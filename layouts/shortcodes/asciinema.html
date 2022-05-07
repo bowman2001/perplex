@@ -1,0 +1,40 @@
+{{/* There are some defaults included here, you may want to change for your needs. */}}
+{{ $id := 0 }}
+{{ $startAt := 0 }}
+{{ $autoplay := 0 }}
+{{ $preload := 0 }}
+{{ $loop := 0 }}
+{{ $speed := 1.5 }}
+{{ $idleTimeLimit := 0 }}
+{{ $theme := "tango" }}
+{{ $cols := 80 }}
+{{ $rows := 25 }}
+{{ if .IsNamedParams }}
+    {{ $id = .Get "id" }}
+    {{ $startAt = .Get "startAt" }}
+    {{ $autoplay = .Get "autoplay" }}
+    {{ $preload = .Get "preload" }}
+    {{ $loop = .Get "loop" }}
+    {{ $speed = .Get "speed" }}
+    {{ $idleTimeLimit = .Get "idleTimeLimit" }}
+    {{ $theme = .Get "theme" }}
+    {{ $rows = .Get "rows" }}
+    {{ $cols = .Get "cols" }}
+{{ else }}
+    {{ $id = .Get 0 }}
+    {{ $rows = .Get 1 }}
+{{ end }}
+<script src="https://asciinema.org/a/{{ $id }}.js"
+        id="asciicast-{{ $id }}"
+        {{ with $startAt }} data-t="{{ . }}" {{ end }}
+        {{ with $autoplay }} data-autoplay="{{ . }}" {{ end }}
+        {{ with $preload }} data-preload="{{ . }}" {{ end }}
+        {{ with $loop }} data-loop="{{ . }}" {{ end }}
+        {{ with $speed }} data-speed="{{ . }}" {{ end }}
+        {{ with $idleTimeLimit }} data-i="{{ . }}" {{ end }}
+        {{ with $cols }} data-cols="{{ . }}" {{ end }}
+        {{ with $theme }} data-theme="{{ . }}" {{ end }}
+        {{ with $rows }} data-rows="{{ . }}" {{ end }}
+        data-theme="monokai"
+        data-size="small"
+        async></script>

@@ -1,0 +1,19 @@
+{{ $imgResource := "" }}
+{{ $currentPage := .Page }}
+{{ $url := "" }}
+{{- with .Params.featImg -}}
+    {{ $url = . }}
+{{- else }}
+    {{ with .CurrentSection.Params.featImg }}
+        {{ $url = . }}
+    {{ else }}
+        {{ with .Site.Params.featImg }}
+            {{ $url = . }}
+        {{ end }}
+    {{ end }}
+{{- end -}}
+{{ with $url }}
+    {{ $args := ( dict "currentPage" $currentPage "name" . ) }}
+    {{ $imgResource = ( partial "get-resource.html" $args ) }}
+{{ end }}
+{{ return $imgResource }}

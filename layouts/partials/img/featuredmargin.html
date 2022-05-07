@@ -1,0 +1,29 @@
+{{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
+{{- with $img -}}
+    {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
+    {{- $imgclass := "" -}}
+    <figure class="md right show3">
+        {{- if eq .MediaType.SubType "svg" -}}
+          <img class="img-svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
+        {{- else -}}
+            {{- if eq .MediaType.SubType "png" -}}
+                {{- $imgclass = "img-png" -}}
+            {{- end -}}
+            {{- $maxcolpx := mul $.Site.Params.layout.column $.Site.Params.layout.xmax -}}
+            {{ $img1 := .Resize (printf "%.0fx" $maxcolpx) }}
+            {{ $img15 := .Resize (printf "%.0fx" (mul $maxcolpx 1.5)) }}
+            {{ $img2 := .Resize (printf "%.0fx" (mul $maxcolpx 2)) }}
+            {{ $img25 := .Resize (printf "%.0fx" (mul $maxcolpx 2.5)) }}
+            {{ $img3 := .Resize (printf "%.0fx" (mul $maxcolpx 3)) }}
+            <img {{ with $imgclass }}class="{{ . }}"{{ end }} src="{{ $img1.RelPermalink }}" alt="{{ .Name }}"
+                 title="{{ .Title }}"
+                 srcset="{{ $img15.RelPermalink }} 1.5x, {{ $img2.RelPermalink }} 2x, {{ $img3.RelPermalink }} 3x"
+                 width="{{ $img1.Width }}" height="{{ $img1.Height }}">
+        {{- end -}}
+        {{- with $imgLink -}}
+          <figcaption>
+            <div class="attr">By <a href="{{ . }}" target="_blank">Unsplash</a></div>
+          </figcaption>
+        {{- end -}}
+    </figure>
+{{- end -}}

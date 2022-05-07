@@ -1,0 +1,57 @@
+<nav class="pagenav mt1">
+  <ul class="pagenav__list pagenav__list--flex">
+      {{ $pages := where site.Pages.Reverse "Section" .Section -}}
+      {{ with $pages.Prev . }}
+        <li><a href="{{ .RelPermalink }}" class="pagenav__item pagenav__item--prev mt-05">
+            <div class="pagenav__itemcol">
+              <div class="pagenav__meta pagenav__meta--dir">Prev.</div>
+                {{ partial "doc/nav/menu-icon.html" . }}
+            </div>
+                {{ partial "nav/page/parent-title.html" . }}
+            <div class="icon pagenav__icon pagenav__icon--arrow">west</div>
+          </a></li>
+      {{ else }}
+          {{ with .FirstSection }}{{ template "start" . }}{{ end }}
+      {{- end -}}
+      {{ with $pages.Next . }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="pagenav__item pagenav__item--next mt-05">
+            <div class="pagenav__itemcol">
+              <div class="pagenav__meta pagenav__meta--dir">Next</div>
+                {{ partial "doc/nav/menu-icon.html" . }}
+            </div>
+              {{ partial "nav/page/parent-title.html" . }}
+            <div class="icon pagenav__icon pagenav__icon--arrow">east</div>
+          </a></li>
+      {{ else }}
+          {{ with .FirstSection }}{{ template "end" . }}{{ end }}
+      {{- end -}}
+  </ul>
+</nav>
+
+{{ define "start" }}
+  <li><span class="pagenav__item pagenav__item--start mt-05">
+      <div class="pagenav__itemcol">
+        <div class="pagenav__meta pagenav__meta--dir"><b>Start</b></div>
+        {{ partial "doc/nav/menu-icon.html" . }}
+      </div>
+         {{ partial "nav/page/parent-title.html" . }}
+      <div class="icon pagenav__icon pagenav__icon--arrow">&nbsp;</div>
+    </span></li>
+{{ end }}
+
+{{ define "end" }}
+  <li><a href="{{ .RelPermalink }}" class="pagenav__item pagenav__item--next mt-05">
+      <div class="pagenav__itemcol">
+        <div class="pagenav__meta pagenav__meta--dir"><b>End</b></div>
+          {{ partial "doc/nav/menu-icon.html" . }}
+      </div>
+          {{ partial "nav/page/parent-title.html" . }}
+      <div class="icon pagenav__icon pagenav__icon--arrow">north</div>
+    </a></li>
+{{ end }}
+
+{{ define "arrow" }}
+
+    {{/* TODO: Up or down the content hierarchy? */}}
+{{ end }}

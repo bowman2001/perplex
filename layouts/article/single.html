@@ -1,0 +1,26 @@
+{{- define "main" -}}
+  <div id="box">
+    <header class="pageheader">
+      <aside class="right">
+          {{- partial "img/featuredmargin.html" . -}}
+      </aside>
+      <div class="title title--article">
+          {{ partial "title/title.html" . }}
+          {{ partial "title/subtitle.html" . }}
+      </div>
+    </header>
+    <div class="md md--serif md-article {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
+        {{- partial "content.html" . -}}
+    </div>
+    <footer class="pagefooter">
+      <div class="meta">
+          {{ partial "nav/breadcrumbs/footer.html" . }}
+          {{ partial "date/page/updated.html" . }}
+      </div>
+    </footer>
+  </div>
+{{- end -}}
+
+{{- define "sidebar" -}}{{- partial "article/nav/sidebar.html" . -}}{{- end -}}
+
+{{- define "toc" -}}{{- partial "nav/toc.html" . -}}{{- end -}}

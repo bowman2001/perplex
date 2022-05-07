@@ -1,0 +1,9 @@
+<div class="sidebarbox">
+  <nav class="sidenav nav-content">
+      {{ with .Site.GetPage "/doc" }}
+          {{ partial "nav/sidebar/heading.html" . }}
+      {{ end }}
+      {{- partial "nav/sidebar/menu-list.html"
+      (dict "context" . "menu" .Site.Menus.doc "menuname" "doc" ) -}}
+  </nav>
+</div>

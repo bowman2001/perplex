@@ -1,0 +1,2 @@
+{{ $screen := resources.Get "css/screen.post.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" media="screen">

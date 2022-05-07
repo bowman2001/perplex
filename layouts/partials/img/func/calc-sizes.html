@@ -1,0 +1,9 @@
+{{ $min := .min }}
+{{ $max := mul .max site.Params.imaging.u_pxdmax }}
+{{ $sizes := (slice (int $min)) }}
+{{ $n := sub site.Params.imaging.u_number 1 }}
+{{ $ratio := div $max $min }}
+{{ range seq $n }}
+    {{ $sizes = $sizes | append (int (math.Round (mul $min (math.Pow $ratio (div . (mul $n 1.0)))))) }}
+{{ end }}
+{{ return $sizes }}

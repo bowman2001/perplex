@@ -1,0 +1,60 @@
+<ul class="nav__list sidenav__list">
+    {{ $currentPage := .context }}
+    {{ $menuName := .menuname }}
+    {{ $menu := .menu }}
+    {{ range $menu }}
+        {{ if .HasChildren }}
+          <li class='li--1 {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end -}}'>
+              {{ template "item" . }}
+              {{ template "expand" . }}
+            <ul class='{{ if ( partial "itemsHaveNoChildren" . ) -}}itemsHaveNoChildren{{ end }}'>
+                {{ range .Children }}
+                  <li class='li--2 {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end -}}'>
+                      {{ template "item" . }}
+                      {{ if .HasChildren }}
+                          {{ template "expand" . }}
+                          <ul class='{{ if ( partial "itemsHaveNoChildren" . ) }}itemsHaveNoChildren{{ end }}'>
+                              {{ range .Children }}
+                                <li class='li--3 {{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}'>
+                                    {{ template "item" . }}
+                                </li>
+                              {{ end }}
+                          </ul>
+                      {{ end }}
+                  </li>
+                {{ end }}
+            </ul>
+          </li>
+        {{ else }}
+          <li class='li--1 {{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}'>
+              {{ template "item" . }}
+          </li>
+        {{ end }}
+    {{ end }}
+</ul>
+
+{{- define "item" -}}
+  <a href="{{ .URL }}">
+      {{- with .Pre -}}<span class="icon">{{ . }}</span>{{ end }}<span
+            class="li__text">{{ .Name | site.Home.RenderString }}</span>
+  </a>
+{{- end -}}
+
+{{- define "expand" -}}
+    {{ with .Identifier }}
+      <input id="menu-{{ . }}" class="chk-menu" type="checkbox">
+      <label class="open-menu" for="menu-{{ . }}"><span class="icon"></span></label>
+    {{ else }}
+        {{ warnf "Missing menu identifier for menu entry %q" .KeyName }}
+    {{ end }}
+{{- end -}}
+
+{{- define "partials/itemsHaveNoChildren" -}}
+    {{ $value := true }}
+    {{ range .Children }}
+        {{ if .HasChildren }}
+            {{ $value = false }}
+        {{ end }}
+    {{ end }}
+    {{ return $value }}
+{{ end }}

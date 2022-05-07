@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html {{ with .Site.Language.Lang }}lang="{{ . }}"{{ end }}>
+{{- partial "head.html" . -}}
+<body>
+<header class="l-masthead l-nav" id="masthead">
+    {{- partial "nav/masthead.html" . -}}
+</header>
+<div id="page">
+  <div id="content">
+    <main id="main">
+        {{- block "main" . -}}{{- end -}}
+    </main>
+    <div id="overlay"></div>
+    <aside class="l-sidebar l-nav" id="sidebar">
+      <header class="l-masthead l-masthead-sidebar hide3">
+          {{- partial "nav/sidebar-masthead.html" . -}}
+      </header>
+        {{- block "sidebar" . -}}{{- end -}}
+    </aside>
+      {{- block "toc" . -}}{{- end -}}
+  </div>
+</div>
+{{- partial "foot.html" . -}}
+</body>
+</html>

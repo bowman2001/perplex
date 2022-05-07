@@ -1,0 +1,20 @@
+<nav>
+  <ul class="meta__list">
+      {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+  </ul>
+</nav>
+
+{{ define "breadcrumbnav" }}
+    {{ if .p1.Parent }}
+        {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+        {{ partial "nav/breadcrumbs/separator.html" . }}
+    {{ else if not .p1.IsHome }}
+        {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+        {{ partial "nav/breadcrumbs/separator.html" . }}
+    {{ end }}
+    {{ if ne .p1 .p2  }}
+        {{ partial "nav/breadcrumbs/link.html" .p1 }}
+    {{ else }}
+        {{ partial "nav/breadcrumbs/link.html" .p2 }}
+    {{ end }}
+{{ end }}

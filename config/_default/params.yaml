@@ -1,0 +1,32 @@
+# Repository
+repo: https://github.com/bowman2001/perplexdoc
+
+# All parameters may be set per page in the front-matter
+subtitle: false
+toc: true
+toctitle: On this Page
+latex: false
+mermaid: false
+
+# Image processing
+imaging:
+  u_number: 12 # Number of different sizes
+  u_pxdmax: 4 # Maximum pixel density
+  u_jpeg_quality_reduction: # JPEG Quality reduction for higher densities
+    - -10 # 2*
+    - -15 # 3*
+    - -20 # 4*
+
+# The following parameters of the Perplex layout are essential for image processing
+# DO NOT REMOVE OR CHANGE THEM! THE LAYOUT WILL BREAK!
+layout:
+  measure: 70.0
+  column: 33.0
+  gutter: 4.0
+  lineheightfac: 3.0
+  guttermobile: 2.0
+  xminmobile: 7.5
+  xmaxmobile: 8.29
+  xmin: 6.6667
+  xmax: 10.0
+  background: '#fefefe'

@@ -1,0 +1,10 @@
+{{ if (partial "nav/func/show-toc.html" .) }}
+    {{ with .TableOfContents }}
+      <aside class="is-closed" id="toc">
+        <div class="nav-toc">
+          <h4><a href="#page">{{ $.Site.Params.toctitle | default "On this page" }}</a></h4>
+            {{ . }}
+        </div>
+      </aside>
+    {{- end -}}
+{{ end }}

@@ -1,0 +1,30 @@
+<nav class="pagenav">
+  <ul>
+      {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="navpages__prev">
+          <div class="icon">chevron_left</div>
+            {{- partial "nav/page/preview" . -}}
+        </a>
+      {{- end -}}
+      {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="navpages__next">
+            {{- partial "nav/page/preview" . -}}
+          <div class="icon">chevron_right</div>
+        </a>
+      {{- end -}}
+  </ul>
+</nav>
+
+{{- define "partials/nav/page/preview" -}}
+  <div class="navpages__page">
+    <h4>
+        {{ with .Param "menu.doc.pre" }}<span class="icon">{{ . }}</span>{{ end }}
+        {{ .Title | site.Home.RenderString }}
+    </h4>
+      {{ with .Description }}<p>{{ . | site.Home.RenderString }}</p>{{ end }}
+  </div>
+{{- end -}}
+
+{{- define "partials/nav/section/preview" -}}
+    {{ .Title | site.Home.RenderString }}
+{{- end -}}

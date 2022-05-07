@@ -1,0 +1,12 @@
+{{- with .Site.Params.favicon.svg -}}
+    {{ $icon := resources.Get . }}
+    <link rel="icon" type="image/svg+xml" href="{{ $icon.RelPermalink }}">
+{{- else -}}
+    {{ warnf "No SVG favicon in the site parameters." }}
+{{- end -}}
+{{- with .Site.Params.favicon.png -}}
+    {{ $icon := resources.Get . }}
+    <link rel="icon" type="image/png" href="{{ $icon.RelPermalink }}">
+{{- else -}}
+    {{ warnf "No PNG fallback favicon in the site parameters." }}
+{{- end -}}

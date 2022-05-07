@@ -1,0 +1,22 @@
+{{- define "main" -}}
+  <div id="box">
+    <header class="pageheader">
+        {{- partial "img/featuredmargin.html" . -}}
+      <div class="title title-left">
+          {{ partial "title/title.html" . }}
+          {{ partial "title/subtitle.html" . }}
+      </div>
+    </header>
+    <div class="md md--serif">
+        {{- partial "content.html" . -}}
+    </div>
+    <footer class="pagefooter">
+      <div class="meta">
+          {{ partial "nav/breadcrumbs/footer.html" . }}
+          {{ partial "date/page/updated.html" . }}
+      </div>
+    </footer>
+  </div>
+{{- end -}}
+
+{{- define "toc" -}}{{- partial "nav/toc.html" . -}}{{- end -}}
