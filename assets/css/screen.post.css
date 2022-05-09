@@ -481,7 +481,7 @@ html {
 }
 
 body {
-  background: #fefefe;
+  background: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -693,7 +693,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
-    scrollbar-color: #ebb923 #ebebeb;
+    scrollbar-color: #ebb923 #ececec;
   }
 
   #main::-webkit-scrollbar {
@@ -706,7 +706,7 @@ body {
   }
 
   #main::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #ececec;
   }
 }
 
@@ -721,7 +721,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behaviour: contain;
-  background-color: #fefefe;
+  background-color: #fff;
 }
 
 #sidebar.is-visible {
@@ -1415,7 +1415,7 @@ h6 {
   padding: 0 .25em;
   text-transform: none;
   border: .1rem solid rgba(0,0,0,0.06667);
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
 }
 
 .md dt code {
@@ -1466,17 +1466,17 @@ h6 {
 
 .md .highlight > div,
 .md .highlight > pre {
-  background-color: #f8f8f8 !important;
+  background-color: #f9f9f9 !important;
   border: .1rem solid rgba(0,0,0,0.06667);
 }
 
 .md .highlight > div pre,
 .md .highlight > pre pre {
-  background-color: #f8f8f8 !important;
+  background-color: #f9f9f9 !important;
 }
 
 .md .highlight table {
-  scrollbar-color: #ebb923 #ebebeb;
+  scrollbar-color: #ebb923 #ececec;
 }
 
 .md .highlight table::-webkit-scrollbar {
@@ -1489,7 +1489,7 @@ h6 {
 }
 
 .md .highlight table::-webkit-scrollbar-track {
-  background: #ebebeb;
+  background: #ececec;
 }
 
 .md .highlight table pre {
@@ -1865,7 +1865,7 @@ h6 {
 
 .md .box {
   position: relative;
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
 }
 
 @media screen and (min-width: 48em) {
@@ -2230,33 +2230,6 @@ h6 {
   margin: -0.9rem .5rem -1rem -0.2rem;
 }
 
-.md--margin {
-  margin-top: -1rem;
-}
-
-@media screen and (min-width: 79em) {
-  .md--margin > h1,
-  .md--margin > h2,
-  .md--margin > h3,
-  .md--margin > h4,
-  .md--margin > p,
-  .md--margin > blockquote,
-  .md--margin > ul,
-  .md--margin > ol,
-  .md--margin > dl,
-  .md--margin > table,
-  .md--margin > pre,
-  .md--margin > .highlight,
-  .md--margin .maincol,
-  .md--margin .literature,
-  .md--margin .footnotes,
-  .md--margin .asciicast {
-    max-width: 144rem;
-    margin-left: 37rem;
-    margin-right: 37rem;
-  }
-}
-
 .md--list {
   padding-bottom: 0;
 }
@@ -2491,7 +2464,7 @@ h6 {
   max-width: 70rem;
   text-align: center;
   border-radius: .5rem;
-  background-color: #f1f1f1;
+  background-color: #f2f2f2;
 }
 
 @media screen and (min-width: 37em) {
@@ -2740,7 +2713,7 @@ h6 {
   margin-bottom: calc(0.9rem + 1 * var(--es));
   border-top: .1rem solid #c4c4cc;
   border-bottom: .1rem solid #c4c4cc;
-  background: radial-gradient(#fefefe, #e5e5e5);
+  background: radial-gradient(#ffffff, #e6e6e6);
 }
 
 @media screen and (min-width: 37em) {
@@ -2886,7 +2859,7 @@ h6 {
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f6f6f6 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f7f7f7 90%);
 }
 
 @media screen and (min-width: 48em) {
@@ -3362,7 +3335,7 @@ a.pagenav__item--next:focus {
   .sidebarbox {
     width: 35rem;
     height: 100%;
-    scrollbar-color: #ebb923 #ebebeb;
+    scrollbar-color: #ebb923 #ececec;
   }
 
   .sidebarbox::-webkit-scrollbar {
@@ -3375,7 +3348,7 @@ a.pagenav__item--next:focus {
   }
 
   .sidebarbox::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #ececec;
   }
 }
 

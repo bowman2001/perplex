@@ -395,7 +395,7 @@ html {
 }
 
 body {
-  background: #fefefe;
+  background: #ffffff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -582,7 +582,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
-    scrollbar-color: #EBB923 #ebebeb;
+    scrollbar-color: #EBB923 #ececec;
   }
   #main::-webkit-scrollbar {
     width: 1rem;
@@ -592,7 +592,7 @@ body {
     background: #EBB923;
   }
   #main::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #ececec;
   }
 }
 
@@ -607,7 +607,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behaviour: contain;
-  background-color: #fefefe;
+  background-color: #ffffff;
 }
 #sidebar.is-visible {
   left: 0;
@@ -1143,7 +1143,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 0.25em;
   text-transform: none;
   border: 0.1rem solid #0001;
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
 }
 .md dt code {
   font-weight: 500;
@@ -1192,14 +1192,14 @@ h1, h2, h3, h4, h5, h6 {
   } */
 }
 .md .highlight > div, .md .highlight > pre {
-  background-color: #f8f8f8 !important;
+  background-color: #f9f9f9 !important;
   border: 0.1rem solid #0001;
 }
 .md .highlight > div pre, .md .highlight > pre pre {
-  background-color: #f8f8f8 !important;
+  background-color: #f9f9f9 !important;
 }
 .md .highlight table {
-  scrollbar-color: #EBB923 #ebebeb;
+  scrollbar-color: #EBB923 #ececec;
 }
 .md .highlight table::-webkit-scrollbar {
   width: 1rem;
@@ -1209,7 +1209,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #EBB923;
 }
 .md .highlight table::-webkit-scrollbar-track {
-  background: #ebebeb;
+  background: #ececec;
 }
 .md .highlight table pre {
   padding-right: 0;
@@ -1486,7 +1486,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .md .box {
   position: relative;
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
 }
 @media screen and (min-width: 48em) {
   .md .up-1 {
@@ -1759,17 +1759,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: -0.9rem 0.5rem -1rem -0.2rem;
 }
 
-.md--margin {
-  margin-top: -1rem;
-}
-@media screen and (min-width: 79em) {
-  .md--margin > h1, .md--margin > h2, .md--margin > h3, .md--margin > h4, .md--margin > p, .md--margin > blockquote, .md--margin > ul, .md--margin > ol, .md--margin > dl, .md--margin > table, .md--margin > pre, .md--margin > .highlight, .md--margin .maincol, .md--margin .literature, .md--margin .footnotes, .md--margin .asciicast {
-    max-width: 144rem;
-    margin-left: 37rem;
-    margin-right: 37rem;
-  }
-}
-
+/* .md--margin {
+	margin-top: -1rem;
+	@media screen and (min-width: $bp-4col) {
+		> h1, > h2, > h3, > h4, > p, > blockquote, > ul, > ol, > dl, > table, > pre, > .highlight, .maincol, .literature, .footnotes, .asciicast {
+			max-width: $s-m-opt + 2 * $s-colg;
+			margin-left: $s-colg;
+			margin-right: $s-colg;
+		}
+	}
+} */
 .md--list {
   padding-bottom: 0;
 }
@@ -2042,7 +2041,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 70rem;
   text-align: center;
   border-radius: 0.5rem;
-  background-color: #f1f1f1;
+  background-color: #f2f2f2;
 }
 @media screen and (min-width: 37em) {
   .md .asciicast {
@@ -2243,7 +2242,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: calc(0.9rem + 1 * var(--es));
   border-top: 0.1rem solid #c4c4cc;
   border-bottom: 0.1rem solid #c4c4cc;
-  background: radial-gradient(#fefefe, #e5e5e5);
+  background: radial-gradient(#ffffff, #e6e6e6);
 }
 @media screen and (min-width: 37em) {
   .note {
@@ -2365,7 +2364,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f6f6f6 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f7f7f7 90%);
 }
 @media screen and (min-width: 48em) {
   .checkbox-note ~ .note__content {
@@ -2767,7 +2766,7 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
   .sidebarbox {
     width: 35rem;
     height: 100%;
-    scrollbar-color: #EBB923 #ebebeb;
+    scrollbar-color: #EBB923 #ececec;
   }
   .sidebarbox::-webkit-scrollbar {
     width: 1rem;
@@ -2777,7 +2776,7 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
     background: #EBB923;
   }
   .sidebarbox::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #ececec;
   }
 }
 
