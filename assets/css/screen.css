@@ -65,11 +65,9 @@ hr {
 /*
  * Align fonts to a vertical x-grid
  */
-.footnotes {
+.footnotes, .md > h1, .md > h2, .md > h3, .md > h4, .md > p, .md > blockquote, .md > ul, .md > ol, .md > dl, .md > table, .md > pre, .md > .highlight, .md .maincol, .md .literature, .md .footnotes, .md .asciicast {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 /**
@@ -1773,83 +1771,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0;
 }
 
-.md {
-  /* &.md-margin {
-  	figure {
-  		&.full {
-  			max-width: 100%;
-  		}
-  		&.xlarge {
-  			max-width: 3 * $s-colg - $s-gutter;
-  			margin-left: $s-colhalfg;
-  			&.left {
-  				float: none;
-  				width: auto;
-  				margin-left: 0;
-  			}
-  		}
-  		&.large {
-  			margin-left: $s-colg;
-  			&.right, {
-  				margin-left: $s-gutter;
-  			}
-  			&.left {
-  				margin-left: 0;
-  				margin-right: $s-gutter;
-  			}
-  		}
-
-
-  	    &.left, &.right {
-  			@media screen and (min-width: $bp-2col) {
-  				margin-bottom: 1rem;
-  			}
-  		}
-
-  		&.left {
-  			&.tiny {
-  				margin-right: $s-gutter-half;
-  				@media screen and (min-width: $bp-3col) {
-  				margin-left: $s-colghalf;
-  				}
-  			}
-  		}
-  		&.right {
-  			&.tiny {
-  				margin-left: $s-gutter-half;
-  				@media screen and (min-width: $bp-3col) {
-  				margin-right: $s-colghalf;
-  				}
-  			}
-  		}
-  		&.normal.caption-right {
-  			@media screen and (min-width: $bp-3col) {
-  				display: flex;
-  				justify-content: space-between;
-  				padding-bottom: 0;
-  				background-color: transparent;
-  				figcaption {
-  					position: absolute;
-  					top: 0;
-  					left: $s-m-opt + $s-gutter;
-  					flex-direction: column;
-  					width: $s-col;
-  					height: 100%;
-  					padding-right: 0;
-  					padding-left: 0;
-
-  					.caption, .attr {
-  						width: 100%;
-  						padding-right: 0;
-  						padding-bottom: 1rem;
-  						text-align: left;
-  					}
-  				}
-  			}
-  		}
-  	}
-  } */
-}
 .md figure {
   position: relative;
   margin-top: 1.75rem;
@@ -3011,9 +2932,8 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
   font-size: 1.737rem;
   line-height: 2rem;
   padding-top: 0.3494935rem;
-  margin-bottom: -0.3494935rem;
-  padding-bottom: 0;
-  margin-bottom: 1rem;
+  padding-bottom: 0.6505065rem;
+  margin-bottom: 0;
 }
 .nav-toc h4 {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;

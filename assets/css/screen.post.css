@@ -114,10 +114,24 @@ hr {
   margin: 0;
 }
 
-.footnotes {
+.footnotes,
+.md > h1,
+.md > h2,
+.md > h3,
+.md > h4,
+.md > p,
+.md > blockquote,
+.md > ul,
+.md > ol,
+.md > dl,
+.md > table,
+.md > pre,
+.md > .highlight,
+.md .maincol,
+.md .literature,
+.md .footnotes,
+.md .asciicast {
   word-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 .cf:before,
@@ -3653,9 +3667,8 @@ a.pagenav__item--next:focus {
   font-size: 1.737rem;
   line-height: 2rem;
   padding-top: .3494935rem;
-  margin-bottom: -.3494935rem;
-  padding-bottom: 0;
-  margin-bottom: 1rem;
+  padding-bottom: .6505065rem;
+  margin-bottom: 0;
 }
 
 .nav-toc h4 {
