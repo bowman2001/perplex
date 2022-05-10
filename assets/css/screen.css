@@ -400,7 +400,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "liga" on, "clig" on, "dlig" off;
-  scroll-behaviour: smooth;
+  scroll-behavior: smooth;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -606,7 +606,7 @@ body {
   height: calc( 100vh - 7rem);
   overflow-x: hidden;
   overflow-y: auto;
-  overscroll-behaviour: contain;
+  overscroll-behavior: contain;
   background-color: #ffffff;
 }
 #sidebar.is-visible {
@@ -2396,30 +2396,30 @@ h1, h2, h3, h4, h5, h6 {
   color: transparent;
 }
 
-.checkbox-note:not(checked) ~ .note__content {
+.checkbox-note ~ .note__content {
   height: 10.5rem;
 }
-.checkbox-note:not(checked) ~ .note__content:after {
+.checkbox-note ~ .note__content:after {
   transition: opacity 150ms ease;
   opacity: 1;
 }
 @media screen and (min-width: 48em) {
-  .checkbox-note:not(checked) ~ .note__content {
+  .checkbox-note ~ .note__content {
     height: 100%;
   }
-  .checkbox-note:not(checked) ~ .note__content:after {
+  .checkbox-note ~ .note__content:after {
     display: none;
   }
 }
-.checkbox-note:not(checked) ~ .open-note {
+.checkbox-note ~ .open-note {
   bottom: -3rem;
 }
-.checkbox-note:not(checked) ~ .open-note > .arrow {
+.checkbox-note ~ .open-note > .arrow {
   border-top: 1rem solid #667;
   border-bottom: unset;
 }
 @media screen and (min-width: 48em) {
-  .checkbox-note:not(checked) ~ .open-note {
+  .checkbox-note ~ .open-note {
     display: none;
   }
 }
@@ -2892,7 +2892,6 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
   margin-bottom: 0;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }

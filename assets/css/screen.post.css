@@ -486,7 +486,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "liga" on, "clig" on, "dlig" off;
-  scroll-behaviour: smooth;
+  scroll-behavior: smooth;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -663,7 +663,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: transparent;
-  cursor: unset;
+  cursor: inherit;
   transition: background-color 50ms 250ms;
 }
 
@@ -720,7 +720,7 @@ body {
   height: calc(100vh - 7rem);
   overflow-x: hidden;
   overflow-y: auto;
-  overscroll-behaviour: contain;
+  overscroll-behavior: contain;
   background-color: #fff;
 }
 
@@ -2897,36 +2897,36 @@ h6 {
   color: transparent;
 }
 
-.checkbox-note:not(checked) ~ .note__content {
+.checkbox-note ~ .note__content {
   height: 10.5rem;
 }
 
-.checkbox-note:not(checked) ~ .note__content:after {
+.checkbox-note ~ .note__content:after {
   transition: opacity 150ms ease;
   opacity: 1;
 }
 
 @media screen and (min-width: 48em) {
-  .checkbox-note:not(checked) ~ .note__content {
+  .checkbox-note ~ .note__content {
     height: 100%;
   }
 
-  .checkbox-note:not(checked) ~ .note__content:after {
+  .checkbox-note ~ .note__content:after {
     display: none;
   }
 }
 
-.checkbox-note:not(checked) ~ .open-note {
+.checkbox-note ~ .open-note {
   bottom: -3rem;
 }
 
-.checkbox-note:not(checked) ~ .open-note > .arrow {
+.checkbox-note ~ .open-note > .arrow {
   border-top: 1rem solid #667;
-  border-bottom: unset;
+  border-bottom: initial;
 }
 
 @media screen and (min-width: 48em) {
-  .checkbox-note:not(checked) ~ .open-note {
+  .checkbox-note ~ .open-note {
     display: none;
   }
 }
@@ -2945,7 +2945,7 @@ h6 {
 }
 
 .checkbox-note:checked ~ .open-note > .arrow {
-  border-top: unset;
+  border-top: initial;
   border-bottom: 1rem solid #667;
 }
 
@@ -3509,7 +3509,6 @@ a.pagenav__item--next:focus {
   margin-bottom: 0;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: .04em;
 }
@@ -3549,8 +3548,8 @@ a.pagenav__item--next:focus {
 
 @media screen and (min-width: 79em) {
   .itemsHaveNoChildren {
-    -moz-columns: unset;
-         columns: unset;
+    -moz-columns: initial;
+         columns: initial;
     margin-bottom: 0;
     padding-top: 0;
   }
