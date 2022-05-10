@@ -455,10 +455,10 @@ img.img-png {
 }
 
 figure {
-  padding-right: calc(2*0rem);
-  padding-right: calc(2*var(--es));
-  padding-left: calc(2*0rem);
-  padding-left: calc(2*var(--es));
+  padding-left: calc(2 * 0rem);
+  padding-left: calc(2 * var(--es));
+  padding-right: calc(2 * 0rem);
+  padding-right: calc(2 * var(--es));
 }/*!
  * Copyright (c) [2022.] [Jörg Makowski]
  *

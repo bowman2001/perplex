@@ -355,8 +355,8 @@ img.img-svg, img.img-png {
 }
 
 figure {
-  padding-right: calc(2 * var(--es));
   padding-left: calc(2 * var(--es));
+  padding-right: calc(2 * var(--es));
 }
 
 /*!
