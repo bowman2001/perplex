@@ -35,8 +35,8 @@
 
 {{- define "item" -}}
   <a href="{{ .URL }}">
-      {{- with .Pre -}}<span class="icon">{{ . }}</span>{{ end }}<span
-            class="li__text">{{ .Name | site.Home.RenderString }}</span>
+    {{ partial "nav/menu-pre-icon.html" . }}
+    <span class="li__text">{{ .Name | site.Home.RenderString }}</span>
   </a>
 {{- end -}}
 
