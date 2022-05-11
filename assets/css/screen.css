@@ -267,18 +267,15 @@ q:after {
   content: close-quote;
 }
 
-ul, ol {
-  list-style: none;
-}
-ul li, ol li {
+li {
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   break-inside: avoid-column;
 }
-ul li:empty, ol li:empty {
+li:empty {
   display: none;
 }
-ul li:empty:before, ol li:empty:before {
+li:empty:before {
   display: none;
 }
 
@@ -628,13 +625,6 @@ body {
     border-right: none;
     animation: fadeinsite 500ms;
   }
-}
-
-#toc {
-  position: fixed;
-  top: 10rem;
-  right: 0;
-  width: 33rem;
 }
 
 /* #sidebar-left {
