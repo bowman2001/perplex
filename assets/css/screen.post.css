@@ -791,6 +791,7 @@ body {
 
 #box {
   width: 100%;
+  scroll-margin-top: 7rem;
 }
 
 @media screen and (min-width: 48em) {
