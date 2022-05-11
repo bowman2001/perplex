@@ -1,5 +1,6 @@
 # Repository
-repo: https://github.com/bowman2001/perplexdoc
+themeURL: https://github.com/bowman2001/perplex
+themeIssueTree: issues
 
 # All parameters may be set per page in the front-matter
 subtitle: false
