@@ -950,7 +950,7 @@ a.meta__item--text:hover {
   margin-bottom: 0;
   scroll-margin-top: 10rem;
   text-transform: uppercase;
-  color: #333;
+  color: #222;
   letter-spacing: .02em;
   word-spacing: .06em;
 }
@@ -988,7 +988,7 @@ a.meta__item--text:hover {
 }
 
 .title--ruled > hr {
-  border-top: .35rem solid #333;
+  border-top: .35rem solid #222;
   height: .65rem;
 }
 
@@ -1041,16 +1041,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #333;
-}
-
-.md h1:target .heading,
-.md h2:target .heading,
-.md h3:target .heading,
-.md h4:target .heading,
-.md h5:target .heading,
-.md h6:target .heading {
-  background-color: #8ddbff;
+  color: #222;
 }
 
 .md h1:hover .heading__anchor,
@@ -1068,13 +1059,28 @@ h6 {
   color: #7b7b7b;
 }
 
+.md h1:target .heading,
 .md h1:target .heading__anchor,
+.md h2:target .heading,
 .md h2:target .heading__anchor,
+.md h3:target .heading,
 .md h3:target .heading__anchor,
+.md h4:target .heading,
 .md h4:target .heading__anchor,
+.md h5:target .heading,
 .md h5:target .heading__anchor,
+.md h6:target .heading,
 .md h6:target .heading__anchor {
-  color: #222;
+  color: #111;
+}
+
+.md h1:target .heading,
+.md h2:target .heading,
+.md h3:target .heading,
+.md h4:target .heading,
+.md h5:target .heading,
+.md h6:target .heading {
+  background-color: #8ddbff;
 }
 
 .md h2 {
@@ -1105,7 +1111,7 @@ h6 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: .005em;
-  color: #222;
+  color: #444;
 }
 
 .md h4 {
@@ -1119,7 +1125,7 @@ h6 {
   font-weight: 600;
   letter-spacing: .005em;
   word-spacing: .015em;
-  color: #222;
+  color: #444;
 }
 
 .md h5,
@@ -1153,7 +1159,7 @@ h6 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: .005em;
-  color: #111;
+  color: #333;
 }
 
 .md h6,
@@ -1161,7 +1167,7 @@ h6 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #000;
+  color: #333;
 }
 
 .md h2 + h3:not(.h-p),
@@ -1264,14 +1270,14 @@ h6 {
   scroll-margin-top: 9rem;
   font-weight: 600;
   letter-spacing: .005em;
-  color: #222;
+  color: #444;
 }
 
 .note h3,
 .note h4,
 .note h5,
 .note h6 {
-  color: #666;
+  color: #555;
 }
 
 @-webkit-keyframes anchorflash {
@@ -2814,7 +2820,7 @@ h6 {
   left: -1rem;
   font-size: .8em;
   line-height: 1;
-  color: #333;
+  color: #222;
 }
 
 .note-star1 .note__content > p:first-of-type:before {

@@ -801,7 +801,7 @@ a.meta__item--text:hover {
   margin-bottom: 0;
   scroll-margin-top: 10rem;
   text-transform: uppercase;
-  color: #333;
+  color: #222;
   letter-spacing: 0.02em;
   word-spacing: 0.06em;
 }
@@ -834,7 +834,7 @@ a.meta__item--text:hover {
   padding-bottom: calc(1rem + 1 * var(--es));
 }
 .title--ruled > hr {
-  border-top: 0.35rem solid #333;
+  border-top: 0.35rem solid #222;
   height: 0.65rem;
 }
 .title--ruled > h1 {
@@ -877,17 +877,17 @@ a.meta__item--text:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #333;
+  color: #222;
 }
 
-.md h1:target .heading, .md h2:target .heading, .md h3:target .heading, .md h4:target .heading, .md h5:target .heading, .md h6:target .heading {
-  background-color: #8ddbff;
-}
 .md h1:hover .heading__anchor, .md h1:focus .heading__anchor, .md h2:hover .heading__anchor, .md h2:focus .heading__anchor, .md h3:hover .heading__anchor, .md h3:focus .heading__anchor, .md h4:hover .heading__anchor, .md h4:focus .heading__anchor, .md h5:hover .heading__anchor, .md h5:focus .heading__anchor, .md h6:hover .heading__anchor, .md h6:focus .heading__anchor {
   color: #7b7b7b;
 }
-.md h1:target .heading__anchor, .md h2:target .heading__anchor, .md h3:target .heading__anchor, .md h4:target .heading__anchor, .md h5:target .heading__anchor, .md h6:target .heading__anchor {
-  color: #222;
+.md h1:target .heading, .md h1:target .heading__anchor, .md h2:target .heading, .md h2:target .heading__anchor, .md h3:target .heading, .md h3:target .heading__anchor, .md h4:target .heading, .md h4:target .heading__anchor, .md h5:target .heading, .md h5:target .heading__anchor, .md h6:target .heading, .md h6:target .heading__anchor {
+  color: #111;
+}
+.md h1:target .heading, .md h2:target .heading, .md h3:target .heading, .md h4:target .heading, .md h5:target .heading, .md h6:target .heading {
+  background-color: #8ddbff;
 }
 .md h2 {
   font-size: 2.145rem;
@@ -901,7 +901,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.015em;
   word-spacing: 0.045em;
-  color: #222222;
+  color: #222;
 }
 .md h3 {
   font-size: 2.145rem;
@@ -913,7 +913,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 0.005em;
-  color: #222;
+  color: #444;
 }
 .md h4 {
   font-size: 2.002rem;
@@ -926,7 +926,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
-  color: #222;
+  color: #444;
 }
 .md h5, .md h6, .md .h-p {
   display: inline-block;
@@ -949,13 +949,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.005em;
-  color: #111;
+  color: #333;
 }
 .md h6, .md .h-p-s {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #000;
+  color: #333;
 }
 .md h2 + h3:not(.h-p), .md h3 + h4:not(.h-p) {
   margin-top: -1rem;
@@ -1020,7 +1020,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: none;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
-  color: #222222;
+  color: #222;
 }
 .md-article h3 {
   font-size: 2.3833333333rem;
@@ -1031,11 +1031,11 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 9rem;
   font-weight: 600;
   letter-spacing: 0.005em;
-  color: #222;
+  color: #444;
 }
 
 .note h3, .note h4, .note h5, .note h6 {
-  color: #666666;
+  color: #555555;
 }
 
 @keyframes anchorflash {
@@ -2235,7 +2235,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -1rem;
   font-size: 0.8em;
   line-height: 1;
-  color: #333;
+  color: #222;
 }
 
 .note-star1 .note__content > p:first-of-type:before {
