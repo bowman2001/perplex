@@ -4,6 +4,7 @@
 <body>
 <header class="l-masthead l-nav" id="masthead">
     {{- partial "nav/masthead.html" . -}}
+    {{- block "toc" . -}}{{- end -}}
 </header>
 <div id="page">
   <div id="content">
@@ -17,7 +18,6 @@
       </header>
         {{- block "sidebar" . -}}{{- end -}}
     </aside>
-      {{- block "toc" . -}}{{- end -}}
   </div>
 </div>
 {{- partial "foot.html" . -}}
