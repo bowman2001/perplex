@@ -3637,6 +3637,7 @@ a.pagenav__item--next:focus {
   display: block;
   position: absolute;
   top: 7rem;
+  right: 0;
   width: 33rem;
   height: calc(100vh - 7rem);
   overflow-y: auto;
@@ -3650,15 +3651,16 @@ a.pagenav__item--next:focus {
 
 @media screen and (min-width: 37em) {
   #toc {
+    right: initial;
     grid-area: control;
     width: 33rem;
-    margin: 0 2rem;
+    margin: 0 2rem 0 1rem;
   }
 }
 
 @media screen and (min-width: 48em) {
   #toc {
-    margin: 3rem 2rem 0 2rem;
+    margin: 3rem 2rem 0 1rem;
   }
 }
 
