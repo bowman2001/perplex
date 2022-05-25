@@ -437,7 +437,7 @@ body {
     grid-template-columns: auto repeat(12, 18.5rem) auto;
     grid-template-areas: ". . . logo logo men1 men1 men2 men2 ctrl ctrl . . .";
   }
-  #masthead > #toc.is-closed {
+  #masthead #toc.is-closed {
     display: block;
     opacity: 1;
   }
@@ -487,6 +487,7 @@ body {
 
 #ctrl {
   grid-area: ctrl;
+  position: relative;
 }
 
 #tgl-sb1 .icon:after, #tgl-sb2 .icon:after {
@@ -2894,14 +2895,16 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
 }
 
 #toc {
-  position: fixed;
+  position: absolute;
   top: 7rem;
   right: 0;
   z-index: 8;
   opacity: 1;
   width: 37rem;
+  height: calc( 100vh - 7rem );
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
 }
 #toc.is-closed {
   opacity: 0;
@@ -2909,7 +2912,18 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
 }
 @media screen and (min-width: 48em) {
   #toc {
+    grid-area: control;
     width: 33rem;
+    margin: 3rem 2rem 0 2rem;
+  }
+}
+@media screen and (min-width: 120em) {
+  #toc {
+    right: -37rem;
+  }
+  #toc.is-closed {
+    opacity: 1;
+    z-index: 8;
   }
 }
 
