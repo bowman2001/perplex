@@ -3631,10 +3631,7 @@ a.pagenav__item--next:focus {
   display: block;
   position: absolute;
   top: 7rem;
-  right: 0;
-  z-index: 8;
-  opacity: 1;
-  width: 37rem;
+  width: 33rem;
   height: calc(100vh - 7rem);
   overflow-y: auto;
   overflow-x: hidden;
@@ -3643,14 +3640,18 @@ a.pagenav__item--next:focus {
 
 #toc.is-closed {
   display: none;
-  opacity: 0;
-  z-index: -1;
+}
+
+@media screen and (min-width: 37em) {
+  #toc {
+    grid-area: control;
+    width: 33rem;
+    margin: 0 2rem;
+  }
 }
 
 @media screen and (min-width: 48em) {
   #toc {
-    grid-area: control;
-    width: 33rem;
     margin: 3rem 2rem 0 2rem;
   }
 }
@@ -3661,8 +3662,7 @@ a.pagenav__item--next:focus {
   }
 
   #toc.is-closed {
-    opacity: 1;
-    z-index: 8;
+    display: block;
   }
 }
 

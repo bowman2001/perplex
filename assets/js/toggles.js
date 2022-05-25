@@ -48,7 +48,7 @@ if ( tocBtn ) {
 }
 
 function sbHandler () {
-    if ( tocBtn.classList.contains( 'is-visible' ) ) {
+    if ( toc && tocBtn.classList.contains( 'is-visible' ) ) {
         tocHandler();
     }
     if ( sb ) {

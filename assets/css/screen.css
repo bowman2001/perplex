@@ -2898,10 +2898,7 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
   display: block;
   position: absolute;
   top: 7rem;
-  right: 0;
-  z-index: 8;
-  opacity: 1;
-  width: 37rem;
+  width: 33rem;
   height: calc( 100vh - 7rem );
   overflow-y: auto;
   overflow-x: hidden;
@@ -2909,13 +2906,16 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
 }
 #toc.is-closed {
   display: none;
-  opacity: 0;
-  z-index: -1;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 37em) {
   #toc {
     grid-area: control;
     width: 33rem;
+    margin: 0 2rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  #toc {
     margin: 3rem 2rem 0 2rem;
   }
 }
@@ -2924,8 +2924,7 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
     right: -37rem;
   }
   #toc.is-closed {
-    opacity: 1;
-    z-index: 8;
+    display: block;
   }
 }
 
