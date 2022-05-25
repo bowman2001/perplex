@@ -1474,6 +1474,10 @@ h6 {
 .md .highlight > div,
 .md .highlight > pre {
   background-color: #f9f9f9 !important;
+}
+
+.md .highlight > div,
+.md .highlight > pre {
   border: .1rem solid rgba(0,0,0,0.06667);
 }
 
@@ -2468,6 +2472,9 @@ h6 {
 .md .asciicast {
   margin-top: 1rem !important;
   padding: 1rem 0 .5rem 0 !important;
+}
+
+.md .asciicast {
   max-width: 70rem;
   text-align: center;
   border-radius: .5rem;
