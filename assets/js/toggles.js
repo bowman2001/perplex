@@ -43,12 +43,14 @@ if( overlay ) {
 
 if ( tocBtn ) {
     tocBtn.addEventListener('click', function () {
-        tocBtn.classList.toggle( 'is-visible' );
-        toc.classList.toggle('is-closed');
+        tocHandler();
     })
 }
 
 function sbHandler () {
+    if ( tocBtn.classList.contains( 'is-visible' ) ) {
+        tocHandler();
+    }
     if ( sb ) {
         sbBtn1.classList.toggle('is-visible');
         sbBtn2.classList.toggle('is-visible');
@@ -65,4 +67,9 @@ function sbHandler () {
     if( tocBtn ) {
         tocBtn.disabled = !tocBtn.disabled;
     }
+}
+
+function tocHandler () {
+    tocBtn.classList.toggle( 'is-visible' );
+    toc.classList.toggle('is-closed');
 }
