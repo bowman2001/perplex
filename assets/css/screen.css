@@ -2895,7 +2895,7 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
 }
 
 #toc {
-  dispplay: block;
+  display: block;
   position: absolute;
   top: 7rem;
   right: 0;

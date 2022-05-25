@@ -3628,7 +3628,7 @@ a.pagenav__item--next:focus {
 }
 
 #toc {
-  dispplay: block;
+  display: block;
   position: absolute;
   top: 7rem;
   right: 0;
