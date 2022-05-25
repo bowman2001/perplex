@@ -91,6 +91,10 @@ hr {
   clear: both;
 }
 
+.clear {
+  clear: both;
+}
+
 .mt1 {
   margin-top: 1rem;
 }
@@ -1912,18 +1916,15 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
   border: 1px solid rgba(34, 34, 34, 0.25);
 }
-.md .i-right .embed {
-  float: right;
-  clear: right;
-}
 @media screen and (min-width: 37em) {
   .md .i-right .embed {
+    float: right;
+    clear: right;
     margin-right: 0;
     margin-left: 4rem;
   }
   .md .i-right.i-small .embed, .md .i-right.i-tiny .embed {
     margin-left: 2rem;
-    margin-right: 0;
   }
 }
 @media screen and (min-width: 37em) {
