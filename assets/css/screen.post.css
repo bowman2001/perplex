@@ -3341,7 +3341,6 @@ a.pagenav__item--next:focus {
 @media screen and (min-width: 79em) {
   .sidebarbox {
     width: 35rem;
-    height: 100%;
     scrollbar-color: #ebb923 #ececec;
   }
 

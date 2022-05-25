@@ -2678,7 +2678,6 @@ a.pagenav__item--prev:hover, a.pagenav__item--prev:focus, a.pagenav__item--next:
 @media screen and (min-width: 79em) {
   .sidebarbox {
     width: 35rem;
-    height: 100%;
     scrollbar-color: #EBB923 #ececec;
   }
   .sidebarbox::-webkit-scrollbar {
