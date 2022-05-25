@@ -3628,6 +3628,7 @@ a.pagenav__item--next:focus {
 }
 
 #toc {
+  dispplay: block;
   position: absolute;
   top: 7rem;
   right: 0;
@@ -3641,6 +3642,7 @@ a.pagenav__item--next:focus {
 }
 
 #toc.is-closed {
+  display: none;
   opacity: 0;
   z-index: -1;
 }
