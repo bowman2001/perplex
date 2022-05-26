@@ -91,8 +91,19 @@ hr {
   clear: both;
 }
 
-.clear {
+/**
+ * Utility classes for Markdown attributes.
+ */
+.clear-both {
   clear: both;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
 }
 
 .mt1 {
@@ -441,10 +452,6 @@ body {
     grid-template-columns: auto repeat(12, 18.5rem) auto;
     grid-template-areas: ". . . logo logo men1 men1 men2 men2 ctrl ctrl . . .";
   }
-  #masthead #toc.is-closed {
-    display: block;
-    opacity: 1;
-  }
 }
 
 .l-masthead {
@@ -603,7 +610,7 @@ body {
   z-index: 90;
   transition: left 250ms ease-out;
   width: 100vw;
-  height: calc( 100vh - 7rem);
+  height: calc( 100% - 7rem);
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
