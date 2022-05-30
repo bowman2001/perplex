@@ -1,6 +1,6 @@
 {{- define "main" -}}
   <div id="box">
-    <header class="pageheader">
+    <header class="page-header">
       <aside class="right">
           {{- partial "img/featuredmargin.html" . -}}
       </aside>
@@ -12,7 +12,7 @@
     <div class="md md--serif md-article {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
         {{- partial "content.html" . -}}
     </div>
-    <footer class="pagefooter">
+    <footer class="page-footer">
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}

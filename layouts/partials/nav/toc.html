@@ -2,7 +2,7 @@
     {{ with .TableOfContents }}
       <aside class="is-closed" id="toc">
         <div class="nav-toc">
-          <h2 class="sidenav__title"><a href="#box">{{ $.Site.Params.toctitle | default "On this Page" }}</a></h2>
+          <h2 class="sidebar__title"><a href="#box">{{ $.Site.Params.toctitle | default "On this Page" }}</a></h2>
             {{ . }}
         </div>
       </aside>

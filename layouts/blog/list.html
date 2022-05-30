@@ -1,6 +1,6 @@
 {{- define "main" -}}
   <div id="box">
-    <header class="pageheader">
+    <header class="page-header">
         {{- partial "img/featuredmargin.html" . -}}
       <div class="title title--ruled">
         <hr>
@@ -11,14 +11,14 @@
     <div class="md md--serif md--list">
         {{- partial "content.html" . -}}
     </div>
-    <nav class="pagenav">
+    <nav class="page-nav">
       <ul>
           {{- range .Pages -}}
             <li>{{- .Render "summary" -}}</li>
           {{- end -}}
       </ul>
     </nav>
-    <footer class="pagefooter">
+    <footer class="page-footer">
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}

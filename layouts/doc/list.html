@@ -1,6 +1,6 @@
 {{- define "main" -}}
   <div id="box">
-    <header class="pageheader">
+    <header class="page-header">
         {{- partial "img/featuredmargin.html" . -}}
       <div class="title title--ruled">
         <hr>
@@ -12,8 +12,8 @@
         {{- partial "content.html" . -}}
     </div>
     <div class="section">
-    <nav class="pagenav pagenav--cols">
-      <ul class="pagenav__list">
+    <nav class="page-nav page-nav--cols">
+      <ul class="page-nav__list">
           {{- range .Pages -}}
             <li>{{- .Render "li" -}}</li>
           {{- end -}}
@@ -21,7 +21,7 @@
     </nav>
     </div>
     <!-- <section class="md md--serif">{{/*- partial "after.html" . -*/}}</section> -->
-    <footer class="pagefooter">
+    <footer class="page-footer">
       <hr>
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}

@@ -1,27 +1,27 @@
-<nav class="pagenav mt1">
-  <ul class="pagenav__list pagenav__list--flex">
+<nav class="page-nav mt1">
+  <ul class="page-nav__list page-nav__list--flex">
       {{ $pages := where site.Pages.Reverse "Section" .Section -}}
       {{ with $pages.Prev . }}
-        <li><a href="{{ .RelPermalink }}" class="pagenav__item pagenav__item--prev mt-05">
-            <div class="pagenav__itemcol">
-              <div class="pagenav__meta pagenav__meta--dir">Prev.</div>
+        <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--prev mt-05">
+            <div class="page-nav__itemcol">
+              <div class="page-nav__meta page-nav__meta--dir">Prev.</div>
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
                 {{ partial "nav/page/parent-title.html" . }}
-            <div class="icon pagenav__icon pagenav__icon--arrow">west</div>
+            <div class="icon page-nav__icon page-nav__icon--arrow">west</div>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "start" . }}{{ end }}
       {{- end -}}
       {{ with $pages.Next . }}
         <li>
-          <a href="{{ .RelPermalink }}" class="pagenav__item pagenav__item--next mt-05">
-            <div class="pagenav__itemcol">
-              <div class="pagenav__meta pagenav__meta--dir">Next</div>
+          <a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next mt-05">
+            <div class="page-nav__itemcol">
+              <div class="page-nav__meta page-nav__meta--dir">Next</div>
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
               {{ partial "nav/page/parent-title.html" . }}
-            <div class="icon pagenav__icon pagenav__icon--arrow">east</div>
+            <div class="icon page-nav__icon page-nav__icon--arrow">east</div>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "end" . }}{{ end }}
@@ -30,24 +30,24 @@
 </nav>
 
 {{ define "start" }}
-  <li><span class="pagenav__item pagenav__item--start mt-05">
-      <div class="pagenav__itemcol">
-        <div class="pagenav__meta pagenav__meta--dir"><strong>Start</strong></div>
+  <li><span class="page-nav__item page-nav__item--start mt-05">
+      <div class="page-nav__itemcol">
+        <div class="page-nav__meta page-nav__meta--dir"><strong>Start</strong></div>
         {{ partial "doc/nav/menu-icon.html" . }}
       </div>
          {{ partial "nav/page/parent-title.html" . }}
-      <div class="icon pagenav__icon pagenav__icon--arrow">&nbsp;</div>
+      <div class="icon page-nav__icon page-nav__icon--arrow">&nbsp;</div>
     </span></li>
 {{ end }}
 
 {{ define "end" }}
-  <li><a href="{{ .RelPermalink }}" class="pagenav__item pagenav__item--next mt-05">
-      <div class="pagenav__itemcol">
-        <div class="pagenav__meta pagenav__meta--dir"><strong>End</strong></div>
+  <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next mt-05">
+      <div class="page-nav__itemcol">
+        <div class="page-nav__meta page-nav__meta--dir"><strong>End</strong></div>
           {{ partial "doc/nav/menu-icon.html" . }}
       </div>
           {{ partial "nav/page/parent-title.html" . }}
-      <div class="icon pagenav__icon pagenav__icon--arrow">north</div>
+      <div class="icon page-nav__icon page-nav__icon--arrow">north</div>
     </a></li>
 {{ end }}
 

@@ -1,6 +1,6 @@
 {{- define "main" -}}
   <div id="box">
-    <header class="pageheader">
+    <header class="page-header">
         {{- partial "img/featuredmargin.html" . -}}
       <div class="title title-left">
           {{ partial "title/title.html" . }}
@@ -10,7 +10,7 @@
     <div class="md md--serif">
         {{- partial "content.html" . -}}
     </div>
-    <footer class="pagefooter">
+    <footer class="page-footer">
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
