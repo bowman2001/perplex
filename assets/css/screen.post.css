@@ -1053,18 +1053,14 @@ a.meta__item--text:hover {
 }
 
 .md .p-lead {
-  font-size: 2.0265rem;
+  font-size: 2.123rem;
   line-height: 3rem;
-  padding-top: .74107575rem;
-  padding-bottom: calc(1.25892425rem + 1 * 0rem);
-  padding-bottom: calc(1.25892425rem + 1 * var(--es));
+  padding-top: .7049365rem;
+  padding-bottom: calc(1.2950635rem + 1 * 0rem);
+  padding-bottom: calc(1.2950635rem + 1 * var(--es));
   margin-bottom: 0;
   scroll-margin-top: 10rem;
   font-style: italic;
-}
-
-.md .p-lead strong {
-  font-weight: 700;
 }
 
 .md .p-big {
@@ -1401,18 +1397,8 @@ a.meta__item--text:hover {
   margin-bottom: 0;
   scroll-margin-top: 10rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
+  font-weight: 450;
   font-style: italic;
-}
-
-.md--serif .p-lead {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
-}
-
-.md--serif .p-big,
-.md--serif .p-small {
-  font-weight: 500;
 }
 
 .md--sans p,
@@ -1442,32 +1428,7 @@ a.meta__item--text:hover {
 .md--sans > .blockquote-hero > ul,
 .md--sans > .blockquote-hero > ol,
 .md--sans > .blockquote-hero > dl {
-  font-size: 1.9375rem;
-  line-height: 3rem;
-  padding-top: .77440625rem;
-  padding-bottom: .22559375rem;
-  margin-bottom: 0;
-  scroll-margin-top: 10rem;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
   font-style: italic;
-}
-
-.md--sans .p-lead {
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
-}
-
-.md--sans .p-big {
-  font-size: 2.583326875rem;
-  line-height: 4rem;
-  padding-top: calc(0.6992110853rem + 0.666667 * 0rem);
-  padding-top: calc(0.6992110853rem + 0.666667 * var(--es));
-  padding-bottom: calc(0.6341229147rem + 0.666667 * 0rem);
-  padding-bottom: calc(0.6341229147rem + 0.666667 * var(--es));
-  margin-bottom: 0;
-  scroll-margin-top: calc(8.333333rem - 0.666667 * 0rem);
-  scroll-margin-top: calc(8.333333rem - 0.666667 * var(--es));
 }
 
 .md--dropcap2 > p:first-child:first-letter {
@@ -1510,7 +1471,7 @@ a.meta__item--text:hover {
 }
 
 .md dt code {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .md pre {
@@ -1732,11 +1693,11 @@ a.meta__item--text:hover {
 
 .md.md--serif dl {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .md.md--serif dl dt {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .md.md--serif dl dd,
@@ -1745,7 +1706,7 @@ a.meta__item--text:hover {
 }
 
 .md.md--sans dl dt {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .md.md--sans dl dd,
@@ -1867,7 +1828,7 @@ a.meta__item--text:hover {
 
 .md sup[id^=fnref]>a.footnote-ref {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   text-decoration: none;
 }
 
@@ -2138,7 +2099,7 @@ a.meta__item--text:hover {
 .md .heading__anchor {
   font-size: inherit;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 450;
   transition: color 500ms;
   text-decoration: none;
   color: rgba(0, 0, 0, 0);
@@ -2583,7 +2544,7 @@ a.meta__item--text:hover {
 .note-dagger2 .note__content > p:first-of-type:before {
   position: absolute;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
+  font-weight: 450;
   top: .1em;
   left: -1rem;
   font-size: .8em;
@@ -2823,7 +2784,7 @@ nav {
 
 .nav__list li li {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: .015em;
 }
 
