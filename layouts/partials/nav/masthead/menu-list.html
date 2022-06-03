@@ -4,7 +4,7 @@
     {{ $menu := .menu }}
     {{ range $menu }}
       <li>
-        <a class="{{ if $currentPage.IsMenuCurrent $menuName . -}} is-active {{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}} has-active {{- end }}"
+        <a class="ctrl__link {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end }}"
            href="{{ .URL }}">
             {{- with .Pre -}}<span class="icon">{{ . }}</span>{{ end }}
             {{ with .Name }}{{ . | site.Home.RenderString }}{{ end }}

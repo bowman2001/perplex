@@ -1,8 +1,8 @@
 {{ if (partial "nav/func/show-toc.html" .) }}
     {{ with .TableOfContents }}
       <aside class="is-closed" id="toc">
-        <div class="nav-toc">
-          <h2 class="sidebar__title"><a href="#box">{{ $.Site.Params.toctitle | default "On this Page" }}</a></h2>
+        <div class="toc__box">
+          <h2 class="toc__title"><a href="#box">{{ $.Site.Params.toctitle | default "On this Page" }}</a></h2>
             {{ . }}
         </div>
       </aside>
