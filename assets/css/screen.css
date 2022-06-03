@@ -159,7 +159,7 @@ li:empty:before {
   font-weight: 600;
 }
 #TableOfContents ul li li:before, #TableOfContents ol li li:before, .md ul li li:before {
-  font-weight: 500;
+  font-weight: 450;
 }
 #TableOfContents ul li li li:before, #TableOfContents ol li li li:before, .md ul li li li:before {
   font-weight: 300;
@@ -367,7 +367,7 @@ body {
 }
 
 .section {
-  padding-bottom: calc(1rem + 1 * var(--es));
+  padding: calc(1rem + 1 * var(--es)) 0rem;
 }
 
 @media screen and (min-width: 37em) {
@@ -513,16 +513,28 @@ body {
     width: 55.5rem;
     border-right: 1px solid #fbfafa;
     margin-right: 2rem;
-    overflow: hidden;
   }
 }
 @media screen and (min-width: 79em) {
   #sidebar {
     position: static;
-    width: 37rem;
+    width: 36rem;
     grid-area: left;
     border-right: none;
     animation: fade 500ms;
+    height: 100%;
+    scrollbar-gutter: stable both-edges;
+    scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
+  }
+  #sidebar::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+  }
+  #sidebar::-webkit-scrollbar-thumb {
+    background: hsl(45deg, 83%, 53%);
+  }
+  #sidebar::-webkit-scrollbar-track {
+    background: #d7ebff;
   }
 }
 
@@ -645,20 +657,19 @@ a.meta__item--text:hover {
 }
 
 .title__description {
-  font-size: 1.93rem;
+  font-size: 1.95rem;
   line-height: 3rem;
-  margin-top: -0.222785rem;
+  margin-top: -0.230275rem;
   padding-top: 0;
-  padding-bottom: calc(0.222785rem + 1 * var(--es));
+  padding-bottom: calc(0.230275rem + 1 * var(--es));
   margin-bottom: 0;
   scroll-margin-top: 11rem;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
-  font-style: italic;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 300;
   color: #333;
 }
-.title__description > em {
-  font-style: normal;
+.title__description strong {
+  font-weight: 450;
 }
 
 .title--ruled {
@@ -2161,7 +2172,7 @@ nav {
 
 .nav__list li {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 450;
   letter-spacing: 0.03em;
 }
 .nav__list li li {
@@ -2171,7 +2182,7 @@ nav {
 }
 .nav__list li li li {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 450;
   letter-spacing: normal;
 }
 .nav__list li:empty {
@@ -2222,7 +2233,7 @@ nav {
   justify-content: center;
   padding: 0 2rem;
 }
-.ctrl button, .ctrl a {
+.ctrl button, .ctrl .ctrl__link {
   display: inline-block;
   font-size: 3rem;
   line-height: 3rem;
@@ -2239,8 +2250,7 @@ nav {
 .ctrl button:not([disabled]):hover, .ctrl button:not([disabled]):focus {
   color: #ffc30f;
 }
-.ctrl a {
-  line-height: 3rem;
+.ctrl .ctrl__link {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   font-size: 1.43rem;
@@ -2438,11 +2448,11 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 }
 
 .page-nav__meta {
-  font-size: 1.453125rem;
+  font-size: 1.4625rem;
   line-height: 2rem;
-  margin-top: -0.5441953125rem;
+  margin-top: -0.54770625rem;
   padding-top: 0;
-  margin-bottom: -0.4558046875rem;
+  margin-bottom: -0.45229375rem;
   padding-bottom: 0;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
@@ -2459,14 +2469,17 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 }
 
 .page-nav__description {
-  font-size: 1.6145833333rem;
+  font-size: 1.625rem;
   line-height: 2rem;
-  padding-top: 1.3953385417rem;
-  padding-bottom: 0.6046614583rem;
+  padding-top: 1.3914375rem;
+  padding-bottom: 0.6085625rem;
   margin-bottom: 0;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
-  font-style: italic;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 300;
+}
+.page-nav__description strong {
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 450;
 }
 
 .sidebar-box {
@@ -2714,7 +2727,8 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 }
 @media screen and (min-width: 48em) {
   #toc {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+    height: calc( 100vh - 7rem - 10rem );
   }
 }
 @media screen and (min-width: 120em) {
@@ -2726,35 +2740,49 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   }
 }
 
-.nav-toc {
+.toc__box {
   padding: 3rem 2rem;
+  border-radius: 0.5rem;
   background: black;
   color: #bbb;
   opacity: 0.9;
-  font-size: 1.737rem;
-  line-height: 2rem;
-  padding-top: 0.3494935rem;
-  padding-bottom: 0.6505065rem;
-  margin-bottom: 0;
-}
-.nav-toc h4 {
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: white;
 }
 @media screen and (min-width: 48em) {
-  .nav-toc {
-    padding: 1.5rem 1.5rem;
-    font-size: 1.43rem;
-    line-height: 2rem;
-    padding-top: 0.464465rem;
-    margin-bottom: -0.464465rem;
-    padding-bottom: 0;
+  .toc__box {
+    padding: 2rem 2rem;
   }
 }
 
+.toc__title > a {
+  display: inline-block;
+  padding: 0;
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: 0.464465rem;
+  padding-bottom: 0.535535rem;
+  margin-bottom: 0;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: white;
+}
+
+#TableOfContents {
+  font-size: 1.7235rem;
+  line-height: 2rem;
+  padding-top: 0.35454925rem;
+  padding-bottom: 0.64545075rem;
+  margin-bottom: 0;
+}
+#TableOfContents a {
+  display: inline-block;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+#TableOfContents a:hover {
+  color: white;
+}
 #TableOfContents ul li, #TableOfContents ol li {
   position: relative;
   padding-left: 1.5rem;
@@ -2766,15 +2794,21 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 #TableOfContents ul li:before {
   content: "•";
 }
-#TableOfContents li a:hover {
-  color: white;
-}
 #TableOfContents li:before {
   color: inherit;
   transition: color 250ms ease-in-out;
 }
 #TableOfContents li:hover:before {
   color: hsl(325deg, 79%, 44%);
+}
+@media screen and (min-width: 48em) {
+  #TableOfContents {
+    font-size: 1.43rem;
+    line-height: 2rem;
+    padding-top: 0.464465rem;
+    margin-bottom: -0.464465rem;
+    padding-bottom: 0;
+  }
 }
 
 /**
