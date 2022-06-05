@@ -230,8 +230,6 @@ li:empty:before {
 }
 
 .md ol li,
-#TableOfContents ul li,
-#TableOfContents ol li,
 .md ul li {
   position: relative;
   padding-left: calc(3rem + 1 * 0rem);
@@ -239,8 +237,6 @@ li:empty:before {
 }
 
 .md ol li > p,
-#TableOfContents ul li > p,
-#TableOfContents ol li > p,
 .md ul li > p {
   padding-bottom: 1rem;
   text-align: left;
@@ -248,27 +244,19 @@ li:empty:before {
 }
 
 .md ol li:before,
-#TableOfContents ul li:before,
-#TableOfContents ol li:before,
 .md ul li:before {
   position: absolute;
   left: 0;
 }
 
-#TableOfContents ul li:before,
-#TableOfContents ol li:before,
 .md ul li:before {
   font-weight: 600;
 }
 
-#TableOfContents ul li li:before,
-#TableOfContents ol li li:before,
 .md ul li li:before {
   font-weight: 450;
 }
 
-#TableOfContents ul li li li:before,
-#TableOfContents ol li li li:before,
 .md ul li li li:before {
   font-weight: 300;
 }
@@ -277,34 +265,28 @@ li:empty:before {
   content: "•";
 }
 
-#TableOfContents ol,
 .md ol {
   counter-reset: ol1;
 }
 
-#TableOfContents ol > li > ol,
 .md ol > li > ol {
   counter-reset: ol2;
 }
 
-#TableOfContents ol > li > ol > li > ol,
 .md ol > li > ol > li > ol {
   counter-reset: ol3;
 }
 
-#TableOfContents ol > li:before,
 .md ol > li:before {
   content: counter(ol1) ".";
   counter-increment: ol1;
 }
 
-#TableOfContents ol > li > ol > li:before,
 .md ol > li > ol > li:before {
   content: counter(ol2, lower-alpha) ")";
   counter-increment: ol2;
 }
 
-#TableOfContents ol > li > ol > li > ol > li:before,
 .md ol > li > ol > li > ol > li:before {
   content: counter(ol3, lower-roman) ".";
   counter-increment: ol3;
@@ -2800,7 +2782,7 @@ nav {
 
 .nav__list li {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 500;
   letter-spacing: .03em;
 }
 
@@ -2812,7 +2794,7 @@ nav {
 
 .nav__list li li li {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 300;
   letter-spacing: normal;
 }
 
@@ -3464,10 +3446,10 @@ a.page-nav__item--next:focus {
 #toc {
   display: block;
   position: absolute;
-  top: 7rem;
-  right: 0;
+  top: 9rem;
+  right: 2rem;
   width: 33rem;
-  height: calc(100vh - 7rem);
+  max-height: calc(100vh - 7rem - 2 * 2rem);
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
@@ -3480,15 +3462,6 @@ a.page-nav__item--next:focus {
 @media screen and (min-width: 37em) {
   #toc {
     grid-area: control;
-    width: 33rem;
-    margin: 0 2rem 0 1rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  #toc {
-    margin-top: 2.5rem;
-    height: calc(100vh - 7rem - 10rem);
   }
 }
 
@@ -3503,85 +3476,85 @@ a.page-nav__item--next:focus {
 }
 
 .toc__box {
-  padding: 3rem 2rem;
+  padding: 1.5rem 1.5rem 2rem 1.5rem;
   border-radius: .5rem;
   background: #000;
-  color: #bbb;
   opacity: .9;
 }
 
-@media screen and (min-width: 48em) {
-  .toc__box {
-    padding: 2rem 2rem;
-  }
-}
-
-.toc__title > a {
-  display: inline-block;
-  padding: 0;
-  font-size: 1.43rem;
+.toc__content {
+  font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: .464465rem;
-  padding-bottom: .535535rem;
+  padding-top: .35791975rem;
+  padding-bottom: .64208025rem;
   margin-bottom: 0;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .02em;
-  color: #fff;
 }
 
-#TableOfContents {
-  font-size: 1.7235rem;
-  line-height: 2rem;
-  padding-top: .35454925rem;
-  padding-bottom: .64545075rem;
-  margin-bottom: 0;
-}
-
-#TableOfContents a {
-  display: inline-block;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
-}
-
-#TableOfContents a:hover {
-  color: #fff;
-}
-
-#TableOfContents ul li,
-#TableOfContents ol li {
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-#TableOfContents ul li > a,
-#TableOfContents ol li > a {
-  display: inline-block;
-  padding-bottom: 1rem;
-}
-
-#TableOfContents ul li:before {
-  content: "•";
-}
-
-#TableOfContents li:before {
-  color: inherit;
-  transition: color 250ms ease-in-out;
-}
-
-#TableOfContents li:hover:before {
-  color: #c9187f;
-}
-
-@media screen and (min-width: 48em) {
-  #TableOfContents {
+@media screen and (min-width: 79em) {
+  .toc__content {
     font-size: 1.43rem;
     line-height: 2rem;
     padding-top: .464465rem;
     margin-bottom: -0.464465rem;
     padding-bottom: 0;
   }
+}
+
+.toc__title > a {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: #fff;
+  padding: .5rem 0 2.5rem 1.5rem;
+  border-left: .5rem solid #bbb;
+}
+
+.toc__title > a:hover {
+  border-left: .5rem solid #c9187f;
+}
+
+#TableOfContents {
+  color: #bbb;
+}
+
+#TableOfContents a {
+  display: inline-block;
+  padding: .5rem 0;
+}
+
+#TableOfContents a:hover {
+  color: #fff;
+}
+
+#TableOfContents li {
+  font-weight: 700;
+}
+
+#TableOfContents li > a {
+  padding-left: 1.5rem;
+  border-left: .5rem solid #bbb;
+}
+
+#TableOfContents li > a:hover {
+  border-left: .5rem solid #c9187f;
+}
+
+#TableOfContents li li {
+  font-weight: 600;
+}
+
+#TableOfContents li li > a {
+  padding-left: 3rem;
+}
+
+#TableOfContents li li li {
+  font-weight: 500;
+}
+
+#TableOfContents li li li > a {
+  padding-left: 4.5rem;
 }
 
 .cf:before,
