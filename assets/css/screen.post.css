@@ -1048,7 +1048,7 @@ a.meta__item--text:hover {
   font-weight: 450;
 }
 
-.md .p-lead {
+.md .p-first {
   font-size: 2.071875rem;
   line-height: 3rem;
   padding-top: .7240828125rem;
@@ -1062,7 +1062,7 @@ a.meta__item--text:hover {
   color: #211;
 }
 
-.md .p-lead strong {
+.md .p-first strong {
   font-weight: 450;
 }
 
