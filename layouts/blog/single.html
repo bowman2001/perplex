@@ -1,8 +1,8 @@
 {{- define "main" -}}
   <div id="box">
     <header class="page-header">
-        {{- partial "img/featuredmargin.html" . -}}
-      <div class="title title-left">
+        {{- partial "img/featured.html" . -}}
+      <div class="title">
           {{ partial "title/title.html" . }}
           {{ partial "title/subtitle.html" . }}
       </div>
@@ -18,5 +18,3 @@
     </footer>
   </div>
 {{- end -}}
-
-{{- define "toc" -}}{{- partial "nav/toc.html" . -}}{{- end -}}

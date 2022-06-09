@@ -1,0 +1,40 @@
+{{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
+{{- with $img -}}
+    {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
+    {{- $imgclass := "" -}}
+    <figure class="md right show3">
+        {{- if eq .MediaType.SubType "svg" -}}
+          <img class="img-svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
+        {{- else -}}
+            {{- if eq .MediaType.SubType "png" -}}
+                {{- $imgclass = "img-png" -}}
+            {{- end -}}
+            {{- $max_px := mul $.Site.Params.layout.column $.Site.Params.layout.xmax -}}
+            {{ $img := .Resize (printf "%dx" (int $max_px)) }}
+            <img {{ with $imgclass }}class="{{ . }}"{{ end }} src="{{ $img.RelPermalink }}" alt="{{ .Name }}"
+                 title="{{ .Title }}"
+                 srcset="{{ partial "srcset.html" (dict "img" . "max" $max_px) }}"
+                 width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+        {{- end -}}
+        {{- with $imgLink -}}
+          <figcaption>
+            <div class="attr">By <a href="{{ . }}">Unsplash</a></div>
+          </figcaption>
+        {{- end -}}
+    </figure>
+{{- end -}}
+
+{{ define "partials/srcset.html" }}
+    {{ $factors := (slice 1 2 3 4) }}
+    {{ $srcset := slice }}
+    {{ range $fac := $factors }}
+        {{ $width := math.Round (mul $.max $fac) }}
+        {{ if le $width $.img.Width }}
+            {{ $img := $.img.Resize (printf "%dx" (int $width)) }}
+            {{ $src := printf "%s %sx" ($img.RelPermalink | safeURL) ($fac | safeURL) | safeHTML }}
+            {{ $srcset = $srcset | append $src }}
+        {{ end }}
+    {{ end }}
+    {{ $srcset = delimit $srcset ", " }}
+    {{ return $srcset }}
+{{ end }}

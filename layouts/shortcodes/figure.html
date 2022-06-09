@@ -45,17 +45,18 @@
             {{ with $rel }}rel='{{ . | safeHTMLAttr }}'{{ end }}>
         {{ end }}
         {{ if eq $img.MediaType.SubType "svg" }}
-          <img class="img-svg" src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
+          <img class="img-svg"
+               src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
                   {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
         {{ else }}
-            <img src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
-                    {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
+          <img src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
+                  {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
         {{ end }}
         {{ if $link }}</a>{{ end }}
       {{ if (or $caption $attr) }}
         <figcaption>
             {{ with ($caption | site.Home.RenderString )}}
-            <div class="caption">{{ . }}</div>{{ end }}
+              <div class="caption">{{ . }}</div>{{ end }}
             {{ with $attr }}
               <div class="attr">
                   {{ if $attrlink }}<a href='{{ $attrlink }}'>{{ end }}

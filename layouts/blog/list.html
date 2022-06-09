@@ -1,7 +1,7 @@
 {{- define "main" -}}
   <div id="box">
     <header class="page-header">
-        {{- partial "img/featuredmargin.html" . -}}
+        {{- partial "img/featured.html" . -}}
       <div class="title title--ruled">
         <hr>
           {{ partial "title/title.html" . }}
@@ -14,7 +14,7 @@
     <nav class="page-nav">
       <ul>
           {{- range .Pages -}}
-            <li>{{- .Render "summary" -}}</li>
+            <li>{{- .Render "li" -}}</li>
           {{- end -}}
       </ul>
     </nav>

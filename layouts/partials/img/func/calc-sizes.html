@@ -1,3 +1,10 @@
+{{/*
+* Calculate the sizes for an <img> with a srcset
+*
+* IN: (dict "min" $min "max" $max)
+*
+* OUT: String for the <img> attribute sizes
+*/}}
 {{ $min := .min }}
 {{ $max := mul .max site.Params.imaging.u_pxdmax }}
 {{ $sizes := (slice (int $min)) }}
