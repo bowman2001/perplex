@@ -58,7 +58,7 @@
             {{ with ($caption | site.Home.RenderString )}}
               <div class="caption">{{ . }}</div>{{ end }}
             {{ with $attr }}
-              <div class="attr">
+              <div class="attribution">
                   {{ if $attrlink }}<a href='{{ $attrlink }}'>{{ end }}
                       {{ . | site.Home.RenderString }}{{ if $attrlink }}</a>{{ end }}
               </div>

@@ -1,12 +1,13 @@
 {{/*
-* Calculate the sizes for an img with a srcset
+* Calculate a range of width numbers for a responsive 'img srcset'
 *
-* IN: (dict "min" $min "max" $max)
+* IN: maximum image width in 'px'
 *
-* OUT: String for the img attribute sizes
+* OUT: exponential slice of 'img' widths
 */}}
-{{ $min := .min }}
-{{ $max := mul .max site.Params.imaging.u_pxdmax }}
+{{ $colmax := . }}
+{{ $min := mul site.Params.layout.xmin site.Params.layout.column }}
+{{ $max := mul $colmax site.Params.imaging.u_pxdmax }}
 {{ $sizes := (slice (int $min)) }}
 {{ $n := sub site.Params.imaging.u_number 1 }}
 {{ $ratio := div $max $min }}

@@ -13,24 +13,11 @@
 {{ if eq $img.MediaType.SubType "svg" }}
   <img class="img-svg" src="{{ $img.RelPermalink }}" alt="{{ $img.Name }}" title="{{ $title }}">
 {{ else }}
-    {{/* $ratio := (div (mul $img.Height 1.0) $img.Width) */}}
-    {{ $colmin := mul site.Params.layout.xmin site.Params.layout.column }}
-    {{ $colmax := mul site.Params.layout.xmax site.Params.layout.column }}
-    {{ $measuremobile := mul site.Params.layout.xmax site.Params.layout.measure }}
-    {{ $gutter_mobile := mul site.Params.layout.xmaxmobile site.Params.layout.guttermobile }}
-    {{ $width_3col := mul site.Params.layout.xmin (add (mul 3 site.Params.layout.column) (mul 4 site.Params.layout.gutter)) }}
-    {{ $args := (dict "min" $colmin "max" $measuremobile ) }}
-    {{ $widths := partial "img/func/calc-sizes.html" $args }}
-    {{ $srcset := slice }}
-    {{ range $widths }}
-        {{ if le . $img.Width }}
-            {{ $i := $img.Resize (printf "%dx" . ) }}
-            {{ $src := print ($i.RelPermalink | safeURL) " " $i.Width "w" }}
-            {{ $srcset = $srcset | append $src }}
-        {{ end }}
-    {{ end }}
-    {{ $srcset = delimit $srcset "," }}
-    {{ $sizes := print "(max-width: " $width_3col "px) calc( 100vw - " (mul 2 $gutter_mobile) "px ), " $colmax "px" }}
+    {{ $max_px := mul site.Params.layout.xmax site.Params.layout.column }}
+    {{ $srcset := partial "img/func/generate-srcset.html" (dict "img" $img "max_px" $max_px) }}
+    {{ $bp_3col := mul site.Params.layout.xmin (add (mul 3 site.Params.layout.column) (mul 4 site.Params.layout.gutter)) }}
+    {{ $min_gutter_mobile := mul site.Params.layout.xminmobile site.Params.layout.guttermobile }}
+    {{ $sizes := print "(max-width: " $bp_3col "px) calc( 50vw - " $min_gutter_mobile "px ), " $max_px "px" }}
     <img src="{{ $img.RelPermalink }}"
          srcset="{{ print $srcset }}"
          sizes="{{ print $sizes }}"
@@ -45,8 +32,8 @@
         {{ $attr := .  }}
         {{- if $img.Params.caption -}} · {{- end -}}
         {{ with $img.Params.attrlink }}<a href="{{ . | safeHTML }}">
-			<span class='attr'>{{- $attr | site.Home.RenderString -}}</span></a>
-        {{ else }}<span class='attr'>{{- $attr | site.Home.RenderString -}}</span>
+			<span class='attribution'>{{- $attr | site.Home.RenderString -}}</span></a>
+        {{ else }}<span class='attribution'>{{- $attr | site.Home.RenderString -}}</span>
         {{ end }}
     {{ end }}
 </span>
