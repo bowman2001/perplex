@@ -208,15 +208,32 @@ img {
   height: auto;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
-img.img-svg, img.img-png {
+
+.img-svg, .img-png {
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
 
+.img-attr {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+}
+
 figure {
   padding-left: calc(2 * var(--es));
   padding-right: calc(2 * var(--es));
+}
+
+figcaption {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: 0.464465rem;
+  margin-bottom: -0.464465rem;
+  padding-bottom: 0;
+  scroll-margin-top: 11rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
 }
 
 *, *:before, *:after {
@@ -554,21 +571,6 @@ body {
     opacity: 1;
   }
 }
-figure > figcaption {
-  font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 0.464465rem;
-  margin-bottom: -0.464465rem;
-  padding-bottom: 0;
-  scroll-margin-top: 11rem;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
-}
-figure > figcaption .attr {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-}
-
 .l-footer {
   flex: 0 0 auto;
   height: 10rem;
@@ -681,19 +683,19 @@ a.meta__item--text:hover {
 }
 .title--ruled > h1 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   letter-spacing: 0.015em;
   margin-top: -0.5rem;
 }
 
 .title--article > h1 {
-  font-size: 3.575rem;
-  line-height: 4rem;
-  padding-top: 0.6611625rem;
-  padding-bottom: calc(0.3388375rem + 1 * var(--es));
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: 0.42893rem;
+  padding-bottom: calc(0.57107rem + 1 * var(--es));
   margin-bottom: 0;
-  scroll-margin-top: 9rem;
+  scroll-margin-top: 10rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
   font-style: italic;
@@ -1351,7 +1353,7 @@ a.meta__item--text:hover {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.md figure > figcaption .caption, .md figure > figcaption .attr {
+.md figure > figcaption .caption, .md figure > figcaption .attribution {
   display: inline;
   color: #614949;
   hyphens: auto;
@@ -1372,7 +1374,7 @@ a.meta__item--text:hover {
   padding-bottom: 0;
   scroll-margin-top: 11rem;
 }
-.md figure > figcaption .attr:before {
+.md figure > figcaption .attribution:before {
   content: " · ";
 }
 .md figure.tiny {
@@ -1538,10 +1540,10 @@ a.meta__item--text:hover {
   background-color: #8fdbff;
 }
 .md h2 {
-  font-size: 2.145rem;
+  font-size: 2.3833333333rem;
   line-height: 3rem;
-  padding-top: calc(1.6966975rem + 1 * var(--es));
-  padding-bottom: calc(0.3033025rem + 1 * var(--es));
+  padding-top: calc(1.6074416667rem + 1 * var(--es));
+  padding-bottom: calc(0.3925583333rem + 1 * var(--es));
   margin-bottom: 0;
   scroll-margin-top: calc(9rem - 1 * var(--es));
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -1552,10 +1554,10 @@ a.meta__item--text:hover {
   color: #222;
 }
 .md h3 {
-  font-size: 2.145rem;
+  font-size: 2.3833333333rem;
   line-height: 3rem;
-  padding-top: 1.6966975rem;
-  padding-bottom: 0.3033025rem;
+  padding-top: 1.6074416667rem;
+  padding-bottom: 0.3925583333rem;
   margin-bottom: 0;
   scroll-margin-top: 9rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -1564,10 +1566,10 @@ a.meta__item--text:hover {
   color: #292929;
 }
 .md h4 {
-  font-size: 2.002rem;
+  font-size: 1.915rem;
   line-height: 2rem;
-  padding-top: 1.750251rem;
-  padding-bottom: 0.249749rem;
+  padding-top: 1.7828325rem;
+  padding-bottom: 0.2171675rem;
   margin-bottom: 0;
   scroll-margin-top: 9.5rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -1722,7 +1724,7 @@ a.meta__item--text:hover {
     margin-right: 4rem;
   }
 }
-.md .embed .attr {
+.md .embed .attribution {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   font-style: italic;
@@ -2714,6 +2716,8 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }
 #toc.is-closed {
   display: none;
@@ -2733,8 +2737,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 }
 
 .toc__box {
-  padding: 1.5rem 1.5rem 2rem 1.5rem;
-  border-radius: 0.5rem;
+  padding: 1.5rem;
   background: black;
   opacity: 0.9;
 }

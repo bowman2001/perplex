@@ -20,7 +20,9 @@
       </ul>
     </nav>
     </div>
-    <!-- <section class="md md--serif">{{/*- partial "after.html" . -*/}}</section> -->
+    {{ with .Page.GetPage "after_index" }}
+    <section class="md md--serif">{{- partial "content.html" . }}</section>
+    {{ end }}
     <footer class="page-footer">
       <hr>
       <div class="meta">

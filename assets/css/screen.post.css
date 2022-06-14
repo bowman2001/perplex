@@ -311,11 +311,16 @@ img {
   box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
 }
 
-img.img-svg,
-img.img-png {
+.img-svg,
+.img-png {
   border: none;
   border-radius: 0;
   box-shadow: none;
+}
+
+.img-attr {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
 }
 
 figure {
@@ -323,6 +328,17 @@ figure {
   padding-left: calc(2 * var(--es));
   padding-right: calc(2 * 0rem);
   padding-right: calc(2 * var(--es));
+}
+
+figcaption {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: .464465rem;
+  margin-bottom: -0.464465rem;
+  padding-bottom: 0;
+  scroll-margin-top: 11rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
 }
 
 *,
@@ -708,22 +724,6 @@ body {
   }
 }
 
-figure > figcaption {
-  font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: .464465rem;
-  margin-bottom: -0.464465rem;
-  padding-bottom: 0;
-  scroll-margin-top: 11rem;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
-}
-
-figure > figcaption .attr {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-}
-
 .l-footer {
   flex: 0 0 auto;
   height: 10rem;
@@ -849,20 +849,20 @@ a.meta__item--text:hover {
 
 .title--ruled > h1 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   letter-spacing: .015em;
   margin-top: -0.5rem;
 }
 
 .title--article > h1 {
-  font-size: 3.575rem;
-  line-height: 4rem;
-  padding-top: .6611625rem;
-  padding-bottom: calc(0.3388375rem + 1 * 0rem);
-  padding-bottom: calc(0.3388375rem + 1 * var(--es));
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: .42893rem;
+  padding-bottom: calc(0.57107rem + 1 * 0rem);
+  padding-bottom: calc(0.57107rem + 1 * var(--es));
   margin-bottom: 0;
-  scroll-margin-top: 9rem;
+  scroll-margin-top: 10rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
   font-style: italic;
@@ -1739,7 +1739,7 @@ a.meta__item--text:hover {
 }
 
 .md figure > figcaption .caption,
-.md figure > figcaption .attr {
+.md figure > figcaption .attribution {
   display: inline;
   color: #614949;
   -webkit-hyphens: auto;
@@ -1765,7 +1765,7 @@ a.meta__item--text:hover {
   scroll-margin-top: 11rem;
 }
 
-.md figure > figcaption .attr:before {
+.md figure > figcaption .attribution:before {
   content: " · ";
 }
 
@@ -1993,12 +1993,12 @@ a.meta__item--text:hover {
 }
 
 .md h2 {
-  font-size: 2.145rem;
+  font-size: 2.3833333333rem;
   line-height: 3rem;
-  padding-top: calc(1.6966975rem + 1 * 0rem);
-  padding-top: calc(1.6966975rem + 1 * var(--es));
-  padding-bottom: calc(0.3033025rem + 1 * 0rem);
-  padding-bottom: calc(0.3033025rem + 1 * var(--es));
+  padding-top: calc(1.6074416667rem + 1 * 0rem);
+  padding-top: calc(1.6074416667rem + 1 * var(--es));
+  padding-bottom: calc(0.3925583333rem + 1 * 0rem);
+  padding-bottom: calc(0.3925583333rem + 1 * var(--es));
   margin-bottom: 0;
   scroll-margin-top: calc(9rem - 1 * 0rem);
   scroll-margin-top: calc(9rem - 1 * var(--es));
@@ -2011,10 +2011,10 @@ a.meta__item--text:hover {
 }
 
 .md h3 {
-  font-size: 2.145rem;
+  font-size: 2.3833333333rem;
   line-height: 3rem;
-  padding-top: 1.6966975rem;
-  padding-bottom: .3033025rem;
+  padding-top: 1.6074416667rem;
+  padding-bottom: .3925583333rem;
   margin-bottom: 0;
   scroll-margin-top: 9rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -2024,10 +2024,10 @@ a.meta__item--text:hover {
 }
 
 .md h4 {
-  font-size: 2.002rem;
+  font-size: 1.915rem;
   line-height: 2rem;
-  padding-top: 1.750251rem;
-  padding-bottom: .249749rem;
+  padding-top: 1.7828325rem;
+  padding-bottom: .2171675rem;
   margin-bottom: 0;
   scroll-margin-top: 9.5rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -2240,7 +2240,7 @@ a.meta__item--text:hover {
   }
 }
 
-.md .embed .attr {
+.md .embed .attribution {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   font-style: italic;
@@ -3453,6 +3453,8 @@ a.page-nav__item--next:focus {
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
+  border-radius: .5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
 }
 
 #toc.is-closed {
@@ -3476,8 +3478,7 @@ a.page-nav__item--next:focus {
 }
 
 .toc__box {
-  padding: 1.5rem 1.5rem 2rem 1.5rem;
-  border-radius: .5rem;
+  padding: 1.5rem;
   background: #000;
   opacity: .9;
 }
