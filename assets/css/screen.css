@@ -464,7 +464,7 @@ body {
   position: relative;
   z-index: 5;
   align-items: stretch;
-  height: calc(100% - 7rem);
+  height: 100%;
   width: 100%;
   animation: fade 500ms;
   transition: background-color 250ms;
