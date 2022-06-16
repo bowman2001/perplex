@@ -1,7 +1,7 @@
 <div class="l-box">
   <hr>
     {{ with .Site.GetPage "site/footer" }}
-      <div class="footer__columns">
+      <div class="l-footer__columns">
           {{ range .Resources.Match "*.md" }}
             <div class="footer__col">
               <h2>{{ .Title | site.Home.RenderString }}</h2>

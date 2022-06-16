@@ -712,9 +712,10 @@ body {
   margin: calc(2rem + 1 * var(--es)) 2rem 0 2rem;
 }
 
-.footer__columns {
+.l-footer__columns {
   display: flex;
   flex-direction: row;
+  padding: 0 1rem;
 }
 
 .footer__col {
@@ -726,9 +727,9 @@ body {
   scroll-margin-top: 11rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-  width: 37rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 18.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .icon {
