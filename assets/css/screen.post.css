@@ -543,7 +543,6 @@ body {
 #l-content {
   position: relative;
   z-index: 1;
-  height: 100%;
 }
 
 @media screen and (min-width: 79em) {
