@@ -255,8 +255,6 @@ html {
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
   background: #fdfeff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -273,9 +271,8 @@ body {
 }
 
 #l-page {
-  width: 100%;
   height: 100%;
-  padding: 7rem var(--pmr) 0 var(--pml);
+  padding: 0 var(--pmr) 0 var(--pml);
 }
 
 ::selection {
@@ -416,6 +413,8 @@ body {
 #l-content {
   position: relative;
   z-index: 1;
+  height: 100vh;
+  padding-top: 7rem;
 }
 @media screen and (min-width: 79em) {
   #l-content {
@@ -459,9 +458,10 @@ body {
 #l-main {
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
   position: relative;
   z-index: 5;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   animation: fade 500ms;
   transition: background-color 250ms;
