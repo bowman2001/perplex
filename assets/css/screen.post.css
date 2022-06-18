@@ -381,9 +381,14 @@ body {
 }
 
 #l-page {
-  height: 100%;
   padding: 0 0rem 0 0rem;
   padding: 0 var(--pmr) 0 var(--pml);
+}
+
+@media screen and (min-width: 79em) {
+  #l-page {
+    height: 100%;
+  }
 }
 
 ::-moz-selection {
