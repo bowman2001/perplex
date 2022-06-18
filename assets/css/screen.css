@@ -244,19 +244,17 @@ figcaption {
 }
 
 html, body {
+  height: 100%;
   width: 100vw;
 }
 
 html {
-  height: -webkit-fill-available;
   font-size: var(--fs);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 450;
 }
 
 body {
-  height: 100vh;
-  height: -webkit-fill-available;
   background: #fdfeff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

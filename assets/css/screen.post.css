@@ -352,11 +352,11 @@ figcaption {
 
 html,
 body {
+  height: 100%;
   width: 100vw;
 }
 
 html {
-  height: -webkit-fill-available;
   font-size: 51.8125%;
   font-size: var(--fs);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
@@ -364,8 +364,6 @@ html {
 }
 
 body {
-  height: 100vh;
-  height: -webkit-fill-available;
   background: #fdfeff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
