@@ -540,7 +540,6 @@ body {
 #l-content {
   position: relative;
   z-index: 1;
-  height: 100%;
   padding-top: 7rem;
 }
 
@@ -593,8 +592,6 @@ body {
   justify-content: space-between;
   position: relative;
   z-index: 5;
-  height: 100%;
-  width: 100%;
   -webkit-animation: fade 500ms;
           animation: fade 500ms;
   transition: background-color 250ms;
@@ -606,6 +603,7 @@ body {
     grid-area: main;
     overflow-x: hidden;
     overflow-y: auto;
+    height: 100%;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
     scrollbar-color: #ebb924 #d7ebff;
