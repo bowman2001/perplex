@@ -272,6 +272,7 @@ body {
 
 #l-page {
   padding: 0 var(--pmr) 0 var(--pml);
+  height: 100%;
 }
 @media screen and (min-width: 79em) {
   #l-page {
@@ -418,6 +419,7 @@ body {
   position: relative;
   z-index: 1;
   padding-top: 7rem;
+  height: 100%;
 }
 @media screen and (min-width: 79em) {
   #l-content {
@@ -467,6 +469,7 @@ body {
   z-index: 5;
   animation: fade 500ms;
   transition: background-color 250ms;
+  height: 100%;
   padding-bottom: 2rem;
 }
 @media screen and (min-width: 79em) {
@@ -474,7 +477,6 @@ body {
     grid-area: main;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 100%;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
     scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
@@ -555,7 +557,7 @@ body {
   }
 }
 #l-footer {
-  flex: 0 0 auto;
+  flex: 0 0 0;
 }
 #l-footer hr {
   border-top: 0.3rem solid #433;
@@ -1637,7 +1639,6 @@ a.meta__item--text:hover {
   margin-top: 1rem;
 }
 .md .heading {
-  display: inline-block;
   position: relative;
   left: -0.5rem;
   padding: 0 0.5rem;
