@@ -553,6 +553,7 @@ body {
     display: grid;
     grid-template-columns: auto repeat(8, 18.5rem) auto;
     grid-template-areas: ". left left main main main main main main main";
+    height: 100%;
   }
 }
 
