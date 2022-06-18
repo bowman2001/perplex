@@ -714,6 +714,10 @@ body {
   margin: calc(2rem + 1 * var(--es)) 2rem 0 2rem;
 }
 
+#l-footer .wtf {
+  padding-bottom: 48px;
+}
+
 .l-footer__columns {
   display: flex;
   flex-direction: row;
@@ -725,9 +729,9 @@ body {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: .464465rem;
-  margin-bottom: -0.464465rem;
-  padding-bottom: 0;
-  scroll-margin-top: 11rem;
+  padding-bottom: calc(0.535535rem + 1 * 0rem);
+  padding-bottom: calc(0.535535rem + 1 * var(--es));
+  margin-bottom: 0;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   width: 18.5rem;
