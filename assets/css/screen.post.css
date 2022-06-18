@@ -590,7 +590,7 @@ body {
 #l-main {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
+  justify-content: space-between;
   position: relative;
   z-index: 5;
   height: 100%;
