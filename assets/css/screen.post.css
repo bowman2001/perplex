@@ -593,7 +593,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: auto;
   position: relative;
   z-index: 5;
   -webkit-animation: fade 500ms;
@@ -633,7 +633,7 @@ body {
   z-index: 90;
   transition: left 250ms ease-out;
   width: 100vw;
-  height: calc(100% - 7rem);
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
