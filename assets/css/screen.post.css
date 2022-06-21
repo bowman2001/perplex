@@ -471,7 +471,7 @@ body {
 }
 
 #l-content-box {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   padding-top: 7rem;
   scroll-margin-top: 7rem;
 }
@@ -605,7 +605,6 @@ body {
     grid-area: main;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 100%;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
     scrollbar-color: #ebb924 #d7ebff;
@@ -700,7 +699,8 @@ body {
 }
 
 #l-footer {
-  flex: 0 0 0;
+  flex: 0 0 auto;
+  min-height: 10rem;
 }
 
 #l-footer hr {
