@@ -590,9 +590,6 @@ body {
 }
 
 #l-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: auto;
   position: relative;
   z-index: 5;
@@ -603,6 +600,9 @@ body {
 
 @media screen and (min-width: 79em) {
   #l-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     grid-area: main;
     overflow-x: hidden;
     overflow-y: auto;
