@@ -2,10 +2,10 @@
 <html {{ with .Site.Language.Lang }}lang="{{ . }}"{{ end }}>
 {{- partial "head.html" . -}}
 <body>
-<header class="l-masthead l-nav" id="l-masthead">
-    {{- partial "nav/masthead.html" . -}}
-</header>
 <div id="l-page">
+  <header class="l-masthead l-nav" id="l-masthead">
+      {{- partial "nav/masthead.html" . -}}
+  </header>
   <div id="l-content">
     <main id="l-main">
         {{- block "main" . -}}{{- end -}}
