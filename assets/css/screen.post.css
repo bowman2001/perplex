@@ -380,71 +380,15 @@ body {
   }
 }
 
-@media screen and (min-width: 48em) {
-  .l-grid {
-    display: grid;
-    grid-template-columns: 2rem repeat(6, 18.5rem) 2rem;
-  }
-}
-
-@media screen and (min-width: 79em) {
-  .l-grid {
-    grid-template-columns: minmax(2rem, auto) repeat(8, 18.5rem) auto;
-  }
-}
-
-@media screen and (min-width: 120em) {
-  .l-grid {
-    grid-template-columns: auto repeat(12, 18.5rem) auto;
-  }
-}
-
-.l-grid--content {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-areas: "main main";
-}
-
 @media screen and (min-width: 37em) {
-  .l-grid--content {
-    grid-template-columns: 2rem repeat(4, 18.5rem) 2rem;
-    grid-template-areas: ". main main main main main";
+  .l-wrap {
+    padding: 0 2rem;
   }
 }
 
 @media screen and (min-width: 48em) {
-  .l-grid--content {
-    grid-template-areas: ". main main main main main main main";
-  }
-}
-
-@media screen and (min-width: 79em) {
-  .l-grid--content {
-    grid-template-areas: ". left left main main main main main main main";
-  }
-}
-
-@media screen and (min-width: 120em) {
-  .l-grid--content {
-    grid-template-areas: ". . . left left main main main main main main main main main";
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .l-grid--masthead {
-    grid-template-areas: ". logo logo men1 men1 ctrl ctrl .";
-  }
-}
-
-@media screen and (min-width: 79em) {
-  .l-grid--masthead {
-    grid-template-areas: ". logo logo men1 men1 men2 men2 ctrl ctrl .";
-  }
-}
-
-@media screen and (min-width: 120em) {
-  .l-grid--masthead {
-    grid-template-areas: ". . . logo logo men1 men1 men2 men2 ctrl ctrl . . .";
+  .l-wrap {
+    padding: 0;
   }
 }
 
@@ -465,7 +409,23 @@ body {
 @media screen and (min-width: 48em) {
   #l-masthead {
     display: grid;
-    justify-content: start;
+    justify-content: center;
+    grid-template-columns: 2rem repeat(6, 18.5rem) 2rem;
+    grid-template-areas: ". logo logo men1 men1 ctrl ctrl .";
+  }
+}
+
+@media screen and (min-width: 79em) {
+  #l-masthead {
+    grid-template-columns: minmax(2rem, auto) repeat(8, 18.5rem) auto;
+    grid-template-areas: ". logo logo men1 men1 men2 men2 ctrl ctrl .";
+  }
+}
+
+@media screen and (min-width: 120em) {
+  #l-masthead {
+    grid-template-columns: minmax(2rem, auto) repeat(12, 18.5rem) auto;
+    grid-template-areas: ". . . logo logo men1 men1 men2 men2 ctrl ctrl . . .";
   }
 }
 
@@ -517,6 +477,12 @@ body {
 
 .l-box {
   width: 100%;
+}
+
+@media screen and (min-width: 37em) {
+  .l-box {
+    width: 74rem;
+  }
 }
 
 @media screen and (min-width: 48em) {
@@ -578,6 +544,9 @@ body {
 }
 
 #l-content {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas: "main main";
   position: relative;
   z-index: 1;
   padding-top: 7rem;
@@ -590,6 +559,34 @@ body {
 
 #l-content.is-locked > #l-main {
   z-index: -1;
+}
+
+@media screen and (min-width: 37em) {
+  #l-content {
+    grid-template-columns: 2rem repeat(4, 18.5rem) 2rem;
+    grid-template-areas: ". main main main main main";
+  }
+}
+
+@media screen and (min-width: 48em) {
+  #l-content {
+    grid-template-columns: 2rem repeat(6, 18.5rem) 2rem;
+    grid-template-areas: ". main main main main main main main";
+  }
+}
+
+@media screen and (min-width: 79em) {
+  #l-content {
+    grid-template-columns: minmax(2rem, auto) repeat(8, 18.5rem) auto;
+    grid-template-areas: ". left left main main main main main main main";
+  }
+}
+
+@media screen and (min-width: 120em) {
+  #l-content {
+    grid-template-columns: minmax(2rem, auto) repeat(12, 18.5rem) auto;
+    grid-template-areas: ". . . left left main main main main main main main main main";
+  }
 }
 
 #l-overlay {
@@ -650,12 +647,13 @@ body {
 
 #l-sidebar {
   position: fixed;
-  top: 7rem;
+  top: 0;
   left: -100vw;
   z-index: 90;
   transition: left 250ms ease-out;
   width: 100vw;
   height: 100%;
+  padding-top: 7rem;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -3195,10 +3193,6 @@ a.page-nav__item--next:focus {
 .page-nav__description strong {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 450;
-}
-
-.sidebar-box {
-  padding: 0 var(--pmv);
 }
 
 @media screen and (min-width: 79em) {
