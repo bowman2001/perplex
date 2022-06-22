@@ -614,20 +614,15 @@ body {
 
 #l-main {
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: auto;
   position: relative;
   z-index: 5;
   -webkit-animation: fade 500ms;
           animation: fade 500ms;
   transition: background-color 250ms;
-}
-
-@media screen and (min-width: 48em) {
-  #l-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
 }
 
 @media screen and (min-width: 79em) {
