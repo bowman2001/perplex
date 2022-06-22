@@ -270,9 +270,64 @@ body {
   }
 }
 
-#l-page {
-  height: 100%;
-  padding: 0 var(--pmr) 0 var(--pml);
+@media screen and (min-width: 48em) {
+  .l-grid {
+    display: grid;
+    grid-template-columns: 2rem repeat(6, 18.5rem) 2rem;
+  }
+}
+@media screen and (min-width: 79em) {
+  .l-grid {
+    grid-template-columns: minmax(2rem, auto) repeat(8, 18.5rem) auto;
+  }
+}
+@media screen and (min-width: 120em) {
+  .l-grid {
+    grid-template-columns: auto repeat(12, 18.5rem) auto;
+  }
+}
+
+.l-grid--content {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas: "main main";
+}
+@media screen and (min-width: 37em) {
+  .l-grid--content {
+    grid-template-columns: 2rem repeat(4, 18.5rem) 2rem;
+    grid-template-areas: ". main main main main main";
+  }
+}
+@media screen and (min-width: 48em) {
+  .l-grid--content {
+    grid-template-areas: ". main main main main main main main";
+  }
+}
+@media screen and (min-width: 79em) {
+  .l-grid--content {
+    grid-template-areas: ". left left main main main main main main main";
+  }
+}
+@media screen and (min-width: 120em) {
+  .l-grid--content {
+    grid-template-areas: ". . . left left main main main main main main main main main";
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .l-grid--masthead {
+    grid-template-areas: ". logo logo men1 men1 ctrl ctrl .";
+  }
+}
+@media screen and (min-width: 79em) {
+  .l-grid--masthead {
+    grid-template-areas: ". logo logo men1 men1 men2 men2 ctrl ctrl .";
+  }
+}
+@media screen and (min-width: 120em) {
+  .l-grid--masthead {
+    grid-template-areas: ". . . logo logo men1 men1 men2 men2 ctrl ctrl . . .";
+  }
 }
 
 ::selection {
@@ -287,37 +342,18 @@ body {
 @media screen and (min-width: 48em) {
   #l-masthead {
     display: grid;
-    grid-template-columns: repeat(6, 18.5rem);
-    grid-template-areas: "logo logo men1 men1 ctrl ctrl";
-  }
-}
-@media screen and (min-width: 79em) {
-  #l-masthead {
-    grid-template-columns: auto repeat(8, 18.5rem) auto;
-    grid-template-areas: ". logo logo men1 men1 men2 men2 ctrl ctrl .";
-  }
-}
-@media screen and (min-width: 120em) {
-  #l-masthead {
-    grid-template-columns: auto repeat(12, 18.5rem) auto;
-    grid-template-areas: ". . . logo logo men1 men1 men2 men2 ctrl ctrl . . .";
+    justify-content: start;
   }
 }
 
 .l-masthead {
-  width: 100%;
   height: 7rem;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2666666667);
   background: black;
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-@media screen and (min-width: 48em) {
-  .l-masthead {
-    display: grid;
-    justify-content: center;
-  }
 }
 
 .l-masthead-sidebar {
@@ -327,7 +363,7 @@ body {
 }
 @media screen and (min-width: 37em) {
   .l-masthead-sidebar {
-    height: 5rem;
+    height: 7rem;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -352,7 +388,6 @@ body {
 
 #l-content-box {
   flex: 0 1 auto;
-  padding-top: 7rem;
   scroll-margin-top: 7rem;
 }
 
@@ -414,21 +449,8 @@ body {
 #l-content {
   position: relative;
   z-index: 1;
+  padding-top: 7rem;
   height: 100%;
-}
-@media screen and (min-width: 79em) {
-  #l-content {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: auto repeat(8, 18.5rem) auto;
-    grid-template-areas: ". left left main main main main main main main";
-  }
-}
-@media screen and (min-width: 120em) {
-  #l-content {
-    grid-template-columns: auto repeat(12, 18.5rem) auto;
-    grid-template-areas: ". . . left left main main main main main main main main main";
-  }
 }
 #l-content.is-locked {
   background: black;
@@ -457,18 +479,22 @@ body {
 }
 
 #l-main {
+  grid-area: main;
   height: auto;
   position: relative;
   z-index: 5;
   animation: fade 500ms;
   transition: background-color 250ms;
 }
-@media screen and (min-width: 79em) {
+@media screen and (min-width: 48em) {
   #l-main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    grid-area: main;
+  }
+}
+@media screen and (min-width: 79em) {
+  #l-main {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -2275,7 +2301,7 @@ nav {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   font-size: 1.43rem;
-  padding: 2rem 1rem 1.5rem 1rem;
+  padding: calc(1rem + 1 * var(--es)) 1rem calc(0.5rem + 1 * var(--es)) 1rem;
 }
 @media screen and (min-width: 48em) {
   .ctrl {
