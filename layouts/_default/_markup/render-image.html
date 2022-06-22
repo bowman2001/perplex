@@ -9,7 +9,7 @@
     {{ $filepath := path.Split $img.Name }}
     {{ $title = $filepath.File }}
 {{ end }}
-<span class="embed">
+<span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }}">
 {{ if eq $img.MediaType.SubType "svg" }}
   <img class="img-svg" src="{{ $img.RelPermalink }}" alt="{{ $img.Name }}" title="{{ $title }}">
 {{ else }}

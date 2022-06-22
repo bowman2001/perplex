@@ -1,13 +1,13 @@
-<div class="l-box">
-  <hr>
-    {{ with .Site.GetPage "site/footer" }}
-      <div class="l-footer__columns">
-          {{ range .Resources.Match "*.md" }}
-            <div class="footer__col">
-              <h2>{{ .Title | site.Home.RenderString }}</h2>
-                {{ partial "content.html" . }}
-            </div>
-          {{ end }}
-      </div>
-    {{ end }}
-</div>
+{{ with .Site.GetPage "site/footer" }}
+  <div class="l-footer__box">
+    <hr>
+    <div class="l-footer__columns">
+        {{ range .Resources.Match "*.md" }}
+          <div class="footer__col">
+            <h2>{{ .Title | site.Home.RenderString }}</h2>
+              {{ partial "content.html" . }}
+          </div>
+        {{ end }}
+    </div>
+  </div>
+{{ end }}

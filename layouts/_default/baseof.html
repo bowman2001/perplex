@@ -2,13 +2,13 @@
 <html {{ with .Site.Language.Lang }}lang="{{ . }}"{{ end }}>
 {{- partial "head.html" . -}}
 <body>
-<header class="l-masthead l-nav l-grid l-grid--masthead l-wrap" id="l-masthead">
+<header class="l-masthead l-nav l-wrap" id="l-masthead">
     {{- partial "nav/masthead.html" . -}}
 </header>
-<div id="l-content" class="l-grid l-grid--content">
+<div id="l-content">
   <main id="l-main">
       {{- block "main" . -}}{{- end -}}
-    <footer id="l-footer l-wrap">
+    <footer id="l-footer" class="l-box">
         {{- partial "footer/site.html" . -}}
     </footer>
   </main>
