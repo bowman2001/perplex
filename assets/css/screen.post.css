@@ -676,9 +676,10 @@ body {
 
 @media screen and (min-width: 79em) {
   #l-sidebar {
+    grid-area: left;
     position: static;
     width: 35rem;
-    grid-area: left;
+    padding-top: 0;
     -webkit-animation: fade 500ms;
             animation: fade 500ms;
     height: 100%;
