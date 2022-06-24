@@ -8,16 +8,16 @@
 <div id="l-home">
     {{ with .Site.GetPage "site/home" }}
         {{ with .Resources.GetMatch "title.md" }}
-          <header id="dt" class="md md--home home__tile home__tile--dark">
+          <header id="dt" class="md md--sans md--home home__tile home__tile--title">
               {{ partial "content.html" . }}
           </header>
         {{ end }}
         {{ range .Resources.Match "l*.md" }}
           <div {{ with .Params.id }}id="{{ . }}"{{ end }}
-                  class="md md--home home__tile ">{{ partial "content.html" . }}</div>
+                  class="md md--sans md--home home__tile ">{{ partial "content.html" . }}</div>
         {{ end }}
         {{ range .Resources.Match "d*.md" }}
-          <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="md md--home md--dark home__tile home__tile--dark">{{ partial "content.html" . }}</div>
+          <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="md md--sans md--home home__tile home__tile--bg">{{ partial "content.html" . }}</div>
         {{ end }}
     {{ end }}
 </div>

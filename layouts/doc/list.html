@@ -8,7 +8,7 @@
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--serif md--list md--content">
+    <div class="md md--serif md--list md--hnav">
         {{- partial "content.html" . -}}
     </div>
     <div class="section">
@@ -21,7 +21,7 @@
     </nav>
     </div>
     {{ with .Page.GetPage "after_index" }}
-    <section class="md md--serif md--content">{{- partial "content.html" . }}</section>
+    <section class="md md--serif md--hnav">{{- partial "content.html" . }}</section>
     {{ end }}
     <footer class="page-footer">
       <hr>

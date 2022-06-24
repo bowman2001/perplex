@@ -9,7 +9,7 @@
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--serif md-article {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
+    <div class="md md--serif md--article {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
         {{- partial "content.html" . -}}
     </div>
     <footer class="page-footer">
