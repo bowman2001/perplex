@@ -7,18 +7,8 @@
 </header>
 <div id="l-home">
     {{ with .Site.GetPage "site/home" }}
-        {{ with .Resources.GetMatch "title.md" }}
-          <header id="dt" class="md md--sans md--home home__tile home__tile--title">
-              {{ partial "content.html" . }}
-          </header>
-        {{ end }}
-        {{ range .Resources.Match "l*.md" }}
-          <div {{ with .Params.id }}id="{{ . }}"{{ end }}
-                  class="md md--sans md--home home__tile ">{{ partial "content.html" . }}</div>
-        {{ end }}
-        {{ range .Resources.Match "d*.md" }}
-          <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="md md--sans md--home home__tile home__tile--bg">{{ partial "content.html" . }}</div>
-        {{ end }}
+        {{ partial "home/title.html" . }}
+        {{ partial "home/tiles.html" . }}
     {{ end }}
 </div>
 <footer id="l-footer" class="l-box">

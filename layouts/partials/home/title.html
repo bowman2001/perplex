@@ -1,0 +1,5 @@
+{{ with .Resources.GetMatch "title.md" }}
+  <header id="dt" class="md md--sans md--home home__tile home__tile--title">
+     {{ partial "home/markdown.html" . }}
+  </header>
+{{ end }}

@@ -444,7 +444,19 @@ body {
 }
 
 .home__tile--title {
-  background-color: #222;
+  background-color: hsl(325deg, 30%, 90%);
+}
+
+.home__tile--blue {
+  background-color: hsl(199deg, 45%, 85%);
+}
+
+.home__tile--green {
+  background-color: hsl(169deg, 45%, 80%);
+}
+
+.home__tile--yellow {
+  background-color: hsl(45deg, 50%, 93%);
 }
 
 .home__tile--bg {
@@ -1465,11 +1477,11 @@ a.meta__item--text:hover {
 }
 
 .md dl dt {
+  font-weight: 600;
   text-align: left;
 }
 .md dl dd {
-  padding-left: 3rem;
-  padding-bottom: 1rem;
+  padding: 0 0 1rem 3rem;
   text-align: var(--ta);
   hyphens: auto;
 }
@@ -1490,7 +1502,7 @@ a.meta__item--text:hover {
   content: "";
 }
 .md .dl-tight > dd {
-  padding-left: 0;
+  padding: 0;
 }
 @media screen and (min-width: 37em) {
   .md .dl-loose > dt {
@@ -1503,21 +1515,8 @@ a.meta__item--text:hover {
     padding-left: 18.5rem;
   }
 }
-.md.md--serif dl {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
-}
-.md.md--serif dl dt {
-  font-weight: 600;
-  color: #444;
-}
-.md.md--serif dl dd, .md.md--serif dl dd > p {
-  font-weight: 450;
-}
-.md.md--sans dl dt {
-  font-weight: 600;
-}
-.md.md--sans dl dd, .md.md--sans dl dd > p {
+
+.md--light dl dt {
   font-weight: 450;
 }
 

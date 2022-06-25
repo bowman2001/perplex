@@ -571,7 +571,19 @@ body {
 }
 
 .home__tile--title {
-  background-color: #222;
+  background-color: #eddee7;
+}
+
+.home__tile--blue {
+  background-color: #c8dfea;
+}
+
+.home__tile--green {
+  background-color: #b5e3db;
+}
+
+.home__tile--yellow {
+  background-color: #f6f2e4;
 }
 
 .home__tile--bg {
@@ -1875,12 +1887,12 @@ a.meta__item--text:hover {
 }
 
 .md dl dt {
+  font-weight: 600;
   text-align: left;
 }
 
 .md dl dd {
-  padding-left: 3rem;
-  padding-bottom: 1rem;
+  padding: 0 0 1rem 3rem;
   text-align: left;
   text-align: var(--ta);
   -webkit-hyphens: auto;
@@ -1909,7 +1921,7 @@ a.meta__item--text:hover {
 }
 
 .md .dl-tight > dd {
-  padding-left: 0;
+  padding: 0;
 }
 
 @media screen and (min-width: 37em) {
@@ -1925,27 +1937,7 @@ a.meta__item--text:hover {
   }
 }
 
-.md.md--serif dl {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
-}
-
-.md.md--serif dl dt {
-  font-weight: 600;
-  color: #444;
-}
-
-.md.md--serif dl dd,
-.md.md--serif dl dd > p {
-  font-weight: 450;
-}
-
-.md.md--sans dl dt {
-  font-weight: 600;
-}
-
-.md.md--sans dl dd,
-.md.md--sans dl dd > p {
+.md--light dl dt {
   font-weight: 450;
 }
 
