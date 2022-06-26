@@ -5,15 +5,15 @@
 <header class="l-masthead l-nav l-wrap" id="l-masthead">
     {{- partial "nav/masthead.html" . -}}
 </header>
-<div id="l-home">
+<main id="l-home">
     {{ with .Site.GetPage "site/home" }}
         {{ partial "home/title.html" . }}
         {{ partial "home/tiles.html" . }}
     {{ end }}
-</div>
-<footer id="l-footer" class="l-box">
-    {{- partial "footer/site.html" . -}}
-</footer>
+  <footer id="l-footer" class="l-box l-footer--home">
+      {{- partial "footer/site.html" . -}}
+  </footer>
+</main>
 {{- partial "foot.html" . -}}
 </body>
 </html>

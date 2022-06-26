@@ -8,9 +8,11 @@
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--serif md--list md--hnav">
+    {{ with .Content }}
+    <div class="md md--serif md--list md--main">
         {{- partial "content.html" . -}}
     </div>
+    {{ end }}
     <nav class="page-nav">
       <ul>
           {{- range .Pages -}}

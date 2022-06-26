@@ -1,5 +1,6 @@
 {{ with .Resources.GetMatch "title.md" }}
-  <header id="dt" class="md md--sans md--home home__tile home__tile--title">
-     {{ partial "home/markdown.html" . }}
+  <header id="dt" class="md md--sans md--sans--light home__tile home__tile--title">
+      {{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}
+      {{ partial "content.html" .Content }}
   </header>
 {{ end }}

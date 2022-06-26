@@ -1,5 +1,6 @@
 {{- define "main" -}}
   <div id="l-content-box" class="box">
+    <div id="l-content">
     <header class="page-header">
       <aside class="right">
           {{- partial "img/featured.html" . -}}
@@ -9,8 +10,9 @@
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--serif md--article {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
-        {{- partial "content.html" . -}}
+    <div class="md md--serif md--article md--linkcolor {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
+        {{- partial "content.html" .Content -}}
+    </div>
     </div>
     <footer class="page-footer">
       <div class="meta">

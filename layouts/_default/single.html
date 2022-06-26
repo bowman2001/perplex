@@ -8,9 +8,11 @@
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--hnav md--serif">
+    {{ with .Content }}
+    <div class="md md--main md--serif">
         {{- partial "content.html" . -}}
     </div>
+    {{ end }}
     <footer class="page-footer">
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}

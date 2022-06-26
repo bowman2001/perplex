@@ -1,28 +1,32 @@
 {{- define "main" -}}
   <div id="l-content-box" class="l-box">
-    <header class="page-header">
-        {{- partial "img/featured.html" . -}}
-      <div class="title title--ruled">
-        <hr>
-          {{ partial "title/title.html" . }}
-          {{ partial "title/subtitle.html" . }}
+    <div id="l-content">
+      <header class="page-header">
+          {{- partial "img/featured.html" . -}}
+        <div class="title title--ruled">
+          <hr>
+            {{ partial "title/title.html" . }}
+            {{ partial "title/subtitle.html" . }}
+        </div>
+      </header>
+        {{ with .Content }}
+          <div class="md md--serif md--list md--main md--linkcolor">
+              {{- partial "content.html" . -}}
+          </div>
+        {{ end }}
+      <div class="section">
+        <nav class="page-nav page-nav--cols">
+          <ul class="page-nav__list">
+              {{- range .Pages -}}
+                <li>{{- .Render "li" -}}</li>
+              {{- end -}}
+          </ul>
+        </nav>
       </div>
-    </header>
-    <div class="md md--serif md--list md--hnav">
-        {{- partial "content.html" . -}}
+        {{ with .Page.GetPage "after_index" }}
+          <section class="md md--serif md--main md--linkcolor">{{- partial "content.html" . }}</section>
+        {{ end }}
     </div>
-    <div class="section">
-    <nav class="page-nav page-nav--cols">
-      <ul class="page-nav__list">
-          {{- range .Pages -}}
-            <li>{{- .Render "li" -}}</li>
-          {{- end -}}
-      </ul>
-    </nav>
-    </div>
-    {{ with .Page.GetPage "after_index" }}
-    <section class="md md--serif md--hnav">{{- partial "content.html" . }}</section>
-    {{ end }}
     <footer class="page-footer">
       <hr>
       <div class="meta">

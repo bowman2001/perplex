@@ -1,11 +1,11 @@
 {{ with .Site.GetPage "site/footer" }}
-  <div class="l-footer__box">
+  <div class="l-box">
     <hr>
     <div class="l-footer__columns">
         {{ range .Resources.Match "*.md" }}
-          <div class="footer__col">
+          <div class="md md--tiny footer__col">
             <h2>{{ .Title | site.Home.RenderString }}</h2>
-              {{ partial "content.html" . }}
+              {{ partial "content.html" .Content }}
           </div>
         {{ end }}
     </div>

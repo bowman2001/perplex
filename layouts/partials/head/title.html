@@ -1,1 +1,1 @@
-{{- .Title | $.RenderString | plainify }} | {{ .Site.Title | $.RenderString | plainify -}}
+{{- .Title | site.Home.RenderString | plainify }} | {{ .Site.Title | site.Home.RenderString | plainify -}}
