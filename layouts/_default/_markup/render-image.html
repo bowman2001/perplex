@@ -11,7 +11,7 @@
 {{ end }}
 <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }}">
 {{ if eq $img.MediaType.SubType "svg" }}
-  <img class="img-svg" src="{{ $img.RelPermalink }}" alt="{{ $img.Name }}" title="{{ $title }}">
+  <img class="img--svg" src="{{ $img.RelPermalink }}" alt="{{ $img.Name }}" title="{{ $title }}">
 {{ else }}
     {{ $max_px := mul site.Params.layout.xmax site.Params.layout.column }}
     {{ $srcset := partial "img/func/generate-srcset.html" (dict "img" $img "max_px" $max_px) }}

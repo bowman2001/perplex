@@ -45,7 +45,7 @@
             {{ with $rel }}rel='{{ . | safeHTMLAttr }}'{{ end }}>
         {{ end }}
         {{ if eq $img.MediaType.SubType "svg" }}
-          <img class="img-svg"
+          <img class="img--svg"
                src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
                   {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
         {{ else }}

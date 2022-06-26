@@ -3,7 +3,7 @@
     <hr>
     <div class="l-footer__columns">
         {{ range .Resources.Match "*.md" }}
-          <div class="md md--tiny footer__col">
+          <div class="md md--tiny md--footer footer__col">
             <h2>{{ .Title | site.Home.RenderString }}</h2>
               {{ partial "content.html" .Content }}
           </div>

@@ -1,3 +1,15 @@
 {{ with .Site.Title }}
-  <a class="site_title" href="{{ $.Site.BaseURL }}">{{ . | site.Home.RenderString }}</a>
+    {{ $title := . | site.Home.RenderString }}
+    {{ $link := $.Site.BaseURL }}
+    {{ with $.Site.Params.logo }}
+        {{ with resources.Get . }}
+          <a class="ctrl__title ctrl__title--logo" href="{{ $link }}">
+            <img class="img--svg" src="{{ .RelPermalink }}" alt="$title">
+          </a>
+        {{ end }}
+    {{ else }}
+      <a class="ctrl__title ctrl__title--text" href="{{ $link }}">
+        <span>{{ $title }}</span>
+      </a>
+    {{ end }}
 {{ end }}

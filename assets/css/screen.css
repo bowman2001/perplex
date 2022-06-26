@@ -212,13 +212,13 @@ img {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
-.img-svg, .img-png {
+.img--svg, .img--png {
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
 
-.img-attr {
+.img__attr {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
 }
@@ -451,27 +451,27 @@ body {
 
 .home__tile--title {
   background: hsl(325deg, 79%, 44%);
-  background: linear-gradient(45deg, #fdfeff 0%, #e01a8d 10%, #b21571 30%, #a71469 50%, #b21571 70%, #e01a8d 90%, #fdfeff 100%);
+  background: linear-gradient(45deg, #e944a4 0%, hsl(325deg, 79%, 44%) 15%, #b21571 25%, #a71469 50%, #b21571 75%, hsl(325deg, 79%, 44%) 85%, #e944a4 100%);
 }
 
 .home__tile--red {
   background: hsl(325deg, 79%, 44%);
-  background: linear-gradient(45deg, #fdfeff 0%, #e01a8d 10%, #b21571 30%, #a71469 50%, #b21571 70%, #e01a8d 90%, #fdfeff 100%);
+  background: linear-gradient(45deg, #e944a4 0%, hsl(325deg, 79%, 44%) 15%, #b21571 25%, #a71469 50%, #b21571 75%, hsl(325deg, 79%, 44%) 85%, #e944a4 100%);
 }
 
 .home__tile--blue {
   background: hsl(199deg, 100%, 38%);
-  background: linear-gradient(45deg, #fdfeff 0%, #0096db 10%, #0073a8 30%, #006a9c 50%, #0073a8 70%, #0096db 90%, #fdfeff 100%);
+  background: linear-gradient(45deg, #0fb3ff 0%, hsl(199deg, 100%, 38%) 15%, #0073a8 25%, #006a9c 50%, #0073a8 75%, hsl(199deg, 100%, 38%) 85%, #0fb3ff 100%);
 }
 
 .home__tile--green {
   background: hsl(169deg, 100%, 33%);
-  background: linear-gradient(45deg, #fdfeff 0%, #00c29e 10%, #008f75 30%, #00826a 50%, #008f75 70%, #00c29e 90%, #fdfeff 100%);
+  background: linear-gradient(45deg, #00f5c8 0%, hsl(169deg, 100%, 33%) 15%, #008f75 25%, #00826a 50%, #008f75 75%, hsl(169deg, 100%, 33%) 85%, #00f5c8 100%);
 }
 
 .home__tile--yellow {
   background: hsl(45deg, 83%, 53%);
-  background: linear-gradient(45deg, #fdfeff 0%, #edc03b 10%, #e0ad15 30%, #d4a414 50%, #e0ad15 70%, #edc03b 90%, #fdfeff 100%);
+  background: linear-gradient(45deg, #f1cf6a 0%, hsl(45deg, 83%, 53%) 15%, #e0ad15 25%, #d4a414 50%, #e0ad15 75%, hsl(45deg, 83%, 53%) 85%, #f1cf6a 100%);
 }
 
 #l-content-box {
@@ -497,7 +497,7 @@ body {
 }
 
 .section {
-  padding: calc(1rem + 1 * var(--es)) 0rem;
+  padding: calc(2rem + 1 * var(--es)) 0rem;
 }
 
 @media screen and (min-width: 37em) {
@@ -1824,6 +1824,14 @@ a.meta__item--text:hover {
   text-decoration-color: hsl(199deg, 100%, 38%);
 }
 
+.md--footer h2 {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: 0.464465rem;
+  margin-bottom: -0.464465rem;
+  padding-bottom: 0;
+}
+
 .md--sans--light h2 {
   font-size: 1.905rem;
   line-height: 3rem;
@@ -2471,16 +2479,26 @@ nav {
     width: 37rem;
   }
 }
-.ctrl .site_title {
+
+.ctrl__title {
+  display: inline-block;
+  padding: 2rem 1rem;
+}
+
+.ctrl__title--logo img {
+  height: 3rem;
+  width: auto;
+}
+
+.ctrl__title--text {
+  font-size: 2.86rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  font-size: 2.86rem;
-  line-height: 2rem;
-  padding: 2.5rem 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  line-height: 3rem;
 }
-.ctrl .site_title:hover {
+.ctrl__title--text:hover {
   color: #fe169d;
 }
 
