@@ -475,7 +475,7 @@ body {
 }
 
 #l-content-box {
-  flex: 0 1 auto;
+  flex: 0 1 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1711,6 +1711,9 @@ a.meta__item--text:hover {
     column-count: 4;
   }
 }
+.md h1, .md h2, .md h3, .md h4 {
+  display: inline-block;
+}
 .md h2 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
@@ -2518,8 +2521,9 @@ nav {
 
 .page-footer {
   flex: 0 0 auto;
+  margin-top: auto;
   padding-top: 1rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 .page-footer > hr {
   border-top: 0.1rem solid #322;
