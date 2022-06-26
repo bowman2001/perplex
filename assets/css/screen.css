@@ -445,33 +445,64 @@ body {
   padding-bottom: 1rem;
 }
 
-.md.home__tile--green > p, .md.home__tile--blue > p, .md.home__tile--title > p, .md.home__tile--green > ul, .md.home__tile--blue > ul, .md.home__tile--title > ul, .md.home__tile--green > ol, .md.home__tile--blue > ol, .md.home__tile--title > ol, .md.home__tile--green > blockquote, .md.home__tile--blue > blockquote, .md.home__tile--title > blockquote, .md.home__tile--green > dl, .md.home__tile--blue > dl, .md.home__tile--title > dl {
-  color: white;
-}
-
 .home__tile--title {
   background: hsl(325deg, 79%, 44%);
-  background: linear-gradient(45deg, #e944a4 0%, hsl(325deg, 79%, 44%) 15%, #b21571 25%, #a71469 50%, #b21571 75%, hsl(325deg, 79%, 44%) 85%, #e944a4 100%);
+  background: linear-gradient(225deg, hsl(325deg, 79%, 44%) 0%, hsl(325deg, 79%, 44%) 8%, #bbbbbf 8%, #fdfeff 100%);
+  /* lighten($c, 15%) 0%,
+  $c 15%,
+  darken($c, 5%) 25%,
+  darken($c, 7.5%) 50%,
+  darken($c, 5%) 75%,
+  $c 85%,
+  lighten($c, 15%) 100%); */
 }
 
 .home__tile--red {
   background: hsl(325deg, 79%, 44%);
-  background: linear-gradient(45deg, #e944a4 0%, hsl(325deg, 79%, 44%) 15%, #b21571 25%, #a71469 50%, #b21571 75%, hsl(325deg, 79%, 44%) 85%, #e944a4 100%);
+  background: linear-gradient(225deg, hsl(325deg, 79%, 44%) 0%, hsl(325deg, 79%, 44%) 8%, #dddddf 8%, #fdfeff 100%);
+  /* lighten($c, 15%) 0%,
+  $c 15%,
+  darken($c, 5%) 25%,
+  darken($c, 7.5%) 50%,
+  darken($c, 5%) 75%,
+  $c 85%,
+  lighten($c, 15%) 100%); */
 }
 
 .home__tile--blue {
   background: hsl(199deg, 100%, 38%);
-  background: linear-gradient(45deg, #0fb3ff 0%, hsl(199deg, 100%, 38%) 15%, #0073a8 25%, #006a9c 50%, #0073a8 75%, hsl(199deg, 100%, 38%) 85%, #0fb3ff 100%);
+  background: linear-gradient(225deg, hsl(199deg, 100%, 38%) 0%, hsl(199deg, 100%, 38%) 8%, #dddddf 8%, #fdfeff 100%);
+  /* lighten($c, 15%) 0%,
+  $c 15%,
+  darken($c, 5%) 25%,
+  darken($c, 7.5%) 50%,
+  darken($c, 5%) 75%,
+  $c 85%,
+  lighten($c, 15%) 100%); */
 }
 
 .home__tile--green {
   background: hsl(169deg, 100%, 33%);
-  background: linear-gradient(45deg, #00f5c8 0%, hsl(169deg, 100%, 33%) 15%, #008f75 25%, #00826a 50%, #008f75 75%, hsl(169deg, 100%, 33%) 85%, #00f5c8 100%);
+  background: linear-gradient(225deg, hsl(169deg, 100%, 33%) 0%, hsl(169deg, 100%, 33%) 8%, #dddddf 8%, #fdfeff 100%);
+  /* lighten($c, 15%) 0%,
+  $c 15%,
+  darken($c, 5%) 25%,
+  darken($c, 7.5%) 50%,
+  darken($c, 5%) 75%,
+  $c 85%,
+  lighten($c, 15%) 100%); */
 }
 
 .home__tile--yellow {
   background: hsl(45deg, 83%, 53%);
-  background: linear-gradient(45deg, #f1cf6a 0%, hsl(45deg, 83%, 53%) 15%, #e0ad15 25%, #d4a414 50%, #e0ad15 75%, hsl(45deg, 83%, 53%) 85%, #f1cf6a 100%);
+  background: linear-gradient(225deg, hsl(45deg, 83%, 53%) 0%, hsl(45deg, 83%, 53%) 8%, #dddddf 8%, #fdfeff 100%);
+  /* lighten($c, 15%) 0%,
+  $c 15%,
+  darken($c, 5%) 25%,
+  darken($c, 7.5%) 50%,
+  darken($c, 5%) 75%,
+  $c 85%,
+  lighten($c, 15%) 100%); */
 }
 
 #l-content-box {
@@ -1281,12 +1312,12 @@ a.meta__item--text:hover {
   font-weight: 450;
 }
 
-.md--sans--light > p, .md--sans--light > ul, .md--sans--light > ol, .md--sans--light > dl {
+.md--home > p, .md--home > ul, .md--home > ol, .md--home > dl {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
-.md--sans--light > p strong, .md--sans--light > ul strong, .md--sans--light > ol strong, .md--sans--light > dl strong {
-  font-weight: 600;
+.md--home > p strong, .md--home > ul strong, .md--home > ol strong, .md--home > dl strong {
+  font-weight: 450;
 }
 
 .md--tiny > p, .md--tiny > ul, .md--tiny > ol, .md--tiny > dl {
@@ -1297,6 +1328,10 @@ a.meta__item--text:hover {
   margin-bottom: 0;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
+}
+
+.md--white > p, .md--white > ul, .md--white > ol, .md--white > blockquote, .md--white > dl {
+  color: white;
 }
 
 .md--dropcap2 > p:first-child:first-letter {
@@ -1832,20 +1867,28 @@ a.meta__item--text:hover {
   padding-bottom: 0;
 }
 
-.md--sans--light h2 {
-  font-size: 1.905rem;
-  line-height: 3rem;
-  padding-top: 1.7865775rem;
-  padding-bottom: calc(0.2134225rem + 1 * var(--es));
+.md--home h1 {
+  font-size: 4.29rem;
+  line-height: 5rem;
+  padding-top: 1.893395rem;
+  padding-bottom: 2.106605rem;
   margin-bottom: 0;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  word-spacing: 0.15em;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  word-spacing: 0.06em;
+  color: black;
+}
+.md--home h2 {
+  font-size: 2.145rem;
+  line-height: 3rem;
+  padding-top: 1.6966975rem;
+  padding-bottom: 0.3033025rem;
+  margin-bottom: 0;
 }
 
-.md--white h1, .md--white h2, .md--white h3, .md--white h4, .md--white h5, .md--white h6 {
+.md--white h2, .md--white h3, .md--white h4, .md--white h5, .md--white h6 {
   color: white;
 }
 

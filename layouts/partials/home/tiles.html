@@ -1,11 +1,11 @@
 {{ range .Resources.Match "l*.md" }}
   <div {{ with .Params.id }}id="{{ . }}"{{ end }}
-       class="md md--sans md--light md--sans--light home__tile ">{{ partial "home/markdown.html" . }}</div>
+       class="md md--sans md--light md--home home__tile ">{{ partial "home/markdown.html" . }}</div>
 {{ end }}
-{{ $colors := slice "yellow" "blue" "green" }}
+{{ $colors := slice "blue" "green" "yellow" "red" }}
 {{ $counter := 0 }}
 {{ range .Resources.Match "d*.md" }}
-  <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="md md--sans md--light md--white md--sans--light home__tile home__tile--{{ index $colors (mod $counter 3) }}">{{ partial "home/markdown.html" . }}</div>
+  <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="md md--sans md--light md--home home__tile home__tile--{{ index $colors (mod $counter 4)}}">{{ partial "home/markdown.html" . }}</div>
   {{ $counter = add $counter 1 }}
 {{ end }}
 
@@ -13,3 +13,4 @@
 {{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}
 {{ partial "content.html" .Content }}
 {{ end }}
+{{/*   */}}
