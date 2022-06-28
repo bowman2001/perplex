@@ -363,14 +363,14 @@ body {
 @media screen and (min-width: 37em) and (min-width: 48em) {
   #l-home {
     grid-template-columns: 2rem repeat(3, 37rem) 2rem;
-    grid-template-rows: 2rem repeat(4, 37rem) 2rem;
+    grid-template-rows: 2rem repeat(4, 37rem) 1fr auto;
     grid-template-areas: ".  .  .  .  ." ". dt .  .   ." ". .  d2 l1  ." ". .  l3 d4  ." ". .  d6 l5  ." ".  .  .  .  ." ".  fo fo fo .";
   }
 }
 @media screen and (min-width: 37em) and (min-width: 79em) {
   #l-home {
     grid-template-columns: minmax(2rem, auto) repeat(4, 37rem) minmax(2rem, auto);
-    grid-template-rows: 2rem repeat(3, 37rem) 2rem;
+    grid-template-rows: 2rem repeat(3, 37rem) 1fr auto;
     grid-template-areas: ".  .  .  .  .  ." ".  dt .  .  .  ." ".  .  d2 l1 d6 ." ".  .  l3 d4 l5 ." ".  .  .  .  .  ." ".  .  fo fo fo .";
     overflow-x: hidden;
     overflow-y: auto;
@@ -391,7 +391,7 @@ body {
 }
 @media screen and (min-width: 37em) and (min-width: 95em) {
   #l-home {
-    grid-template-rows: 4rem repeat(3, 37rem) 2rem;
+    grid-template-rows: 4rem repeat(3, 37rem) 1fr auto;
   }
 }
 @media screen and (min-width: 37em) and (min-width: 120em) {
@@ -734,6 +734,7 @@ body {
 }
 #l-footer {
   flex: 0 0 auto;
+  padding-top: calc(1rem + 1 * var(--es));
   padding-bottom: calc(1rem + 1 * var(--es));
 }
 #l-footer hr {
@@ -1325,9 +1326,6 @@ a.meta__item--text:hover {
 .md--home > p strong, .md--home > ul strong, .md--home > ol strong, .md--home > dl strong {
   font-weight: 450;
 }
-.md--home dt {
-  font-weight: 450;
-}
 .md--home .p-small {
   font-size: 1.43rem;
   line-height: 2rem;
@@ -1563,6 +1561,11 @@ a.meta__item--text:hover {
     margin-left: 0;
     padding-left: 18.5rem;
   }
+}
+
+.md--home dt {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
 }
 
 .md figure {
@@ -1877,6 +1880,9 @@ a.meta__item--text:hover {
   padding-bottom: 0;
 }
 
+.md--home {
+  padding-bottom: 0.5rem;
+}
 .md--home h1 {
   font-size: 3.83rem;
   line-height: 4rem;
@@ -1886,7 +1892,7 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
   letter-spacing: 0.05em;
-  word-spacing: 0.015em;
+  word-spacing: 0.15em;
   color: black;
 }
 .md--home h2 {
@@ -1897,6 +1903,8 @@ a.meta__item--text:hover {
   margin-bottom: 0;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  word-spacing: 0.09em;
 }
 
 .md--white h2, .md--white h3, .md--white h4, .md--white h5, .md--white h6 {
@@ -2595,7 +2603,6 @@ nav {
   flex: 0 0 auto;
   margin-top: auto;
   padding-top: 1rem;
-  padding-bottom: 2rem;
 }
 .page-footer > hr {
   border-top: 0.1rem solid #322;
@@ -2627,7 +2634,6 @@ nav {
   page-break-inside: avoid;
   break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
-  padding-bottom: 1rem;
 }
 
 .page-nav__list--flex {
