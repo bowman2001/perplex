@@ -117,6 +117,7 @@ hr {
 :root {
   --fs: 51.8125%;
   --tnh: 7rem;
+  --snh: 5rem;
   --es: 0rem;
   --ta: left;
 }
@@ -3274,6 +3275,7 @@ nav {
   -moz-column-break-inside: avoid;
        break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
+  padding-bottom: 1rem;
 }
 
 .page-nav__list--flex {
