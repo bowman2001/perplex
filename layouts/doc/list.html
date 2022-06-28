@@ -24,7 +24,9 @@
         </nav>
       </div>
         {{ with .Page.GetPage "after_index" }}
-          <section class="md md--serif md--main md--linkcolor">{{- partial "content.html" . }}</section>
+          <section class="md md--serif md--main md--linkcolor">
+              {{- partial "content.html" .Content }}
+          </section>
         {{ end }}
     </div>
     <footer class="page-footer">
