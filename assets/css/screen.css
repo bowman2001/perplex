@@ -1880,7 +1880,7 @@ a.meta__item--text:hover {
 .md--home h1 {
   font-size: 3.83rem;
   line-height: 4rem;
-  padding-top: calc(3.565665rem + -2 * var(--es));
+  padding-top: calc(4.565665rem + -3 * var(--es));
   padding-bottom: 2.434335rem;
   margin-bottom: 0;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
