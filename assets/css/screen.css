@@ -292,7 +292,7 @@ body {
   z-index: 100;
   width: 100vw;
   height: 10rem;
-  background: linear-gradient(225deg, #c9d8de, #fdfeff);
+  background: linear-gradient(225deg, #d4d4d4, #fdfeff);
   opacity: 0.95;
   box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.1);
   display: grid;
