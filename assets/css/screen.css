@@ -707,7 +707,8 @@ body {
     width: 35rem;
     animation: fade 500ms;
     height: 100%;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     scrollbar-gutter: stable;
     scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
   }
