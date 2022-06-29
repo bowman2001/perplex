@@ -292,9 +292,9 @@ body {
   z-index: 100;
   width: 100vw;
   height: 10rem;
-  background: linear-gradient(225deg, #dddddf, rgba(253, 254, 255, 0.965));
+  background: linear-gradient(225deg, #dfd8dc, #fdfeff);
   opacity: 0.95;
-  box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.1);
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 50%);
@@ -790,15 +790,14 @@ body {
   direction: ltr;
 }
 
-#tgl-sb1 .icon:after, #tgl-sb2 .icon:after {
+#tgl-sb .icon:after {
   content: "\e5d2";
 }
-#tgl-sb1.is-visible .icon:after, #tgl-sb2.is-visible .icon:after {
+#tgl-sb.is-visible .icon:after {
   content: "\e9bd";
 }
-
 @media screen and (min-width: 79em) {
-  #tgl-sb2 {
+  #tgl-sb {
     display: none;
   }
 }
@@ -858,7 +857,7 @@ a.meta__item--text {
   text-decoration-color: rgba(51, 34, 34, 0.2);
 }
 a.meta__item--text:hover {
-  text-decoration-color: #df0183;
+  text-decoration-color: hsl(325deg, 79%, 44%);
 }
 
 .title h1, .md h1 {
@@ -1866,7 +1865,7 @@ a.meta__item--text:hover {
   text-decoration-color: transparent;
 }
 .md--main h1:hover .heading__anchor, .md--main h1:focus .heading__anchor, .md--main h2:hover .heading__anchor, .md--main h2:focus .heading__anchor, .md--main h3:hover .heading__anchor, .md--main h3:focus .heading__anchor, .md--main h4:hover .heading__anchor, .md--main h4:focus .heading__anchor, .md--main h5:hover .heading__anchor, .md--main h5:focus .heading__anchor, .md--main h6:hover .heading__anchor, .md--main h6:focus .heading__anchor {
-  text-decoration-color: #df0183;
+  text-decoration-color: hsl(325deg, 79%, 44%);
 }
 .md--main h1:target .heading__anchor, .md--main h2:target .heading__anchor, .md--main h3:target .heading__anchor, .md--main h4:target .heading__anchor, .md--main h5:target .heading__anchor, .md--main h6:target .heading__anchor {
   text-decoration-color: hsl(199deg, 100%, 38%);
@@ -2483,7 +2482,7 @@ nav {
   border-bottom: 0.5rem solid transparent;
 }
 .top-nav .is-active, .top-nav .has-active {
-  border-bottom-color: #00a7f5;
+  border-bottom-color: hsl(199deg, 100%, 38%);
 }
 .top-nav .is-active {
   pointer-events: none;
@@ -2494,7 +2493,7 @@ nav {
   text-transform: uppercase;
 }
 .menu a:hover, .menu a:focus {
-  border-bottom-color: #fe169d;
+  border-bottom-color: hsl(325deg, 79%, 44%);
 }
 
 .social a {
@@ -2553,13 +2552,13 @@ nav {
 .ctrl__title--text {
   font-size: 2.86rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 3rem;
 }
 .ctrl__title--text:hover {
-  color: #fe169d;
+  color: hsl(325deg, 79%, 44%);
 }
 
 .ctrl-sh {
@@ -2666,7 +2665,7 @@ a.page-nav__item:hover, a.page-nav__item:focus {
   color: black;
 }
 a.page-nav__item:hover .page-nav__icon, a.page-nav__item:hover .page-nav__meta--dir, a.page-nav__item:focus .page-nav__icon, a.page-nav__item:focus .page-nav__meta--dir {
-  color: #df0183;
+  color: hsl(325deg, 79%, 44%);
 }
 
 .page-nav__item--prev, .page-nav__item--next, .page-nav__item--start {
@@ -2678,7 +2677,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
   box-shadow: 0rem 0.2rem 0.5rem rgba(0, 0, 0, 0.075);
 }
 a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--next:hover, a.page-nav__item--next:focus {
-  border-color: #df0183;
+  border-color: hsl(325deg, 79%, 44%);
 }
 
 .page-nav__item--start {
@@ -2825,7 +2824,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   color: black;
 }
 .sidebar__list a:hover > .icon, .sidebar__list a:focus > .icon {
-  color: #df0183;
+  color: hsl(325deg, 79%, 44%);
 }
 .sidebar__list .is-active > a > .icon {
   color: hsl(199deg, 100%, 38%);
@@ -2900,7 +2899,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   letter-spacing: 0.04em;
 }
 .sidebar__title:hover, .sidebar__title:focus {
-  color: #c60174;
+  color: #b21571;
 }
 @media screen and (min-width: 79em) {
   .sidebar__title {
@@ -3017,7 +3016,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 
 .toc__box {
   padding: 1rem;
-  background: rgba(253, 254, 255, 0.965);
+  background: #fdfeff;
 }
 
 .toc__content {

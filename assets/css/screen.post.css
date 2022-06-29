@@ -409,9 +409,9 @@ body {
   z-index: 100;
   width: 100vw;
   height: 10rem;
-  background: linear-gradient(225deg, #dddddf, rgba(253, 254, 255, 0.965));
+  background: linear-gradient(225deg, #dfd8dc, #fdfeff);
   opacity: .95;
-  box-shadow: 0 .2rem 1rem 0 rgba(0, 0, 0, .15);
+  box-shadow: 0 .2rem 1rem 0 rgba(0, 0, 0, .1);
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 50%);
@@ -922,18 +922,16 @@ body {
   direction: ltr;
 }
 
-#tgl-sb1 .icon:after,
-#tgl-sb2 .icon:after {
+#tgl-sb .icon:after {
   content: "";
 }
 
-#tgl-sb1.is-visible .icon:after,
-#tgl-sb2.is-visible .icon:after {
+#tgl-sb.is-visible .icon:after {
   content: "";
 }
 
 @media screen and (min-width: 79em) {
-  #tgl-sb2 {
+  #tgl-sb {
     display: none;
   }
 }
@@ -999,8 +997,8 @@ a.meta__item--text {
 }
 
 a.meta__item--text:hover {
-  -webkit-text-decoration-color: #df0183;
-          text-decoration-color: #df0183;
+  -webkit-text-decoration-color: #c9187f;
+          text-decoration-color: #c9187f;
 }
 
 .title h1,
@@ -2351,8 +2349,8 @@ a.meta__item--text:hover {
 .md--main h5:focus .heading__anchor,
 .md--main h6:hover .heading__anchor,
 .md--main h6:focus .heading__anchor {
-  -webkit-text-decoration-color: #df0183;
-          text-decoration-color: #df0183;
+  -webkit-text-decoration-color: #c9187f;
+          text-decoration-color: #c9187f;
 }
 
 .md--main h1:target .heading__anchor,
@@ -2940,6 +2938,7 @@ a.meta__item--text:hover {
 
 .checkbox-note ~ .open-note > .arrow {
   border-top: 1rem solid #667;
+  border-bottom: 0;
   border-bottom: initial;
 }
 
@@ -2963,6 +2962,7 @@ a.meta__item--text:hover {
 }
 
 .checkbox-note:checked ~ .open-note > .arrow {
+  border-top: 0;
   border-top: initial;
   border-bottom: 1rem solid #667;
 }
@@ -3099,7 +3099,7 @@ nav {
 
 .top-nav .is-active,
 .top-nav .has-active {
-  border-bottom-color: #00a7f5;
+  border-bottom-color: #0084c2;
 }
 
 .top-nav .is-active {
@@ -3113,7 +3113,7 @@ nav {
 
 .menu a:hover,
 .menu a:focus {
-  border-bottom-color: #fe169d;
+  border-bottom-color: #c9187f;
 }
 
 .social a {
@@ -3182,14 +3182,14 @@ nav {
 .ctrl__title--text {
   font-size: 2.86rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: .04em;
   text-transform: uppercase;
   line-height: 3rem;
 }
 
 .ctrl__title--text:hover {
-  color: #fe169d;
+  color: #c9187f;
 }
 
 .ctrl-sh {
@@ -3317,7 +3317,7 @@ a.page-nav__item:hover .page-nav__icon,
 a.page-nav__item:hover .page-nav__meta--dir,
 a.page-nav__item:focus .page-nav__icon,
 a.page-nav__item:focus .page-nav__meta--dir {
-  color: #df0183;
+  color: #c9187f;
 }
 
 .page-nav__item--prev,
@@ -3336,7 +3336,7 @@ a.page-nav__item--prev:hover,
 a.page-nav__item--prev:focus,
 a.page-nav__item--next:hover,
 a.page-nav__item--next:focus {
-  border-color: #df0183;
+  border-color: #c9187f;
 }
 
 .page-nav__item--start {
@@ -3506,7 +3506,7 @@ a.page-nav__item--next:focus {
 
 .sidebar__list a:hover > .icon,
 .sidebar__list a:focus > .icon {
-  color: #df0183;
+  color: #c9187f;
 }
 
 .sidebar__list .is-active > a > .icon {
@@ -3614,7 +3614,7 @@ a.page-nav__item--next:focus {
 
 .sidebar__title:hover,
 .sidebar__title:focus {
-  color: #c60174;
+  color: #b21571;
 }
 
 @media screen and (min-width: 79em) {
@@ -3647,6 +3647,8 @@ a.page-nav__item--next:focus {
 
 @media screen and (min-width: 79em) {
   .items-have-no-children {
+    -moz-columns: auto;
+         columns: auto;
     -moz-columns: initial;
          columns: initial;
     margin-bottom: 0;
@@ -3755,7 +3757,7 @@ a.page-nav__item--next:focus {
 
 .toc__box {
   padding: 1rem;
-  background: rgba(253, 254, 255, .965);
+  background: #fdfeff;
 }
 
 .toc__content {
