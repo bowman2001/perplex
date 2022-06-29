@@ -7,13 +7,13 @@
           <li class='li--1 {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end -}}'>
               {{ template "item" . }}
               {{ template "expand" . }}
-            <ul class='{{ if ( partial "itemsHaveNoChildren" . ) -}}itemsHaveNoChildren{{ end }}'>
+            <ul class='{{ if ( partial "itemsHaveNoChildren" . ) -}}items-have-no-children{{ end }}'>
                 {{ range .Children }}
                   <li class='li--2 {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end -}}'>
                       {{ template "item" . }}
                       {{ if .HasChildren }}
                           {{ template "expand" . }}
-                          <ul class='{{ if ( partial "itemsHaveNoChildren" . ) }}itemsHaveNoChildren{{ end }}'>
+                          <ul class='{{ if ( partial "itemsHaveNoChildren" . ) }}items-have-no-children{{ end }}'>
                               {{ range .Children }}
                                 <li class='li--3 {{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}'>
                                     {{ template "item" . }}

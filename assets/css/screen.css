@@ -2933,7 +2933,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 }
 @media screen and (min-width: 79em) {
   .items-have-no-children {
-    columns: unset;
+    column-count: 1;
     margin-bottom: 0;
     padding-top: 0;
   }

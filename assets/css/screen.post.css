@@ -3655,10 +3655,8 @@ a.page-nav__item--next:focus {
 
 @media screen and (min-width: 79em) {
   .items-have-no-children {
-    -moz-columns: auto;
-         columns: auto;
-    -moz-columns: initial;
-         columns: initial;
+    -moz-column-count: 1;
+         column-count: 1;
     margin-bottom: 0;
     padding-top: 0;
   }
