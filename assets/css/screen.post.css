@@ -803,6 +803,13 @@ body {
   transition: left 250ms ease-in;
 }
 
+@media screen and (min-width: 37em) {
+  #l-sidebar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 @media screen and (min-width: 48em) {
   #l-sidebar {
     left: -55.5rem;
@@ -820,6 +827,7 @@ body {
     -webkit-animation: fade 500ms;
             animation: fade 500ms;
     height: 100%;
+    padding: 0;
     scrollbar-gutter: stable;
     scrollbar-color: #ebb924 #d7ebff;
   }
@@ -860,8 +868,8 @@ body {
 
 #l-footer {
   flex: 0 0 auto;
-  padding-top: calc(1rem + 2 * 0rem);
-  padding-top: calc(1rem + 2 * var(--es));
+  padding-top: calc(1rem + 1 * 0rem);
+  padding-top: calc(1rem + 1 * var(--es));
   padding-bottom: calc(1rem + 1 * 0rem);
   padding-bottom: calc(1rem + 1 * var(--es));
 }
