@@ -5,7 +5,7 @@
 <header class="l-masthead l-nav l-wrap" id="l-masthead">
     {{- partial "nav/masthead.html" . -}}
 </header>
-<main id="l-home">
+<main id="l-home" class="l-tnp">
     {{ with .Site.GetPage "site/home" }}
         {{ partial "home/title.html" . }}
         {{ partial "home/tiles.html" . }}
