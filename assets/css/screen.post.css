@@ -1646,14 +1646,14 @@ a.meta__item--text:hover {
 .md--home > ol,
 .md--home > dl {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .md--home > p strong,
 .md--home > ul strong,
 .md--home > ol strong,
 .md--home > dl strong {
-  font-weight: 450;
+  font-weight: 600;
 }
 
 .md--home .p-small {
@@ -1951,7 +1951,7 @@ a.meta__item--text:hover {
 
 .md--home dt {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .md figure {
@@ -2379,27 +2379,27 @@ a.meta__item--text:hover {
 }
 
 .md--home h1 {
-  font-size: 3.83rem;
+  font-size: 3.81rem;
   line-height: 4rem;
-  padding-top: calc(4.565665rem + -3 * 0rem);
-  padding-top: calc(4.565665rem + -3 * var(--es));
-  padding-bottom: 2.434335rem;
+  padding-top: calc(4.573155rem + -3 * 0rem);
+  padding-top: calc(4.573155rem + -3 * var(--es));
+  padding-bottom: 2.426845rem;
   margin-bottom: 0;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .05em;
   word-spacing: .15em;
   color: #000;
 }
 
 .md--home h2 {
-  font-size: 1.915rem;
+  font-size: 1.905rem;
   line-height: 3rem;
-  padding-top: 1.7828325rem;
-  padding-bottom: .2171675rem;
+  padding-top: 1.7865775rem;
+  padding-bottom: .2134225rem;
   margin-bottom: 0;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .03em;
   word-spacing: .09em;
 }
@@ -3160,7 +3160,7 @@ nav {
 
 .ctrl .ctrl__link {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.43rem;
   padding: .9rem 0 .4rem 0;
   margin: 0 1rem;
