@@ -3767,7 +3767,7 @@ a.page-nav__item--next:focus {
 .toc__box {
   border: .1rem solid #ccc;
   padding: 1rem;
-  background: linear-gradient(225deg, #e8e8e8, #fdfeff);
+  background: #e8e8e8;
 }
 
 .toc__title > a {
@@ -3782,7 +3782,7 @@ a.page-nav__item--next:focus {
   text-transform: uppercase;
   letter-spacing: .02em;
   padding-left: 1.5rem;
-  border-left: .5rem solid #bbb;
+  border-left: .5rem solid #ccc;
 }
 
 .toc__title > a:hover {
@@ -3797,29 +3797,31 @@ a.page-nav__item--next:focus {
   padding-bottom: 0;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-  color: #bbb;
+  color: #555;
 }
 
 #TableOfContents a {
   display: block;
   padding: .5rem 0;
+  transition: color 200ms ease-in-out;
 }
 
 #TableOfContents a:hover {
   color: #000;
 }
 
-#TableOfContents ul > li:first-child {
+#TableOfContents > ul > li:first-child {
   margin-top: -0.5rem;
 }
 
 #TableOfContents li > a {
   padding-left: 1.5rem;
-  border-left: .5rem solid #bbb;
+  border-left: .5rem solid #ccc;
+  transition: border-left-color 200ms ease-in-out;
 }
 
 #TableOfContents li > a:hover {
-  border-left: .5rem solid #c9187f;
+  border-left-color: #c9187f;
 }
 
 #TableOfContents li li {

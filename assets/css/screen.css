@@ -2990,7 +2990,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
 .toc__box {
   border: 0.1rem solid #ccc;
   padding: 1rem;
-  background: linear-gradient(225deg, #e8e8e8, #fdfeff);
+  background: #e8e8e8;
 }
 
 .toc__title > a {
@@ -3005,7 +3005,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   text-transform: uppercase;
   letter-spacing: 0.02em;
   padding-left: 1.5rem;
-  border-left: 0.5rem solid #bbb;
+  border-left: 0.5rem solid #ccc;
 }
 .toc__title > a:hover {
   border-left: 0.5rem solid hsl(325deg, 79%, 44%);
@@ -3019,24 +3019,26 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   padding-bottom: 0;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-  color: #bbb;
+  color: #555;
 }
 #TableOfContents a {
   display: block;
   padding: 0.5rem 0;
+  transition: color 200ms ease-in-out;
 }
 #TableOfContents a:hover {
   color: black;
 }
-#TableOfContents ul > li:first-child {
+#TableOfContents > ul > li:first-child {
   margin-top: -0.5rem;
 }
 #TableOfContents li > a {
   padding-left: 1.5rem;
-  border-left: 0.5rem solid #bbb;
+  border-left: 0.5rem solid #ccc;
+  transition: border-left-color 200ms ease-in-out;
 }
 #TableOfContents li > a:hover {
-  border-left: 0.5rem solid hsl(325deg, 79%, 44%);
+  border-left-color: hsl(325deg, 79%, 44%);
 }
 #TableOfContents li li {
   font-weight: 600;
