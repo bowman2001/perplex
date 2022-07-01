@@ -226,7 +226,7 @@ figcaption {
   padding-top: 0.464465rem;
   margin-bottom: -0.464465rem;
   padding-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(4rem + var(--tnh));
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
 }
@@ -609,7 +609,6 @@ body {
   #l-main {
     overflow-x: hidden;
     overflow-y: auto;
-    scroll-behavior: smooth;
     scrollbar-gutter: stable;
     scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
   }
@@ -902,7 +901,7 @@ a.meta__item--text:hover {
     padding-top: 0.893395rem;
     padding-bottom: calc(0.106605rem + 1 * var(--es));
     margin-bottom: 0;
-    scroll-margin-top: calc(3rem + var(--tnh));
+    scroll-margin-top: calc(1rem + var(--tnh));
     font-weight: 600;
   }
 }
@@ -1035,7 +1034,7 @@ a.meta__item--text:hover {
   padding-top: 0.7029533333rem;
   padding-bottom: 1.2970466667rem;
   margin-bottom: 0;
-  scroll-margin-top: calc(2.3333333333rem + var(--tnh));
+  scroll-margin-top: calc(1.3333333333rem + var(--tnh));
 }
 .md .p-small {
   font-size: 1.43rem;
@@ -1043,7 +1042,7 @@ a.meta__item--text:hover {
   padding-top: 0.464465rem;
   padding-bottom: calc(0.535535rem + 1 * var(--es));
   margin-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(4rem + var(--tnh));
 }
 .md .blind {
   position: relative;
@@ -1374,7 +1373,7 @@ a.meta__item--text:hover {
   padding-top: 0.464465rem;
   padding-bottom: 0.535535rem;
   margin-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(4rem + var(--tnh));
   width: 100%;
   word-break: normal;
   hyphens: none;
@@ -1444,7 +1443,7 @@ a.meta__item--text:hover {
   padding-top: 1.214465rem;
   padding-bottom: 0.785535rem;
   margin-bottom: 0;
-  scroll-margin-top: calc(2rem + var(--tnh));
+  scroll-margin-top: calc(3.5rem + var(--tnh));
 }
 .md .note p > code {
   color: #667;
@@ -1549,7 +1548,7 @@ a.meta__item--text:hover {
   padding-top: 0.714465rem;
   margin-bottom: -0.464465rem;
   padding-bottom: 0;
-  scroll-margin-top: calc(2.75rem + var(--tnh));
+  scroll-margin-top: calc(3.75rem + var(--tnh));
   text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1573,7 +1572,7 @@ a.meta__item--text:hover {
   padding-top: 0.5218883333rem;
   margin-bottom: -0.5218883333rem;
   padding-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(4rem + var(--tnh));
 }
 .md figure > figcaption .attribution:before {
   content: " · ";
@@ -1682,7 +1681,7 @@ a.meta__item--text:hover {
   padding-top: 0.680063125rem;
   margin-bottom: -0.680063125rem;
   padding-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(3.375rem + var(--tnh));
   float: left;
   height: 1em;
   content: counter(nr, decimal) ".";
@@ -1695,7 +1694,7 @@ a.meta__item--text:hover {
   padding-top: 0.680063125rem;
   margin-bottom: -0.680063125rem;
   padding-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(3.375rem + var(--tnh));
 }
 .footnotes > ol > li > p + p {
   text-indent: 2.5rem;
@@ -1763,7 +1762,7 @@ a.meta__item--text:hover {
   padding-top: 1.7828325rem;
   padding-bottom: 0.2171675rem;
   margin-bottom: 0;
-  scroll-margin-top: calc(1.5rem + var(--tnh));
+  scroll-margin-top: calc(2.5rem + var(--tnh));
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.005em;
@@ -1915,7 +1914,7 @@ a.meta__item--text:hover {
   padding-top: 0.964465rem;
   padding-bottom: 0.535535rem;
   margin-bottom: 0;
-  scroll-margin-top: calc(2.5rem + var(--tnh));
+  scroll-margin-top: calc(3.5rem + var(--tnh));
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   text-align: left;
@@ -2014,7 +2013,7 @@ a.meta__item--text:hover {
     padding-top: 4.114465rem;
     padding-bottom: 0.885535rem;
     margin-bottom: 0;
-    scroll-margin-top: calc(-0.65rem + var(--tnh));
+    scroll-margin-top: calc(0.35rem + var(--tnh));
   }
   .i-midst.i-small .embed, .i-midst.i-tiny .embed {
     font-size: 1.43rem;
@@ -2022,7 +2021,7 @@ a.meta__item--text:hover {
     padding-top: 1.114465rem;
     margin-bottom: -0.464465rem;
     padding-bottom: 0;
-    scroll-margin-top: calc(2.35rem + var(--tnh));
+    scroll-margin-top: calc(3.35rem + var(--tnh));
   }
 }
 
@@ -2159,7 +2158,7 @@ a.meta__item--text:hover {
     padding-top: 0.367563125rem;
     margin-bottom: -0.367563125rem;
     padding-bottom: 0;
-    scroll-margin-top: calc(3rem + var(--tnh));
+    scroll-margin-top: calc(4rem + var(--tnh));
   }
   .note > .note__content > p {
     font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -2169,7 +2168,7 @@ a.meta__item--text:hover {
     padding-top: 0.367563125rem;
     padding-bottom: 0.632436875rem;
     margin-bottom: 0;
-    scroll-margin-top: calc(3rem + var(--tnh));
+    scroll-margin-top: calc(4rem + var(--tnh));
     color: #667;
   }
 }
@@ -2185,7 +2184,7 @@ a.meta__item--text:hover {
   padding-top: 0.6476791667rem;
   margin-bottom: -0.6476791667rem;
   padding-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(3.5rem + var(--tnh));
 }
 .note__content > p {
   text-align: left;
@@ -2194,7 +2193,7 @@ a.meta__item--text:hover {
   padding-top: 0.6476791667rem;
   padding-bottom: 0.3523208333rem;
   margin-bottom: 0;
-  scroll-margin-top: calc(3rem + var(--tnh));
+  scroll-margin-top: calc(3.5rem + var(--tnh));
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   color: #667;
@@ -3018,8 +3017,8 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   margin-bottom: -0.464465rem;
   padding-bottom: 0;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
-  color: #555;
+  font-weight: 600;
+  color: #445;
 }
 #TableOfContents a {
   display: block;
@@ -3041,13 +3040,13 @@ a.page-nav__item--prev:hover, a.page-nav__item--prev:focus, a.page-nav__item--ne
   border-left-color: hsl(325deg, 79%, 44%);
 }
 #TableOfContents li li {
-  font-weight: 600;
+  font-weight: 450;
 }
 #TableOfContents li li > a {
   padding-left: 3rem;
 }
 #TableOfContents li li li {
-  font-weight: 500;
+  font-weight: 300;
 }
 #TableOfContents li li li > a {
   padding-left: 4.5rem;
