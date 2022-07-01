@@ -38,9 +38,15 @@ if ( tocBtn ) {
     })
 }
 
+document.addEventListener("click", function (event) {
+        if( !event.target.closest('#toggle-toc') && !toc.classList.contains('is-closed') && !event.target.closest('#toc') ) {
+            tocHandler();
+        }
+    })
+
 function sbHandler () {
     if ( toc && tocBtn.classList.contains( 'is-visible' ) ) {
-        tocHandler();
+        tocHandler( );
     }
     if ( sb ) {
         sbBtn.classList.toggle('is-visible');
