@@ -3078,6 +3078,15 @@ a.meta__item--text:hover {
   display: none;
 }
 
+.nav__title {
+  transition: color 150ms ease-in-out;
+}
+
+.nav__title:hover,
+.nav__title:focus {
+  color: #c9187f;
+}
+
 .nav__link {
   transition: color 150ms ease-in-out, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
   transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out;
@@ -3218,10 +3227,6 @@ a.meta__item--text:hover {
   font-weight: 500;
   letter-spacing: .04em;
   text-transform: uppercase;
-}
-
-.ctrl__title--text:hover {
-  color: #c9187f;
 }
 
 .ctrl-sh {
@@ -3588,11 +3593,6 @@ a.page-nav__item--next {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .04em;
-}
-
-.sidebar__title:hover,
-.sidebar__title:focus {
-  color: #b21571;
 }
 
 @media screen and (min-width: 79em) {
