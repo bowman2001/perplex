@@ -1,22 +1,22 @@
 <ul class="nav__list sidebar__list">
-    {{ $currentPage := .context }}
-    {{ $menuName := .menuname }}
+    {{ $page := .context }}
+    {{ $menuName := .menuName }}
     {{ $menu := .menu }}
     {{ range $menu }}
         {{ if .HasChildren }}
-          <li class='li--1 {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end -}}'>
-              {{ template "item" . }}
+          <li class="nav__li1 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
+              {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
               {{ template "expand" . }}
-            <ul class='{{ if ( partial "itemsHaveNoChildren" . ) -}}items-have-no-children{{ end }}'>
+            <ul class="{{ if ( partial "itemsHaveNoChildren" . ) -}}items-have-no-children{{ end }}">
                 {{ range .Children }}
-                  <li class='li--2 {{ if $currentPage.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $currentPage.HasMenuCurrent $menuName . -}}has-active{{- end -}}'>
-                      {{ template "item" . }}
+                  <li class="nav__li2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
+                      {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
                       {{ if .HasChildren }}
                           {{ template "expand" . }}
-                          <ul class='{{ if ( partial "itemsHaveNoChildren" . ) }}items-have-no-children{{ end }}'>
+                          <ul class="{{ if ( partial "itemsHaveNoChildren" . ) }}items-have-no-children{{ end }}">
                               {{ range .Children }}
-                                <li class='li--3 {{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}'>
-                                    {{ template "item" . }}
+                                <li class="nav__li3">
+                                    {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
                                 </li>
                               {{ end }}
                           </ul>
@@ -26,17 +26,17 @@
             </ul>
           </li>
         {{ else }}
-          <li class='li--1 {{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}'>
-              {{ template "item" . }}
+          <li class="nav__li1">
+              {{ template "item" }}
           </li>
         {{ end }}
     {{ end }}
 </ul>
 
 {{- define "item" -}}
-  <a href="{{ .URL }}">
-    {{ partial "nav/menu-pre-icon.html" . }}
-    <span class="li__text">{{ .Name | site.Home.RenderString }}</span>
+  <a href="{{ .menuEntry.URL }}" class="nav__link {{ if .page.IsMenuCurrent .menuName .menuEntry -}}is-active{{- end }}">
+    {{ partial "nav/menu-pre-icon.html" .menuEntry }}
+    <span class="li__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
   </a>
 {{- end -}}
 
