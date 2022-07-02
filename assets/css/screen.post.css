@@ -3079,13 +3079,13 @@ a.meta__item--text:hover {
 }
 
 .nav__link {
-  transition: color 250ms ease-in-out, border-color 250ms ease-in-out, -webkit-text-decoration-color 250ms;
-  transition: color 250ms ease-in-out, text-decoration-color 250ms, border-color 250ms ease-in-out;
-  transition: color 250ms ease-in-out, text-decoration-color 250ms, border-color 250ms ease-in-out, -webkit-text-decoration-color 250ms;
+  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
+  transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out;
+  transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
 }
 
 .nav__link .icon {
-  transition: color 250ms ease-in-out;
+  transition: color 150ms ease-in-out;
 }
 
 .nav__link:hover,
@@ -3773,11 +3773,25 @@ a.page-nav__item--next {
   display: block;
   padding: .5rem 0 .5rem 1.5rem;
   border-left: .5rem solid #ccc;
+  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
+  transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out;
+  transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
 }
 
-#TableOfContents a:hover {
+#TableOfContents a .icon {
+  transition: color 150ms ease-in-out;
+}
+
+#TableOfContents a:hover,
+#TableOfContents a:focus {
   color: #000;
-  border-left-color: #c9187f;
+  text-shadow: 0 0 .1rem rgba(0, 0, 0, .1333333333);
+  border-color: #c9187f;
+}
+
+#TableOfContents a:hover .icon,
+#TableOfContents a:focus .icon {
+  color: #c9187f;
 }
 
 #TableOfContents li li > a {

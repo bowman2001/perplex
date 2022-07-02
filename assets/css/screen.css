@@ -2430,10 +2430,10 @@ a.meta__item--text:hover {
 }
 
 .nav__link {
-  transition: color 250ms ease-in-out, text-decoration-color 250ms, border-color 250ms ease-in-out;
+  transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out;
 }
 .nav__link .icon {
-  transition: color 250ms ease-in-out;
+  transition: color 150ms ease-in-out;
 }
 .nav__link:hover, .nav__link:focus {
   color: black;
@@ -3012,10 +3012,18 @@ a.page-nav__item--prev, a.page-nav__item--next {
   display: block;
   padding: 0.5rem 0 0.5rem 1.5rem;
   border-left: 0.5rem solid #ccc;
+  transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out;
 }
-#TableOfContents a:hover {
+#TableOfContents a .icon {
+  transition: color 150ms ease-in-out;
+}
+#TableOfContents a:hover, #TableOfContents a:focus {
   color: black;
-  border-left-color: hsl(325deg, 79%, 44%);
+  text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.1333333333);
+  border-color: hsl(325deg, 79%, 44%);
+}
+#TableOfContents a:hover .icon, #TableOfContents a:focus .icon {
+  color: hsl(325deg, 79%, 44%);
 }
 #TableOfContents li li > a {
   padding-left: 3rem;
