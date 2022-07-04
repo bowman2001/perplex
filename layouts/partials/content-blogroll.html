@@ -1,5 +1,9 @@
 {{-
 .
+| replaceRE `<h5 (.*)>(.*)</h5>` "<h6 $1>$2</h6>"
+| replaceRE `<h4 (.*)>(.*)</h4>` "<h5 $1>$2</h5>"
+| replaceRE `<h3 (.*)>(.*)</h3>` "<h4 $1>$2</h4>"
+| replaceRE `<h2 (.*)>(.*)</h2>` "<h3 $1>$2</h3>"
 | replaceRE `\{\^([^\}]*)\}` "<sup>$1</sup>"
 | replaceRE `\{\_([^\}]*)\}` "<sub>$1</sub>"
 | replaceRE `\{\#([^\}]*)\}` "<kbd>$1</kbd>"
@@ -15,9 +19,4 @@
 | safeHTML
 -}}
 
-{{/* The last pattern enforces thin spaces around all em-dashes.
-     It’s a choice of style you may want to change. */}}
-
-{{/* The following regex pattern for "hanging quotes" at the beginning
-     of a text block doesn't work at all. */}}
-{{/* replaceRE `^([“«»„})^\s` "<span class='hang-quote'>$1</span>" */}}
+{{/* replaceRE `#(#*\s)` "##$1" . | safeHTML */}}

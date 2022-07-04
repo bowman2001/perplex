@@ -1,0 +1,13 @@
+<header class="li-header">
+    {{ partial "img/featured.html" . }}
+  <div class="title title--li">
+      {{ partial "title/title-in-list.html" . }}
+      {{ partial "title/subtitle.html" . }}
+  </div>
+  <div class="meta">
+      {{ partial "date/page/published.html" . }}
+  </div>
+</header>
+<div class="md md--serif md--link-color md--main">
+    {{ partial "content-blogroll.html" .Content }}
+</div>
