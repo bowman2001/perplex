@@ -1003,8 +1003,7 @@ a.meta__item--text:hover {
   font-size: 2.86rem;
   line-height: 3rem;
   padding-top: .42893rem;
-  padding-bottom: calc(0.57107rem + 1 * 0rem);
-  padding-bottom: calc(0.57107rem + 1 * var(--es));
+  padding-bottom: .57107rem;
   margin-bottom: 0;
   scroll-margin-top: calc(3rem + 10rem);
   scroll-margin-top: calc(3rem + var(--tnh));
@@ -1024,21 +1023,6 @@ a.meta__item--text:hover {
   padding-right: 2rem;
 }
 
-.title__description {
-  font-size: 1.95rem;
-  line-height: 3rem;
-  padding-bottom: .230275rem;
-  margin-bottom: 0;
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 300;
-  font-style: italic;
-  color: #333;
-}
-
-.title__description strong {
-  font-weight: 450;
-}
-
 .title--ruled {
   padding-bottom: calc(1 * 0rem);
   padding-bottom: calc(1 * var(--es));
@@ -1054,6 +1038,22 @@ a.meta__item--text:hover {
   font-weight: 500;
   font-style: italic;
   letter-spacing: .015em;
+}
+
+.title--li h2 {
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: .42893rem;
+  padding-bottom: calc(0.57107rem + 1 * 0rem);
+  padding-bottom: calc(0.57107rem + 1 * var(--es));
+  margin-bottom: 0;
+  scroll-margin-top: calc(3rem + 10rem);
+  scroll-margin-top: calc(3rem + var(--tnh));
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: .01em;
+  word-spacing: .03em;
 }
 
 .title--article h1 {
@@ -1091,6 +1091,61 @@ a.meta__item--text:hover {
     scroll-margin-top: calc(1rem + var(--tnh));
     font-weight: 600;
   }
+}
+
+.title__description {
+  font-size: 1.95rem;
+  line-height: 3rem;
+  padding-top: .769725rem;
+  padding-bottom: .230275rem;
+  margin-bottom: 0;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #333;
+}
+
+.title__description strong {
+  font-weight: 450;
+}
+
+.h-link-color h1 .h__anchor,
+.h-link-color h2 .h__anchor,
+.h-link-color h3 .h__anchor,
+.h-link-color h4 .h__anchor,
+.h-link-color h5 .h__anchor,
+.h-link-color h6 .h__anchor {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: .15em;
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
+}
+
+.h-link-color h1:hover .h__anchor,
+.h-link-color h1:focus .h__anchor,
+.h-link-color h2:hover .h__anchor,
+.h-link-color h2:focus .h__anchor,
+.h-link-color h3:hover .h__anchor,
+.h-link-color h3:focus .h__anchor,
+.h-link-color h4:hover .h__anchor,
+.h-link-color h4:focus .h__anchor,
+.h-link-color h5:hover .h__anchor,
+.h-link-color h5:focus .h__anchor,
+.h-link-color h6:hover .h__anchor,
+.h-link-color h6:focus .h__anchor {
+  -webkit-text-decoration-color: #c9187f;
+          text-decoration-color: #c9187f;
+}
+
+.h-link-color h1:target .h__anchor,
+.h-link-color h2:target .h__anchor,
+.h-link-color h3:target .h__anchor,
+.h-link-color h4:target .h__anchor,
+.h-link-color h5:target .h__anchor,
+.h-link-color h6:target .h__anchor {
+  -webkit-text-decoration-color: #0084c2;
+          text-decoration-color: #0084c2;
 }
 
 .md {
@@ -1592,23 +1647,23 @@ a.meta__item--text:hover {
   display: none;
 }
 
-.md--main {
+.h-link-color {
   padding-bottom: calc(1 * 0rem);
   padding-bottom: calc(1 * var(--es));
 }
 
-.md--main p,
-.md--main ul,
-.md--main ol,
-.md--main dl {
+.h-link-color p,
+.h-link-color ul,
+.h-link-color ol,
+.h-link-color dl {
   color: #322;
 }
 
-.md--main > p,
-.md--main > ul,
-.md--main > ol,
-.md--main > blockquote,
-.md--main > dl {
+.h-link-color > p,
+.h-link-color > ul,
+.h-link-color > ol,
+.h-link-color > blockquote,
+.h-link-color > dl {
   text-align: left;
   text-align: var(--ta);
 }
@@ -1673,14 +1728,6 @@ a.meta__item--text:hover {
   margin-bottom: 0;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-}
-
-.md--white > p,
-.md--white > ul,
-.md--white > ol,
-.md--white > blockquote,
-.md--white > dl {
-  color: #fff;
 }
 
 .md--dropcap2 > p:first-child:first-letter {
@@ -2322,45 +2369,6 @@ a.meta__item--text:hover {
   background-color: rgba(0, 238, 0, .5333333333);
 }
 
-.md--main h1 .heading__anchor,
-.md--main h2 .heading__anchor,
-.md--main h3 .heading__anchor,
-.md--main h4 .heading__anchor,
-.md--main h5 .heading__anchor,
-.md--main h6 .heading__anchor {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: .15em;
-  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
-          text-decoration-color: rgba(0, 0, 0, 0);
-}
-
-.md--main h1:hover .heading__anchor,
-.md--main h1:focus .heading__anchor,
-.md--main h2:hover .heading__anchor,
-.md--main h2:focus .heading__anchor,
-.md--main h3:hover .heading__anchor,
-.md--main h3:focus .heading__anchor,
-.md--main h4:hover .heading__anchor,
-.md--main h4:focus .heading__anchor,
-.md--main h5:hover .heading__anchor,
-.md--main h5:focus .heading__anchor,
-.md--main h6:hover .heading__anchor,
-.md--main h6:focus .heading__anchor {
-  -webkit-text-decoration-color: #c9187f;
-          text-decoration-color: #c9187f;
-}
-
-.md--main h1:target .heading__anchor,
-.md--main h2:target .heading__anchor,
-.md--main h3:target .heading__anchor,
-.md--main h4:target .heading__anchor,
-.md--main h5:target .heading__anchor,
-.md--main h6:target .heading__anchor {
-  -webkit-text-decoration-color: #0084c2;
-          text-decoration-color: #0084c2;
-}
-
 .md--footer h2 {
   font-size: 1.43rem;
   line-height: 2rem;
@@ -2663,31 +2671,31 @@ a.meta__item--text:hover {
   font-style: italic;
 }
 
-.md--linkcolor a {
+.md--link-color a {
   color: #006a9c;
   -webkit-text-decoration-color: rgba(0, 106, 156, .15);
           text-decoration-color: rgba(0, 106, 156, .15);
 }
 
-.md--linkcolor a:hover,
-.md--linkcolor a:focus {
+.md--link-color a:hover,
+.md--link-color a:focus {
   -webkit-text-decoration-color: rgba(0, 106, 156, .67);
           text-decoration-color: rgba(0, 106, 156, .67);
 }
 
-.md--linkcolor a[href^=http] {
+.md--link-color a[href^=http] {
   color: #00826a;
   -webkit-text-decoration-color: rgba(0, 130, 106, .15);
           text-decoration-color: rgba(0, 130, 106, .15);
 }
 
-.md--linkcolor a[href^=http]:hover,
-.md--linkcolor a[href^=http]:focus {
+.md--link-color a[href^=http]:hover,
+.md--link-color a[href^=http]:focus {
   -webkit-text-decoration-color: rgba(0, 130, 106, .67);
           text-decoration-color: rgba(0, 130, 106, .67);
 }
 
-.md--linkcolor a[href^=http]:after {
+.md--link-color a[href^=http]:after {
   content: none;
 }
 
@@ -3256,23 +3264,6 @@ a.meta__item--text:hover {
   padding-right: 1.5rem;
 }
 
-.page-header {
-  padding-top: 5rem;
-}
-
-.page-footer {
-  flex: 0 0 auto;
-  margin-top: auto;
-  padding-top: 1rem;
-}
-
-.page-footer > hr {
-  border-top: .1rem solid #322;
-  height: 1rem;
-  margin: 0 2rem 1rem 2rem;
-  max-width: 70rem;
-}
-
 .page-nav {
   color: #322;
   margin-right: 2rem;
@@ -3806,6 +3797,23 @@ a.page-nav__item--next {
     margin-bottom: -0.464465rem;
     padding-bottom: 0;
   }
+}
+
+.page-header {
+  padding-top: 5rem;
+}
+
+.page-footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.page-footer > hr {
+  border-top: .1rem solid #322;
+  height: 1rem;
+  margin: 0 2rem 1rem 2rem;
+  max-width: 70rem;
 }
 
 .cf:before,
