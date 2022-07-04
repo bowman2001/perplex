@@ -844,8 +844,6 @@ a.meta__item--text:hover {
 .title__description {
   font-size: 1.95rem;
   line-height: 3rem;
-  margin-top: -1.230275rem;
-  padding-top: 0;
   padding-bottom: 0.230275rem;
   margin-bottom: 0;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
@@ -2715,8 +2713,6 @@ a.page-nav__item--prev, a.page-nav__item--next {
 .page-nav__meta {
   font-size: 1.4625rem;
   line-height: 2rem;
-  margin-top: -0.54770625rem;
-  padding-top: 0;
   margin-bottom: -0.45229375rem;
   padding-bottom: 0;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -3002,7 +2998,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
   padding-top: 0.3724784375rem;
   margin-bottom: -0.3724784375rem;
   padding-bottom: 0;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   color: #556;
 }
