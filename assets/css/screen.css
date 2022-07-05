@@ -841,6 +841,23 @@ a.meta__item--text:hover {
   padding-right: 2rem;
 }
 
+.title--big {
+  margin-top: -1rem;
+}
+.title--big h1 {
+  font-size: 4.29rem;
+  line-height: 4rem;
+  padding-top: 0.393395rem;
+  padding-bottom: 1.606605rem;
+  margin-bottom: 0;
+  scroll-margin-top: calc(2rem + var(--tnh));
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
+  text-transform: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
 .title--ruled {
   padding-bottom: calc(1 * var(--es));
 }
@@ -920,6 +937,7 @@ a.meta__item--text:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.15em;
   text-decoration-color: transparent;
+  transition: text-decoration-color 150ms ease;
 }
 .h-link-color h1:hover .h__anchor, .h-link-color h1:focus .h__anchor, .h-link-color h2:hover .h__anchor, .h-link-color h2:focus .h__anchor, .h-link-color h3:hover .h__anchor, .h-link-color h3:focus .h__anchor, .h-link-color h4:hover .h__anchor, .h-link-color h4:focus .h__anchor, .h-link-color h5:hover .h__anchor, .h-link-color h5:focus .h__anchor, .h-link-color h6:hover .h__anchor, .h-link-color h6:focus .h__anchor {
   text-decoration-color: hsl(325deg, 79%, 44%);
@@ -3034,7 +3052,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
 }
 
 .page-header {
-  padding-top: 5rem;
+  padding-top: calc(5rem + 4 * var(--es));
 }
 
 .page-footer {
@@ -3047,6 +3065,15 @@ a.page-nav__item--prev, a.page-nav__item--next {
   height: 1rem;
   margin: 0 2rem 1rem 2rem;
   max-width: 70rem;
+}
+
+.li-box {
+  padding: calc(2rem + 2 * var(--es)) 0rem;
+}
+.li-box > hr {
+  border-top: 1px solid #dddddd;
+  height: 1rem;
+  margin: 0 2rem 2rem 2rem;
 }
 
 /**

@@ -3,11 +3,16 @@
     <div id="l-content">
       <header class="page-header">
           {{- partial "img/featured.html" . -}}
-        <div class="title title--ruled">
-          <hr>
-            {{ partial "title/title.html" . }}
-            {{ partial "title/subtitle.html" . }}
-        </div>
+          {{ if eq .CurrentSection .FirstSection }}
+            <div class="title title--big">
+                {{ partial "title/title.html" . }}
+            </div>
+          {{ else }}
+            <div class="title title--ruled">
+              <hr>
+                {{ partial "title/title.html" . }}
+            </div>
+          {{ end }}
       </header>
         {{ with .Content }}
           <div class="md md--serif md--list h-link-color md--link-color">

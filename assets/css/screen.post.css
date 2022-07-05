@@ -1023,6 +1023,25 @@ a.meta__item--text:hover {
   padding-right: 2rem;
 }
 
+.title--big {
+  margin-top: -1rem;
+}
+
+.title--big h1 {
+  font-size: 4.29rem;
+  line-height: 4rem;
+  padding-top: .393395rem;
+  padding-bottom: 1.606605rem;
+  margin-bottom: 0;
+  scroll-margin-top: calc(2rem + 10rem);
+  scroll-margin-top: calc(2rem + var(--tnh));
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
+  text-transform: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
 .title--ruled {
   padding-bottom: calc(1 * 0rem);
   padding-bottom: calc(1 * var(--es));
@@ -1120,6 +1139,9 @@ a.meta__item--text:hover {
   text-decoration-thickness: .15em;
   -webkit-text-decoration-color: rgba(0, 0, 0, 0);
           text-decoration-color: rgba(0, 0, 0, 0);
+  transition: -webkit-text-decoration-color 150ms ease;
+  transition: text-decoration-color 150ms ease;
+  transition: text-decoration-color 150ms ease, -webkit-text-decoration-color 150ms ease;
 }
 
 .h-link-color h1:hover .h__anchor,
@@ -3800,7 +3822,8 @@ a.page-nav__item--next {
 }
 
 .page-header {
-  padding-top: 5rem;
+  padding-top: calc(5rem + 4 * 0rem);
+  padding-top: calc(5rem + 4 * var(--es));
 }
 
 .page-footer {
@@ -3814,6 +3837,17 @@ a.page-nav__item--next {
   height: 1rem;
   margin: 0 2rem 1rem 2rem;
   max-width: 70rem;
+}
+
+.li-box {
+  padding: calc(2rem + 2 * 0rem) 0rem;
+  padding: calc(2rem + 2 * var(--es)) 0rem;
+}
+
+.li-box > hr {
+  border-top: 1px solid #ddd;
+  height: 1rem;
+  margin: 0 2rem 2rem 2rem;
 }
 
 .cf:before,
