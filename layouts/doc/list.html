@@ -15,7 +15,7 @@
           {{ end }}
       </header>
         {{ with .Content }}
-          <div class="md md--serif md--list h-link-color md--link-color">
+          <div class="md md--sans md--list h-link-color md--link-color">
               {{- partial "content.html" . -}}
           </div>
         {{ end }}
@@ -29,7 +29,7 @@
         </nav>
       </div>
         {{ with .Page.GetPage "after_index" }}
-          <section class="md md--serif h-link-color md--link-color">
+          <section class="md md--sans h-link-color md--link-color">
               {{- partial "content.html" .Content }}
           </section>
         {{ end }}
