@@ -864,8 +864,7 @@ a.meta__item--text:hover {
   font-style: italic;
   text-transform: none;
   letter-spacing: 0.01em;
-  word-spacing: 0.015em;
-  letter-spacing: 0.005em;
+  word-spacing: 0.03em;
 }
 
 .title--li h2 {
@@ -1034,7 +1033,7 @@ a.meta__item--text:hover {
   margin-left: 2rem;
   margin-right: 2rem;
   max-width: 70rem;
-  border-top: 0.1rem solid #b97878;
+  border-top: 0.1rem solid rgba(33, 17, 17, 0.5);
 }
 @media screen and (min-width: 37em) {
   .md > p + ul, .md > p + ol {
@@ -1320,7 +1319,7 @@ a.meta__item--text:hover {
   font-weight: 300;
 }
 .md--serif .p-first strong {
-  font-weight: 600;
+  font-weight: 450;
 }
 
 .md--sans > p, .md--sans > ul, .md--sans > ol, .md--sans > dl, .md--sans > blockquote {
@@ -1690,15 +1689,15 @@ a.meta__item--text:hover {
   }
 }
 
-.md sup[id^=fnref] > a.footnote-ref {
+.md sup[id^=fnref] .footnote-ref {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   text-decoration: none;
 }
-.md sup[id^=fnref] > a.footnote-ref:before {
+.md sup[id^=fnref] .footnote-ref:before {
   content: " [";
 }
-.md sup[id^=fnref] > a.footnote-ref:after {
+.md sup[id^=fnref] .footnote-ref:after {
   content: "]";
 }
 .md sup[id^=fnref]:target {
@@ -1719,11 +1718,11 @@ a.meta__item--text:hover {
   padding: 0;
   border-top: 0.25em solid #444444;
 }
-.footnotes > ol {
+.footnotes ol {
   counter-reset: nr;
   color: #211111;
 }
-.footnotes > ol > li {
+.footnotes ol li {
   margin-bottom: 1.5rem;
   counter-increment: nr;
   transition: background-color 0.5s;
@@ -1732,32 +1731,30 @@ a.meta__item--text:hover {
   -webkit-column-break-inside: avoid;
   break-inside: avoid-column;
 }
-.footnotes > ol > li:target {
+.footnotes ol li:target {
   border-radius: 0.25em;
   background-color: #8fdbff;
 }
-.footnotes > ol > li:before {
+.footnotes ol li:before {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  font-size: 1.68875rem;
+  font-size: 1.675625rem;
   line-height: 2.625rem;
-  padding-top: 0.680063125rem;
-  margin-bottom: -0.680063125rem;
+  padding-top: 0.6849784375rem;
+  margin-bottom: -0.6849784375rem;
   scroll-margin-top: calc(3.375rem + var(--tnh));
   float: left;
   height: 1em;
   content: counter(nr, decimal) ".";
 }
-.footnotes > ol > li > p {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 450;
+.footnotes ol li p {
   font-size: 1.68875rem;
   line-height: 2.625rem;
   padding-top: 0.680063125rem;
   margin-bottom: -0.680063125rem;
   scroll-margin-top: calc(3.375rem + var(--tnh));
 }
-.footnotes > ol > li > p + p {
+.footnotes ol li p + p {
   text-indent: 2.5rem;
 }
 .footnotes ol li .footnote-backref {
@@ -1791,6 +1788,16 @@ a.meta__item--text:hover {
     column-count: 4;
   }
 }
+.md--sans .footnotes p {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.md--serif .footnotes p {
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 450;
+}
+
 .md h2 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
@@ -1799,13 +1806,9 @@ a.meta__item--text:hover {
   padding-top: calc(1.42893rem + 1 * var(--es));
   padding-bottom: calc(0.57107rem + 1 * var(--es));
   scroll-margin-top: calc(2rem + var(--tnh) - 1 * var(--es));
-  letter-spacing: 0.02em;
-  word-spacing: 0.06em;
+  letter-spacing: 0.01em;
+  word-spacing: 0.03em;
   color: #222;
-}
-.md h2 > span {
-  display: block;
-  border-bottom: 0.1rem solid rgba(34, 34, 34, 0.25);
 }
 .md h3 {
   font-size: 2.3833333333rem;
@@ -1838,12 +1841,10 @@ a.meta__item--text:hover {
   padding-top: 0.777215rem;
   margin-bottom: -0.777215rem;
   scroll-margin-top: calc(3rem + var(--tnh));
+  padding-bottom: 0;
 }
 .md .h-p {
   margin-right: 1ch;
-}
-.md > h5, .md > h6, .md > .h-p {
-  padding-left: 2rem;
 }
 .md h5, .md .h-p {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -1892,6 +1893,8 @@ a.meta__item--text:hover {
   padding-top: 0.464465rem;
   margin-bottom: -0.464465rem;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 0;
 }
 
 .md--home {
@@ -1915,8 +1918,21 @@ a.meta__item--text:hover {
   padding-bottom: 0.2134225rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
-  letter-spacing: 0.03em;
-  word-spacing: 0.09em;
+  letter-spacing: 0.05em;
+  word-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.md--doc h2 {
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: calc(1.42893rem + 1 * var(--es));
+  padding-bottom: calc(0.47107rem + 1 * var(--es));
+  scroll-margin-top: calc(2rem + var(--tnh) - 1 * var(--es));
+}
+.md--doc h2 > span {
+  display: block;
+  border-bottom: 0.1rem solid rgba(34, 34, 34, 0.5);
 }
 
 .md--white h2, .md--white h3, .md--white h4, .md--white h5, .md--white h6 {
