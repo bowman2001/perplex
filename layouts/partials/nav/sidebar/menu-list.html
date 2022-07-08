@@ -43,7 +43,7 @@
 {{- define "expand" -}}
     {{ with .Identifier }}
       <input id="menu-{{ . }}" class="chk-menu" type="checkbox">
-      <label class="open-menu" for="menu-{{ . }}"><span class="icon"></span></label>
+      <label class="open-menu" for="menu-{{ . }}"><span class="icon-font"></span></label>
     {{ else }}
         {{ warnf "Missing menu identifier for menu entry %q" .KeyName }}
     {{ end }}

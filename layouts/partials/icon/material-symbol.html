@@ -1,0 +1,6 @@
+{{ $path := print "material-symbols/svg/" .weight "/outlined/" .icon ".svg" }}
+{{ with resources.GetMatch $path }}
+  <span class="icon-svg">{{ .Content | safeHTML }}</span>
+    {{ else }}
+    {{ warnf "There is no resource \"%s\"" $path }}
+{{ end }}

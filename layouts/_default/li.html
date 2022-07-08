@@ -1,6 +1,6 @@
 <a href="{{- .RelPermalink -}}">
   <h4>
-      {{ with .Params.menu.doc.pre }}<span class="icon icon-bullet">{{ . }}</span>{{ end }}
+      {{ with .Params.menu.doc.pre }}<span class="icon-font icon-bullet">{{ . }}</span>{{ end }}
       {{ with .Title }}{{- . | site.Home.RenderString -}}{{ end }}
   </h4>
     {{- with .Description -}}

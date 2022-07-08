@@ -6,8 +6,13 @@
       <li>
         <a class="ctrl__link {{ if $page.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $page.HasMenuCurrent $menuName . -}}has-active{{- end }}"
            href="{{ .URL }}">
-            {{- with .Pre -}}<span class="icon">{{ . }}</span>{{ end }}
+            {{ if eq $menuName "main" }}
+              {{- with .Pre -}}<span class="icon-font">{{ . }}</span>{{ end }}
+              {{ with .Name }}{{ . | site.Home.RenderString }}{{ end }}
+          {{ else if eq $menuName "social" }}
+            {{- with .Pre -}}<span>{{ . }}</span>{{ end }}
             {{ with .Name }}{{ . | site.Home.RenderString }}{{ end }}
+          {{ end }}
         </a>
       </li>
     {{ end }}

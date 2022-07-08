@@ -1,5 +1,5 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
 <div class="meta__date" title="Last updated {{ if .GitInfo }}{{ with .GitInfo.AuthorName }}by {{ . }}{{ end }}{{end}}">
-  <span class="meta__item icon">edit</span>&ensp;<time datetime='{{ .Lastmod.Format $iso8601 }}'
-                                                 class="meta__item meta__item--text">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+  <span class="meta__item icon-font">edit</span>&ensp;<time datetime='{{ .Lastmod.Format $iso8601 }}'
+                                                            class="meta__item meta__item--text">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
 </div>

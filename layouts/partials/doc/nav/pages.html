@@ -8,7 +8,7 @@
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
                 {{ partial "nav/page/parent-title.html" . }}
-            <div class="icon page-nav__icon page-nav__icon--arrow">west</div>
+            <div class="icon-font page-nav__icon page-nav__icon--arrow">west</div>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "start" . }}{{ end }}
@@ -21,7 +21,7 @@
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
               {{ partial "nav/page/parent-title.html" . }}
-            <div class="icon page-nav__icon page-nav__icon--arrow">east</div>
+            <div class="icon-font page-nav__icon page-nav__icon--arrow">east</div>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "end" . }}{{ end }}
@@ -36,7 +36,7 @@
         {{ partial "doc/nav/menu-icon.html" . }}
       </div>
          {{ partial "nav/page/parent-title.html" . }}
-      <div class="icon page-nav__icon page-nav__icon--arrow">&nbsp;</div>
+      <div class="icon-font page-nav__icon page-nav__icon--arrow">&nbsp;</div>
     </span></li>
 {{ end }}
 
@@ -47,7 +47,7 @@
           {{ partial "doc/nav/menu-icon.html" . }}
       </div>
           {{ partial "nav/page/parent-title.html" . }}
-      <div class="icon page-nav__icon page-nav__icon--arrow">north</div>
+      <div class="icon-font page-nav__icon page-nav__icon--arrow">north</div>
     </a></li>
 {{ end }}
 

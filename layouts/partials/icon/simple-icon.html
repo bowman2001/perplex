@@ -1,0 +1,4 @@
+{{ $path := print "simple-icons/icons/" . ".svg" }}
+{{ with resources.GetMatch $path }}
+  <span class="icon-svg">{{ .Content | safeHTML }}</span>
+{{ end }}
