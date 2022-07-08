@@ -117,6 +117,7 @@ hr {
 :root {
   --fs: 51.8125%;
   --tnh: 10rem;
+  --tg: 3rem;
   --es: 0rem;
   --ta: left;
 }
@@ -139,6 +140,7 @@ hr {
   :root {
     --fs: 0.6578947368vw;
     --tnh: 5rem;
+    --tg: 4rem;
   }
 }
 
@@ -363,8 +365,8 @@ body {
 }
 
 .l-tnp {
-  padding-top: calc(10rem + 1rem + 3*0rem);
-  padding-top: calc(var(--tnh) + 1rem + 3*var(--es));
+  padding-top: calc(10rem + 3rem);
+  padding-top: calc(var(--tnh) + var(--tg));
 }
 
 @media screen and (min-width: 37em) {
@@ -452,8 +454,8 @@ body {
 #l-home {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(7, auto) 1fr auto;
-  grid-template-areas: "dt" "l1" "d2" "l3" "d4" "l5" "d6" "." "fo";
+  grid-template-rows: 5rem repeat(6, auto) 1fr auto;
+  grid-template-areas: "." "dt" "l1" "d2" "l3" "d4" "l5" "d6" "." "fo";
   position: relative;
   z-index: 1;
   height: 100%;
@@ -462,7 +464,7 @@ body {
 @media screen and (min-width: 37em) {
   #l-home {
     grid-template-columns: 2rem repeat(2, 37rem) 2rem;
-    grid-template-rows: 3rem repeat(4, 37rem) 1fr auto;
+    grid-template-rows: 5rem repeat(4, 37rem) 1fr auto;
     grid-template-areas: ".  .  .  ." ".  dt .  ." ".  l1 d2 ." ".  d4 l3 ." ".  l5 d6 ." ".  .  .  ." ".  fo fo .";
   }
 }
@@ -897,7 +899,13 @@ body {
   }
 }
 
-.icon {
+.icon-svg {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+}
+
+.icon-font {
   font-family: "Material Icons", monospace;
   font-weight: 400;
   font-style: normal;
@@ -909,11 +917,11 @@ body {
   direction: ltr;
 }
 
-#tgl-sb .icon:after {
+#tgl-sb .icon-font:after {
   content: "";
 }
 
-#tgl-sb.is-visible .icon:after {
+#tgl-sb.is-visible .icon-font:after {
   content: "";
 }
 
@@ -923,11 +931,11 @@ body {
   }
 }
 
-#toggle-toc .icon:after {
+#toggle-toc .icon-font:after {
   content: "";
 }
 
-#toggle-toc.is-visible .icon:after {
+#toggle-toc.is-visible .icon-font:after {
   content: "";
 }
 
@@ -3163,20 +3171,25 @@ a.meta__item--text:hover {
   transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
 }
 
-.nav__link .icon {
-  transition: color 150ms ease-in-out;
+.nav__link .icon-font,
+.nav__link path {
+  transition: color 150ms ease-in-out, fill 150ms ease-in-out;
 }
 
 .nav__link:hover,
 .nav__link:focus {
   color: #000;
-  text-shadow: 0 0 .1rem rgba(0, 0, 0, .1333333333);
   border-color: #c9187f;
 }
 
-.nav__link:hover .icon,
-.nav__link:focus .icon {
+.nav__link:hover .icon-font,
+.nav__link:focus .icon-font {
   color: #c9187f;
+}
+
+.nav__link:hover path,
+.nav__link:focus path {
+  fill: #c9187f;
 }
 
 .nav__link.is-active {
@@ -3185,11 +3198,11 @@ a.meta__item--text:hover {
   pointer-events: none;
 }
 
-.nav__link.is-active .icon {
+.nav__link.is-active .icon-font {
   color: #0084c2;
 }
 
-.icon {
+.icon-font {
   color: rgba(0, 0, 0, .54);
 }
 
@@ -3268,7 +3281,7 @@ a.meta__item--text:hover {
   font-weight: 700;
   font-size: 1.43rem;
   padding: .9rem 0 .4rem 0;
-  margin: 0 1rem;
+  margin: 0 .5rem;
 }
 
 @media screen and (min-width: 48em) {
@@ -3298,31 +3311,12 @@ a.meta__item--text:hover {
   text-transform: uppercase;
 }
 
-.ctrl-sh {
-  height: 5rem;
-}
-
-.ctrl-sw button,
-.ctrl-sw a {
-  padding: 0 .5rem;
-}
-
 .ctrl-left {
   justify-content: flex-start;
   padding-left: 1rem;
 }
 
-.ctrl-sw-left {
-  justify-content: flex-start;
-  padding-left: 1.5rem;
-}
-
 .ctrl-right {
-  justify-content: flex-end;
-  padding-right: 1rem;
-}
-
-.ctrl-sw-right {
   justify-content: flex-end;
   padding-right: 1.5rem;
 }
@@ -3557,7 +3551,7 @@ a.page-nav__item--next {
   padding-bottom: 1.1505065rem;
 }
 
-.sidebar__list li .icon {
+.sidebar__list li .icon-font {
   font-size: 150%;
   width: 5rem;
 }
@@ -3588,7 +3582,7 @@ a.page-nav__item--next {
   padding-bottom: .578228rem;
 }
 
-.sidebar__list li li .icon {
+.sidebar__list li li .icon-font {
   width: 4rem;
 }
 
@@ -3611,7 +3605,7 @@ a.page-nav__item--next {
     padding-bottom: .535535rem;
   }
 
-  .sidebar__list > li > a > .icon {
+  .sidebar__list > li > a > .icon-font {
     font-size: 187.5%;
   }
 
@@ -3688,11 +3682,11 @@ a.page-nav__item--next {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.open-menu > .icon {
+.open-menu > .icon-font {
   position: static;
 }
 
-.open-menu > .icon:after {
+.open-menu > .icon-font:after {
   content: "";
 }
 
@@ -3817,20 +3811,25 @@ a.page-nav__item--next {
   transition: color 150ms ease-in-out, text-decoration-color 150ms, border-color 150ms ease-in-out, -webkit-text-decoration-color 150ms;
 }
 
-#TableOfContents a .icon {
-  transition: color 150ms ease-in-out;
+#TableOfContents a .icon-font,
+#TableOfContents a path {
+  transition: color 150ms ease-in-out, fill 150ms ease-in-out;
 }
 
 #TableOfContents a:hover,
 #TableOfContents a:focus {
   color: #000;
-  text-shadow: 0 0 .1rem rgba(0, 0, 0, .1333333333);
   border-color: #c9187f;
 }
 
-#TableOfContents a:hover .icon,
-#TableOfContents a:focus .icon {
+#TableOfContents a:hover .icon-font,
+#TableOfContents a:focus .icon-font {
   color: #c9187f;
+}
+
+#TableOfContents a:hover path,
+#TableOfContents a:focus path {
+  fill: #c9187f;
 }
 
 #TableOfContents li li > a {
