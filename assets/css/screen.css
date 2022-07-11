@@ -1796,10 +1796,10 @@ a.meta__item--text:hover {
   margin-bottom: -0.77440625rem;
   scroll-margin-top: calc(3rem + var(--tnh));
   padding-bottom: 0;
-  color: #333;
+  color: #211111;
 }
 .md h6, .md .h-p-s {
-  color: #333;
+  color: #211111;
 }
 .md h2 + h3:not(.h-p), .md h3 + h4:not(.h-p) {
   margin-top: -1rem;
@@ -1836,11 +1836,11 @@ a.meta__item--text:hover {
   font-weight: 600;
   line-height: 3rem;
   padding: calc(2rem + var(--es)) 0 calc(0.9rem + var(--es));
-  color: #222;
+  color: #322222;
 }
 .md--h-serif h2 > span {
   display: block;
-  border-bottom: 0.1rem solid #222;
+  border-bottom: 0.1rem solid #322222;
 }
 .md--h-serif h3 {
   font-size: 1.905rem;
@@ -1850,17 +1850,17 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(2rem + var(--tnh));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
-  color: #292929;
+  color: #292222;
 }
 .md--h-serif h4 {
   font-size: 1.925rem;
   line-height: 2rem;
-  padding-top: 2.2790875rem;
-  padding-bottom: 0.7209125rem;
-  scroll-margin-top: calc(2rem + var(--tnh));
+  padding-top: calc(1.2790875rem + 1 * var(--es));
+  margin-bottom: calc(-0.2790875rem + 1 * var(--es));
+  scroll-margin-top: calc(3rem + var(--tnh) - 1 * var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
-  color: #333;
+  color: #211111;
 }
 .md--h-serif h5, .md--h-serif h6, .md--h-serif .h-p {
   font-size: 1.93rem;
@@ -1881,7 +1881,7 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #333;
+  color: #211111;
 }
 
 .md--h-sans h2 {
@@ -1894,7 +1894,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(2rem + var(--tnh) - 1 * var(--es));
   letter-spacing: 0.015em;
   word-spacing: 0.045em;
-  color: #222;
+  color: #322222;
 }
 .md--h-sans h3 {
   font-size: 2.3833333333rem;
@@ -1906,7 +1906,7 @@ a.meta__item--text:hover {
   font-weight: 600;
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
-  color: #292929;
+  color: #292222;
 }
 .md--h-sans h4 {
   font-size: 1.915rem;
@@ -1918,7 +1918,7 @@ a.meta__item--text:hover {
   font-weight: 600;
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
-  color: #333;
+  color: #211111;
 }
 .md--h-sans h5, .md--h-sans h6, .md--h-sans .h-p {
   font-size: 1.93rem;
@@ -1934,13 +1934,13 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.005em;
-  color: #333;
+  color: #211111;
 }
 .md--h-sans h6, .md--h-sans .h-p-s {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #333;
+  color: #211111;
 }
 
 .md--footer h2 {
@@ -1997,7 +1997,7 @@ a.meta__item--text:hover {
   text-transform: none;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
-  color: #222;
+  color: #322222;
 }
 .md--article h3 {
   font-size: 2.3833333333rem;
@@ -2007,7 +2007,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(2rem + var(--tnh));
   font-weight: 600;
   letter-spacing: 0.005em;
-  color: #292929;
+  color: #292222;
 }
 
 .note h3, .note h4, .note h5, .note h6 {
@@ -2788,6 +2788,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
 .page-nav__meta {
   font-size: 1.4625rem;
   line-height: 2rem;
+  margin-top: -0.54770625rem;
   margin-bottom: -0.45229375rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
