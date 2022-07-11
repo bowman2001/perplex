@@ -1855,9 +1855,9 @@ a.meta__item--text:hover {
 .md--h-serif h4 {
   font-size: 1.925rem;
   line-height: 2rem;
-  padding-top: calc(1.2790875rem + 1 * var(--es));
-  margin-bottom: calc(-0.2790875rem + 1 * var(--es));
-  scroll-margin-top: calc(3rem + var(--tnh) - 1 * var(--es));
+  padding-top: calc(1.7790875rem + 0.5 * var(--es));
+  padding-bottom: calc(0.2209125rem + 0.5 * var(--es));
+  scroll-margin-top: calc(2.5rem + var(--tnh) - 0 * var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
   color: #211111;
