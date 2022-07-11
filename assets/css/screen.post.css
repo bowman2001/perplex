@@ -994,8 +994,8 @@ a.meta__item--text:hover {
 }
 
 .title {
-  padding-bottom: calc(1rem + 1 * 0rem);
-  padding-bottom: calc(1rem + 1 * var(--es));
+  padding-bottom: calc(2rem + 2 * 0rem);
+  padding-bottom: calc(2rem + 2 * var(--es));
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1044,11 +1044,11 @@ a.meta__item--text:hover {
   padding-bottom: calc(0.57107rem + 1 * var(--es));
   scroll-margin-top: calc(3rem + 10rem);
   scroll-margin-top: calc(3rem + var(--tnh));
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
-  color: #222;
   letter-spacing: .01em;
   word-spacing: .03em;
+  color: #222;
 }
 
 .title--article h1 {
@@ -2342,12 +2342,12 @@ a.meta__item--text:hover {
 .md--h-serif h2 {
   font-size: 2.3833333333rem;
   line-height: 3rem;
-  padding-top: calc(1.6074416667rem + 1 * 0rem);
-  padding-top: calc(1.6074416667rem + 1 * var(--es));
-  padding-bottom: calc(0.2925583333rem + 1 * 0rem);
-  padding-bottom: calc(0.2925583333rem + 1 * var(--es));
-  scroll-margin-top: calc(2rem + 10rem - 1 * 0rem);
-  scroll-margin-top: calc(2rem + var(--tnh) - 1 * var(--es));
+  padding-top: calc(2.6074416667rem + 1 * 0rem);
+  padding-top: calc(2.6074416667rem + 1 * var(--es));
+  padding-bottom: calc(1.2925583333rem + 1 * 0rem);
+  padding-bottom: calc(1.2925583333rem + 1 * var(--es));
+  scroll-margin-top: calc(1rem + 10rem - 1 * 0rem);
+  scroll-margin-top: calc(1rem + var(--tnh) - 1 * var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
   color: #222;
@@ -2360,13 +2360,13 @@ a.meta__item--text:hover {
 
 .md--h-serif h3 {
   font-size: 1.905rem;
-  line-height: 3rem;
-  padding-top: calc(1.7865775rem + 1 * 0rem);
-  padding-top: calc(1.7865775rem + 1 * var(--es));
-  padding-bottom: calc(0.2134225rem + 1 * 0rem);
-  padding-bottom: calc(0.2134225rem + 1 * var(--es));
-  scroll-margin-top: calc(2rem + 10rem - 1 * 0rem);
-  scroll-margin-top: calc(2rem + var(--tnh) - 1 * var(--es));
+  line-height: 2rem;
+  padding-top: calc(1.2865775rem + 1 * 0rem);
+  padding-top: calc(1.2865775rem + 1 * var(--es));
+  padding-bottom: calc(0.7134225rem + 1 * 0rem);
+  padding-bottom: calc(0.7134225rem + 1 * var(--es));
+  scroll-margin-top: calc(3rem + 10rem - 1 * 0rem);
+  scroll-margin-top: calc(3rem + var(--tnh) - 1 * var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   color: #292929;
@@ -2375,10 +2375,10 @@ a.meta__item--text:hover {
 .md--h-serif h4 {
   font-size: 1.925rem;
   line-height: 2rem;
-  padding-top: 1.7790875rem;
-  padding-bottom: .2209125rem;
-  scroll-margin-top: calc(2.5rem + 10rem);
-  scroll-margin-top: calc(2.5rem + var(--tnh));
+  padding-top: 1.2790875rem;
+  padding-bottom: .7209125rem;
+  scroll-margin-top: calc(3rem + 10rem);
+  scroll-margin-top: calc(3rem + var(--tnh));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
   color: #333;
@@ -3193,7 +3193,7 @@ a.meta__item--text:hover {
 
 .nav__list li li li {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 400;
   letter-spacing: normal;
 }
 
