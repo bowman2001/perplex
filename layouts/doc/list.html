@@ -3,19 +3,21 @@
     <div id="l-content">
       <header class="page-header">
           {{- partial "img/featured.html" . -}}
+          {{ $level := "" }}
           {{ if eq .CurrentSection .FirstSection }}
-            <div class="title title--big">
-                {{ partial "title/title.html" . }}
-            </div>
+              {{ $level = "first" }}
+          {{ else if eq .Parent.CurrentSection .FirstSection }}
+              {{ $level = "second" }}
           {{ else }}
-            <div class="title title--ruled">
-              <hr>
-                {{ partial "title/title.html" . }}
-            </div>
+              {{ $level = "third" }}
           {{ end }}
+        <div class="title title--serif title--ruled title--{{- $level -}}">
+          <hr>
+            {{ partial "title/title.html" . }}
+        </div>
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--list h-link-color md--link-color">
+          <div class="md md--sans md--h-serif md--list h-link-color md--link-color">
               {{- partial "content.html" . -}}
           </div>
         {{ end }}
@@ -29,7 +31,7 @@
         </nav>
       </div>
         {{ with .Page.GetPage "after_index" }}
-          <section class="md md--sans h-link-color md--link-color">
+          <section class="md md--sans md--h-serif h-link-color md--link-color">
               {{- partial "content.html" .Content }}
           </section>
         {{ end }}

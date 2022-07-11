@@ -2,14 +2,14 @@
   <div id="l-content-box" class="l-box">
     <header class="page-header">
         {{- partial "img/featured.html" . -}}
-      <div class="title title--ruled">
+      <div class="title title--serif title--ruled">
         <hr>
           {{ partial "title/title.html" . }}
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
     {{ with .Content }}
-    <div class="md h-link-color md--serif">
+    <div class="md h-link-color md--sans md--h-serif">
         {{- partial "content.html" . -}}
     </div>
     {{ end }}
