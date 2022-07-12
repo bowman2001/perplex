@@ -1316,8 +1316,8 @@ a.meta__item--text:hover {
 }
 
 @media screen and (min-width: 37em) {
-  .md > p + ul,
-  .md > p + ol {
+  .md > p:not(:empty) + ul,
+  .md > p:not(:empty) + ol {
     margin-top: -1rem;
   }
 }
@@ -2920,7 +2920,7 @@ a.meta__item--text:hover {
   color: #667;
 }
 
-.note__content > p + p {
+.note__content > p:not(:empty) + p {
   margin-top: -1rem;
   text-indent: 2rem;
 }
