@@ -610,8 +610,8 @@ body {
 }
 
 .section {
-  padding: calc(2rem + 1 * 0rem) 0rem;
-  padding: calc(2rem + 1 * var(--es)) 0rem;
+  padding: calc(1rem + 1 * 0rem) 0rem;
+  padding: calc(1rem + 1 * var(--es)) 0rem;
 }
 
 @media screen and (min-width: 37em) {
@@ -1016,6 +1016,16 @@ a.meta__item--text:hover {
   color: #222;
 }
 
+.title--ruled > hr {
+  border-bottom: .25rem solid #222;
+  height: 1rem;
+}
+
+.title--first hr {
+  border-bottom: .35rem solid #222;
+  height: 1rem;
+}
+
 .title--first h1 {
   text-transform: uppercase;
   letter-spacing: .03em;
@@ -1034,11 +1044,6 @@ a.meta__item--text:hover {
   word-spacing: 0em;
   text-transform: lowercase;
   font-style: italic;
-}
-
-.title--ruled > hr {
-  border-bottom: .2rem solid #222;
-  height: 1rem;
 }
 
 .title--li h2 {
@@ -2370,11 +2375,11 @@ a.meta__item--text:hover {
 }
 
 .md--h-serif h3 {
-  font-size: 1.905rem;
+  font-size: 2.0955rem;
   line-height: 2rem;
-  padding-top: 2.2865775rem;
-  padding-bottom: calc(0.7134225rem + 1 * 0rem);
-  padding-bottom: calc(0.7134225rem + 1 * var(--es));
+  padding-top: 2.21523525rem;
+  padding-bottom: calc(0.78476475rem + 1 * 0rem);
+  padding-bottom: calc(0.78476475rem + 1 * var(--es));
   scroll-margin-top: calc(10rem + 3rem + 2rem - 4rem);
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 4rem);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
@@ -2508,8 +2513,8 @@ a.meta__item--text:hover {
   line-height: 2rem;
   padding-top: .464465rem;
   margin-bottom: -0.464465rem;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
   letter-spacing: .05em;
   word-spacing: .15em;
   text-transform: uppercase;
@@ -2881,33 +2886,6 @@ a.meta__item--text:hover {
     border: none;
     background: rgba(0, 0, 0, 0);
   }
-
-  .note > .note__content {
-    padding: 1rem 0;
-    overflow: visible;
-  }
-
-  .note > .note__content > h5,
-  .note > .note__content h6 {
-    font-size: 1.68875rem;
-    line-height: 2rem;
-    padding-top: .367563125rem;
-    margin-bottom: -.367563125rem;
-    scroll-margin-top: calc(10rem + 3rem + 2rem - 2rem);
-    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2rem);
-  }
-
-  .note > .note__content > p {
-    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 450;
-    font-size: 1.68875rem;
-    line-height: 2rem;
-    padding-top: .367563125rem;
-    padding-bottom: .632436875rem;
-    scroll-margin-top: calc(10rem + 3rem + 2rem - 2rem);
-    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2rem);
-    color: #667;
-  }
 }
 
 .note__content {
@@ -2945,6 +2923,40 @@ a.meta__item--text:hover {
 .note__content > p + p {
   margin-top: -1rem;
   text-indent: 2rem;
+}
+
+@media screen and (min-width: 48em) {
+  .note__content {
+    padding: 1rem 0;
+    overflow: visible;
+  }
+
+  .note__content > h5,
+  .note__content h6 {
+    font-size: 1.68875rem;
+    line-height: 2rem;
+    padding-top: .367563125rem;
+    margin-bottom: -.367563125rem;
+    scroll-margin-top: calc(10rem + 3rem + 2rem - 2rem);
+    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2rem);
+  }
+
+  .note__content > p {
+    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 450;
+    font-size: 1.68875rem;
+    line-height: 2rem;
+    padding-top: .367563125rem;
+    padding-bottom: .632436875rem;
+    scroll-margin-top: calc(10rem + 3rem + 2rem - 2rem);
+    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2rem);
+    color: #667;
+  }
+
+  .note__content > p strong {
+    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+  }
 }
 
 .note-star1 .note__content > p:first-of-type,
@@ -3001,6 +3013,7 @@ a.meta__item--text:hover {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  margin: 0;
 }
 
 .checkbox-note ~ .note__content:after {
@@ -3936,6 +3949,10 @@ a.page-nav__item--next {
   border-top: 1px solid #ddd;
   height: 1rem;
   margin: 0 2rem 2rem 2rem;
+}
+
+.li-header figure {
+  margin-top: 1rem;
 }
 
 .cf:before,
