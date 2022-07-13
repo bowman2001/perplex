@@ -1,10 +1,9 @@
 {{- define "main" -}}
   <div id="l-content-box" class="l-box">
     <header class="page-header">
-      <div class="title title--ruled">
-        <hr>
+      <div class="title title--list title--sans title-list--ruled">
           {{ partial "title/title.html" . }}
-          {{ partial "title/subtitle.html" . }}
+          <hr>
       </div>
     </header>
       {{ with .Content }}
