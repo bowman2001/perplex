@@ -647,6 +647,7 @@ body {
   .right {
     float: right;
     clear: right;
+    margin-left: 2rem;
   }
 }
 
@@ -791,7 +792,7 @@ body {
   #l-sidebar {
     left: -55.5rem;
     width: 55.5rem;
-    border-right: 1px solid rgba(33, 17, 17, .25);
+    border-right: 1px solid rgba(17, 17, 17, .25);
     margin-right: 2rem;
   }
 }
@@ -853,7 +854,7 @@ body {
 }
 
 #l-footer hr {
-  border-bottom: .2rem solid #211111;
+  border-bottom: .2rem solid #111;
   height: 1rem;
   margin: 2rem 2rem 0 2rem;
 }
@@ -994,42 +995,45 @@ a.meta__item--text:hover {
 }
 
 .title {
-  padding-bottom: calc(2rem + 2 * 0rem);
-  padding-bottom: calc(2rem + 2 * var(--es));
+  padding: 0 2rem calc(2rem + 2 * 0rem) 2rem;
+  padding: 0 2rem calc(2rem + 2 * var(--es)) 2rem;
   max-width: 74rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  color: #111;
 }
 
-.title--serif h1,
-.md--h-serif h1 {
+.title h1 {
   font-size: 2.86rem;
   line-height: 3rem;
   padding-top: .42893rem;
   padding-bottom: .57107rem;
   scroll-margin-top: calc(10rem + 3rem + 2rem - 3rem);
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
+}
+
+.title--list {
+  max-width: 100%;
+}
+
+.title--serif h1,
+.md--h-serif h1 {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  letter-spacing: .01em;
-  word-spacing: .03em;
-  color: #222;
+  font-weight: 450;
+}
+
+.title--sans h1 {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
 }
 
 .title--ruled > hr {
-  border-bottom: .25rem solid #222;
-  height: 1rem;
-}
-
-.title--first hr {
-  border-bottom: .35rem solid #222;
+  border-bottom: .25rem solid #111;
   height: 1rem;
 }
 
 .title--first h1 {
   text-transform: uppercase;
-  letter-spacing: .03em;
-  word-spacing: .09em;
+  letter-spacing: .02em;
+  word-spacing: .06em;
 }
 
 .title--second h1 {
@@ -1055,10 +1059,13 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(10rem + 3rem + 2rem - 3rem);
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
-  letter-spacing: .01em;
-  word-spacing: .03em;
-  color: #222;
+  font-weight: 450;
+  color: #111;
+}
+
+.title-list--ruled hr {
+  border-top: .2rem solid #111;
+  height: 1rem;
 }
 
 .title--article h1 {
@@ -1118,13 +1125,16 @@ a.meta__item--text:hover {
 .h-link-color h5 .h__anchor,
 .h-link-color h6 .h__anchor {
   color: inherit;
+  line-height: inherit;
   text-decoration: underline;
-  text-decoration-thickness: .2em;
+  text-underline-offset: .05em;
+  text-decoration-thickness: 1px;
   -webkit-text-decoration-color: rgba(0, 0, 0, 0);
           text-decoration-color: rgba(0, 0, 0, 0);
-  transition: -webkit-text-decoration-color 150ms ease;
-  transition: text-decoration-color 150ms ease;
-  transition: text-decoration-color 150ms ease, -webkit-text-decoration-color 150ms ease;
+  transition: background-color 150ms ease, -webkit-text-decoration-color 150ms ease;
+  transition: text-decoration-color 150ms ease, background-color 150ms ease;
+  transition: text-decoration-color 150ms ease, background-color 150ms ease, -webkit-text-decoration-color 150ms ease;
+  border-radius: .25em;
 }
 
 .h-link-color h1:hover .h__anchor,
@@ -1139,8 +1149,9 @@ a.meta__item--text:hover {
 .h-link-color h5:focus .h__anchor,
 .h-link-color h6:hover .h__anchor,
 .h-link-color h6:focus .h__anchor {
-  -webkit-text-decoration-color: #c9187f;
-          text-decoration-color: #c9187f;
+  -webkit-text-decoration-color: inherit;
+          text-decoration-color: inherit;
+  background-color: #fdedf6;
 }
 
 .h-link-color h1:target .h__anchor,
@@ -1218,7 +1229,7 @@ a.meta__item--text:hover {
 .md > ol,
 .md > blockquote,
 .md > dl {
-  color: #211111;
+  color: #111;
   transition: background-color .5s;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -1262,7 +1273,7 @@ a.meta__item--text:hover {
 
 .md .blockquote-hero {
   padding-right: 4rem;
-  color: #532b2b;
+  color: #373737;
 }
 
 .md .blockquote-hero > p,
@@ -1288,7 +1299,7 @@ a.meta__item--text:hover {
   top: .3em;
   left: -4.5rem;
   content: "“";
-  color: rgba(33, 17, 17, .15);
+  color: rgba(17, 17, 17, .15);
 }
 
 .md .blockquote-hero > p:last-child {
@@ -1301,7 +1312,7 @@ a.meta__item--text:hover {
   top: .3em;
   right: -3.5rem;
   content: "”";
-  color: rgba(33, 17, 17, .15);
+  color: rgba(17, 17, 17, .15);
 }
 
 .md hr {
@@ -1312,7 +1323,7 @@ a.meta__item--text:hover {
   margin-left: 2rem;
   margin-right: 2rem;
   max-width: 70rem;
-  border-top: .1rem solid rgba(33, 17, 17, .5);
+  border-top: .1rem solid rgba(17, 17, 17, .5);
 }
 
 @media screen and (min-width: 37em) {
@@ -1344,7 +1355,7 @@ a.meta__item--text:hover {
   -webkit-hyphens: none;
           hyphens: none;
   text-align: left;
-  color: #100;
+  color: #000;
 }
 
 .md .p-first strong {
@@ -1663,7 +1674,7 @@ a.meta__item--text:hover {
 .h-link-color ul,
 .h-link-color ol,
 .h-link-color dl {
-  color: #211111;
+  color: #111;
 }
 
 .h-link-color > p,
@@ -2072,7 +2083,7 @@ a.meta__item--text:hover {
 .md figure > figcaption .caption,
 .md figure > figcaption .attribution {
   display: inline;
-  color: #432222;
+  color: #2b2b2b;
   -webkit-hyphens: auto;
           hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
@@ -2197,7 +2208,7 @@ a.meta__item--text:hover {
 
 .footnotes ol {
   counter-reset: nr;
-  color: #211111;
+  color: #111;
 }
 
 .footnotes ol li {
@@ -2303,12 +2314,12 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(10rem + 3rem + 2rem - 3rem);
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
   padding-bottom: 0;
-  color: #211111;
+  color: #111;
 }
 
 .md h6,
 .md .h-p-s {
-  color: #211111;
+  color: #111;
 }
 
 .md h2 + h3:not(.h-p),
@@ -2358,33 +2369,33 @@ a.meta__item--text:hover {
 }
 
 .md--h-serif h2 {
-  font-size: 2.39375rem;
+  font-size: 2.145rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 3rem;
   padding: calc(2rem + 0rem) 0 calc(.9rem + 0rem);
   padding: calc(2rem + var(--es)) 0 calc(.9rem + var(--es));
   scroll-margin-top: calc(10rem + 3rem - 3rem - 0rem);
   scroll-margin-top: calc(var(--tnh) + var(--tg) - 3rem - var(--es));
-  color: #322222;
+  color: #222;
 }
 
 .md--h-serif h2 > span {
   display: block;
-  border-bottom: .1rem solid #322222;
+  border-bottom: .1rem solid #222;
 }
 
 .md--h-serif h3 {
-  font-size: 2.0955rem;
+  font-size: 1.915rem;
   line-height: 2rem;
-  padding-top: 2.21523525rem;
-  padding-bottom: calc(0.78476475rem + 1 * 0rem);
-  padding-bottom: calc(0.78476475rem + 1 * var(--es));
+  padding-top: 2.2828325rem;
+  padding-bottom: calc(0.7171675rem + 1 * 0rem);
+  padding-bottom: calc(0.7171675rem + 1 * var(--es));
   scroll-margin-top: calc(10rem + 3rem + 2rem - 4rem);
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 4rem);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  color: #292222;
+  font-weight: 600;
+  color: #222;
 }
 
 .md--h-serif h4 {
@@ -2398,7 +2409,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (3.5rem + 0.5 * var(--es)));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
-  color: #211111;
+  color: #111;
 }
 
 .md--h-serif h5,
@@ -2428,7 +2439,7 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #211111;
+  color: #111;
 }
 
 .md--h-sans h2 {
@@ -2444,7 +2455,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (4rem + 1 * var(--es)));
   letter-spacing: .015em;
   word-spacing: .045em;
-  color: #322222;
+  color: #222;
 }
 
 .md--h-sans h3 {
@@ -2460,7 +2471,7 @@ a.meta__item--text:hover {
   font-weight: 600;
   letter-spacing: .01em;
   word-spacing: .03em;
-  color: #292222;
+  color: #222;
 }
 
 .md--h-sans h4 {
@@ -2474,7 +2485,7 @@ a.meta__item--text:hover {
   font-weight: 600;
   letter-spacing: .01em;
   word-spacing: .03em;
-  color: #211111;
+  color: #111;
 }
 
 .md--h-sans h5,
@@ -2497,7 +2508,7 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: .005em;
-  color: #211111;
+  color: #111;
 }
 
 .md--h-sans h6,
@@ -2505,7 +2516,7 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #211111;
+  color: #111;
 }
 
 .md--footer h2 {
@@ -2572,7 +2583,7 @@ a.meta__item--text:hover {
   text-transform: none;
   letter-spacing: .005em;
   word-spacing: .015em;
-  color: #322222;
+  color: #222;
 }
 
 .md--article h3 {
@@ -2584,14 +2595,14 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 4rem);
   font-weight: 600;
   letter-spacing: .005em;
-  color: #292222;
+  color: #222;
 }
 
 .note h3,
 .note h4,
 .note h5,
 .note h6 {
-  color: #555;
+  color: #444;
 }
 
 .embed {
@@ -2610,7 +2621,7 @@ a.meta__item--text:hover {
   width: calc(50% - 1rem);
   margin-right: 2rem;
   clear: left;
-  color: #432222;
+  color: #2b2b2b;
   -webkit-hyphens: auto;
           hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
@@ -2685,7 +2696,7 @@ a.meta__item--text:hover {
 
 .i-border > .embed > img {
   box-shadow: none;
-  border: 1px solid rgba(33, 17, 17, .25);
+  border: 1px solid rgba(17, 17, 17, .25);
 }
 
 @media screen and (min-width: 37em) {
@@ -2733,14 +2744,14 @@ a.meta__item--text:hover {
   transition: text-decoration 150ms, -webkit-text-decoration 150ms;
   text-decoration: underline;
   text-decoration-thickness: .15em;
-  -webkit-text-decoration-color: rgba(33, 17, 17, .15);
-          text-decoration-color: rgba(33, 17, 17, .15);
+  -webkit-text-decoration-color: rgba(17, 17, 17, .15);
+          text-decoration-color: rgba(17, 17, 17, .15);
 }
 
 .md a:hover,
 .md a:focus {
-  -webkit-text-decoration-color: rgba(33, 17, 17, .67);
-          text-decoration-color: rgba(33, 17, 17, .67);
+  -webkit-text-decoration-color: rgba(17, 17, 17, .67);
+          text-decoration-color: rgba(17, 17, 17, .67);
 }
 
 .md pre :target {
@@ -2793,10 +2804,10 @@ a.meta__item--text:hover {
   display: inline-block;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-  line-height: 1.25em;
+  line-height: 1em;
   min-width: 1.25em;
   margin: 0 .1em;
-  padding: 0 .25em .1em .25em;
+  padding: .1em .25em;
   text-align: center;
   letter-spacing: .05em;
   border: .1em solid #aeaeae;
@@ -2977,7 +2988,7 @@ a.meta__item--text:hover {
   left: -1rem;
   font-size: .8em;
   line-height: 1;
-  color: #222;
+  color: #111;
 }
 
 .note-star1 .note__content > p:first-of-type:before {
@@ -3153,7 +3164,7 @@ a.meta__item--text:hover {
 .md table th,
 .md table td {
   padding: .5rem;
-  border-right: 0.1rem solid #d5aeae;
+  border-right: 0.1rem solid #b9b9b9;
 }
 
 .md table th:first-child,
@@ -3176,9 +3187,9 @@ a.meta__item--text:hover {
 
 .md li input[type=checkbox]:disabled {
   margin: 0 1em 0 0;
-  color: #643434;
-  border-color: #643434;
-  background-color: #643434;
+  color: #444;
+  border-color: #444;
+  background-color: #444;
 }
 
 .md ul.indent-small li,
@@ -3393,7 +3404,7 @@ a.meta__item--text:hover {
 }
 
 .page-nav {
-  color: #211111;
+  color: #111;
   margin-right: 2rem;
   margin-left: 2rem;
   max-width: 70rem;
@@ -3543,7 +3554,7 @@ a.page-nav__item--next {
 
 .page-nav__title {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: .01em;
   word-spacing: .03em;
 }
@@ -3934,7 +3945,7 @@ a.page-nav__item--next {
 }
 
 .page-footer > hr {
-  border-bottom: .1rem solid #211111;
+  border-bottom: .1rem solid #111;
   height: 1rem;
   margin: 0 2rem 1rem 2rem;
   max-width: 70rem;

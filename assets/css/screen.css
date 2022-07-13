@@ -515,6 +515,7 @@ body {
   .right {
     float: right;
     clear: right;
+    margin-left: 2rem;
   }
 }
 
@@ -643,7 +644,7 @@ body {
   #l-sidebar {
     left: -55.5rem;
     width: 55.5rem;
-    border-right: 1px solid rgba(33, 17, 17, 0.25);
+    border-right: 1px solid rgba(17, 17, 17, 0.25);
     margin-right: 2rem;
   }
 }
@@ -693,7 +694,7 @@ body {
   padding-bottom: calc(1rem + 1 * var(--es));
 }
 #l-footer hr {
-  border-bottom: 0.2rem solid #211111;
+  border-bottom: 0.2rem solid #111111;
   height: 1rem;
   margin: 2rem 2rem 0 2rem;
 }
@@ -821,38 +822,41 @@ a.meta__item--text:hover {
 }
 
 .title {
-  padding-bottom: calc(2rem + 2 * var(--es));
+  padding: 0 2rem calc(2rem + 2 * var(--es)) 2rem;
   max-width: 74rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  color: #111111;
 }
-
-.title--serif h1, .md--h-serif h1 {
+.title h1 {
   font-size: 2.86rem;
   line-height: 3rem;
   padding-top: 0.42893rem;
   padding-bottom: 0.57107rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
+}
+
+.title--list {
+  max-width: 100%;
+}
+
+.title--serif h1, .md--h-serif h1 {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  word-spacing: 0.03em;
-  color: #222;
+  font-weight: 450;
+}
+
+.title--sans h1 {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
 }
 
 .title--ruled > hr {
-  border-bottom: 0.25rem solid #222;
+  border-bottom: 0.25rem solid #111111;
   height: 1rem;
 }
 
-.title--first hr {
-  border-bottom: 0.35rem solid #222;
-  height: 1rem;
-}
 .title--first h1 {
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  word-spacing: 0.09em;
+  letter-spacing: 0.02em;
+  word-spacing: 0.06em;
 }
 
 .title--second h1 {
@@ -876,10 +880,13 @@ a.meta__item--text:hover {
   padding-bottom: calc(0.57107rem + 1 * var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  word-spacing: 0.03em;
-  color: #222;
+  font-weight: 450;
+  color: #111111;
+}
+
+.title-list--ruled hr {
+  border-top: 0.2rem solid #111111;
+  height: 1rem;
 }
 
 .title--article h1 {
@@ -927,13 +934,17 @@ a.meta__item--text:hover {
 
 .h-link-color h1 .h__anchor, .h-link-color h2 .h__anchor, .h-link-color h3 .h__anchor, .h-link-color h4 .h__anchor, .h-link-color h5 .h__anchor, .h-link-color h6 .h__anchor {
   color: inherit;
+  line-height: inherit;
   text-decoration: underline;
-  text-decoration-thickness: 0.2em;
+  text-underline-offset: 0.05em;
+  text-decoration-thickness: 1px;
   text-decoration-color: transparent;
-  transition: text-decoration-color 150ms ease;
+  transition: text-decoration-color 150ms ease, background-color 150ms ease;
+  border-radius: 0.25em;
 }
 .h-link-color h1:hover .h__anchor, .h-link-color h1:focus .h__anchor, .h-link-color h2:hover .h__anchor, .h-link-color h2:focus .h__anchor, .h-link-color h3:hover .h__anchor, .h-link-color h3:focus .h__anchor, .h-link-color h4:hover .h__anchor, .h-link-color h4:focus .h__anchor, .h-link-color h5:hover .h__anchor, .h-link-color h5:focus .h__anchor, .h-link-color h6:hover .h__anchor, .h-link-color h6:focus .h__anchor {
-  text-decoration-color: hsl(325deg, 79%, 44%);
+  text-decoration-color: inherit;
+  background-color: #fdedf6;
 }
 .h-link-color h1:target .h__anchor, .h-link-color h2:target .h__anchor, .h-link-color h3:target .h__anchor, .h-link-color h4:target .h__anchor, .h-link-color h5:target .h__anchor, .h-link-color h6:target .h__anchor {
   text-decoration-color: hsl(199deg, 100%, 38%);
@@ -969,7 +980,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
 }
 .md > p, .md > ul, .md > ol, .md > blockquote, .md > dl {
-  color: #211111;
+  color: #111111;
   transition: background-color 0.5s;
   background-color: transparent;
 }
@@ -997,7 +1008,7 @@ a.meta__item--text:hover {
 }
 .md .blockquote-hero {
   padding-right: 4rem;
-  color: #532b2b;
+  color: #373737;
 }
 .md .blockquote-hero > p, .md .blockquote-hero > ul, .md .blockquote-hero > ol, .md .blockquote-hero > dl {
   font-size: 1.93rem;
@@ -1016,7 +1027,7 @@ a.meta__item--text:hover {
   top: 0.3em;
   left: -4.5rem;
   content: "“";
-  color: rgba(33, 17, 17, 0.15);
+  color: rgba(17, 17, 17, 0.15);
 }
 .md .blockquote-hero > p:last-child {
   position: relative;
@@ -1027,7 +1038,7 @@ a.meta__item--text:hover {
   top: 0.3em;
   right: -3.5rem;
   content: "”";
-  color: rgba(33, 17, 17, 0.15);
+  color: rgba(17, 17, 17, 0.15);
 }
 .md hr {
   margin-top: calc(1.4rem + 0.5 * var(--es));
@@ -1035,7 +1046,7 @@ a.meta__item--text:hover {
   margin-left: 2rem;
   margin-right: 2rem;
   max-width: 70rem;
-  border-top: 0.1rem solid rgba(33, 17, 17, 0.5);
+  border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
 }
 @media screen and (min-width: 37em) {
   .md > p:not(:empty) + ul, .md > p:not(:empty) + ol {
@@ -1057,7 +1068,7 @@ a.meta__item--text:hover {
   font-weight: 300;
   hyphens: none;
   text-align: left;
-  color: #100;
+  color: #000000;
 }
 .md .p-first strong {
   font-weight: 450;
@@ -1297,7 +1308,7 @@ a.meta__item--text:hover {
   padding-bottom: calc(1 * var(--es));
 }
 .h-link-color p, .h-link-color ul, .h-link-color ol, .h-link-color dl {
-  color: #211111;
+  color: #111111;
 }
 .h-link-color > p, .h-link-color > ul, .h-link-color > ol, .h-link-color > blockquote, .h-link-color > dl {
   text-align: var(--ta);
@@ -1612,7 +1623,7 @@ a.meta__item--text:hover {
 }
 .md figure > figcaption .caption, .md figure > figcaption .attribution {
   display: inline;
-  color: #432222;
+  color: #2b2b2b;
   hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
   hyphenate-limit-lines: 2;
@@ -1713,7 +1724,7 @@ a.meta__item--text:hover {
 }
 .footnotes ol {
   counter-reset: nr;
-  color: #211111;
+  color: #111111;
 }
 .footnotes ol li {
   margin-bottom: 1.5rem;
@@ -1800,10 +1811,10 @@ a.meta__item--text:hover {
   margin-bottom: -0.77440625rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   padding-bottom: 0;
-  color: #211111;
+  color: #111111;
 }
 .md h6, .md .h-p-s {
-  color: #211111;
+  color: #111111;
 }
 .md h2 + h3:not(.h-p), .md h3 + h4:not(.h-p) {
   margin-top: -1rem;
@@ -1835,27 +1846,27 @@ a.meta__item--text:hover {
 }
 
 .md--h-serif h2 {
-  font-size: 2.39375rem;
+  font-size: 2.145rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 3rem;
   padding: calc(2rem + var(--es)) 0 calc(0.9rem + var(--es));
   scroll-margin-top: calc(var(--tnh) + var(--tg) - 3rem - var(--es));
-  color: #322222;
+  color: #222222;
 }
 .md--h-serif h2 > span {
   display: block;
-  border-bottom: 0.1rem solid #322222;
+  border-bottom: 0.1rem solid #222222;
 }
 .md--h-serif h3 {
-  font-size: 2.0955rem;
+  font-size: 1.915rem;
   line-height: 2rem;
-  padding-top: 2.21523525rem;
-  padding-bottom: calc(0.78476475rem + 1 * var(--es));
+  padding-top: 2.2828325rem;
+  padding-bottom: calc(0.7171675rem + 1 * var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  color: #292222;
+  font-weight: 600;
+  color: #222222;
 }
 .md--h-serif h4 {
   font-size: 1.925rem;
@@ -1865,7 +1876,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (3.5rem + 0.5 * var(--es)));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
-  color: #211111;
+  color: #111111;
 }
 .md--h-serif h5, .md--h-serif h6, .md--h-serif .h-p {
   font-size: 1.93rem;
@@ -1886,7 +1897,7 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #211111;
+  color: #111111;
 }
 
 .md--h-sans h2 {
@@ -1899,7 +1910,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (4rem + 1 * var(--es)));
   letter-spacing: 0.015em;
   word-spacing: 0.045em;
-  color: #322222;
+  color: #222222;
 }
 .md--h-sans h3 {
   font-size: 2.3833333333rem;
@@ -1911,7 +1922,7 @@ a.meta__item--text:hover {
   font-weight: 600;
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
-  color: #292222;
+  color: #222222;
 }
 .md--h-sans h4 {
   font-size: 1.915rem;
@@ -1923,7 +1934,7 @@ a.meta__item--text:hover {
   font-weight: 600;
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
-  color: #211111;
+  color: #111111;
 }
 .md--h-sans h5, .md--h-sans h6, .md--h-sans .h-p {
   font-size: 1.93rem;
@@ -1939,13 +1950,13 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.005em;
-  color: #211111;
+  color: #111111;
 }
 .md--h-sans h6, .md--h-sans .h-p-s {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #211111;
+  color: #111111;
 }
 
 .md--footer h2 {
@@ -2002,7 +2013,7 @@ a.meta__item--text:hover {
   text-transform: none;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
-  color: #322222;
+  color: #222222;
 }
 .md--article h3 {
   font-size: 2.3833333333rem;
@@ -2012,11 +2023,11 @@ a.meta__item--text:hover {
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-weight: 600;
   letter-spacing: 0.005em;
-  color: #292222;
+  color: #222222;
 }
 
 .note h3, .note h4, .note h5, .note h6 {
-  color: #555555;
+  color: #444444;
 }
 
 .embed {
@@ -2034,7 +2045,7 @@ a.meta__item--text:hover {
   width: calc(50% - 1rem);
   margin-right: 2rem;
   clear: left;
-  color: #432222;
+  color: #2b2b2b;
   hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
   hyphenate-limit-lines: 2;
@@ -2101,7 +2112,7 @@ a.meta__item--text:hover {
 
 .i-border > .embed > img {
   box-shadow: none;
-  border: 1px solid rgba(33, 17, 17, 0.25);
+  border: 1px solid rgba(17, 17, 17, 0.25);
 }
 
 @media screen and (min-width: 37em) {
@@ -2141,10 +2152,10 @@ a.meta__item--text:hover {
   transition: text-decoration 150ms;
   text-decoration: underline;
   text-decoration-thickness: 0.15em;
-  text-decoration-color: rgba(33, 17, 17, 0.15);
+  text-decoration-color: rgba(17, 17, 17, 0.15);
 }
 .md a:hover, .md a:focus {
-  text-decoration-color: rgba(33, 17, 17, 0.67);
+  text-decoration-color: rgba(17, 17, 17, 0.67);
 }
 .md pre :target {
   text-decoration: none;
@@ -2182,10 +2193,10 @@ a.meta__item--text:hover {
   display: inline-block;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-  line-height: 1.25em;
+  line-height: 1em;
   min-width: 1.25em;
   margin: 0 0.1em;
-  padding: 0 0.25em 0.1em 0.25em;
+  padding: 0.1em 0.25em;
   text-align: center;
   letter-spacing: 0.05em;
   border: 0.1em solid #aeaeae;
@@ -2324,7 +2335,7 @@ a.meta__item--text:hover {
   left: -1rem;
   font-size: 0.8em;
   line-height: 1;
-  color: #222;
+  color: #111111;
 }
 
 .note-star1 .note__content > p:first-of-type:before {
@@ -2471,7 +2482,7 @@ a.meta__item--text:hover {
 }
 .md table th, .md table td {
   padding: 0.5rem;
-  border-right: 0.1rem solid #d5aeae;
+  border-right: 0.1rem solid #b9b9b9;
 }
 .md table th:first-child, .md table td:first-child {
   padding-left: 0;
@@ -2494,9 +2505,9 @@ a.meta__item--text:hover {
 } */
 .md li input[type=checkbox]:disabled {
   margin: 0 1em 0 0;
-  color: #643434;
-  border-color: #643434;
-  background-color: #643434;
+  color: #444444;
+  border-color: #444444;
+  background-color: #444444;
 }
 
 .md ul.indent-small li, .md ol.indent-small li {
@@ -2683,7 +2694,7 @@ a.meta__item--text:hover {
 }
 
 .page-nav {
-  color: #211111;
+  color: #111111;
   margin-right: 2rem;
   margin-left: 2rem;
   max-width: 70rem;
@@ -2812,7 +2823,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
 
 .page-nav__title {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
 }
@@ -3129,7 +3140,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
   padding-top: 1rem;
 }
 .page-footer > hr {
-  border-bottom: 0.1rem solid #211111;
+  border-bottom: 0.1rem solid #111111;
   height: 1rem;
   margin: 0 2rem 1rem 2rem;
   max-width: 70rem;
