@@ -487,7 +487,7 @@ body {
 }
 
 .left, .right {
-  width: calc(45% - 2rem);
+  width: calc( 45% - 2rem );
 }
 @media screen and (min-width: 37em) {
   .left, .right {
@@ -1870,23 +1870,23 @@ a.meta__item--text:hover {
   border-bottom: 0.1rem solid #222222;
 }
 .md--h-serif h3 {
-  font-size: 1.915rem;
+  font-size: 1.905rem;
   line-height: 2rem;
-  padding-top: 2.2828325rem;
-  padding-bottom: calc(0.7171675rem + 1 * var(--es));
+  padding-top: 2.2865775rem;
+  padding-bottom: calc(0.7134225rem + 1 * var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
+  font-weight: 700;
   color: #222222;
 }
 .md--h-serif h4 {
-  font-size: 1.925rem;
+  font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: calc(1.7790875rem + 0.5 * var(--es));
-  padding-bottom: calc(0.2209125rem + 0.5 * var(--es));
+  padding-top: calc(1.85791975rem + 0.5 * var(--es));
+  padding-bottom: calc(0.14208025rem + 0.5 * var(--es));
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (3.5rem + 0.5 * var(--es)));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
+  font-weight: 700;
   color: #111111;
 }
 .md--h-serif h5, .md--h-serif h6, .md--h-serif .h-p {
