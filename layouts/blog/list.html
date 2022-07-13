@@ -11,16 +11,13 @@
             {{- partial "content.html" . -}}
         </div>
       {{ end }}
-    <ul>
+    <ul class="page-list">
         {{- range .Pages -}}
-          <li>{{- .Render "li-full" -}}</li>
+          <li class="li-box">{{- .Render "li-full" -}}</li>
+            <hr>
         {{- end -}}
     </ul>
     <footer class="page-footer">
-      <div class="meta">
-          {{ partial "nav/breadcrumbs/footer.html" . }}
-          {{ partial "date/page/updated.html" . }}
-      </div>
     </footer>
   </div>
 {{- end -}}

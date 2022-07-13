@@ -2,7 +2,9 @@
   <div id="l-content-box" class="l-box">
     <div id="l-content">
       <header class="page-header">
-          {{- partial "img/featured.html" . -}}
+          <aside class="right show3">
+            {{- partial "img/featured.html" . -}}
+          </aside>
           {{ $level := "" }}
           {{ if eq .CurrentSection .FirstSection }}
               {{ $level = "first" }}

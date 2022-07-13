@@ -315,10 +315,7 @@ img {
 }
 
 figure {
-  padding-left: calc(2 * 0rem);
-  padding-left: calc(2 * var(--es));
-  padding-right: calc(2 * 0rem);
-  padding-right: calc(2 * var(--es));
+  padding: 0 2rem 2rem 2rem;
 }
 
 figcaption {
@@ -614,6 +611,11 @@ body {
   padding: calc(1rem + 1 * var(--es)) 0rem;
 }
 
+.left,
+.right {
+  width: calc(45% - 2rem);
+}
+
 @media screen and (min-width: 37em) {
   .left,
   .right {
@@ -635,18 +637,24 @@ body {
   }
 }
 
+.left {
+  float: left;
+  clear: left;
+}
+
 @media screen and (min-width: 37em) {
   .left {
-    float: left;
-    clear: left;
     margin-right: 2rem;
   }
 }
 
+.right {
+  float: right;
+  clear: right;
+}
+
 @media screen and (min-width: 37em) {
   .right {
-    float: right;
-    clear: right;
     margin-left: 2rem;
   }
 }
@@ -948,8 +956,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
   color: #556;
-  max-width: 74rem;
-  padding: 0 2rem;
+  max-width: 70rem;
+  margin: 0 2rem;
 }
 
 .meta__list {
@@ -1012,6 +1020,8 @@ a.meta__item--text:hover {
 
 .title--list {
   max-width: 100%;
+  padding-bottom: calc(1rem + 1 * 0rem);
+  padding-bottom: calc(1rem + 1 * var(--es));
 }
 
 .title--serif h1,
@@ -1180,7 +1190,6 @@ a.meta__item--text:hover {
 }
 
 .md > p,
-.md > blockquote,
 .md > ul,
 .md > ol,
 .md > dl,
@@ -1248,8 +1257,10 @@ a.meta__item--text:hover {
 }
 
 .md > blockquote {
-  padding: 0 calc(3rem + 1 * 0rem) calc(1 * 0rem) 0;
-  padding: 0 calc(3rem + 1 * var(--es)) calc(1 * var(--es)) 0;
+  padding: 0 calc(1 * 0rem) calc(1 * 0rem) 3rem;
+  padding: 0 calc(1 * var(--es)) calc(1 * var(--es)) 3rem;
+  margin: 0 2rem;
+  max-width: 70rem;
 }
 
 .md > blockquote > p,
@@ -1873,7 +1884,8 @@ a.meta__item--text:hover {
 .md .highlight {
   overflow: auto;
   max-height: 200rem;
-  padding: .9rem 0;
+  padding-top: .9rem;
+  padding-bottom: .9rem;
 }
 
 .md .highlight > div,
@@ -2382,6 +2394,7 @@ a.meta__item--text:hover {
 
 .md--h-serif h2 > span {
   display: block;
+  max-width: 100%;
   border-bottom: .1rem solid #222;
 }
 
@@ -3142,12 +3155,14 @@ a.meta__item--text:hover {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
   border-collapse: separate;
   width: 100%;
+  margin-top: -0.5rem;
 }
 
 .md table thead {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: .01em;
+  letter-spacing: .02em;
+  word-spacing: .06em;
 }
 
 .md table thead:before {
@@ -3158,7 +3173,7 @@ a.meta__item--text:hover {
 
 .md table tbody {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 400;
 }
 
 .md table th,
@@ -3180,8 +3195,8 @@ a.meta__item--text:hover {
 
 .md table::after {
   display: table-row;
-  height: calc(1rem + 0rem);
-  height: calc(1rem + var(--es));
+  height: calc(.5rem + 0rem);
+  height: calc(.5rem + var(--es));
   content: "";
 }
 
@@ -3471,6 +3486,7 @@ a.meta__item--text:hover {
   display: flex;
   flex-wrap: nowrap;
   align-items: start;
+  height: 100%;
 }
 
 .page-nav__item--prev,
@@ -3938,6 +3954,12 @@ a.page-nav__item--next {
   margin-top: 1rem;
 }
 
+.page-list > hr {
+  border-bottom: .1rem solid rgba(17, 17, 17, .5);
+  height: 1rem;
+  margin: 0 2rem;
+}
+
 .page-footer {
   flex: 0 0 auto;
   margin-top: auto;
@@ -3952,8 +3974,8 @@ a.page-nav__item--next {
 }
 
 .li-box {
-  padding: calc(2rem + 2 * 0rem) 0rem;
-  padding: calc(2rem + 2 * var(--es)) 0rem;
+  padding: calc(1rem + 1 * 0rem) 0rem;
+  padding: calc(1rem + 1 * var(--es)) 0rem;
 }
 
 .li-box > hr {

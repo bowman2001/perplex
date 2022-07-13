@@ -1,15 +1,15 @@
-<section class="li-box">
-  <header class="li-header">
+<header class="li-header">
+  <aside class="right show2">
       {{ partial "img/featured.html" . }}
-    <div class="title title--li h-link-color">
-        {{ partial "title/title-in-list.html" . }}
-        {{ partial "title/subtitle.html" . }}
-    </div>
-    <div class="meta">
-        {{ partial "date/page/published.html" . }}
-    </div>
-  </header>
-  <div class="md md--sans md--h-serif md--link-color h-link-color">
-      {{ partial "content-blogroll.html" .Content }}
+  </aside>
+  <div class="title title--li h-link-color">
+      {{ partial "title/title-in-list.html" . }}
+      {{ partial "title/subtitle.html" . }}
   </div>
-</section>
+  <div class="meta">
+      {{ partial "date/page/published.html" . }}
+  </div>
+</header>
+<div class="md md--sans md--h-serif md--link-color h-link-color">
+    {{ partial "content-blogroll.html" .Content }}
+</div>

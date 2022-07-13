@@ -2,7 +2,7 @@
 {{- with $img -}}
     {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
     {{- $imgclass := "" -}}
-    <figure class="md right show2">
+    <figure class="md">
         {{- if eq .MediaType.SubType "svg" -}}
           <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
         {{- else -}}
