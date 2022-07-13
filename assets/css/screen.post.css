@@ -2791,18 +2791,18 @@ a.meta__item--text:hover {
 
 .md kbd {
   display: inline-block;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-  line-height: 2.2rem;
-  min-width: 2.4rem;
-  margin: 0 .2rem;
-  padding: 0 .5rem .2rem .5rem;
+  line-height: 1.25em;
+  min-width: 1.25em;
+  margin: 0 .1em;
+  padding: 0 .25em .1em .25em;
   text-align: center;
   letter-spacing: .05em;
-  border: .1em solid #b97878;
-  border-radius: .5rem;
+  border: .1em solid #aeaeae;
+  border-radius: .2em;
   background-color: #eee;
-  box-shadow: 0 .1em .2em #b97878;
+  box-shadow: 0 .1rem .25rem #aeaeae;
 }
 
 .md cite {
