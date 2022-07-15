@@ -1229,7 +1229,7 @@ a.meta__item--text:hover {
 .md > blockquote:target,
 .md > dl:target {
   border-radius: .25em;
-  background-color: #8fdbff;
+  background-color: rgba(0, 132, 194, .1);
 }
 
 .md p > .pull-quote {
@@ -1322,11 +1322,6 @@ a.meta__item--text:hover {
 .md dd p + ol,
 .md dd p + ul {
   padding-top: 1rem;
-}
-
-.md dd li,
-.md dd p {
-  font-weight: 450;
 }
 
 .md .p-first {
@@ -2154,7 +2149,7 @@ a.meta__item--text:hover {
 }
 
 .md sup[id^=fnref]:target {
-  background-color: #8fdbff;
+  background-color: rgba(0, 132, 194, .1);
   scroll-margin-top: 4rem;
 }
 
@@ -2189,7 +2184,7 @@ a.meta__item--text:hover {
 
 .footnotes ol li:target {
   border-radius: .25em;
-  background-color: #8fdbff;
+  background-color: rgba(0, 132, 194, .1);
 }
 
 .footnotes ol li:before {

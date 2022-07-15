@@ -994,7 +994,7 @@ a.meta__item--text:hover {
 }
 .md > p:target, .md > ul:target, .md > ol:target, .md > blockquote:target, .md > dl:target {
   border-radius: 0.25em;
-  background-color: #8fdbff;
+  background-color: rgba(0, 132, 194, 0.1);
 }
 .md p > .pull-quote {
   margin-left: -0.5em;
@@ -1065,9 +1065,6 @@ a.meta__item--text:hover {
 }
 .md dd p + ol, .md dd p + ul {
   padding-top: 1rem;
-}
-.md dd li, .md dd p {
-  font-weight: 450;
 }
 .md .p-first {
   font-size: 2.071875rem;
@@ -1717,7 +1714,7 @@ a.meta__item--text:hover {
   content: "]";
 }
 .md sup[id^=fnref]:target {
-  background-color: #8fdbff;
+  background-color: rgba(0, 132, 194, 0.1);
   scroll-margin-top: 4rem;
 }
 
@@ -1748,7 +1745,7 @@ a.meta__item--text:hover {
 }
 .footnotes ol li:target {
   border-radius: 0.25em;
-  background-color: #8fdbff;
+  background-color: rgba(0, 132, 194, 0.1);
 }
 .footnotes ol li:before {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
