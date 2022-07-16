@@ -1,20 +1,20 @@
 {{- define "main" -}}
-  <div id="l-content-box" class="l-box">
+  <div id="l-content-box" class="l-box l-box--full">
     <div id="l-content">
     <header class="page-header">
         <aside class="right show2">
             {{- partial "img/featured.html" . -}}
         </aside>
-      <div class="title title--serif">
+      <div class="title title--serif title--margin-left">
           {{ partial "title/title.html" . }}
           {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--sans md--h-serif h-link-color md--link-color">
+    <div class="md md--sans md--h-serif md--margin-left md--link-color h-link-color">
         {{- partial "content.html" .Content -}}
     </div>
     </div>
-    <footer class="page-footer">
+    <footer class="page-footer l-margin-left">
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}

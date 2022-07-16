@@ -1,13 +1,13 @@
 {{- define "main" -}}
-  <div id="l-content-box" class="l-box">
+  <div id="l-content-box" class="l-box l-box--full">
     <header class="page-header">
-      <div class="title title--list title--sans title-list--ruled">
+      <div class="title title--list title--sans title-list--ruled title--margin-left">
           {{ partial "title/title.html" . }}
           <hr>
       </div>
     </header>
       {{ with .Content }}
-        <div class="md md--sans md--h-serif md--list h-link-color">
+        <div class="md md--sans md--h-serif md--list h-link-color md--margin-left">
             {{- partial "content.html" . -}}
         </div>
       {{ end }}
@@ -21,3 +21,5 @@
     </footer>
   </div>
 {{- end -}}
+
+{{ define "sidebar" }}{{ partial "blog/nav/sidebar.html" . }}{{ end }}
