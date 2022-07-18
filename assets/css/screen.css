@@ -1735,7 +1735,7 @@ a.meta__item--text:hover {
 }
 .md sup[id^=fnref]:target {
   background-color: rgba(0, 132, 194, 0.1);
-  scroll-margin-top: 4rem;
+  scroll-margin-top: calc(var(--tnh) + var(--tg));
 }
 
 .footnotes {
@@ -2302,21 +2302,21 @@ a.meta__item--text:hover {
 }
 .note__content h3, .note__content h4, .note__content h5, .note__content h6, .note__content .h-p {
   display: inline;
-  font-size: 1.6083333333rem;
+  font-size: 1.6145833333rem;
   line-height: 2.5rem;
-  padding-top: 0.6476791667rem;
-  margin-bottom: -0.6476791667rem;
+  padding-top: 0.6453385417rem;
+  margin-bottom: -0.6453385417rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
 }
 .note__content > p {
   text-align: left;
-  font-size: 1.6083333333rem;
+  font-size: 1.6145833333rem;
   line-height: 2.5rem;
-  padding-top: 0.6476791667rem;
-  padding-bottom: 0.3523208333rem;
+  padding-top: 0.6453385417rem;
+  padding-bottom: 0.3546614583rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 400;
   color: #667;
 }
 .note__content > p:not(:empty) + p {
@@ -2329,19 +2329,19 @@ a.meta__item--text:hover {
     overflow: visible;
   }
   .note__content > h5, .note__content h6 {
-    font-size: 1.68875rem;
+    font-size: 1.6953125rem;
     line-height: 2rem;
-    padding-top: 0.367563125rem;
-    margin-bottom: -0.367563125rem;
+    padding-top: 0.3651054688rem;
+    margin-bottom: -0.3651054688rem;
     scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2rem );
   }
   .note__content > p {
     font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 450;
-    font-size: 1.68875rem;
+    font-weight: 400;
+    font-size: 1.6953125rem;
     line-height: 2rem;
-    padding-top: 0.367563125rem;
-    padding-bottom: 0.632436875rem;
+    padding-top: 0.3651054688rem;
+    padding-bottom: 0.6348945313rem;
     scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2rem );
     color: #667;
   }
@@ -2356,8 +2356,8 @@ a.meta__item--text:hover {
 }
 .note-star1 .note__content > p:first-of-type:before, .note-star2 .note__content > p:first-of-type:before, .note-dagger1 .note__content > p:first-of-type:before, .note-dagger2 .note__content > p:first-of-type:before {
   position: absolute;
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 450;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
   top: 0.1em;
   left: -1rem;
   font-size: 0.8em;
