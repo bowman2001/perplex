@@ -2,9 +2,6 @@
   <div id="l-content-box" class="l-box">
     <div id="l-content">
       <header class="page-header">
-          <aside class="right show3">
-            {{- partial "img/featured.html" . -}}
-          </aside>
           {{ $level := "" }}
           {{ if eq .CurrentSection .FirstSection }}
               {{ $level = "first" }}
@@ -17,6 +14,9 @@
           <hr>
             {{ partial "title/title.html" . }}
         </div>
+        <aside class="featured-image">
+            {{- partial "img/featured.html" . -}}
+        </aside>
       </header>
         {{ with .Content }}
           <div class="md md--sans md--h-serif md--list h-link-color md--link-color">
