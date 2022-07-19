@@ -1,0 +1,10 @@
+{{ with .GetTerms "tags" }}
+<ul class="meta__list meta__list--tags">
+{{ range first 1 . }}
+<li><a class="meta__item meta__item--text meta__item--tag" href="{{ .Permalink }}">{{ .LinkTitle | site.Home.RenderString }}</a></li>
+{{ end }}
+  {{ range after 1 . }}
+  <li><span class="meta__item meta__item--text"> · </span><a class="meta__item meta__item--text meta__item--tag" href="{{ .Permalink }}">{{ .LinkTitle | site.Home.RenderString }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}

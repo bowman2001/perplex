@@ -762,7 +762,7 @@ body {
   height: 3rem;
   width: 3rem;
 }
-.icon-font {
+.icon-font, .meta__list--tags:before {
   font-family: "Material Icons", monospace;
   font-weight: 400;
   font-style: normal;
@@ -807,16 +807,40 @@ body {
   margin: 0 2rem;
 }
 
+@media screen and (min-width: 79em) {
+  .meta--left {
+    flex-direction: row-reverse;
+    justify-content: start;
+    float: left;
+    width: 33rem;
+  }
+  .meta--left .meta__date {
+    text-align: left;
+    width: 18.5rem;
+  }
+}
+
 .meta__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.meta__date {
-  flex-shrink: 0;
-  width: 14rem;
-  text-align: right;
+.meta__list--tags {
+  position: relative;
+}
+.meta__list--tags:before {
+  font-size: 1.6083333333rem;
+  line-height: 2rem;
+  padding-top: 0.5643458333rem;
+  padding-bottom: 0.4356541667rem;
+  content: "\e41d ";
+}
+@media screen and (min-width: 79em) {
+  .meta__list--tags {
+    position: absolute;
+    left: -1.5rem;
+  }
 }
 
 .meta__item {
@@ -832,6 +856,11 @@ body {
   font-weight: 450;
 }
 
+.meta__item--tag {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+
 a.meta__item--text {
   transition: text-decoration 150ms;
   text-decoration: underline;
@@ -844,6 +873,12 @@ a.meta__item--text:hover {
   text-decoration-color: hsl(325deg, 79%, 44%);
 }
 
+.meta__date {
+  flex-shrink: 0;
+  width: 14rem;
+  text-align: right;
+}
+
 .title {
   padding: 0 2rem calc(2rem + 2 * var(--es)) 2rem;
   max-width: 74rem;
@@ -854,7 +889,6 @@ a.meta__item--text:hover {
   line-height: 3rem;
   padding-top: 0.42893rem;
   padding-bottom: 0.57107rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
 }
 
 @media screen and (min-width: 79em) {
@@ -2279,7 +2313,7 @@ a.meta__item--text:hover {
   margin-bottom: calc(0.9rem + 1 * var(--es));
   border-top: 0.1rem solid #c4c4cc;
   border-bottom: 0.1rem solid #c4c4cc;
-  background: radial-gradient(#fdfeff, #cae5ff);
+  background: #e8e8e8;
 }
 @media screen and (min-width: 37em) {
   .note {
@@ -2317,7 +2351,7 @@ a.meta__item--text:hover {
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #667;
+  color: #445;
 }
 .note__content > p:not(:empty) + p {
   margin-top: -1rem;
