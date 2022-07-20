@@ -832,23 +832,32 @@ body {
 .meta__list--tags:before {
   font-size: 1.6083333333rem;
   line-height: 2rem;
-  padding-top: 0.5643458333rem;
-  padding-bottom: 0.4356541667rem;
+  padding-top: 0.3976791667rem;
+  margin-bottom: -0.3976791667rem;
   content: "\e41d ";
 }
 @media screen and (min-width: 79em) {
-  .meta__list--tags {
+  .meta__list--tags:before {
     position: absolute;
-    left: -1.5rem;
+    left: -2rem;
   }
 }
 
+/* .meta__list--tags {
+	position: relative;
+	&:before {
+		position: absolute;
+		left: -$u-gutter-half;
+		@include font.family(icon);
+		content: "\e41d"
+	}
+} */
 .meta__item {
   display: inline-block;
   font-size: 1.4475rem;
   line-height: 2rem;
   padding-top: 0.45791125rem;
-  padding-bottom: 0.54208875rem;
+  margin-bottom: -0.45791125rem;
 }
 
 .meta__item--text {
@@ -877,6 +886,10 @@ a.meta__item--text:hover {
   flex-shrink: 0;
   width: 14rem;
   text-align: right;
+}
+
+.meta__list, .meta__date {
+  padding-bottom: 1rem;
 }
 
 .title {
@@ -1018,7 +1031,7 @@ a.meta__item--text:hover {
 .md {
   overflow-wrap: break-word;
 }
-.md > h1, .md > h2, .md > h3, .md > h4, .md > h5, .md > h6 {
+.md > h1, .md > h2, .md > h3, .md > h4, .md > h5, .md > h6, .md > hr {
   max-width: 70rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -1108,9 +1121,6 @@ a.meta__item--text:hover {
 .md hr {
   margin-top: calc(1.4rem + 0.5 * var(--es));
   padding-bottom: calc(0.5rem + 1.5 * var(--es));
-  margin-left: 2rem;
-  margin-right: 2rem;
-  max-width: 70rem;
   border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
 }
 @media screen and (min-width: 37em) {
@@ -1128,7 +1138,6 @@ a.meta__item--text:hover {
   padding-bottom: calc(1.2759171875rem + var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   font-weight: 300;
-  hyphens: none;
   text-align: left;
   color: #000000;
 }
@@ -1461,7 +1470,7 @@ a.meta__item--text:hover {
 }
 
 @media screen and (min-width: 79em) {
-  .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6 {
+  .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
   .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .asciicast {
@@ -2768,8 +2777,9 @@ a.meta__item--text:hover {
 
 .page-nav--cols {
   column-count: 2;
-  column-width: 22.5rem;
+  column-width: 33rem;
   column-gap: 4rem;
+  clear: both;
 }
 
 .page-nav__list {
@@ -3194,8 +3204,8 @@ a.page-nav__item--prev, a.page-nav__item--next {
   }
 }
 
-.page-header figure {
-  margin-top: 1rem;
+.page-header {
+  position: relative;
 }
 
 .page-list > hr {
@@ -3231,8 +3241,34 @@ a.page-nav__item--prev, a.page-nav__item--next {
   margin: 0 2rem 2rem 2rem;
 }
 
-.li-header figure {
-  margin-top: 1rem;
+.li-header {
+  position: relative;
+}
+
+.featured-image {
+  float: right;
+  clear: both;
+  margin: 1.5rem 0 0 0;
+  width: 100%;
+}
+@media screen and (min-width: 366px) {
+  .featured-image {
+    width: calc( 50% - 2rem );
+  }
+}
+@media screen and (min-width: 37em) {
+  .featured-image {
+    width: 37rem;
+    margin: 1.5rem 0 0 2rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  .featured-image {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    margin: 0;
+  }
 }
 
 /**
