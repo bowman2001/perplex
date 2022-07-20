@@ -1,5 +1,4 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-<div class="meta__date" {{ with $.Params.author -}}title="First published by {{ . -}}{{- end -}}"><span
-          class="meta__item icon-font">event</span>
+<div class="meta__date" {{ with $.Params.author -}}title="By {{ . -}}{{- end -}}"><span class="meta__item icon-font">event</span>
   <time datetime="{{ .Date.Format $iso8601 }}" class="meta__item meta__item--text">&ensp;{{ .Date.Format "Jan 2, 2006" }}</time>
 </div>
