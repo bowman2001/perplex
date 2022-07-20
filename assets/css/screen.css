@@ -813,6 +813,7 @@ body {
     justify-content: start;
     float: left;
     width: 33rem;
+    padding-top: 1rem;
   }
   .meta--left .meta__date {
     text-align: left;
@@ -858,6 +859,14 @@ body {
   line-height: 2rem;
   padding-top: 0.45791125rem;
   margin-bottom: -0.45791125rem;
+}
+@media screen and (min-width: 79em) {
+  .meta__item {
+    font-size: 1.6083333333rem;
+    line-height: 2rem;
+    padding-top: 0.3976791667rem;
+    margin-bottom: -0.3976791667rem;
+  }
 }
 
 .meta__item--text {
@@ -1421,6 +1430,7 @@ a.meta__item--text:hover {
 }
 .md--sans .p-first strong {
   font-weight: 450;
+  font-size: 99%;
 }
 
 .md--home > p, .md--home > ul, .md--home > ol, .md--home > dl {
@@ -1916,6 +1926,15 @@ a.meta__item--text:hover {
   background-color: rgba(0, 238, 0, 0.5333333333);
 }
 
+.md--h-serif h1 {
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: 0.42893rem;
+  padding-bottom: 0.57107rem;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 500;
+  color: #111111;
+}
 .md--h-serif h2 {
   font-size: 2.145rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
