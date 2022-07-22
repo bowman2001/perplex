@@ -34,7 +34,8 @@
 </ul>
 
 {{- define "item" -}}
-  <a href="{{ .menuEntry.URL }}" class="nav__link {{ if .page.IsMenuCurrent .menuName .menuEntry -}}is-active{{- end }}">
+  {{ $active := .page.IsMenuCurrent .menuName .menuEntry }}
+  <a {{ if not $active }}href="{{ .menuEntry.URL }}"{{ end }} class="nav__link {{ if $active -}}is-active{{- end }}">
     {{ partial "nav/menu-pre-icon.html" .menuEntry }}
     <span class="li__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
   </a>

@@ -83,6 +83,11 @@ hr {
     --fs: 62.5%;
   }
 }
+@media screen and (min-height: 80em) {
+  :root {
+    --tg: 6rem;
+  }
+}
 
 /*
  * Google Material Icons
@@ -424,6 +429,7 @@ body {
   height: auto;
   width: 100%;
   padding-bottom: 1rem;
+  overflow: hidden;
 }
 
 .home__tile--title {
@@ -1032,11 +1038,11 @@ a.meta__item--text:hover {
   border-radius: 0.25em;
 }
 .h-link-color h1:hover .h__anchor, .h-link-color h1:focus .h__anchor, .h-link-color h2:hover .h__anchor, .h-link-color h2:focus .h__anchor, .h-link-color h3:hover .h__anchor, .h-link-color h3:focus .h__anchor, .h-link-color h4:hover .h__anchor, .h-link-color h4:focus .h__anchor, .h-link-color h5:hover .h__anchor, .h-link-color h5:focus .h__anchor, .h-link-color h6:hover .h__anchor, .h-link-color h6:focus .h__anchor {
-  text-decoration-color: hsl(325deg, 79%, 44%);
+  text-decoration-color: inherit;
   background-color: rgba(201, 24, 127, 0.1);
 }
 .h-link-color h1:target .h__anchor, .h-link-color h2:target .h__anchor, .h-link-color h3:target .h__anchor, .h-link-color h4:target .h__anchor, .h-link-color h5:target .h__anchor, .h-link-color h6:target .h__anchor {
-  text-decoration-color: hsl(199deg, 100%, 38%);
+  text-decoration-color: inherit;
   background-color: rgba(0, 132, 194, 0.1);
 }
 
@@ -2682,8 +2688,8 @@ a.meta__item--text:hover {
 }
 .nav__link.is-active {
   color: black;
-  pointer-events: none;
   border-color: hsl(199deg, 100%, 38%);
+  cursor: default;
 }
 .nav__link.is-active .icon-font {
   color: hsl(199deg, 100%, 38%);
@@ -2709,9 +2715,6 @@ a.meta__item--text:hover {
 .top-nav .is-active, .top-nav .has-active {
   border-bottom-color: hsl(199deg, 100%, 38%);
 }
-.top-nav .is-active {
-  pointer-events: none;
-}
 
 .menu a {
   letter-spacing: 0.075em;
@@ -2719,6 +2722,10 @@ a.meta__item--text:hover {
 }
 .menu a:hover, .menu a:focus {
   border-bottom-color: hsl(325deg, 79%, 44%);
+}
+.menu a.is-active:hover, .menu a.is-active:focus {
+  border-bottom-color: hsl(199deg, 100%, 38%);
+  cursor: default;
 }
 
 .social a {
@@ -2915,13 +2922,15 @@ a.page-nav__item--prev, a.page-nav__item--next {
 
 .page-nav__itemcol {
   width: 4rem;
+  height: 3rem;
+  align-self: center;
 }
 
 .page-nav__meta {
   font-size: 1.43rem;
   line-height: 2rem;
   margin-top: -0.535535rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: 0.535535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
 }
@@ -2933,8 +2942,6 @@ a.page-nav__item--prev, a.page-nav__item--next {
 .page-nav__title {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-  letter-spacing: 0.01em;
-  word-spacing: 0.03em;
 }
 
 .page-nav__description {
@@ -3293,7 +3300,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
   margin: 1.5rem 0 0 0;
   width: 100%;
 }
-@media screen and (min-width: 366px) {
+@media screen and (min-width: 420px) {
   .featured-image {
     width: calc( 50% - 2rem );
   }
@@ -3407,6 +3414,10 @@ a.page-nav__item--prev, a.page-nav__item--next {
   .show6 {
     display: none !important;
   }
+}
+
+.mt05 {
+  margin-top: 0.5rem;
 }
 
 .mt1 {

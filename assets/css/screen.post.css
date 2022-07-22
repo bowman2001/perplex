@@ -162,6 +162,12 @@ hr {
   }
 }
 
+@media screen and (min-height: 80em) {
+  :root {
+    --tg: 6rem;
+  }
+}
+
 i {
   font-style: italic;
 }
@@ -539,6 +545,7 @@ body {
   height: auto;
   width: 100%;
   padding-bottom: 1rem;
+  overflow: hidden;
 }
 
 .home__tile--title {
@@ -1221,8 +1228,8 @@ a.meta__item--text:hover {
 .h-link-color h5:focus .h__anchor,
 .h-link-color h6:hover .h__anchor,
 .h-link-color h6:focus .h__anchor {
-  -webkit-text-decoration-color: #c9187f;
-          text-decoration-color: #c9187f;
+  -webkit-text-decoration-color: inherit;
+          text-decoration-color: inherit;
   background-color: rgba(201, 24, 127, .1);
 }
 
@@ -1232,8 +1239,8 @@ a.meta__item--text:hover {
 .h-link-color h4:target .h__anchor,
 .h-link-color h5:target .h__anchor,
 .h-link-color h6:target .h__anchor {
-  -webkit-text-decoration-color: #0084c2;
-          text-decoration-color: #0084c2;
+  -webkit-text-decoration-color: inherit;
+          text-decoration-color: inherit;
   background-color: rgba(0, 132, 194, .1);
 }
 
@@ -3327,8 +3334,8 @@ a.meta__item--text:hover {
 
 .nav__link.is-active {
   color: #000;
-  pointer-events: none;
   border-color: #0084c2;
+  cursor: default;
 }
 
 .nav__link.is-active .icon-font {
@@ -3360,10 +3367,6 @@ a.meta__item--text:hover {
   border-bottom-color: #0084c2;
 }
 
-.top-nav .is-active {
-  pointer-events: none;
-}
-
 .menu a {
   letter-spacing: .075em;
   text-transform: uppercase;
@@ -3372,6 +3375,12 @@ a.meta__item--text:hover {
 .menu a:hover,
 .menu a:focus {
   border-bottom-color: #c9187f;
+}
+
+.menu a.is-active:hover,
+.menu a.is-active:focus {
+  border-bottom-color: #0084c2;
+  cursor: default;
 }
 
 .social a {
@@ -3597,13 +3606,15 @@ a.page-nav__item--next {
 
 .page-nav__itemcol {
   width: 4rem;
+  height: 3rem;
+  align-self: center;
 }
 
 .page-nav__meta {
   font-size: 1.43rem;
   line-height: 2rem;
   margin-top: -0.535535rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: .535535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
 }
@@ -3615,8 +3626,6 @@ a.page-nav__item--next {
 .page-nav__title {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
-  letter-spacing: .01em;
-  word-spacing: .03em;
 }
 
 .page-nav__description {
@@ -4051,7 +4060,7 @@ a.page-nav__item--next {
   width: 100%;
 }
 
-@media screen and (min-width: 366px) {
+@media screen and (min-width: 420px) {
   .featured-image {
     width: calc(50% - 2rem);
   }
@@ -4153,6 +4162,10 @@ a.page-nav__item--next {
   .show6 {
     display: none !important;
   }
+}
+
+.mt05 {
+  margin-top: .5rem;
 }
 
 .mt1 {

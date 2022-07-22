@@ -4,8 +4,10 @@
     {{ $menu := .menu }}
     {{ range $menu }}
       <li>
-        <a class="ctrl__link {{ if $page.IsMenuCurrent $menuName . -}}is-active{{- end }} {{ if $page.HasMenuCurrent $menuName . -}}has-active{{- end }}"
-           href="{{ .URL }}">
+        {{ $is_active := $page.IsMenuCurrent $menuName . }}
+        {{ $has_active := $page.HasMenuCurrent $menuName . }}
+        <a class="ctrl__link {{ if $is_active -}}is-active{{- end }} {{ if $has_active -}}has-active{{- end }}"
+           {{ if not $is_active }}href="{{ .URL }}"{{ end }}>
             {{ if eq $menuName "main" }}
               {{- with .Pre -}}<span class="icon-font">{{ . }}</span>{{ end }}
               {{ with .Name }}{{ . | site.Home.RenderString }}{{ end }}

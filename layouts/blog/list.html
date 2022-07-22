@@ -12,11 +12,14 @@
         </div>
       {{ end }}
     <ul class="page-list">
-        {{- range .Pages -}}
+        {{ range (.Paginate .Pages 10).Pages }}
           <li class="li-box">{{- .Render "li-full" -}}</li>
         {{- end -}}
     </ul>
     <footer class="page-footer">
+      <nav class="pagination">
+          {{/* template "_internal/pagination.html" (dict "page" . ) */}}
+      </nav>
     </footer>
   </div>
 {{- end -}}
