@@ -431,7 +431,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(225deg, hsl(325deg, 79%, 44%) 0%, hsl(325deg, 79%, 44%) 9%, #e8e8e8 9%, #e8e8e8 100%);
   text-align: center;
 }
 @media screen and (min-width: 37em) {
@@ -444,20 +443,24 @@ body {
   flex: 0 0 auto;
 }
 
-.home__tile--red {
-  background: linear-gradient(225deg, hsl(325deg, 79%, 44%) 0%, hsl(325deg, 79%, 44%) 9%, #e8e8e8 9%, #e8e8e8 100%);
+.home__tile--red, .home__tile--title {
+  background: linear-gradient(225deg, hsl(325deg, 79%, 44%) 0%, hsl(325deg, 79%, 44%) 9%, #fdfeff 9%, #fdfeff 100%);
+  border: 0.01rem solid hsl(325deg, 79%, 44%);
 }
 
 .home__tile--blue {
-  background: linear-gradient(225deg, hsl(199deg, 100%, 38%) 0%, hsl(199deg, 100%, 38%) 9%, #e8e8e8 9%, #e8e8e8 100%);
+  background: linear-gradient(225deg, hsl(199deg, 100%, 38%) 0%, hsl(199deg, 100%, 38%) 9%, #fdfeff 9%, #fdfeff 100%);
+  border: 0.01rem solid hsl(199deg, 100%, 38%);
 }
 
 .home__tile--green {
-  background: linear-gradient(225deg, hsl(169deg, 100%, 33%) 0%, hsl(169deg, 100%, 33%) 9%, #e8e8e8 9%, #e8e8e8 100%);
+  background: linear-gradient(225deg, hsl(169deg, 100%, 33%) 0%, hsl(169deg, 100%, 33%) 9%, #fdfeff 9%, #fdfeff 100%);
+  border: 0.01rem solid hsl(169deg, 100%, 33%);
 }
 
 .home__tile--yellow {
-  background: linear-gradient(225deg, hsl(45deg, 83%, 53%) 0%, hsl(45deg, 83%, 53%) 9%, #e8e8e8 9%, #e8e8e8 100%);
+  background: linear-gradient(225deg, hsl(45deg, 83%, 53%) 0%, hsl(45deg, 83%, 53%) 9%, #fdfeff 9%, #fdfeff 100%);
+  border: 0.01rem solid hsl(45deg, 83%, 53%);
 }
 
 #l-content-box {
@@ -1030,11 +1033,11 @@ a.meta__item--text:hover {
 }
 .h-link-color h1:hover .h__anchor, .h-link-color h1:focus .h__anchor, .h-link-color h2:hover .h__anchor, .h-link-color h2:focus .h__anchor, .h-link-color h3:hover .h__anchor, .h-link-color h3:focus .h__anchor, .h-link-color h4:hover .h__anchor, .h-link-color h4:focus .h__anchor, .h-link-color h5:hover .h__anchor, .h-link-color h5:focus .h__anchor, .h-link-color h6:hover .h__anchor, .h-link-color h6:focus .h__anchor {
   text-decoration-color: hsl(325deg, 79%, 44%);
-  background-color: rgba(201, 24, 127, 0.05);
+  background-color: rgba(201, 24, 127, 0.1);
 }
 .h-link-color h1:target .h__anchor, .h-link-color h2:target .h__anchor, .h-link-color h3:target .h__anchor, .h-link-color h4:target .h__anchor, .h-link-color h5:target .h__anchor, .h-link-color h6:target .h__anchor {
   text-decoration-color: hsl(199deg, 100%, 38%);
-  background-color: rgba(0, 132, 194, 0.05);
+  background-color: rgba(0, 132, 194, 0.1);
 }
 
 .md {
@@ -1130,6 +1133,7 @@ a.meta__item--text:hover {
 .md hr {
   margin-top: calc(1.4rem + 0.5 * var(--es));
   padding-bottom: calc(0.5rem + 1.5 * var(--es));
+  height: 0.1rem;
   border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
 }
 @media screen and (min-width: 37em) {
@@ -1808,7 +1812,6 @@ a.meta__item--text:hover {
   color: #111111;
 }
 .footnotes ol li {
-  margin-bottom: 1.5rem;
   counter-increment: nr;
   transition: background-color 0.5s;
   background-color: transparent;
@@ -1836,10 +1839,11 @@ a.meta__item--text:hover {
   font-size: 1.68875rem;
   line-height: 2.625rem;
   padding-top: 0.680063125rem;
-  margin-bottom: -0.680063125rem;
+  padding-bottom: 0.319936875rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.625rem );
 }
 .footnotes ol li p + p {
+  margin-top: -0.875rem;
   text-indent: 2.5rem;
 }
 .footnotes ol li .footnote-backref {
@@ -2572,7 +2576,7 @@ a.meta__item--text:hover {
   font-weight: 400;
 }
 .md table th, .md table td {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-right: 0.1rem solid #b9b9b9;
 }
 .md table th:first-child, .md table td:first-child {
@@ -2658,6 +2662,10 @@ a.meta__item--text:hover {
 .nav__link .icon-font, .nav__link path {
   transition: color 150ms ease-in-out, fill 150ms ease-in-out;
 }
+.nav__link .li__text {
+  transition: background-color 150ms ease-in-out;
+  background-color: transparent;
+}
 .nav__link:hover, .nav__link:focus {
   color: black;
   border-color: hsl(325deg, 79%, 44%);
@@ -2668,13 +2676,21 @@ a.meta__item--text:hover {
 .nav__link:hover path, .nav__link:focus path {
   fill: hsl(325deg, 79%, 44%);
 }
+.nav__link:hover .li__text, .nav__link:focus .li__text {
+  background-color: rgba(201, 24, 127, 0.1);
+  border-radius: 0.25em;
+}
 .nav__link.is-active {
   color: black;
-  border-color: hsl(199deg, 100%, 38%);
   pointer-events: none;
+  border-color: hsl(199deg, 100%, 38%);
 }
 .nav__link.is-active .icon-font {
   color: hsl(199deg, 100%, 38%);
+}
+.nav__link.is-active .li__text {
+  background-color: rgba(0, 132, 194, 0.1);
+  border-radius: 0.25em;
 }
 
 .icon-font {
@@ -2875,7 +2891,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
 .page-nav__title, .page-nav__icon {
   font-size: 1.9375rem;
   line-height: 3rem;
-  padding-top: 0.77440625rem;
+  margin-top: -0.22559375rem;
   margin-bottom: -0.77440625rem;
 }
 
@@ -2902,10 +2918,10 @@ a.page-nav__item--prev, a.page-nav__item--next {
 }
 
 .page-nav__meta {
-  font-size: 1.4625rem;
+  font-size: 1.43rem;
   line-height: 2rem;
-  margin-top: -0.54770625rem;
-  margin-bottom: -0.45229375rem;
+  margin-top: -0.535535rem;
+  margin-bottom: -0.464465rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
 }
@@ -2922,17 +2938,16 @@ a.page-nav__item--prev, a.page-nav__item--next {
 }
 
 .page-nav__description {
-  font-size: 1.6145833333rem;
+  font-size: 1.625rem;
   line-height: 2rem;
-  padding-top: 1.3953385417rem;
-  padding-bottom: 0.6046614583rem;
+  padding-top: 1.3914375rem;
+  padding-bottom: 0.6085625rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 300;
 }
 .page-nav__description strong {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 79em) {
@@ -3198,6 +3213,10 @@ a.page-nav__item--prev, a.page-nav__item--next {
 #TableOfContents a .icon-font, #TableOfContents a path {
   transition: color 150ms ease-in-out, fill 150ms ease-in-out;
 }
+#TableOfContents a .li__text {
+  transition: background-color 150ms ease-in-out;
+  background-color: transparent;
+}
 #TableOfContents a:hover, #TableOfContents a:focus {
   color: black;
   border-color: hsl(325deg, 79%, 44%);
@@ -3207,6 +3226,10 @@ a.page-nav__item--prev, a.page-nav__item--next {
 }
 #TableOfContents a:hover path, #TableOfContents a:focus path {
   fill: hsl(325deg, 79%, 44%);
+}
+#TableOfContents a:hover .li__text, #TableOfContents a:focus .li__text {
+  background-color: rgba(201, 24, 127, 0.1);
+  border-radius: 0.25em;
 }
 #TableOfContents li li > a {
   padding-left: 3.4rem;

@@ -1,5 +1,5 @@
 <div>
     {{- with .Title -}}
-    <div class="page-nav__title">{{- . | site.Home.RenderString -}}</div>{{- end -}}
+        <div class="page-nav__title"><span class="li__text">{{- . | site.Home.RenderString -}}</span></div>{{- end -}}
     {{- with .Description -}}<p class="page-nav__description">{{- . | site.Home.RenderString -}}</p>{{- end -}}
 </div>

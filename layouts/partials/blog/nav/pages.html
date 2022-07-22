@@ -3,10 +3,7 @@
       {{ $pages := where site.Pages.Reverse "Section" .Section -}}
       {{ with $pages.Prev . }}
         <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--prev nav__link mt-05">
-            <div class="page-nav__itemcol">
-                {{ partial "doc/nav/menu-icon.html" . }}
-            </div>
-                {{ partial "nav/page/parent-title.html" . }}
+            {{ partial "nav/page/title.html" . }}
             <div class="icon-font page-nav__icon page-nav__icon--arrow">west</div>
           </a></li>
       {{ else }}
@@ -15,10 +12,7 @@
       {{ with $pages.Next . }}
         <li>
           <a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next nav__link mt-05">
-            <div class="page-nav__itemcol">
-                {{ partial "doc/nav/menu-icon.html" . }}
-            </div>
-              {{ partial "nav/page/parent-title.html" . }}
+              {{ partial "nav/page/title.html" . }}
             <div class="icon-font page-nav__icon page-nav__icon--arrow">east</div>
           </a></li>
       {{ else }}
@@ -45,9 +39,4 @@
           {{ partial "nav/page/parent-title.html" . }}
       <div class="icon-font page-nav__icon page-nav__icon--arrow">north</div>
     </a></li>
-{{ end }}
-
-{{ define "arrow" }}
-
-    {{/* TODO: Up or down the content hierarchy? */}}
 {{ end }}

@@ -19,10 +19,12 @@
     </div>
     </div>
     <footer class="page-footer l-margin-left">
+      <hr>
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
+      {{ partial "blog/nav/pages.html" . }}
     </footer>
   </div>
 {{- end -}}
