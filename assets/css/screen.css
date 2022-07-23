@@ -1042,6 +1042,8 @@ a.meta__item--text:hover {
 }
 
 .md {
+  position: relative;
+  z-index: 1;
   overflow-wrap: break-word;
 }
 .md > h1, .md > h2, .md > h3, .md > h4, .md > h5, .md > h6, .md > hr {
@@ -1174,6 +1176,7 @@ a.meta__item--text:hover {
 }
 .md .blind {
   position: relative;
+  z-index: 1;
 }
 .md .blind:after {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -1693,6 +1696,7 @@ a.meta__item--text:hover {
 
 .md figure {
   position: relative;
+  z-index: 5;
   margin-top: 1.75rem;
   margin-bottom: calc(1rem + 1 * var(--es));
   max-width: 100%;
