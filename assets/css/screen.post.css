@@ -1240,6 +1240,8 @@ a.meta__item--text:hover {
 }
 
 .md {
+  position: relative;
+  z-index: 1;
   word-wrap: break-word;
 }
 
@@ -1438,6 +1440,7 @@ a.meta__item--text:hover {
 
 .md .blind {
   position: relative;
+  z-index: 1;
 }
 
 .md .blind:after {
@@ -2134,6 +2137,7 @@ a.meta__item--text:hover {
 
 .md figure {
   position: relative;
+  z-index: 5;
   margin-top: 1.75rem;
   margin-bottom: calc(1rem + 1 * var(--es));
   max-width: 100%;

@@ -12,7 +12,7 @@
 {{ $inner := "" }}
 {{ if .IsNamedParams }}
     {{ $name = (printf "*%s*" (.Get "src")) }}
-    {{ $img = .Page.Resources.GetMatch $name }}
+    {{ $img := partial "get-resource.html" (dict "name" $name "currentPage" .Page ) }}
     {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
     {{ with (.Get "link") }}{{ $link = . }}{{ end }}
     {{ with (.Get "target") }}{{ $target = . }}{{ end }}
