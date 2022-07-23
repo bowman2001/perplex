@@ -545,7 +545,6 @@ body {
   height: auto;
   width: 100%;
   padding-bottom: 1rem;
-  overflow: hidden;
 }
 
 .home__tile--title {
@@ -568,23 +567,19 @@ body {
 
 .home__tile--red,
 .home__tile--title {
-  background: linear-gradient(225deg, hsl(325, 79%, 44%) 0%, hsl(325, 79%, 44%) 9%, #fdfeff 9%, #fdfeff 100%);
-  border: .01rem solid #c9187f;
+  background: linear-gradient(225deg, hsl(325, 79%, 44%) 0%, hsl(325, 79%, 44%) 9%, #e8e8e8 9%, #e8e8e8 100%);
 }
 
 .home__tile--blue {
-  background: linear-gradient(225deg, hsl(199, 100%, 38%) 0%, hsl(199, 100%, 38%) 9%, #fdfeff 9%, #fdfeff 100%);
-  border: .01rem solid #0084c2;
+  background: linear-gradient(225deg, hsl(199, 100%, 38%) 0%, hsl(199, 100%, 38%) 9%, #e8e8e8 9%, #e8e8e8 100%);
 }
 
 .home__tile--green {
-  background: linear-gradient(225deg, hsl(169, 100%, 33%) 0%, hsl(169, 100%, 33%) 9%, #fdfeff 9%, #fdfeff 100%);
-  border: .01rem solid #00a889;
+  background: linear-gradient(225deg, hsl(169, 100%, 33%) 0%, hsl(169, 100%, 33%) 9%, #e8e8e8 9%, #e8e8e8 100%);
 }
 
 .home__tile--yellow {
-  background: linear-gradient(225deg, hsl(45, 83%, 53%) 0%, hsl(45, 83%, 53%) 9%, #fdfeff 9%, #fdfeff 100%);
-  border: .01rem solid #ebb924;
+  background: linear-gradient(225deg, hsl(45, 83%, 53%) 0%, hsl(45, 83%, 53%) 9%, #e8e8e8 9%, #e8e8e8 100%);
 }
 
 #l-content-box {
