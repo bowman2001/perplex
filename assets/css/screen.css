@@ -1134,8 +1134,7 @@ a.meta__item--text:hover {
   color: rgba(17, 17, 17, 0.15);
 }
 .md hr {
-  margin-top: calc(1.4rem + 0.5 * var(--es));
-  padding-bottom: calc(0.5rem + 1.5 * var(--es));
+  margin: calc(1.4rem + 0.5 * var(--es)) 2rem calc(0.5rem + 1.5 * var(--es)) 2rem;
   height: 0.1rem;
   border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
 }
@@ -2346,11 +2345,8 @@ a.meta__item--text:hover {
 
 .note {
   position: relative;
-  margin-top: 1.4rem;
-  margin-bottom: calc(0.9rem + 1 * var(--es));
-  border-top: 0.1rem solid #c4c4cc;
-  border-bottom: 0.1rem solid #c4c4cc;
-  background: #e8e8e8;
+  padding-top: 1.4rem;
+  padding-bottom: calc(0.9rem + 1 * var(--es));
 }
 @media screen and (min-width: 37em) {
   .note {
@@ -2360,15 +2356,16 @@ a.meta__item--text:hover {
 }
 @media screen and (min-width: 48em) {
   .note {
-    margin: 0;
     padding: 0;
-    border: none;
-    background: transparent;
+    margin: 0;
   }
 }
 
 .note__content {
   padding: 0.625rem 2rem;
+  border-top: 0.1rem solid #c4c4cc;
+  border-bottom: 0.1rem solid #c4c4cc;
+  background: #e8e8e8;
   overflow: hidden;
 }
 .note__content h3, .note__content h4, .note__content h5, .note__content h6, .note__content .h-p {
@@ -2396,7 +2393,10 @@ a.meta__item--text:hover {
 }
 @media screen and (min-width: 48em) {
   .note__content {
+    margin: 0;
     padding: 1rem 0;
+    border: none;
+    background: transparent;
     overflow: visible;
   }
   .note__content > h5, .note__content h6 {
@@ -2876,6 +2876,12 @@ a.page-nav__item--prev, a.page-nav__item--next {
 
 .page-nav__item--start {
   visibility: hidden;
+  display: none;
+}
+@media screen and (min-width: 37em) {
+  .page-nav__item--start {
+    display: flex;
+  }
 }
 
 .page-nav__item--prev, .page-nav__item--next, .page-nav__item--start {
