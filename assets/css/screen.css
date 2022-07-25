@@ -1051,7 +1051,7 @@ a.meta__item--text:hover {
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .highlight, .md .maincol, .md .literature, .md .footnotes, .md .asciicast {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1490,7 +1490,7 @@ a.meta__item--text:hover {
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .asciicast {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast {
     margin-left: 37rem;
   }
 }
@@ -2847,14 +2847,15 @@ a.meta__item--text:hover {
     align-items: stretch;
   }
   .page-nav__list--flex .page-nav__item--prev, .page-nav__list--flex .page-nav__item--start {
-    margin: 0 1rem 0 0;
+    margin: auto 1rem auto 0;
   }
   .page-nav__list--flex .page-nav__item--next {
-    margin: 0 0 0 1rem;
+    margin: auto 0 auto 1rem;
   }
   .page-nav__list--flex > li {
     width: 50%;
     height: 100%;
+    self-align: stretch;
   }
 }
 

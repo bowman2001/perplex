@@ -1,5 +1,6 @@
 {{ $r := "" }}
 {{ $glob := (printf "*%s*" .name) }}
+{{/* warnf "%v - get-resource: %s" .currentPage .name */}}
 {{ with .currentPage.Resources.GetMatch $glob }}
     {{ $r = . }}
 {{ else }}

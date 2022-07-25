@@ -12,8 +12,5 @@
         {{ end }}
     {{ end }}
 {{- end -}}
-{{ with $url }}
-    {{ $args := ( dict "currentPage" $currentPage "name" . ) }}
-    {{ $imgResource = ( partial "get-resource.html" $args ) }}
-{{ end }}
+{{ $imgResource = ( partial "get-resource.html" ( dict "currentPage" $currentPage "name" $url ) ) }}
 {{ return $imgResource }}
