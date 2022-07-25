@@ -11,15 +11,11 @@
       </aside>
     </header>
     {{ with .Content }}
-    <div class="md h-link-color md--sans md--h-serif">
+    <div class="md md--sans md--h-serif md--link-color h-link-color">
         {{- partial "content.html" . -}}
     </div>
     {{ end }}
     <footer class="page-footer">
-      <div class="meta">
-          {{ partial "nav/breadcrumbs/footer.html" . }}
-          {{ partial "date/page/updated.html" . }}
-      </div>
     </footer>
   </div>
 {{- end -}}
