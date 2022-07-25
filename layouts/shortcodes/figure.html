@@ -11,8 +11,7 @@
 {{ $attrlink := "" }}
 {{ $inner := "" }}
 {{ if .IsNamedParams }}
-    {{ $name = (printf "*%s*" (.Get "src")) }}
-    {{ $img := partial "get-resource.html" (dict "name" $name "currentPage" .Page ) }}
+    {{ $img := partial "get-resource.html" (dict "name" (.Get "src") "currentPage" .Page ) }}
     {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
     {{ with (.Get "link") }}{{ $link = . }}{{ end }}
     {{ with (.Get "target") }}{{ $target = . }}{{ end }}
