@@ -251,7 +251,7 @@ html {
 }
 
 body {
-  background: #fdfeff;
+  background: #fffefd;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -376,7 +376,7 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-home::-webkit-scrollbar {
     width: 1rem;
@@ -386,7 +386,7 @@ body {
     background: hsl(45deg, 83%, 53%);
   }
   #l-home::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 @media screen and (min-width: 120em) {
@@ -630,7 +630,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-main::-webkit-scrollbar {
     width: 1rem;
@@ -640,7 +640,7 @@ body {
     background: hsl(45deg, 83%, 53%);
   }
   #l-main::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 
@@ -655,7 +655,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: #fdfeff;
+  background-color: #fffefd;
 }
 #l-sidebar.is-visible {
   left: 0;
@@ -685,7 +685,7 @@ body {
     padding-left: 0;
     padding-right: 0;
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-sidebar::-webkit-scrollbar {
     width: 1rem;
@@ -695,7 +695,7 @@ body {
     background: hsl(45deg, 83%, 53%);
   }
   #l-sidebar::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 
@@ -1204,7 +1204,7 @@ a.meta__item--text:hover {
 }
 .md .box {
   position: relative;
-  background-color: aliceblue;
+  background-color: #fff8f0;
 }
 @media screen and (min-width: 48em) {
   .md .up-1 {
@@ -1512,7 +1512,7 @@ a.meta__item--text:hover {
   padding: 0 0.25em;
   text-transform: none;
   border: 0.1rem solid rgba(0, 0, 0, 0.0666666667);
-  background-color: aliceblue;
+  background-color: #fff8f0;
 }
 .md dt code {
   font-weight: 700;
@@ -1561,15 +1561,15 @@ a.meta__item--text:hover {
   } */
 }
 .md .highlight > div, .md .highlight > pre {
-  background-color: aliceblue !important;
+  background-color: #fff8f0 !important;
   border: 0.1rem solid rgba(0, 0, 0, 0.0666666667);
 }
 .md .highlight > div pre, .md .highlight > pre pre {
-  background-color: aliceblue !important;
+  background-color: #fff8f0 !important;
 }
 .md .highlight table {
   scrollbar-gutter: stable;
-  scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
+  scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
 }
 .md .highlight table::-webkit-scrollbar {
   width: 1rem;
@@ -1579,7 +1579,7 @@ a.meta__item--text:hover {
   background: hsl(45deg, 83%, 53%);
 }
 .md .highlight table::-webkit-scrollbar-track {
-  background: #d7ebff;
+  background: #ffebd7;
 }
 .md .highlight table pre {
   padding-right: 0;
@@ -2330,7 +2330,7 @@ a.meta__item--text:hover {
   max-width: 70rem;
   text-align: center;
   border-radius: 0.5rem;
-  background-color: #e4f1fe;
+  background-color: #fef1e4;
 }
 @media screen and (min-width: 37em) {
   .md .asciicast {
@@ -2476,7 +2476,7 @@ a.meta__item--text:hover {
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #eef6ff 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #fff6ee 90%);
 }
 @media screen and (min-width: 48em) {
   .checkbox-note ~ .note__content {
@@ -2865,6 +2865,7 @@ a.meta__item--text:hover {
   flex-wrap: nowrap;
   align-items: start;
   height: 100%;
+  padding-bottom: 1rem;
 }
 
 .page-nav__item--prev, .page-nav__item--next, .page-nav__item--start {
@@ -2967,7 +2968,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
 @media screen and (min-width: 79em) {
   .sidebar-box {
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #d7ebff;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   .sidebar-box::-webkit-scrollbar {
     width: 1rem;
@@ -2977,7 +2978,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
     background: hsl(45deg, 83%, 53%);
   }
   .sidebar-box::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 

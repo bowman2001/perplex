@@ -350,7 +350,7 @@ html {
 }
 
 body {
-  background: #fdfeff;
+  background: #fffefd;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -488,7 +488,7 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #d7ebff;
+    scrollbar-color: #ebb924 #ffebd7;
   }
 
   #l-home::-webkit-scrollbar {
@@ -501,7 +501,7 @@ body {
   }
 
   #l-home::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 
@@ -769,7 +769,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #d7ebff;
+    scrollbar-color: #ebb924 #ffebd7;
   }
 
   #l-main::-webkit-scrollbar {
@@ -782,7 +782,7 @@ body {
   }
 
   #l-main::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 
@@ -797,7 +797,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: #fdfeff;
+  background-color: #fffefd;
 }
 
 #l-sidebar.is-visible {
@@ -832,7 +832,7 @@ body {
     padding-left: 0;
     padding-right: 0;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #d7ebff;
+    scrollbar-color: #ebb924 #ffebd7;
   }
 
   #l-sidebar::-webkit-scrollbar {
@@ -845,7 +845,7 @@ body {
   }
 
   #l-sidebar::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 
@@ -1475,7 +1475,7 @@ a.meta__item--text:hover {
 
 .md .box {
   position: relative;
-  background-color: #f0f8ff;
+  background-color: #fff8f0;
 }
 
 @media screen and (min-width: 48em) {
@@ -1906,7 +1906,7 @@ a.meta__item--text:hover {
   padding: 0 .25em;
   text-transform: none;
   border: .1rem solid rgba(0, 0, 0, .0666666667);
-  background-color: #f0f8ff;
+  background-color: #fff8f0;
 }
 
 .md dt code {
@@ -1957,7 +1957,7 @@ a.meta__item--text:hover {
 
 .md .highlight > div,
 .md .highlight > pre {
-  background-color: #f0f8ff !important;
+  background-color: #fff8f0 !important;
 }
 
 .md .highlight > div,
@@ -1967,12 +1967,12 @@ a.meta__item--text:hover {
 
 .md .highlight > div pre,
 .md .highlight > pre pre {
-  background-color: #f0f8ff !important;
+  background-color: #fff8f0 !important;
 }
 
 .md .highlight table {
   scrollbar-gutter: stable;
-  scrollbar-color: #ebb924 #d7ebff;
+  scrollbar-color: #ebb924 #ffebd7;
 }
 
 .md .highlight table::-webkit-scrollbar {
@@ -1985,7 +1985,7 @@ a.meta__item--text:hover {
 }
 
 .md .highlight table::-webkit-scrollbar-track {
-  background: #d7ebff;
+  background: #ffebd7;
 }
 
 .md .highlight table pre {
@@ -2913,7 +2913,7 @@ a.meta__item--text:hover {
   max-width: 70rem;
   text-align: center;
   border-radius: .5rem;
-  background-color: #e4f1fe;
+  background-color: #fef1e4;
 }
 
 @media screen and (min-width: 37em) {
@@ -3086,7 +3086,7 @@ a.meta__item--text:hover {
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #eef6ff 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #fff6ee 90%);
 }
 
 @media screen and (min-width: 48em) {
@@ -3543,6 +3543,7 @@ a.meta__item--text:hover {
   flex-wrap: nowrap;
   align-items: start;
   height: 100%;
+  padding-bottom: 1rem;
 }
 
 .page-nav__item--prev,
@@ -3655,7 +3656,7 @@ a.page-nav__item--next {
 @media screen and (min-width: 79em) {
   .sidebar-box {
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #d7ebff;
+    scrollbar-color: #ebb924 #ffebd7;
   }
 
   .sidebar-box::-webkit-scrollbar {
@@ -3668,7 +3669,7 @@ a.page-nav__item--next {
   }
 
   .sidebar-box::-webkit-scrollbar-track {
-    background: #d7ebff;
+    background: #ffebd7;
   }
 }
 
