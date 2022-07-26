@@ -899,6 +899,7 @@ a.meta__item--text:hover {
   flex-shrink: 0;
   width: 14rem;
   text-align: right;
+  color: #00826a;
 }
 
 .meta__list, .meta__date {
@@ -975,7 +976,7 @@ a.meta__item--text:hover {
 }
 
 .title-list--ruled hr {
-  border-top: 0.2rem solid rgba(17, 17, 17, 0.25);
+  border-top: 0.2rem solid #006a9c;
   height: 1rem;
 }
 
