@@ -2855,8 +2855,7 @@ a.meta__item--text:hover {
   }
   .page-nav__list--flex > li {
     width: 50%;
-    height: 100%;
-    self-align: stretch;
+    align-self: stretch;
   }
 }
 
