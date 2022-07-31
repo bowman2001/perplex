@@ -1,8 +1,8 @@
-<nav class="page-nav mt1">
+<nav class="page-nav">
   <ul class="page-nav__list page-nav__list--flex">
       {{ $pages := where site.Pages.Reverse "Section" .Section -}}
       {{ with $pages.Prev . }}
-        <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--prev nav__link mt-05">
+        <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--prev nav__link">
             {{ partial "nav/page/title.html" . }}
             <div class="icon-font page-nav__icon page-nav__icon--arrow">west</div>
           </a></li>
@@ -11,7 +11,7 @@
       {{- end -}}
       {{ with $pages.Next . }}
         <li>
-          <a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next nav__link mt-05">
+          <a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next nav__link">
               {{ partial "nav/page/title.html" . }}
             <div class="icon-font page-nav__icon page-nav__icon--arrow">east</div>
           </a></li>
@@ -22,7 +22,7 @@
 </nav>
 
 {{ define "start" }}
-  <li><span class="page-nav__item page-nav__item--start mt-05">
+  <li><span class="page-nav__item page-nav__item--start">
       <div class="page-nav__itemcol">
         {{ partial "doc/nav/menu-icon.html" . }}
       </div>
@@ -32,7 +32,7 @@
 {{ end }}
 
 {{ define "end" }}
-  <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next nav__link mt-05">
+  <li><a href="{{ .RelPermalink }}" class="page-nav__item page-nav__item--next nav__link">
       <div class="page-nav__itemcol">
           {{ partial "doc/nav/menu-icon.html" . }}
       </div>
