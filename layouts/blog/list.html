@@ -12,7 +12,9 @@
         </div>
       {{ end }}
     <ul class="page-list">
-        {{ range (.Paginate .Pages 1).Pages }}
+      {{ $n := 10 }}
+      {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
+        {{ range (.Paginate .Pages $n).Pages }}
           <li class="li-box">{{- .Render "li-full" -}}</li>
         {{- end -}}
     </ul>

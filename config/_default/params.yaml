@@ -10,14 +10,13 @@ toctitle: On this Page
 latex: false
 mermaid: false
 
+paginateNr: 5
 # Image processing
 imaging:
   u_number: 12 # Number of different sizes
   u_pxdmax: 4 # Maximum pixel density
-  u_jpeg_quality_reduction: # JPEG Quality reduction for higher densities
-    - -10 # 2*
-    - -15 # 3*
-    - -20 # 4*
+  # JPEG Quality reduction for higher densities
+  u_jpeg_quality_reduction: [-10, -20, -30]
 
 # The following parameters of the Perplex layout are essential for image processing
 # DO NOT REMOVE OR CHANGE THEM! THE LAYOUT WILL BREAK!
@@ -31,4 +30,4 @@ layout:
   xmaxmobile: 8.29
   xmin: 6.6667
   xmax: 10.0
-  background: '#fdfeff'
+  background: '#fffefd'
