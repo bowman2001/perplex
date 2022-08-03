@@ -1,28 +1,27 @@
 {{- define "main" -}}
-  <div id="l-content-box" class="l-box">
-    <div id="l-content">
+<div id="l-content-box" class="l-box">
+  <div id="l-content">
     <header class="page-header">
       <aside class="right">
-          {{- partial "img/featured.html" . -}}
+        {{- partial "img/featured.html" . -}}
       </aside>
       <div class="title title--article">
-          {{ partial "title/title.html" . }}
-          {{ partial "title/subtitle.html" . }}
+        {{ partial "title/title.html" . }}
+        {{ partial "title/subtitle.html" . }}
       </div>
     </header>
-    <div class="md md--serif md--article md--link-color {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
-        {{- partial "content.html" .Content -}}
+    <div class="md md--serif md--margin-left md--article md--link-color
+    {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
+      {{- partial "content.html" .Content -}}
     </div>
-    </div>
-    <footer class="page-footer">
-      <div class="meta">
-          {{ partial "nav/breadcrumbs/footer.html" . }}
-          {{ partial "date/page/updated.html" . }}
-      </div>
-    </footer>
   </div>
+  <footer class="page-footer">
+    <div class="meta">
+      {{ partial "nav/breadcrumbs/footer.html" . }}
+      {{ partial "date/page/updated.html" . }}
+    </div>
+  </footer>
+</div>
 {{- end -}}
-
-{{- define "sidebar" -}}{{- partial "article/nav/sidebar.html" . -}}{{- end -}}
 
 {{- define "toc" -}}{{- partial "nav/toc.html" . -}}{{- end -}}
