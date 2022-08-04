@@ -8,14 +8,11 @@
 <div class="l-page">
   <main id="l-main" class="l-tnp">
       {{- block "main" . -}}{{- end -}}
-    <footer id="l-footer" class="l-box">
+    <footer id="l-footer" class="l-box margin-left">
         {{- partial "footer/site.html" . -}}
     </footer>
   </main>
   <div id="l-overlay"></div>
-  <aside id="l-sidebar" class="l-nav l-tnp">
-      {{- block "sidebar" . -}}{{- end -}}
-  </aside>
 </div>
 {{- partial "foot.html" . -}}
 </body>

@@ -569,31 +569,31 @@ body {
 @media screen and (min-width: 79em) {
   .l-page {
     grid-template-columns: minmax(2rem, auto) repeat(8, 18.5rem) minmax(2rem, auto);
-    grid-template-areas: ". left left main main main main main main main";
+    grid-template-areas: ". main main main main main main main main main";
   }
 }
 @media screen and (min-width: 120em) {
   .l-page {
     grid-template-columns: minmax(2rem, auto) repeat(12, 18.5rem) minmax(2rem, auto);
-    grid-template-areas: ". . . left left main main main main main main main main main";
+    grid-template-areas: ". . . main main main main main main main main main main main";
   }
-}
-.l-page.is-locked {
-  background: black;
-}
-.l-page.is-locked > #l-main {
-  z-index: -1;
 }
 
 @media screen and (min-width: 79em) {
-  .l-page--blog {
-    grid-template-areas: ". main main main main main main main main main";
+  .l-page--doc {
+    grid-template-areas: ". left left main main main main main main main";
   }
 }
 @media screen and (min-width: 120em) {
-  .l-page--blog {
-    grid-template-areas: ". . . main main main main main main main main main main main";
+  .l-page--doc {
+    grid-template-areas: ". . . left left main main main main main main main main main";
   }
+}
+.l-page--doc.is-locked {
+  background: black;
+}
+.l-page--doc.is-locked > #l-main {
+  z-index: -1;
 }
 
 #l-overlay {
@@ -606,11 +606,11 @@ body {
   width: 100%;
   background-color: transparent;
   cursor: unset;
-  transition: background-color 50ms 250ms;
+  transition: background-color 250ms;
 }
 #l-overlay.is-visible {
   display: block;
-  transition: background-color 50ms 250ms;
+  transition: background-color 250ms;
   background-color: #000b;
   cursor: pointer;
 }
@@ -916,12 +916,6 @@ a.meta__item--text:hover {
   line-height: 3rem;
   padding-top: 0.42893rem;
   padding-bottom: 0.57107rem;
-}
-
-@media screen and (min-width: 79em) {
-  .title--margin-left {
-    margin-left: 37rem;
-  }
 }
 
 .title--list {
@@ -3288,7 +3282,7 @@ a.page-nav__item--prev, a.page-nav__item--next {
 }
 
 @media screen and (min-width: 79em) {
-  .l-margin-left {
+  .margin-left {
     margin-left: 37rem;
   }
 }

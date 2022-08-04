@@ -5,14 +5,17 @@
 <header class="l-masthead l-nav" id="l-masthead">
     {{- partial "nav/masthead.html" . -}}
 </header>
-<div class="l-page l-page--blog">
+<div class="l-page l-page--doc">
   <main id="l-main" class="l-tnp">
       {{- block "main" . -}}{{- end -}}
-    <footer id="l-footer" class="l-box l-margin-left">
+    <footer id="l-footer" class="l-box">
         {{- partial "footer/site.html" . -}}
     </footer>
   </main>
   <div id="l-overlay"></div>
+  <aside id="l-sidebar" class="l-nav l-tnp">
+      {{- block "sidebar" . -}}{{- end -}}
+  </aside>
 </div>
 {{- partial "foot.html" . -}}
 </body>
