@@ -1084,12 +1084,6 @@ a.meta__item--text:hover {
   padding-bottom: .57107rem;
 }
 
-@media screen and (min-width: 79em) {
-  .title--margin-left {
-    margin-left: 37rem;
-  }
-}
-
 .title--list {
   max-width: 100%;
   padding-bottom: 0;
@@ -4049,7 +4043,7 @@ a.page-nav__item--next {
 }
 
 @media screen and (min-width: 79em) {
-  .l-margin-left {
+  .margin-left {
     margin-left: 37rem;
   }
 }
