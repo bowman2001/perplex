@@ -1,25 +1,27 @@
 {{- define "main" -}}
-  <div id="l-content-box" class="l-box l-box--full">
-    <header class="page-header">
-      <div class="title title--list title--sans title-list--ruled margin-left">
-          {{ partial "title/title.html" . }}
-          <hr>
-      </div>
-    </header>
-      {{ with .Content }}
-        <div class="md md--sans md--h-serif md--list h-link-color md--margin-left">
-            {{- partial "content.html" . -}}
-        </div>
-      {{ end }}
-    <ul class="page-list">
-      {{ $n := 10 }}
-      {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-        {{ range (.Paginate .Pages $n).Pages }}
-          <li class="li-box">{{- .Render "li-full" -}}</li>
-        {{- end -}}
-    </ul>
-    <footer class="page-footer">
-      {{ partial "blog/nav/paginator.html" . }}
-    </footer>
+<div id="l-content-box" class="l-box l-box--full">
+  <header class="page-header">
+    <div class="title title--list title--sans title-list--ruled">
+      {{ partial "blog/title/title-stream.html" . }}
+    </div>
+  </header>
+  {{ with .Content }}
+  <div class="md md--sans md--h-serif md--list h-link-color md--margin-left">
+    {{- partial "content.html" . -}}
   </div>
+  {{ end }}
+  <ul class="page-list">
+    {{ $n := 10 }}
+    {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
+    {{ range (.Paginate .Pages $n).Pages }}
+    <li class="li-box">
+      <hr>
+      {{- .Render "li-full" -}}
+    </li>
+    {{- end -}}
+  </ul>
+  <footer class="page-footer">
+    {{ partial "blog/nav/paginator.html" . }}
+  </footer>
+</div>
 {{- end -}}
