@@ -1,6 +1,6 @@
 {{ range .Resources.Match "l*.md" }}
   <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="home__tile ">
-      <div class="md md--sans md--home md--link-color">
+      <div class="md md--sans md--home ">
       {{ partial "home/markdown.html" . }}
       </div>
   </div>
@@ -9,7 +9,7 @@
 {{ $counter := 0 }}
 {{ range .Resources.Match "d*.md" }}
   <div {{ with .Params.id }}id="{{ . }}"{{ end }} class="home__tile home__tile--shadow home__tile--{{ index $colors (mod $counter 4)}}">
-      <div class="md md--sans md--home md--link-color">
+      <div class="md md--sans md--home ">
           {{ partial "home/markdown.html" . }}
       </div>
   </div>

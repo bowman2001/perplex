@@ -19,7 +19,7 @@
         </aside>
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--h-serif md--list h-link-color md--link-color">
+          <div class="md md--sans md--h-serif md--list h-link-color ">
               {{- partial "content.html" . -}}
           </div>
         {{ end }}
@@ -33,7 +33,7 @@
         </nav>
       </div>
         {{ with .Page.GetPage "after_index" }}
-          <section class="md md--sans md--h-serif h-link-color md--link-color">
+          <section class="md md--sans md--h-serif h-link-color ">
               {{- partial "content.html" .Content }}
           </section>
         {{ end }}
