@@ -1047,7 +1047,7 @@ a.meta__item--text {
   transition: text-decoration 150ms;
   transition: text-decoration 150ms, -webkit-text-decoration 150ms;
   text-decoration: underline;
-  text-decoration-thickness: .15em;
+  text-decoration-thickness: .1rem;
   -webkit-text-decoration-color: rgba(85, 85, 102, .2);
           text-decoration-color: rgba(85, 85, 102, .2);
   letter-spacing: .01em;
@@ -2784,19 +2784,33 @@ a.meta__item--text:hover {
 }
 
 .md a {
-  transition: -webkit-text-decoration 150ms;
-  transition: text-decoration 150ms;
-  transition: text-decoration 150ms, -webkit-text-decoration 150ms;
+  transition: background-color 150ms, -webkit-text-decoration-color 150ms;
+  transition: text-decoration-color 150ms, background-color 150ms;
+  transition: text-decoration-color 150ms, background-color 150ms, -webkit-text-decoration-color 150ms;
   text-decoration: underline;
-  text-decoration-thickness: .15em;
-  -webkit-text-decoration-color: rgba(17, 17, 17, .15);
-          text-decoration-color: rgba(17, 17, 17, .15);
+  text-underline-offset: .05em;
+  text-decoration-thickness: 1px;
+  -webkit-text-decoration-color: rgba(17, 17, 17, .5);
+          text-decoration-color: rgba(17, 17, 17, .5);
+  background-color: transparent;
+  border-radius: .25em;
 }
 
 .md a:hover,
 .md a:focus {
-  -webkit-text-decoration-color: rgba(17, 17, 17, .67);
-          text-decoration-color: rgba(17, 17, 17, .67);
+  -webkit-text-decoration-color: #111;
+          text-decoration-color: #111;
+  background-color: rgba(0, 132, 194, .1);
+}
+
+.md a[href^=http] {
+  -webkit-text-decoration-style: double;
+          text-decoration-style: double;
+}
+
+.md a[href^=http]:hover,
+.md a[href^=http]:focus {
+  background-color: rgba(0, 168, 137, .1);
 }
 
 .md pre :target {
@@ -2809,7 +2823,7 @@ a.meta__item--text:hover {
 .md ins {
   -webkit-text-decoration-color: #a00;
           text-decoration-color: #a00;
-  text-decoration-thickness: .15em;
+  text-decoration-thickness: .1rem;
   -webkit-text-decoration-skip: auto;
           text-decoration-skip: auto;
 }
@@ -2863,34 +2877,6 @@ a.meta__item--text:hover {
 
 .md cite {
   font-style: italic;
-}
-
-.md--link-color a {
-  color: #006a9c;
-  -webkit-text-decoration-color: rgba(0, 106, 156, .15);
-          text-decoration-color: rgba(0, 106, 156, .15);
-}
-
-.md--link-color a:hover,
-.md--link-color a:focus {
-  -webkit-text-decoration-color: rgba(0, 106, 156, .67);
-          text-decoration-color: rgba(0, 106, 156, .67);
-}
-
-.md--link-color a[href^=http] {
-  color: #00826a;
-  -webkit-text-decoration-color: rgba(0, 130, 106, .15);
-          text-decoration-color: rgba(0, 130, 106, .15);
-}
-
-.md--link-color a[href^=http]:hover,
-.md--link-color a[href^=http]:focus {
-  -webkit-text-decoration-color: rgba(0, 130, 106, .67);
-          text-decoration-color: rgba(0, 130, 106, .67);
-}
-
-.md--link-color a[href^=http]:after {
-  content: none;
 }
 
 .md .asciicast {

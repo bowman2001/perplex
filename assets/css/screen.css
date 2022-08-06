@@ -886,7 +886,7 @@ body {
 a.meta__item--text {
   transition: text-decoration 150ms;
   text-decoration: underline;
-  text-decoration-thickness: 0.15em;
+  text-decoration-thickness: 0.1rem;
   text-decoration-color: rgba(85, 85, 102, 0.2);
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
@@ -2236,13 +2236,23 @@ a.meta__item--text:hover {
 }
 
 .md a {
-  transition: text-decoration 150ms;
+  transition: text-decoration-color 150ms, background-color 150ms;
   text-decoration: underline;
-  text-decoration-thickness: 0.15em;
-  text-decoration-color: rgba(17, 17, 17, 0.15);
+  text-underline-offset: 0.05em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(17, 17, 17, 0.5);
+  background-color: transparent;
+  border-radius: 0.25em;
 }
 .md a:hover, .md a:focus {
-  text-decoration-color: rgba(17, 17, 17, 0.67);
+  text-decoration-color: #111111;
+  background-color: rgba(0, 132, 194, 0.1);
+}
+.md a[href^=http] {
+  text-decoration-style: double;
+}
+.md a[href^=http]:hover, .md a[href^=http]:focus {
+  background-color: rgba(0, 168, 137, 0.1);
 }
 .md pre :target {
   text-decoration: none;
@@ -2251,7 +2261,7 @@ a.meta__item--text:hover {
 }
 .md del, .md ins {
   text-decoration-color: #aa0000;
-  text-decoration-thickness: 0.15em;
+  text-decoration-thickness: 0.1rem;
   text-decoration-skip: auto;
 }
 .md del {
@@ -2293,24 +2303,6 @@ a.meta__item--text:hover {
 }
 .md cite {
   font-style: italic;
-}
-
-.md--link-color a {
-  color: #006a9c;
-  text-decoration-color: rgba(0, 106, 156, 0.15);
-}
-.md--link-color a:hover, .md--link-color a:focus {
-  text-decoration-color: rgba(0, 106, 156, 0.67);
-}
-.md--link-color a[href^=http] {
-  color: #00826a;
-  text-decoration-color: rgba(0, 130, 106, 0.15);
-}
-.md--link-color a[href^=http]:hover, .md--link-color a[href^=http]:focus {
-  text-decoration-color: rgba(0, 130, 106, 0.67);
-}
-.md--link-color a[href^=http]:after {
-  content: none;
 }
 
 .md .asciicast {
