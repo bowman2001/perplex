@@ -2790,8 +2790,8 @@ a.meta__item--text:hover {
   text-decoration: underline;
   text-underline-offset: .05em;
   text-decoration-thickness: 1px;
-  -webkit-text-decoration-color: rgba(17, 17, 17, .5);
-          text-decoration-color: rgba(17, 17, 17, .5);
+  -webkit-text-decoration-color: rgba(17, 17, 17, .25);
+          text-decoration-color: rgba(17, 17, 17, .25);
   background-color: transparent;
   border-radius: .25em;
 }
@@ -2801,11 +2801,6 @@ a.meta__item--text:hover {
   -webkit-text-decoration-color: #111;
           text-decoration-color: #111;
   background-color: rgba(0, 132, 194, .1);
-}
-
-.md a[href^=http] {
-  -webkit-text-decoration-style: double;
-          text-decoration-style: double;
 }
 
 .md a[href^=http]:hover,

@@ -2240,7 +2240,7 @@ a.meta__item--text:hover {
   text-decoration: underline;
   text-underline-offset: 0.05em;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(17, 17, 17, 0.5);
+  text-decoration-color: rgba(17, 17, 17, 0.25);
   background-color: transparent;
   border-radius: 0.25em;
 }
@@ -2249,7 +2249,14 @@ a.meta__item--text:hover {
   background-color: rgba(0, 132, 194, 0.1);
 }
 .md a[href^=http] {
-  text-decoration-style: double;
+  /* &:after {
+  	position: relative;
+  	top: -0.2em;
+  	right: -0.1em;
+  	content: u.$ne-arr;
+  	font-size: 85%;
+  	text-decoration: unset;
+  } */
 }
 .md a[href^=http]:hover, .md a[href^=http]:focus {
   background-color: rgba(0, 168, 137, 0.1);
