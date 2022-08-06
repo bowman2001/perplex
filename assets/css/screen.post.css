@@ -1136,11 +1136,6 @@ a.meta__item--text:hover {
   color: #111;
 }
 
-.title-list--ruled hr {
-  border-top: .2rem solid #006a9c;
-  height: 1rem;
-}
-
 .title--article h1 {
   font-size: 2.86rem;
   line-height: 3rem;
@@ -4024,7 +4019,7 @@ a.page-nav__item--next {
 }
 
 .page-list > hr {
-  border-bottom: .2rem solid rgba(17, 17, 17, .25);
+  border-bottom: .2rem solid rgba(0, 132, 194, .25);
   height: 1rem;
   margin: 0 2rem;
 }
@@ -4049,13 +4044,13 @@ a.page-nav__item--next {
 }
 
 .li-box {
-  padding: calc(2rem + 1 * var(--es)) 0rem;
+  padding-bottom: 2rem;
 }
 
 .li-box > hr {
-  border-top: 1px solid #ddd;
+  border-top: .25rem solid #0084c2;
   height: 1rem;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 2rem 3rem 2rem;
 }
 
 .li-header {
