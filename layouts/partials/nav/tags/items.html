@@ -1,11 +1,13 @@
 {{ with .GetTerms "tags" }}
 <ul class="meta__list meta__list--tags">
-    {{ $n := len . }}
-{{ range first (sub $n 1 ) . }}
-<li><a class="meta__item meta__item--text meta__item--tag" href="{{ .Permalink }}">{{ .LinkTitle | site.Home.RenderString }}</a><span class="meta__item meta__item--text"> · </span></li>
-{{ end }}
+  {{ $n := len . }}
+  {{ range first (sub $n 1 ) . }}
+  <li><a class="meta__item meta__item--text meta__item--tag" href="{{ .Permalink }}">{{ .LinkTitle |
+    site.Home.RenderString }}</a><span class="meta__item meta__item--text"> · </span></li>
+  {{ end }}
   {{ range last 1 . }}
-  <li><a class="meta__item meta__item--text meta__item--tag" href="{{ .Permalink }}">{{ .LinkTitle | site.Home.RenderString }}</a></li>
+  <li><a class="meta__item meta__item--text meta__item--tag" href="{{ .Permalink }}">{{ .LinkTitle |
+    site.Home.RenderString }}</a></li>
   {{ end }}
 </ul>
 {{ end }}
