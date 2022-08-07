@@ -1048,8 +1048,9 @@ a.meta__item--text {
   transition: text-decoration 150ms, -webkit-text-decoration 150ms;
   text-decoration: underline;
   text-decoration-thickness: .1rem;
-  -webkit-text-decoration-color: rgba(85, 85, 102, .2);
-          text-decoration-color: rgba(85, 85, 102, .2);
+  text-decoration-gap: .05em;
+  -webkit-text-decoration-color: rgba(85, 85, 102, .5);
+          text-decoration-color: rgba(85, 85, 102, .5);
   letter-spacing: .01em;
   word-spacing: .03em;
 }

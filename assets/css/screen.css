@@ -887,7 +887,8 @@ a.meta__item--text {
   transition: text-decoration 150ms;
   text-decoration: underline;
   text-decoration-thickness: 0.1rem;
-  text-decoration-color: rgba(85, 85, 102, 0.2);
+  text-decoration-gap: 0.05em;
+  text-decoration-color: rgba(85, 85, 102, 0.5);
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
 }
