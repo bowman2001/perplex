@@ -11,6 +11,10 @@ latex: false
 mermaid: false
 
 paginateNr: 5
+
+taxonomies:
+  tag: tags
+
 # Image processing
 imaging:
   u_number: 12 # Number of different sizes

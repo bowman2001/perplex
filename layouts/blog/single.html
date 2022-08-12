@@ -1,30 +1,30 @@
 {{- define "main" -}}
-  <div id="l-content-box" class="l-box l-box--full">
-    <div id="l-content">
+<div id="l-content-box" class="l-box l-box--full">
+  <div id="l-content">
     <header class="page-header">
       <div class="meta meta--left">
-          {{ partial "nav/tags/header.html" . }}
-          {{ partial "date/page/published.html" . }}
+        {{ partial "nav/tags/header.html" . }}
+        {{ partial "date/page/published.html" . }}
       </div>
       <div class="title title--serif margin-left">
-          {{ partial "title/title.html" . }}
-          {{ partial "title/subtitle.html" . }}
+        {{ partial "title/title.html" . }}
+        {{ partial "title/subtitle.html" . }}
       </div>
       <aside class="featured-image">
-          {{- partial "img/featured.html" . -}}
+        {{- partial "img/featured.html" . -}}
       </aside>
     </header>
     <div class="md md--sans md--h-serif md--margin-left  h-link-color">
-        {{- partial "content.html" .Content -}}
+      {{- partial "content.html" .Content -}}
     </div>
-    </div>
-    <footer class="page-footer margin-left">
-      <hr>
-      <div class="meta">
-          {{ partial "nav/breadcrumbs/footer.html" . }}
-          {{ partial "date/page/updated.html" . }}
-      </div>
-      {{ partial "blog/nav/pages.html" . }}
-    </footer>
   </div>
+  <footer class="page-footer margin-left">
+    <hr>
+    <div class="meta">
+      {{ partial "nav/breadcrumbs/footer.html" . }}
+      {{ partial "date/page/updated.html" . }}
+    </div>
+    {{ partial "blog/nav/pages.html" . }}
+  </footer>
+</div>
 {{- end -}}

@@ -614,6 +614,7 @@ body {
 
 .section {
   padding: calc(1rem + 1 * var(--es)) 0rem;
+  clear: both;
 }
 
 .left,
@@ -1048,8 +1049,9 @@ a.meta__item--text {
   transition: text-decoration 150ms, -webkit-text-decoration 150ms;
   text-decoration: underline;
   text-decoration-thickness: .1rem;
-  -webkit-text-decoration-color: rgba(85, 85, 102, .2);
-          text-decoration-color: rgba(85, 85, 102, .2);
+  text-underline-offset: .075em;
+  -webkit-text-decoration-color: rgba(85, 85, 102, .5);
+          text-decoration-color: rgba(85, 85, 102, .5);
   letter-spacing: .01em;
   word-spacing: .03em;
 }
@@ -1084,6 +1086,11 @@ a.meta__item--text:hover {
   padding-bottom: .57107rem;
 }
 
+.title > hr {
+  border-bottom: .25rem solid #111;
+  height: 1rem;
+}
+
 .title--list {
   max-width: 100%;
   padding-bottom: 0;
@@ -1100,9 +1107,11 @@ a.meta__item--text:hover {
   font-weight: 400;
 }
 
-.title--ruled > hr {
-  border-bottom: .25rem solid #111;
-  height: 1rem;
+@media screen and (min-width: 79em) {
+  .title--left {
+    float: left;
+    width: 37rem;
+  }
 }
 
 .title--first h1 {
@@ -1191,7 +1200,7 @@ a.meta__item--text:hover {
   color: inherit;
   line-height: inherit;
   text-decoration: underline;
-  text-underline-offset: .05em;
+  text-underline-offset: .075em;
   text-decoration-thickness: 1px;
   -webkit-text-decoration-color: transparent;
           text-decoration-color: transparent;
@@ -2788,7 +2797,7 @@ a.meta__item--text:hover {
   transition: text-decoration-color 150ms, background-color 150ms;
   transition: text-decoration-color 150ms, background-color 150ms, -webkit-text-decoration-color 150ms;
   text-decoration: underline;
-  text-underline-offset: .05em;
+  text-underline-offset: .075em;
   text-decoration-thickness: 1px;
   -webkit-text-decoration-color: rgba(17, 17, 17, .25);
           text-decoration-color: rgba(17, 17, 17, .25);
@@ -3465,7 +3474,6 @@ a.meta__item--text:hover {
        column-width: 33rem;
   -moz-column-gap: 4rem;
        column-gap: 4rem;
-  clear: both;
 }
 
 .page-nav__list {
@@ -3999,6 +4007,17 @@ a.page-nav__item--next {
   position: relative;
 }
 
+@media screen and (min-width: 79em) {
+  .page-header--title-left {
+    height: 0;
+  }
+
+  .page-header--title-left .title {
+    float: left;
+    width: 37rem;
+  }
+}
+
 .page-list > hr {
   border-bottom: .2rem solid rgba(0, 132, 194, .25);
   height: 1rem;
@@ -4064,6 +4083,8 @@ a.page-nav__item--next {
     top: 1rem;
     right: 0;
     margin: 0;
+    float: none;
+    clear: none;
   }
 }
 

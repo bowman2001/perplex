@@ -494,6 +494,7 @@ body {
 
 .section {
   padding: calc(1rem + 1 * var(--es)) 0rem;
+  clear: both;
 }
 
 .left, .right {
@@ -887,7 +888,8 @@ a.meta__item--text {
   transition: text-decoration 150ms;
   text-decoration: underline;
   text-decoration-thickness: 0.1rem;
-  text-decoration-color: rgba(85, 85, 102, 0.2);
+  text-underline-offset: 0.075em;
+  text-decoration-color: rgba(85, 85, 102, 0.5);
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
 }
@@ -917,6 +919,10 @@ a.meta__item--text:hover {
   padding-top: 0.42893rem;
   padding-bottom: 0.57107rem;
 }
+.title > hr {
+  border-bottom: 0.25rem solid #111111;
+  height: 1rem;
+}
 
 .title--list {
   max-width: 100%;
@@ -933,9 +939,11 @@ a.meta__item--text:hover {
   font-weight: 400;
 }
 
-.title--ruled > hr {
-  border-bottom: 0.25rem solid #111111;
-  height: 1rem;
+@media screen and (min-width: 79em) {
+  .title--left {
+    float: left;
+    width: 37rem;
+  }
 }
 
 .title--first h1 {
@@ -1016,7 +1024,7 @@ a.meta__item--text:hover {
   color: inherit;
   line-height: inherit;
   text-decoration: underline;
-  text-underline-offset: 0.05em;
+  text-underline-offset: 0.075em;
   text-decoration-thickness: 1px;
   text-decoration-color: transparent;
   transition: text-decoration-color 150ms ease, background-color 150ms ease;
@@ -2238,7 +2246,7 @@ a.meta__item--text:hover {
 .md a {
   transition: text-decoration-color 150ms, background-color 150ms;
   text-decoration: underline;
-  text-underline-offset: 0.05em;
+  text-underline-offset: 0.075em;
   text-decoration-thickness: 1px;
   text-decoration-color: rgba(17, 17, 17, 0.25);
   background-color: transparent;
@@ -2814,7 +2822,6 @@ a.meta__item--text:hover {
   column-count: 2;
   column-width: 33rem;
   column-gap: 4rem;
-  clear: both;
 }
 
 .page-nav__list {
@@ -3257,6 +3264,16 @@ a.page-nav__item--prev, a.page-nav__item--next {
   position: relative;
 }
 
+@media screen and (min-width: 79em) {
+  .page-header--title-left {
+    height: 0;
+  }
+  .page-header--title-left .title {
+    float: left;
+    width: 37rem;
+  }
+}
+
 .page-list > hr {
   border-bottom: 0.2rem solid rgba(0, 132, 194, 0.25);
   height: 1rem;
@@ -3317,6 +3334,8 @@ a.page-nav__item--prev, a.page-nav__item--next {
     top: 1rem;
     right: 0;
     margin: 0;
+    float: none;
+    clear: none;
   }
 }
 
