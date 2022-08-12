@@ -614,6 +614,7 @@ body {
 
 .section {
   padding: calc(1rem + 1 * var(--es)) 0rem;
+  clear: both;
 }
 
 .left,
@@ -3473,7 +3474,6 @@ a.meta__item--text:hover {
        column-width: 33rem;
   -moz-column-gap: 4rem;
        column-gap: 4rem;
-  clear: both;
 }
 
 .page-nav__list {

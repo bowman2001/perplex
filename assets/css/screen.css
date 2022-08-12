@@ -494,6 +494,7 @@ body {
 
 .section {
   padding: calc(1rem + 1 * var(--es)) 0rem;
+  clear: both;
 }
 
 .left, .right {
@@ -2821,7 +2822,6 @@ a.meta__item--text:hover {
   column-count: 2;
   column-width: 33rem;
   column-gap: 4rem;
-  clear: both;
 }
 
 .page-nav__list {
