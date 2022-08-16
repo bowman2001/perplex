@@ -7,9 +7,6 @@
         {{ partial "title/taxonomy.html" . }}
         {{ partial "title/subtitle.html" . }}
       </div>
-      <aside class="featured-image">
-        {{- partial "img/featured.html" . -}}
-      </aside>
     </header>
     {{ with .Content }}
     <div class="md md--sans md--margin-left md--h-serif h-link-color md--list">
@@ -17,9 +14,9 @@
     </div>
     {{ end }}
     <nav class="page-nav page-nav--cols margin-left">
-      <ul>
+      <ul class="page-nav__list">
         {{- range .Pages -}}
-        <li>{{- .Render "li" -}}</li>
+        <li>{{- .Render "li-global" -}}</li>
         {{- end -}}
       </ul>
     </nav>
