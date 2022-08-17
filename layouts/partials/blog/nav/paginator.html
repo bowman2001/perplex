@@ -1,5 +1,5 @@
 {{ if (or .Paginator.HasPrev .Paginator.HasNext) -}}
-<nav class="page-nav page-nav--margin">
+<nav class="page-nav margin-left">
   <ul class="page-nav__list page-nav__list--flex">
     {{- with .Paginator.Prev -}}
     <li><a href="{{ .URL }}" class="page-nav__item page-nav__item--prev nav__link">

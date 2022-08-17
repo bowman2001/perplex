@@ -1,9 +1,0 @@
-{{ with .FirstSection.Title }}
-  <div class="page-nav__meta">{{- . | site.Home.RenderString -}}</div>{{- end -}}
-{{- with .Title -}}
-  <div class="page-nav__title">{{- . | site.Home.RenderString -}}</div>{{- end -}}
-{{- with .Summary -}}{{- partial "content.html" . -}}{{- else -}}
-    {{- with .Description -}}
-      <p class="page-nav__description">{{- . | site.Home.RenderString -}}</p>
-    {{- end -}}
-{{- end -}}
