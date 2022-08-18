@@ -1,10 +1,10 @@
-{{ $length := (len .Name) }}
+{{ $length := (len .Title) }}
 {{ $link := "" }}
 {{ if and (gt $length 24) }}
     {{ $end := (sub $length 13) }}
-    {{ if eq (slicestr .Name $end) "-unsplash.jpg" }}
+    {{ if eq (slicestr .Title $end) "-unsplash.jpg" }}
         {{ $start := (sub $length 24) }}
-        {{ $id := (slicestr .Name $start $end) }}
+        {{ $id := (slicestr .Title $start $end) }}
         {{ $link = (print "https://unsplash.com/photos/" $id )}}
     {{ end }}
 {{ end }}
