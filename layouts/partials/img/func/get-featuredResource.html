@@ -1,4 +1,12 @@
-{{ $imgResource := .Resources.GetMatch "featured" }}
+{{ $imgResource := "" }}
+{{ with .Resources.GetMatch "featured" }}
+    {{ $imgResource = . }}
+{{ else }}
+    {{ with .CurrentSection.Resources.GetMatch "featured" }}
+        {{ $imgResource = . }}
+    {{ end }}
+{{ end }}
+
 {{ if not $imgResource }}
     {{ $currentPage := .Page }}
     {{ $url := "" }}
