@@ -1,10 +1,11 @@
-{{ $length := (len .Title) }}
+{{ $filename := .Key | path.Base }}
+{{ $length := len $filename }}
 {{ $link := "" }}
-{{ if and (gt $length 24) }}
+{{ if (gt $length 24) }}
     {{ $end := (sub $length 13) }}
-    {{ if eq (slicestr .Title $end) "-unsplash.jpg" }}
+    {{ if eq (slicestr $filename $end) "-unsplash.jpg" }}
         {{ $start := (sub $length 24) }}
-        {{ $id := (slicestr .Title $start $end) }}
+        {{ $id := (slicestr $filename $start $end) }}
         {{ $link = (print "https://unsplash.com/photos/" $id )}}
     {{ end }}
 {{ end }}

@@ -493,7 +493,7 @@ body {
 }
 
 .section {
-  padding: calc(1rem + 1 * var(--es)) 0rem;
+  padding: calc(1 * var(--es)) 0rem;
   clear: both;
 }
 
@@ -628,7 +628,6 @@ body {
 }
 @media screen and (min-width: 79em) {
   #l-main {
-    overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
     scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
@@ -807,7 +806,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #556;
+  color: #006a9c;
   max-width: 70rem;
   margin: 0 2rem;
 }
@@ -889,7 +888,7 @@ a.meta__item--text {
   text-decoration: underline;
   text-decoration-thickness: 0.1rem;
   text-underline-offset: 0.075em;
-  text-decoration-color: rgba(85, 85, 102, 0.5);
+  text-decoration-color: rgba(0, 106, 156, 0.5);
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
 }
@@ -936,7 +935,8 @@ a.meta__item--text:hover {
 
 .title--sans h1 {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 @media screen and (min-width: 79em) {
@@ -1423,7 +1423,7 @@ a.meta__item--text:hover {
   font-weight: 400;
 }
 .md--sans strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 .md--sans .p-first {
   font-size: 2.19375rem;
@@ -1438,7 +1438,15 @@ a.meta__item--text:hover {
   font-size: 99%;
 }
 
-.md--home > p, .md--home > ul, .md--home > ol, .md--home > dl {
+.md--home .p-small {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: 1.464465rem;
+  padding-bottom: calc(0.535535rem + var(--es));
+  font-weight: 400;
+}
+
+.md--card > p, .md--card > ul, .md--card > ol, .md--card > dl, .md--card > blockquote, .md--card > .p-first {
   font-size: 1.81640625rem;
   line-height: 3rem;
   padding-top: 0.8197558594rem;
@@ -1447,18 +1455,8 @@ a.meta__item--text:hover {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
 }
-.md--home > p em, .md--home > ul em, .md--home > ol em, .md--home > dl em {
+.md--card > p strong, .md--card > ul strong, .md--card > ol strong, .md--card > dl strong, .md--card > blockquote strong, .md--card > .p-first strong {
   font-weight: 500;
-}
-.md--home > p strong, .md--home > ul strong, .md--home > ol strong, .md--home > dl strong {
-  font-weight: 600;
-}
-.md--home .p-small {
-  font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 1.464465rem;
-  padding-bottom: calc(0.535535rem + var(--es));
-  font-weight: 400;
 }
 
 .md--tiny > p, .md--tiny > ul, .md--tiny > ol, .md--tiny > dl {
@@ -1931,6 +1929,16 @@ a.meta__item--text:hover {
 .md .h-tip > span, .md .h-tip:target > span {
   background-color: rgba(0, 238, 0, 0.5333333333);
 }
+.md .h-meta {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: calc(0.464465rem + var(--es));
+  margin-bottom: -0.464465rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  color: #006a9c;
+  padding-bottom: 0;
+}
 
 .md--h-serif h1 {
   font-size: 2.86rem;
@@ -2070,7 +2078,11 @@ a.meta__item--text:hover {
 .md--home {
   padding-bottom: 0.5rem;
 }
-.md--home h1 {
+.md--home h2 {
+  margin-top: 1rem;
+}
+
+.md--card h1 {
   font-size: 3.81rem;
   line-height: 4rem;
   padding-top: calc(4.573155rem + -3 * var(--es));
@@ -2082,10 +2094,10 @@ a.meta__item--text:hover {
   text-transform: uppercase;
   color: black;
 }
-.md--home h2 {
+.md--card h2 {
   font-size: 1.666875rem;
   line-height: 2rem;
-  padding-top: 2.3757553125rem;
+  padding-top: 1.3757553125rem;
   padding-bottom: 0.6242446875rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
@@ -2246,28 +2258,35 @@ a.meta__item--text:hover {
 .md a {
   transition: text-decoration-color 150ms, background-color 150ms;
   text-decoration: underline;
+  border-radius: 0.25em;
+  background-color: transparent;
   text-underline-offset: 0.075em;
   text-decoration-thickness: 1px;
   text-decoration-color: rgba(17, 17, 17, 0.5);
-  background-color: transparent;
-  border-radius: 0.25em;
 }
 .md a:hover, .md a:focus {
-  text-decoration-color: #111111;
   background-color: rgba(0, 132, 194, 0.1);
+  text-decoration-color: #111111;
 }
 .md a[href^=http] {
-  /* &:after {
-  	position: relative;
-  	top: -0.2em;
-  	right: -0.1em;
-  	content: u.$ne-arr;
-  	font-size: 85%;
-  	text-decoration: unset;
-  } */
+  position: relative;
+}
+.md a[href^=http]:after {
+  position: absolute;
+  top: -1.5em;
+  right: -0.65em;
+  font-size: 40%;
+  font-weight: 700;
+  content: "↗";
+  transition: color 150ms;
+  text-decoration: unset;
+  color: transparent;
 }
 .md a[href^=http]:hover, .md a[href^=http]:focus {
   background-color: rgba(0, 168, 137, 0.1);
+}
+.md a[href^=http]:hover:after, .md a[href^=http]:focus:after {
+  color: #111111;
 }
 .md pre :target {
   text-decoration: none;
@@ -2805,17 +2824,11 @@ a.meta__item--text:hover {
 
 .page-nav {
   color: #111111;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   max-width: 74rem;
 }
 .page-nav b {
   font-weight: 500;
-}
-
-@media screen and (min-width: 79em) {
-  .page-nav--margin {
-    margin-left: 37rem;
-  }
 }
 
 .page-nav--cols {
@@ -2827,9 +2840,7 @@ a.meta__item--text:hover {
   page-break-inside: avoid;
   break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
-  padding: 0.5rem 2rem;
-  margin-bottom: 1rem;
-  background-color: transparent;
+  padding: 1rem 2rem;
 }
 
 .page-nav__list--flex {
@@ -2851,6 +2862,7 @@ a.meta__item--text:hover {
   .page-nav__list--flex > li {
     width: 50%;
     align-self: stretch;
+    padding: 0 2rem;
   }
 }
 
@@ -2866,10 +2878,6 @@ a.meta__item--text:hover {
   border-top: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
-  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
-}
-
 .page-nav__item--start {
   visibility: hidden;
   display: none;
@@ -2882,7 +2890,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
 
 .page-nav__item--prev, .page-nav__item--next, .page-nav__item--start {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 .page-nav__item--prev {
@@ -2943,7 +2951,8 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
   margin-top: -0.535535rem;
   padding-bottom: 0.535535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  color: #006a9c;
 }
 
 .page-nav__meta--dir {
@@ -2966,6 +2975,36 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
 .page-nav__description strong {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
+}
+
+.card-nav {
+  max-width: 111rem;
+}
+
+.card-nav__list {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 37em) {
+  .card-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-radius: 0.5em;
+  transition: background-color 150ms;
+}
+@media screen and (min-width: 37em) {
+  .card {
+    width: 37rem;
+  }
+}
+.card:hover {
+  background-color: rgba(201, 24, 127, 0.1);
 }
 
 @media screen and (min-width: 79em) {
@@ -3072,7 +3111,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
   font-size: 1.905rem;
   line-height: 2rem;
   padding-top: 1.2865775rem;
-  padding-bottom: 0.7134225rem;
+  padding-bottom: 1.7134225rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -3083,7 +3122,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
     font-size: 1.43rem;
     line-height: 2rem;
     padding-top: 1.464465rem;
-    padding-bottom: 0.535535rem;
+    padding-bottom: 1.535535rem;
   }
 }
 
@@ -3266,6 +3305,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
 
 .page-header {
   position: relative;
+  z-index: 2;
 }
 
 @media screen and (min-width: 79em) {
@@ -3306,9 +3346,9 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
   padding-bottom: 2rem;
 }
 .li-box > hr {
-  border-top: 0.25rem solid #0084c2;
-  height: 1rem;
-  margin: 0 2rem 3rem 2rem;
+  background-image: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, rgba(0, 132, 194, 0.5) 25%, rgba(0, 132, 194, 0.5) 75%, rgba(0, 132, 194, 0.025) 100%);
+  height: 0.2rem;
+  margin: 0 2rem 3.8rem 2rem;
 }
 
 .li-header {
@@ -3335,6 +3375,7 @@ a.page-nav__item--prev:hover, a.page-nav__item--next:hover {
 @media screen and (min-width: 48em) {
   .featured-image {
     position: absolute;
+    z-index: 2;
     top: 1rem;
     right: 0;
     margin: 0;
