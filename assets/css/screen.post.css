@@ -3520,6 +3520,10 @@ a.meta__item--text:hover {
   margin: 0 0 1rem 0;
 }
 
+.page-nav__list--flex > li {
+  padding: 0 2rem;
+}
+
 @media screen and (min-width: 37em) {
   .page-nav__list--flex {
     flex-direction: row;
@@ -3535,7 +3539,6 @@ a.meta__item--text:hover {
   .page-nav__list--flex > li {
     width: 50%;
     align-self: stretch;
-    padding: 0 2rem;
   }
 }
 
@@ -3678,9 +3681,9 @@ a.meta__item--text:hover {
 }
 
 .card {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   background-color: rgba(0, 0, 0, 0);
-  border-radius: .5em;
+  border-radius: .5rem;
   transition: background-color 150ms;
 }
 
