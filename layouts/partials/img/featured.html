@@ -13,7 +13,7 @@
             {{ $img := .Resize (printf "%dx" (int $max_px)) }}
             <img {{ with $imgclass }}class="{{ . }}"{{ end }} src="{{ $img.RelPermalink }}" alt="{{ .Name }}"
                  title="{{ .Title }}"
-                 srcset="{{ partial "srcset.html" (dict "img" . "max" $max_px) }}"
+                 srcset="{{ partial "img/func/srcset.html" (dict "img" . "max" $max_px) }}"
                  width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
         {{- end -}}
         {{- with $imgLink -}}

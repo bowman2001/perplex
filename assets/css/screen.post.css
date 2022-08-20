@@ -1822,7 +1822,7 @@ a.meta__item--text:hover {
 .md--card > dl strong,
 .md--card > blockquote strong,
 .md--card > .p-first strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .md--card > hr {
@@ -2439,7 +2439,7 @@ a.meta__item--text:hover {
   background-color: rgba(0, 238, 0, .5333333333);
 }
 
-.md .h-meta {
+.md .p-meta {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: calc(0.464465rem + var(--es));
@@ -2448,6 +2448,13 @@ a.meta__item--text:hover {
   font-weight: 400;
   color: #006a9c;
   padding-bottom: 0;
+}
+
+.md .p-meta + h1,
+.md .p-meta + h2,
+.md .p-meta + h3,
+.md .p-meta + h4 {
+  margin-top: -2rem;
 }
 
 .md--h-serif h1 {
@@ -2611,10 +2618,6 @@ a.meta__item--text:hover {
   padding-bottom: .5rem;
 }
 
-.md--home h2 {
-  margin-top: 1rem;
-}
-
 .md--card h1 {
   font-size: 3.81rem;
   line-height: 4rem;
@@ -2631,7 +2634,7 @@ a.meta__item--text:hover {
 .md--card h2 {
   font-size: 1.666875rem;
   line-height: 2rem;
-  padding-top: 1.3757553125rem;
+  padding-top: 2.3757553125rem;
   padding-bottom: .6242446875rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
