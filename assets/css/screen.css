@@ -2837,14 +2837,16 @@ a.meta__item--text:hover {
 
 .page-nav--cols {
   column-count: 2;
-  column-width: 36rem;
+  column-width: 33rem;
+  column-gap: 4rem;
+  margin: 0 2rem;
 }
 
 .page-nav__list li {
   page-break-inside: avoid;
   break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
 }
 
 .page-nav__list--flex {

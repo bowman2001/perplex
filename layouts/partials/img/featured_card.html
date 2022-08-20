@@ -1,8 +1,7 @@
 {{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
 {{- with $img -}}
-    {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
     {{- $imgclass := "" -}}
-    <figure class="md">
+    <figure class="fig-card">
         {{- if eq .MediaType.SubType "svg" -}}
           <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
         {{- else -}}
@@ -15,11 +14,6 @@
                  title="{{ .Title }}"
                  srcset="{{ partial "img/func/srcset.html" (dict "img" . "max" $max_px) }}"
                  width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
-        {{- end -}}
-        {{- with $imgLink -}}
-          <figcaption>
-            <div class="attribution">By <a href="{{ . }}">Unsplash</a></div>
-          </figcaption>
         {{- end -}}
     </figure>
 {{- end -}}

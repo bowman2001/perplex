@@ -3506,8 +3506,11 @@ a.meta__item--text:hover {
 .page-nav--cols {
   -moz-column-count: 2;
        column-count: 2;
-  -moz-column-width: 36rem;
-       column-width: 36rem;
+  -moz-column-width: 33rem;
+       column-width: 33rem;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  margin: 0 2rem;
 }
 
 .page-nav__list li {
@@ -3515,7 +3518,7 @@ a.meta__item--text:hover {
   -moz-column-break-inside: avoid;
        break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
 }
 
 .page-nav__list--flex {
