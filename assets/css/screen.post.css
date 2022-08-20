@@ -1825,6 +1825,11 @@ a.meta__item--text:hover {
   font-weight: 500;
 }
 
+.md--card > hr {
+  margin: 0 2rem;
+  border-top: .1rem solid rgba(17, 17, 17, .5);
+}
+
 .md--tiny > p,
 .md--tiny > ul,
 .md--tiny > ol,
@@ -3681,7 +3686,7 @@ a.meta__item--text:hover {
 }
 
 .card {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   background-color: rgba(0, 0, 0, 0);
   border-radius: .5rem;
   transition: background-color 150ms;

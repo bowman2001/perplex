@@ -1458,6 +1458,10 @@ a.meta__item--text:hover {
 .md--card > p strong, .md--card > ul strong, .md--card > ol strong, .md--card > dl strong, .md--card > blockquote strong, .md--card > .p-first strong {
   font-weight: 500;
 }
+.md--card > hr {
+  margin: 0 2rem;
+  border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
+}
 
 .md--tiny > p, .md--tiny > ul, .md--tiny > ol, .md--tiny > dl {
   font-size: 1.43rem;
@@ -2995,7 +2999,7 @@ a.meta__item--text:hover {
 }
 
 .card {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   background-color: transparent;
   border-radius: 0.5rem;
   transition: background-color 150ms;
