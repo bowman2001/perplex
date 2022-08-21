@@ -1,3 +1,2 @@
-{{- $js := resources.Get "js/toggles.js" -}}
-{{- $secureJS := $js | resources.Fingerprint "sha512" -}}
-<script src="{{- $secureJS.RelPermalink -}}"></script>
+{{- $js := resources.Get "js/toggles.js" | fingerprint -}}
+<script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>

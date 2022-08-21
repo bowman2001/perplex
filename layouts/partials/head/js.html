@@ -1,25 +1,2 @@
-{{- $js := resources.Get "hyphenopoly/Hyphenopoly_Loader.js" | minify | fingerprint -}}
-<script type="text/javascript" src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>
-<script>
-    Hyphenopoly.config({
-        require: {
-            // "la": "honorificabilitudinitas",
-            "de": "Silbentrennungsalgorithmus",
-            "en": "FORCEHYPHENOPOLY" // "Supercalifragilisticexpialidocious"
-            //
-        },
-        setup: {
-            selectors: {
-                "p, dd, .md li": {
-                    minWordLength: 5,
-                    orphanControl: 2,
-                }
-            }
-        },
-        paths: {
-            maindir: "/hyphenopoly/",
-            patterndir: "/hyphenopoly/patterns/",
-
-        },
-    });
-</script>
+{{- $js := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint -}}
+<script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>

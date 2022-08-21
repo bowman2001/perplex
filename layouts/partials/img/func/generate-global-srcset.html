@@ -1,0 +1,8 @@
+{{ $srcset := slice }}
+{{ $widths := partial "img/func/calc-global-sizes.html" . }}
+{{ range $w := $widths }}
+    {{ $img := $.Resize (printf "%dx" $w ) }}
+    {{ $src := print ($img.RelPermalink | safeURL) " " $img.Width "w" }}
+    {{ $srcset = $srcset | append $src }}
+{{ end }}
+{{ return ( delimit $srcset ", " ) }}
