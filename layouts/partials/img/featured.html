@@ -1,20 +1,23 @@
 {{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
 {{- with $img -}}
     {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
-    {{- $imgclass := "" -}}
+    {{- $imgClass := "" -}}
     <figure class="md">
         {{- if eq .MediaType.SubType "svg" -}}
           <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
         {{- else -}}
             {{- if eq .MediaType.SubType "png" -}}
-                {{- $imgclass = "img-png" -}}
+                {{- $imgClass = "img-png" -}}
             {{- end -}}
             {{- $max_px := mul $.Site.Params.layout.column $.Site.Params.layout.xmax -}}
-            {{ $img := .Resize (printf "%dx" (int $max_px)) }}
-            <img {{ with $imgclass }}class="{{ . }}"{{ end }} src="{{ $img.RelPermalink }}" alt="{{ .Name }}"
-                 title="{{ .Title }}"
-                 srcset="{{ partial "img/func/srcset.html" (dict "img" . "max" $max_px) }}"
-                 width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ $defaultImg := .Resize (printf "%dx" (int $max_px)) }}
+            <img src="{{ $defaultImg.RelPermalink }}"
+                 srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 data-sizes="auto"
+                 data-srcset="{{ partial "img/func/generate-global-srcset.html" . }}"
+                 class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
+                 alt="{{ .Name }}"
+                 title="{{ .Title }}" />
         {{- end -}}
         {{- with $imgLink -}}
           <figcaption>

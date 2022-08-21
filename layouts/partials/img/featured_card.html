@@ -16,8 +16,7 @@
                  data-srcset="{{ partial "img/func/generate-global-srcset.html" . }}"
                  class="lazyload {{ with $imgclass -}}{{ . }}{{- end }}"
                  alt="{{ .Name }}"
-                 title="{{ .Title }}"
-            />
+                 title="{{ .Title }}" />
         {{- end -}}
     </figure>
 {{- end -}}
