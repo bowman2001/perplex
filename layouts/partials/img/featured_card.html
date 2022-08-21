@@ -1,7 +1,7 @@
 {{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
 {{- with $img -}}
     {{- $imgclass := "" -}}
-    <figure class="fig-card">
+    <figure class="card__fig">
         {{- if eq .MediaType.SubType "svg" -}}
           <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
         {{- else -}}

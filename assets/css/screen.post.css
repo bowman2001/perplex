@@ -1825,11 +1825,6 @@ a.meta__item--text:hover {
   font-weight: 600;
 }
 
-.md--card > hr {
-  margin: 0 2rem;
-  border-top: .1rem solid rgba(17, 17, 17, .5);
-}
-
 .md--tiny > p,
 .md--tiny > ul,
 .md--tiny > ol,
@@ -3706,6 +3701,26 @@ a.meta__item--text:hover {
 
 .card:hover {
   background-color: rgba(201, 24, 127, .1);
+}
+
+.card > hr {
+  margin: 0 2rem 1rem 2rem;
+  border-top: .1rem solid rgba(17, 17, 17, .5);
+}
+
+.card__fig {
+  height: 0;
+  padding-bottom: calc(66.6667% - 4rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.card__fig > img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 @media screen and (min-width: 79em) {

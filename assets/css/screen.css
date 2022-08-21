@@ -1458,10 +1458,6 @@ a.meta__item--text:hover {
 .md--card > p strong, .md--card > ul strong, .md--card > ol strong, .md--card > dl strong, .md--card > blockquote strong, .md--card > .p-first strong {
   font-weight: 600;
 }
-.md--card > hr {
-  margin: 0 2rem;
-  border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
-}
 
 .md--tiny > p, .md--tiny > ul, .md--tiny > ol, .md--tiny > dl {
   font-size: 1.43rem;
@@ -3013,6 +3009,22 @@ a.meta__item--text:hover {
 }
 .card:hover {
   background-color: rgba(201, 24, 127, 0.1);
+}
+.card > hr {
+  margin: 0 2rem 1rem 2rem;
+  border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
+}
+
+.card__fig {
+  height: 0;
+  padding-bottom: calc(66.6667% - 4rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.card__fig > img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media screen and (min-width: 79em) {
