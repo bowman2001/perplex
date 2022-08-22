@@ -27,10 +27,10 @@
            alt="{{ .Name }}"
            title="{{ .Title }}"/>
   {{ end }}
-      {{ with $img.Params.caption }}
+      {{ with .Params.caption }}
         <span class="caption">{{- . | site.Home.RenderString -}}</span>
       {{ end }}
-      {{ with $img.Params.attr }}
+      {{ with .Params.attr }}
           {{ $attr := .  }}
           {{- if $img.Params.caption -}} · {{- end -}}
           {{ with $img.Params.attrlink }}<a href="{{ . | safeHTML }}">
