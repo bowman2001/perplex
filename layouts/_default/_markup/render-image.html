@@ -9,32 +9,34 @@
     {{ $filepath := path.Split $img.Name }}
     {{ $title = $filepath.File }}
 {{ end }}
-<span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }}">
-{{ if eq $img.MediaType.SubType "svg" }}
-  <img class="img--svg" src="{{ $img.RelPermalink }}" alt="{{ $img.Name }}" title="{{ $title }}">
-{{ else }}
-    {{ $max_px := mul site.Params.layout.xmax site.Params.layout.column }}
-    {{ $srcset := partial "img/func/generate-srcset.html" (dict "img" $img "max_px" $max_px) }}
-    {{ $bp_3col := mul site.Params.layout.xmin (add (mul 3 site.Params.layout.column) (mul 4 site.Params.layout.gutter)) }}
-    {{ $min_gutter_mobile := mul site.Params.layout.xminmobile site.Params.layout.guttermobile }}
-    {{ $sizes := print "(max-width: " $bp_3col "px) calc( 50vw - " $min_gutter_mobile "px ), " $max_px "px" }}
-    <img src="{{ $img.RelPermalink }}"
-         srcset="{{ print $srcset }}"
-         sizes="{{ print $sizes }}"
-         alt="{{- .Text -}}"
-         {{ with $title }}title="{{- . | site.Home.RenderString -}}"{{ end }}
-		     loading="lazy"/>
-{{ end }}
-    {{ with $img.Params.caption }}
-      <span class="caption">{{- . | site.Home.RenderString -}}</span>
-    {{ end }}
-    {{ with $img.Params.attr }}
-        {{ $attr := .  }}
-        {{- if $img.Params.caption -}} · {{- end -}}
-        {{ with $img.Params.attrlink }}<a href="{{ . | safeHTML }}">
+{{ with $img }}
+  <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }}">
+  {{ if eq .MediaType.SubType "svg" }}
+    <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ $title }}">
+  {{ else }}
+      {{ $max_px := mul site.Params.layout.xmax site.Params.layout.column }}
+      {{ $srcset := partial "img/func/generate-srcset.html" (dict "img" . "max_px" $max_px) }}
+      {{ $bp_3col := mul site.Params.layout.xmin (add (mul 3 site.Params.layout.column) (mul 4 site.Params.layout.gutter)) }}
+      {{ $min_gutter_mobile := mul site.Params.layout.xminmobile site.Params.layout.guttermobile }}
+      {{ $sizes := print "(max-width: " $bp_3col "px) calc( 50vw - " $min_gutter_mobile "px ), " $max_px "px" }}
+      <img src="{{ .RelPermalink }}"
+           srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+           data-sizes="auto"
+           data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
+           class="lazyload"
+           alt="{{ .Name }}"
+           title="{{ .Title }}"/>
+  {{ end }}
+      {{ with $img.Params.caption }}
+        <span class="caption">{{- . | site.Home.RenderString -}}</span>
+      {{ end }}
+      {{ with $img.Params.attr }}
+          {{ $attr := .  }}
+          {{- if $img.Params.caption -}} · {{- end -}}
+          {{ with $img.Params.attrlink }}<a href="{{ . | safeHTML }}">
 			<span class='attribution'>{{- $attr | site.Home.RenderString -}}</span></a>
-        {{ else }}<span class='attribution'>{{- $attr | site.Home.RenderString -}}</span>
-        {{ end }}
-    {{ end }}
+          {{ else }}<span class='attribution'>{{- $attr | site.Home.RenderString -}}</span>
+          {{ end }}
+      {{ end }}
 </span>
-{{/* width="{{- $img1.Width -}}" height="{{- $img1.Height -}}" */}}
+{{ end }}
