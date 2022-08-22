@@ -119,7 +119,7 @@ small {
 
 mark {
   color: inherit;
-  background-color: #eeee0088;
+  background-color: rgba(238, 238, 0, 0.5333333333);
 }
 
 q {
@@ -376,14 +376,14 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ffebd7;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-home::-webkit-scrollbar {
     width: 1rem;
     height: 1rem;
   }
   #l-home::-webkit-scrollbar-thumb {
-    background: #ebb924;
+    background: hsl(45deg, 83%, 53%);
   }
   #l-home::-webkit-scrollbar-track {
     background: #ffebd7;
@@ -449,19 +449,19 @@ body {
 }
 
 .home__tile--red, .home__tile--title {
-  background: linear-gradient(225deg, #c9187f 0%, #c9187f 9%, #e7e8e9 9%, #e7e8e9 100%);
+  background: linear-gradient(225deg, hsl(325deg, 79%, 44%) 0%, hsl(325deg, 79%, 44%) 9%, #e7e8e9 9%, #e7e8e9 100%);
 }
 
 .home__tile--blue {
-  background: linear-gradient(225deg, #0084c2 0%, #0084c2 9%, #e7e8e9 9%, #e7e8e9 100%);
+  background: linear-gradient(225deg, hsl(199deg, 100%, 38%) 0%, hsl(199deg, 100%, 38%) 9%, #e7e8e9 9%, #e7e8e9 100%);
 }
 
 .home__tile--green {
-  background: linear-gradient(225deg, #00a889 0%, #00a889 9%, #e7e8e9 9%, #e7e8e9 100%);
+  background: linear-gradient(225deg, hsl(169deg, 100%, 33%) 0%, hsl(169deg, 100%, 33%) 9%, #e7e8e9 9%, #e7e8e9 100%);
 }
 
 .home__tile--yellow {
-  background: linear-gradient(225deg, #ebb924 0%, #ebb924 9%, #e7e8e9 9%, #e7e8e9 100%);
+  background: linear-gradient(225deg, hsl(45deg, 83%, 53%) 0%, hsl(45deg, 83%, 53%) 9%, #e7e8e9 9%, #e7e8e9 100%);
 }
 
 #l-content-box {
@@ -612,7 +612,7 @@ body {
 #l-overlay.is-visible {
   display: block;
   transition: background-color 250ms;
-  background-color: #000b;
+  background-color: rgba(0, 0, 0, 0.7333333333);
   cursor: pointer;
 }
 
@@ -630,14 +630,14 @@ body {
   #l-main {
     overflow-y: auto;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ffebd7;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-main::-webkit-scrollbar {
     width: 1rem;
     height: 1rem;
   }
   #l-main::-webkit-scrollbar-thumb {
-    background: #ebb924;
+    background: hsl(45deg, 83%, 53%);
   }
   #l-main::-webkit-scrollbar-track {
     background: #ffebd7;
@@ -685,14 +685,14 @@ body {
     padding-left: 0;
     padding-right: 0;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ffebd7;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-sidebar::-webkit-scrollbar {
     width: 1rem;
     height: 1rem;
   }
   #l-sidebar::-webkit-scrollbar-thumb {
-    background: #ebb924;
+    background: hsl(45deg, 83%, 53%);
   }
   #l-sidebar::-webkit-scrollbar-track {
     background: #ffebd7;
@@ -893,7 +893,7 @@ a.meta__item--text {
   word-spacing: 0.03em;
 }
 a.meta__item--text:hover {
-  text-decoration-color: #c9187f;
+  text-decoration-color: hsl(325deg, 79%, 44%);
 }
 
 .meta__date {
@@ -1505,7 +1505,7 @@ a.meta__item--text:hover {
   margin: 0 0.1em;
   padding: 0 0.25em;
   text-transform: none;
-  border: 0.1rem solid #0001;
+  border: 0.1rem solid rgba(0, 0, 0, 0.0666666667);
   background-color: #fff8f0;
 }
 .md dt code {
@@ -1525,7 +1525,7 @@ a.meta__item--text:hover {
   width: 100%;
   word-break: normal;
   hyphens: none;
-  border: 0.1rem solid #0001;
+  border: 0.1rem solid rgba(0, 0, 0, 0.0666666667);
 }
 .md pre code {
   display: block;
@@ -1556,21 +1556,21 @@ a.meta__item--text:hover {
 }
 .md .highlight > div, .md .highlight > pre {
   background-color: #fff8f0 !important;
-  border: 0.1rem solid #0001;
+  border: 0.1rem solid rgba(0, 0, 0, 0.0666666667);
 }
 .md .highlight > div pre, .md .highlight > pre pre {
   background-color: #fff8f0 !important;
 }
 .md .highlight table {
   scrollbar-gutter: stable;
-  scrollbar-color: #ebb924 #ffebd7;
+  scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
 }
 .md .highlight table::-webkit-scrollbar {
   width: 1rem;
   height: 1rem;
 }
 .md .highlight table::-webkit-scrollbar-thumb {
-  background: #ebb924;
+  background: hsl(45deg, 83%, 53%);
 }
 .md .highlight table::-webkit-scrollbar-track {
   background: #ffebd7;
@@ -1920,13 +1920,13 @@ a.meta__item--text:hover {
   color: #ffffff;
 }
 .md .h-warn > span, .md .h-warn:target > span {
-  background-color: #cc0000bb;
+  background-color: rgba(204, 0, 0, 0.7333333333);
 }
 .md .h-info > span, .md .h-info:target > span {
-  background-color: #eeee0088;
+  background-color: rgba(238, 238, 0, 0.5333333333);
 }
 .md .h-tip > span, .md .h-tip:target > span {
-  background-color: #00ee0088;
+  background-color: rgba(0, 238, 0, 0.5333333333);
 }
 .md .p-meta {
   font-size: 1.43rem;
@@ -2673,7 +2673,7 @@ a.meta__item--text:hover {
   transition: color 150ms ease-in-out;
 }
 .nav__title:hover, .nav__title:focus {
-  color: #c9187f;
+  color: hsl(325deg, 79%, 44%);
 }
 
 .nav__link {
@@ -2688,13 +2688,13 @@ a.meta__item--text:hover {
 }
 .nav__link:hover, .nav__link:focus {
   color: black;
-  border-color: #c9187f;
+  border-color: hsl(325deg, 79%, 44%);
 }
 .nav__link:hover .icon-font, .nav__link:focus .icon-font {
-  color: #c9187f;
+  color: hsl(325deg, 79%, 44%);
 }
 .nav__link:hover path, .nav__link:focus path {
-  fill: #c9187f;
+  fill: hsl(325deg, 79%, 44%);
 }
 .nav__link:hover .li__text, .nav__link:focus .li__text {
   background-color: rgba(201, 24, 127, 0.1);
@@ -2702,11 +2702,11 @@ a.meta__item--text:hover {
 }
 .nav__link.is-active {
   color: black;
-  border-color: #0084c2;
+  border-color: hsl(199deg, 100%, 38%);
   cursor: default;
 }
 .nav__link.is-active .icon-font {
-  color: #0084c2;
+  color: hsl(199deg, 100%, 38%);
 }
 .nav__link.is-active .li__text {
   background-color: rgba(0, 132, 194, 0.1);
@@ -2727,7 +2727,7 @@ a.meta__item--text:hover {
   border-bottom: 0.5rem solid transparent;
 }
 .top-nav .is-active, .top-nav .has-active {
-  border-bottom-color: #0084c2;
+  border-bottom-color: hsl(199deg, 100%, 38%);
 }
 
 .menu a {
@@ -2735,10 +2735,10 @@ a.meta__item--text:hover {
   text-transform: uppercase;
 }
 .menu a:hover, .menu a:focus {
-  border-bottom-color: #c9187f;
+  border-bottom-color: hsl(325deg, 79%, 44%);
 }
 .menu a.is-active:hover, .menu a.is-active:focus {
-  border-bottom-color: #0084c2;
+  border-bottom-color: hsl(199deg, 100%, 38%);
   cursor: default;
 }
 
@@ -2746,7 +2746,7 @@ a.meta__item--text:hover {
   letter-spacing: 0.025em;
 }
 .social a:hover, .social a:focus {
-  color: #00a889;
+  color: hsl(169deg, 100%, 33%);
 }
 
 .ctrl {
@@ -2879,7 +2879,7 @@ a.meta__item--text:hover {
 
 .page-nav__item--prev, .page-nav__item--next, .page-nav__item--start {
   justify-content: space-between;
-  border-top: 1px solid #0006;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .page-nav__item--start {
@@ -3030,14 +3030,14 @@ a.meta__item--text:hover {
 @media screen and (min-width: 79em) {
   .sidebar-box {
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ffebd7;
+    scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   .sidebar-box::-webkit-scrollbar {
     width: 1rem;
     height: 1rem;
   }
   .sidebar-box::-webkit-scrollbar-thumb {
-    background: #ebb924;
+    background: hsl(45deg, 83%, 53%);
   }
   .sidebar-box::-webkit-scrollbar-track {
     background: #ffebd7;
@@ -3296,13 +3296,13 @@ a.meta__item--text:hover {
 }
 #TableOfContents a:hover, #TableOfContents a:focus {
   color: black;
-  border-color: #c9187f;
+  border-color: hsl(325deg, 79%, 44%);
 }
 #TableOfContents a:hover .icon-font, #TableOfContents a:focus .icon-font {
-  color: #c9187f;
+  color: hsl(325deg, 79%, 44%);
 }
 #TableOfContents a:hover path, #TableOfContents a:focus path {
-  fill: #c9187f;
+  fill: hsl(325deg, 79%, 44%);
 }
 #TableOfContents a:hover .li__text, #TableOfContents a:focus .li__text {
   background-color: rgba(201, 24, 127, 0.1);
