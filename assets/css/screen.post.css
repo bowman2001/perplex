@@ -3703,24 +3703,31 @@ a.meta__item--text:hover {
   background-color: rgba(201, 24, 127, .1);
 }
 
-.card > hr {
-  margin: 0 2rem 1rem 2rem;
+.card hr {
+  margin: 0 2rem;
+  height: 2rem;
   border-top: .1rem solid rgba(17, 17, 17, .5);
 }
 
 .card__fig {
-  height: 0;
-  padding-bottom: calc(66.6667% - 4rem);
+  width: 100%;
+  height: auto;
+  padding: 0 2rem;
   margin-bottom: 1rem;
-  overflow: hidden;
 }
 
-.card__fig > img {
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+@media screen and (min-width: 37em) {
+  .card__fig {
+    width: 37rem;
+    height: 22.00011rem;
+  }
+
+  .card__fig > img {
+    width: 33rem;
+    height: 22.00011rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 @media screen and (min-width: 79em) {
