@@ -13,6 +13,7 @@
             <img src="{{ $defaultImg.RelPermalink }}"
                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                  data-sizes="auto"
+                 data-parent-fit="contain"
                  data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
                  class="lazyload {{ with $imgclass -}}{{ . }}{{- end }}"
                  alt="{{ .Name }}"
