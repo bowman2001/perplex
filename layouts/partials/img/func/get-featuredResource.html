@@ -36,3 +36,16 @@
     {{ end }}
 {{ end }}
 {{ return $imgResource }}
+
+{{/* TODO: Recursive partial is not working. Why? */}}
+{{ define "partials/resource-in-parent.html" }}
+    {{ $imgResource := "" }}
+    {{ with .Parent }}
+        {{ with .Resources.GetMatch "featured" }}
+            {{ $imgResource = . }}
+        {{ else }}
+            {{ partial "resource-in-parent.html" . }}
+        {{ end }}
+    {{ end }}
+    {{ return $imgResource }}
+{{ end }}
