@@ -16,6 +16,7 @@ taxonomies:
   tag: tags
 
 # Image processing
+featured: logo/Perplex.svg
 imaging:
   u_number: 8 # Number of different sizes
   u_pxdmax: 4 # Maximum pixel density

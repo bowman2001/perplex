@@ -1,7 +1,8 @@
 {{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
 {{- with $img -}}
-    {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
-    {{- $imgClass := "" -}}
+  <aside class="featured-image">
+      {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
+      {{- $imgClass := "" -}}
     <figure class="md">
         {{- if eq .MediaType.SubType "svg" -}}
           <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
@@ -17,7 +18,7 @@
                  data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
                  class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                  alt="{{ .Name }}"
-                 title="{{ .Title }}" />
+                 title="{{ .Title }}"/>
         {{- end -}}
         {{- with $imgLink -}}
           <figcaption>
@@ -25,4 +26,5 @@
           </figcaption>
         {{- end -}}
     </figure>
+  </aside>
 {{- end -}}

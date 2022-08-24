@@ -2,13 +2,11 @@
 <div id="l-content-box" class="l-box">
   <div id="l-content">
     <header class="page-header">
-      <aside class="right">
-        {{- partial "img/featured.html" . -}}
-      </aside>
       <div class="title title--article">
         {{ partial "title/title.html" . }}
         {{ partial "title/subtitle.html" . }}
       </div>
+        {{- partial "img/featured.html" . -}}
     </header>
     <div class="md md--serif md--margin-left md--article
     {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
@@ -23,5 +21,3 @@
   </footer>
 </div>
 {{- end -}}
-
-{{- define "toc" -}}{{- partial "nav/toc.html" . -}}{{- end -}}
