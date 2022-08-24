@@ -2,25 +2,37 @@
 {{ with .Resources.GetMatch "featured" }}
     {{ $imgResource = . }}
 {{ else }}
-    {{ with .CurrentSection.Resources.GetMatch "featured" }}
-        {{ $imgResource = . }}
+    {{ with .Parent }}
+        {{ with .Resources.GetMatch "featured" }}
+            {{ $imgResource = . }}
+        {{ else }}
+            {{ with .Parent }}
+                {{ with .Resources.GetMatch "featured" }}
+                    {{ $imgResource = . }}
+                {{ else }}
+                    {{ with .Parent }}
+                        {{ with .Resources.GetMatch "featured" }}
+                            {{ $imgResource = . }}
+                        {{ else }}
+                            {{ with .Parent }}
+                                {{ with .Resources.GetMatch "featured" }}
+                                    {{ $imgResource = . }}
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
     {{ end }}
 {{ end }}
 
 {{ if not $imgResource }}
-    {{ $currentPage := .Page }}
-    {{ $url := "" }}
-    {{- with .Params.featImg -}}
-        {{ $url = . }}
-    {{- else }}
-        {{ with .CurrentSection.Params.featImg }}
-            {{ $url = . }}
-        {{ else }}
-            {{ with .Site.Params.featImg }}
-                {{ $url = . }}
-            {{ end }}
-        {{ end }}
-    {{- end -}}
-    {{ $imgResource = ( partial "get-resource.html" ( dict "currentPage" $currentPage "name" $url ) ) }}
+    {{ warnf "There is no specific featured image for the page %v" . }}
+    {{ with site.GetPage "/" }}
+        {{ $imgResource = .Resources.GetMatch "featured" }}
+    {{ else }}
+        {{ errorf "There is no featured image resource for this site" }}
+    {{ end }}
 {{ end }}
 {{ return $imgResource }}
