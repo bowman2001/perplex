@@ -3728,6 +3728,11 @@ a.meta__item--text:hover {
     -o-object-fit: cover;
        object-fit: cover;
   }
+
+  .card__fig > .img--svg {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }
 
 @media screen and (min-width: 79em) {

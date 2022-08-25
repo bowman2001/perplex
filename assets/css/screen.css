@@ -3032,6 +3032,9 @@ a.meta__item--text:hover {
     height: 22.00011rem;
     object-fit: cover;
   }
+  .card__fig > .img--svg {
+    object-fit: contain;
+  }
 }
 
 @media screen and (min-width: 79em) {
