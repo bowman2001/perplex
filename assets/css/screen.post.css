@@ -765,7 +765,6 @@ body {
   grid-area: main;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative;
   z-index: 5;
   -webkit-animation: fade 500ms;
