@@ -592,6 +592,9 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   scroll-margin-top: calc(var(--tnh) + var(--tg));
 }
 
