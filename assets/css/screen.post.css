@@ -544,7 +544,13 @@ body {
   font-size: 3rem;
   height: auto;
   width: 100%;
-  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 37em) {
+  .home__tile {
+    height: 37rem;
+    width: 37rem;
+  }
 }
 
 .home__tile--title {
@@ -583,7 +589,7 @@ body {
 }
 
 #l-content-box {
-  flex: 0 1 100%;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -904,6 +910,7 @@ body {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 18.5rem;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 37em) {

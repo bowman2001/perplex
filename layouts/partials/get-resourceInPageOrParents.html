@@ -1,0 +1,32 @@
+{{/*
+  IN:
+    - name: Name of the resource
+    - currentPage: The
+  OUT: Resource or empty string
+*/}}
+{{ $name := .name }}
+{{ $resource := "" }}
+{{ with .currentPage }}
+    {{ with .Resources.GetMatch $name }}
+        {{ $resource = . }}
+    {{ else }}
+        {{ $resource = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . ))}}
+    {{ end }}
+{{ end }}
+{{ if not $resource }}
+    {{ warnf "There is no resource with the name '%s' for the %v or its parent sections." $name .currentPage }}
+{{ end }}
+{{ return $resource }}
+
+{{ define "partials/resource-in-parent.html" }}
+    {{ $name := .name }}
+    {{ $resource := "" }}
+    {{ with .currentPage.Parent }}
+        {{ with .Resources.GetMatch $name }}
+            {{ $resource = . }}
+        {{ else }}
+            {{ $resource = partial "resource-in-parent.html" ( dict "name" $name "currentPage" . )}}
+        {{ end }}
+    {{ end }}
+    {{ return $resource }}
+{{ end }}

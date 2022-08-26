@@ -1,34 +1,5 @@
-{{ $imgResource := "" }}
-{{ with .Resources.GetMatch "featured" }}
-    {{ $imgResource = . }}
-{{ else }}
-    {{ with .Parent }}
-        {{ with .Resources.GetMatch "featured" }}
-            {{ $imgResource = . }}
-        {{ else }}
-            {{ with .Parent }}
-                {{ with .Resources.GetMatch "featured" }}
-                    {{ $imgResource = . }}
-                {{ else }}
-                    {{ with .Parent }}
-                        {{ with .Resources.GetMatch "featured" }}
-                            {{ $imgResource = . }}
-                        {{ else }}
-                            {{ with .Parent }}
-                                {{ with .Resources.GetMatch "featured" }}
-                                    {{ $imgResource = . }}
-                                {{ end }}
-                            {{ end }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
+{{ $imgResource := (partial "get-resourceInPageOrParents.html" (dict "name" "featured" "currentPage" . ) )}}
 {{ if not $imgResource }}
-    {{ warnf "There is no specific featured image for the page %v" . }}
     {{ with resources.Get .Site.Params.featured }}
         {{ $imgResource = . }}
     {{ else }}
@@ -36,16 +7,3 @@
     {{ end }}
 {{ end }}
 {{ return $imgResource }}
-
-{{/* TODO: Recursive partial is not working. Why? */}}
-{{ define "partials/resource-in-parent.html" }}
-    {{ $imgResource := "" }}
-    {{ with .Parent }}
-        {{ with .Resources.GetMatch "featured" }}
-            {{ $imgResource = . }}
-        {{ else }}
-            {{ partial "resource-in-parent.html" . }}
-        {{ end }}
-    {{ end }}
-    {{ return $imgResource }}
-{{ end }}

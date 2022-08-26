@@ -1,6 +1,6 @@
-{{ $img := partial "get-resource.html" (dict "name" .Destination "currentPage" .Page ) }}
+{{ $img := partial "get-resourceInPageOrParents.html" (dict "name" .Destination "currentPage" $.Page ) }}
 {{ if not $img }}
-    {{ errorf "%v - No image with the (partial) name %s has been found." .Page .Destination }}
+    {{ errorf "%v - No image with the name '%s' has been found." .currentPage .Destination }}
 {{ end }}
 {{ $title := "" }}
 {{ with .Title }}
