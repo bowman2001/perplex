@@ -470,7 +470,9 @@ body {
 }
 
 #l-content-box {
-  flex: 1 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
