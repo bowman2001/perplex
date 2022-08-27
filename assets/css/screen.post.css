@@ -1276,7 +1276,8 @@ a.meta__item--text:hover {
 .md .literature,
 .md .footnotes,
 .md .gist,
-.md .asciicast {
+.md .asciicast,
+.md .box--outer {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1331,14 +1332,19 @@ a.meta__item--text:hover {
   margin-left: -0.5em;
 }
 
-.md > blockquote {
+.md > blockquote,
+.md > div > blockquote {
   padding: 0 2rem calc(1 * var(--es)) calc(5rem + 1 * var(--es));
 }
 
 .md > blockquote > p,
 .md > blockquote > ul,
 .md > blockquote > ol,
-.md > blockquote > dl {
+.md > blockquote > dl,
+.md > div > blockquote > p,
+.md > div > blockquote > ul,
+.md > div > blockquote > ol,
+.md > div > blockquote > dl {
   font-size: 1.809375rem;
   line-height: 3rem;
   padding-top: .8223890625rem;
@@ -1347,7 +1353,9 @@ a.meta__item--text:hover {
 }
 
 .md > blockquote footer,
-.md > blockquote cite {
+.md > blockquote cite,
+.md > div > blockquote footer,
+.md > div > blockquote cite {
   display: block;
   font-style: italic;
   text-align: right;
@@ -1481,6 +1489,7 @@ a.meta__item--text:hover {
 
 .md .box {
   position: relative;
+  margin-bottom: calc(1rem + 1 * var(--es));
   background-color: #fff8f0;
 }
 
@@ -1774,11 +1783,11 @@ a.meta__item--text:hover {
   font-weight: 450;
 }
 
-.md--sans > p,
-.md--sans > ul,
-.md--sans > ol,
-.md--sans > dl,
-.md--sans > blockquote {
+.md--sans p,
+.md--sans ul,
+.md--sans ol,
+.md--sans dl,
+.md--sans blockquote {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
 }
@@ -1882,7 +1891,8 @@ a.meta__item--text:hover {
   .md--margin-left .literature,
   .md--margin-left .footnotes,
   .md--margin-left .gist,
-  .md--margin-left .asciicast {
+  .md--margin-left .asciicast,
+  .md--margin-left .box--outer {
     margin-left: 37rem;
   }
 }

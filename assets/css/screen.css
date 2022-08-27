@@ -1056,7 +1056,7 @@ a.meta__item--text:hover {
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box--outer {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1089,17 +1089,17 @@ a.meta__item--text:hover {
 .md p > .pull-quote {
   margin-left: -0.5em;
 }
-.md > blockquote {
+.md > blockquote, .md > div > blockquote {
   padding: 0 2rem calc(1 * var(--es)) calc(5rem + 1 * var(--es));
 }
-.md > blockquote > p, .md > blockquote > ul, .md > blockquote > ol, .md > blockquote > dl {
+.md > blockquote > p, .md > blockquote > ul, .md > blockquote > ol, .md > blockquote > dl, .md > div > blockquote > p, .md > div > blockquote > ul, .md > div > blockquote > ol, .md > div > blockquote > dl {
   font-size: 1.809375rem;
   line-height: 3rem;
   padding-top: 0.8223890625rem;
   padding-bottom: 0.1776109375rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
 }
-.md > blockquote footer, .md > blockquote cite {
+.md > blockquote footer, .md > blockquote cite, .md > div > blockquote footer, .md > div > blockquote cite {
   display: block;
   font-style: italic;
   text-align: right;
@@ -1208,6 +1208,7 @@ a.meta__item--text:hover {
 }
 .md .box {
   position: relative;
+  margin-bottom: calc(1rem + 1 * var(--es));
   background-color: #fff8f0;
 }
 @media screen and (min-width: 48em) {
@@ -1425,7 +1426,7 @@ a.meta__item--text:hover {
   font-weight: 450;
 }
 
-.md--sans > p, .md--sans > ul, .md--sans > ol, .md--sans > dl, .md--sans > blockquote {
+.md--sans p, .md--sans ul, .md--sans ol, .md--sans dl, .md--sans blockquote {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
 }
@@ -1493,7 +1494,7 @@ a.meta__item--text:hover {
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box--outer {
     margin-left: 37rem;
   }
 }
