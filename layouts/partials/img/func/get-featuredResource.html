@@ -1,4 +1,5 @@
 {{ $imgResource := (partial "get-resourceInPageOrParents.html" (dict "name" "featured" "currentPage" . ) )}}
+{{/* Site-wide fallback */}}
 {{ if not $imgResource }}
     {{ with resources.Get .Site.Params.featured }}
         {{ $imgResource = . }}

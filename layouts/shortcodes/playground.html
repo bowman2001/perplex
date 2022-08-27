@@ -1,0 +1,6 @@
+{{ $result := .Site.Params.playground.codetext | default "gets rendered to:" }}
+{{ highlight (trim .Inner "\n") "markdown" }}
+<p>{{ $result | site.Home.RenderString }}</p>
+<div class="box box--outer">
+{{ .Inner | site.Home.RenderString }}
+</div>
