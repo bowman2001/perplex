@@ -2625,13 +2625,12 @@ a.meta__item--text:hover {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: .464465rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: .535535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: .05em;
   word-spacing: .15em;
   text-transform: uppercase;
-  padding-bottom: 0;
 }
 
 .md--home {
