@@ -14,17 +14,24 @@ paginateNr: 5
 
 taxonomies:
   tag: tags
+  category: categories
+  serie: series
 
-# Image processing
+#### Image processing
+
+# Site-wide fallback for the featured image (usually provided as page resource
+# with the name "featured")
 featured: logo/Perplex.svg
+
+# Image processing parameters
 imaging:
   u_number: 8 # Number of different sizes
-  u_pxdmax: 4 # Maximum pixel density
+  
   # JPEG Quality reduction for higher densities
   u_jpeg_quality_reduction: [-10, -20, -30]
 
-# The following parameters of the Perplex layout are essential for image processing
-# DO NOT REMOVE OR CHANGE THEM! THE LAYOUT WILL BREAK!
+### The following parameters of the Perplex layout are essential for image processing
+### DO NOT REMOVE OR CHANGE THEM! THE LAYOUT WILL BREAK!
 layout:
   measure: 70.0
   column: 33.0

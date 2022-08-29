@@ -1,4 +1,4 @@
-<aside class="right3 {{- with .Get "up" }} up-{{ . }}{{- end -}}">
+<aside class="right3 {{ with .Get "up" }}up-{{ . }}{{ end }} {{ with .Get "down" }}down-{{ . }}{{ end }}">
     {{- $cutoff := (mul 4 80) -}}
   <div class="note {{- with .Get "star" }} note-star{{- . -}} {{ end -}} {{ with .Get "dagger" }}note-dagger{{.}}{{end}} {{ if gt ( len .Inner ) $cutoff  }}note-long{{end}}">
       {{- $html:= .Inner | site.Home.RenderString -}}

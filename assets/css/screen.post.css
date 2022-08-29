@@ -934,7 +934,9 @@ body {
 }
 
 .icon-font,
-.meta__list--tags:before {
+.meta__list--categories:before,
+.meta__list--tags:before,
+.meta__list--series:before {
   font-family: "Material Icons", monospace;
   font-weight: 400;
   font-style: normal;
@@ -1004,23 +1006,40 @@ body {
   flex-wrap: wrap;
 }
 
-.meta__list--tags {
+.meta__list--categories,
+.meta__list--tags,
+.meta__list--series {
   position: relative;
 }
 
-.meta__list--tags:before {
+.meta__list--categories:before,
+.meta__list--tags:before,
+.meta__list--series:before {
   font-size: 1.6083333333rem;
   line-height: 2rem;
   padding-top: .3976791667rem;
   margin-bottom: -.3976791667rem;
-  content: " ";
 }
 
 @media screen and (min-width: 79em) {
-  .meta__list--tags:before {
+  .meta__list--categories:before,
+  .meta__list--tags:before,
+  .meta__list--series:before {
     position: absolute;
     left: -2rem;
   }
+}
+
+.meta__list--categories:before {
+  content: " ";
+}
+
+.meta__list--tags:before {
+  content: " ";
+}
+
+.meta__list--series:before {
+  content: " ";
 }
 
 .meta__item {
@@ -1042,10 +1061,10 @@ body {
 
 .meta__item--text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 400;
 }
 
-.meta__item--tag {
+.meta__item--taxonomy {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
 }

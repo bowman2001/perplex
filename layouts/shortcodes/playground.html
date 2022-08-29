@@ -1,6 +1,9 @@
-{{ $result := .Site.Params.playground.codetext | default "gets rendered to:" }}
-{{ highlight (trim .Inner "\n") "markdown" }}
-<p>{{ $result | site.Home.RenderString }}</p>
-<div class="box box--outer">
-{{ .Inner | site.Home.RenderString }}
-</div>
+{{ $result := (.Get 0) | default "gets rendered to:" }}
+{{ with .Inner }}
+    {{ $inner := trim . "\n" }}
+    {{ highlight $inner "md" }}
+    <p>{{ $result | site.Home.RenderString }}</p>
+    <div class="box box--outer">
+        {{ $inner | site.Home.RenderString }}
+    </div>
+{{ end }}

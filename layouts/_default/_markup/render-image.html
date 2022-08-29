@@ -14,11 +14,6 @@
   {{ if eq .MediaType.SubType "svg" }}
     <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ $title }}">
   {{ else }}
-      {{ $max_px := mul site.Params.layout.xmax site.Params.layout.column }}
-      {{ $srcset := partial "img/func/generate-srcset.html" (dict "img" . "max_px" $max_px) }}
-      {{ $bp_3col := mul site.Params.layout.xmin (add (mul 3 site.Params.layout.column) (mul 4 site.Params.layout.gutter)) }}
-      {{ $min_gutter_mobile := mul site.Params.layout.xminmobile site.Params.layout.guttermobile }}
-      {{ $sizes := print "(max-width: " $bp_3col "px) calc( 50vw - " $min_gutter_mobile "px ), " $max_px "px" }}
       <img src="{{ .RelPermalink }}"
            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
            data-sizes="auto"

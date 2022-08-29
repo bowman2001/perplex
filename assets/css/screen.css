@@ -773,7 +773,7 @@ body {
   height: 3rem;
   width: 3rem;
 }
-.icon-font, .meta__list--tags:before {
+.icon-font, .meta__list--categories:before, .meta__list--tags:before, .meta__list--series:before {
   font-family: "Material Icons", monospace;
   font-weight: 400;
   font-style: normal;
@@ -838,21 +838,32 @@ body {
   flex-wrap: wrap;
 }
 
-.meta__list--tags {
+.meta__list--categories, .meta__list--tags, .meta__list--series {
   position: relative;
 }
-.meta__list--tags:before {
+.meta__list--categories:before, .meta__list--tags:before, .meta__list--series:before {
   font-size: 1.6083333333rem;
   line-height: 2rem;
   padding-top: 0.3976791667rem;
   margin-bottom: -0.3976791667rem;
-  content: "\e41d ";
 }
 @media screen and (min-width: 79em) {
-  .meta__list--tags:before {
+  .meta__list--categories:before, .meta__list--tags:before, .meta__list--series:before {
     position: absolute;
     left: -2rem;
   }
+}
+
+.meta__list--categories:before {
+  content: "\e574 ";
+}
+
+.meta__list--tags:before {
+  content: "\e41d ";
+}
+
+.meta__list--series:before {
+  content: "\e267 ";
 }
 
 /* .meta__list--tags {
@@ -882,10 +893,10 @@ body {
 
 .meta__item--text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 450;
+  font-weight: 400;
 }
 
-.meta__item--tag {
+.meta__item--taxonomy {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
 }
