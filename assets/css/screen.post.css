@@ -1490,7 +1490,7 @@ a.meta__item--text:hover {
 .md .box {
   position: relative;
   margin-bottom: calc(1rem + 1 * var(--es));
-  background-color: #fff8f0;
+  background-color: rgba(255, 229, 202, .25);
 }
 
 @media screen and (min-width: 48em) {
@@ -2093,17 +2093,14 @@ a.meta__item--text:hover {
 .md dt {
   font-weight: 600;
   text-align: left;
+  padding-bottom: 1rem;
 }
 
 .md dd {
-  padding: 0 0 1rem 3rem;
+  padding: 0 0 1rem calc(3rem + 1 * var(--es));
   text-align: var(--ta);
   -webkit-hyphens: auto;
           hyphens: auto;
-}
-
-.md dd:last-child {
-  padding-bottom: 0;
 }
 
 .md dd ul > li,
@@ -2111,10 +2108,15 @@ a.meta__item--text:hover {
   padding-left: 3rem;
 }
 
+.md dd + dt {
+  margin-top: 1rem;
+}
+
 .md .dl-tight > dt {
   float: left;
+  clear: left;
   width: auto;
-  padding-right: 3rem;
+  padding: 0 3rem 0 0;
 }
 
 .md .dl-tight > dt:after {
@@ -2132,12 +2134,18 @@ a.meta__item--text:hover {
     float: left;
     clear: left;
     width: 16.5rem;
+    padding-bottom: 0;
   }
 
   .md .dl-loose > dd {
     margin-left: 0;
     padding-left: 18.5rem;
   }
+}
+
+.md .dl-tight > dd + dt,
+.md .dl-loose > dd + dt {
+  margin-top: 0;
 }
 
 .md--home dt {
