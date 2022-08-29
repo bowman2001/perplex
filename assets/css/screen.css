@@ -727,7 +727,7 @@ body {
   padding-bottom: calc(1rem + 1 * var(--es));
 }
 #l-footer hr {
-  border-bottom: 0.2rem solid #111111;
+  border-bottom: 0.25rem solid #111111;
   height: 1rem;
   margin: 2rem 2rem 0 2rem;
 }
