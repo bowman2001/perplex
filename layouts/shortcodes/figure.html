@@ -29,8 +29,8 @@
         {{ with .Params.link }}{{ $link = . }}{{ end }}
         {{ with .Params.target }}{{ $target = . }}{{ end }}
         {{ with .Params.rel }}{{ $rel = . }}{{ end }}
-        {{ with .Params.alt }}{{ $alt = . }}{{ end }}
-        {{ with .Title }}{{ $title = .  }}{{ end }}
+        {{ with .Params.alt }}{{ $alt = . }}{{ else }}{{ $alt = .Title }}{{ end }}
+        {{ $title = .Title  }}
         {{ with .Params.caption }}{{ $caption = . }}{{ end }}
         {{ with .Params.attr }}{{ $attr = . }}{{ end }}
         {{ with .Params.attrlink }}{{ $attrlink = . }}{{ end }}

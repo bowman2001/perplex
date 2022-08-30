@@ -820,6 +820,8 @@ body {
 
 @media screen and (min-width: 79em) {
   .meta--left {
+    position: relative;
+    z-index: 5;
     flex-direction: row-reverse;
     justify-content: start;
     float: left;
@@ -850,7 +852,7 @@ body {
 @media screen and (min-width: 79em) {
   .meta__list--categories:before, .meta__list--tags:before, .meta__list--series:before {
     position: absolute;
-    left: -2rem;
+    left: -2.5rem;
   }
 }
 
