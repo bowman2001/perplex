@@ -1,26 +1,9 @@
 {{- $img := ( partial "img/func/get-featuredResource.html" . ) -}}
 {{- with $img -}}
   <aside class="featured-image">
-      {{- $imgLink := (partial "img/func/get-unsplashLink.html" . ) -}}
-      {{- $imgClass := "" -}}
     <figure class="md">
-        {{- if eq .MediaType.SubType "svg" -}}
-          <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
-        {{- else -}}
-            {{- if eq .MediaType.SubType "png" -}}
-                {{- $imgClass = "img-png" -}}
-            {{- end -}}
-            {{- $max_px := mul $.Site.Params.layout.column $.Site.Params.layout.xmax -}}
-            {{ $defaultImg := .Resize (printf "%dx" (int $max_px)) }}
-            <img src="{{ $defaultImg.RelPermalink }}"
-                 srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                 data-sizes="auto"
-                 data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
-                 class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
-                 alt="{{ .Name }}"
-                 title="{{ .Title }}"/>
-        {{- end -}}
-        {{- with $imgLink -}}
+        {{ partial "img/img.html" . }}
+        {{- with partial "img/func/get-unsplashLink.html" . -}}
           <figcaption>
             <div class="attribution">By <a href="{{ . }}">Unsplash</a></div>
           </figcaption>

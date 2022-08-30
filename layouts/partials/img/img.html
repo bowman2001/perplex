@@ -1,0 +1,18 @@
+{{- $imgClass := "" -}}
+{{- if eq .MediaType.SubType "svg" -}}
+  <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
+{{- else -}}
+    {{- if eq .MediaType.SubType "png" -}}
+        {{- $imgClass = "img-png" -}}
+    {{- end -}}
+    {{- $max_px := mul site.Params.layout.column site.Params.layout.xmax -}}
+    {{ $defaultImg := .Resize (printf "%dx" (int $max_px)) }}
+    <img src="{{ $defaultImg.RelPermalink }}"
+         srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+         data-sizes="auto"
+         data-parent-fit="contain"
+         data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
+         class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
+         alt="{{ .Name }}"
+         title="{{ .Title }}" />
+{{- end -}}

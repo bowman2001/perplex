@@ -5,7 +5,7 @@
 *
 * OUT: exponential slice of 'img' widths
 */}}
-{{ $min := mul site.Params.layout.xmin site.Params.layout.column }}
+{{ $min := mul site.Params.layout.xmin 9 }}
 {{ $max := .Width }}
 {{ $sizes := (slice (int $min)) }}
 {{ $n := sub site.Params.imaging.u_number 1 }}

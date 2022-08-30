@@ -11,17 +11,7 @@
 {{ end }}
 {{ with $img }}
   <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }}">
-  {{ if eq .MediaType.SubType "svg" }}
-    <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ $title }}">
-  {{ else }}
-      <img src="{{ .RelPermalink }}"
-           srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-           data-sizes="auto"
-           data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
-           class="lazyload"
-           alt="{{ .Name }}"
-           title="{{ .Title }}"/>
-  {{ end }}
+  {{ partial "img/img.html" . }}
       {{ with .Params.caption }}
         <span class="caption">{{- . | site.Home.RenderString -}}</span>
       {{ end }}
