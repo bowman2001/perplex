@@ -13,13 +13,24 @@
               {{- partial "content.html" . -}}
           </div>
         {{ end }}
+      {{ with .Pages }}
       <nav class="card-nav margin-left">
         <ul class="card-nav__list">
-            {{- range .Pages -}}
-              <li class="card">{{- .Render "li-card-img" -}}</li>
+            {{ $n := len . }}
+            {{ $normal := 2 }}
+            {{ if gt $n 8 }}
+              {{ $normal = 4 }}
+            {{ end }}
+            {{- range $index, $page := . -}}
+                {{ if lt $index $normal }}
+                  <li class="card">{{- $page.Render "li-card-img" -}}</li>
+                {{ else }}
+                  <li class="card card--small">{{- $page.Render "li-card-small-img" -}}</li>
+                {{ end }}
             {{- end -}}
         </ul>
       </nav>
+      {{ end }}
     </div>
   </div>
 {{- end -}}

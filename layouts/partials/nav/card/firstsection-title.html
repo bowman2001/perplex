@@ -1,0 +1,4 @@
+<div class="md md--sans md--card">
+    {{ with .FirstSection.Title }}<p class="p-meta">{{ . | site.Home.RenderString }}</p>{{ end }}
+    {{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}
+</div>
