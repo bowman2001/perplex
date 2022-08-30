@@ -4266,6 +4266,15 @@ a.meta__item--text:hover {
   font-style: normal;
 }
 
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .hide1 {
   display: none !important;
 }
