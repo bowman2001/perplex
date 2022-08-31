@@ -2661,6 +2661,13 @@ a.meta__item--text:hover {
   text-transform: uppercase;
 }
 
+.md--card--small h2 {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: 2.464465rem;
+  padding-bottom: .535535rem;
+}
+
 .md--white h2,
 .md--white h3,
 .md--white h4,
@@ -3513,7 +3520,6 @@ a.meta__item--text:hover {
 
 .page-nav {
   color: #111;
-  padding: 1rem 0;
   max-width: 74rem;
 }
 
@@ -3543,11 +3549,6 @@ a.meta__item--text:hover {
 .page-nav__list--flex {
   display: flex;
   flex-direction: column;
-}
-
-.page-nav__list--flex .page-nav__item--prev,
-.page-nav__list--flex .page-nav__item--start {
-  margin: 0 0 1rem 0;
 }
 
 .page-nav__list--flex > li {
@@ -3583,7 +3584,7 @@ a.meta__item--text:hover {
 .page-nav__item--next,
 .page-nav__item--start {
   justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, .4);
+  border-top: 1px solid rgba(0, 0, 0, .2);
 }
 
 .page-nav__item--start {
@@ -3769,14 +3770,14 @@ a.meta__item--text:hover {
 }
 
 .card__fig--small {
-  width: 9rem;
-  height: 6rem;
-  margin: 0 2rem 2rem 0;
+  width: 16rem;
+  height: 10.6667rem;
+  margin: -0.3333rem 2rem 2rem 0;
 }
 
 .card__fig--small > img {
-  width: 9rem;
-  height: 6rem;
+  width: 16rem;
+  height: 10.6667rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -4180,13 +4181,13 @@ a.meta__item--text:hover {
 .page-footer {
   flex: 0 0 auto;
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 3rem;
 }
 
 .page-footer > hr {
-  border-bottom: .1rem solid #111;
+  border-top: .1rem solid #111;
   height: 1rem;
-  margin: 0 2rem 1rem 2rem;
+  margin: 0 2rem;
   max-width: 70rem;
 }
 
@@ -4355,4 +4356,12 @@ a.meta__item--text:hover {
 
 .mt-1 {
   margin-top: -1rem;
+}
+
+.mb05 {
+  margin-bottom: .5rem;
+}
+
+.mb1 {
+  margin-bottom: 1rem;
 }

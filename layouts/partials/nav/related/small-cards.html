@@ -3,14 +3,13 @@
 {{ $first := 0 }}
 {{ if gt $n 1 }}
     {{ $first = 2 }}
-    {{ if gt $n 3 }}
-        {{ $first = 4 }}
-    {{ end }}
 {{ end }}
 
 {{ with ($related | first $first) }}
   <hr>
-  <h2>See Also</h2>
+    <div class="md md--footer mb1">
+      <h2>See Also</h2>
+    </div>
   <nav class="card-nav">
   <ul class="card-nav__list">
       {{ range . }}
