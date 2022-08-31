@@ -259,6 +259,7 @@ body {
   scroll-behavior: smooth;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-gutter: stable both-edges;
   min-height: 0;
 }
 @media screen and (min-width: 79em) {
@@ -375,7 +376,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
     scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-home::-webkit-scrollbar {
@@ -635,7 +636,7 @@ body {
 @media screen and (min-width: 79em) {
   #l-main {
     overflow-y: auto;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
     scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-main::-webkit-scrollbar {
@@ -690,7 +691,7 @@ body {
     height: 100%;
     padding-left: 0;
     padding-right: 0;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
     scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   #l-sidebar::-webkit-scrollbar {
@@ -1573,7 +1574,7 @@ a.meta__item--text:hover {
   border: 0.1rem solid rgba(0, 0, 0, 0.1333333333);
 }
 .md .highlight table {
-  scrollbar-gutter: stable;
+  scrollbar-gutter: stable both-edges;
   scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
 }
 .md .highlight table::-webkit-scrollbar {
@@ -2089,7 +2090,7 @@ a.meta__item--text:hover {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: 0.464465rem;
-  padding-bottom: 0.535535rem;
+  margin-bottom: -0.464465rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -2813,7 +2814,7 @@ a.meta__item--text:hover {
 
 .ctrl__title {
   display: inline-block;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem;
 }
 
 .ctrl__title--logo img {
@@ -2834,7 +2835,6 @@ a.meta__item--text:hover {
 
 .ctrl-left {
   justify-content: flex-start;
-  padding-left: 1rem;
 }
 
 .ctrl-right {
@@ -3083,7 +3083,7 @@ a.meta__item--text:hover {
 
 @media screen and (min-width: 79em) {
   .sidebar-box {
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
     scrollbar-color: hsl(45deg, 83%, 53%) #ffebd7;
   }
   .sidebar-box::-webkit-scrollbar {
