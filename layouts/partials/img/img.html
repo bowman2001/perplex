@@ -14,5 +14,7 @@
          data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
          alt="{{ .Name }}"
-         title="{{ .Title }}" />
+         title="{{ .Title }}"
+            width="{{ $defaultImg.Width }}"
+    height="{{ $defaultImg.Height }}" />
 {{- end -}}

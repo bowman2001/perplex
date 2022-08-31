@@ -13,8 +13,8 @@
         {{ partial "nav/breadcrumbs/separator.html" . }}
     {{ end }}
     {{ if ne .p1 .p2  }}
-        {{ partial "nav/breadcrumbs/link.html" .p1 }}
+        {{ partial "nav/breadcrumbs/shortLink.html" .p1 }}
     {{ else }}
-        {{ partial "nav/breadcrumbs/link.html" .p2 }}
+        {{ partial "nav/breadcrumbs/shortLink.html" .p2 }}
     {{ end }}
 {{ end }}
