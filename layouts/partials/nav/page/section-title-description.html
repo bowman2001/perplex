@@ -1,5 +1,5 @@
 <div>
-    {{ with .CurrentSection.Title }}
+    {{ with .CurrentSection.LinkTitle }}
       <div class="page-nav__meta">{{- . | site.Home.RenderString -}}</div>{{- end -}}
     {{- with .Title -}}
     <div class="page-nav__title">{{- . | site.Home.RenderString -}}</div>{{- end -}}
