@@ -1,11 +1,4 @@
-{{ $related := site.RegularPages.Related . }}
-{{ $n := len $related }}
-{{ $first := 0 }}
-{{ if gt $n 1 }}
-    {{ $first = 2 }}
-{{ end }}
-
-{{ with ($related | first $first) }}
+{{ with (site.RegularPages.Related . | first 2) }}
   <hr>
     <div class="md md--footer mb1">
       <h2>See Also</h2>

@@ -25,7 +25,7 @@ featured: logo/Perplex.svg
 
 # Image processing parameters
 imaging:
-  u_number: 8 # Number of different sizes
+  u_number: 15 # Number of different sizes
   
   # JPEG Quality reduction for higher densities
   u_jpeg_quality_reduction: [-10, -20, -30]

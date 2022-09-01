@@ -3,14 +3,14 @@
 *
 * IN: image resource
 *
-* OUT: exponential slice of 'img' widths
+* OUT: slice of 'img' widths
 */}}
-{{ $min := mul site.Params.layout.xmin 9 }}
+{{ $min := mul site.Params.layout.xmin 16 }}
 {{ $max := .Width }}
 {{ $sizes := (slice (int $min)) }}
-{{ $n := sub site.Params.imaging.u_number 1 }}
-{{ $ratio := div $max $min }}
-{{ range seq $n }}
-    {{ $sizes = $sizes | append (int (math.Round (mul $min (math.Pow $ratio (div . (mul $n 1.0)))))) }}
+{{ $n := float (sub site.Params.imaging.u_number 1) }}
+{{ $step := div (sub $max $min) $n }}
+{{ range seq 1 site.Params.imaging.u_number }}
+    {{ $sizes = $sizes | append (int (math.Round (mul $step .))) }}
 {{ end }}
 {{ return $sizes }}

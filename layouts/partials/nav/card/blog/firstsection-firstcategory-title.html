@@ -1,0 +1,8 @@
+<div class="md md--sans md--card md--card--small">
+    <p class="p-meta">
+        {{- .FirstSection.LinkTitle | site.Home.RenderString -}}
+        {{- $firstcategory := index (.GetTerms "categories") 0 -}}
+        {{- with $firstcategory.Title }}&thinsp;/&thinsp;{{ . }}{{ end -}}
+    </p>
+    {{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}
+</div>

@@ -1,7 +1,17 @@
 {{ $srcset := slice }}
 {{ $widths := partial "img/func/calc-global-sizes.html" . }}
+{{ $raster := slice "jpeg" "tiff" "bmp" }}
+{{ $target := "" }}
+{{- if in $raster .MediaType.SubType }}
+    {{ $target = "webp" }}
+{{ end }}
 {{ range $w := $widths }}
-    {{ $img := $.Resize (printf "%dx" $w ) }}
+    {{ $img := "" }}
+    {{ with $target }}
+        {{ $img = $.Resize (printf "%dx %s" $w . ) }}
+    {{ else }}
+        {{ $img = $.Resize (printf "%dx" $w ) }}
+    {{ end }}
     {{ $src := print ($img.RelPermalink | safeURL) " " $img.Width "w" }}
     {{ $srcset = $srcset | append $src }}
 {{ end }}

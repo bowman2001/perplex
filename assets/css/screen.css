@@ -883,14 +883,14 @@ body {
   font-size: 1.4475rem;
   line-height: 2rem;
   padding-top: 0.45791125rem;
-  margin-bottom: -0.45791125rem;
+  padding-bottom: 0.54208875rem;
 }
 @media screen and (min-width: 79em) {
   .meta__item {
     font-size: 1.6083333333rem;
     line-height: 2rem;
     padding-top: 0.3976791667rem;
-    margin-bottom: -0.3976791667rem;
+    padding-bottom: 0.6023208333rem;
   }
 }
 
@@ -924,19 +924,15 @@ a.meta__item--text:hover {
   color: #006a9c;
 }
 
-.meta__list, .meta__date {
-  padding-bottom: 1rem;
-}
-
 .title {
-  padding: calc(1rem + -1 * var(--es)) 2rem calc(2rem + 2 * var(--es)) 2rem;
+  padding: 0 2rem calc(2rem + 1 * var(--es)) 2rem;
   max-width: 74rem;
   color: #111111;
 }
 .title h1 {
   font-size: 2.86rem;
   line-height: 3rem;
-  padding-top: 0.42893rem;
+  padding-top: 1.42893rem;
   padding-bottom: 0.57107rem;
 }
 .title > hr {
@@ -951,12 +947,12 @@ a.meta__item--text:hover {
 
 .title--serif h1, .md--h-serif h1 {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .title--sans h1 {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.01em;
 }
 
@@ -990,11 +986,11 @@ a.meta__item--text:hover {
 .title--li h2 {
   font-size: 2.86rem;
   line-height: 3rem;
-  padding-top: 0.42893rem;
+  padding-top: 1.42893rem;
   padding-bottom: calc(0.57107rem + var(--es));
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 450;
+  font-weight: 600;
   color: #111111;
 }
 
@@ -1451,6 +1447,9 @@ a.meta__item--text:hover {
   font-size: 99%;
 }
 
+.md--home {
+  padding-bottom: 1rem;
+}
 .md--home .p-small {
   font-size: 1.43rem;
   line-height: 2rem;
@@ -1460,20 +1459,19 @@ a.meta__item--text:hover {
 }
 
 .md--card > p, .md--card > ul, .md--card > ol, .md--card > dl, .md--card > blockquote, .md--card > .p-first {
-  font-size: 1.81640625rem;
+  font-size: 1.828125rem;
   line-height: 3rem;
-  padding-top: 0.8197558594rem;
-  padding-bottom: calc(0.1802441406rem + var(--es));
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
+  padding-top: 0.8153671875rem;
+  padding-bottom: calc(0.1846328125rem + var(--es));
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 .md--card > p strong, .md--card > ul strong, .md--card > ol strong, .md--card > dl strong, .md--card > blockquote strong, .md--card > .p-first strong {
-  font-weight: 600;
+  font-weight: 450;
 }
 
 .md--card--small {
-  margin-top: -2rem;
+  margin-top: -1rem;
 }
 
 .md--tiny > p, .md--tiny > ul, .md--tiny > ol, .md--tiny > dl {
@@ -1956,7 +1954,7 @@ a.meta__item--text:hover {
 .md .p-meta {
   font-size: 1.43rem;
   line-height: 2rem;
-  padding-top: 1.464465rem;
+  padding-top: 0.464465rem;
   margin-bottom: -0.464465rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
@@ -2098,10 +2096,6 @@ a.meta__item--text:hover {
   text-transform: uppercase;
 }
 
-.md--home {
-  padding-bottom: 0.5rem;
-}
-
 .md--card h1 {
   font-size: 3.81rem;
   line-height: 4rem;
@@ -2117,8 +2111,8 @@ a.meta__item--text:hover {
 .md--card h2 {
   font-size: 1.666875rem;
   line-height: 2rem;
-  padding-top: 2.3757553125rem;
-  padding-bottom: 0.6242446875rem;
+  padding-top: 1.3757553125rem;
+  margin-bottom: -0.3757553125rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -2129,8 +2123,20 @@ a.meta__item--text:hover {
 .md--card--small h2 {
   font-size: 1.43rem;
   line-height: 2rem;
-  padding-top: 2.464465rem;
+  padding-top: 1.464465rem;
   padding-bottom: 0.535535rem;
+}
+
+.md--home h2 {
+  font-size: 1.666875rem;
+  line-height: 2rem;
+  padding-top: 2.3757553125rem;
+  padding-bottom: 0.6242446875rem;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  word-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .md--white h2, .md--white h3, .md--white h4, .md--white h5, .md--white h6 {

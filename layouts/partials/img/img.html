@@ -1,8 +1,9 @@
 {{- $imgClass := "" -}}
-{{- if eq .MediaType.SubType "svg" -}}
+{{ $mediaType := .MediaType.SubType }}
+{{- if eq $mediaType "svg" -}}
   <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
 {{- else -}}
-    {{- if eq .MediaType.SubType "png" -}}
+    {{- if eq $mediaType "png" -}}
         {{- $imgClass = "img-png" -}}
     {{- end -}}
     {{- $max_px := mul site.Params.layout.column site.Params.layout.xmax -}}
