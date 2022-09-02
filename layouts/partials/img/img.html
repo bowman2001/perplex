@@ -11,11 +11,11 @@
     <img src="{{ $defaultImg.RelPermalink }}"
          srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          data-sizes="auto"
-         data-parent-fit="contain"
          data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
+         data-parentfit="cover"
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
          alt="{{ .Name }}"
          title="{{ .Title }}"
-            width="{{ $defaultImg.Width }}"
-    height="{{ $defaultImg.Height }}" />
+         width="{{ $defaultImg.Width }}"
+         height="{{ $defaultImg.Height }}" />
 {{- end -}}

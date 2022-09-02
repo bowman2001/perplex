@@ -1509,6 +1509,10 @@ a.meta__item--text:hover {
   background-color: rgba(255, 229, 202, .25);
 }
 
+.md .hang-quote {
+  margin-left: -0.5em;
+}
+
 @media screen and (min-width: 48em) {
   .md .up-1 {
     margin-top: -1rem;
@@ -2622,7 +2626,7 @@ a.meta__item--text:hover {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: .464465rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: .535535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: .05em;
@@ -3791,6 +3795,8 @@ a.meta__item--text:hover {
 .card__fig--small .img--svg {
   -o-object-fit: contain;
      object-fit: contain;
+  padding: 1rem;
+  border: .1rem solid #e7e8e9;
 }
 
 @media screen and (min-width: 79em) {

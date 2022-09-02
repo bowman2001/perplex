@@ -1220,6 +1220,9 @@ a.meta__item--text:hover {
   margin-bottom: calc(1rem + 1 * var(--es));
   background-color: rgba(255, 229, 202, 0.25);
 }
+.md .hang-quote {
+  margin-left: -0.5em;
+}
 @media screen and (min-width: 48em) {
   .md .up-1 {
     margin-top: -1rem;
@@ -2088,7 +2091,7 @@ a.meta__item--text:hover {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: 0.464465rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: 0.535535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -3088,6 +3091,8 @@ a.meta__item--text:hover {
 }
 .card__fig--small .img--svg {
   object-fit: contain;
+  padding: 1rem;
+  border: 0.1rem solid #e7e8e9;
 }
 
 @media screen and (min-width: 79em) {

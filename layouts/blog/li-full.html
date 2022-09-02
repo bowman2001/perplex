@@ -10,5 +10,5 @@
   {{ partial "img/featured.html" . }}
 </header>
 <div class="md md--sans md--h-serif  md--margin-left h-link-color">
-  {{ partial "content-blogroll.html" .Content }}
+  {{ partial "content-blogroll.html" (partial "content.html" .Content ) }}
 </div>

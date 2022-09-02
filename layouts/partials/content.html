@@ -1,23 +1,17 @@
 {{-
 .
-| replaceRE `\{\^([^\}]*)\}` "<sup>$1</sup>"
-| replaceRE `\{\_([^\}]*)\}` "<sub>$1</sub>"
-| replaceRE `\{\#([^\}]*)\}` "<kbd>$1</kbd>"
-| replaceRE `\{\!([^\}]*)\}` "<mark>$1</mark>"
-| replaceRE `\{\=([^\}]*)\}` "<cite>$1</cite>"
-| replaceRE `\{\+([^\}]*)\}` "<ins>$1</ins>"
-| replaceRE `\{\$([^\}]*)\}` "<var>$1</var>"
-| replaceRE `\{s\s?([^\}]*)\}` "<small>$1</small>"
-| replaceRE `\{r\s?([^\}]*)\}` "<span style='float: right;'>$1</span>"
-| replaceRE `\{d\s?([^\}]*)\}` "<span lang='de'>$1</span>"
-| replaceRE `\{f\s?([^\}]*)\}` "<span lang='fr'>$1</span>"
+| replaceRE `\{\^([^}<>]*)\}` "<sup>$1</sup>"
+| replaceRE `\{\_([^}<>]*)\}` "<sub>$1</sub>"
+| replaceRE `\{\#([^}<>]*)\}` "<kbd>$1</kbd>"
+| replaceRE `\{\!([^}<>]*)\}` "<mark>$1</mark>"
+| replaceRE `\{\=([^}<>]*)\}` "<cite>$1</cite>"
+| replaceRE `\{\+([^}]*)\}` "<ins>$1</ins>"
+| replaceRE `\{\$([^}<>]*)\}` "<var>$1</var>"
+| replaceRE `\{s\s?([^}<>]*)\}` "<small>$1</small>"
+| replaceRE `\{r\s?([^}<>]*)\}` "<span style='float: right;'>$1</span>"
+| replaceRE `\{d\s?([^}<>]*)\}` "<span lang='de'>$1</span>"
+| replaceRE `\{f\s?([^}<>]*)\}` "<span lang='fr'>$1</span>"
 | replaceRE `\s?(—|&mdash;)\s?` " — "
+| replaceRE `(<p[^>]*>|<li[^>]*>)([“«»„])` "$1<span class='hang-quote'>$2</span>"
 | safeHTML
 -}}
-
-{{/* The last pattern enforces thin spaces around all em-dashes.
-     It’s a choice of style you may want to change. */}}
-
-{{/* The following regex pattern for "hanging quotes" at the beginning
-     of a text block doesn't work at all. Why? */}}
-{{/* replaceRE `^([“«»„})^\s` "<span class='hang-quote'>$1</span>" */}}
