@@ -1,6 +1,6 @@
 {{ with site.Taxonomies }}
-  <nav>
-    <ul>
+  <nav class="taxo">
+    <ul class="taxo__termlist">
         {{ range $term, $taxonomy := . }}
             {{ with site.GetPage (printf "/%s" $term) }}
               <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>

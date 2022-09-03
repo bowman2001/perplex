@@ -10,7 +10,17 @@
     {{ with .Resources.GetMatch $name }}
         {{ $resource = . }}
     {{ else }}
-        {{ $resource = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . ))}}
+        {{ range $i, $tag := .GetTerms "tags" }}
+            {{ warnf "tag %d: %v" $i $tag }}
+            {{ with $tag.Page.Resources.GetMatch $name }}
+                {{ if eq $resource "" }}
+                    {{ $resource = . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ if eq $resource "" }}
+            {{ $resource = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . ))}}
+        {{ end }}
     {{ end }}
 {{ end }}
 {{ if not $resource }}
