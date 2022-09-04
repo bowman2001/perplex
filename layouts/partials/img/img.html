@@ -1,7 +1,7 @@
 {{- $imgClass := "" -}}
 {{ $mediaType := .MediaType.SubType }}
 {{- if eq $mediaType "svg" -}}
-  <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
+  <img class="img__svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
 {{- else -}}
     {{- if eq $mediaType "png" -}}
         {{- $imgClass = "img-png" -}}

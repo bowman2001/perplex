@@ -1,0 +1,12 @@
+{{ with site.Taxonomies.categories }}
+    {{ $i := 1 }}
+    {{ $last := (len .) }}
+    <nav class="taxo__tags">
+      <p>
+          {{ range $key, $value := . }}
+            <a href="{{ "/categories/" | relLangURL }}{{ $key | urlize }}">{{- $key | humanize -}} <span>({{ $value.Count }}){{- if not (eq $i $last) -}} ·{{- end -}}</span></a>
+            {{- $i = add $i 1 -}}
+          {{- end -}}
+      </p>
+    </nav>
+{{ end }}

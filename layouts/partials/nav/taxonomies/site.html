@@ -1,17 +1,12 @@
-{{ with site.Taxonomies }}
-  <nav class="taxo">
-    <ul class="taxo__termlist">
-        {{ range $term, $taxonomy := . }}
-            {{ with site.GetPage (printf "/%s" $term) }}
-              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <ul>
-                  {{ range $taxonomy }}
-                    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
-                  {{ end }}
-                </ul>
-              </li>
-            {{ end }}
-        {{ end }}
-    </ul>
-  </nav>
+{{ with site.GetPage "categories" }}
+<div class="taxo__title">
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+</div>
+{{ partial "nav/taxonomies/helpers/allCategories.html" . }}
+{{ end }}
+{{ with site.GetPage "tags" }}
+<div class="taxo__title">
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+</div>
+{{ partial "nav/taxonomies/helpers/allTags.html" . }}
 {{ end }}
