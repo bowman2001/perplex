@@ -1,0 +1,11 @@
+{{ with .Data.Terms.ByCount }}
+<nav class="taxo__tags">
+  <p>
+      {{ $last := sub (len .) 1 }}
+      {{ range $index, $value := . }}
+        <a href="{{ $value.Page.RelPermalink }}">{{ $value.Page.Title }} ({{ $value.Count }})</a>
+        {{- if lt $index $last }} ·{{ end -}}
+    {{ end }}
+  </p>
+</nav>
+{{ end }}
