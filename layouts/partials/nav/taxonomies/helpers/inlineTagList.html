@@ -1,5 +1,0 @@
-{{ $last := sub (len .) 1 }}
-{{ range $index, $tag := . }}
-  <li><a class="taxo__item taxo__item--tag" href="{{ $tag.RelPermalink }}">{{ $tag.LinkTitle |
-          site.Home.RenderString }}</a><span class="meta__item meta__item--text">{{ if (lt $index $last) }}&thinsp;&middot;&thinsp;{{ end }}</span></li>
-{{ end }}

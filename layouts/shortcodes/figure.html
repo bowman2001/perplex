@@ -22,15 +22,13 @@
     {{ with (.Get "attr") }}{{ $attr = . }}{{ end }}
     {{ with (.Get "attrlink") }}{{ $attrlink = . }}{{ end }}
 {{ else }}
-    {{ $name = (.Get 0) }}
-    {{ $img = .Page.Resources.GetMatch $name }}
+    {{ $img = partial "get-resource.html" (dict "name" (.Get 0) "currentPage" $.Page )  }}
     {{ with $img }}
         {{ with .Params.class  }}{{ $class = $class | append . }}{{ end }}
         {{ with .Params.link }}{{ $link = . }}{{ end }}
         {{ with .Params.target }}{{ $target = . }}{{ end }}
         {{ with .Params.rel }}{{ $rel = . }}{{ end }}
         {{ with .Params.alt }}{{ $alt = . }}{{ else }}{{ $alt = .Title }}{{ end }}
-        {{ $title = .Title  }}
         {{ with .Params.caption }}{{ $caption = . }}{{ end }}
         {{ with .Params.attr }}{{ $attr = . }}{{ end }}
         {{ with .Params.attrlink }}{{ $attrlink = . }}{{ end }}

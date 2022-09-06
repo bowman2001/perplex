@@ -2,11 +2,11 @@
 <div class="taxo__title">
   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 </div>
-{{ partial "nav/taxonomies/helpers/allCategories.html" . }}
+{{ partial "nav/taxonomies/site/paragraph.html" . }}
 {{ end }}
 {{ with site.GetPage "tags" }}
 <div class="taxo__title">
   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 </div>
-{{ partial "nav/taxonomies/helpers/allTags2.html" . }}
+{{ partial "nav/taxonomies/site/paragraph.html" . }}
 {{ end }}
