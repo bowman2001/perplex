@@ -18,6 +18,15 @@
             {{ end }}
         {{ end }}
         {{ if eq $resource "" }}
+            {{ range $i, $tag := .GetTerms "categories" }}
+                {{ with $tag.Page.Resources.GetMatch $name }}
+                    {{ if eq $resource "" }}
+                        {{ $resource = . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ if eq $resource "" }}
             {{ $resource = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . ))}}
         {{ end }}
     {{ end }}
