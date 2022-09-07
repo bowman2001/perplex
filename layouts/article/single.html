@@ -10,7 +10,7 @@
     </header>
     <div class="md md--serif md--margin-left md--article
     {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
-      {{- partial "content.html" .Content -}}
+      {{- partial "replacements.html" .Content -}}
     </div>
   </div>
   <footer class="page-footer">

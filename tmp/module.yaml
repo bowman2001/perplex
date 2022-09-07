@@ -1,8 +1,5 @@
-noProxy: none
-# noVendor: ""
-private: "*.*"
-proxy: direct
-# replacements: "github.com/bowman2001/hugo-mod-replacements -> ."
-# workspace: ""
 imports:
   - path: github.com/bowman2001/hugo-mod-replacements
+    mounts:
+      - source: replacements.html
+        target: layouts/partials/

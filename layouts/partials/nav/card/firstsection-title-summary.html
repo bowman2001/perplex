@@ -1,7 +1,7 @@
 <div class="md md--sans md--card">
     {{ with .FirstSection.LinkTitle }}<p class="p-meta">{{- . | site.Home.RenderString -}}</p>{{- end -}}
     {{- with .Title -}}<h2>{{- . | site.Home.RenderString -}}</h2>{{- end -}}
-    {{- with .Summary -}}{{- partial "content.html" . -}}{{- else -}}
+    {{- with .Summary -}}{{- partial "replacements.html" . -}}{{- else -}}
         {{- with .Description -}}
           <p>{{- . | site.Home.RenderString -}}</p>
         {{- end -}}

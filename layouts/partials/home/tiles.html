@@ -18,6 +18,6 @@
 
 {{ define "partials/home/markdown.html" }}
 {{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}
-{{ partial "content.html" .Content }}
+{{ partial "replacements.html" .Content }}
 {{ end }}
 {{/*   */}}
