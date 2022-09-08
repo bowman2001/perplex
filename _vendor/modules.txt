@@ -1,1 +1,1 @@
-# github.com/bowman2001/hugo-mod-replacements v0.0.0-20220908003204-a96f7c25e413
+# github.com/bowman2001/hugo-mod-replacements v0.0.0-20220908204158-063fff518d6c
