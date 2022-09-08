@@ -14,10 +14,10 @@
       {{- partial "replacements.html" . -}}
     </div>
     {{ end }}
-    <nav class="page-nav page-nav--cols margin-left">
+    <nav class="section-nav margin-left">
       <ul>
         {{- range .Pages -}}
-        <li>{{- .Render "li" -}}</li>
+        <li class="section-nav__li">{{- .Render "li" -}}</li>
         {{- end -}}
       </ul>
     </nav>
