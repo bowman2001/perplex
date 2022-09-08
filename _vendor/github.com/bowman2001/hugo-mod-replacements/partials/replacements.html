@@ -11,6 +11,7 @@
 | replaceRE `\{r\s?([^\}]*)\}` "<span style='float: right;'>$1</span>"
 | replaceRE `\{d\s?([^\}]*)\}` "<span lang='de'>$1</span>"
 | replaceRE `\{f\s?([^\}]*)\}` "<span lang='fr'>$1</span>"
+| replaceRE `\{\/\}` " <br>"
 | replaceRE `\s?(—|&mdash;)\s?` " — "
 | replaceRE `(<p[^>]*>|<li[^>]*>)([“«»„])` "$1<span class='hang-quote'>$2</span>"
 | safeHTML
