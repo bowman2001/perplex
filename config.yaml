@@ -1,0 +1,64 @@
+params:
+# Repository
+  themeURL: https://github.com/bowman2001/perplex
+  docURL: https://github.com/bowman2001/perplexdoc
+  themeIssueTree: issues
+
+# All parameters may be set per page in the front-matter
+  subtitle: false
+  toc: true
+  toctitle: On this Page
+  latex: false
+  mermaid: false
+
+  paginateNr: 5
+
+  taxonomies:
+    tag: tags
+    category: categories
+    series: series
+
+#### Image processing
+
+# Image processing parameters
+  imaging:
+    u_number: 15 # Number of different sizes
+  
+# Quality reduction for higher densities
+    u_quality_reduction: [-10, -20, -30]
+
+### WARNING!
+### THE FOLLOWING CONFIGURATION PARAMETERS ARE ESSENTIAL FOR THE THEME
+### DO NOT REMOVE OR CHANGE THEM!
+
+  layout:
+    measure: 70.0
+    column: 33.0
+    gutter: 4.0
+    lineheightfac: 3.0
+    guttermobile: 2.0
+    xminmobile: 7.5
+    xmaxmobile: 8.29
+    xmin: 6.6667
+    xmax: 10.0
+    background: '#fffefd'
+
+module:
+  imports:
+  - path: github.com/bowman2001/hugo-mod-replacements
+    mounts:
+      - source: partials
+        target: layouts/partials
+        
+  mounts:
+    - source: archetypes
+      target: archetypes
+      
+    - source: assets
+      target: assets
+      
+    - source: layouts
+      target: layouts
+      
+    - source: static
+      target: static

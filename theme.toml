@@ -9,7 +9,7 @@ homepage = "https://perplex.desider.at"
 demosite = "https://perplex.desider.at"
 tags = ["documentation", "blog", "articles"]
 features = ["Typography", "Baseline Grid"]
-min_version = "0.98"
+min_version = "0.102.0"
 
 [author]
   name = "Georg Makowski"

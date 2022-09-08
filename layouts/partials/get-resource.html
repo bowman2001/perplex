@@ -17,7 +17,7 @@
                 {{ end }}
             {{ end }}
         {{ end }}
-        {{ if eq $resource "" }}
+        {{ if not $resource }}
             {{ range $i, $tag := .GetTerms "categories" }}
                 {{ with $tag.Page.Resources.GetMatch $name }}
                     {{ if eq $resource "" }}
@@ -26,13 +26,15 @@
                 {{ end }}
             {{ end }}
         {{ end }}
-        {{ if eq $resource "" }}
-            {{ $resource = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . ))}}
+        {{ if not $resource }}
+            {{ with (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . )) }}
+                {{ $resource = . }}
+            {{ else }}
+                {{ with site.GetPage "/site"  }}
+                    {{ $resource = .Resources.GetMatch $name }}
+                {{ end }}
+            {{ end }}
         {{ end }}
-    {{ end }}
-{{ else }}
-    {{ with .site.GetPage "/site"  }}
-        {{ $resource = .Resources.GetMatch $name }}
     {{ end }}
 {{ end }}
 {{ if not $resource }}

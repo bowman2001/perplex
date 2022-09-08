@@ -1,5 +1,0 @@
-# imports:
-#  - path: github.com/bowman2001/hugo-mod-replacements
-#    mounts:
-#      - source: partials
-#        target: layouts/partials

@@ -1,0 +1,1 @@
+# github.com/bowman2001/hugo-mod-replacements v0.0.0-20220907093529-9f84c22bfe52
