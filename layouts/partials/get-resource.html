@@ -10,12 +10,32 @@
     {{ with .Resources.GetMatch $name }}
         {{ $resource = . }}
     {{ else }}
-        {{ $resource = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . ))}}
-    {{ end }}
-    {{ else }}
-        {{ with .site.GetPage "/site"  }}
-            {{ $resource = .Resources.GetMatch $name }}
+        {{ range $i, $tag := .GetTerms "tags" }}
+            {{ with $tag.Page.Resources.GetMatch $name }}
+                {{ if eq $resource "" }}
+                    {{ $resource = . }}
+                {{ end }}
+            {{ end }}
         {{ end }}
+        {{ if not $resource }}
+            {{ range $i, $tag := .GetTerms "categories" }}
+                {{ with $tag.Page.Resources.GetMatch $name }}
+                    {{ if eq $resource "" }}
+                        {{ $resource = . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ if not $resource }}
+            {{ with (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . )) }}
+                {{ $resource = . }}
+            {{ else }}
+                {{ with site.GetPage "/site"  }}
+                    {{ $resource = .Resources.GetMatch $name }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
 {{ end }}
 {{ if not $resource }}
     {{ warnf "There is no resource with the name '%s' in the page %v, its parent sections or the 'site' folder." $name .currentPage }}

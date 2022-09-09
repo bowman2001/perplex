@@ -1,0 +1,9 @@
+{{ if or (.GetTerms "categories") (.GetTerms "tags") }}
+  <div class="md md--sans md--footer">
+    <h2>Also filed under</h2>
+  </div>
+  <hr>
+  <div class="meta">
+      {{ partial "nav/taxonomies/page/footer.html" . }}
+  </div>
+{{ end }}

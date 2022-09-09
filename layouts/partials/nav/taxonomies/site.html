@@ -1,3 +1,14 @@
-<nav>
-
-</nav>
+{{ with site.GetPage "categories" }}
+  <div class="md md--sans md--tiny md--footer">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <ul>
+        {{ partial "nav/taxonomies/site/list.html" . }}
+    </ul>
+  </div>
+{{ end }}
+{{ with site.GetPage "tags" }}
+  <div class="md md--sans md--tiny md--footer">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ partial "nav/taxonomies/site/paragraph.html" . }}
+  </div>
+{{ end }}

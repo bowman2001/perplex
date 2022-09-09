@@ -6,14 +6,14 @@
     </div>
   </header>
   {{ with .Content }}
-  <div class="md md--sans md--h-serif md--list h-link-color md--margin-left">
-    {{- partial "content.html" . -}}
+  <div class="md md--sans md--h-serif md--list md--margin-left">
+    {{- partial "replacements.html" . -}}
   </div>
   {{ end }}
   <ul class="page-list">
-    {{ $n := 10 }}
+    {{ $n := 5 }}
     {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-    {{ range (.Paginate .Pages $n).Pages }}
+    {{ range (.Paginate .Pages $n).Pages.ByDate.Reverse }}
     <li class="li-box">
       <hr>
       {{- .Render "li-full" -}}

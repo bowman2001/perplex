@@ -4,7 +4,7 @@
         {{ range .Resources.Match "*.md" }}
           <div class="md md--tiny md--footer footer__col">
             <h2>{{ .Title | site.Home.RenderString }}</h2>
-              {{ partial "content.html" .Content }}
+              {{ partial "replacements.html" .Content }}
           </div>
         {{ end }}
     </div>

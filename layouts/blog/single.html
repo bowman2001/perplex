@@ -3,7 +3,7 @@
     <div id="l-content">
       <header class="page-header">
         <div class="meta meta--left">
-            {{ partial "nav/taxonomies/header.html" . }}
+            {{ partial "nav/taxonomies/page/header.html" . }}
             {{ partial "date/page/published.html" . }}
         </div>
         <div class="title title--serif margin-left">
@@ -12,16 +12,16 @@
         </div>
           {{- partial "img/featured.html" . -}}
       </header>
-      <div class="md md--sans md--h-serif md--margin-left h-link-color">
-          {{- partial "content.html" .Content -}}
+      <div class="md md--sans md--h-serif md--margin-left">
+          {{- partial "replacements.html" .Content -}}
       </div>
     </div>
     <footer class="page-footer margin-left">
-      <hr>
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
+      <hr>
         {{ partial "blog/nav/pages.html" . }}
         {{ partial "nav/related/small-cards.html" . }}
     </footer>

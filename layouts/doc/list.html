@@ -17,32 +17,31 @@
         {{- partial "img/featured.html" . -}}
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--h-serif md--list h-link-color ">
-              {{- partial "content.html" . -}}
+          <div class="md md--sans md--h-serif md--list">
+              {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
-      <div class="section">
-        <nav class="page-nav page-nav--cols">
-          <ul class="page-nav__list">
+        <nav class="section-nav">
+          <ul>
               {{- range .Pages -}}
-                <li>{{- .Render "li" -}}</li>
+                <li class="section-nav__li">{{- .Render "li" -}}</li>
               {{- end -}}
           </ul>
         </nav>
-      </div>
         {{ with .Page.GetPage "after_index" }}
-          <section class="md md--sans md--h-serif h-link-color ">
-              {{- partial "content.html" .Content }}
+          <section class="md md--sans md--h-serif">
+              {{- partial "replacements.html" .Content }}
           </section>
         {{ end }}
     </div>
-    <footer class="page-footer">
-      <hr>
+    <footer class="page-footer">      
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
+      <hr>
         {{ partial "doc/nav/pages.html" . }}
+        {{ partial "doc/nav/taxonomies.html" . }}
     </footer>
   </div>
 {{- end -}}

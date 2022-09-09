@@ -1,14 +1,14 @@
 <header class="li-header">
   <div class="meta meta--left">
-    {{ partial "nav/taxonomies/header.html" . }}
+    {{ partial "nav/taxonomies/page/header.html" . }}
     {{ partial "date/page/published.html" . }}
   </div>
-  <div class="title title--li margin-left h-link-color">
+  <div class="title title--li margin-left">
     {{ partial "title/title-in-list.html" . }}
     {{ partial "title/subtitle.html" . }}
   </div>
   {{ partial "img/featured.html" . }}
 </header>
-<div class="md md--sans md--h-serif  md--margin-left h-link-color">
-  {{ partial "content-blogroll.html" (partial "content.html" .Content ) }}
+<div class="md md--sans md--h-serif  md--margin-left">
+  {{ partial "content-blogroll.html" (partial "replacements.html" .Content ) }}
 </div>

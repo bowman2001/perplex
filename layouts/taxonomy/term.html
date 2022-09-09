@@ -4,13 +4,13 @@
       <header class="page-header page-header--title-left">
         <div class="title">
           <hr>
-            {{ partial "title/taxonomy.html" . }}
-            {{ partial "title/subtitle.html" . }}
+            {{ partial "title/taxonomy.html" .Page }}
+            {{ partial "title/subtitle.html" .Page }}
         </div>
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--margin-left md--h-serif h-link-color md--list">
-              {{- partial "content.html" . -}}
+          <div class="md md--sans md--margin-left md--h-serif md--list">
+              {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
       {{ with .Pages }}
@@ -26,14 +26,18 @@
             {{ end }}
             {{- range $index, $page := . -}}
                 {{ if lt $index $normal }}
-                  <li class="card">{{- $page.Render "li-card-img" -}}</li>
+                  <li class="card hover-link">{{- $page.Render "li-card-img" -}}</li>
                 {{ else }}
-                  <li class="card card--small">{{- $page.Render "li-card-small-img" -}}</li>
+                  <li class="card hover-link">{{- $page.Render "li-card-small-img" -}}</li>
                 {{ end }}
             {{- end -}}
         </ul>
       </nav>
       {{ end }}
+      <footer class="page-footer margin-left">
+        <hr>
+          {{ partial "nav/taxonomies/site.html" . }}
+      </footer>
     </div>
   </div>
 {{- end -}}

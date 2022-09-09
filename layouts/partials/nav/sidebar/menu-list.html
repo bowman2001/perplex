@@ -35,16 +35,16 @@
 
 {{- define "item" -}}
   {{ $active := .page.IsMenuCurrent .menuName .menuEntry }}
-  <a {{ if not $active }}href="{{ .menuEntry.URL }}"{{ end }} class="nav__link {{ if $active -}}is-active{{- end }}">
+  <a {{ if not $active }}href="{{ .menuEntry.URL }}"{{ end }} class="icon-link text-link {{ if $active -}}is-active{{- end }}">
     {{ partial "nav/menu-pre-icon.html" .menuEntry }}
-    <span class="li__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
+    <span class="text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
   </a>
 {{- end -}}
 
 {{- define "expand" -}}
     {{ with .Identifier }}
       <input id="menu-{{ . }}" class="chk-menu" type="checkbox">
-      <label class="open-menu" for="menu-{{ . }}"><span class="sr-only">+</span><span class="icon-font"></span></label>
+      <label class="open-menu icon-link" for="menu-{{ . }}"><span class="sr-only">+</span><span class="icon-font"></span></label>
     {{ else }}
         {{ warnf "Missing menu identifier for menu entry %q" .KeyName }}
     {{ end }}

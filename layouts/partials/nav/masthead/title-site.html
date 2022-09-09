@@ -4,7 +4,7 @@
     {{ with $.Site.Params.logo }}
         {{ with resources.Get . }}
           <a class="ctrl__title ctrl__title--logo" href="{{ $link }}">
-            <img class="img--svg" src="{{ .RelPermalink }}" alt="$title">
+            <img class="img__svg" src="{{ .RelPermalink }}" alt="$title">
           </a>
         {{ end }}
     {{ else }}

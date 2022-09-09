@@ -1,1 +1,1 @@
-{{ with .Title }}<h1>{{ $.Data.Singular | humanize }}: {{ . | site.Home.RenderString -}}</h1>{{ end }}
+{{ with .Title }}<h1><strong>{{ $.Data.Singular | humanize }}:</strong> {{ . | site.Home.RenderString -}}</h1>{{ end }}

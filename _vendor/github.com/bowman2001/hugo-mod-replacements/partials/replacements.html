@@ -1,0 +1,17 @@
+{{
+.
+| replaceRE `\{\^([^\}]*)\}` "<sup>$1</sup>"
+| replaceRE `\{\_([^\}]*)\}` "<sub>$1</sub>"
+| replaceRE `\{\#([^\}]*)\}` "<kbd>$1</kbd>"
+| replaceRE `\{\!([^\}]*)\}` "<mark>$1</mark>"
+| replaceRE `\{\=([^\}]*)\}` "<cite>$1</cite>"
+| replaceRE `\{\+([^\}]*)\}` "<ins>$1</ins>"
+| replaceRE `\{\$([^\}]*)\}` "<var>$1</var>"
+| replaceRE `\{s\s?([^\}]*)\}` "<small>$1</small>"
+| replaceRE `\{r\s?([^\}]*)\}` "<span style='float: right;'>$1</span>"
+| replaceRE `\{([a-z]{2})\s?([^\}]*)\}` "<span lang='$1'>$2</span>"
+| replaceRE `\{\/\}` " <br>"
+| replaceRE `\s?(—|&mdash;)\s?` " — "
+| replaceRE `(<p[^>]*>|<li[^>]*>)([“«»„])` "$1<span class='hang-quote'>$2</span>"
+| safeHTML
+}}

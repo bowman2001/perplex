@@ -1,22 +1,22 @@
 {{ if (or .Paginator.HasPrev .Paginator.HasNext) -}}
 <nav class="page-nav margin-left">
-  <ul class="page-nav__list page-nav__list--flex">
+  <ul class="page-nav__list">
     {{- with .Paginator.Prev -}}
-    <li><a href="{{ .URL }}" class="page-nav__item page-nav__item--prev nav__link">
-      <div class="page-nav__title"><span class="li__text">Newer</span></div>
+    <li class="page-nav__li"><a href="{{ .URL }}" class="page-nav__link page-nav__link--prev nav__link">
+      <div class="page-nav__title"><span class="text">Newer</span></div>
       <div class="icon-font page-nav__icon page-nav__icon--arrow">west</div>
     </a></li>
     {{- else -}}
-    <li><span class="page-nav__item page-nave__item--prev"></span></li>
+    <li><span class="page-nav__link page-nave__item--prev"></span></li>
     {{- end -}}
     {{ with .Paginator.Next }}
-    <li>
-      <a href="{{ .URL }}" class="page-nav__item page-nav__item--next nav__link">
-        <div class="page-nav__title"><span class="li__text">Older</span></div>
+    <li class="page-nav__li">
+      <a href="{{ .URL }}" class="page-nav__link page-nav__link--next nav__link">
+        <div class="page-nav__title"><span class="text">Older</span></div>
         <div class="icon-font page-nav__icon page-nav__icon--arrow">east</div>
       </a></li>
     {{- else -}}
-    <li class="page-nav__item page-nav__item--next"></li>
+    <li class="page-nav__link page-nav__link--next"></li>
     {{- end -}}
   </ul>
 </nav>

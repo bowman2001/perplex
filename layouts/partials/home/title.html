@@ -1,8 +1,8 @@
 {{ with .Resources.GetMatch "title.md" }}
   <header id="dt" class="home__tile home__tile--title home__tile--shadow">
-      <div class="md md--sans md--card md--home home__title">
+      <div class="md md--sans md--home home__title">
       {{ with .Title }}<h1>{{ . | site.Home.RenderString }}</h1>{{ end }}
-      {{ partial "content.html" .Content }}
+      {{ partial "replacements.html" .Content }}
       </div>
   </header>
 {{ end }}

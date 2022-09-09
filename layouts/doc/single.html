@@ -12,18 +12,19 @@
         </div>
             {{ partial "img/featured.html" . }}
       </header>
-      <div class="md md--sans md--h-serif  h-link-color">
-          {{ partial "content.html" .Content }}
+      <div class="md md--sans md--h-serif ">
+          {{ partial "replacements.html" .Content }}
       </div>
     </div>
     <footer class="page-footer">
-      <hr>
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
+      <hr>
         {{ partial "doc/nav/pages.html" . }}
         {{ partial "nav/related/small-cards.html" . }}
+        {{ partial "doc/nav/taxonomies.html" . }}
     </footer>
   </div>
 {{ end }}

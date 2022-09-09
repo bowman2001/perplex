@@ -1,21 +1,26 @@
 {{- $imgClass := "" -}}
 {{ $mediaType := .MediaType.SubType }}
+{{ $alt := (partial "img/func/get-figureAlt.html" . ) }}
+{{ $defaultImg := "" }}
+{{ $maxWidth := 1200 }}
 {{- if eq $mediaType "svg" -}}
-  <img class="img--svg" src="{{ .RelPermalink }}" alt="{{ .Name }}" title="{{ .Title }}">
-{{- else -}}
-    {{- if eq $mediaType "png" -}}
-        {{- $imgClass = "img-png" -}}
-    {{- end -}}
-    {{- $max_px := mul site.Params.layout.column site.Params.layout.xmax -}}
-    {{ $defaultImg := .Resize (printf "%dx" (int $max_px)) }}
+  <img class="img__svg" src="{{ .RelPermalink }}" alt="{{ $alt }}" title="{{ .Title }}">
+{{- else }}
+    {{ $defaultWidth := int (math.Min $maxWidth .Width) }}
+    {{ if eq $mediaType "png" -}}
+        {{- $imgClass = "img__png" -}}
+        {{ $defaultImg = .Resize (printf "%dx" $defaultWidth ) }}
+    {{ else }}
+        {{ $defaultImg = .Resize (printf "%dx jpeg q60" $defaultWidth ) }}
+    {{ end }}
     <img src="{{ $defaultImg.RelPermalink }}"
          srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          data-sizes="auto"
          data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
          data-parentfit="cover"
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
-         alt="{{ .Name }}"
+         alt="{{ $alt }}"
          title="{{ .Title }}"
          width="{{ $defaultImg.Width }}"
-         height="{{ $defaultImg.Height }}" />
-{{- end -}}
+         height="{{ $defaultImg.Height }}"/>
+{{ end }}

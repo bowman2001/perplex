@@ -1,0 +1,8 @@
+{{ with .Data.Terms.ByCount }}
+    <p>
+        {{ $last := sub (len .) 1 }}
+        {{ range $index, $value := . }}
+          <a href="{{ $value.Page.RelPermalink }}">{{ $value.Page.LinkTitle | site.Home.RenderString }} ({{ $value.Count }})</a>{{- if lt $index $last }} ·{{ end -}}
+        {{ end }}
+    </p>
+{{ end }}

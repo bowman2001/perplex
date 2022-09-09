@@ -7,6 +7,7 @@
     {{- partialCached "head/js.html" . -}}
     {{- partialCached "head/css.html" . -}}
     {{ if $.Params.latex }}{{- partialCached "head/katex.html" . -}}{{ end }}
-    {{ define "partials/dev/head.html" }}{{ end }}
     {{- partial "dev/head.html" . -}}
 </head>
+
+{{ define "partials/dev/head.html" }}{{ end }}

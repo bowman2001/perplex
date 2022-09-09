@@ -1,4 +1,4 @@
-<a class="page-nav__item page-nav__item--prev" href="{{- .RelPermalink -}}">
+<a class="page-nav__link page-nav__link--prev" href="{{- .RelPermalink -}}">
     {{- with .Params.menu.doc.pre -}}<span class="icon-font page-nav__icon">{{- . -}}</span>{{- end -}}
   <div>
       {{- with .Title -}}<h2 class="page-nav__title">{{- . | site.Home.RenderString -}}</h2>{{- end -}}

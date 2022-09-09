@@ -1,0 +1,7 @@
+{{ with .Data.Terms.ByCount }}
+{{/* $last := sub (len .) 1 */}}
+{{ range $index, $value := . }}
+  <li><a class="taxo__item taxo__item--taxonomy" href="{{ $value.Page.RelPermalink }}">{{ $value.Page.LinkTitle |
+          site.Home.RenderString }} ({{ $value.Count }})</a></li>
+{{ end }}
+{{ end }}
