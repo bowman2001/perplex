@@ -2,7 +2,7 @@
     <p>
         {{ $last := sub (len .) 1 }}
         {{ range $index, $value := . }}
-          <a href="{{ $value.Page.RelPermalink }}">{{ $value.Page.Title }} ({{ $value.Count }})</a>{{- if lt $index $last }} ·{{ end -}}
+          <a href="{{ $value.Page.RelPermalink }}">{{ $value.Page.LinkTitle | site.Home.RenderString }} ({{ $value.Count }})</a>{{- if lt $index $last }} ·{{ end -}}
         {{ end }}
     </p>
 {{ end }}
