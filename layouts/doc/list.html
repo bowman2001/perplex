@@ -34,14 +34,14 @@
           </section>
         {{ end }}
     </div>
-    <footer class="page-footer">
-      <hr>
+    <footer class="page-footer">      
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
+      <hr>
         {{ partial "doc/nav/pages.html" . }}
-        {{ partial "nav/taxonomies/page/footer.html" . }}
+        {{ partial "doc/nav/taxonomies.html" . }}
     </footer>
   </div>
 {{- end -}}
