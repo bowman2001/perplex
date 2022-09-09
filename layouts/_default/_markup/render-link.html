@@ -1,3 +1,3 @@
-<a class="text-link" href="{{- .Destination  -}}"
-        {{ with .Title }} title="{{ . }}" {{ end }}>{{- .Text -}}</a>
+<a class="md-hook-link" href="{{- .Destination  -}}"
+        {{ with .Title }} title="{{ . }}" {{ end }}>{{- .Text | safeHTML -}}</a>
 {{- /* This comment removes trailing newlines */ -}}

@@ -17,19 +17,19 @@
         {{- partial "img/featured.html" . -}}
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--h-serif md--list h-link-color ">
+          <div class="md md--sans md--h-serif md--list">
               {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
         <nav class="section-nav">
           <ul>
               {{- range .Pages -}}
-                <li class="section-nav__li hover-link">{{- .Render "li" -}}</li>
+                <li class="section-nav__li">{{- .Render "li" -}}</li>
               {{- end -}}
           </ul>
         </nav>
         {{ with .Page.GetPage "after_index" }}
-          <section class="md md--sans md--h-serif h-link-color ">
+          <section class="md md--sans md--h-serif">
               {{- partial "replacements.html" .Content }}
           </section>
         {{ end }}
