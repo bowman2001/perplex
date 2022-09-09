@@ -2090,7 +2090,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   color: #006a9c;
-  padding-bottom: 0;
 }
 .md h1 br, .md h2 br, .md h3 br, .md h4 br {
   display: none;
