@@ -1,14 +1,15 @@
 ---
 title: {{ replace .Name "-" " " | title }}
-description: Page description placeholder
+description: Post description placeholder
 subtitle: false
 date: {{ .Date }}
-weight: 1
-featImg:
-categories:
-tags:
+categories: []
+tags: []
+resources:
+  - src:
+    name: featured
 draft: true
 ---
 
-Place your lead paragraph here. The _more-tag_ marks the paragraph as the _summary_ for this page.
-<!--more-->
+Place your introduction paragraph here. The **more-tag** marks this paragraph as the summary and meta-description for this page.
+{.p-first} <!--more-->

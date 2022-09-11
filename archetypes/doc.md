@@ -10,6 +10,11 @@ menu:
     name: {{ replace .Name "-" " " | title }}
     parent: 
     pre: remove
+categories: []
+tags: []
+resources:
+  - src: 
+    name: featured
 draft: true
 ---
 

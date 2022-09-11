@@ -26,9 +26,9 @@
             {{ end }}
             {{- range $index, $page := . -}}
                 {{ if lt $index $normal }}
-                  <li class="card hover-link">{{- $page.Render "li-card-img" -}}</li>
+                  <li class="card">{{- $page.Render "li-card-img" -}}</li>
                 {{ else }}
-                  <li class="card hover-link">{{- $page.Render "li-card-small-img" -}}</li>
+                  <li class="card card--small">{{- $page.Render "li-card-small-img" -}}</li>
                 {{ end }}
             {{- end -}}
         </ul>

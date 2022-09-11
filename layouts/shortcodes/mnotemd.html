@@ -1,0 +1,21 @@
+{{/* Not working, not finished */}}
+{{ $html := "" }}
+{{- if not ( strings.Contains .Inner "<p>" ) -}}
+  {{ $html = print "<p>" .Inner "</p>" }}
+{{- else -}}
+    {{- $html = .Inner -}}
+{{- end -}}
+<aside class="right3 {{ with .Get "up" }}up-{{ . }}{{ end }} {{ with .Get "down" }}down-{{ . }}{{ end }}">
+    {{- $cutoff := (mul 4 80) -}}
+  <div class="note {{- with .Get "star" }} note-star{{- . -}} {{ end -}} {{ with .Get "dagger" }}note-dagger{{.}}{{end}} {{ if gt ( len .Inner ) $cutoff  }}note-long{{end}}">
+      {{- if gt ( len .Inner ) $cutoff -}}
+        <input id="check-note-{{.Ordinal}}" class="checkbox-note hide3" type="checkbox">
+        <label class="open-note hide3" for="check-note-{{.Ordinal}}">
+          <span class="arrow"></span>
+        </label>
+      {{- end -}}
+    <div class="note__content">
+      {{ $html | safeHTML }}
+    </div>
+  </div>
+</aside>

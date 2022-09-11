@@ -1,5 +1,5 @@
 <div>
     {{- with .Title -}}
         <div class="section-nav__title"><span class="text">{{- . | site.Home.RenderString -}}</span></div>{{- end -}}
-    {{- with .Description -}}<p class="section-nav__description">{{- . | site.Home.RenderString -}}</p>{{- end -}}
+    {{- with .Description -}}<p class="section-nav__description">{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>{{- end -}}
 </div>

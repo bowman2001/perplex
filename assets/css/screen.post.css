@@ -168,14 +168,12 @@ hr {
   }
 }
 
+em,
 i {
   font-style: italic;
 }
 
-em {
-  font-style: italic;
-}
-
+strong,
 b {
   font-weight: 700;
 }
@@ -187,7 +185,7 @@ var {
 }
 
 var {
-  color: #777;
+  color: #800;
 }
 
 a {
@@ -355,7 +353,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #fefefe;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -494,7 +492,7 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ececec;
+    scrollbar-color: #ebb924 #ebebeb;
   }
 
   #l-home::-webkit-scrollbar {
@@ -507,7 +505,7 @@ body {
   }
 
   #l-home::-webkit-scrollbar-track {
-    background: #ececec;
+    background: #ebebeb;
   }
 }
 
@@ -777,7 +775,7 @@ body {
   #l-main {
     overflow-y: auto;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ececec;
+    scrollbar-color: #ebb924 #ebebeb;
   }
 
   #l-main::-webkit-scrollbar {
@@ -790,7 +788,7 @@ body {
   }
 
   #l-main::-webkit-scrollbar-track {
-    background: #ececec;
+    background: #ebebeb;
   }
 }
 
@@ -805,7 +803,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: #fff;
+  background-color: #fefefe;
 }
 
 #l-sidebar.is-visible {
@@ -840,7 +838,7 @@ body {
     padding-left: 0;
     padding-right: 0;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ececec;
+    scrollbar-color: #ebb924 #ebebeb;
   }
 
   #l-sidebar::-webkit-scrollbar {
@@ -853,7 +851,7 @@ body {
   }
 
   #l-sidebar::-webkit-scrollbar-track {
-    background: #ececec;
+    background: #ebebeb;
   }
 }
 
@@ -1105,11 +1103,6 @@ a.meta__item--text:hover {
   color: #111;
 }
 
-.title > hr {
-  border-bottom: .25rem solid #111;
-  height: 1rem;
-}
-
 .title > h1 {
   font-size: 2.86rem;
   line-height: 3rem;
@@ -1141,10 +1134,21 @@ a.meta__item--text:hover {
   }
 }
 
+.title--first > hr {
+  border-bottom: .4rem solid #111;
+  height: 1rem;
+}
+
 .title--first h1 {
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .02em;
   word-spacing: .06em;
+}
+
+.title--second > hr {
+  border-bottom: .3rem solid #111;
+  height: 1rem;
 }
 
 .title--second h1 {
@@ -1154,10 +1158,15 @@ a.meta__item--text:hover {
   font-style: italic;
 }
 
-.title--third h1 {
+.title--third > hr {
+  border-bottom: .2rem solid #111;
+  height: 1rem;
+}
+
+.title--third > h1 {
+  font-weight: 500;
   letter-spacing: 0em;
   word-spacing: 0em;
-  text-transform: lowercase;
   font-style: italic;
 }
 
@@ -1261,6 +1270,13 @@ a.meta__item--text:hover {
           text-decoration-color: #fff;
 }
 
+.md-hook-link:hover var,
+.heading-anchor:hover var,
+.md-hook-link:focus var,
+.heading-anchor:focus var {
+  color: #000;
+}
+
 .heading-anchor {
   -webkit-text-decoration-color: rgba(0, 0, 0, 0);
           text-decoration-color: rgba(0, 0, 0, 0);
@@ -1359,6 +1375,7 @@ h6:target .heading-anchor {
 }
 
 .hover-link {
+  display: block;
   --bs-color: transparent;
   border: .1rem solid var(--bs-color);
   border-radius: 1rem;
@@ -1631,7 +1648,7 @@ h6:target .heading-anchor {
 .md .box {
   position: relative;
   margin-bottom: calc(1rem + 1 * var(--es));
-  background-color: rgba(230, 230, 230, .25);
+  background-color: rgba(229, 229, 229, .25);
   border-radius: .5rem;
 }
 
@@ -1981,7 +1998,7 @@ h6:target .heading-anchor {
   color: #111;
   font-size: 1.70625rem;
   line-height: 2.5rem;
-  padding-top: 1.611009375rem;
+  padding-top: 1.111009375rem;
   padding-bottom: calc(0.388990625rem + var(--es));
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
@@ -2007,9 +2024,9 @@ h6:target .heading-anchor {
 .md--card--small > blockquote,
 .md--card--small > .p-first {
   font-size: 1.43rem;
-  line-height: 1.5rem;
-  padding-top: .714465rem;
-  margin-bottom: -.214465rem;
+  line-height: 2rem;
+  padding-top: .464465rem;
+  margin-bottom: -0.464465rem;
 }
 
 .md--tiny > p,
@@ -2149,7 +2166,7 @@ h6:target .heading-anchor {
 
 .md .highlight table {
   scrollbar-gutter: stable;
-  scrollbar-color: #ebb924 #ececec;
+  scrollbar-color: #ebb924 #ebebeb;
 }
 
 .md .highlight table::-webkit-scrollbar {
@@ -2162,7 +2179,7 @@ h6:target .heading-anchor {
 }
 
 .md .highlight table::-webkit-scrollbar-track {
-  background: #ececec;
+  background: #ebebeb;
 }
 
 .md .highlight table pre {
@@ -2816,7 +2833,7 @@ h6:target .heading-anchor {
 .md--card h2 {
   font-size: 1.666875rem;
   line-height: 2rem;
-  padding-top: 1.3757553125rem;
+  padding-top: .8757553125rem;
   margin-bottom: -.3757553125rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
@@ -2834,9 +2851,9 @@ h6:target .heading-anchor {
 
 .md--card--small .p-meta {
   font-size: 1.3585rem;
-  line-height: 2rem;
-  padding-top: .49124175rem;
-  margin-bottom: -.49124175rem;
+  line-height: 1.5rem;
+  padding-top: .74124175rem;
+  padding-bottom: .25875825rem;
   font-weight: 300;
 }
 
@@ -3106,7 +3123,7 @@ h6:target .heading-anchor {
   max-width: 70rem;
   text-align: center;
   border-radius: .5rem;
-  background-color: #f2f2f2;
+  background-color: #f1f1f1;
 }
 
 @media screen and (min-width: 37em) {
@@ -3279,7 +3296,7 @@ h6:target .heading-anchor {
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f7f7f7 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f6f6f6 90%);
 }
 
 @media screen and (min-width: 48em) {
@@ -3456,6 +3473,11 @@ h6:target .heading-anchor {
 .md > ul > li:last-child > p:last-child,
 .md > ol > li:last-child > p:last-child {
   padding-bottom: 0;
+}
+
+.md--tiny ul li,
+.md--tiny ol li {
+  padding-left: 2rem;
 }
 
 .nav__list li {
@@ -3876,7 +3898,7 @@ h6:target .heading-anchor {
 
 .card__fig > .img__svg {
   padding: 1rem;
-  border: .1rem solid rgba(17, 17, 17, .25);
+  border: .1rem solid rgba(17, 17, 17, .5);
   border-radius: .5rem;
 }
 
@@ -3924,7 +3946,7 @@ h6:target .heading-anchor {
 @media screen and (min-width: 79em) {
   .sidebar-box {
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ececec;
+    scrollbar-color: #ebb924 #ebebeb;
   }
 
   .sidebar-box::-webkit-scrollbar {
@@ -3937,7 +3959,7 @@ h6:target .heading-anchor {
   }
 
   .sidebar-box::-webkit-scrollbar-track {
-    background: #ececec;
+    background: #ebebeb;
   }
 }
 

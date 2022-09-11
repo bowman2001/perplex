@@ -1,9 +1,9 @@
-<a href="{{- .RelPermalink -}}">
+<a class="hover-link" href="{{- .RelPermalink -}}">
   <h4>
       {{ with .Params.menu.doc.pre }}<span class="icon-font icon-bullet">{{ . }}</span>{{ end }}
       {{ with .Title }}{{- . | site.Home.RenderString -}}{{ end }}
   </h4>
     {{- with .Description -}}
-      <p class="description">{{- . | site.Home.RenderString -}}</p>
+      <p class="description">{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
     {{- end -}}
 </a>
