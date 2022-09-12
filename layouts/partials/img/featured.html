@@ -3,9 +3,10 @@
   <aside class="featured-image">
     <figure class="md">
         {{ partial "img/img.html" . }}
+        {{ $name := ( partial "img/func/get-unsplashName.html" . ) }}
         {{- with partial "img/func/get-unsplashLink.html" . -}}
           <figcaption>
-            <div class="attribution">By <a href="{{ . }}">Unsplash</a></div>
+            <div class="attribution">By <a href="{{ . }}">{{ $name }}/Unsplash</a></div>
           </figcaption>
         {{- end -}}
     </figure>

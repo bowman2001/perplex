@@ -940,6 +940,14 @@ a.meta__item--text:hover {
 .title--list {
   max-width: 100%;
   padding-bottom: 0;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: linear-gradient(to right, hsl(199deg, 100%, 38%) 0%, rgba(0, 132, 194, 0.05) 95%);
+}
+@media screen and (min-width: 79em) {
+  .title--list {
+    background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199deg, 100%, 38%) 25%, rgba(0, 132, 194, 0.025) 100%);
+  }
 }
 
 .title--serif h1, .md--h-serif h1 {
@@ -1151,7 +1159,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   --bs-color: transparent;
   border: 0.1rem solid var(--bs-color);
   border-radius: 1rem;
-  box-shadow: inset 0 0rem 0.25rem var(--bs-color);
+  box-shadow: inset 0 0 0.5rem var(--bs-color);
   text-shadow: 0 0 0.1rem var(--bs-color);
   transition: border-color, box-shadow, text-shadow;
   transition-duration: 200ms;
@@ -3001,6 +3009,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   font-weight: 500;
 }
 
+.section-nav--top {
+  padding-top: 0;
+}
+
 .page-nav {
   max-width: 74rem;
   margin: 2rem 0;
@@ -3624,7 +3636,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 @media screen and (min-width: 79em) {
   .padding-left {
-    padding-left: 37rem;
+    padding-left: 39rem;
   }
 }
 

@@ -1,0 +1,13 @@
+{{ $tmp := slice }}
+{{ $name := "" }}
+{{ with (partial "img/func/unsplash.html" . ) }}
+    {{ $length := len . }}
+    {{ $startid := (sub $length 24) }}
+    {{ $namedashed := (slicestr . 0 $startid) }}
+    {{ $slice := (split $namedashed "-") }}
+    {{ range $slice }}
+        {{ $tmp = $tmp | append ( . | humanize ) }}
+    {{ end }}
+    {{ $name = (trim (delimit $tmp " ") " " )}}
+{{ end }}
+{{ return $name }}

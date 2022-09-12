@@ -1,12 +1,9 @@
-{{ $filename := .Key | path.Base }}
-{{ $length := len $filename }}
 {{ $link := "" }}
-{{ if (gt $length 24) }}
-    {{ $end := (sub $length 13) }}
-    {{ if eq (slicestr $filename $end) "-unsplash.jpg" }}
-        {{ $start := (sub $length 24) }}
-        {{ $id := (slicestr $filename $start $end) }}
-        {{ $link = (print "https://unsplash.com/photos/" $id )}}
-    {{ end }}
+{{ with (partial "img/func/unsplash.html" . ) }}
+{{ $length := len . }}
+{{ $startid := (sub $length 24) }}
+{{ $endid := (sub $length 13) }}
+{{ $id := (slicestr . $startid $endid) }}
+{{ $link = (print "https://unsplash.com/photos/" $id )}}
 {{ end }}
 {{ return $link }}
