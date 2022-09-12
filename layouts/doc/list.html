@@ -14,7 +14,7 @@
           <hr>
             {{ partial "title/title.html" . }}
         </div>
-        {{- partial "img/featured.html" . -}}
+        <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
         {{ with .Content }}
           <div class="md md--sans md--h-serif md--list">

@@ -6,7 +6,7 @@
         {{ partial "title/title.html" . }}
         {{ partial "title/subtitle.html" . }}
       </div>
-        {{- partial "img/featured.html" . -}}
+        <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
     </header>
     <div class="md md--serif md--margin-left md--article
     {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">

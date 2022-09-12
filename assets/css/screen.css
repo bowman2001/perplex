@@ -942,11 +942,11 @@ a.meta__item--text:hover {
   padding-bottom: 0;
   border-radius: 0.5rem;
   color: #fff;
-  background: linear-gradient(to right, hsl(199deg, 100%, 38%) 0%, rgba(0, 132, 194, 0.05) 95%);
+  background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199deg, 100%, 38%) 2%, hsl(199deg, 100%, 38%) 66%, rgba(0, 132, 194, 0.025) 100%);
 }
 @media screen and (min-width: 79em) {
   .title--list {
-    background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199deg, 100%, 38%) 25%, rgba(0, 132, 194, 0.025) 100%);
+    background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199deg, 100%, 38%) 25%, hsl(199deg, 100%, 38%) 75%, rgba(0, 132, 194, 0.025) 100%);
   }
 }
 
@@ -3011,6 +3011,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .section-nav--top {
   padding-top: 0;
+  clear: none;
 }
 
 .page-nav {
@@ -3654,6 +3655,9 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   height: 0.2rem;
   margin: 0 2rem 3.8rem 2rem;
 }
+.li-box > hr:first-child {
+  background-color: transparent;
+}
 
 .li-header {
   position: relative;
@@ -3666,7 +3670,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 @media screen and (min-width: 420px) {
   .featured-image {
-    width: calc( 50% - 2rem );
+    width: calc(50% - 2rem);
     margin: 1.25rem 0 0 2rem;
   }
 }

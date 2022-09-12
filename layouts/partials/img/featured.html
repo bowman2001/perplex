@@ -1,6 +1,5 @@
 {{- $img := ( partial "img/func/get-featured.html" . ) -}}
 {{- with $img -}}
-  <aside class="featured-image">
     <figure class="md">
         {{ partial "img/img.html" . }}
         {{ $name := ( partial "img/func/get-unsplashName.html" . ) }}
@@ -10,5 +9,4 @@
           </figcaption>
         {{- end -}}
     </figure>
-  </aside>
 {{- end -}}

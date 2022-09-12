@@ -1116,12 +1116,12 @@ a.meta__item--text:hover {
   padding-bottom: 0;
   border-radius: .5rem;
   color: #fff;
-  background: linear-gradient(to right, hsl(199, 100%, 38%) 0%, rgba(0, 132, 194, 0.05) 95%);
+  background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199, 100%, 38%) 2%, hsl(199, 100%, 38%) 66%, rgba(0, 132, 194, 0.025) 100%);
 }
 
 @media screen and (min-width: 79em) {
   .title--list {
-    background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199, 100%, 38%) 25%, rgba(0, 132, 194, 0.025) 100%);
+    background: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, hsl(199, 100%, 38%) 25%, hsl(199, 100%, 38%) 75%, rgba(0, 132, 194, 0.025) 100%);
   }
 }
 
@@ -3723,6 +3723,7 @@ h6:target .heading-anchor {
 
 .section-nav--top {
   padding-top: 0;
+  clear: none;
 }
 
 .page-nav {
@@ -4479,6 +4480,10 @@ h6:target .heading-anchor {
   background-image: linear-gradient(to right, rgba(0, 132, 194, 0.025) 0%, rgba(0, 132, 194, 0.5) 25%, rgba(0, 132, 194, 0.5) 75%, rgba(0, 132, 194, 0.025) 100%);
   height: .2rem;
   margin: 0 2rem 3.8rem 2rem;
+}
+
+.li-box > hr:first-child {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .li-header {

@@ -7,7 +7,7 @@
         {{ partial "title/title.html" . }}
         {{ partial "title/subtitle.html" . }}
       </div>
-       {{- partial "img/featured.html" . -}}
+       <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
     </header>
     {{ with .Content }}
     <div class="md md--sans md--margin-left md--h-serif ">
