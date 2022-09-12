@@ -1,14 +1,32 @@
-{{ with site.GetPage "categories" }}
-  <div class="md md--sans md--tiny md--footer">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <ul>
+{{ $categories := site.GetPage "categories" }}
+{{ $tags := site.GetPage "tags" }}
+{{ $series := site.GetPage "series" }}
+{{ if or $categories $tags $series }}
+  <nav class="taxo-site-nav">
+      {{ with $categories }}
+        {{ template "taxolist.html" . }}
+      {{ end }}
+      {{ with $tags }}
+        {{ template "taxopara.html" . }}
+      {{ end }}
+      {{ with $series }}
+          {{ template "taxolist.html" . }}
+      {{ end }}
+  </nav>
+{{ end }}
+
+{{ define "taxolist.html" }}
+  <div class="taxo-site-nav__taxo md md--sans md--small md--footer">
+    <h2><a class="taxo__item taxo__item--taxo" href="{{ .RelPermalink }}"><span>{{ .Title }}</span></a></h2>
+    <ul class="col2">
         {{ partial "nav/taxonomies/site/list.html" . }}
     </ul>
   </div>
 {{ end }}
-{{ with site.GetPage "tags" }}
-  <div class="md md--sans md--tiny md--footer">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{ partial "nav/taxonomies/site/paragraph.html" . }}
-  </div>
+
+{{ define "taxopara.html" }}
+<div class="taxo-site-nav__taxo md md--sans md--small md--footer">
+  <h2><a class="taxo__item taxo__item--taxo" href="{{ .RelPermalink }}"><span>{{ .Title }}</span></a></h2>
+    {{ partial "nav/taxonomies/site/paragraph.html" . }}
+</div>
 {{ end }}

@@ -17,12 +17,9 @@
       <nav class="card-nav margin-left">
         <ul class="card-nav__list">
             {{ $n := len . }}
-            {{ $normal := 0 }}
-            {{ if gt $n 4 }}
-                {{ $normal = 2 }}
-                {{ if gt $n 8 }}
-                    {{ $normal = 4 }}
-                {{ end }}
+            {{ $normal := 2 }}
+            {{ if gt $n 8 }}
+               {{ $normal = 4 }}
             {{ end }}
             {{- range $index, $page := . -}}
                 {{ if lt $index $normal }}
@@ -34,10 +31,10 @@
         </ul>
       </nav>
       {{ end }}
-      <footer class="page-footer margin-left">
-        <hr>
-          {{ partial "nav/taxonomies/site.html" . }}
-      </footer>
     </div>
+    <footer class="page-footer page-footer--taxo">
+      <hr>
+        {{ partial "nav/taxonomies/site.html" . }}
+    </footer>
   </div>
 {{- end -}}

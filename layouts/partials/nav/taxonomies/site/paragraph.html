@@ -1,8 +1,9 @@
+{{ $taxo := .Data.Singular }}
 {{ with .Data.Terms.ByCount }}
-    <p>
-        {{ $last := sub (len .) 1 }}
-        {{ range $index, $value := . }}
-          <a href="{{ $value.Page.RelPermalink }}">{{ $value.Page.LinkTitle | site.Home.RenderString }} ({{ $value.Count }})</a>{{- if lt $index $last }} ·{{ end -}}
-        {{ end }}
-    </p>
+  <p>
+      {{ $last := sub (len .) 1 }}
+      {{ range $index, $value := . }}
+        <a class="taxo__item taxo__item--{{ $taxo }}" href="{{ $value.Page.RelPermalink }}"><span>{{ $value.Page.LinkTitle | site.Home.RenderString -}}</span> ({{ $value.Count }}){{- if lt $index $last }} ·{{ end -}}</a>
+      {{ end }}
+  </p>
 {{ end }}
