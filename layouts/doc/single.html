@@ -17,14 +17,14 @@
       </div>
     </div>
     <footer class="page-footer">
+        {{ partial "nav/related/small-cards.html" . }}
+        {{ partial "doc/nav/taxonomies.html" . }}
       <div class="meta">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
       <hr>
         {{ partial "doc/nav/pages.html" . }}
-        {{ partial "nav/related/small-cards.html" . }}
-        {{ partial "doc/nav/taxonomies.html" . }}
     </footer>
   </div>
 {{ end }}
