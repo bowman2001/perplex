@@ -11,7 +11,11 @@
 {{ $attrlink := "" }}
 {{ $inner := "" }}
 {{ if .IsNamedParams }}
-    {{ $img := partial "get-resource.html" (dict "name" (.Get "src") "currentPage" $.Page ) }}
+    {{ with (.Get "src") }}
+        {{ $img = partial "get-resource.html" (dict "name" . "currentPage" $.Page ) }}
+    {{ else }}
+        {{ errorf "Missing 'src' parameter for the figure." }}
+    {{ end }}
     {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
     {{ with (.Get "link") }}{{ $link = . }}{{ end }}
     {{ with (.Get "target") }}{{ $target = . }}{{ end }}

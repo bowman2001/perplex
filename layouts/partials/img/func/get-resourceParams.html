@@ -1,0 +1,10 @@
+{{ $rp := dict  }}
+{{ with .Params.class }}{{ $rp = merge $rp (dict "class" . ) }}{{ end }}
+{{ with .Params.link }}{{ $rp = merge $rp (dict "link" . ) }}{{ end }}
+{{ with .Params.target }}{{ $rp = merge $rp (dict "target" . ) }}{{ end }}
+{{ with .Params.rel }}{{ $rp = merge $rp (dict "rel" . ) }}{{ end }}
+{{ with .Params.alt }}{{ $rp = merge $rp (dict "alt" . ) }}{{ end }}
+{{ with .Params.caption }}{{ $rp = merge $rp (dict "caption" ( . | site.Home.RenderString)) }}{{ end }}
+{{ with .Params.attr }}{{ $rp = merge $rp (dict "attr" ( . | site.Home.RenderString )) }}{{ end }}
+{{ with .Params.attrlink }}{{ $rp = merge $rp (dict "attrlink" . ) }}{{ end }}
+{{ return $rp }}

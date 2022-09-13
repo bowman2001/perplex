@@ -18,8 +18,8 @@
             {{ end }}
         {{ end }}
         {{ if not $resource }}
-            {{ range $i, $tag := .GetTerms "categories" }}
-                {{ with $tag.Page.Resources.GetMatch $name }}
+            {{ range $i, $category := .GetTerms "categories" }}
+                {{ with $category.Page.Resources.GetMatch $name }}
                     {{ if eq $resource "" }}
                         {{ $resource = . }}
                     {{ end }}
