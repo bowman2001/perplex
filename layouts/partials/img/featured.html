@@ -1,4 +1,4 @@
-{{- $img := ( partial "img/func/get-featured.html" . ) -}}
+{{- $img := ( partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) ) -}}
 {{- with $img -}}
     <figure class="md">
         {{ partial "img/img.html" . }}

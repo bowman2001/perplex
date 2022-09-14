@@ -5,4 +5,5 @@
 <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="{{ $auto.RelPermalink }}" integrity="{{ $auto.Data.Integrity }}" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
+        onload='renderMathInElement(document.body,{ delimiters: [{left: "$$", right: "$$", display: true},
+{left: "\\[", right: "\\]", display: true}, {left: "$", right: "$", display: false}, {left: "\\(", right: "\\)", display: false}]});'></script>

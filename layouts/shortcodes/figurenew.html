@@ -1,0 +1,30 @@
+{{ $name := "" }}
+{{ $img := false }}
+{{ $attributes := dict }}
+{{ if .IsNamedParams }}
+    {{ with (.Get "src") }}
+        {{ $name = . }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" $name "currentPage" $.Page ) }}
+    {{ else }}
+        {{ errorf "Missing 'src' parameter for figure shortcode." }}
+    {{ end }}
+    {{ with $img }}
+        {{ $attributes = merge $attributes (partial "img/func/params/resource.html" . )}}
+    {{ end }}
+    {{ $attributes = merge $attributes ( partial "img/func/params/namedFigure.html" . ) }}
+{{ else }}
+    {{ with (.Get 0) }}
+        {{ $name = . }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" $name "currentPage" $.Page )  }}
+    {{ else }}
+        {{ errorf "Missing positional parameter in figure shortcode (Needs 1 got 0)." }}
+    {{ end }}
+    {{ with $img }}
+        {{ $attributes = merge $attributes (partial "img/func/params/resource.html" . )}}
+    {{ end }}
+{{ end }}
+{{ $attributes = merge $attributes (dict "name" $name) }}
+{{ with (.Inner | site.Home.RenderString) }}
+    {{ $attributes = merge $attributes (dict "caption" .) }}
+{{ end }}
+{{ partial "img/figure.html" (dict "img" $img "a" $attributes )}}

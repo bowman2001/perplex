@@ -1,8 +1,7 @@
 {{ $srcset := slice }}
 {{ $widths := partial "img/func/calc-global-sizes.html" . }}
-{{ $raster := slice "jpeg" "tiff" "bmp" }}
 {{ $target := "" }}
-{{- if in $raster .MediaType.SubType }}
+{{- if in $.Params.imaging.raster_subtypes .MediaType.SubType }}
     {{ $target = "webp" }}
 {{ end }}
 {{ range $w := $widths }}

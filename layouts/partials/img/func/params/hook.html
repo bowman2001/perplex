@@ -1,0 +1,9 @@
+{{ $hp := dict  }}
+{{ $url := urls.Parse .Destination }}
+{{ with .Title }}{{ $hp = merge $hp (dict "title" . ) }}{{ end }}
+{{ with .PlainText }}{{ $hp = merge $hp (dict "alt" . ) }}{{ end }}
+{{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{end}}
+{{ with $url.Query }}
+
+{{ end }}
+{{ return $hp }}

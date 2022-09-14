@@ -5,12 +5,25 @@
 *
 * OUT: slice of 'img' widths
 */}}
-{{ $min := mul site.Params.layout.xmin 16 }}
-{{ $max := .Width }}
+
+{{ $min := (mul site.Params.layout.xmin 9.0) }}
 {{ $sizes := (slice (int $min)) }}
-{{ $n := float (sub site.Params.imaging.u_number 1) }}
-{{ $step := div (sub $max $min) $n }}
-{{ range seq 1 site.Params.imaging.u_number }}
-    {{ $sizes = $sizes | append (int (math.Round (mul $step .))) }}
+{{ $max := .Width }}
+{{ $ratio := (div $max $min) }}
+{{ $sizestep := site.Params.imaging.sizestep }}
+{{ if (lt $sizestep 10) }}
+    {{ errorf "The size difference of %d percent for your srcsets is too small. You would end up with very large ones. A minimum of 20 percent is recommended." $sizestep }}
+{{ else if (lt $sizestep 20) }}
+    {{ warnf "The size difference of %d percent for your srcsets is small. Hugo will initially take some time for the image processing. A minimum of 20 percent is recommended." $sizestep }}
 {{ end }}
+{{ $m := (math.Sqrt (add 1 (div site.Params.imaging.sizestep 100.0))) }}
+{{ $n := (math.Ceil (div (math.Log $ratio) (math.Log $m))) }}
+{{ $m = (math.Pow $ratio (div 1 $n)) }}
+{{ $size := $min }}
+{{ range (seq 1 (int $n)) }}
+    {{ $size = (mul $size $m) }}
+    {{ $sizes = $sizes | append (int (math.Round $size)) }}
+{{ end }}
+
+{{ warnf "Image %v has the sizes %v" .RelPermalink $sizes }}
 {{ return $sizes }}

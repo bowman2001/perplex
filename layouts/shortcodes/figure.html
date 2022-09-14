@@ -20,9 +20,9 @@
         {{ errorf "Missing 'src' parameter for figure shortcode." }}
     {{ end }}
     {{ with $img }}
-        {{ $attributes = merge $attributes (partial "img/func/get-resourceParams.html" . )}}
+        {{ $attributes = merge $attributes (partial "img/func/params/resource.html" . )}}
     {{ end }}
-    {{ $attributes = merge $attributes ( partial "img/func/get-namedFigureParams.html" . ) }}
+    {{ $attributes = merge $attributes ( partial "img/func/params/namedFigure.html" . ) }}
     {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
     {{ with (.Get "link") }}{{ $link = . }}{{ end }}
     {{ with (.Get "target") }}{{ $target = . }}{{ end }}
@@ -48,14 +48,14 @@
         {{ with .Params.caption }}{{ $caption = . }}{{ end }}
         {{ with .Params.attr }}{{ $attr = . }}{{ end }}
         {{ with .Params.attrlink }}{{ $attrlink = . }}{{ end }}
-        {{ $attributes = merge $attributes (partial "img/func/get-resourceParams.html" . )}}
+        {{ $attributes = merge $attributes (partial "img/func/params/resource.html" . )}}
     {{ end }}
 {{ end }}
 {{ with (.Inner | site.Home.RenderString) }}
     {{ $attributes = merge $attributes (dict "caption" .) }}
 {{ end }}
 
-<p>{{ $attributes }}</p>
+
 {{ with $img }}
   <figure {{ with $class }}class='{{ delimit . " " | safeHTMLAttr }}'{{ end }}>
       {{ if $link }}
