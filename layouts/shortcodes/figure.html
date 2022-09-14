@@ -10,12 +10,19 @@
 {{ $attr := "" }}
 {{ $attrlink := "" }}
 {{ $inner := "" }}
+
+{{ $attributes := dict }}
 {{ if .IsNamedParams }}
     {{ with (.Get "src") }}
-        {{ $img = partial "get-resource.html" (dict "name" . "currentPage" $.Page ) }}
+        {{ $name = . }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" $name "currentPage" $.Page ) }}
     {{ else }}
-        {{ errorf "Missing 'src' parameter for the figure." }}
+        {{ errorf "Missing 'src' parameter for figure shortcode." }}
     {{ end }}
+    {{ with $img }}
+        {{ $attributes = merge $attributes (partial "img/func/get-resourceParams.html" . )}}
+    {{ end }}
+    {{ $attributes = merge $attributes ( partial "img/func/get-namedFigureParams.html" . ) }}
     {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
     {{ with (.Get "link") }}{{ $link = . }}{{ end }}
     {{ with (.Get "target") }}{{ $target = . }}{{ end }}
@@ -25,8 +32,13 @@
     {{ with (.Get "caption") }}{{ $caption = . }}{{ end }}
     {{ with (.Get "attr") }}{{ $attr = . }}{{ end }}
     {{ with (.Get "attrlink") }}{{ $attrlink = . }}{{ end }}
+
 {{ else }}
-    {{ $img = partial "get-resource.html" (dict "name" (.Get 0) "currentPage" $.Page )  }}
+    {{ with (.Get 0) }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" . "currentPage" $.Page )  }}
+    {{ else }}
+        {{ errorf "Missing parameter in figure shortcode (Needs at least 1 got 0)." }}
+    {{ end }}
     {{ with $img }}
         {{ with .Params.class  }}{{ $class = $class | append . }}{{ end }}
         {{ with .Params.link }}{{ $link = . }}{{ end }}
@@ -36,9 +48,14 @@
         {{ with .Params.caption }}{{ $caption = . }}{{ end }}
         {{ with .Params.attr }}{{ $attr = . }}{{ end }}
         {{ with .Params.attrlink }}{{ $attrlink = . }}{{ end }}
+        {{ $attributes = merge $attributes (partial "img/func/get-resourceParams.html" . )}}
     {{ end }}
 {{ end }}
-{{ with .Inner }}{{ $caption = . }}{{ end }}
+{{ with (.Inner | site.Home.RenderString) }}
+    {{ $attributes = merge $attributes (dict "caption" .) }}
+{{ end }}
+
+<p>{{ $attributes }}</p>
 {{ with $img }}
   <figure {{ with $class }}class='{{ delimit . " " | safeHTMLAttr }}'{{ end }}>
       {{ if $link }}

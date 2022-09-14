@@ -1,0 +1,8 @@
+{{ $img := false }}
+{{ $resource := (partial "get-resource.html" (dict "name" .name "currentPage" .currentPage ) )}}
+{{ if (eq $resource.MediaType.MainType "image") }}
+    {{ $img = $resource }}
+{{ else }}
+    {{ errorf "The resource '%s' called from the page '%v' is not an image." .name .currentPage }}
+{{ end }}
+{{ return $img }}
