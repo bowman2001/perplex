@@ -6,15 +6,15 @@
 * OUT: slice of 'img' widths
 */}}
 
-{{ $min := (mul site.Params.layout.xmin 9.0) }}
+{{ $min := site.Params.imaging.min_width }}
 {{ $sizes := (slice (int $min)) }}
 {{ $max := .Width }}
 {{ $ratio := (div $max $min) }}
 {{ $sizestep := site.Params.imaging.sizestep }}
 {{ if (lt $sizestep 10) }}
-    {{ errorf "The size difference of %d percent for your srcsets is too small. You would end up with very large ones. A minimum of 20 percent is recommended." $sizestep }}
-{{ else if (lt $sizestep 20) }}
-    {{ warnf "The size difference of %d percent for your srcsets is small. Hugo will initially take some time for the image processing. A minimum of 20 percent is recommended." $sizestep }}
+    {{ errorf "The size difference of %d percent for your srcset is too small. You could end up with more than 100 images. At least 20 percent are recommended." $sizestep }}
+{{ else if (lt $sizestep 15) }}
+    {{ warnf "The size difference of %d percent for your srcset is small. Hugo will initially take some time for the image processing. At least 20 percent are recommended." $sizestep }}
 {{ end }}
 {{ $m := (math.Sqrt (add 1 (div site.Params.imaging.sizestep 100.0))) }}
 {{ $n := (math.Ceil (div (math.Log $ratio) (math.Log $m))) }}
@@ -24,6 +24,4 @@
     {{ $size = (mul $size $m) }}
     {{ $sizes = $sizes | append (int (math.Round $size)) }}
 {{ end }}
-
-{{ warnf "Image %v has the sizes %v" .RelPermalink $sizes }}
 {{ return $sizes }}

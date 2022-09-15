@@ -1,18 +1,18 @@
 {{ $rp := dict  }}
 {{ with .Name }}{{ $rp = merge $rp (dict "name" . ) }}{{ end }}
 {{ with .Title }}
-    {{ if not (eq . $.Name) }}{{ $rp = merge $rp (dict "title" . ) }}{{ end }}
+    {{ if not (eq . (path.Base $.Key)) }}{{ $rp = merge $rp (dict "title" . ) }}{{ end }}
 {{ end }}
 {{ with .Params.alt }}{{ $rp = merge $rp (dict "alt" . ) }}{{ end }}
 {{ with .Params.attr }}{{ $rp = merge $rp (dict "attr" ( . | site.Home.RenderString )) }}{{ end }}
 {{ with .Params.attrlink }}{{ $rp = merge $rp (dict "attrlink" . ) }}{{ end }}
 {{ with .Params.caption }}{{ $rp = merge $rp (dict "caption" ( . | site.Home.RenderString)) }}{{ end }}
-{{ with .Params.class }}{{ $rp = merge $rp (dict "class" . ) }}{{ end }}
+{{ with .Params.class }}{{ $rp = merge $rp (dict "class" (dict "plain" . ) ) }}{{ end }}
 {{ with .Params.id }}{{ $rp = merge $rp (dict "id" . ) }}{{ end }}
 {{ with .Params.link }}{{ $rp = merge $rp (dict "link" . ) }}{{ end }}
-{{ with .Params.pos }}{{ $rp = merge $rp (dict "posh" . ) }}{{ end }}
-{{ with .Params.posh }}{{ $rp = merge $rp (dict "posh" . ) }}{{ end }}
-{{ with .Params.posv }}{{ $rp = merge $rp (dict "posv" . ) }}{{ end }}
+{{ with .Params.pos }}{{ $rp = merge $rp (dict "class" (dict "posh" . )) }}{{ end }}
+{{ with .Params.posh }}{{ $rp = merge $rp (dict "class" (dict "posh" . )) }}{{ end }}
+{{ with .Params.posv }}{{ $rp = merge $rp (dict "class" (dict "posv" . )) }}{{ end }}
 {{ with .Params.rel }}{{ $rp = merge $rp (dict "rel" . ) }}{{ end }}
 {{ with .Params.size }}{{ $rp = merge $rp (dict "size" . ) }}{{ end }}
 {{ with .Params.target }}{{ $rp = merge $rp (dict "target" . ) }}{{ end }}

@@ -24,7 +24,7 @@
     {{ end }}
 {{ end }}
 {{ $attributes = merge $attributes (dict "name" $name) }}
-{{ with (.Inner | site.Home.RenderString) }}
+{{ with .Inner }}
     {{ $attributes = merge $attributes (dict "caption" .) }}
 {{ end }}
 {{ partial "img/figure.html" (dict "img" $img "a" $attributes )}}

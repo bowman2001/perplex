@@ -1,9 +1,7 @@
-{{ with .a.link }}
-<a href="{{ . | safeHTMLAttr }}"
-   {{ with $.a.target }}target="{{ . | safeHTMLAttr }}"{{ end }}
+{{ if .a.link }}<a href="{{ .a.link | safeHTMLAttr }}"
+                   {{ with .a.target }}target="{{ . | safeHTMLAttr }}"{{ end }}
         {{ with $.a.rel }}rel="{{ . | safeHTMLAttr }}"{{ end }}>
     {{ end }}
-
     {{ $class := slice }}
     {{ with .a.class }}
         {{ if not (reflect.IsMap .) }}
@@ -17,15 +15,21 @@
     {{ $class = delimit $class " " }}
   <figure class="{{ $class | safeHTMLAttr }}">
       {{ partial "img/imgnew.html" (dict "img" .img "a" .a) }}
-      {{ if (or .a.caption .a.attr )}}
+      {{ $unsplash := ( partial "img/func/get-unsplash.html" .img ) }}
+      {{ if (or .a.caption .a.attr $unsplash)}}
         <figcaption>
-            {{ with .a.caption }}<span class="caption">{{ . | site.Home.RenderString }}</span>{{ end }}
-            {{ with .a.attr }}
+            {{- with .a.caption }}<span class="caption">{{ . | site.Home.RenderString }}</span>{{ end -}}
+            {{- with .a.attr -}}
                 {{ $attribution := ( . | site.Home.RenderString ) }}
                 {{ with $.a.attrlink }}
                   <a class="attribution" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>
                 {{ else }}
                   <span class="attribution">{{ $attribution }}</span>
+                {{ end }}
+            {{ else }}
+                {{ with $unsplash }}
+                  <span class="attribution"> <a
+                            href="{{ .link | safeHTMLAttr }}">{{ .name }}&hairsp;/&hairsp;Unsplash</a></span>
                 {{ end }}
             {{ end }}
         </figcaption>

@@ -1,8 +1,11 @@
+### WARNING!
+### This is the theme configuration file. Don’t change anything here!
+### Use the configuration in your project root to change parameters.
+
 params:
-  # Repository
+  # Repositories
   themeURL      : https://github.com/bowman2001/perplex
   docURL        : https://github.com/bowman2001/perplexdoc
-  themeIssueTree: issues
   
   # All parameters may be set per page in the front-matter
   subtitle      : false
@@ -14,6 +17,7 @@ params:
   
   paginateNr    : 5
   
+  ### Default taxonomies the theme can handle
   taxonomies    :
     tag     : tags
     category: categories
@@ -23,21 +27,20 @@ params:
   
   ### Parameters
   imaging       :
+    fallback_width   : 1200 # In pixel, also used for meta images
     sizestep         : 20 # In percent
-    fallback_width   : 1280
-    fallback_quality : 60
+    min_width        : 100 # In pixel
+    # Quality reduction for higher densities
+    # quality_reduction: [ -10, -20, -30 ] TODO
+    
+### WARNING!
+### Changing the following parameters in your config will break things.
+    
     # See https://gohugo.io/content-management/image-processing/#anchor
     anchors          : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
     #
     raster_subtypes  : [ bmp, gif, jpeg, tiff, webp ]
     presets          : [ drawing, icon, photo, picture, text ]
-    
-    # Quality reduction for higher densities
-    # quality_reduction: [ -10, -20, -30 ] TODO
-  
-  ### WARNING!
-  ### THE FOLLOWING CONFIGURATION PARAMETERS ARE ESSENTIAL FOR THE THEME
-  ### DO NOT REMOVE OR CHANGE THEM!
   
   layout        :
     measure      : 70.0
@@ -49,8 +52,10 @@ params:
     xmaxmobile   : 8.29
     xmin         : 6.6667
     xmax         : 10.0
-    background   : '#fffefd'
+    background   : '#ffffff'
 
+### IMPORTANT!
+### This module configuration does only affect the folder of the theme.
 module:
   imports:
     - path  : github.com/bowman2001/hugo-mod-replacements

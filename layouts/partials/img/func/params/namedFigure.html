@@ -4,8 +4,9 @@
 {{ with (.Get "attr") }}{{ $np = merge $np (dict "attr" . ) }}{{ end }}
 {{ with (.Get "attrlink") }}{{ $np = merge $np (dict "attrlink" . ) }}{{ end }}
 {{ with (.Get "caption") }}{{ $np = merge $np (dict "caption"  . ) }}{{ end }}
-{{ with (.Get "class" ) }}{{ $np = merge $np (dict "class" . ) }}{{ end }}
+{{ with (.Get "class" ) }}{{ $np = merge $np (dict "class" (dict "plain" . )) }}{{ end }}
 {{ with (.Get "link") }}{{ $np = merge $np (dict "link" . ) }}{{ end }}
+{{ with (.Get "src") }}{{ $np = merge $np (dict "name" . ) }}{{ end }}
 {{ with (.Get "ratio" ) }}{{ $np = merge $np (dict "ratio" . ) }}{{ end }}
 {{ with (.Get "rel") }}{{ $np = merge $np (dict "np" . ) }}{{ end }}
 {{ with (.Get "target") }}{{ $np = merge $np (dict "target" . ) }}{{ end }}
