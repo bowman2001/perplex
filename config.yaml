@@ -22,9 +22,9 @@ params:
   
   ### Parameters
   imaging       :
-    sizes            : 15 # Number of different sizes
-    sizestep         : 25
-    fallback_width   : 1200
+    sizestep         : 20 # In percent
+    fallback_width   : 1280
+    fallback_quality : 60
     # See https://gohugo.io/content-management/image-processing/#anchor
     anchors          : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
     #
@@ -32,7 +32,7 @@ params:
     presets          : [ drawing, icon, photo, picture, text ]
     
     # Quality reduction for higher densities
-    quality_reduction: [ -10, -20, -30 ]
+    # quality_reduction: [ -10, -20, -30 ] TODO
   
   ### WARNING!
   ### THE FOLLOWING CONFIGURATION PARAMETERS ARE ESSENTIAL FOR THE THEME

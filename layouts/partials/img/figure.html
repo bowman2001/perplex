@@ -1,22 +1,36 @@
 {{ with .a.link }}
-  <a href="{{ . | safeHTMLAttr }}"
-  {{ with $.a.target }}target="{{ . | safeHTMLAttr }}"{{ end }}
-  {{ with $.a.rel }}rel="{{ . | safeHTMLAttr }}"{{ end }}>
-{{ end }}
-<figure {{ with .a.class }}class=" . | safeHTMLAttr"{{ end }}>
-  {{ if (or .a.caption .a.attr )}}
-  <figcaption>
-      {{ with .a.caption }}<span class="caption">{{ . | site.Home.RenderString }}</span>{{ end }}
+<a href="{{ . | safeHTMLAttr }}"
+   {{ with $.a.target }}target="{{ . | safeHTMLAttr }}"{{ end }}
+        {{ with $.a.rel }}rel="{{ . | safeHTMLAttr }}"{{ end }}>
+    {{ end }}
+
+    {{ $class := slice }}
+    {{ with .a.class }}
+        {{ if not (reflect.IsMap .) }}
+            {{ $class = $class | append . }}
+        {{ else }}
+            {{ range $k, $v := . }}
+                {{ $class = $class | append $v }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ $class = delimit $class " " }}
+  <figure class="{{ $class | safeHTMLAttr }}">
       {{ partial "img/imgnew.html" (dict "img" .img "a" .a) }}
-      {{ with .a.attr }}
-        {{ $attribution := ( . | site.Home.RenderString ) }}
-           {{ with $.a.attrlink }}
-             <a class="attribution" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>
-           {{ else }}
-            <span class="attribution">{{ $attribution }}</span>
-           {{ end }}
+      {{ if (or .a.caption .a.attr )}}
+        <figcaption>
+            {{ with .a.caption }}<span class="caption">{{ . | site.Home.RenderString }}</span>{{ end }}
+            {{ with .a.attr }}
+                {{ $attribution := ( . | site.Home.RenderString ) }}
+                {{ with $.a.attrlink }}
+                  <a class="attribution" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>
+                {{ else }}
+                  <span class="attribution">{{ $attribution }}</span>
+                {{ end }}
+            {{ end }}
+        </figcaption>
       {{ end }}
-  </figcaption>
-  {{ end }}
-</figure>
-{{ if .a.link }}</a>{{ end }}
+  </figure>
+    {{ if .a.link }}
+</a>
+{{ end }}

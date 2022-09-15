@@ -13,9 +13,9 @@
     {{ else }}
         {{ $defaultImg = .Resize (printf "%dx jpeg q60" $defaultWidth ) }}
     {{ end }}
-    <img src="{{ $defaultImg.RelPermalink }}"
-         srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    <img srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          data-sizes="auto"
+         data-src="{{ $defaultImg.RelPermalink }}"
          data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
          data-parentfit="cover"
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"

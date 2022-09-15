@@ -1,2 +1,29 @@
 {{ $subType := .img.MediaType.SubType }}
 {{ $fallbackImg := "" }}
+{{- $imgClass := "" -}}
+{{ $fallbackWidth := site.Params.imaging.fallback_width }}
+{{ $fallbackQuality := site.Params.imaging.fallback_quality }}
+{{- if eq $subType "svg" -}}
+  <img class="img__svg" src="{{ .img.RelPermalink }}"
+       {{ with .a.alt }}alt="{{ . }}"{{ end }}
+          {{ with .a.title }}title="{{ . }}"{{ end }}>
+{{- else }}
+    {{ $defaultWidth := int (math.Min $fallbackWidth .img.Width) }}
+    {{ if eq $subType "png" -}}
+        {{- $imgClass = "img__png" -}}
+        {{ $fallbackImg = .img.Resize (printf "%dx" $defaultWidth ) }}
+    {{ else }}
+        {{ warnf "%dx jpeg q%d" $defaultWidth $fallbackQuality }}
+        {{ $fallbackImg = .img.Resize (printf "%dx jpeg q%d" $defaultWidth $fallbackQuality ) }}
+    {{ end }}
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+         data-sizes="auto"
+         data-src="{{ $fallbackImg.RelPermalink }}"
+         data-srcset="{{ partial "img/func/generate-global-srcset.html" .img }}"
+         data-parentfit="cover"
+         class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
+         {{ with .a.alt }}alt="{{ . }}"{{ end }}
+            {{ with .a.title }}title="{{ . }}"{{ end }}
+         width="{{ $fallbackImg.Width }}"
+         height="{{ $fallbackImg.Height }}"/>
+{{ end }}
