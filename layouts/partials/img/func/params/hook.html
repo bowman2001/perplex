@@ -1,9 +1,22 @@
 {{ $hp := dict  }}
 {{ $url := urls.Parse .Destination }}
+{{ $name := "" }}
 {{ with .Title }}{{ $hp = merge $hp (dict "title" . ) }}{{ end }}
 {{ with .PlainText }}{{ $hp = merge $hp (dict "alt" . ) }}{{ end }}
-{{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{end}}
+{{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{ $name = . }}{{end}}
 {{ with $url.Query }}
-
+    {{ $pos := ""}}
+    {{ with (.Get "pos") }}
+        {{ $pos = . }}
+    {{ else }}
+        {{ $pos = (.Get "posh" )}}
+    {{ end }}
+    {{ with $pos | lower }}
+        {{ if in site.Params.imaging.posh . }}
+            {{ $hp = merge $hp (dict (slice "class" "posh") . )}}
+        {{ else }}
+            {{ errorf "Unable to render embedded image '%s'. '%q' is not a valid position." $name . }}
+        {{ end }}
+    {{ end }}
 {{ end }}
 {{ return $hp }}

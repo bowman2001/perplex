@@ -74,9 +74,9 @@
       {{ if (or $caption $attr) }}
         <figcaption>
             {{ with ($caption | site.Home.RenderString )}}
-              <div class="caption">{{ . }}</div>{{ end }}
+              <div class="caption__text">{{ . }}</div>{{ end }}
             {{ with $attr }}
-              <div class="attribution">
+              <div class="caption__attribution">
                   {{ if $attrlink }}<a href='{{ $attrlink }}'>{{ end }}
                       {{ . | site.Home.RenderString }}{{ if $attrlink }}</a>{{ end }}
               </div>

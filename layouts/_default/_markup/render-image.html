@@ -1,27 +1,4 @@
 {{ $img := partial "img/func/get-img.html" (dict "name" .Destination "currentPage" .Page ) }}
-{{ if not $img }}
-    {{ errorf "%v - No image with the name '%s' available." .Page .Destination }}
-{{ end }}
-{{ $title := "" }}
-{{ with .Title }}
-    {{ $title = ( . | site.Home.RenderString)  }}
-{{ else }}
-    {{ $filepath := path.Split $img.Name }}
-    {{ $title = $filepath.File }}
-{{ end }}
-{{ with $img }}
-  <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }}">
-  {{ partial "img/img.html" . }}
-      {{ with .Params.caption }}
-        <span class="caption">{{- . | site.Home.RenderString -}}</span>
-      {{ end }}
-      {{ with .Params.attr }}
-          {{ $attr := .  }}
-          {{- if $img.Params.caption -}} · {{- end -}}
-          {{ with $img.Params.attrlink }}<a href="{{ . | safeHTMLAttr }}">
-			      <span class='attribution'>{{- $attr | site.Home.RenderString -}}</span></a>
-          {{ else }}<span class='attribution'>{{- $attr | site.Home.RenderString -}}</span>
-          {{ end }}
-      {{ end }}
-  </span>
-{{ end }}
+{{ $a := partial "img/func/params/resource.html" $img }}
+{{ $a = merge $a ( partial "img/func/params/hook.html" . ) }}
+{{ partial "img/embedded.html" (dict "img" $img "a" $a )}}

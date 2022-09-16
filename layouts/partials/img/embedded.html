@@ -13,11 +13,11 @@
         {{ end }}
     {{ end }}
     {{ $class = delimit $class " " }}
-  <figure class="{{ $class | safeHTMLAttr }}">
+  <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }} {{ $class | safeHTMLAttr }}">
       {{ partial "img/imgnew.html" (dict "img" .img "a" .a) }}
       {{ $unsplash := ( partial "img/func/get-unsplash.html" .img ) }}
       {{ if (or .a.caption .a.attr $unsplash)}}
-        <figcaption class="caption">
+        <span class="caption">
             {{- with .a.caption }}<span class="caption__text">{{ . | site.Home.RenderString }}</span>{{ end -}}
             {{- with .a.attr -}}
                 {{ $attribution := ( . | site.Home.RenderString ) }}
@@ -32,9 +32,9 @@
                             href="{{ .link | safeHTMLAttr }}">{{ .name }}&hairsp;/&hairsp;Unsplash</a></span>
                 {{ end }}
             {{ end }}
-        </figcaption>
+        </span>
       {{ end }}
-  </figure>
+  </span>
     {{ if .a.link }}
 </a>
 {{ end }}
