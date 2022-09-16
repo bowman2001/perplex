@@ -40,7 +40,15 @@ params:
     anchors          : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
     #
     raster_subtypes  : [ bmp, gif, jpeg, tiff, webp ]
-    presets          : [ drawing, icon, photo, picture, text ]
+    webp_hints       : [ drawing, icon, photo, picture, text ]
+    rs_filter: [bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch]
+    embedded:
+      width: [tiny, small, normal, large, xlarge]
+      posh: [left, center, right]
+    figure:
+      width: [tiny, small, normal, full]
+      posh: [left, right]
+  
   
   layout        :
     measure      : 70.0

@@ -1,9 +1,0 @@
-{{ $link := "" }}
-{{ with (partial "img/func/unsplash.html" . ) }}
-{{ $length := len . }}
-{{ $startid := (sub $length 24) }}
-{{ $endid := (sub $length 13) }}
-{{ $id := (slicestr . $startid $endid) }}
-{{ $link = (print "https://unsplash.com/photos/" $id )}}
-{{ end }}
-{{ return $link }}

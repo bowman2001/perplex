@@ -6,10 +6,10 @@
 {{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{ $name = . }}{{end}}
 {{ with $url.Query }}
     {{ $pos := ""}}
-    {{ with (.Get "pos") }}
+    {{ with .Get "pos" }}
         {{ $pos = . }}
     {{ else }}
-        {{ $pos = (.Get "posh" )}}
+        {{ $pos = .Get "posh" }}
     {{ end }}
     {{ with $pos | lower }}
         {{ if in site.Params.imaging.posh . }}

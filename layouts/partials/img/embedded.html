@@ -14,7 +14,7 @@
     {{ end }}
     {{ $class = delimit $class " " }}
   <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }} {{ $class | safeHTMLAttr }}">
-      {{ partial "img/imgnew.html" (dict "img" .img "a" .a) }}
+      {{ partial "img/img.html" (dict "img" .img "a" .a) }}
       {{ $unsplash := ( partial "img/func/get-unsplash.html" .img ) }}
       {{ if (or .a.caption .a.attr $unsplash)}}
         <span class="caption">

@@ -1,16 +1,5 @@
 {{ $name := "" }}
-{{ $img := "" }}
-{{ $class := slice }}
-{{ $link := "" }}
-{{ $target := "" }}
-{{ $rel := "" }}
-{{ $alt := "" }}
-{{ $title := "" }}
-{{ $caption := "" }}
-{{ $attr := "" }}
-{{ $attrlink := "" }}
-{{ $inner := "" }}
-
+{{ $img := false }}
 {{ $attributes := dict }}
 {{ if .IsNamedParams }}
     {{ with (.Get "src") }}
@@ -23,67 +12,19 @@
         {{ $attributes = merge $attributes (partial "img/func/params/resource.html" . )}}
     {{ end }}
     {{ $attributes = merge $attributes ( partial "img/func/params/namedFigure.html" . ) }}
-    {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
-    {{ with (.Get "link") }}{{ $link = . }}{{ end }}
-    {{ with (.Get "target") }}{{ $target = . }}{{ end }}
-    {{ with (.Get "rel") }}{{ $rel = . }}{{ end }}
-    {{ with (.Get "alt") }}{{ $alt = . }}{{ end }}
-    {{ with (.Get "title") }}{{ $title = . }}{{ end }}
-    {{ with (.Get "caption") }}{{ $caption = . }}{{ end }}
-    {{ with (.Get "attr") }}{{ $attr = . }}{{ end }}
-    {{ with (.Get "attrlink") }}{{ $attrlink = . }}{{ end }}
-
 {{ else }}
     {{ with (.Get 0) }}
-        {{ $img = partial "img/func/get-img.html" (dict "name" . "currentPage" $.Page )  }}
+        {{ $name = . }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" $name "currentPage" $.Page )  }}
     {{ else }}
-        {{ errorf "Missing parameter in figure shortcode (Needs at least 1 got 0)." }}
+        {{ errorf "Missing positional parameter in figure shortcode (Needs 1 got 0)." }}
     {{ end }}
     {{ with $img }}
-        {{ with .Params.class  }}{{ $class = $class | append . }}{{ end }}
-        {{ with .Params.link }}{{ $link = . }}{{ end }}
-        {{ with .Params.target }}{{ $target = . }}{{ end }}
-        {{ with .Params.rel }}{{ $rel = . }}{{ end }}
-        {{ with .Params.alt }}{{ $alt = . }}{{ else }}{{ $alt = .Title }}{{ end }}
-        {{ with .Params.caption }}{{ $caption = . }}{{ end }}
-        {{ with .Params.attr }}{{ $attr = . }}{{ end }}
-        {{ with .Params.attrlink }}{{ $attrlink = . }}{{ end }}
         {{ $attributes = merge $attributes (partial "img/func/params/resource.html" . )}}
     {{ end }}
 {{ end }}
-{{ with (.Inner | site.Home.RenderString) }}
+{{ $attributes = merge $attributes (dict "name" $name) }}
+{{ with .Inner }}
     {{ $attributes = merge $attributes (dict "caption" .) }}
 {{ end }}
-
-
-{{ with $img }}
-  <figure {{ with $class }}class='{{ delimit . " " | safeHTMLAttr }}'{{ end }}>
-      {{ if $link }}
-    <a href='{{ $link | safeHTMLAttr }}' {{ with $target }}target='{{ . | safeHTMLAttr }}'{{ end }}
-            {{ with $rel }}rel='{{ . | safeHTMLAttr }}'{{ end }}>
-        {{ end }}
-        {{ if eq $img.MediaType.SubType "svg" }}
-          <img class="img__svg"
-               src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
-                  {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
-        {{ else }}
-          <img src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
-                  {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
-        {{ end }}
-        {{ if $link }}</a>{{ end }}
-      {{ if (or $caption $attr) }}
-        <figcaption>
-            {{ with ($caption | site.Home.RenderString )}}
-              <div class="caption__text">{{ . }}</div>{{ end }}
-            {{ with $attr }}
-              <div class="caption__attribution">
-                  {{ if $attrlink }}<a href='{{ $attrlink }}'>{{ end }}
-                      {{ . | site.Home.RenderString }}{{ if $attrlink }}</a>{{ end }}
-              </div>
-            {{ end }}
-        </figcaption>
-      {{ end }}
-  </figure>
-{{ else }}
-    {{ warnf "%v: No page resource '%s' available." .Page $name  }}
-{{ end }}
+{{ partial "img/figure.html" (dict "img" $img "a" $attributes )}}
