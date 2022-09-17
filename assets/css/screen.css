@@ -3673,12 +3673,12 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 
 .featured-image {
-  float: right;
-  clear: both;
   width: 100%;
 }
 @media screen and (min-width: 420px) {
   .featured-image {
+    float: right;
+    clear: both;
     width: calc(50% - 2rem);
     margin: 1.25rem 0 0 2rem;
   }
