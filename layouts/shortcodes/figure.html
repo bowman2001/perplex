@@ -1,72 +1,33 @@
 {{ $name := "" }}
-{{ $img := "" }}
-{{ $class := slice }}
-{{ $link := "" }}
-{{ $target := "" }}
-{{ $rel := "" }}
-{{ $alt := "" }}
-{{ $title := "" }}
-{{ $caption := "" }}
-{{ $attr := "" }}
-{{ $attrlink := "" }}
-{{ $inner := "" }}
+{{ $img := false }}
+{{ $a := dict }}
 {{ if .IsNamedParams }}
     {{ with (.Get "src") }}
-        {{ $img = partial "get-resource.html" (dict "name" . "currentPage" $.Page ) }}
+        {{ $name = . }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" $name "currentPage" $.Page ) }}
     {{ else }}
-        {{ errorf "Missing 'src' parameter for the figure." }}
+        {{ errorf "Missing 'src' parameter for figure shortcode." }}
     {{ end }}
-    {{ with (.Get "class") }}{{ $class = $class | append . }}{{ end }}
-    {{ with (.Get "link") }}{{ $link = . }}{{ end }}
-    {{ with (.Get "target") }}{{ $target = . }}{{ end }}
-    {{ with (.Get "rel") }}{{ $rel = . }}{{ end }}
-    {{ with (.Get "alt") }}{{ $alt = . }}{{ end }}
-    {{ with (.Get "title") }}{{ $title = . }}{{ end }}
-    {{ with (.Get "caption") }}{{ $caption = . }}{{ end }}
-    {{ with (.Get "attr") }}{{ $attr = . }}{{ end }}
-    {{ with (.Get "attrlink") }}{{ $attrlink = . }}{{ end }}
-{{ else }}
-    {{ $img = partial "get-resource.html" (dict "name" (.Get 0) "currentPage" $.Page )  }}
     {{ with $img }}
-        {{ with .Params.class  }}{{ $class = $class | append . }}{{ end }}
-        {{ with .Params.link }}{{ $link = . }}{{ end }}
-        {{ with .Params.target }}{{ $target = . }}{{ end }}
-        {{ with .Params.rel }}{{ $rel = . }}{{ end }}
-        {{ with .Params.alt }}{{ $alt = . }}{{ else }}{{ $alt = .Title }}{{ end }}
-        {{ with .Params.caption }}{{ $caption = . }}{{ end }}
-        {{ with .Params.attr }}{{ $attr = . }}{{ end }}
-        {{ with .Params.attrlink }}{{ $attrlink = . }}{{ end }}
+        {{ $a = partial "img/func/params/unsplash.html" . }}
+        {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
+    {{ end }}
+    {{ $a = merge $a ( partial "img/func/params/namedFigure.html" . ) }}
+{{ else }}
+    {{ with (.Get 0) }}
+        {{ $name = . }}
+        {{ $img = partial "img/func/get-img.html" (dict "name" $name "currentPage" $.Page )  }}
+    {{ else }}
+        {{ errorf "Missing positional parameter in figure shortcode (Needs 1 got 0)." }}
+    {{ end }}
+    {{ with $img }}
+        {{ $a = partial "img/func/params/unsplash.html" . }}
+        {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
     {{ end }}
 {{ end }}
-{{ with .Inner }}{{ $caption = . }}{{ end }}
-{{ with $img }}
-  <figure {{ with $class }}class='{{ delimit . " " | safeHTMLAttr }}'{{ end }}>
-      {{ if $link }}
-    <a href='{{ $link | safeHTMLAttr }}' {{ with $target }}target='{{ . | safeHTMLAttr }}'{{ end }}
-            {{ with $rel }}rel='{{ . | safeHTMLAttr }}'{{ end }}>
-        {{ end }}
-        {{ if eq $img.MediaType.SubType "svg" }}
-          <img class="img__svg"
-               src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
-                  {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
-        {{ else }}
-          <img src='{{ .RelPermalink }}' {{ with $alt }} alt='{{ . | site.Home.RenderString }}' {{ end }}
-                  {{ with $title }} title='{{ . | site.Home.RenderString }}' {{ end }} />
-        {{ end }}
-        {{ if $link }}</a>{{ end }}
-      {{ if (or $caption $attr) }}
-        <figcaption>
-            {{ with ($caption | site.Home.RenderString )}}
-              <div class="caption">{{ . }}</div>{{ end }}
-            {{ with $attr }}
-              <div class="attribution">
-                  {{ if $attrlink }}<a href='{{ $attrlink }}'>{{ end }}
-                      {{ . | site.Home.RenderString }}{{ if $attrlink }}</a>{{ end }}
-              </div>
-            {{ end }}
-        </figcaption>
-      {{ end }}
-  </figure>
-{{ else }}
-    {{ warnf "%v: No page resource '%s' available." .Page $name  }}
+{{ with .Inner }}
+    {{ $a = merge $a (dict "caption" .) }}
 {{ end }}
+{{ $a = merge $a (dict "name" $name) }}
+{{ $a = merge $a (dict "type" "figure" )}}
+{{ partial "img/figure.html" (dict "img" $img "a" $a )}}

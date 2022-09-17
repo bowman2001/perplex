@@ -1,0 +1,17 @@
+{{ $np := dict  }}
+{{ with (.Get "anchor") }}{{ $np = merge $np (dict "anchor" . ) }}{{ end }}
+{{ with (.Get "alt") }}{{ $np = merge $np (dict "alt" . ) }}{{ end }}
+{{ with (.Get "attr") }}{{ $np = merge $np (dict "attr" . ) }}{{ end }}
+{{ with (.Get "attrlink") }}{{ $np = merge $np (dict "attrlink" . ) }}{{ end }}
+{{ with (.Get "caption") }}{{ $np = merge $np (dict "caption"  . ) }}{{ end }}
+{{ with (.Get "class" ) }}{{ $np = merge $np (dict (slice "class" "plain") ( . | lower)) }}{{ end }}
+{{ with (.Get "link") }}{{ $np = merge $np (dict "link" (. | lower) ) }}{{ end }}
+{{ with (.Get "pos") }}{{ $np = merge $np (dict (slice "class" "posh") ( . | lower))}}{{ end }}
+{{ with (.Get "posh") }}{{ $np = merge $np (dict (slice "class" "posh") ( . | lower))}}{{ end }}
+{{ with (.Get "posv") }}{{ $np = merge $np (dict (slice "class" "posv") ( . | lower))}}{{ end }}
+{{ with (.Get "src") }}{{ $np = merge $np (dict "name" . ) }}{{ end }}
+{{ with (.Get "ratio" ) }}{{ $np = merge $np (dict "ratio" . ) }}{{ end }}
+{{ with (.Get "rel") }}{{ $np = merge $np (dict "rel" . ) }}{{ end }}
+{{ with (.Get "target") }}{{ $np = merge $np (dict "target" . ) }}{{ end }}
+{{ with (.Get "title") }}{{ $np = merge $np (dict "title" . ) }}{{ end }}
+{{ return $np }}

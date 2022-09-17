@@ -1,64 +1,84 @@
-params:
-# Repository
-  themeURL: https://github.com/bowman2001/perplex
-  docURL: https://github.com/bowman2001/perplexdoc
-  themeIssueTree: issues
-
-# All parameters may be set per page in the front-matter
-  subtitle: false
-  toc: true
-  toctitle: On this Page
-  latex: false
-  mermaid: false
-
-  paginateNr: 5
-
-  taxonomies:
-    tag: tags
-    category: categories
-    series: series
-
-#### Image processing
-
-# Image processing parameters
-  imaging:
-    u_number: 15 # Number of different sizes
-  
-# Quality reduction for higher densities
-    u_quality_reduction: [-10, -20, -30]
-
 ### WARNING!
-### THE FOLLOWING CONFIGURATION PARAMETERS ARE ESSENTIAL FOR THE THEME
-### DO NOT REMOVE OR CHANGE THEM!
+### This is the theme configuration file. Don’t change anything here!
+### Use the configuration in your project root to change parameters.
 
-  layout:
-    measure: 70.0
-    column: 33.0
-    gutter: 4.0
+params:
+  # Repositories
+  themeURL      : https://github.com/bowman2001/perplex
+  docURL        : https://github.com/bowman2001/perplexdoc
+  
+  # All parameters may be set per page in the front-matter
+  subtitle      : false
+  toc           : true
+  toctitle      : On this Page
+  latex         : false
+  latex_dollar  : true
+  mermaid       : false
+  
+  paginateNr    : 5
+  
+  ### Default taxonomies the theme can handle
+  taxonomies    :
+    tag     : tags
+    category: categories
+    series  : series
+  
+  #### Image processing
+  
+  ### Parameters
+  imaging       :
+    fallback_width   : 1200 # In pixel, also used for meta images
+    sizestep         : 20 # In percent
+    min_width        : 100 # In pixel
+    # Quality reduction for higher densities
+    # quality_reduction: [ -10, -20, -30 ] TODO
+    
+### WARNING!
+### Changing the following parameters in your config will break things.
+    
+    # See https://gohugo.io/content-management/image-processing/#anchor
+    anchors          : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
+    #
+    raster_subtypes  : [ bmp, gif, jpeg, tiff, webp ]
+    webp_hints       : [ drawing, icon, photo, picture, text ]
+    rs_filter: [bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch]
+    embedded:
+      size: [tiny, small, normal, full]
+      posh: [left, right]
+    figure:
+      size: [tiny, small, normal, large, xlarge]
+      posh: [left, center, right]
+  
+  layout        :
+    measure      : 70.0
+    column       : 33.0
+    gutter       : 4.0
     lineheightfac: 3.0
-    guttermobile: 2.0
-    xminmobile: 7.5
-    xmaxmobile: 8.29
-    xmin: 6.6667
-    xmax: 10.0
-    background: '#fffefd'
+    guttermobile : 2.0
+    xminmobile   : 7.5
+    xmaxmobile   : 8.29
+    xmin         : 6.6667
+    xmax         : 10.0
+    background   : '#ffffff'
 
+### IMPORTANT!
+### This module configuration does only affect the folder of the theme.
 module:
   imports:
-  - path: github.com/bowman2001/hugo-mod-replacements
-    mounts:
-      - source: partials
-        target: layouts/partials
-        
-  mounts:
+    - path  : github.com/bowman2001/hugo-mod-replacements
+      mounts:
+        - source: partials
+          target: layouts/partials
+  
+  mounts :
     - source: archetypes
       target: archetypes
-      
+    
     - source: assets
       target: assets
-      
+    
     - source: layouts
       target: layouts
-      
+    
     - source: static
       target: static

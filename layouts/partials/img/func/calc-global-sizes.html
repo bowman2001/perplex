@@ -1,16 +1,27 @@
 {{/*
 * Calculate a range of width numbers for a responsive image 'srcset'
 *
-* IN: image resource
+* IN: image resource map, parameter map
 *
 * OUT: slice of 'img' widths
 */}}
-{{ $min := mul site.Params.layout.xmin 16 }}
-{{ $max := .Width }}
+
+{{ $min := site.Params.imaging.min_width }}
 {{ $sizes := (slice (int $min)) }}
-{{ $n := float (sub site.Params.imaging.u_number 1) }}
-{{ $step := div (sub $max $min) $n }}
-{{ range seq 1 site.Params.imaging.u_number }}
-    {{ $sizes = $sizes | append (int (math.Round (mul $step .))) }}
+{{ $max := .Width }}
+{{ $ratio := (div $max (float $min)) }}
+{{ $sizestep := site.Params.imaging.sizestep }}
+{{ if (lt $sizestep 10) }}
+    {{ errorf "The size difference of %d percent for your srcset is too small. You could end up with more than 100 images. At least 20 percent are recommended." $sizestep }}
+{{ else if (lt $sizestep 15) }}
+    {{ warnf "The size difference of %d percent for your srcset is small. Hugo will initially take some time for the image processing. At least 20 percent are recommended." $sizestep }}
+{{ end }}
+{{ $m := (math.Sqrt (add 1 (div site.Params.imaging.sizestep 100.0))) }}
+{{ $n := (math.Ceil (div (math.Log $ratio) (math.Log $m))) }}
+{{ $mo := (math.Pow $ratio (div 1.0 $n)) }}
+{{ $size := $min }}
+{{ range (seq 1 (int $n)) }}
+    {{ $size = (mul $size $mo) }}
+    {{ $sizes = $sizes | append (int (math.Round $size)) }}
 {{ end }}
 {{ return $sizes }}

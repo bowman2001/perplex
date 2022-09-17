@@ -1,26 +1,30 @@
-{{- $imgClass := "" -}}
-{{ $mediaType := .MediaType.SubType }}
-{{ $alt := (partial "img/func/get-figureAlt.html" . ) }}
-{{ $defaultImg := "" }}
-{{ $maxWidth := 1200 }}
-{{- if eq $mediaType "svg" -}}
-  <img class="img__svg" src="{{ .RelPermalink }}" alt="{{ $alt }}" title="{{ .Title }}">
-{{- else }}
-    {{ $defaultWidth := int (math.Min $maxWidth .Width) }}
-    {{ if eq $mediaType "png" -}}
-        {{- $imgClass = "img__png" -}}
-        {{ $defaultImg = .Resize (printf "%dx" $defaultWidth ) }}
-    {{ else }}
-        {{ $defaultImg = .Resize (printf "%dx jpeg q60" $defaultWidth ) }}
-    {{ end }}
-    <img src="{{ $defaultImg.RelPermalink }}"
-         srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-         data-sizes="auto"
-         data-srcset="{{ partialCached "img/func/generate-global-srcset.html" . .Key }}"
-         data-parentfit="cover"
-         class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
-         alt="{{ $alt }}"
-         title="{{ .Title }}"
-         width="{{ $defaultImg.Width }}"
-         height="{{ $defaultImg.Height }}"/>
+{{ if .a.link }}
+  <a class="link-block"
+  href="{{ .a.link | safeHTMLAttr }}"
+  {{ with .a.target }}target="{{ . | safeHTMLAttr }}"{{ end }}
+  {{ with $.a.rel }}rel="{{ . | safeHTMLAttr }}"{{ end }}>
 {{ end }}
+{{ $subType := .img.MediaType.SubType }}
+{{- if eq $subType "svg" -}}
+  <img class="img__svg" src="{{ .img.RelPermalink }}"
+       {{ with .a.alt }}alt="{{ . }}"{{ end }}
+          {{ with .a.title }}title="{{ . }}"{{ end }}>
+{{- else -}}
+    {{ $fallbackImg := "" }}
+    {{- $imgClass := "" -}}
+    {{ $fallbackWidth := site.Params.imaging.fallback_width }}
+    {{ $fallbackImg = .img.Resize (printf "%dx" (int (math.Min $fallbackWidth .img.Width)) ) }}
+    {{- if eq $subType "png" -}}
+        {{- $imgClass = "img__png" -}}
+    {{- end -}}
+    <img data-sizes="auto"
+         data-src="{{ $fallbackImg.RelPermalink }}"
+         data-srcset="{{ partial "img/func/generate-global-srcset.html" . }}"
+         data-parentfit="cover"
+         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+         class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
+            {{- with .a.alt }} alt="{{ . }}"{{ end -}}
+            {{- with .a.title }} title="{{ . }}"{{ end -}}
+    />
+{{ end }}
+{{ if .a.link }}</a>{{ end }}

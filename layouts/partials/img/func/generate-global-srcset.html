@@ -1,18 +1,59 @@
 {{ $srcset := slice }}
-{{ $widths := partial "img/func/calc-global-sizes.html" . }}
-{{ $raster := slice "jpeg" "tiff" "bmp" }}
-{{ $target := "" }}
-{{- if in $raster .MediaType.SubType }}
-    {{ $target = "webp" }}
-{{ end }}
-{{ range $w := $widths }}
-    {{ $img := "" }}
-    {{ with $target }}
-        {{ $img = $.Resize (printf "%dx %s" $w . ) }}
-    {{ else }}
-        {{ $img = $.Resize (printf "%dx" $w ) }}
+{{ $widths := partial "img/func/calc-global-sizes.html" .img }}
+{{ $raster := false }}
+{{ $hint := "" }}
+{{ $ratio := 0 }}
+{{ $anchor := "Smart" }}
+{{ $max := (math.Max site.Params.imaging.fallback_width $.img.Width) }}
+{{ $rs_img := "" }}
+
+{{- if in site.Params.imaging.raster_subtypes .img.MediaType.SubType }}
+    {{ $raster = true }}
+    {{ with .a.hint }}
+        {{ if in site.Params.imaging.webp_hints . }}
+            {{ $hint = . }}
+        {{ else }}
+            {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types." . $.img.name }}
+        {{ end }}
     {{ end }}
-    {{ $src := print ($img.RelPermalink | safeURL) " " $img.Width "w" }}
-    {{ $srcset = $srcset | append $src }}
+{{ end }}
+
+{{ with .a.ratio }}
+    {{ if or (lt . 0.01) (gt . 100) }}
+        {{ warnf "Unable to resize '%s' to the ratio '%f'. Values between 0.01 and 100 are possible." $.img.name . }}
+    {{ else }}
+        {{ $ratio = . }}
+    {{ end }}
+    {{ if in site.Params.imaging.anchors $.a.anchor }}
+        {{ $anchor = $.a.anchor }}
+    {{ end }}
+{{ end }}
+
+{{ range $w := $widths }}
+    {{ $string := slice }}
+    {{ with $ratio }}
+        {{ $string = $string | append (printf "%dx%d" $w (int (math.Round (div $w $ratio)))) }}
+        {{ with $anchor }}
+            {{ $string = $string | append . }}
+        {{ end }}
+    {{ else }}
+        {{ $string = $string | append (printf "%dx" $w) }}
+    {{ end }}
+    {{ if $raster }}
+        {{ $string = $string | append "webp" }}
+        {{ with $hint }}
+            {{ $string = $string | append . }}
+        {{ end }}
+    {{ end }}
+    {{ if gt $w $max }}
+        {{ $string = $string | append "MitchellNetravali" }}
+    {{ end }}
+    {{ $string = (delimit $string " ") }}
+    {{ if $ratio }}
+        {{ $rs_img = $.img.Fill (print $string) }}
+    {{ else }}
+        {{ $rs_img = $.img.Resize (print $string) }}
+    {{ end }}
+    {{ $srcset = $srcset | append (print ($rs_img.RelPermalink | safeURL) " " $rs_img.Width "w") }}
 {{ end }}
 {{ return ( delimit $srcset ", " ) }}

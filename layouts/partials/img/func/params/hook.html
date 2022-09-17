@@ -1,0 +1,12 @@
+{{ $hp := dict  }}
+{{ $url := urls.Parse .Destination }}
+{{ $name := "" }}
+{{ with .Title }}{{ $hp = merge $hp (dict "title" . ) }}{{ end }}
+{{ with .PlainText }}{{ $hp = merge $hp (dict "alt" . ) }}{{ end }}
+{{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{ $name = . }}{{end}}
+{{ with $url.Query }}
+    {{ with .Get "pos" }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
+    {{ with .Get "posh" }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
+    {{ with .Get "size" }}{{ $hp = merge $hp (dict (slice "class" "size") . )}}{{ end }}
+{{ end }}
+{{ return $hp }}

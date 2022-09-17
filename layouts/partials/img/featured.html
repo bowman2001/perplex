@@ -1,12 +1,6 @@
-{{- $img := ( partial "img/func/get-featured.html" . ) -}}
+{{- $img := ( partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) ) -}}
 {{- with $img -}}
-    <figure class="md">
-        {{ partial "img/img.html" . }}
-        {{ $name := ( partial "img/func/get-unsplashName.html" . ) }}
-        {{- with partial "img/func/get-unsplashLink.html" . -}}
-          <figcaption>
-            <div class="attribution">By <a href="{{ . }}">{{ $name }}/Unsplash</a></div>
-          </figcaption>
-        {{- end -}}
-    </figure>
+    {{ $a := partial "img/func/params/unsplash.html" . }}
+    {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
+    {{ partial "img/figure.html" (dict "img" . "a" $a )}}
 {{- end -}}
