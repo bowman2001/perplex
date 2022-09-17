@@ -1,11 +1,15 @@
-{{ with (site.RegularPages.Related . | first 4) }}
+{{ with (site.RegularPages.Related . | first 6) }}
   <div class="md md--footer">
     <h2>See Also</h2>
   </div>
   <nav class="card-nav">
     <ul class="card-nav__list">
-        {{ range . }}
-          <li class="card card--small">{{- .Render "li-card-small-img" -}}</li>
+        {{ range $k, $v := . }}
+            {{ if (lt $k 2) }}
+              <li class="card card--small">{{- $v.Render "li-card-small-img" -}}</li>
+            {{ else }}
+              <li class="card card--small">{{- $v.Render "li-card-small" -}}</li>
+            {{ end }}
         {{ end }}
     </ul>
   </nav>
