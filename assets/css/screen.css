@@ -1624,7 +1624,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   font-size: 1.70625rem;
   line-height: 2.5rem;
   padding-top: 1.111009375rem;
-  padding-bottom: calc(0.388990625rem + var(--es));
+  padding-bottom: 0.388990625rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
 }
@@ -1639,7 +1639,16 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: 0.464465rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: 0.535535rem;
+}
+
+.md--taxo > p, .md--taxo > ul, .md--taxo > ol, .md--taxo > dl {
+  font-size: 1.43rem;
+  line-height: 3rem;
+  padding-top: 0.964465rem;
+  padding-bottom: 0.035535rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
 }
 
 .md--small > p, .md--small > ul, .md--small > ol, .md--small > dl {
@@ -2276,7 +2285,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .md--card--small h2 {
   font-size: 1.3585rem;
   line-height: 1.5rem;
-  padding-top: 0.74124175rem;
+  padding-top: 0.24124175rem;
   padding-bottom: 0.25875825rem;
 }
 .md--card--small .p-meta {
@@ -3532,7 +3541,8 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .taxo-site-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 @media screen and (min-width: 37em) {
   .taxo-site-nav {
@@ -3540,10 +3550,14 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     flex-wrap: wrap;
   }
 }
+.taxo-site-nav__taxo {
+  min-width: 50%;
+}
 @media screen and (min-width: 37em) {
   .taxo-site-nav__taxo {
     width: 37rem;
     flex-shrink: 0;
+    flex-grow: 1;
     padding-bottom: 2rem;
   }
 }
@@ -3597,7 +3611,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   }
   .page-header--title-left .title {
     float: left;
-    text-align: right;
     width: 37rem;
   }
 }
