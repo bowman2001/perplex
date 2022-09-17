@@ -4,7 +4,7 @@
 {{ $hint := "" }}
 {{ $ratio := 0 }}
 {{ $anchor := "Smart" }}
-{{ $max := (math.Max site.Params.imaging.max_width $.img.Width) }}
+{{ $max := (math.Max site.Params.imaging.fallback_width $.img.Width) }}
 {{ $rs_img := "" }}
 
 {{- if in site.Params.imaging.raster_subtypes .img.MediaType.SubType }}
@@ -13,14 +13,14 @@
         {{ if in site.Params.imaging.webp_hints . }}
             {{ $hint = . }}
         {{ else }}
-            {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types." . $.img.Key }}
+            {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types." . $.img.name }}
         {{ end }}
     {{ end }}
 {{ end }}
 
 {{ with .a.ratio }}
     {{ if or (lt . 0.01) (gt . 100) }}
-        {{ warnf "Unable to resize to the ratio '%f'. Values between 0.01 and 100 are possible."}}
+        {{ warnf "Unable to resize '%s' to the ratio '%f'. Values between 0.01 and 100 are possible." $.img.name . }}
     {{ else }}
         {{ $ratio = . }}
     {{ end }}

@@ -5,18 +5,8 @@
 {{ with .PlainText }}{{ $hp = merge $hp (dict "alt" . ) }}{{ end }}
 {{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{ $name = . }}{{end}}
 {{ with $url.Query }}
-    {{ $pos := ""}}
-    {{ with .Get "pos" }}
-        {{ $pos = . }}
-    {{ else }}
-        {{ $pos = .Get "posh" }}
-    {{ end }}
-    {{ with $pos | lower }}
-        {{ if in site.Params.imaging.posh . }}
-            {{ $hp = merge $hp (dict (slice "class" "posh") . )}}
-        {{ else }}
-            {{ errorf "Unable to render embedded image '%s'. '%q' is not a valid position." $name . }}
-        {{ end }}
-    {{ end }}
+    {{ with .Get "pos" }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
+    {{ with .Get "posh" }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
+    {{ with .Get "size" }}{{ $hp = merge $hp (dict (slice "class" "size") . )}}{{ end }}
 {{ end }}
 {{ return $hp }}

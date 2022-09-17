@@ -1,5 +1,6 @@
 {{- $img := ( partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) ) -}}
 {{- with $img -}}
-    {{ $a := (partial "img/func/params/resource.html" . )}}
+    {{ $a := partial "img/func/params/unsplash.html" . }}
+    {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
     {{ partial "img/figure.html" (dict "img" . "a" $a )}}
 {{- end -}}

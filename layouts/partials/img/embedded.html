@@ -1,40 +1,9 @@
-{{ if .a.link }}<a class="link-block" href="{{ .a.link | safeHTMLAttr }}"
-                   {{ with .a.target }}target="{{ . | safeHTMLAttr }}"{{ end }}
-        {{ with $.a.rel }}rel="{{ . | safeHTMLAttr }}"{{ end }}>
-    {{ end }}
-    {{ $class := slice }}
-    {{ with .a.class }}
-        {{ if not (reflect.IsMap .) }}
-            {{ $class = $class | append . }}
-        {{ else }}
-            {{ range $k, $v := . }}
-                {{ $class = $class | append $v }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
-    {{ $class = delimit $class " " }}
+{{ $class := partial "img/func/params/aggregate-class.html" . }}
   <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }} {{ $class | safeHTMLAttr }}">
-      {{ partial "img/img.html" (dict "img" .img "a" .a) }}
-      {{ $unsplash := ( partial "img/func/get-unsplash.html" .img ) }}
-      {{ if (or .a.caption .a.attr $unsplash)}}
+      {{ partial "img/img.html" . }}
+      {{ if (or .a.caption .a.attr) }}
         <span class="caption">
-            {{- with .a.caption }}<span class="caption__text">{{ . | site.Home.RenderString }}</span>{{ end -}}
-            {{- with .a.attr -}}
-                {{ $attribution := ( . | site.Home.RenderString ) }}
-                {{ with $.a.attrlink }}
-                  <a class="caption__attribution" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>
-                {{ else }}
-                  <span class="caption__attribution">{{ $attribution }}</span>
-                {{ end }}
-            {{ else }}
-                {{ with $unsplash }}
-                  <span class="caption__attribution"> <a
-                            href="{{ .link | safeHTMLAttr }}">{{ .name }}&hairsp;/&hairsp;Unsplash</a></span>
-                {{ end }}
-            {{ end }}
+           {{ partial "img/caption.html" . }}
         </span>
       {{ end }}
   </span>
-    {{ if .a.link }}
-</a>
-{{ end }}

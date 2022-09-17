@@ -43,12 +43,11 @@ params:
     webp_hints       : [ drawing, icon, photo, picture, text ]
     rs_filter: [bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch]
     embedded:
-      width: [tiny, small, normal, large, xlarge]
-      posh: [left, center, right]
-    figure:
-      width: [tiny, small, normal, full]
+      size: [tiny, small, normal, full]
       posh: [left, right]
-  
+    figure:
+      size: [tiny, small, normal, large, xlarge]
+      posh: [left, center, right]
   
   layout        :
     measure      : 70.0

@@ -1,0 +1,9 @@
+{{ with .a.caption }}<span class="caption__text">{{ . | site.Home.RenderString }}</span>{{ end -}}
+{{ with .a.attr -}}
+    {{- $attribution := ( . | site.Home.RenderString ) -}}
+    {{- with $.a.attrlink -}}
+      <a class="caption__attribution" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>
+    {{- else -}}
+      <span class="caption__attribution">{{ $attribution }}</span>
+    {{- end -}}
+{{ end -}}
