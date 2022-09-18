@@ -12,6 +12,7 @@ This is still work in progress. I hope to release the first beta in the next few
 The documentation for this theme is also work in progress and online for testing purposes:
 
 - Via Netlify: <https://perplex.desider.at>
+  
   The status badge at the top refers to the deployment of this site.
 
 - Via GitHub: <https://bowman2001.github.io/perplexdoc>
