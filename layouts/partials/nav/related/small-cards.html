@@ -1,16 +1,28 @@
-{{ with (site.RegularPages.Related . | first 6) }}
-  <div class="md md--footer">
-    <h2>See Also</h2>
-  </div>
-  <nav class="card-nav">
-    <ul class="card-nav__list">
-        {{ range $k, $v := . }}
-            {{ if (lt $k 2) }}
-              <li class="card card--small">{{- $v.Render "li-card-small-img" -}}</li>
+{{ with (site.RegularPages.Related . | first 6 ) }}
+    {{ $n := len . }}
+    <div class="md md--footer">
+      <h2>See Also</h2>
+    </div>
+    <nav class="card-nav">
+      <ul class="card-nav__list">
+          {{ range $k, $v := ( . | first 2 ) }}
+            <li class="card card--small">{{- $v.Render "li-card-small-img" -}}</li>
+          {{ end }}
+      </ul>
+        {{ if gt $n 2 }}
+            {{ if gt $n 4 }}
+              <ul class="card-nav__list card-nav__list--small">
+                  {{ range $k, $v := ( . | last (sub $n 2) ) }}
+                    <li class="card card--tiny">{{- $v.Render "li-card-small" -}}</li>
+                  {{ end }}
+              </ul>
             {{ else }}
-              <li class="card card--small">{{- $v.Render "li-card-small" -}}</li>
+              <ul class="card-nav__list">
+                  {{ range $k, $v := ( . | last (sub $n 2) ) }}
+                    <li class="card card--small">{{- $v.Render "li-card-small" -}}</li>
+                  {{ end }}
+              </ul>
             {{ end }}
         {{ end }}
-    </ul>
-  </nav>
+    </nav>
 {{ end }}

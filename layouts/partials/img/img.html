@@ -13,13 +13,13 @@
     {{ $fallbackImg := "" }}
     {{- $imgClass := "" -}}
     {{ $fallbackWidth := site.Params.imaging.fallback_width }}
-    {{ $fallbackImg = .img.Resize (printf "%dx" (int (math.Min $fallbackWidth .img.Width)) ) }}
+    {{ $fallbackImg = .img.Resize (printf "%dx" (int (math.Max $fallbackWidth .img.Width)) ) }}
     {{- if eq $subType "png" -}}
         {{- $imgClass = "img__png" -}}
     {{- end -}}
     <img data-sizes="auto"
          data-src="{{ $fallbackImg.RelPermalink }}"
-         data-srcset="{{ partial "img/func/generate-global-srcset.html" . }}"
+         data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" .img "a" .a ) }}"
          data-parentfit="cover"
          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"

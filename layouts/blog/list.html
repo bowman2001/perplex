@@ -15,13 +15,12 @@
     {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
     {{ range (.Paginate .Pages $n).Pages.ByDate.Reverse }}
     <li class="li-box">
-      <hr>
       {{- .Render "li-full" -}}
+      <hr>
     </li>
     {{- end -}}
   </ul>
-  <footer class="page-footer margin-left">
-      <hr>
+  <footer class="page-footer page-footer--blog margin-left">
     {{ partial "blog/nav/paginator.html" . }}
   </footer>
 </div>

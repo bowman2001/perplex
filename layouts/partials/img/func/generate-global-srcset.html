@@ -1,5 +1,4 @@
 {{ $srcset := slice }}
-{{ $widths := partial "img/func/calc-global-sizes.html" .img }}
 {{ $raster := false }}
 {{ $hint := "" }}
 {{ $ratio := 0 }}
@@ -29,6 +28,7 @@
     {{ end }}
 {{ end }}
 
+{{ $widths := partial "img/func/calc-global-sizes.html" (dict "img" .img "max" $max) }}
 {{ range $w := $widths }}
     {{ $string := slice }}
     {{ with $ratio }}

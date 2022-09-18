@@ -8,13 +8,13 @@
 
 {{ $min := site.Params.imaging.min_width }}
 {{ $sizes := (slice (int $min)) }}
-{{ $max := .Width }}
+{{ $max := .max }}
 {{ $ratio := (div $max (float $min)) }}
 {{ $sizestep := site.Params.imaging.sizestep }}
 {{ if (lt $sizestep 10) }}
-    {{ errorf "The size difference of %d percent for your srcset is too small. You could end up with more than 100 images. At least 20 percent are recommended." $sizestep }}
+    {{ errorf "The file size difference of %d percent for your srcset is too small. You could end up with more than 100 images. At least 20 percent are recommended." $sizestep }}
 {{ else if (lt $sizestep 15) }}
-    {{ warnf "The size difference of %d percent for your srcset is small. Hugo will initially take some time for the image processing. At least 20 percent are recommended." $sizestep }}
+    {{ warnf "The file size difference of %d percent for your srcset is small. Hugo will take some time for the image processing. 20 percent or more are recommended." $sizestep }}
 {{ end }}
 {{ $m := (math.Sqrt (add 1 (div site.Params.imaging.sizestep 100.0))) }}
 {{ $n := (math.Ceil (div (math.Log $ratio) (math.Log $m))) }}
