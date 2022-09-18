@@ -4,3 +4,14 @@
 ![GitHub issues](https://img.shields.io/github/issues/bowman2001/perplex)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/bowman2001/perplex?color=green)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bowman2001_perplex&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bowman2001_perplex)
+
+# Perplex theme for Hugo
+
+This is still work in progress. I hope to release the first beta in the next few month. 
+
+The documentation for this theme is also work in progress and online for testing purposes:
+
+- Via Netlify: <https://perplex.desider.at>
+  The status badge at the top refers to the deployment of this site.
+
+- Via GitHub: <https://bowman2001.github.io/perplexdoc>
