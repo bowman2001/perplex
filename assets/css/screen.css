@@ -969,7 +969,7 @@ a.meta__item--text:hover {
 }
 @media screen and (min-width: 37em) {
   .title {
-    margin: 3rem 0 0 0;
+    margin: 0;
   }
 }
 
