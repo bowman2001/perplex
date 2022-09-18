@@ -1,12 +1,12 @@
 {{ $img := "" }}
 {{ $resource := (partial "func/get-resource.html" (dict "name" .name "currentPage" .currentPage ) )}}
 {{ with $resource }}
-{{ if (eq $resource.MediaType.MainType "image") }}
-    {{ $img = $resource }}
+    {{ if (eq $resource.MediaType.MainType "image") }}
+        {{ $img = $resource }}
+    {{ else }}
+        {{ errorf "The resource '%s' called from %v is not an image." $.name $.currentPage }}
+    {{ end }}
 {{ else }}
-    {{ errorf "The resource '%s' called from %v is not an image." $.name $.currentPage }}
-{{ end }}
-{{ else }}
-    {{ errorf "Unable to retrieve resource '%s' from %v" .name .currentPage }}
+    {{ errorf "Unable to get resource '%s' in %s" $.name $.currentPage }}
 {{ end }}
 {{ return $img }}

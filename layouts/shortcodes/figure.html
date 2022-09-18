@@ -11,6 +11,8 @@
     {{ with $img }}
         {{ $a = partial "img/func/params/unsplash.html" . }}
         {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
+    {{ else }}
+        {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
     {{ end }}
     {{ $a = merge $a ( partial "img/func/params/namedFigure.html" . ) }}
 {{ else }}
@@ -23,6 +25,8 @@
     {{ with $img }}
         {{ $a = partial "img/func/params/unsplash.html" . }}
         {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
+    {{ else }}
+        {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
     {{ end }}
 {{ end }}
 {{ with .Inner }}
