@@ -1,9 +1,12 @@
 {{/*
-* Calculate a range of width numbers for a responsive image 'srcset'
+* Calculate a range of width numbers for the <img> attribute 'srcset'
+* The set meets two
 *
-* IN: image resource map, parameter map
+* IN:
+*   int: min (minimum width)
+*   int: max (maximum width)
 *
-* OUT: slice of 'img' widths
+* OUT: slice of int
 */}}
 
 {{ $min := site.Params.imaging.min_width }}

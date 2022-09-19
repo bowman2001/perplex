@@ -39,8 +39,11 @@ params:
     # See https://gohugo.io/content-management/image-processing/#anchor
     anchors          : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
     #
-    raster_subtypes  : [ bmp, gif, jpeg, tiff, webp ]
-    webp_hints       : [ drawing, icon, photo, picture, text ]
+    no_processing : [svg, gif]
+    raster_compress  : [ bmp, jpeg, webp ]
+    raster_lossless  : [ tiff, png]
+    rotate : [90right, 90left, flip]
+    webp_hints : [ drawing, icon, photo, picture, text ]
     rs_filter: [bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch]
     embedded:
       size: [tiny, small, normal, full]

@@ -1,0 +1,81 @@
+{{ $params := dict }}
+{{ with .img.MediaType.SubType }}
+    {{ if eq "svg" .  }}
+        {{ $params = merge $params ( dict "process" false ) }}
+    {{ else if eq "gif" . }}
+        {{ if $.a.process }}
+            {{ $params = merge $params (dict "process" true ) }}
+            {{ $params = merge $params (dict "compress" false) }}
+        {{ else }}
+            {{ $params = merge $params ( dict "process" false )}}
+        {{ end }}
+    {{ else }}
+        {{ if in site.Params.imaging.raster_compress . }}
+            {{ $params = merge $params (dict "process" true)  }}
+            {{ $params = merge $params (dict "compress" true) }}
+        {{ else if in site.Params.imaging.raster_lossless . }}
+            {{ $params = merge $params (dict "process" true )}}
+            {{ $params = merge $params (dict "compress" false)}}
+        {{ else }}
+            {{ errorf "Unable to handle '%s'. Image type '%s' is not supported." $.img.Key . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ with .a.rotate }}
+    {{ if in site.Params.imaging.rotations . }}
+        {{ if eq "90right" . }}
+            {{ $params = merge $params ( dict "rotate" 270 ) }}
+            {{ $params = merge $params (dict "flipsides" true )}}
+        {{ else if eq "90left" . }}
+            {{ $params = merge $params ( dict "rotate" 90 ) }}
+            {{ $params = merge $params ( dict "flipsides" true ) }}
+        {{ else }}
+            {{ $params = merge $params ( dict "rotate" 180 )}}
+            {{ $params = merge $params (dict "flipsides" false )}}
+        {{ end }}
+    {{ else }}
+        {{ "Unable to rotate the image '%s' with '%v'." $.img.Key . }}
+    {{ end }}
+{{ end }}
+
+{{ with .a.ratio }}
+    {{ if or (lt . 0.1) (gt . 10) }}
+        {{ warnf "Unable to resize '%s' to the ratio '%f'. Values between 0.1 and 10 are possible." $.img.name . }}
+    {{ else }}
+        {{ $params = merge $params (dict "ratio" .) }}
+    {{ end }}
+    {{ if in site.Params.imaging.anchors $.a.anchor }}
+        {{ $params = merge $params (dict "anchor" $.a.anchor ) }}
+    {{ end }}
+{{ end }}
+
+{{ with .a.hint }}
+    {{ if in site.Params.imaging.webp_hints . }}
+        {{ $params = merge $params (dict "hint" . ) }}
+    {{ else }}
+        {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types %v." . $.img.Key }}
+    {{ end }}
+{{ end }}
+{{ warnf "Preprocessing: %v" $params }}
+{{ $pimg := "" }}
+{{ if $params.process }}
+    {{ $rs := slice }}
+    {{ with $params.ratio }}
+        {{ $rs = $rs | append (printf "%dx%d" $.img.Width (int (math.Round (div $.img.Width .)))) }}
+        {{ with $params.anchor }}
+            {{ $rs = $rs | append . }}
+        {{ end }}
+        {{ $pimg = $.img.Fill (print (delimit $rs " ")) }}
+    {{ end }}
+    {{ with $params.rotate }}
+        {{ if $.params.flipsides }}
+            {{ $pimg = $pimg.Resize (printf "%dx%d r%d" $.img.Height $.img.Width . )}}
+        {{ else }}
+            {{ $pimg = $pimg.Resize (printf "%dx%d r%d" $.img.Width $.img.Height . )}}
+        {{ end }}
+    {{ end }}
+{{ else }}
+    {{ $pimg = $.img }}
+{{ end }}
+{{ return (dict "img" $pimg "params" $params )}}

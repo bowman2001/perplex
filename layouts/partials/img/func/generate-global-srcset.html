@@ -1,9 +1,10 @@
-{{ $srcset := slice }}
+{{ $p := partial "img/func/preprocess.html" . }}
+
 {{ $raster := false }}
 {{ $hint := "" }}
 {{ $ratio := 0 }}
 {{ $anchor := "Smart" }}
-{{ $max := (math.Max site.Params.imaging.fallback_width $.img.Width) }}
+
 {{ $rs_img := "" }}
 
 {{- if in site.Params.imaging.raster_subtypes .img.MediaType.SubType }}
@@ -28,6 +29,9 @@
     {{ end }}
 {{ end }}
 
+{{ $srcset := slice }}
+{{ $width := "" }}
+{{ $max := (math.Max site.Params.imaging.fallback_width $.img.Width) }}
 {{ $widths := partial "img/func/calc-global-sizes.html" (dict "img" .img "max" $max) }}
 {{ range $w := $widths }}
     {{ $string := slice }}
