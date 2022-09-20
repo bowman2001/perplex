@@ -19,7 +19,7 @@
     {{- end -}}
     <img data-sizes="auto"
          data-src="{{ $fallbackImg.RelPermalink }}"
-         data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" .img "a" .a ) }}"
+         data-srcset="{{ partialCached "img/func/generate-global-srcset.html" (dict "img" .img "a" .a ) .img.Key .a }}"
          data-parentfit="cover"
          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"

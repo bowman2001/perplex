@@ -23,7 +23,7 @@
 {{ end }}
 
 {{ with .a.rotate }}
-    {{ if in site.Params.imaging.rotations . }}
+    {{ if in site.Params.imaging.rotate . }}
         {{ if eq "90right" . }}
             {{ $params = merge $params ( dict "rotate" 270 ) }}
             {{ $params = merge $params (dict "flipsides" true )}}
@@ -35,7 +35,7 @@
             {{ $params = merge $params (dict "flipsides" false )}}
         {{ end }}
     {{ else }}
-        {{ "Unable to rotate the image '%s' with '%v'." $.img.Key . }}
+        {{ errorf "Unable to rotate the image '%s' with '%v'." $.img.Key . }}
     {{ end }}
 {{ end }}
 
@@ -57,24 +57,19 @@
         {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types %v." . $.img.Key }}
     {{ end }}
 {{ end }}
-{{ warnf "Preprocessing: %v" $params }}
 {{ $pimg := "" }}
 {{ if $params.process }}
     {{ $rs := slice }}
+    {{ $width := $.img.Width }}
+    {{ $height:= $.img.Height }}
     {{ with $params.ratio }}
-        {{ $rs = $rs | append (printf "%dx%d" $.img.Width (int (math.Round (div $.img.Width .)))) }}
-        {{ with $params.anchor }}
-            {{ $rs = $rs | append . }}
-        {{ end }}
-        {{ $pimg = $.img.Fill (print (delimit $rs " ")) }}
+        {{ $height = int (math.Round (div $width .)) }}
     {{ end }}
-    {{ with $params.rotate }}
-        {{ if $.params.flipsides }}
-            {{ $pimg = $pimg.Resize (printf "%dx%d r%d" $.img.Height $.img.Width . )}}
-        {{ else }}
-            {{ $pimg = $pimg.Resize (printf "%dx%d r%d" $.img.Width $.img.Height . )}}
-        {{ end }}
+    {{ $rs = $rs | append (printf "%dx%d" $width $height ) }}
+      {{ with $params.anchor }}
+        {{ $rs = $rs | append (print .)}}
     {{ end }}
+    {{ $pimg = $.img.Fill (print (delimit $rs " "))}}
 {{ else }}
     {{ $pimg = $.img }}
 {{ end }}
