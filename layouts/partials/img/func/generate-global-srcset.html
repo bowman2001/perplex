@@ -3,7 +3,7 @@
 {{ $srcset := slice }}
 {{ $max := (math.Max site.Params.imaging.fallback_width $.img.Width) }}
 {{ with partial "img/func/calc-global-sizes.html" (dict "img" .img "max" $max) }}
-    {{ range $w := . }}
+    {{ range $k, $w := . }}
         {{ $string := slice }}
         {{ $string = $string | append (printf "%dx" $w) }}
         {{ if $p.params.compress }}
@@ -15,6 +15,7 @@
         {{ if gt $w $max }}
             {{ $string = $string | append "MitchellNetravali" }}
         {{ end }}
+        {{ warnf "string %d: %v" $k $string }}
         {{ $rs_img := $p.img.Resize (print (delimit $string " ")) }}
         {{ $srcset = $srcset | append (print ($rs_img.RelPermalink | safeURL) " " $rs_img.Width "w") }}
     {{ end }}

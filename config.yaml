@@ -49,7 +49,7 @@ params:
       size: [tiny, small, normal, full]
       posh: [left, right]
     figure:
-      size: [tiny, small, normal, large, xlarge]
+      size: [tiny, small, medium, normal, large, xlarge]
       posh: [left, center, right]
   
   layout        :

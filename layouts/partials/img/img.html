@@ -17,9 +17,10 @@
     {{- if eq $subType "png" -}}
         {{- $imgClass = "img__png" -}}
     {{- end -}}
-    <img data-sizes="auto"
-         data-src="{{ $fallbackImg.RelPermalink }}"
-         data-srcset="{{ partialCached "img/func/generate-global-srcset.html" (dict "img" .img "a" .a ) .img.Key .a }}"
+    <img data-src="{{ $fallbackImg.RelPermalink }}"
+         data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" .img "a" .a ) }}"
+         data-sizes="auto"
+         data-aspectratio="{{ div .img.Width (float .img.Height) }}"
          data-parentfit="cover"
          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
          class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"

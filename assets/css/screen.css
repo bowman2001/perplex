@@ -45,7 +45,7 @@ hr {
 :root {
   --fs: 51.8125%;
   --tnh: 10rem;
-  --tg: 3rem;
+  --tg: 4rem;
   --es: 0rem;
   --ta: left;
 }
@@ -65,7 +65,6 @@ hr {
   :root {
     --fs: 0.6578947368vw;
     --tnh: 5rem;
-    --tg: 4rem;
   }
 }
 @media screen and (min-width: 95em) {
@@ -81,11 +80,6 @@ hr {
 @media screen and (min-width: 141em) {
   :root {
     --fs: 62.5%;
-  }
-}
-@media screen and (min-height: 80em) {
-  :root {
-    --tg: 6rem;
   }
 }
 
@@ -206,12 +200,15 @@ li:empty:before {
 
 img {
   width: 100%;
+  max-height: 100%;
   height: auto;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
 
 .img__svg, .img__png {
+  width: 100%;
+  height: auto;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -222,16 +219,13 @@ img {
   font-weight: 300;
 }
 
-figure {
-  padding: 0 2rem 2rem 2rem;
-}
-
 figcaption {
   font-size: 1.43rem;
   line-height: 1.5rem;
   padding-top: 0.214465rem;
   margin-bottom: -0.214465rem;
   color: #555;
+  min-height: 2rem;
 }
 figcaption a {
   color: inherit;
@@ -255,7 +249,6 @@ figcaption a:hover {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   float: right;
-  font-style: italic;
 }
 
 .caption__text {
@@ -974,12 +967,20 @@ a.meta__item--text:hover {
 }
 
 .title--list {
+  height: 5rem;
   max-width: 100%;
+  margin-top: 1rem;
   padding-bottom: 0;
   border-radius: 0.5rem;
   color: #fff;
   background: linear-gradient(20deg, hsl(199deg, 100%, 38%) 0, hsl(199deg, 100%, 38%) 66%, transparent 90%);
   box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.title--list > h1 {
+  font-size: 2.86rem;
+  line-height: 3.5rem;
+  padding-top: 0.67893rem;
+  padding-bottom: 0.32107rem;
 }
 @media screen and (min-width: 79em) {
   .title--list {
@@ -1006,19 +1007,28 @@ a.meta__item--text:hover {
   }
 }
 
+.title--first, .title--second, .title--third {
+  padding-top: 1rem;
+}
+.title--first > hr, .title--second > hr, .title--third > hr {
+  margin-bottom: -1rem;
+}
+
 .title--first > hr {
-  border-bottom: 0.4rem solid #111111;
+  border-top: 0.4rem solid #111111;
   height: 1rem;
+  margin-bottom: -1rem;
 }
 .title--first h1 {
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  word-spacing: 0.06em;
+  letter-spacing: 0.01em;
+  word-spacing: 0.03em;
+  font-style: italic;
 }
 
 .title--second > hr {
-  border-bottom: 0.3rem solid #111111;
+  border-top: 0.3rem solid #111111;
   height: 1rem;
 }
 .title--second h1 {
@@ -1029,7 +1039,7 @@ a.meta__item--text:hover {
 }
 
 .title--third > hr {
-  border-bottom: 0.2rem solid #111111;
+  border-top: 0.2rem solid #111111;
   height: 1rem;
 }
 .title--third > h1 {
@@ -1095,11 +1105,11 @@ a.meta__item--text:hover {
 .md-hook-link, .heading-anchor {
   text-decoration: underline;
   background-color: transparent;
-  border: 1px solid transparent;
   border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5rem transparent;
   text-underline-offset: 0.075em;
   text-decoration-thickness: 1px;
-  transition-property: color, text-decoration-color, background-color, border-color;
+  transition-property: color, text-decoration-color, background-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1114,6 +1124,7 @@ a.meta__item--text:hover {
 .md-hook-link:hover, .heading-anchor:hover, .md-hook-link:focus, .heading-anchor:focus {
   color: #000000;
   text-decoration-color: #000000;
+  box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 .md-hook-link:hover code, .heading-anchor:hover code, .md-hook-link:focus code, .heading-anchor:focus code {
   text-decoration-color: #fff;
@@ -1127,14 +1138,12 @@ a.meta__item--text:hover {
 }
 .heading-anchor:hover, .heading-anchor:focus {
   background-color: rgba(201, 24, 127, 0.1);
-  border-color: rgba(201, 24, 127, 0.25);
 }
 
 h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor, h5:target .heading-anchor, h6:target .heading-anchor {
   color: #000000;
   text-decoration-color: #000000;
   background-color: rgba(0, 132, 194, 0.1);
-  border-color: rgba(0, 132, 194, 0.25);
 }
 
 .md-hook-link {
@@ -1145,14 +1154,12 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 .md-hook-link:hover, .md-hook-link:focus {
   background-color: rgba(0, 132, 194, 0.1);
-  border-color: rgba(0, 132, 194, 0.25);
 }
 .md-hook-link[href^=http] {
   text-decoration-color: hsl(169deg, 100%, 33%);
 }
 .md-hook-link[href^=http]:hover, .md-hook-link[href^=http]:focus {
   background-color: rgba(0, 168, 137, 0.1);
-  border-color: rgba(0, 168, 137, 0.25);
   text-decoration-color: black;
 }
 
@@ -1173,10 +1180,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   color: hsl(325deg, 79%, 44%);
 }
 .svg-link.is-active path {
-  color: hsl(199deg, 100%, 38%);
+  color: #006a9c;
 }
 
 .text-link .text {
+  display: inline-block;
   line-height: 1.8rem;
   background-color: transparent;
   border-radius: 0.25em;
@@ -1184,12 +1192,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
 }
 .text-link:hover .text, .text-link:focus .text {
-  background-color: rgba(201, 24, 127, 0.1);
-  border-color: rgba(201, 24, 127, 0.25);
+  color: hsl(325deg, 79%, 44%);
 }
 .text-link.is-active .text {
-  background-color: rgba(0, 132, 194, 0.1);
-  border-color: rgba(0, 132, 194, 0.25);
+  color: #006a9c;
 }
 
 .hover-link {
@@ -2195,8 +2201,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .md .h-warn > span, .md .h-info > span, .md .h-tip > span {
   position: relative;
   left: -0.5rem;
-  padding: 0 0.5rem;
   border-radius: 0.5rem;
+}
+.md .h-warn > span > a, .md .h-info > span > a, .md .h-tip > span > a {
+  padding: 0 0.5rem;
 }
 .md .h-warn {
   color: #ffffff;
@@ -2245,11 +2253,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
   line-height: 3rem;
-  padding: calc(2rem + var(--es)) 0 calc(0.9rem + var(--es));
+  padding: calc(2rem + var(--es)) 0 calc(0.9rem + var(--es)) 0;
   scroll-margin-top: calc(var(--tnh) + var(--tg) - 3rem - var(--es));
   color: #222222;
 }
-.md--h-serif h2 > span {
+.md--h-serif h2 > span > a {
   border-bottom: 0.1rem solid rgba(34, 34, 34, 0.5);
 }
 .md--h-serif h3 {
@@ -3266,6 +3274,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   padding: 0 0rem calc(3rem + 2 * var(--es)) 0;
   max-width: 74rem;
 }
+@media screen and (min-width: 79em) {
+  .card-nav--top {
+    padding-top: 1rem;
+  }
+}
 .card-nav__list {
   display: flex;
   flex-direction: column;
@@ -3315,8 +3328,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .card__fig {
   width: 100%;
   height: auto;
-  padding: 0 2rem;
-  margin-bottom: 1rem;
+  padding: 0 2rem 1rem 2rem;
 }
 .card__fig > .img__svg {
   padding: 1rem;
@@ -3325,7 +3337,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 @media screen and (min-width: 37em) {
   .card__fig {
-    width: 37rem;
+    width: 33rem;
     height: 22.00011rem;
   }
   .card__fig > img {
@@ -3341,15 +3353,14 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .card__fig--small {
   width: 14.5rem;
   height: 9.6666715rem;
-  margin: -0.3333rem 2rem 2rem 0;
+  margin: -0.3333rem 0 1.6667rem 2rem;
+  padding: 0;
+  flex-shrink: 0;
 }
 .card__fig--small > img {
   width: 14.5rem;
   height: 9.6666715rem;
   object-fit: cover;
-}
-.card__fig--small > .img__svg {
-  object-fit: contain;
 }
 
 .sidebar-box {
@@ -3737,7 +3748,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   padding-top: 5rem;
 }
 .page-footer > hr {
-  border-bottom: 0.15rem solid rgba(17, 17, 17, 0.5);
+  border-top: 0.15rem solid rgba(17, 17, 17, 0.5);
   height: 1rem;
   margin: 0 2rem;
   max-width: 70rem;
@@ -3782,13 +3793,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 
 .li-box {
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 .li-box > hr {
   background-image: linear-gradient(3deg, rgba(0, 132, 194, 0.025) 0%, rgba(0, 132, 194, 0.75) 25%, rgba(0, 132, 194, 0.75) 75%, rgba(0, 132, 194, 0.025) 100%);
   height: 0.5rem;
   box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.1);
-  margin: 4.5rem 2rem 0 2rem;
+  margin: 2.5rem 2rem 0 2rem;
 }
 .li-box:last-child > hr {
   height: 1rem;
@@ -3800,6 +3811,9 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .featured-image {
   width: 100%;
+}
+.featured-image > figure {
+  padding: 0 2rem 1rem 2rem;
 }
 @media screen and (min-width: 420px) {
   .featured-image {
