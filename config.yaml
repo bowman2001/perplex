@@ -68,10 +68,10 @@ params:
 ### This module configuration does only affect the folder of the theme.
 module:
   imports:
-    - path  : github.com/bowman2001/hugo-mod-replacements
-      mounts:
-        - source: partials
-          target: layouts/partials
+  - path  : github.com/bowman2001/hugo-mod-replacements
+    mounts:
+    - source: replacements.html
+      target: layouts/partials/replacements.html
   
   mounts :
     - source: archetypes
