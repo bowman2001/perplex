@@ -329,19 +329,15 @@ figcaption a {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  -webkit-text-decoration-color: rgba(85, 85, 85, .25);
-          text-decoration-color: rgba(85, 85, 85, .25);
-  transition-property: color, -webkit-text-decoration-color;
+  text-decoration-color: rgba(85, 85, 85, .25);
   transition-property: color, text-decoration-color;
-  transition-property: color, text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
 figcaption a:hover {
   color: #000;
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  text-decoration-color: #000;
 }
 
 .caption__text,
@@ -1110,15 +1106,13 @@ a.meta__item--text {
   text-decoration: underline;
   text-decoration-thickness: .1rem;
   text-underline-offset: .075em;
-  -webkit-text-decoration-color: rgba(0, 106, 156, .5);
-          text-decoration-color: rgba(0, 106, 156, .5);
+  text-decoration-color: rgba(0, 106, 156, .5);
   letter-spacing: .01em;
   word-spacing: .03em;
 }
 
 a.meta__item--text:hover {
-  -webkit-text-decoration-color: #c9187f;
-          text-decoration-color: #c9187f;
+  text-decoration-color: #c9187f;
 }
 
 .meta__date {
@@ -1306,9 +1300,7 @@ a.meta__item--text:hover {
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
   text-underline-offset: .075em;
   text-decoration-thickness: 1px;
-  transition-property: color, background-color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color, background-color;
-  transition-property: color, text-decoration-color, background-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1318,9 +1310,7 @@ a.meta__item--text:hover {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
-  transition-property: -webkit-text-decoration-color;
   transition-property: text-decoration-color;
-  transition-property: text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1330,8 +1320,7 @@ a.meta__item--text:hover {
 .md-hook-link:focus,
 .heading-anchor:focus {
   color: #000;
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  text-decoration-color: #000;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, .1);
 }
 
@@ -1339,8 +1328,7 @@ a.meta__item--text:hover {
 .heading-anchor:hover code,
 .md-hook-link:focus code,
 .heading-anchor:focus code {
-  -webkit-text-decoration-color: #fff;
-          text-decoration-color: #fff;
+  text-decoration-color: #fff;
 }
 
 .md-hook-link:hover var,
@@ -1351,13 +1339,12 @@ a.meta__item--text:hover {
 }
 
 .heading-anchor {
-  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
-          text-decoration-color: rgba(0, 0, 0, 0);
+  text-decoration-color: rgba(0, 0, 0, 0);
 }
 
 .heading-anchor:hover,
 .heading-anchor:focus {
-  background-color: rgba(201, 24, 127, .1);
+  background-color: rgba(201, 24, 127, .05);
 }
 
 h2:target .heading-anchor,
@@ -1366,36 +1353,31 @@ h4:target .heading-anchor,
 h5:target .heading-anchor,
 h6:target .heading-anchor {
   color: #000;
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
-  background-color: rgba(0, 132, 194, .1);
+  text-decoration-color: #000;
+  background-color: rgba(0, 132, 194, .05);
 }
 
 .md-hook-link {
-  -webkit-text-decoration-color: #0084c2;
-          text-decoration-color: #0084c2;
+  text-decoration-color: #0084c2;
 }
 
 .md-hook-link code {
-  -webkit-text-decoration-color: #888;
-          text-decoration-color: #888;
+  text-decoration-color: #888;
 }
 
 .md-hook-link:hover,
 .md-hook-link:focus {
-  background-color: rgba(0, 132, 194, .1);
+  background-color: rgba(0, 132, 194, .05);
 }
 
 .md-hook-link[href^=http] {
-  -webkit-text-decoration-color: #00a889;
-          text-decoration-color: #00a889;
+  text-decoration-color: #00a889;
 }
 
 .md-hook-link[href^=http]:hover,
 .md-hook-link[href^=http]:focus {
-  background-color: rgba(0, 168, 137, .1);
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  background-color: rgba(0, 168, 137, .05);
+  text-decoration-color: #000;
 }
 
 .icon-link .icon-font {
@@ -2200,6 +2182,18 @@ h6:target .heading-anchor {
 .md--card > blockquote strong,
 .md--card > .p-first strong {
   font-weight: 450;
+}
+
+.md--card--full > p,
+.md--card--full > ul,
+.md--card--full > ol,
+.md--card--full > dl,
+.md--card--full > blockquote,
+.md--card--full > .p-first {
+  font-size: 2.6rem;
+  line-height: 4rem;
+  padding-top: .5263rem;
+  padding-bottom: .9737rem;
 }
 
 .md--card--small {
@@ -3033,6 +3027,13 @@ h6:target .heading-anchor {
   margin-top: 0;
 }
 
+.md--card--full h2 {
+  font-size: 2.2225rem;
+  line-height: 3rem;
+  padding-top: .66767375rem;
+  padding-bottom: .33232625rem;
+}
+
 .md--card--small h2 {
   font-size: 1.3585rem;
   line-height: 1.5rem;
@@ -3241,21 +3242,18 @@ h6:target .heading-anchor {
 
 .md del,
 .md ins {
-  -webkit-text-decoration-color: #a00;
-          text-decoration-color: #a00;
+  text-decoration-color: #a00;
   text-decoration-thickness: .1rem;
   -webkit-text-decoration-skip: auto;
           text-decoration-skip: auto;
 }
 
 .md del {
-  -webkit-text-decoration-line: line-through;
-          text-decoration-line: line-through;
+  text-decoration-line: line-through;
 }
 
 .md ins {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .md sup,
@@ -4063,7 +4061,8 @@ h6:target .heading-anchor {
 
 .card-nav__list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 37em) {
@@ -4078,6 +4077,10 @@ h6:target .heading-anchor {
   flex-wrap: wrap;
 }
 
+.card {
+  width: 100%;
+}
+
 @media screen and (min-width: 37em) {
   .card {
     width: 37rem;
@@ -4089,6 +4092,12 @@ h6:target .heading-anchor {
   height: 2rem;
   border-top: .1rem solid rgba(17, 17, 17, .25);
   transition: border-color 200ms;
+}
+
+@media screen and (min-width: 37em) {
+  .card--full {
+    width: 74rem;
+  }
 }
 
 .card--small {
@@ -4137,6 +4146,25 @@ h6:target .heading-anchor {
   }
 
   .card__fig > .img__svg {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .card__fig--full {
+    width: 70rem;
+    height: 46.6669rem;
+  }
+
+  .card__fig--full > img {
+    width: 70rem;
+    height: 46.6669rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  .card__fig--full > .img__svg {
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -4473,9 +4501,7 @@ h6:target .heading-anchor {
   display: block;
   padding: .5rem 0 .5rem 1.7rem;
   border-left: .3rem solid #ccc;
-  transition: color 200ms ease-in-out, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
   transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out;
-  transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
 }
 
 #TableOfContents a .icon-font,

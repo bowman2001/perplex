@@ -1137,13 +1137,13 @@ a.meta__item--text:hover {
   text-decoration-color: transparent;
 }
 .heading-anchor:hover, .heading-anchor:focus {
-  background-color: rgba(201, 24, 127, 0.1);
+  background-color: rgba(201, 24, 127, 0.05);
 }
 
 h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor, h5:target .heading-anchor, h6:target .heading-anchor {
   color: #000000;
   text-decoration-color: #000000;
-  background-color: rgba(0, 132, 194, 0.1);
+  background-color: rgba(0, 132, 194, 0.05);
 }
 
 .md-hook-link {
@@ -1153,13 +1153,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   text-decoration-color: #888;
 }
 .md-hook-link:hover, .md-hook-link:focus {
-  background-color: rgba(0, 132, 194, 0.1);
+  background-color: rgba(0, 132, 194, 0.05);
 }
 .md-hook-link[href^=http] {
   text-decoration-color: hsl(169deg, 100%, 33%);
 }
 .md-hook-link[href^=http]:hover, .md-hook-link[href^=http]:focus {
-  background-color: rgba(0, 168, 137, 0.1);
+  background-color: rgba(0, 168, 137, 0.05);
   text-decoration-color: black;
 }
 
@@ -1734,6 +1734,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 .md--card > p strong, .md--card > ul strong, .md--card > ol strong, .md--card > dl strong, .md--card > blockquote strong, .md--card > .p-first strong {
   font-weight: 450;
+}
+
+.md--card--full > p, .md--card--full > ul, .md--card--full > ol, .md--card--full > dl, .md--card--full > blockquote, .md--card--full > .p-first {
+  font-size: 2.6rem;
+  line-height: 4rem;
+  padding-top: 0.5263rem;
+  padding-bottom: 0.9737rem;
 }
 
 .md--card--small {
@@ -2386,6 +2393,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 .md--card .p-meta + h2 {
   margin-top: 0;
+}
+
+.md--card--full h2 {
+  font-size: 2.2225rem;
+  line-height: 3rem;
+  padding-top: 0.66767375rem;
+  padding-bottom: 0.33232625rem;
 }
 
 .md--card--small h2 {
@@ -3281,7 +3295,8 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 .card-nav__list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 @media screen and (min-width: 37em) {
   .card-nav__list {
@@ -3294,6 +3309,9 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   flex-wrap: wrap;
 }
 
+.card {
+  width: 100%;
+}
 @media screen and (min-width: 37em) {
   .card {
     width: 37rem;
@@ -3304,6 +3322,12 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   height: 2rem;
   border-top: 0.1rem solid rgba(17, 17, 17, 0.25);
   transition: border-color 200ms;
+}
+
+@media screen and (min-width: 37em) {
+  .card--full {
+    width: 74rem;
+  }
 }
 
 .card--small {
@@ -3346,6 +3370,21 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     object-fit: cover;
   }
   .card__fig > .img__svg {
+    object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .card__fig--full {
+    width: 70rem;
+    height: 46.6669rem;
+  }
+  .card__fig--full > img {
+    width: 70rem;
+    height: 46.6669rem;
+    object-fit: cover;
+  }
+  .card__fig--full > .img__svg {
     object-fit: contain;
   }
 }

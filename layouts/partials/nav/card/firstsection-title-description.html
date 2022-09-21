@@ -1,7 +1,5 @@
-<div class="md md--sans md--card md--card--small">
-    {{ with .FirstSection.LinkTitle }}<p class="p-meta">{{- . | site.Home.RenderString -}}</p>{{- end -}}
-    {{- with .Title -}}<h2>{{- . | site.Home.RenderString -}}</h2>{{- end -}}
-    {{- with .Description -}}
-       <p>{{ partial "replacements" ( . | site.Home.RenderString ) }}</p>
-    {{- end -}}
-</div>
+{{ with .FirstSection.LinkTitle }}<p class="p-meta">{{- . | site.Home.RenderString -}}</p>{{- end -}}
+{{- with .Title -}}<h2>{{- . | site.Home.RenderString -}}</h2>{{- end -}}
+{{- with .Description -}}
+   <p>{{ partial "replacements" ( . | site.Home.RenderString ) }}</p>
+{{- end -}}

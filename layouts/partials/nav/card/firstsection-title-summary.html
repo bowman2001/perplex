@@ -1,11 +1,9 @@
-<div class="md md--sans md--card">
-  {{ with .FirstSection }}
-  {{ if not .IsHome }}<p class="p-meta">{{- .LinkTitle | site.Home.RenderString -}}</p>{{- end -}}
-  {{ end }}
-  {{- with .Title -}}<h2>{{- . | site.Home.RenderString -}}</h2>{{- end -}}
-  {{- with .Summary -}}{{- partial "replacements.html" . -}}{{- else -}}
-  {{- with .Description -}}
-  <p>{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
-  {{- end -}}
-  {{- end -}}
-</div>
+{{ with .FirstSection }}
+    {{ if not .IsHome }}<p class="p-meta">{{- .LinkTitle | site.Home.RenderString -}}</p>{{- end -}}
+{{ end }}
+{{- with .Title -}}<h2>{{- . | site.Home.RenderString -}}</h2>{{- end -}}
+{{- with .Summary -}}{{- partial "replacements.html" . -}}{{- else -}}
+    {{- with .Description -}}
+      <p>{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
+    {{- end -}}
+{{- end -}}

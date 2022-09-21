@@ -17,15 +17,17 @@
       <nav class="card-nav card-nav--top margin-left">
         <ul class="card-nav__list">
             {{ $n := len . }}
-            {{ $normal := 2 }}
-            {{ if gt $n 8 }}
-               {{ $normal = 4 }}
-            {{ end }}
+            {{ $normal := 3 }}
+            {{ $small := 7 }}
             {{- range $index, $page := . -}}
-                {{ if lt $index $normal }}
+                {{ if eq $index 0 }}
+                  <li class="card card--full">{{- $page.Render "li-card-full-img" -}}</li>
+                {{ else if lt $index $normal }}
                   <li class="card">{{- $page.Render "li-card-img" -}}</li>
-                {{ else }}
+                {{ else if lt $index $small }}
                   <li class="card card--small">{{- $page.Render "li-card-small-img" -}}</li>
+                {{ else }}
+                  <li class="card card--tiny">{{- $page.Render "li-card-small" -}}</li>
                 {{ end }}
             {{- end -}}
         </ul>
