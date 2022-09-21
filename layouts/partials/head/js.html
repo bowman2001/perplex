@@ -1,4 +1,5 @@
 {{ $ls := resources.Get "js/lazysizes/lazysizes.min.js" }}
 {{ $parent_fit := resources.Get "js/lazysizes/ls.parent-fit.min.js" }}
-{{ $js := slice $ls $parent_fit | resources.Concat "js/ls.min.js" | fingerprint }}
+{{ $aspectratio := resources.Get "js/lazysizes/ls.aspectratio.min.js" }}
+{{ $js := (slice $ls $parent_fit $aspectratio) | resources.Concat "js/ls.min.js" | fingerprint }}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>
