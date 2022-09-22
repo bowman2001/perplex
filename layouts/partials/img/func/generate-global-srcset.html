@@ -15,7 +15,7 @@
         {{ if gt $w $max }}
             {{ $string = $string | append "MitchellNetravali" }}
         {{ end }}
-        {{ warnf "string %d: %v" $k $string }}
+        {{/* warnf "string %d: %v" $k $string */}}
         {{ $rs_img := $p.img.Resize (print (delimit $string " ")) }}
         {{ $srcset = $srcset | append (print ($rs_img.RelPermalink | safeURL) " " $rs_img.Width "w") }}
     {{ end }}

@@ -1,1 +1,2 @@
-{{ return (partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) )}}
+{{ $map := (dict "name" "featured" "currentPage" . ) }}
+{{ return (partialCached "img/func/get-img.html" $map $map )}}
