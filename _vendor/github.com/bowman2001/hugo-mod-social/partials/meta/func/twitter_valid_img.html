@@ -1,0 +1,14 @@
+{{ $valid := false }}
+{{ $formats := (slice "webp" "jpeg" "png" "gif") }}
+{{ $max_side := 4096 }}
+{{ if not (.MediaType.SubType in $formats) }}
+    {{ warnf "Unable to use the image '%s' for Twitter. Only '%v' are supported." .Key $formats }}
+{{ else }}
+    {{ $valid = true }}
+{{ end }}
+{{ if not (and (lt .Width $max_side) (lt .Height $max_side) ) }}
+    {{ warnf "Unable to use the image '%s' for Twitter. Side length larger than '%d' aren’t supported." .Key $max_side }}
+{{ else }}
+    {{ $valid = true }}
+{{ end }}
+{{ return $valid }}

@@ -1,0 +1,39 @@
+{{ $title_partial := site.Params.meta.twitter_title_partial | default "head/meta/func/twitter_title.html" -}}
+{{ $desc_partial := site.Params.meta.twitter_desc_partial | default "head/meta/func/twitter_desc.html" -}}
+{{ $image_partial := site.Params.meta.twitter_img_partial | default "head/meta/func/twitter_img.html" -}}
+{{ $site_partial := site.Params.meta.twitter_site | default "head/meta/func/twitter_site.html" -}}
+{{ $author_partial := site.Params.meta.twitter_author | default "head/meta/func/twitter_author.html" -}}
+
+{{ $has_img := false }}
+{{ if templates.Exist $image_partial }}
+  {{ $img := partial (print $image_partial) . -}}
+  {{ if partial "meta/func/twitter_valid_img.html" $img -}}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ $img.Permalink }}">
+      {{ $has_img = true }}
+  {{ end }}
+{{ end }}
+
+{{ if not $has_img }}
+  <meta name="twitter:card" content="summary">
+{{ end }}
+{{ if templates.Exist $title_partial }}
+{{ with partial (print $title_partial) . -}}
+  <meta name="twitter:title" content="{{ . }}">
+{{ end }}
+{{ end }}
+{{ if templates.Exist $desc_partial }}
+{{ with partial (print $desc_partial) . -}}
+  <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+{{ end }}
+{{ if templates.Exist $site_partial }}
+{{ with partial (print $site_partial) . -}}
+  <meta name="twitter:site" content="@{{ . }}">
+{{ end }}
+{{ end }}
+{{ if templates.Exist $author_partial }}
+{{ with partial (print $author_partial) . -}}
+  <meta name="twitter:creator" content="@{{ . }}">
+{{ end }}
+{{ end }}

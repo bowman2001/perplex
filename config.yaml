@@ -70,13 +70,13 @@ module:
   imports:
   - path  : github.com/bowman2001/hugo-mod-replacements
     mounts:
-    - source: replacements.html
-      target: layouts/partials/replacements.html
+    - source: partials
+      target: layouts/partials
   
   - path  : github.com/bowman2001/hugo-mod-social
     mounts:
-    - source: hugo-mod-social/partials
-      target: layouts/partials/head/
+    - source: partials
+      target: layouts/partials/head
   
   mounts :
     - source: archetypes
@@ -90,6 +90,9 @@ module:
     
     - source: static
       target: static
+
+### The following security settings are only for the maintenance of this theme
+### They don’t affect the security settings of a project using this theme!
 
 security:
   enableInlineShortcodes: false
