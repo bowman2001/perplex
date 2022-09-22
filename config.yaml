@@ -72,6 +72,7 @@ module:
     mounts:
     - source: replacements.html
       target: layouts/partials/replacements.html
+  
   - path  : github.com/bowman2001/hugo-mod-social
     mounts:
     - source: hugo-mod-social/partials
@@ -89,3 +90,21 @@ module:
     
     - source: static
       target: static
+
+security:
+  enableInlineShortcodes: false
+  exec                  :
+    allow:
+      - ^go$
+    osEnv:
+      - '.*'
+      # - (?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|DISPLAY)$
+  funcs                 :
+    getenv:
+      - ^HUGO_
+      - ^GO
+  http                  :
+    methods:
+      - (?i)GET|POST
+    urls   :
+      - .*

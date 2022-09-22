@@ -1,14 +1,4 @@
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220907093529-9f84c22bfe52 h1:TXY3q66BUOgJ5bw48FzoIwdbG0ZJoci71U6w2dPC1zI=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220907093529-9f84c22bfe52/go.mod h1:ylFfAV1b/kPkH4G6MHMP4BmEmiqcFtiGk8PcqoYdRmw=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220908003204-a96f7c25e413 h1:PzSkIqIhwGkY7xY5017+J4UexrMINMflFPKISMdTOfc=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220908003204-a96f7c25e413/go.mod h1:ylFfAV1b/kPkH4G6MHMP4BmEmiqcFtiGk8PcqoYdRmw=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220908204158-063fff518d6c h1:u0VL+2isS5xT++JBp5tSuefJqFrs9Yo73c7Ld1Jtn0I=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220908204158-063fff518d6c/go.mod h1:ylFfAV1b/kPkH4G6MHMP4BmEmiqcFtiGk8PcqoYdRmw=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220912213221-deb3964d37e8 h1:lFlFhoEHtWEdFPpjy7c5fGbinkF+jV/cdPhdaeU66ew=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220912213221-deb3964d37e8/go.mod h1:ylFfAV1b/kPkH4G6MHMP4BmEmiqcFtiGk8PcqoYdRmw=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220921203223-bd3ff8a5f5be h1:BJQm/g+a5dUsvyhcWcpzWIx836DzMlrA7c6QmCl3n7E=
-github.com/bowman2001/hugo-mod-replacements v0.0.0-20220921203223-bd3ff8a5f5be/go.mod h1:ylFfAV1b/kPkH4G6MHMP4BmEmiqcFtiGk8PcqoYdRmw=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220921205512-fc8a926d6d44 h1:mV95gkDBvDBy+2TAW2P7lx71MwjX2HkXwUIoN2Zh+Dk=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220921205512-fc8a926d6d44/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220922021203-bc45361e2e09 h1:pNH1iRda67CLaLX2QpsxnfYRKCS75cT1ZTxsqWuUFvs=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220922021203-bc45361e2e09/go.mod h1:4yG4HuzmoGFIrdd0v9uH3I24LLt9vgl3WWBDSt3H9Tg=
+github.com/bowman2001/hugo-mod-social v0.0.0-20220922160516-c0876f078323 h1:1sgjFiehnXzshMZSf8650nlLlSxAigA7lzmvCt/MF68=
+github.com/bowman2001/hugo-mod-social v0.0.0-20220922160516-c0876f078323/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=
