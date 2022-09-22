@@ -72,6 +72,10 @@ module:
     mounts:
     - source: replacements.html
       target: layouts/partials/replacements.html
+  - path  : github.com/bowman2001/hugo-mod-social
+    mounts:
+    - source: hugo-mod-social/partials
+      target: layouts/partials/head/
   
   mounts :
     - source: archetypes
