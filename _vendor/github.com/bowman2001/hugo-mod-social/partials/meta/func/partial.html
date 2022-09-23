@@ -1,0 +1,7 @@
+{{ $result := "" }}
+{{ if templates.Exists (printf "partials/%s" .partial ) }}
+    {{ with partial .partial .page -}}
+      {{ $result = . }}
+  {{ end }}
+{{ end }}
+{{ return $result }}

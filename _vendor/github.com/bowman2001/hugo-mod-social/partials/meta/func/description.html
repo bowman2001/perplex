@@ -1,0 +1,9 @@
+{{ $desc := ""}}
+{{ with .Summary }}
+    {{ $desc = ( partial "replacements.html" . ) }}
+{{ else }}
+    {{ with .Description }}
+        {{ $desc = . | site.Home.RenderString }}
+    {{ end }}
+{{ end }}
+{{ return ($desc | plainify | htmlUnescape) }}
