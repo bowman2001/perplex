@@ -1,9 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-{{- with .Summary -}}
-  <meta name="description" content="{{- ( partial "replacements.html" . ) | plainify -}}">
-{{- end -}}
-{{- hugo.Generator -}}
 <meta name="theme-color" content="{{ .Site.Params.layout.background }}"/>
+{{- hugo.Generator -}}
+{{ partial "head/meta/description.html" . }}
 {{ partial "head/meta/twitter-cards.html" . }}
