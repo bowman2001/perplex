@@ -23,6 +23,12 @@ params:
     category: categories
     series  : series
   
+  ### partials for hugo-mod-meta
+  meta:
+    twitter:
+      img: "img/func/get-featured.html"
+    
+  
   #### Image processing
   
   ### Parameters
