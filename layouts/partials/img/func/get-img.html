@@ -4,7 +4,7 @@
     {{ if (eq $resource.MediaType.MainType "image") }}
         {{ $img = $resource }}
     {{ else }}
-        {{ errorf "The resource '%s' called from %v is not an image." $.name $.currentPage }}
+        {{ errorf "The resource '%s' called from %s is not an image." $.name $.currentPage }}
     {{ end }}
 {{ else }}
     {{ errorf "Unable to get resource '%s' in %s" $.name $.currentPage }}
