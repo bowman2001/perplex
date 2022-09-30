@@ -1,6 +1,6 @@
 {{ $docs := site.Params.meta.type.docs | default (slice "doc") }}
 {{ $article := site.Params.meta.type.article | default (slice "blog" "article") }}
-{{ $profile := site.Params.meta.type.profile | default (slice "about")}}
+{{ $profile := site.Params.meta.type.profile | default (slice "profile")}}
 {{ $type := "website" }}
 {{ if .IsPage }}
     {{ with .Type }}
