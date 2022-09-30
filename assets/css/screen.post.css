@@ -357,6 +357,16 @@ figcaption a:hover {
   font-weight: 450;
 }
 
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
 *,
 *:before,
 *:after {
