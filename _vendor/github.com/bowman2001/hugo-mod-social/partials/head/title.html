@@ -1,0 +1,13 @@
+{{ $page := "" }}
+{{ $site := "" }}
+{{ with .LinkTitle }}
+  {{ $page = . | site.Home.RenderString | plainify | htmlUnescape }}
+{{ else }}
+  {{ errorf "Unable to find title for %s. A title in the front-matter is mandatory." . }}
+{{ end }}
+{{ with site.Title }}
+{{ $site = . | site.Home.RenderString | plainify | htmlUnescape }}
+{{ else }}
+{{ errorf "Unable to find a title for the whole site. A site title in the project configuration is mandatory." . }}
+{{ end }}
+{{ $page }} | {{ $site -}}

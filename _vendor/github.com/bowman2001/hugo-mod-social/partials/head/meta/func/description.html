@@ -1,0 +1,15 @@
+{{ $desc := ""}}
+{{ if .IsPage }}
+    {{ with .Summary }}
+        {{ $desc = ( partial "replacements.html" . ) | plainify | htmlUnescape }}
+    {{ else }}
+        {{ warnf "Unable to get a summary for %s." . }}
+    {{ end }}
+{{ else }}
+    {{ with site.Params.Description }}
+        {{ $desc = . }}
+    {{ else }}
+        {{ warnf "Unable to get the general site description from params.description." }}
+    {{ end }}
+{{ end }}
+{{ return $desc }}

@@ -1,7 +1,9 @@
 {{ $result := "" }}
 {{ if templates.Exists (printf "partials/%s" .partial ) }}
     {{ with partial .partial .page -}}
-      {{ $result = . }}
-  {{ end }}
+        {{ $result = . }}
+    {{ end }}
+{{ else }}
+    {{ warnf "There is no template in %s." .partial }}
 {{ end }}
 {{ return $result }}

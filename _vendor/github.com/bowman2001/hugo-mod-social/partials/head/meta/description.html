@@ -1,0 +1,6 @@
+{{ $desc_partial := site.Params.meta.description_partial | default "head/meta/func/description.html" -}}
+{{ with partial "head/partial.html" (dict "partial" $desc_partial "page" . ) }}
+  <meta name="description" content="{{ . }}">
+{{ else }}
+    {{ warnf "Unable to generate the description meta tag for %s. No description given." . }}
+{{ end }}
