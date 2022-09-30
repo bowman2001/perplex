@@ -82,7 +82,7 @@ module:
   - path  : github.com/bowman2001/hugo-mod-social
     mounts:
     - source: partials
-      target: layouts/partials/head
+      target: layouts/partials
   
   mounts :
     - source: archetypes
