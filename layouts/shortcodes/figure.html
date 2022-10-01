@@ -25,9 +25,10 @@
     {{ with $img }}
         {{ $a = partial "img/func/params/unsplash.html" . }}
         {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
-    {{ else }}
-        {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
     {{ end }}
+{{ end }}
+{{ if not $img }}
+    {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
 {{ end }}
 {{ with .Inner }}
     {{ $a = merge $a (dict "caption" .) }}
