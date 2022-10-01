@@ -11,12 +11,11 @@
            {{ with .a.alt }}alt="{{ . }}"{{ end }}
               {{ with .a.title }}title="{{ . }}"{{ end }}>
     {{- else -}}
-        {{ $fallbackImg := "" }}
         {{- $imgClass := "" -}}
         {{ $fallbackWidth := site.Params.imaging.fallback_width }}
-        {{ $fallbackImg = $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) }}
-        <div style="background-color: {{ index $fallbackImg.Colors 0 }}">
-        {{- if eq $subType "png" -}}
+        {{ $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) }}
+        {{/* $lqipImg := $p.img.Resize "132x gif" */}}
+         {{- if eq $subType "png" -}}
             {{- $imgClass = "img__png" -}}
         {{- end -}}
         <img data-src="{{ $fallbackImg.RelPermalink }}"
@@ -28,6 +27,8 @@
              class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                 {{- with .a.alt }} alt="{{ . }}"{{ end -}}
                 {{- with .a.title }} title="{{ . }}"{{ end -}}
-        /></div>
+             style="background-color: {{ index $fallbackImg.Colors 0 }}"
+        />
     {{ end }}
     {{ if .a.link }}</a>{{ end }}
+<!-- "" -->

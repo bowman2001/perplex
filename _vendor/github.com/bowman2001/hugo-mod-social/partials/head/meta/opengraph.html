@@ -1,3 +1,4 @@
+{{/* The generated tags follow the Open Graph protocol as specified on https://ogp.me */}}
 {{ $title_partial := site.Params.meta.title | default "head/meta/func/title.html" -}}
 {{ $desc_partial := site.Params.meta.description | default "head/meta/func/description.html" -}}
 {{ $image_partial := site.Params.meta.img | default "head/meta/func/img.html" -}}
@@ -19,9 +20,9 @@
     {{- end -}}
 {{ end -}}
 {{ with .Permalink -}}
-<meta property="og:url" content="{{ . }}">{{ end -}}
+  <meta property="og:url" content="{{ . }}">{{ end -}}
 {{ with site.Title -}}
-<meta property="og:site_name" content="{{ . }}">{{ end -}}
+  <meta property="og:site_name" content="{{ . }}">{{ end -}}
 {{ $type := "" -}}
 {{ with partial "head/partial.html" (dict "partial" $type_partial "page" . ) -}}
     {{ $type = . }}
@@ -53,15 +54,15 @@
   {{ end }}
 {{ else if eq "profile" $type }}
   <meta property="og:type" content="profile">
-    {{ with $.Params.author }}
-        {{ if reflect.IsSlice . }}
-            {{ range . }}
+  {{ with $.Params.author }}
+      {{ if reflect.IsSlice . }}
+          {{ range . }}
               {{ partial "head/meta/func/sliceauthor.html" . }}
-            {{ end }}
-        {{ else }}
-            {{ partial "head/meta/func/sliceauthor.html" . }}
-        {{ end }}
-    {{ end }}
+          {{ end }}
+      {{ else }}
+          {{ partial "head/meta/func/sliceauthor.html" . }}
+      {{ end }}
+  {{ end }}
 {{ else }}
   <meta property="og:type" content="website">
 {{ end }}
@@ -73,7 +74,7 @@
     {{ $splitted := split . " " }}
     {{ $n := len $splitted }}
     <meta property="profile:last_name" content="{{ delimit (last 1 $splitted) "" }}">
-      {{ if gt $n 1 }}
+    {{ if gt $n 1 }}
       <meta property="profile:first_name" content="{{ delimit (first (sub $n 1) $splitted) " " }}">
-      {{ end }}
+    {{ end }}
 {{ end }}
