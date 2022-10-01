@@ -1,2 +1,2 @@
 # github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c
-# github.com/bowman2001/hugo-mod-social v0.0.0-20221001202237-6e50d42b6dbb
+# github.com/bowman2001/hugo-mod-social v0.0.0-20221001231230-20cca358d209
