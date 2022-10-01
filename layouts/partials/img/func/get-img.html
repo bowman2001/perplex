@@ -6,7 +6,5 @@
     {{ else }}
         {{ errorf "The resource '%s' called from %s is not an image." $.name $.currentPage }}
     {{ end }}
-{{ else }}
-    {{ errorf "Unable to get resource '%s' in %s" $.name $.currentPage }}
 {{ end }}
 {{ return $img }}

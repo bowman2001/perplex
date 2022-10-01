@@ -27,8 +27,7 @@
              class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                 {{- with .a.alt }} alt="{{ . }}"{{ end -}}
                 {{- with .a.title }} title="{{ . }}"{{ end -}}
-             style="background-color: {{ index $fallbackImg.Colors 0 }}"
+
         />
     {{ end }}
     {{ if .a.link }}</a>{{ end }}
-<!-- "" -->
