@@ -12,11 +12,11 @@
 {{ $max_filesize := 5242880 }}
 {{ $filesize := (os.Stat .Key).Size }}
 {{ if not (in $formats .MediaType.SubType) }}
-    {{ warnf "Unable to use the image '%s' for the Twitter meta tag. Only %v are supported." .Key $formats }}
+    {{ warnf "Unable to use the image '%s' for the Twitter meta tag. Only %v are supported." .RelPermalink $formats }}
 {{ else if not (and (lt .Width $max_side) (lt .Height $max_side) ) }}
-    {{ warnf "Unable to use the image %s for the Twitter meta tag. Side length larger than '%d' aren’t supported." .Key $max_side }}
+    {{ warnf "Unable to use the image %s for the Twitter meta tag. Side length larger than '%d' aren’t supported." .RelPermalink $max_side }}
 {{ else if gt $filesize $max_filesize }}
-    {{ warnf "Unable to use the image %s for the Twitter meta tag. The file %s is $d bytes large. Only up to %d are supported." .Key $filesize $max_filesize }}
+    {{ warnf "Unable to use the image %s for the Twitter meta tag. The file %s is $d bytes large. Only up to %d are supported." .RelPermalink $filesize $max_filesize }}
 {{ else }}
     {{ $valid = true }}
 {{ end }}
