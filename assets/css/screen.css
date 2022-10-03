@@ -2260,10 +2260,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   color: #111111;
 }
 .md--h-serif h2 {
-  font-size: 1.716rem;
+  font-size: 1.905rem;
   line-height: 3rem;
-  padding-top: 1.857358rem;
-  padding-bottom: calc(0.142642rem + var(--es));
+  padding-top: 1.7865775rem;
+  padding-bottom: calc(0.2134225rem + var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;

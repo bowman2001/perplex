@@ -1,7 +1,11 @@
-{{ $img := partial "img/func/get-featured.html" . }}
-{{ if eq $img.MediaType.SubType "svg" }}
-    {{ with partial "img/func/get-img.html" (dict "name" (print (path.BaseName $img.RelPermalink) ".png") "currentPage" . ) }}
-        {{ $img = . }}
-    {{ end }}
+{{ $img := "" }}
+{{ with partial "img/func/get-featured.html" . }}
+{{ if eq .MediaType.SubType "svg" }}
+{{ with partial "img/func/get-img.html" (dict "name" (print (path.BaseName .RelPermalink) ".png") "currentPage" . ) }}
+{{ $img = . }}
+{{ end }}
+{{ else }}
+{{ $img = . }}
+{{ end }}
 {{ end }}
 {{ return $img }}
