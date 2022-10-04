@@ -11,10 +11,11 @@
            {{ with .a.alt }}alt="{{ . }}"{{ end }}
               {{ with .a.title }}title="{{ . }}"{{ end }}>
     {{- else -}}
+
         {{- $imgClass := "" -}}
         {{ $fallbackWidth := site.Params.imaging.fallback_width }}
         {{ $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) }}
-        {{/* $lqipImg := $p.img.Resize "132x gif" */}}
+  {{ $lqip := partial "img/func/generate-lqip.html" $p.img }}
          {{- if eq $subType "png" -}}
             {{- $imgClass = "img__png" -}}
         {{- end -}}
@@ -23,7 +24,7 @@
              data-sizes="auto"
              data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
              data-parentfit="cover"
-             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+             src="data:image/gif;base64,{{- $lqip -}}"
              class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                 {{- with .a.alt }} alt="{{ . }}"{{ end -}}
                 {{- with .a.title }} title="{{ . }}"{{ end -}}

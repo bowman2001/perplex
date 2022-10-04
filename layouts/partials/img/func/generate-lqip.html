@@ -1,0 +1,5 @@
+{{ $lqip := "" }}
+{{ $img := .Resize "10x gif" }}
+{{ $lqip = base64Encode $img.Content }}
+{{ warnf "base64: %d" (len $lqip) }}
+{{ return $lqip }}
