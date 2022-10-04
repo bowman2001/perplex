@@ -5,7 +5,6 @@
    href="{{ .a.link | safeHTMLAttr }}"
         {{- with .a.target }} target="{{ . | safeHTMLAttr }}"{{ end -}}
         {{- with $.a.rel }} rel="{{ . | safeHTMLAttr }}"{{ end }}>{{ end -}}
-    <div class="img-box">
     {{- $subType := .img.MediaType.SubType -}}
     {{- if eq $subType "svg" -}}
       <img class="img__svg" src="{{ .img.RelPermalink }}"
@@ -33,5 +32,4 @@
 
         />
     {{ end }}
-    </div>
     {{ if .a.link }}</a>{{ end }}
