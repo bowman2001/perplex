@@ -19,7 +19,7 @@
          {{- if eq $subType "png" -}}
             {{- $imgClass = "img__png" -}}
         {{- end -}}
-    <div class="img-box">
+
         <img data-src="{{ $fallbackImg.RelPermalink }}"
              data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) }}"
              data-sizes="auto"
@@ -31,6 +31,5 @@
                 {{- with .a.title }} title="{{ . }}"{{ end -}}
 
         />
-    </div>
     {{ end }}
     {{ if .a.link }}</a>{{ end }}
