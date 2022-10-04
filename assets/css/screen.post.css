@@ -294,12 +294,17 @@ li:empty:before {
   font-weight: 300;
 }
 
+.img-box {
+  border: 1px solid rgba(0, 0, 0, 0);
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
+}
+
 img {
+  display: inline-block;
   width: 100%;
   height: auto;
-  overflow: hidden;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
-  border-radius: .5rem;
 }
 
 .img__svg,
@@ -319,26 +324,22 @@ img {
   padding-top: .214465rem;
   margin-bottom: -.214465rem;
   color: #555;
-  min-height: 3rem;
+  min-height: 2rem;
 }
 
 .caption a {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  -webkit-text-decoration-color: rgba(85, 85, 85, .25);
-          text-decoration-color: rgba(85, 85, 85, .25);
-  transition-property: color, -webkit-text-decoration-color;
+  text-decoration-color: rgba(85, 85, 85, .25);
   transition-property: color, text-decoration-color;
-  transition-property: color, text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
 .caption a:hover {
   color: #000;
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  text-decoration-color: #000;
 }
 
 .caption__text,
@@ -356,7 +357,7 @@ img {
 
 .lazyload,
 .lazyloading {
-  filter: blur(1rem);
+  filter: blur(0.5rem);
 }
 
 .lazyloaded {
@@ -1114,15 +1115,13 @@ a.meta__item--text {
   text-decoration: underline;
   text-decoration-thickness: .1rem;
   text-underline-offset: .075em;
-  -webkit-text-decoration-color: rgba(0, 106, 156, .5);
-          text-decoration-color: rgba(0, 106, 156, .5);
+  text-decoration-color: rgba(0, 106, 156, .5);
   letter-spacing: .01em;
   word-spacing: .03em;
 }
 
 a.meta__item--text:hover {
-  -webkit-text-decoration-color: #c9187f;
-          text-decoration-color: #c9187f;
+  text-decoration-color: #c9187f;
 }
 
 .meta__date {
@@ -1310,9 +1309,7 @@ a.meta__item--text:hover {
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
   text-underline-offset: .075em;
   text-decoration-thickness: 1px;
-  transition-property: color, background-color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color, background-color;
-  transition-property: color, text-decoration-color, background-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1322,9 +1319,7 @@ a.meta__item--text:hover {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
-  transition-property: -webkit-text-decoration-color;
   transition-property: text-decoration-color;
-  transition-property: text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1334,8 +1329,7 @@ a.meta__item--text:hover {
 .md-hook-link:focus,
 .heading-anchor:focus {
   color: #000;
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  text-decoration-color: #000;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, .1);
 }
 
@@ -1343,8 +1337,7 @@ a.meta__item--text:hover {
 .heading-anchor:hover code,
 .md-hook-link:focus code,
 .heading-anchor:focus code {
-  -webkit-text-decoration-color: #fff;
-          text-decoration-color: #fff;
+  text-decoration-color: #fff;
 }
 
 .md-hook-link:hover var,
@@ -1355,8 +1348,7 @@ a.meta__item--text:hover {
 }
 
 .heading-anchor {
-  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
-          text-decoration-color: rgba(0, 0, 0, 0);
+  text-decoration-color: rgba(0, 0, 0, 0);
 }
 
 .heading-anchor:hover,
@@ -1370,19 +1362,16 @@ h4:target .heading-anchor,
 h5:target .heading-anchor,
 h6:target .heading-anchor {
   color: #000;
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  text-decoration-color: #000;
   background-color: rgba(0, 132, 194, .05);
 }
 
 .md-hook-link {
-  -webkit-text-decoration-color: #0084c2;
-          text-decoration-color: #0084c2;
+  text-decoration-color: #0084c2;
 }
 
 .md-hook-link code {
-  -webkit-text-decoration-color: #888;
-          text-decoration-color: #888;
+  text-decoration-color: #888;
 }
 
 .md-hook-link:hover,
@@ -1391,15 +1380,13 @@ h6:target .heading-anchor {
 }
 
 .md-hook-link[href^=http] {
-  -webkit-text-decoration-color: #00a889;
-          text-decoration-color: #00a889;
+  text-decoration-color: #00a889;
 }
 
 .md-hook-link[href^=http]:hover,
 .md-hook-link[href^=http]:focus {
   background-color: rgba(0, 168, 137, .05);
-  -webkit-text-decoration-color: #000;
-          text-decoration-color: #000;
+  text-decoration-color: #000;
 }
 
 .icon-link .icon-font {
@@ -3266,21 +3253,18 @@ h6:target .heading-anchor {
 
 .md del,
 .md ins {
-  -webkit-text-decoration-color: #a00;
-          text-decoration-color: #a00;
+  text-decoration-color: #a00;
   text-decoration-thickness: .1rem;
   -webkit-text-decoration-skip: auto;
           text-decoration-skip: auto;
 }
 
 .md del {
-  -webkit-text-decoration-line: line-through;
-          text-decoration-line: line-through;
+  text-decoration-line: line-through;
 }
 
 .md ins {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .md sup,
@@ -4528,9 +4512,7 @@ h6:target .heading-anchor {
   display: block;
   padding: .5rem 0 .5rem 1.7rem;
   border-left: .3rem solid #ccc;
-  transition: color 200ms ease-in-out, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
   transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out;
-  transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
 }
 
 #TableOfContents a .icon-font,

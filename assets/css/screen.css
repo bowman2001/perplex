@@ -197,12 +197,17 @@ li:empty:before {
   font-weight: 300;
 }
 
+.img-box {
+  border: 1px solid transparent;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+}
+
 img {
+  display: inline-block;
   width: 100%;
   height: auto;
-  overflow: hidden;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
 }
 
 .img__svg, .img__png {
@@ -221,7 +226,7 @@ img {
   padding-top: 0.214465rem;
   margin-bottom: -0.214465rem;
   color: #555;
-  min-height: 3rem;
+  min-height: 2rem;
 }
 .caption a {
   color: inherit;
@@ -250,7 +255,7 @@ img {
 
 .lazyload,
 .lazyloading {
-  filter: blur(1rem);
+  filter: blur(0.5rem);
 }
 
 .lazyloaded {
