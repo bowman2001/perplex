@@ -200,6 +200,7 @@ li:empty:before {
 img {
   width: 100%;
   height: auto;
+  overflow: hidden;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
@@ -249,12 +250,12 @@ img {
 
 .lazyload,
 .lazyloading {
-  opacity: 0;
+  filter: blur(1rem);
 }
 
 .lazyloaded {
-  opacity: 1;
-  transition: opacity 200ms ease-out;
+  filter: blur(0);
+  transition: filter 250ms ease-out;
 }
 
 *, *:before, *:after {
