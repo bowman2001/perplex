@@ -1,6 +1,6 @@
 {{ $img := "" -}}
 {{ $base64 := "" -}}
-{{ $filters := slice (images.GaussianBlur 5) (images.Pixelate 5) -}}
+{{ $filters := slice (images.GaussianBlur 6) (images.Pixelate 8) -}}
 {{ with (.Filter $filters).Resize "66x webp q20" -}}
     {{- $img = . -}}
     {{- $base64 = base64Encode .Content -}}
