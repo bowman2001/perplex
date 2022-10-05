@@ -4,6 +4,5 @@
 {{ with (.Filter $filters).Resize "22x png" }}
     {{ $img = . }}
     {{ $base64 = base64Encode .Content }}
-    {{ warnf "base64: %d" (len $base64) }}
 {{ end }}
 {{ return (dict "base64" $base64 "img" $img) }}
