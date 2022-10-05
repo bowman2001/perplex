@@ -3364,6 +3364,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   width: 100%;
   height: auto;
   padding: 0 2rem 1rem 2rem;
+  overflow: hidden;
 }
 .card__fig > .img__svg {
   padding: 1rem;
