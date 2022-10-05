@@ -1,8 +1,9 @@
 {{ $img := "" -}}
 {{ $base64 := "" -}}
-{{ $filters := slice (images.Pixelate 16) (images.GaussianBlur 12)  -}}
-{{ with (.Filter $filters).Resize "22x png" -}}
+{{ $filters := slice (images.Pixelate 5) (images.GaussianBlur 5)  -}}
+{{ with (.Filter $filters).Resize "66x webp q20" -}}
     {{- $img = . -}}
     {{- $base64 = base64Encode .Content -}}
+    {{ warnf "base64: %d" (len $base64 )}}
 {{ end -}}
 {{ return (dict "base64" $base64 "img" $img) -}}

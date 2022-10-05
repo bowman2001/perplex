@@ -24,7 +24,7 @@
              data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
              data-parentfit="cover"
              {{- if lt $lqip.base64 2048 -}}
-              src="data:image/png;base64,{{- $lqip.base64 -}}"
+              src="data:image/webp;base64,{{- $lqip.base64 -}}"
              {{- else -}}
                 src="{{ $lqip.img.RelPermalink }}"
              {{- end -}}
