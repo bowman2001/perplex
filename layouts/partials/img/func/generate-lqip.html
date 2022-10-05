@@ -1,9 +1,9 @@
-{{ $lqip := "" }}
-{{ $filters := slice (images.GaussianBlur 6) (images.Pixelate 12)}}
-{{ $img := (.Filter $filters).Resize "22x22 png" }}
-{{ $link := .RelPermalink }}
-{{ with base64Encode $img.Content }}
-    {{ $lqip = . }}
-    {{ warnf "base64: %d" (len $lqip) }}
+{{ $img := "" }}
+{{ $base64 := "" }}
+{{ $filters := slice (images.GaussianBlur 6) (images.Pixelate 12) }}
+{{ with (.Filter $filters).Resize "22x png" }}
+    {{ $img = . }}
+    {{ $base64 = base64Encode .Content }}
+    {{ warnf "base64: %d" (len $base64) }}
 {{ end }}
-{{ return $lqip }}
+{{ return (dict "base64" $base64 "img" $img) }}
