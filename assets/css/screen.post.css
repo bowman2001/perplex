@@ -294,17 +294,12 @@ li:empty:before {
   font-weight: 300;
 }
 
-.img-box {
-  border: 1px solid rgba(0, 0, 0, 0);
-  overflow: hidden;
-  border-radius: .5rem;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
-}
-
 img {
   display: inline-block;
   width: 100%;
   height: auto;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
 }
 
 .img__svg,
@@ -362,7 +357,7 @@ img {
 
 .lazyloaded {
   filter: blur(0);
-  transition: filter 250ms ease-out;
+  transition: filter 150ms;
 }
 
 *,

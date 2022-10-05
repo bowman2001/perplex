@@ -197,17 +197,12 @@ li:empty:before {
   font-weight: 300;
 }
 
-.img-box {
-  border: 1px solid transparent;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
-}
-
 img {
   display: inline-block;
   width: 100%;
   height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .img__svg, .img__png {
@@ -260,7 +255,7 @@ img {
 
 .lazyloaded {
   filter: blur(0);
-  transition: filter 250ms ease-out;
+  transition: filter 150ms;
 }
 
 *, *:before, *:after {
