@@ -1,5 +1,6 @@
 {{ $lqip := "" }}
-{{ with base64Encode (.Resize "22x22 gif").Content }}
+{{ $filters := slice (images.GaussianBlur 10) (images.Pixelate 16)}}
+{{ with base64Encode ((.Filter $filters).Resize "22x22 png").Content }}
     {{ $lqip = . }}
     {{ warnf "base64: %d" (len $lqip) }}
 {{ end }}

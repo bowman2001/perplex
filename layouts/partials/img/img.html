@@ -25,7 +25,7 @@
              data-sizes="auto"
              data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
              data-parentfit="cover"
-             src="data:image/gif;base64,{{- $lqip -}}"
+             src="data:image/png;base64,{{- $lqip -}}"
              class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                 {{- with .a.alt }} alt="{{ . }}"{{ end -}}
                 {{- with .a.title }} title="{{ . }}"{{ end -}}
