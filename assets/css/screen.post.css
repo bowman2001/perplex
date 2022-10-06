@@ -166,6 +166,13 @@ i {
   font-style: italic;
 }
 
+em em,
+em i,
+i em,
+i i {
+  font-style: normal;
+}
+
 strong,
 b {
   font-weight: 700;
@@ -1645,6 +1652,10 @@ h6:target .heading-anchor {
   font-style: italic;
   text-align: left;
   color: #333;
+}
+
+.md .p-first em {
+  font-style: normal;
 }
 
 .md .p-first strong {
@@ -4130,7 +4141,7 @@ h6:target .heading-anchor {
 .card__fig {
   width: 100%;
   height: auto;
-  padding: 0 2rem 1rem 2rem;
+  padding: 0 2rem 2rem 2rem;
   overflow: hidden;
 }
 
@@ -4142,13 +4153,13 @@ h6:target .heading-anchor {
 
 @media screen and (min-width: 37em) {
   .card__fig {
-    width: 33rem;
-    height: 22.00011rem;
+    width: 37rem;
+    height: 24.00011rem;
   }
 
   .card__fig > img {
     width: 33rem;
-    height: 22.00011rem;
+    height: 22.0011rem;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -4161,13 +4172,13 @@ h6:target .heading-anchor {
 
 @media screen and (min-width: 37em) {
   .card__fig--full {
-    width: 70rem;
-    height: 46.6669rem;
+    width: 74rem;
+    height: 48.6669rem;
   }
 
   .card__fig--full > img {
     width: 70rem;
-    height: 46.6669rem;
+    height: 46.669rem;
     -o-object-fit: cover;
        object-fit: cover;
   }
