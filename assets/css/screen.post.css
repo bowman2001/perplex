@@ -1637,13 +1637,14 @@ h6:target .heading-anchor {
 }
 
 .md .p-first {
-  font-size: 2.6rem;
-  line-height: 4rem;
-  padding-top: .0263rem;
-  padding-bottom: calc(0.9737rem + var(--es));
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 4rem);
+  font-size: 1.95rem;
+  line-height: 3rem;
+  padding-top: .769725rem;
+  padding-bottom: calc(0.230275rem + var(--es));
+  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
+  font-style: italic;
   text-align: left;
-  color: #666;
+  color: #333;
 }
 
 .md .p-first strong {
@@ -2112,7 +2113,7 @@ h6:target .heading-anchor {
 }
 
 .md--sans .p-first {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
 }
 
