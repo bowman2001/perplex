@@ -312,6 +312,7 @@ img {
 .img__svg,
 .img__png {
   border: none;
+  border-radius: 0;
   box-shadow: none;
 }
 
@@ -2124,6 +2125,10 @@ h6:target .heading-anchor {
 }
 
 .md--sans .p-first {
+  font-size: 2.4375rem;
+  line-height: 4rem;
+  padding-top: .08715625rem;
+  padding-bottom: calc(0.91284375rem + var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
 }
@@ -2190,6 +2195,7 @@ h6:target .heading-anchor {
   padding-bottom: .388990625rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
+  text-align: left;
 }
 
 .md--card > p strong,
@@ -2201,16 +2207,21 @@ h6:target .heading-anchor {
   font-weight: 450;
 }
 
+.md--card > .p-first {
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 300;
+}
+
 .md--card--full > p,
 .md--card--full > ul,
 .md--card--full > ol,
 .md--card--full > dl,
 .md--card--full > blockquote,
 .md--card--full > .p-first {
-  font-size: 2.6rem;
+  font-size: 2.4375rem;
   line-height: 4rem;
-  padding-top: .5263rem;
-  padding-bottom: .9737rem;
+  padding-top: .58715625rem;
+  padding-bottom: .91284375rem;
 }
 
 .md--card--small {
@@ -2227,7 +2238,9 @@ h6:target .heading-anchor {
   line-height: 2rem;
   padding-top: .464465rem;
   padding-bottom: .535535rem;
-  text-align: left;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 300;
+  font-style: italic;
 }
 
 .md--taxo > p,
@@ -2891,8 +2904,8 @@ h6:target .heading-anchor {
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 4rem);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
-  letter-spacing: .05em;
-  word-spacing: .15em;
+  letter-spacing: .04em;
+  word-spacing: .12em;
   text-transform: uppercase;
   color: #222;
 }
@@ -3046,10 +3059,10 @@ h6:target .heading-anchor {
 }
 
 .md--card--full h2 {
-  font-size: 2.2225rem;
+  font-size: 2.38125rem;
   line-height: 3rem;
-  padding-top: .66767375rem;
-  padding-bottom: .33232625rem;
+  padding-top: .608221875rem;
+  padding-bottom: .391778125rem;
 }
 
 .md--card--small h2 {
