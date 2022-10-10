@@ -2131,6 +2131,8 @@ h6:target .heading-anchor {
   padding-bottom: calc(0.91284375rem + var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
+  letter-spacing: -0.0075em;
+  word-spacing: -0.0225em;
 }
 
 .md--sans .p-first strong {
@@ -2212,11 +2214,6 @@ h6:target .heading-anchor {
   font-weight: 300;
 }
 
-.md--card--full > p,
-.md--card--full > ul,
-.md--card--full > ol,
-.md--card--full > dl,
-.md--card--full > blockquote,
 .md--card--full > .p-first {
   font-size: 2.4375rem;
   line-height: 4rem;
@@ -2228,16 +2225,14 @@ h6:target .heading-anchor {
   margin-top: -1rem;
 }
 
-.md--card--small > p,
-.md--card--small > ul,
-.md--card--small > ol,
-.md--card--small > dl,
-.md--card--small > blockquote,
-.md--card--small > .p-first {
+.md--card--small > p {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: .464465rem;
   padding-bottom: .535535rem;
+}
+
+.md--card--small > .p-first {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
   font-style: italic;
