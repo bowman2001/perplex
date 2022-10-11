@@ -14,8 +14,8 @@
         {{- $imgClass := "" -}}
         {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
         {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
-  {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
-         {{- if eq $subType "png" -}}
+        {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
+        {{- if eq $subType "png" -}}
             {{- $imgClass = "img__png" -}}
         {{- end -}}
         <img data-src="{{ $fallbackImg.RelPermalink }}"
@@ -23,15 +23,19 @@
              data-sizes="auto"
              data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
              data-parentfit="cover"
-             {{- if lt $lqip.base64 2048 -}}
-              src="data:image/webp;base64,{{- $lqip.base64 -}}"
-             {{- else -}}
-                src="{{ $lqip.img.RelPermalink }}"
-             {{- end -}}
+                {{- if lt $lqip.base64 2048 -}}
+                  src="data:image/webp;base64,{{- $lqip.base64 -}}"
+                {{- else -}}
+                  src="{{ $lqip.img.RelPermalink }}"
+                {{- end -}}
              class="lazyload {{- with $imgClass }} {{ . }}{{- end }}"
-                {{- with .a.alt }} alt="{{ . }}"{{ end -}}
+                {{- with .a.alt -}}
+                  alt="{{ . }}"
+                {{- else -}}
+                    {{- warnf "No alternative description for image %s." $p.img.RelPermalink -}}
+                {{- end -}}
                 {{- with .a.title }} title="{{ . }}"{{ end -}}
-
-        />
+             width="{{ $fallbackImg.Width }}"
+             height="{{ $fallbackImg.Height }}"/>
     {{- end -}}
     {{- if .a.link }}</a>{{ end -}}
