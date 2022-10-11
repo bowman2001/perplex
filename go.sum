@@ -1,14 +1,4 @@
+github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0 h1:C+Pqx3un5tM72pq4kagQBG7Lo9Bkq95FX6PJukiZVs8=
+github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c h1:tlyM0cugkBaxBh/G1XewZEVi5XsvAzoJzJt1bOvwhS4=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220923004056-478353f29d79 h1:WCdOwHiBXlDMAcxCvLXoJMRABBz3MjboyIx/w0zgWhc=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220923004056-478353f29d79/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220929232647-235dceb83e4f h1:UzQn0vvJjE7pTg7LJS7N7G3LbBChG0UaFjCTDSoiP1M=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220929232647-235dceb83e4f/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220930203215-1f99ae04f7c3 h1:TikV1tSCi701scXU1j/6tvB8mlRtEW0uU1P06V6nHwg=
-github.com/bowman2001/hugo-mod-social v0.0.0-20220930203215-1f99ae04f7c3/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=
-github.com/bowman2001/hugo-mod-social v0.0.0-20221001202237-6e50d42b6dbb h1:dkXhI7CA79tPVbaPfrTCUDjTqA+cdwXDcd9/XTFnJq8=
-github.com/bowman2001/hugo-mod-social v0.0.0-20221001202237-6e50d42b6dbb/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=
-github.com/bowman2001/hugo-mod-social v0.0.0-20221001231230-20cca358d209 h1:ZBaWA2zUmXGqpFbfleUPo4XGLTsgYPa/FSwiQ3GgEYY=
-github.com/bowman2001/hugo-mod-social v0.0.0-20221001231230-20cca358d209/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=
-github.com/bowman2001/hugo-mod-social v0.0.0-20221001233959-a6d21953ec43 h1:h7DIqAC59IVcBFr5W69hGVlTXETjVewczjvpjQkObkI=
-github.com/bowman2001/hugo-mod-social v0.0.0-20221001233959-a6d21953ec43/go.mod h1:ndjozvl6IoY+Y3sfcGw0tNjQWVA4iwe2JA8rMqIv+48=

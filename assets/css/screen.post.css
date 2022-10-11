@@ -1135,7 +1135,7 @@ a.meta__item--text:hover {
 }
 
 .title {
-  padding: 0 calc(1rem + 1 * var(--es)) calc(2rem + 1 * var(--es)) calc(1rem + 1 * var(--es));
+  padding: 0 calc(1rem + 1 * var(--es)) 2rem calc(1rem + 1 * var(--es));
   margin: 0 1rem;
   max-width: 74rem;
   color: #111;
@@ -2127,7 +2127,7 @@ h6:target .heading-anchor {
 .md--sans .p-first {
   font-size: 2.4375rem;
   line-height: 4rem;
-  padding-top: .08715625rem;
+  padding-top: 1.08715625rem;
   padding-bottom: calc(0.91284375rem + var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
@@ -3846,7 +3846,7 @@ h6:target .heading-anchor {
 }
 
 .section-nav {
-  padding: calc(1rem + 1 * var(--es)) 0rem;
+  padding: calc(0.5rem + 0.5 * var(--es)) 0rem;
   -moz-column-count: 2;
        column-count: 2;
   -moz-column-width: 37rem;
@@ -4821,8 +4821,10 @@ h6:target .heading-anchor {
   overflow: hidden;
 }
 
-.hide1 {
-  display: none !important;
+@media screen and (max-width: 37em) {
+  .hide-mobile {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 37em) {

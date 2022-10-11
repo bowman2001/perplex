@@ -73,7 +73,7 @@ module:
     - source: partials
       target: layouts/partials
   
-  - path  : github.com/bowman2001/hugo-mod-social
+  - path  : github.com/bowman2001/hugo-mod-meta
     mounts:
     - source: partials
       target: layouts/partials

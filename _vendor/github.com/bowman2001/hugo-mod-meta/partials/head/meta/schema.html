@@ -30,6 +30,11 @@
         {{ $article = merge $article (dict "author" $author)}}
     {{ end }}
     {{ $map = $article }}
+{{ else if eq $type "documentation" }}
+    {{ $breadcrumbs := (dict
+    "@context" "https://schema.org"
+    "@type" "BreadcrumbList"
+    )}}
 {{ end }}
 {{ with $map }}
   <script type="application/ld+json">{{ jsonify . | safeJS }}</script>
