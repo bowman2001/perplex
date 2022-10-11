@@ -10,7 +10,6 @@
            {{- with .a.alt }}alt="{{ . }}"{{ end -}}
               {{- with .a.title }}title="{{ . }}"{{ end -}}>
     {{- else -}}
-
         {{- $imgClass := "" -}}
         {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
         {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
