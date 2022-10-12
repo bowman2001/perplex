@@ -3399,7 +3399,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     height: 22.0011rem;
     object-fit: cover;
   }
-  .card__fig > .img__svg {
+  .card__fig > .img__svg, .card__fig .img__png {
     object-fit: contain;
   }
 }
@@ -3414,7 +3414,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     height: 46.669rem;
     object-fit: cover;
   }
-  .card__fig--full > .img__svg {
+  .card__fig--full > .img__svg, .card__fig--full .img__png {
     object-fit: contain;
   }
 }
@@ -3430,6 +3430,9 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   width: 14.5rem;
   height: 9.6666715rem;
   object-fit: cover;
+}
+.card__fig--small > .img__svg, .card__fig--small .img__png {
+  object-fit: contain;
 }
 
 .sidebar-box {

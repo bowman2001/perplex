@@ -1,6 +1,6 @@
 {{- if eq .Destination "@" -}}
   <span id="{{ .PlainText | anchorize }}">{{ .Text | safeHTML }}</span>
 {{- else -}}
-  <a class="md-hook-link" href="{{- .Destination  -}}" {{ with .Title }} title="{{ . }}" {{ end }}>{{- .Text | safeHTML -}}</a>
+  <a class="md-hook-link" href="{{- .Destination | safeURL -}}" {{ with .Title }} title="{{ . }}" {{ end }}>{{- .Text | safeHTML -}}</a>
 {{- end -}}
 {{- /* This comment removes trailing newlines */ -}}

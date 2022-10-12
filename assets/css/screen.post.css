@@ -4172,7 +4172,8 @@ h6:target .heading-anchor {
        object-fit: cover;
   }
 
-  .card__fig > .img__svg {
+  .card__fig > .img__svg,
+  .card__fig .img__png {
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -4191,7 +4192,8 @@ h6:target .heading-anchor {
        object-fit: cover;
   }
 
-  .card__fig--full > .img__svg {
+  .card__fig--full > .img__svg,
+  .card__fig--full .img__png {
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -4210,6 +4212,12 @@ h6:target .heading-anchor {
   height: 9.6666715rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.card__fig--small > .img__svg,
+.card__fig--small .img__png {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .sidebar-box {
