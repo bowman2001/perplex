@@ -6,17 +6,17 @@
         {{- with $.a.rel }} rel="{{ . | safeHTMLAttr }}"{{ end }}>{{ end -}}
     {{- $subType := .img.MediaType.SubType -}}
     {{- if eq $subType "svg" -}}
-      <img class="img__svg" src="{{ .img.RelPermalink }}"
+      <img class="img--transparent" src="{{ .img.RelPermalink }}"
            {{- with .a.alt }}alt="{{ . }}"{{ end -}}
               {{- with .a.title }}title="{{ . }}"{{ end -}}>
     {{- else -}}
         {{- $imgClass := "" -}}
+        {{- if eq $subType "png" -}}
+            {{- $imgClass = "img__transparent" -}}
+        {{- end -}}
         {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
         {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
         {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
-        {{- if eq $subType "png" -}}
-            {{- $imgClass = "img__png" -}}
-        {{- end -}}
         <img data-src="{{ $fallbackImg.RelPermalink }}"
              data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) }}"
              data-sizes="auto"

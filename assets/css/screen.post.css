@@ -309,8 +309,7 @@ img {
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
 }
 
-.img__svg,
-.img__png {
+.img--transparent {
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -3060,6 +3059,14 @@ h6:target .heading-anchor {
   padding-bottom: .391778125rem;
 }
 
+.md--card--full .p-meta {
+  font-size: 1.8525rem;
+  line-height: 1.5rem;
+  padding-top: .55623875rem;
+  padding-bottom: .44376125rem;
+  font-weight: 300;
+}
+
 .md--card--small h2 {
   font-size: 1.3585rem;
   line-height: 1.5rem;
@@ -4153,10 +4160,12 @@ h6:target .heading-anchor {
   overflow: hidden;
 }
 
-.card__fig > .img__svg {
+.card__fig > .img--transparent {
   padding: 1rem;
   border: .1rem solid rgba(17, 17, 17, .5);
   border-radius: .5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @media screen and (min-width: 37em) {
@@ -4171,12 +4180,6 @@ h6:target .heading-anchor {
     -o-object-fit: cover;
        object-fit: cover;
   }
-
-  .card__fig > .img__svg,
-  .card__fig .img__png {
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
 }
 
 @media screen and (min-width: 37em) {
@@ -4190,12 +4193,6 @@ h6:target .heading-anchor {
     height: 46.669rem;
     -o-object-fit: cover;
        object-fit: cover;
-  }
-
-  .card__fig--full > .img__svg,
-  .card__fig--full .img__png {
-    -o-object-fit: contain;
-       object-fit: contain;
   }
 }
 
@@ -4212,12 +4209,6 @@ h6:target .heading-anchor {
   height: 9.6666715rem;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.card__fig--small > .img__svg,
-.card__fig--small .img__png {
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .sidebar-box {
