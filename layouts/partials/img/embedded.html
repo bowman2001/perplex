@@ -1,9 +1,9 @@
 {{ $class := partial "img/func/params/aggregate-class.html" . }}
-  <span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }} {{ $class | safeHTMLAttr }}">
-      {{ partialCached "img/img.html" . .img.Key .a }}
-      {{ if (or .a.caption .a.attr) }}
-        <span class="caption">
+<span class="embed {{ with $.Page.Params.embedImg }}embed--{{ . }}{{ end }} {{ $class | safeHTMLAttr }}">
+    {{ partial "img/img.html" . }}
+    {{ if (or .a.caption .a.attr) }}
+      <span class="caption">
            {{ partial "img/caption.html" . }}
-        </span>
-      {{ end }}
-  </span>
+      </span>
+    {{ end }}
+</span>

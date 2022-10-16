@@ -1,25 +1,43 @@
 {{ $class := slice }}
 {{ $optPosh := "" }}
+{{ $optPosv := "" }}
 {{ $optSize := "" }}
 {{ if eq .a.type "embedded" }}
     {{ $optPosh = site.Params.imaging.embedded.posh }}
+    {{ $optPosv = site.Params.imaging.embedded.posv }}
     {{ $optSize = site.Params.imaging.embedded.size }}
 {{ else if eq .a.type "figure" }}
     {{ $optPosh = site.Params.imaging.figure.posh }}
+    {{ $optPosv = site.Params.imaging.figure.posv }}
     {{ $optSize = site.Params.imaging.figure.size }}
 {{ end }}
 {{ with .a.class }}
     {{ if not (reflect.IsMap .) }}
-        {{ errorf "Unable to aggregate the class for '%s'. The key 'class' needs to contain a map." $.img.Key }}
+        {{ errorf "Unable to aggregate the class for '%s'. The key 'class' needs to contain a map." $.img.RelPermalink }}
     {{ else }}
-        {{ with .posh }}{{ if not (in $optPosh .) }}
-            {{ errorf "Unable to aggregate the class for %s. The key 'posh' contains the invalid value '%s'." $.img.Key . }}
-        {{ end }}{{ end }}
-        {{ with .size }}{{ if not (in $optSize .) }}
-            {{ errorf "Unable to aggregate the class for %s. The key 'size' contains the invalid value '%s'." $.img.Key . }}
-        {{ end }}{{ end }}
-        {{ range $k, $v := . }}
-            {{ $class = $class | append $v }}
+        {{ with .posh }}
+            {{ if in $optPosh . }}
+                {{ $class = $class | append (print "embed--posh-" . )}}
+            {{ else }}
+                {{ errorf "Unable to aggregate the class for %s. The key 'posh' contains the invalid value '%s'." $.img.RelPermalink . }}
+            {{ end }}
+        {{ end }}
+        {{ with .posv }}
+            {{ if in $optPosv . }}
+                {{ $class = $class | append (print "embed--posv-" . )}}
+            {{ else }}
+                {{ errorf "Unable to aggregate the class for %s. The key 'posh' contains the invalid value '%s'." $.img.RelPermalink . }}
+            {{ end }}
+        {{ end }}
+        {{ with .size }}
+            {{ if in $optSize . }}
+                {{ $class = $class | append (print "embed--size-" . )}}
+                {{ else }}
+            {{ errorf "Unable to aggregate the class for %s. The key 'size' contains the invalid value '%s'." $.img.RelPermalink . }}
+        {{ end }}
+        {{ end }}
+        {{ with .plain }}
+            {{ $class = $class | append . }}
         {{ end }}
     {{ end }}
 {{ end }}

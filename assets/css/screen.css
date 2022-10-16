@@ -1144,13 +1144,13 @@ a.meta__item--text:hover {
   text-decoration-color: transparent;
 }
 .heading-anchor:hover, .heading-anchor:focus {
-  background-color: rgba(201, 24, 127, 0.05);
+  background-color: rgba(201, 24, 127, 0.1);
 }
 
 h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor, h5:target .heading-anchor, h6:target .heading-anchor {
   color: #000000;
   text-decoration-color: #000000;
-  background-color: rgba(0, 132, 194, 0.05);
+  background-color: rgba(0, 132, 194, 0.1);
 }
 
 .md-hook-link {
@@ -1160,13 +1160,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   text-decoration-color: #888;
 }
 .md-hook-link:hover, .md-hook-link:focus {
-  background-color: rgba(0, 132, 194, 0.05);
+  background-color: rgba(0, 132, 194, 0.1);
 }
 .md-hook-link[href^=http] {
   text-decoration-color: hsl(169deg, 100%, 33%);
 }
 .md-hook-link[href^=http]:hover, .md-hook-link[href^=http]:focus {
-  background-color: rgba(0, 168, 137, 0.05);
+  background-color: rgba(0, 168, 137, 0.1);
   text-decoration-color: black;
 }
 

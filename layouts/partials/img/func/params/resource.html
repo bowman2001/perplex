@@ -5,11 +5,11 @@
 {{ end }}
 {{ with .Params }}
     {{ with .alt }}{{ $rp = merge $rp (dict "alt" . ) }}{{ end }}
-    {{ with .anchor }}{{ $rp = merge $rp (dict "anchor" . ) }}{{ end }}
+    {{ with .anchor }}{{ $rp = merge $rp (dict "anchor" ( . | lower ) ) }}{{ end }}
     {{ with .attr }}{{ $rp = merge $rp (dict "attr" . ) }}{{ end }}
-    {{ with .attrlink }}{{ $rp = merge $rp (dict "attrlink" . ) }}{{ end }}
+    {{ with .attrlink }}{{ $rp = merge $rp (dict "attrlink" ( . | lower ) ) }}{{ end }}
     {{ with .caption }}{{ $rp = merge $rp (dict "caption" . ) }}{{ end }}
-    {{ with .class }}{{ $rp = merge $rp (dict (slice "class plain") ( . | lower )) }}{{ end }}
+    {{ with .class }}{{ $rp = merge $rp (dict (slice "class" "plain") ( . | lower )) }}{{ end }}
     {{ with .hint }}{{ $rp = merge $rp (dict "hint" (. | lower ) ) }}{{ end }}
     {{ with .id }}{{ $rp = merge $rp (dict "id" (. | lower )) }}{{ end }}
     {{ with .link }}{{ $rp = merge $rp (dict "link" (. | lower ) ) }}{{ end }}

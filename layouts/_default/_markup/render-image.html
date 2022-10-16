@@ -1,4 +1,5 @@
-{{ $img := partial "img/func/get-img.html" (dict "name" .Destination "currentPage" .Page ) }}
+{{ $path := (urls.Parse .Destination).Path }}
+{{ $img := partial "img/func/get-img.html" (dict "name" $path "currentPage" .Page ) }}
 {{ $a := dict }}
 {{ with $img }}
     {{ $a = partial "img/func/params/unsplash.html" . }}
