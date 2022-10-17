@@ -23,6 +23,11 @@ params:
     category: categories
     series  : series
   
+  ### Official values for the link '<a>' attributes
+  link:
+    target: [_blank, _parent, _self, _top]
+    rel: [alternate, author, bookmark, external, help, license, next, nofollow, noopener, noreferrer, opener, prev, search, tag]
+    
   #### Image processing
   
   ### Parameters
@@ -48,7 +53,7 @@ params:
     embedded       :
       size: [ tiny, small, normal, full ]
       posh: [ left, right ]
-      posv: [ top, middle, bottom ]
+      posv: [ top, middle ]
     figure         :
       size: [ tiny, small, medium, normal, large, xlarge ]
       posh: [ left, center, right ]

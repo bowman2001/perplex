@@ -1,9 +1,17 @@
 {{ $p := partial "img/func/preprocess.html" . -}}
 {{ if .a.link -}}
-<a class="link-block"
-   href="{{ .a.link | safeHTMLAttr }}"
-        {{- with .a.target }} target="{{ . | safeHTMLAttr }}"{{ end -}}
-        {{- with $.a.rel }} rel="{{ . | safeHTMLAttr }}"{{ end }}>{{ end -}}
+<a class="link-block" href="{{ .a.link | safeHTMLAttr }}"
+        {{- with .a.target -}}
+            {{- if in site.Params.link.target }} target="{{ . | safeHTMLAttr }}"{{ else -}}
+                {{- warnf "Unable to us the 'target' attribute %s for a link. Only %s are possible." . site.Params.link.target -}}
+            {{- end -}}
+        {{- end -}}
+        {{- with .a.rel -}}
+    {{- if in site.Params.link.rel }} rel="{{ . | safeHTMLAttr }}"{{ else -}}
+        {{- warnf "Unable to us the 'rel' attribute %s for a link. Only %s are possible." . site.Params.link.rel -}}
+    {{- end -}}
+        {{- end -}}>
+    {{- end -}}
     {{- $subType := .img.MediaType.SubType -}}
     {{- if eq $subType "svg" -}}
       <img class="img--transparent" src="{{ .img.RelPermalink }}"
@@ -27,7 +35,7 @@
                 {{- else -}}
                   src="{{ $lqip.img.RelPermalink }}"
                 {{- end -}}
-             class="lazyload {{- with $imgClass }} {{ . }}{{- end }}"
+             class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                 {{- with .a.alt -}}
                   alt="{{ . }}"
                 {{- else -}}
