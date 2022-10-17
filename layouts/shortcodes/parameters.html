@@ -1,0 +1,13 @@
+{{ $param := "" -}}
+{{ with (.Get 0) -}}
+    {{- $param = . -}}
+{{ else -}}
+    {{- errorf "Missing shortcode argument: Needs one parameter." -}}
+{{ end -}}
+{{ with $.Page.Site.Param $param -}}
+    {{- if reflect.IsSlice . -}}
+        {{- print (delimit . ", ") -}}
+    {{- else -}}
+        {{- print . -}}
+    {{- end -}}
+{{ end -}}

@@ -4,11 +4,13 @@
 {{ with .Title }}{{ $hp = merge $hp (dict "title" . ) }}{{ end }}
 {{ with .PlainText }}{{ $hp = merge $hp (dict "alt" . ) }}{{ end }}
 {{ with $url.Path }}{{ $hp = merge $hp (dict "name" . ) }}{{ $name = . }}{{end}}
+{{ if or site.Params.embedFull $.Page.Params.embedFull }}
+    {{ $hp = merge $hp (dict (slice "class" "size") "full" )}}
+{{ end }}
 {{ with $url.Query }}
     {{ with or (.Get "pos") (.Get "p") }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
     {{ with or (.Get "posh") (.Get "ph") }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
     {{ with or (.Get "posv") (.Get "pv") }}{{ $hp = merge $hp (dict (slice "class" "posv") . )}}{{ end }}
-    {{ if site.Params.fullembed }}{{ $hp = merge $hp (dict (slice "class" "size") "full" )}}{{ end }}
     {{ with or (.Get "size") (.Get "s") }}{{ $hp = merge $hp (dict (slice "class" "size") . )}}{{ end }}
 {{ end }}
 {{ return $hp }}

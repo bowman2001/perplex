@@ -321,6 +321,7 @@ img {
 }
 
 .caption {
+  display: block;
   font-size: 1.43rem;
   line-height: 1.5rem;
   padding-top: .214465rem;
@@ -355,6 +356,7 @@ img {
 .caption__attribution {
   color: #777;
   float: right;
+  font-style: italic;
 }
 
 .lazyload,
@@ -1144,7 +1146,7 @@ a.meta__item--text:hover {
   font-size: 2.86rem;
   line-height: 3rem;
   padding-top: .42893rem;
-  padding-bottom: .57107rem;
+  padding-bottom: calc(0.57107rem + var(--es));
 }
 
 @media screen and (min-width: 37em) {
@@ -2126,7 +2128,7 @@ h6:target .heading-anchor {
 .md--sans .p-first {
   font-size: 2.4375rem;
   line-height: 4rem;
-  padding-top: 1.08715625rem;
+  padding-top: .08715625rem;
   padding-bottom: calc(0.91284375rem + var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
@@ -3149,9 +3151,9 @@ h6:target .heading-anchor {
 .embed {
   font-size: 1.43rem;
   line-height: 2rem;
-  padding-top: .964465rem;
+  padding-top: 1.114465rem;
   padding-bottom: .535535rem;
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.5rem);
+  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.65rem);
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   text-align: left;
@@ -3173,14 +3175,77 @@ h6:target .heading-anchor {
   }
 }
 
-.i-full .embed,
-.embed--full {
+.embed--size-full {
   display: inline-block;
   float: none;
   clear: none;
   width: 100%;
   padding: .5rem 0 0 0;
   margin: 0;
+}
+
+@media screen and (min-width: 37em) {
+  .embed--size-small,
+  .embed--size-tiny {
+    margin-right: 2rem;
+  }
+}
+
+.embed--size-small {
+  width: calc(33% - 1rem);
+}
+
+@media screen and (min-width: 37em) {
+  .embed--size-small {
+    max-width: 25%;
+  }
+}
+
+.embed--size-tiny {
+  width: calc(25% - 1rem);
+}
+
+@media screen and (min-width: 37em) {
+  .embed--size-tiny {
+    max-width: 12.5%;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .embed--posh-right {
+    float: right;
+    clear: right;
+    margin-right: 0;
+    margin-left: 4rem;
+  }
+}
+
+.embed--posh-right.embed--size-small,
+.embed--posh-right.embed--size-tiny {
+  margin-left: 2rem;
+}
+
+@media screen and (min-width: 37em) {
+  .embed--posv-middle {
+    font-size: 1.43rem;
+    line-height: 2rem;
+    padding-top: 4.114465rem;
+    padding-bottom: 1.035535rem;
+    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 5.65rem);
+  }
+
+  .embed--posv-middle.embed--size-small,
+  .embed--posv-middle.embed--size-tiny {
+    font-size: 1.43rem;
+    line-height: 2rem;
+    padding-top: 1.114465rem;
+    margin-bottom: -0.464465rem;
+    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.65rem);
+  }
+}
+
+.clear {
+  clear: both;
 }
 
 .i-center {
@@ -3198,73 +3263,9 @@ h6:target .heading-anchor {
   margin: 0;
 }
 
-@media screen and (min-width: 37em) {
-  .i-small .embed,
-  .i-tiny .embed {
-    margin-right: 2rem;
-  }
-}
-
-.i-small .embed {
-  width: calc(33% - 1rem);
-}
-
-@media screen and (min-width: 37em) {
-  .i-small .embed {
-    max-width: 25%;
-  }
-}
-
-.i-tiny .embed {
-  width: calc(25% - 1rem);
-}
-
-@media screen and (min-width: 37em) {
-  .i-tiny .embed {
-    max-width: 12.5%;
-  }
-}
-
 .i-border > .embed > img {
   box-shadow: none;
   border: 1px solid rgba(17, 17, 17, .25);
-}
-
-@media screen and (min-width: 37em) {
-  .i-right .embed {
-    float: right;
-    clear: right;
-    margin-right: 0;
-    margin-left: 4rem;
-  }
-
-  .i-right.i-small .embed,
-  .i-right.i-tiny .embed {
-    margin-left: 2rem;
-  }
-}
-
-@media screen and (min-width: 37em) {
-  .i-midst .embed {
-    font-size: 1.43rem;
-    line-height: 2rem;
-    padding-top: 4.114465rem;
-    padding-bottom: .885535rem;
-    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 5.65rem);
-  }
-
-  .i-midst.i-small .embed,
-  .i-midst.i-tiny .embed {
-    font-size: 1.43rem;
-    line-height: 2rem;
-    padding-top: 1.114465rem;
-    margin-bottom: -0.464465rem;
-    scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.65rem);
-  }
-}
-
-.clear {
-  clear: both;
 }
 
 .md pre :target {
