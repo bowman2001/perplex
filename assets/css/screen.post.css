@@ -4265,7 +4265,7 @@ h6:target .heading-anchor {
   border-bottom: none;
 }
 
-.sidebar__list li a,
+.sidebar__list li .sidebar__link,
 .sidebar__list li .open-menu,
 .sidebar__list li .chk-menu {
   font-size: 1.737rem;
@@ -4275,6 +4275,7 @@ h6:target .heading-anchor {
 }
 
 .sidebar__list li .icon-font {
+  display: inline-block;
   font-size: 150%;
   width: 5rem;
 }
@@ -4285,8 +4286,7 @@ h6:target .heading-anchor {
   }
 }
 
-.sidebar__list a,
-.sidebar__list span,
+.sidebar__list .sidebar__link,
 .sidebar__list .open-menu,
 .sidebar__list .chk-menu {
   display: inline-block;
@@ -4296,7 +4296,7 @@ h6:target .heading-anchor {
   margin-left: 5rem;
 }
 
-.sidebar__list li li a,
+.sidebar__list li li .sidebar__link,
 .sidebar__list li li .open-menu,
 .sidebar__list li li .chk-menu {
   font-size: 1.544rem;
@@ -4319,7 +4319,7 @@ h6:target .heading-anchor {
     padding-bottom: 0;
   }
 
-  .sidebar__list li a,
+  .sidebar__list li .sidebar__link,
   .sidebar__list li .open-menu,
   .sidebar__list li .chk-menu {
     font-size: 1.43rem;
@@ -4328,11 +4328,11 @@ h6:target .heading-anchor {
     padding-bottom: .535535rem;
   }
 
-  .sidebar__list > li > a > .icon-font {
+  .sidebar__list > li > .sidebar__link > .icon-font {
     font-size: 187.5%;
   }
 
-  .sidebar__list li li a,
+  .sidebar__list li li .sidebar__link,
   .sidebar__list li li .open-menu,
   .sidebar__list li li .chk-menu {
     font-size: 1.43rem;

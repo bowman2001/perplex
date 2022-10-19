@@ -3480,13 +3480,14 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .sidebar__list li:last-child {
   border-bottom: none;
 }
-.sidebar__list li a, .sidebar__list li .open-menu, .sidebar__list li .chk-menu {
+.sidebar__list li .sidebar__link, .sidebar__list li .open-menu, .sidebar__list li .chk-menu {
   font-size: 1.737rem;
   line-height: 2rem;
   padding-top: 1.8494935rem;
   padding-bottom: 1.1505065rem;
 }
 .sidebar__list li .icon-font {
+  display: inline-block;
   font-size: 150%;
   width: 5rem;
 }
@@ -3495,13 +3496,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     border-bottom-color: transparent;
   }
 }
-.sidebar__list a, .sidebar__list span, .sidebar__list .open-menu, .sidebar__list .chk-menu {
+.sidebar__list .sidebar__link, .sidebar__list .open-menu, .sidebar__list .chk-menu {
   display: inline-block;
 }
 .sidebar__list li li {
   margin-left: 5rem;
 }
-.sidebar__list li li a, .sidebar__list li li .open-menu, .sidebar__list li li .chk-menu {
+.sidebar__list li li .sidebar__link, .sidebar__list li li .open-menu, .sidebar__list li li .chk-menu {
   font-size: 1.544rem;
   line-height: 2rem;
   padding-top: 1.421772rem;
@@ -3518,16 +3519,16 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     border-bottom: none;
     padding-bottom: 0;
   }
-  .sidebar__list li a, .sidebar__list li .open-menu, .sidebar__list li .chk-menu {
+  .sidebar__list li .sidebar__link, .sidebar__list li .open-menu, .sidebar__list li .chk-menu {
     font-size: 1.43rem;
     line-height: 2rem;
     padding-top: 1.464465rem;
     padding-bottom: 0.535535rem;
   }
-  .sidebar__list > li > a > .icon-font {
+  .sidebar__list > li > .sidebar__link > .icon-font {
     font-size: 187.5%;
   }
-  .sidebar__list li li a, .sidebar__list li li .open-menu, .sidebar__list li li .chk-menu {
+  .sidebar__list li li .sidebar__link, .sidebar__list li li .open-menu, .sidebar__list li li .chk-menu {
     font-size: 1.43rem;
     line-height: 2rem;
     padding-top: 1.464465rem;
