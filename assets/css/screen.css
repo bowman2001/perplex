@@ -530,9 +530,6 @@ body {
   }
 }
 
-.left, .right {
-  width: calc( 45% - 2rem );
-}
 @media screen and (min-width: 37em) {
   .left, .right {
     position: relative;
@@ -549,22 +546,18 @@ body {
   }
 }
 
-.left {
-  float: left;
-  clear: left;
-}
 @media screen and (min-width: 37em) {
   .left {
+    float: left;
+    clear: left;
     margin-right: 2rem;
   }
 }
 
-.right {
-  float: right;
-  clear: right;
-}
 @media screen and (min-width: 37em) {
   .right {
+    float: right;
+    clear: right;
     margin-left: 2rem;
   }
 }
@@ -2567,13 +2560,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   }
 }
 
-@media screen and (min-width: 37em) {
-  .embed--posh-right {
-    float: right;
-    clear: right;
-    margin-right: 0;
-    margin-left: 4rem;
-  }
+.embed--posh-right {
+  float: right;
+  clear: right;
+  margin-right: 0;
+  margin-left: 4rem;
 }
 .embed--posh-right.embed--size-small, .embed--posh-right.embed--size-tiny {
   margin-left: 2rem;
