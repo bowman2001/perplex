@@ -245,7 +245,6 @@ img {
 .caption__text, .caption__attribution {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
-  hyphens: auto;
 }
 
 .caption__attribution {
