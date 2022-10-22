@@ -6,7 +6,6 @@
 {{ with (.Get "caption") }}{{ $np = merge $np (dict "caption"  . ) }}{{ end }}
 {{ with (.Get "class" ) }}{{ $np = merge $np (dict (slice "class" "plain") ( . | lower)) }}{{ end }}
 {{ with (.Get "link") }}{{ $np = merge $np (dict "link" (. | lower) ) }}{{ end }}
-{{ with (.Get "pos") }}{{ $np = merge $np (dict (slice "class" "posh") ( . | lower))}}{{ end }}
 {{ with (.Get "posh") }}{{ $np = merge $np (dict (slice "class" "posh") ( . | lower))}}{{ end }}
 {{ with (.Get "posv") }}{{ $np = merge $np (dict (slice "class" "posv") ( . | lower))}}{{ end }}
 {{ with (.Get "size") }}{{ $np = merge $np (dict (slice "class" "size") ( . | lower))}}{{ end }}

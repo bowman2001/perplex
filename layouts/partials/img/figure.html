@@ -1,5 +1,5 @@
 {{ $class := partial "img/func/params/aggregate-class.html" . }}
-<figure class="{{ $class | safeHTMLAttr }}">
+<figure class="fig {{ $class | safeHTMLAttr }}">
     {{ partial "img/img.html" . }}
     {{ if (or .a.caption .a.attr )}}
       <figcaption class="caption">

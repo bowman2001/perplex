@@ -1,40 +1,56 @@
 {{ $class := slice }}
-{{ $optPosh := "" }}
-{{ $optPosv := "" }}
-{{ $optSize := "" }}
+{{ $optPosh := "left" }}
+{{ $optPosv := "top" }}
+{{ $optSize := "normal" }}
+{{ $isEmbedded := false }}
 {{ if eq .a.type "embedded" }}
+    {{ $isEmbedded = true }}
+{{ end }}
+{{ if $isEmbedded }}
     {{ $optPosh = site.Params.imaging.embedded.posh }}
     {{ $optPosv = site.Params.imaging.embedded.posv }}
     {{ $optSize = site.Params.imaging.embedded.size }}
-{{ else if eq .a.type "figure" }}
+{{ else }}
     {{ $optPosh = site.Params.imaging.figure.posh }}
     {{ $optPosv = site.Params.imaging.figure.posv }}
     {{ $optSize = site.Params.imaging.figure.size }}
 {{ end }}
 {{ with .a.class }}
     {{ if not (reflect.IsMap .) }}
-        {{ errorf "Unable to aggregate the class for '%s'. The key 'class' needs to contain a map." $.img.RelPermalink }}
+        {{ errorf "Unable to generate a CSS class for '%s'. The key 'class' needs to contain a map." $.img.RelPermalink }}
     {{ else }}
         {{ with .posh }}
             {{ if in $optPosh . }}
-                {{ $class = $class | append (print "embed--posh-" . )}}
+                {{ if $isEmbedded }}
+                    {{ $class = $class | append (print "embed--posh-" . )}}
+                {{ else }}
+                    {{ $class = $class | append (print "fig--posh-" . )}}
+                {{ end }}
             {{ else }}
-                {{ errorf "Unable to aggregate the class for %s. The key 'posh' contains the invalid value '%s'." $.img.RelPermalink . }}
+                {{ errorf "Unable to generate a CSS class for %s. The key 'posh' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optPosh }}
             {{ end }}
         {{ end }}
         {{ with .posv }}
             {{ if in $optPosv . }}
-                {{ $class = $class | append (print "embed--posv-" . )}}
+                {{ if $isEmbedded }}
+                    {{ $class = $class | append (print "embed--posv-" . )}}
+                {{ else }}
+                    {{ $class = $class | append (print "fig--posv-" . )}}
+                {{ end }}
             {{ else }}
-                {{ errorf "Unable to aggregate the class for %s. The key 'posh' contains the invalid value '%s'." $.img.RelPermalink . }}
+                {{ errorf "Unable to generate a CSS class for %s. The key 'posv' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optPosv }}
             {{ end }}
         {{ end }}
         {{ with .size }}
             {{ if in $optSize . }}
-                {{ $class = $class | append (print "embed--size-" . )}}
+                {{ if $isEmbedded }}
+                    {{ $class = $class | append (print "embed--size-" . )}}
                 {{ else }}
-            {{ errorf "Unable to aggregate the class for %s. The key 'size' contains the invalid value '%s'." $.img.RelPermalink . }}
-        {{ end }}
+                    {{ $class = $class | append (print "fig--size-" . )}}
+                {{ end }}
+            {{ else }}
+                {{ errorf "Unable to generate the CSS class for %s. The key 'size' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optSize }}
+            {{ end }}
         {{ end }}
         {{ with .plain }}
             {{ $class = $class | append . }}

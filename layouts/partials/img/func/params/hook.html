@@ -8,7 +8,6 @@
     {{ $hp = merge $hp (dict (slice "class" "size") "full" )}}
 {{ end }}
 {{ with $url.Query }}
-    {{ with or (.Get "pos") (.Get "p") }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
     {{ with or (.Get "posh") (.Get "ph") }}{{ $hp = merge $hp (dict (slice "class" "posh") . )}}{{ end }}
     {{ with or (.Get "posv") (.Get "pv") }}{{ $hp = merge $hp (dict (slice "class" "posv") . )}}{{ end }}
     {{ with or (.Get "size") (.Get "s") }}{{ $hp = merge $hp (dict (slice "class" "size") . )}}{{ end }}
