@@ -244,7 +244,7 @@ img {
 
 .caption__text, .caption__attribution {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .caption__attribution {
@@ -2025,58 +2025,102 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   font-weight: 500;
 }
 
-.md figure {
+.fig {
   position: relative;
   z-index: 5;
   margin-top: 1.75rem;
   margin-bottom: calc(1rem + 1 * var(--es));
-  max-width: 100%;
+  width: 100%;
 }
-.md figure a {
-  display: inline-block;
-}
-.md figure.tiny {
-  width: calc(50% - 1rem);
-  float: left;
-  clear: left;
+.fig .caption {
   padding-left: 2rem;
-  margin-right: 2rem;
-}
-.md figure.tiny > figcaption {
-  padding-left: 0;
-  padding-right: 0;
+  padding-right: 2rem;
 }
 @media screen and (min-width: 37em) {
-  .md figure {
-    width: 37rem;
+  .fig {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-  .md figure > figcaption {
+  .fig .caption {
     padding-left: 0;
     padding-right: 0;
   }
-  .md figure.tiny, .md figure.medium {
-    float: right;
-    clear: right;
-  }
-  .md figure.tiny {
-    width: 18.5rem;
-    margin-right: 0;
+}
+
+.fig--featured {
+  margin-top: 0;
+}
+
+.fig--posh-left {
+  float: left;
+  clear: left;
+}
+
+.fig--posh-right {
+  float: right;
+  clear: right;
+}
+
+@media screen and (min-width: 37em) {
+  .fig--size-small, .fig--size-medium {
+    width: 37rem;
   }
 }
+
 @media screen and (min-width: 48em) {
-  .md figure.tiny {
-    padding-right: 0;
-    margin-right: 18.5rem;
+  .fig--size-medium {
+    width: 55.5rem;
   }
-  .md figure.large figcaption {
+}
+
+@media screen and (min-width: 48em) {
+  .fig--size-normal {
+    width: 74rem;
+  }
+  .fig--size-normal .caption {
     position: absolute;
     left: 100%;
     top: 0;
     width: 33rem;
-    margin-left: 4rem;
+    margin-left: 2rem;
     text-align: left;
   }
-  .md figure.medium figcaption, .md figure.large.right figcaption, .md figure.xlarge figcaption {
+}
+
+@media screen and (min-width: 48em) {
+  .fig--size-large .caption__text, .fig--size-xlarge .caption__text {
+    display: inline-block;
+    width: 70rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .fig--size-large {
+    width: 111rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .fig--size-xlarge {
+    width: 148rem;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--size-small.fig--posh-left, .fig--size-medium.fig--posh-left {
+    margin-right: 2rem;
+  }
+  .fig--size-small.fig--posh-right, .fig--size-medium.fig--posh-right {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .md.tiny {
+    padding-right: 0;
+    margin-right: 18.5rem;
+  }
+  .md.medium figcaption, .md.large.right figcaption, .md.xlarge figcaption {
     position: absolute;
     top: 100%;
     width: 33rem;
@@ -3875,9 +3919,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .featured-image {
   width: 100%;
-}
-.featured-image > figure {
-  padding: 0 2rem 1rem 2rem;
 }
 @media screen and (min-width: 420px) {
   .featured-image {
