@@ -4785,8 +4785,8 @@ h6:target .heading-anchor {
   .fig--featured {
     float: right;
     clear: both;
-    width: 50%;
-    margin: 1.5rem 0 0 2rem;
+    width: calc(50% + 1rem);
+    margin: 1.5rem 0 0 0;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -4804,6 +4804,7 @@ h6:target .heading-anchor {
 @media screen and (min-width: 37em) {
   .fig--featured {
     width: 37rem;
+    margin: 1.5rem 0 0 2rem;
   }
 }
 
