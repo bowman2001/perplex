@@ -345,8 +345,7 @@ img {
   text-decoration-color: #000;
 }
 
-.caption__text,
-.caption__attribution {
+.caption__text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
 }
@@ -354,6 +353,9 @@ img {
 .caption__attribution {
   color: #777;
   float: right;
+  text-align: right;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 200;
   font-style: italic;
 }
 
@@ -4744,6 +4746,11 @@ h6:target .heading-anchor {
     display: inline-block;
     width: 70rem;
   }
+
+  .fig--size-large .caption__attribution,
+  .fig--size-xlarge .caption__attribution {
+    width: 33rem;
+  }
 }
 
 @media screen and (min-width: 79em) {
@@ -4774,7 +4781,7 @@ h6:target .heading-anchor {
   margin-top: 0;
 }
 
-@media screen and (min-width: 22em) {
+@media screen and (min-width: 22.5em) {
   .fig--featured {
     float: right;
     clear: both;
