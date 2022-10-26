@@ -4786,9 +4786,13 @@ h6:target .heading-anchor {
     float: right;
     clear: both;
     width: 50%;
-    margin-top: 1.5rem;
+    margin: 1.5rem 0 0 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .fig--featured img {
+    border-radius: .5rem;
   }
 
   .fig--featured .caption {
