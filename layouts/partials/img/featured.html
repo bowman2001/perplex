@@ -2,6 +2,6 @@
 {{- with $img -}}
     {{ $a := partial "img/func/params/unsplash.html" . }}
     {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
-        {{ $a = merge $a (dict (slice "class" "plain") "fig--featured")}}
+    {{ $a = merge $a (dict (slice "class" "plain") "fig--featured")}}
     {{ partial "img/figure.html" (dict "img" . "a" $a )}}
 {{- end -}}

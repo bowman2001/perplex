@@ -2113,10 +2113,10 @@ h6:target .heading-anchor {
 }
 
 .md--sans .p-first {
-  font-size: 2.4375rem;
-  line-height: 4rem;
-  padding-top: .08715625rem;
-  padding-bottom: calc(0.91284375rem + var(--es));
+  font-size: 1.95rem;
+  line-height: 3rem;
+  padding-top: .769725rem;
+  padding-bottom: calc(0.230275rem + var(--es));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
   letter-spacing: -0.0075em;
@@ -2126,6 +2126,15 @@ h6:target .heading-anchor {
 .md--sans .p-first strong {
   font-weight: 450;
   font-size: 99%;
+}
+
+@media screen and (min-width: 48em) {
+  .md--sans .p-first {
+    font-size: 2.4375rem;
+    line-height: 4rem;
+    padding-top: .08715625rem;
+    padding-bottom: calc(0.91284375rem + var(--es));
+  }
 }
 
 .md--home {
@@ -2553,128 +2562,6 @@ h6:target .heading-anchor {
 
 .md--sans dt {
   font-weight: 500;
-}
-
-.fig {
-  position: relative;
-  z-index: 5;
-  margin-top: 1.75rem;
-  margin-bottom: calc(1rem + 1 * var(--es));
-  width: 100%;
-}
-
-.fig .caption {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-@media screen and (min-width: 37em) {
-  .fig {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .fig .caption {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.fig--featured {
-  margin-top: 0;
-}
-
-.fig--posh-left {
-  float: left;
-  clear: left;
-}
-
-.fig--posh-right {
-  float: right;
-  clear: right;
-}
-
-@media screen and (min-width: 37em) {
-  .fig--size-small,
-  .fig--size-medium {
-    width: 37rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .fig--size-medium {
-    width: 55.5rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .fig--size-normal {
-    width: 74rem;
-  }
-
-  .fig--size-normal .caption {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    width: 33rem;
-    margin-left: 2rem;
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .fig--size-large .caption__text,
-  .fig--size-xlarge .caption__text {
-    display: inline-block;
-    width: 70rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .fig--size-large {
-    width: 111rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .fig--size-xlarge {
-    width: 148rem;
-  }
-}
-
-@media screen and (min-width: 37em) {
-  .fig--size-small.fig--posh-left,
-  .fig--size-medium.fig--posh-left {
-    margin-right: 2rem;
-  }
-
-  .fig--size-small.fig--posh-right,
-  .fig--size-medium.fig--posh-right {
-    margin-left: 2rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .md.tiny {
-    padding-right: 0;
-    margin-right: 18.5rem;
-  }
-
-  .md.medium figcaption,
-  .md.large.right figcaption,
-  .md.xlarge figcaption {
-    position: absolute;
-    top: 100%;
-    width: 33rem;
-    right: 2rem;
-    text-align: left;
-  }
-}
-
-.md--footer figure {
-  width: 100%;
-  margin: 0;
-  padding: 0 2rem;
 }
 
 .md sup[id^=fnref] .footnote-ref {
@@ -4775,35 +4662,173 @@ h6:target .heading-anchor {
   position: relative;
 }
 
-.featured-image {
+.fig {
+  position: relative;
+  z-index: 5;
+  margin-top: 1.75rem;
+  margin-bottom: calc(1rem + 1 * var(--es));
   width: 100%;
 }
 
-@media screen and (min-width: 420px) {
-  .featured-image {
-    float: right;
-    clear: both;
-    width: calc(50% - 2rem);
-    margin: 1.25rem 0 0 2rem;
+.fig .caption {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media screen and (max-width: 37em) {
+  .fig img,
+  .fig object {
+    border-radius: 0;
   }
 }
 
 @media screen and (min-width: 37em) {
-  .featured-image {
+  .fig {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .fig .caption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--posh-left {
+    float: left;
+    clear: left;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--posh-right {
+    float: right;
+    clear: right;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--size-small,
+  .fig--size-medium {
     width: 37rem;
   }
 }
 
 @media screen and (min-width: 48em) {
-  .featured-image {
+  .fig--size-medium {
+    width: 55.5rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .fig--size-normal {
+    width: 74rem;
+  }
+
+  .fig--size-normal .caption {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 33rem;
+    margin-left: 2rem;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .fig--size-large .caption__text,
+  .fig--size-xlarge .caption__text {
+    display: inline-block;
+    width: 70rem;
+  }
+}
+
+@media screen and (min-width: 79em) {
+  .fig--size-large {
+    width: 111rem;
+  }
+}
+
+@media screen and (min-width: 95em) {
+  .fig--size-xlarge {
+    width: 148rem;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--size-small.fig--posh-left,
+  .fig--size-medium.fig--posh-left {
+    margin-right: 2rem;
+  }
+
+  .fig--size-small.fig--posh-right,
+  .fig--size-medium.fig--posh-right {
+    margin-left: 2rem;
+  }
+}
+
+.fig--featured {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 22em) {
+  .fig--featured {
+    float: right;
+    clear: both;
+    width: 50%;
+    margin-top: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .fig--featured .caption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--featured {
+    width: 37rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .fig--featured {
     position: absolute;
     z-index: 2;
     top: 1rem;
     right: 0;
-    margin: 0;
     float: none;
     clear: none;
+    margin: 0;
   }
+}
+
+@media screen and (min-width: 48em) {
+  .md.tiny {
+    padding-right: 0;
+    margin-right: 18.5rem;
+  }
+
+  .md.medium figcaption,
+  .md.large.right figcaption,
+  .md.xlarge figcaption {
+    position: absolute;
+    top: 100%;
+    width: 33rem;
+    right: 2rem;
+    text-align: left;
+  }
+}
+
+.md--footer figure {
+  width: 100%;
+  margin: 0;
+  padding: 0 2rem;
 }
 
 .cf:before,
