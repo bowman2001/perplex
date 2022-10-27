@@ -4864,7 +4864,7 @@ h6:target .heading-anchor {
     float: right;
     clear: both;
     width: calc(50% + 1rem);
-    margin: 1.5rem 0 0 0;
+    margin-top: 1.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -4882,7 +4882,7 @@ h6:target .heading-anchor {
 @media screen and (min-width: 37em) {
   .fig--featured {
     width: 37rem;
-    margin: 1.5rem 0 0 2rem;
+    margin-left: 2rem;
   }
 }
 
@@ -4895,23 +4895,6 @@ h6:target .heading-anchor {
     float: none;
     clear: none;
     margin: 0;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .md.tiny {
-    padding-right: 0;
-    margin-right: 18.5rem;
-  }
-
-  .md.medium figcaption,
-  .md.large.right figcaption,
-  .md.xlarge figcaption {
-    position: absolute;
-    top: 100%;
-    width: 33rem;
-    right: 2rem;
-    text-align: left;
   }
 }
 
