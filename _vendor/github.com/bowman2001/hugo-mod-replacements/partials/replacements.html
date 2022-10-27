@@ -10,8 +10,9 @@
 | replaceRE `\{s\s([^\}]*)\}` "<small>$1</small>"
 | replaceRE `\{r\s([^\}]*)\}` "<span style='float: right;'>$1</span>"
 | replaceRE `\{([a-z]{2})\s([^\}]*)\}` "<span lang='$1'>$2</span>"
-| replaceRE `\{\/\}` " <br>"
 | replaceRE `\s?(—|&mdash;)\s?` " — "
 | replaceRE `(<p[^>]*>|<li[^>]*>)([“«»„])` "$1<span class='hang-quote'>$2</span>"
 | safeHTML
 }}
+
+{{/* The TOC can’t be manipulated by replacements. Therefore no | replaceRE `\{\/\}` " <br>" */}}

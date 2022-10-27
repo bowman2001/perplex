@@ -4,3 +4,5 @@ github.com/bowman2001/hugo-mod-meta v0.0.0-20221011095211-5235a7d291a6 h1:w9cnla
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011095211-5235a7d291a6/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c h1:tlyM0cugkBaxBh/G1XewZEVi5XsvAzoJzJt1bOvwhS4=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
+github.com/bowman2001/hugo-mod-replacements v0.0.0-20221027104057-f2c0dfe40057 h1:EPBP1d96vB0Xuy6wlonMWkPNDXeeD3nXyOyHe4MuaHo=
+github.com/bowman2001/hugo-mod-replacements v0.0.0-20221027104057-f2c0dfe40057/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
