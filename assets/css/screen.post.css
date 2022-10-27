@@ -354,8 +354,12 @@ img {
   color: #777;
   float: right;
   text-align: right;
+  font-size: 1.287rem;
+  line-height: 1.5rem;
+  padding-top: .2680185rem;
+  margin-bottom: -.2680185rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-style: italic;
 }
 
@@ -4719,6 +4723,29 @@ h6:target .heading-anchor {
   }
 }
 
+@media screen and (min-width: 22.5em) {
+  .fig--size-tiny {
+    width: calc(50% + 1rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .fig--size-tiny img {
+    border-radius: .5rem;
+  }
+
+  .fig--size-tiny .caption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .fig--size-tiny {
+    width: 18.5rem;
+  }
+}
+
 @media screen and (min-width: 48em) {
   .fig--size-medium {
     width: 55.5rem;
@@ -4748,6 +4775,12 @@ h6:target .heading-anchor {
     left: 0;
     float: none;
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 79em) {
+  .md--margin-left .fig--size-tiny {
+    margin-left: 18.5rem;
   }
 }
 
@@ -4795,6 +4828,18 @@ h6:target .heading-anchor {
 @media screen and (min-width: 95em) {
   .fig--size-xlarge {
     width: 148rem;
+  }
+}
+
+@media screen and (min-width: 22.5em) {
+  .fig--size-tiny.fig--posh-left {
+    float: left;
+    clear: left;
+  }
+
+  .fig--size-tiny.fig--posh-right {
+    float: right;
+    clear: right;
   }
 }
 
