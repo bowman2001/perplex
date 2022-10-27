@@ -252,7 +252,7 @@ img {
   float: right;
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
 }
 
@@ -977,7 +977,7 @@ a.meta__item--text:hover {
   padding-bottom: 0;
   border-radius: 0.5rem;
   color: #fff;
-  background: linear-gradient(20deg, hsl(199deg, 100%, 38%) 0, hsl(199deg, 100%, 38%) 66%, transparent 90%);
+  background: linear-gradient(20deg, hsl(199deg, 100%, 38%) 0%, hsl(199deg, 100%, 38%) 66%, rgba(0, 132, 194, 0.025) 100%);
   box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 .title--list > h1 {
@@ -3805,13 +3805,15 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   padding-top: 4rem;
 }
 .li-box > hr {
-  background-image: linear-gradient(3deg, rgba(0, 132, 194, 0.025) 0%, rgba(0, 132, 194, 0.75) 25%, rgba(0, 132, 194, 0.75) 75%, rgba(0, 132, 194, 0.025) 100%);
+  background-image: linear-gradient(5deg, rgba(0, 132, 194, 0.025) 0%, rgba(0, 132, 194, 0.75) 25%, rgba(0, 132, 194, 0.75) 75%, rgba(0, 132, 194, 0.025) 100%);
   height: 0.5rem;
+  border-radius: 0.25rem;
   box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.1);
   margin: 2.5rem 2rem 0 2rem;
 }
 .li-box:last-child > hr {
   height: 1rem;
+  border-radius: 0.375rem;
 }
 
 .li-header {
@@ -3880,10 +3882,37 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     left: 100%;
     top: 0;
     width: 33rem;
+    height: 100%;
     margin-left: 2rem;
     text-align: left;
     padding-left: 0;
     padding-right: 0;
+  }
+  .fig--size-normal .caption__attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    float: none;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 79em) {
+  .md--margin-left .fig--size-normal {
+    margin-left: 37rem;
+  }
+}
+@media screen and (min-width: 79em) {
+  .md--margin-left .fig--size-large {
+    margin-left: 18.5rem;
+  }
+  .md--margin-left .fig--size-large .caption {
+    margin-left: 18.5rem;
+  }
+}
+@media screen and (min-width: 79em) {
+  .md--margin-left .fig--size-xlarge .caption {
+    margin-left: 37rem;
   }
 }
 
