@@ -334,15 +334,19 @@ img {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(85, 85, 85, .25);
+  -webkit-text-decoration-color: rgba(85, 85, 85, .25);
+          text-decoration-color: rgba(85, 85, 85, .25);
+  transition-property: color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color;
+  transition-property: color, text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
 .caption a:hover {
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .caption__text {
@@ -359,7 +363,7 @@ img {
   padding-top: .2680185rem;
   margin-bottom: -.2680185rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
 }
 
@@ -1112,13 +1116,15 @@ a.meta__item--text {
   text-decoration: underline;
   text-decoration-thickness: .1rem;
   text-underline-offset: .075em;
-  text-decoration-color: rgba(0, 106, 156, .5);
+  -webkit-text-decoration-color: rgba(0, 106, 156, .5);
+          text-decoration-color: rgba(0, 106, 156, .5);
   letter-spacing: .01em;
   word-spacing: .03em;
 }
 
 a.meta__item--text:hover {
-  text-decoration-color: #c9187f;
+  -webkit-text-decoration-color: #c9187f;
+          text-decoration-color: #c9187f;
 }
 
 .meta__date {
@@ -1306,7 +1312,9 @@ a.meta__item--text:hover {
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
   text-underline-offset: .075em;
   text-decoration-thickness: 1px;
+  transition-property: color, background-color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color, background-color;
+  transition-property: color, text-decoration-color, background-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1316,7 +1324,9 @@ a.meta__item--text:hover {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
+  transition-property: -webkit-text-decoration-color;
   transition-property: text-decoration-color;
+  transition-property: text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1326,7 +1336,8 @@ a.meta__item--text:hover {
 .md-hook-link:focus,
 .heading-anchor:focus {
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, .1);
 }
 
@@ -1334,7 +1345,8 @@ a.meta__item--text:hover {
 .heading-anchor:hover code,
 .md-hook-link:focus code,
 .heading-anchor:focus code {
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .md-hook-link:hover var,
@@ -1345,7 +1357,8 @@ a.meta__item--text:hover {
 }
 
 .heading-anchor {
-  text-decoration-color: rgba(0, 0, 0, 0);
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
 }
 
 .heading-anchor:hover,
@@ -1359,16 +1372,19 @@ h4:target .heading-anchor,
 h5:target .heading-anchor,
 h6:target .heading-anchor {
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
   background-color: rgba(0, 132, 194, .1);
 }
 
 .md-hook-link {
-  text-decoration-color: #0084c2;
+  -webkit-text-decoration-color: #0084c2;
+          text-decoration-color: #0084c2;
 }
 
 .md-hook-link code {
-  text-decoration-color: #888;
+  -webkit-text-decoration-color: #888;
+          text-decoration-color: #888;
 }
 
 .md-hook-link:hover,
@@ -1377,13 +1393,15 @@ h6:target .heading-anchor {
 }
 
 .md-hook-link[href^=http] {
-  text-decoration-color: #00a889;
+  -webkit-text-decoration-color: #00a889;
+          text-decoration-color: #00a889;
 }
 
 .md-hook-link[href^=http]:hover,
 .md-hook-link[href^=http]:focus {
   background-color: rgba(0, 168, 137, .1);
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .icon-link .icon-font {
@@ -3197,18 +3215,21 @@ h6:target .heading-anchor {
 
 .md del,
 .md ins {
-  text-decoration-color: #a00;
+  -webkit-text-decoration-color: #a00;
+          text-decoration-color: #a00;
   text-decoration-thickness: .1rem;
   -webkit-text-decoration-skip: auto;
           text-decoration-skip: auto;
 }
 
 .md del {
-  text-decoration-line: line-through;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
 }
 
 .md ins {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .md sup,
@@ -4449,7 +4470,9 @@ h6:target .heading-anchor {
   display: block;
   padding: .5rem 0 .5rem 1.7rem;
   border-left: .3rem solid #ccc;
+  transition: color 200ms ease-in-out, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
   transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out;
+  transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
 }
 
 #TableOfContents a .icon-font,
