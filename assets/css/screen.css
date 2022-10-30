@@ -251,12 +251,9 @@ img {
   color: #777;
   float: right;
   text-align: right;
-  font-size: 1.287rem;
-  line-height: 1.5rem;
-  padding-top: 0.2680185rem;
-  margin-bottom: -0.2680185rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
+  font-size: 90%;
   font-style: italic;
 }
 
@@ -3937,6 +3934,9 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   }
   .md--margin-left .fig--size-large .caption {
     margin-left: 18.5rem;
+  }
+  .md--margin-left .fig--size-large .caption__attribution {
+    width: 14.5rem;
   }
 }
 @media screen and (min-width: 79em) {
