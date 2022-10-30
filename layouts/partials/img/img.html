@@ -20,7 +20,7 @@
     {{- else -}}
         {{- $imgClass := "" -}}
         {{- if eq $subType "png" -}}
-            {{- $imgClass = "img__transparent" -}}
+            {{- $imgClass = "img--transparent" -}}
         {{- end -}}
         {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
         {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}

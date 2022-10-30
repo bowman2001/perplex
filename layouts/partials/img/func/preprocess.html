@@ -17,7 +17,7 @@
             {{ $params = merge $params (dict "process" true )}}
             {{ $params = merge $params (dict "compress" false)}}
         {{ else }}
-            {{ errorf "Unable to handle '%s'. Image type '%s' is not supported." $.img.Key . }}
+            {{ errorf "Unable to handle '%s'. Image type '%s' is not supported." $.img.RelPermalink . }}
         {{ end }}
     {{ end }}
 {{ end }}
@@ -35,7 +35,7 @@
             {{ $params = merge $params (dict "flipsides" false )}}
         {{ end }}
     {{ else }}
-        {{ errorf "Unable to rotate the image '%s' with '%v'." $.img.Key . }}
+        {{ errorf "Unable to rotate the image '%s' with '%v'." $.img.RelPermalink . }}
     {{ end }}
 {{ end }}
 
@@ -54,7 +54,7 @@
     {{ if in site.Params.imaging.webp_hints . }}
         {{ $params = merge $params (dict "hint" . ) }}
     {{ else }}
-        {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types %v." . $.img.Key }}
+        {{ warnf "Unable to use hint '%s' for resizing '%s'. Not in the available types %v." . $.img.RelPermalink }}
     {{ end }}
 {{ end }}
 {{ $pimg := "" }}
@@ -73,4 +73,5 @@
 {{ else }}
     {{ $pimg = $.img }}
 {{ end }}
-{{ return (dict "img" $pimg "params" $params )}}
+{{ $origname := $pimg | resources.Copy (print $.img.RelPermalink) }}
+{{ return (dict "img" $origname "params" $params )}}
