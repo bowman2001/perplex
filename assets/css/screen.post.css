@@ -385,7 +385,6 @@ html {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 450;
   font-size: var(--fs);
-  font-synthesis: weight style;
 }
 
 body {
