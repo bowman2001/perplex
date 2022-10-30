@@ -1010,7 +1010,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #006a9c;
+  color: #00628f;
   max-width: 70rem;
   margin: 0 2rem;
 }
@@ -1110,7 +1110,7 @@ a.meta__item--text {
   text-decoration: underline;
   text-decoration-thickness: .1rem;
   text-underline-offset: .075em;
-  text-decoration-color: rgba(0, 106, 156, .5);
+  text-decoration-color: rgba(0, 98, 143, .5);
   letter-spacing: .01em;
   word-spacing: .03em;
 }
@@ -2776,7 +2776,7 @@ h6:target .heading-anchor {
   padding-bottom: .285535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #006a9c;
+  color: #00628f;
 }
 
 .md h1 br,
@@ -3980,7 +3980,7 @@ h6:target .heading-anchor {
   padding-bottom: .535535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #006a9c;
+  color: #00628f;
 }
 
 .page-nav__meta--dir {
