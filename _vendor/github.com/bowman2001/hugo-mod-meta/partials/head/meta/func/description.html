@@ -1,15 +1,17 @@
 {{ $desc := ""}}
 {{ if .IsPage }}
-    {{ with .Summary }}
-        {{ $desc = ( partial "replacements.html" . ) | plainify | htmlUnescape }}
+    {{ if findRE `<!--more-->` .RawContent }}
+        {{ $desc = ( partial "replacements.html" .Summary ) | plainify | htmlUnescape }}
     {{ else }}
-        {{ warnf "Unable to get a summary for %s." . }}
+        {{ with .Description }}
+            {{ $desc = . | site.Home.RenderString | plainify | htmlUnescape }}
+        {{ end }}
     {{ end }}
 {{ else }}
     {{ with site.Params.Description }}
         {{ $desc = . }}
     {{ else }}
-        {{ warnf "Unable to get the general site description from params.description." }}
+        {{ warnf "Unable to get the general site description (params.description)." }}
     {{ end }}
 {{ end }}
 {{ return $desc }}
