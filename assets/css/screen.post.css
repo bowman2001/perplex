@@ -664,54 +664,6 @@ body {
   }
 }
 
-@media screen and (min-width: 37em) {
-  .left,
-  .right {
-    position: relative;
-    z-index: 2;
-    width: 37rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .left.medium,
-  .right.medium {
-    width: 55.5rem;
-  }
-
-  .left.large,
-  .right.large {
-    width: 70rem;
-  }
-}
-
-@media screen and (min-width: 37em) {
-  .left {
-    float: left;
-    clear: left;
-    margin-right: 2rem;
-  }
-}
-
-@media screen and (min-width: 37em) {
-  .right {
-    float: right;
-    clear: right;
-    margin-left: 2rem;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  .right3 {
-    position: relative;
-    z-index: 2;
-    width: 37rem;
-    padding: 0 2rem;
-    float: right;
-    clear: right;
-  }
-}
-
 .l-page {
   position: relative;
   z-index: 1;
@@ -2417,10 +2369,6 @@ h6:target .heading-anchor {
   display: none;
 }
 
-.md .full-width {
-  max-width: 100%;
-}
-
 .md .lh15 pre {
   font-size: 1.43rem;
   line-height: 1.5rem;
@@ -3607,6 +3555,56 @@ h6:target .heading-anchor {
 .md--tiny ul li,
 .md--tiny ol li {
   padding-left: 2rem;
+}
+
+@media screen and (min-width: 37em) {
+  .md .left,
+  .md .right {
+    position: relative;
+    z-index: 2;
+    width: 37rem;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .md .left {
+    float: left;
+    clear: left;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .md .right {
+    float: right;
+    clear: right;
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .md .right3 {
+    position: relative;
+    z-index: 2;
+    width: 37rem;
+    padding: 0 2rem;
+    float: right;
+    clear: right;
+  }
+}
+
+.md .large {
+  max-width: 111rem;
+}
+
+.md .full {
+  max-width: 148rem;
+}
+
+@media screen and (min-width: 79em) {
+  .md--margin-left .large {
+    margin-left: 18.5rem;
+  }
 }
 
 .nav__list li {
