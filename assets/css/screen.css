@@ -1852,6 +1852,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
   margin-bottom: 1rem;
+  clear: both;
   /* td:last-child code:before {
       display: block;
       content: "Code";
@@ -3801,7 +3802,12 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   height: 0.5rem;
   border-radius: 0.25rem;
   box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.1);
-  margin-top: 2.5rem;
+  margin: 2.5rem 1rem 0 1rem;
+}
+@media screen and (min-width: 37em) {
+  .li-box > hr {
+    margin: 2.5rem 0 0 0;
+  }
 }
 .li-box:last-child > hr {
   height: 1rem;
@@ -3880,7 +3886,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 
 @media screen and (min-width: 48em) {
-  .fig--size-medium {
+  .fig--size-medium.fig--posh-right {
     width: 55.5rem;
   }
 }
@@ -3913,13 +3919,12 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   .md--margin-left .fig--size-tiny {
     margin-left: 18.5rem;
   }
-}
-@media screen and (min-width: 79em) {
   .md--margin-left .fig--size-normal {
     margin-left: 37rem;
   }
-}
-@media screen and (min-width: 79em) {
+  .md--margin-left .fig--size-medium.fig--posh-left {
+    width: 55.5rem;
+  }
   .md--margin-left .fig--size-large {
     margin-left: 18.5rem;
   }
@@ -3929,8 +3934,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   .md--margin-left .fig--size-large .caption__attribution {
     width: 14.5rem;
   }
-}
-@media screen and (min-width: 79em) {
   .md--margin-left .fig--size-xlarge .caption {
     margin-left: 37rem;
   }
