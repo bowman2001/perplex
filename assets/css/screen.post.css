@@ -182,6 +182,8 @@ code,
 kbd,
 var {
   font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  -webkit-hyphens: none;
+          hyphens: none;
 }
 
 var {
@@ -348,6 +350,7 @@ img {
 .caption__text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
+  font-style: italic;
 }
 
 .caption__attribution {
@@ -357,7 +360,6 @@ img {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   font-size: 90%;
-  font-style: italic;
 }
 
 .lazyload,
@@ -2322,16 +2324,11 @@ h6:target .heading-anchor {
   padding-bottom: 0;
 }
 
-.md code {
-  -webkit-hyphens: none;
-          hyphens: none;
-}
-
 .md p code,
 .md li code,
 .md dt code,
 .md dd code,
-.md figcaption code {
+.md .caption code {
   position: relative;
   top: -0.05em;
   font-size: 74%;
@@ -2379,47 +2376,41 @@ h6:target .heading-anchor {
   margin-bottom: 1.9rem;
 }
 
-.md > pre > code,
 .md > .highlight > pre > code {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 .md .highlight {
-  overflow: auto;
+  overflow: hidden;
   max-height: 200rem;
   padding-top: .9rem;
   padding-bottom: .9rem;
   margin-bottom: 1rem;
 }
 
-.md .highlight > div,
-.md .highlight > pre {
+.md .highlight > pre,
+.md .highlight > div {
+  overflow: auto;
+  scrollbar-gutter: stable;
+  scrollbar-color: #ebb924 #ebebeb;
   border-radius: .5rem;
 }
 
-.md .highlight table {
-  scrollbar-gutter: stable;
-  scrollbar-color: #ebb924 #ebebeb;
+.md .highlight > pre::-webkit-scrollbar,
+.md .highlight > div::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
 }
 
-.md .highlight table::-webkit-scrollbar {
-  width: 1rem;
-  height: 1rem;
-}
-
-.md .highlight table::-webkit-scrollbar-thumb {
+.md .highlight > pre::-webkit-scrollbar-thumb,
+.md .highlight > div::-webkit-scrollbar-thumb {
   background: #ebb924;
 }
 
-.md .highlight table::-webkit-scrollbar-track {
+.md .highlight > pre::-webkit-scrollbar-track,
+.md .highlight > div::-webkit-scrollbar-track {
   background: #ebebeb;
-}
-
-.md .highlight table pre {
-  padding-right: 0;
-  padding-left: 0;
-  border: none;
 }
 
 .md .highlight table:after {
@@ -4656,7 +4647,7 @@ h6:target .heading-anchor {
   height: .5rem;
   border-radius: .25rem;
   box-shadow: inset 0 0 .25rem rgba(0, 0, 0, .1);
-  margin: 2.5rem 2rem 0 2rem;
+  margin-top: 2.5rem;
 }
 
 .li-box:last-child > hr {

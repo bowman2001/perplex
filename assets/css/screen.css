@@ -98,6 +98,7 @@ strong, b {
 
 code, kbd, var {
   font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  hyphens: none;
 }
 
 var {
@@ -245,6 +246,7 @@ img {
 .caption__text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
+  font-style: italic;
 }
 
 .caption__attribution {
@@ -254,7 +256,6 @@ img {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   font-size: 90%;
-  font-style: italic;
 }
 
 .lazyload,
@@ -1842,10 +1843,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   padding-bottom: 0;
 }
 
-.md code {
-  hyphens: none;
-}
-.md p code, .md li code, .md dt code, .md dd code, .md figcaption code {
+.md p code, .md li code, .md dt code, .md dd code, .md .caption code {
   position: relative;
   top: -0.05em;
   font-size: 74%;
@@ -1887,12 +1885,12 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   margin-top: 1.9rem;
   margin-bottom: 1.9rem;
 }
-.md > pre > code, .md > .highlight > pre > code {
+.md > .highlight > pre > code {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 .md .highlight {
-  overflow: auto;
+  overflow: hidden;
   max-height: 200rem;
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
@@ -1906,27 +1904,21 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
       width: 100%;
   } */
 }
-.md .highlight > div, .md .highlight > pre {
-  border-radius: 0.5rem;
-}
-.md .highlight table {
+.md .highlight > pre, .md .highlight > div {
+  overflow: auto;
   scrollbar-gutter: stable;
   scrollbar-color: hsl(45deg, 83%, 53%) #ebebeb;
+  border-radius: 0.5rem;
 }
-.md .highlight table::-webkit-scrollbar {
-  width: 1rem;
-  height: 1rem;
+.md .highlight > pre::-webkit-scrollbar, .md .highlight > div::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
 }
-.md .highlight table::-webkit-scrollbar-thumb {
+.md .highlight > pre::-webkit-scrollbar-thumb, .md .highlight > div::-webkit-scrollbar-thumb {
   background: hsl(45deg, 83%, 53%);
 }
-.md .highlight table::-webkit-scrollbar-track {
+.md .highlight > pre::-webkit-scrollbar-track, .md .highlight > div::-webkit-scrollbar-track {
   background: #ebebeb;
-}
-.md .highlight table pre {
-  padding-right: 0;
-  padding-left: 0;
-  border: none;
 }
 .md .highlight table:after {
   display: none;
@@ -3811,7 +3803,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   height: 0.5rem;
   border-radius: 0.25rem;
   box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.1);
-  margin: 2.5rem 2rem 0 2rem;
+  margin-top: 2.5rem;
 }
 .li-box:last-child > hr {
   height: 1rem;
