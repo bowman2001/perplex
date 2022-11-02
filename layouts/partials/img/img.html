@@ -14,10 +14,7 @@
     {{- end -}}
     {{- $subType := .img.MediaType.SubType -}}
     {{- if eq $subType "svg" -}}
-      <img src="{{ .img.RelPermalink }}"
-           class="img--transparent"
-           {{- with .a.alt }}alt="{{ . }}"{{ end -}}
-              {{- with .a.title }}title="{{ . }}"{{ end }}>
+      {{ .img.Content | safeHTML }}
     {{- else -}}
         {{- $imgClass := "" -}}
         {{- if eq $subType "png" -}}

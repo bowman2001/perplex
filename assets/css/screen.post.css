@@ -303,10 +303,14 @@ li:empty:before {
   font-weight: 300;
 }
 
-img {
-  display: inline-block;
+img,
+figure svg {
   width: 100%;
   height: auto;
+}
+
+img {
+  display: inline-block;
   border-radius: .5rem;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
 }
