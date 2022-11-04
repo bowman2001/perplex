@@ -14,6 +14,7 @@ params:
   latex       : false
   latex_dollar: true
   mermaid     : false
+  svg_inline  : true
   
   paginateNr  : 5
   

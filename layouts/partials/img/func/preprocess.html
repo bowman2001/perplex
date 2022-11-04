@@ -73,5 +73,5 @@
 {{ else }}
     {{ $pimg = $.img }}
 {{ end }}
-{{ $origname := $pimg | resources.Copy (print $.img.RelPermalink) }}
+{{ $origname := $pimg | resources.Copy (print "pp/" $.img.Key) }}
 {{ return (dict "img" $origname "params" $params )}}

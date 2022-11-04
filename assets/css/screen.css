@@ -2422,6 +2422,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     margin-right: 4rem;
   }
 }
+.embed svg {
+  width: 100%;
+  height: auto;
+}
 
 .embed--size-full {
   display: inline-block;

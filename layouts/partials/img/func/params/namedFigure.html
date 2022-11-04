@@ -10,6 +10,7 @@
 {{ with (.Get "posv") }}{{ $np = merge $np (dict (slice "class" "posv") ( . | lower))}}{{ end }}
 {{ with (.Get "size") }}{{ $np = merge $np (dict (slice "class" "size") ( . | lower))}}{{ end }}
 {{ with (.Get "src") }}{{ $np = merge $np (dict "name" . ) }}{{ end }}
+{{ with (.Get "svg") }}{{ $np = merge $np (dict "svg"  . )}}{{ end }}
 {{ with (.Get "ratio" ) }}{{ $np = merge $np (dict "ratio" . ) }}{{ end }}
 {{ with (.Get "rel") }}{{ $np = merge $np (dict "rel" . ) }}{{ end }}
 {{ with (.Get "target") }}{{ $np = merge $np (dict "target" . ) }}{{ end }}

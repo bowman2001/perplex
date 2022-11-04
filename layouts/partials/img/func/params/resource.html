@@ -20,6 +20,13 @@
     {{ with .rel }}{{ $rp = merge $rp (dict "rel" ( . | lower ) ) }}{{ end }}
     {{ with .rotate }}{{ $rp = merge $rp (dict "rotate"  .  ) }}{{ end }}
     {{ with .size }}{{ $rp = merge $rp (dict (slice "class" "size") ( . | lower )) }}{{ end }}
+    {{ with .svg }}{{ $rp = merge $rp (dict "svg"  .  ) }}
+        {{ warnf "svg: %s" . }}
+    {{ else }}
+        {{ with site.Params.svg }}
+            {{ $rp = merge $rp (dict "svg" . ) }}
+        {{ end }}
+    {{ end }}
     {{ with .target }}{{ $rp = merge $rp (dict "target" ( . | lower ) ) }}{{ end }}
 {{ end }}
 {{ return $rp }}

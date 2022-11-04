@@ -3040,6 +3040,11 @@ h6:target .heading-anchor {
   }
 }
 
+.embed svg {
+  width: 100%;
+  height: auto;
+}
+
 .embed--size-full {
   display: inline-block;
   float: none;
