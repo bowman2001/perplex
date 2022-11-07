@@ -304,20 +304,18 @@ li:empty:before {
 }
 
 img,
-figure svg {
+svg {
   width: 100%;
   height: auto;
+  border-radius: .5rem;
 }
 
 img {
   display: inline-block;
-  border-radius: .5rem;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
 }
 
 .img--transparent {
-  border: none;
-  border-radius: 0;
   box-shadow: none;
 }
 
@@ -2449,7 +2447,6 @@ h6:target .heading-anchor {
 .md dt {
   font-weight: 600;
   text-align: left;
-  padding-bottom: 1rem;
 }
 
 .md dd {
@@ -4811,6 +4808,12 @@ h6:target .heading-anchor {
   }
 }
 
+@media screen and (min-width: 79em)and (min-width: 95em) {
+  .md--margin-left .fig--size-xlarge {
+    width: 148rem;
+  }
+}
+
 @media screen and (min-width: 48em) {
   .fig--size-large .caption__text,
   .fig--size-xlarge .caption__text {
@@ -4827,12 +4830,6 @@ h6:target .heading-anchor {
 @media screen and (min-width: 79em) {
   .fig--size-large {
     width: 111rem;
-  }
-}
-
-@media screen and (min-width: 95em) {
-  .fig--size-xlarge {
-    width: 148rem;
   }
 }
 

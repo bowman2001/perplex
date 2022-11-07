@@ -201,20 +201,18 @@ li:empty:before {
   font-weight: 300;
 }
 
-img, figure svg {
+img, svg {
   width: 100%;
   height: auto;
+  border-radius: 0.5rem;
 }
 
 img {
   display: inline-block;
-  border-radius: 0.5rem;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .img--transparent {
-  border: none;
-  border-radius: 0;
   box-shadow: none;
 }
 
@@ -1937,7 +1935,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .md dt {
   font-weight: 600;
   text-align: left;
-  padding-bottom: 1rem;
 }
 .md dd {
   padding: 0 0 1rem calc(3rem + 1 * var(--es));
@@ -3945,6 +3942,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     margin-left: 37rem;
   }
 }
+@media screen and (min-width: 79em) and (min-width: 95em) {
+  .md--margin-left .fig--size-xlarge {
+    width: 148rem;
+  }
+}
 
 @media screen and (min-width: 48em) {
   .fig--size-large .caption__text, .fig--size-xlarge .caption__text {
@@ -3959,12 +3961,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 @media screen and (min-width: 79em) {
   .fig--size-large {
     width: 111rem;
-  }
-}
-
-@media screen and (min-width: 95em) {
-  .fig--size-xlarge {
-    width: 148rem;
   }
 }
 
