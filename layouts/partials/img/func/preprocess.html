@@ -70,8 +70,9 @@
         {{ $rs = $rs | append (print .)}}
     {{ end }}
     {{ $pimg = $.img.Fill (print (delimit $rs " "))}}
+    {{ $purl := (partial "func/add-path-to-url.html" (dict "url" $.img.Key "path" "pp" )) }}
+    {{ $pimg = $pimg | resources.Copy $purl }}
 {{ else }}
     {{ $pimg = $.img }}
 {{ end }}
-{{ $origname := $pimg | resources.Copy (print "pp/" $.img.Key) }}
-{{ return (dict "img" $origname "params" $params )}}
+{{ return (dict "img" $pimg "params" $params )}}

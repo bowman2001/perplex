@@ -204,12 +204,16 @@ li:empty:before {
 img, svg {
   width: 100%;
   height: auto;
-  border-radius: 0.5rem;
 }
 
 img {
   display: inline-block;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.img__container {
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .img--transparent {
