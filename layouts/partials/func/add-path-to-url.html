@@ -1,2 +1,2 @@
-{{ $slice := path.Split (urls.Parse .url ).Path  }}
-{{ return (print (path.Join $slice.Dir .path) "/" $slice.File) }}
+{{ $path := path.Split (urls.Parse .url ).Path  }}
+{{ return (print (path.Join $path.Dir .path) "/" $path.File) }}

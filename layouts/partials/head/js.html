@@ -2,4 +2,9 @@
 {{ $parent_fit := resources.Get "js/lazysizes/ls.parent-fit.min.js" }}
 {{ $aspectratio := resources.Get "js/lazysizes/ls.aspectratio.min.js" }}
 {{ $js := (slice $ls $parent_fit $aspectratio) | resources.Concat "js/ls.min.js" | fingerprint }}
-<script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>
+<script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}" defer></script>
+<!-- Fathom - beautiful, simple website analytics -->
+{{ with site.Params.fathom }}
+<script src="https://cdn.usefathom.com/script.js" data-site="{{ . }}" defer></script>
+{{ end }}
+<!-- / Fathom -->
