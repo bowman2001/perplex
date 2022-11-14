@@ -312,6 +312,7 @@ svg {
 img {
   display: inline-block;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
+  border-radius: .5rem;
 }
 
 .img__container {
@@ -4081,7 +4082,7 @@ h6:target .heading-anchor {
   overflow: hidden;
 }
 
-.card__fig > .img--transparent {
+.card__fig .img--transparent {
   padding: 1rem;
   border: .1rem solid rgba(17, 17, 17, .5);
   border-radius: .5rem;
@@ -4095,7 +4096,7 @@ h6:target .heading-anchor {
     height: 24.00011rem;
   }
 
-  .card__fig > img {
+  .card__fig img {
     width: 33rem;
     height: 22.0011rem;
     -o-object-fit: cover;
@@ -4109,7 +4110,7 @@ h6:target .heading-anchor {
     height: 48.6669rem;
   }
 
-  .card__fig--full > img {
+  .card__fig--full img {
     width: 70rem;
     height: 46.669rem;
     -o-object-fit: cover;
@@ -4125,7 +4126,7 @@ h6:target .heading-anchor {
   flex-shrink: 0;
 }
 
-.card__fig--small > img {
+.card__fig--small img {
   width: 14.5rem;
   height: 9.6666715rem;
   -o-object-fit: cover;
@@ -4874,10 +4875,6 @@ h6:target .heading-anchor {
     margin-top: 1.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .fig--featured img {
-    border-radius: .5rem;
   }
 
   .fig--featured .caption {
