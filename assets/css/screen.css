@@ -207,12 +207,13 @@ img, svg {
 }
 
 img {
-  display: inline-block;
+  display: block;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
 
 .img__container {
+  display: block;
   border-radius: 0.5rem;
   overflow: hidden;
 }
