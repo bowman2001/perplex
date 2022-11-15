@@ -3245,6 +3245,7 @@ h6:target .heading-anchor {
   .note {
     padding: 0;
     margin: 0;
+    border: none;
   }
 }
 
