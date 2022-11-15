@@ -325,11 +325,6 @@ img {
   box-shadow: none;
 }
 
-.img__attr {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-}
-
 .caption {
   display: block;
   font-size: 1.43rem;
@@ -361,7 +356,7 @@ img {
   font-style: italic;
 }
 
-.caption__attribution {
+.caption__attr {
   color: #777;
   float: right;
   text-align: right;
