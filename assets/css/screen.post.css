@@ -321,6 +321,7 @@ img {
   overflow: hidden;
 }
 
+svg,
 .img--transparent {
   box-shadow: none;
 }
@@ -1532,6 +1533,10 @@ h6:target .heading-anchor {
   text-align: right;
 }
 
+.md strong {
+  font-size: 99%;
+}
+
 .md .blockquote-hero {
   padding-right: 4rem;
   color: #373737;
@@ -2086,7 +2091,6 @@ h6:target .heading-anchor {
 
 .md--sans .p-first strong {
   font-weight: 450;
-  font-size: 99%;
 }
 
 @media screen and (min-width: 48em) {
@@ -4081,7 +4085,8 @@ h6:target .heading-anchor {
   overflow: hidden;
 }
 
-.card__fig .img--transparent {
+.card__fig .img--transparent,
+.card__fig svg {
   padding: 1rem;
   border: .1rem solid rgba(17, 17, 17, .5);
   border-radius: .5rem;
@@ -4095,7 +4100,8 @@ h6:target .heading-anchor {
     height: 24.00011rem;
   }
 
-  .card__fig img {
+  .card__fig img,
+  .card__fig svg {
     width: 33rem;
     height: 22.0011rem;
     -o-object-fit: cover;
@@ -4109,7 +4115,8 @@ h6:target .heading-anchor {
     height: 48.6669rem;
   }
 
-  .card__fig--full img {
+  .card__fig--full img,
+  .card__fig--full svg {
     width: 70rem;
     height: 46.669rem;
     -o-object-fit: cover;
@@ -4125,7 +4132,8 @@ h6:target .heading-anchor {
   flex-shrink: 0;
 }
 
-.card__fig--small img {
+.card__fig--small img,
+.card__fig--small svg {
   width: 14.5rem;
   height: 9.6666715rem;
   -o-object-fit: cover;
@@ -4774,7 +4782,7 @@ h6:target .heading-anchor {
     padding-right: 0;
   }
 
-  .fig--size-normal .caption__attribution {
+  .fig--size-normal .caption__attr {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -4804,7 +4812,7 @@ h6:target .heading-anchor {
     margin-left: 18.5rem;
   }
 
-  .md--margin-left .fig--size-large .caption__attribution {
+  .md--margin-left .fig--size-large .caption__attr {
     width: 14.5rem;
   }
 
@@ -4826,8 +4834,8 @@ h6:target .heading-anchor {
     width: 70rem;
   }
 
-  .fig--size-large .caption__attribution,
-  .fig--size-xlarge .caption__attribution {
+  .fig--size-large .caption__attr,
+  .fig--size-xlarge .caption__attr {
     width: 33rem;
   }
 }
