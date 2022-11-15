@@ -2585,8 +2585,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .note {
   position: relative;
-  padding-top: 1.4rem;
-  padding-bottom: calc(0.9rem + 1 * var(--es));
+  margin-top: 1.4rem;
+  margin-bottom: calc(0.9rem + 1 * var(--es));
+  border-top: 0.1rem solid #c4c4cc;
+  border-bottom: 0.1rem solid #c4c4cc;
 }
 @media screen and (min-width: 37em) {
   .note {
@@ -2603,8 +2605,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .note__content {
   padding: 0.625rem 2rem;
-  border-top: 0.1rem solid #c4c4cc;
-  border-bottom: 0.1rem solid #c4c4cc;
   background: #e7e8e9;
   overflow: hidden;
 }
@@ -2705,17 +2705,20 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 
 .checkbox-note {
-  appearance: none;
-  margin: 0;
+  position: absolute;
+  visibility: hidden;
+  top: -9999px;
+  left: -9999px;
 }
 .checkbox-note ~ .note__content:after {
   position: absolute;
   bottom: 0;
+  z-index: 9;
   width: calc(100% - 4rem);
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f6f6f6 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #dfe0e2 90%);
 }
 @media screen and (min-width: 48em) {
   .checkbox-note ~ .note__content {
@@ -2726,6 +2729,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .checkbox-note ~ .open-note {
   display: block;
   position: absolute;
+  z-index: 999;
   width: 50%;
   height: 5rem;
   margin-left: 25%;
@@ -2735,7 +2739,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   -webkit-tap-highlight-color: transparent;
 }
 .checkbox-note ~ .open-note > .arrow {
-  position: absolute;
   display: block;
   z-index: 999;
   width: 0;
@@ -2782,9 +2785,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .checkbox-note:checked ~ .note__content:after {
   transition: opacity 150ms ease;
   opacity: 0;
+  height: 100%;
 }
 .checkbox-note:checked ~ .open-note {
-  bottom: -1.1rem;
+  bottom: -2.1rem;
 }
 .checkbox-note:checked ~ .open-note > .arrow {
   border-top: unset;

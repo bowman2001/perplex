@@ -3228,8 +3228,10 @@ h6:target .heading-anchor {
 
 .note {
   position: relative;
-  padding-top: 1.4rem;
-  padding-bottom: calc(0.9rem + 1 * var(--es));
+  margin-top: 1.4rem;
+  margin-bottom: calc(0.9rem + 1 * var(--es));
+  border-top: .1rem solid #c4c4cc;
+  border-bottom: .1rem solid #c4c4cc;
 }
 
 @media screen and (min-width: 37em) {
@@ -3248,8 +3250,6 @@ h6:target .heading-anchor {
 
 .note__content {
   padding: .625rem 2rem;
-  border-top: .1rem solid #c4c4cc;
-  border-bottom: .1rem solid #c4c4cc;
   background: #e7e8e9;
   overflow: hidden;
 }
@@ -3370,20 +3370,21 @@ h6:target .heading-anchor {
 }
 
 .checkbox-note {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  margin: 0;
+  position: absolute;
+  visibility: hidden;
+  top: -9999px;
+  left: -9999px;
 }
 
 .checkbox-note ~ .note__content:after {
   position: absolute;
   bottom: 0;
+  z-index: 9;
   width: calc(100% - 4rem);
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #f6f6f6 90%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #dfe0e2 90%);
 }
 
 @media screen and (min-width: 48em) {
@@ -3396,6 +3397,7 @@ h6:target .heading-anchor {
 .checkbox-note ~ .open-note {
   display: block;
   position: absolute;
+  z-index: 999;
   width: 50%;
   height: 5rem;
   margin-left: 25%;
@@ -3408,7 +3410,6 @@ h6:target .heading-anchor {
 }
 
 .checkbox-note ~ .open-note > .arrow {
-  position: absolute;
   display: block;
   z-index: 999;
   width: 0;
@@ -3464,10 +3465,11 @@ h6:target .heading-anchor {
 .checkbox-note:checked ~ .note__content:after {
   transition: opacity 150ms ease;
   opacity: 0;
+  height: 100%;
 }
 
 .checkbox-note:checked ~ .open-note {
-  bottom: -1.1rem;
+  bottom: -2.1rem;
 }
 
 .checkbox-note:checked ~ .open-note > .arrow {
