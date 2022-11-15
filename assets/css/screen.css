@@ -2587,8 +2587,8 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   position: relative;
   margin-top: 1.4rem;
   margin-bottom: calc(0.9rem + 1 * var(--es));
-  border-top: 0.1rem solid #c4c4cc;
-  border-bottom: 0.1rem solid #c4c4cc;
+  border-top: 0.1rem solid #a8a8b4;
+  border-bottom: 0.1rem solid #a8a8b4;
 }
 @media screen and (min-width: 37em) {
   .note {

@@ -30,7 +30,7 @@
         {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
         {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
         {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
-        <div class="img__container">
+        <span class="img__container">
           <img data-src="{{ $fallbackImg.RelPermalink }}"
                data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) }}"
                data-sizes="auto"
@@ -50,6 +50,6 @@
                   {{- with .a.title }} title="{{ . }}"{{ end -}}
                width="{{ $fallbackImg.Width }}"
                height="{{ $fallbackImg.Height }}"/>
-        </div>
+        </span>
     {{- end -}}
     {{- if .a.link }}</a>{{ end -}}

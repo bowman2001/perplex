@@ -3230,8 +3230,8 @@ h6:target .heading-anchor {
   position: relative;
   margin-top: 1.4rem;
   margin-bottom: calc(0.9rem + 1 * var(--es));
-  border-top: .1rem solid #c4c4cc;
-  border-bottom: .1rem solid #c4c4cc;
+  border-top: .1rem solid #a8a8b4;
+  border-bottom: .1rem solid #a8a8b4;
 }
 
 @media screen and (min-width: 37em) {
