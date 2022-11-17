@@ -4,10 +4,8 @@
 {{ $js := (slice $ls $parent_fit $aspectratio) | resources.Concat "js/ls.min.js" | fingerprint }}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}" defer></script>
 <!-- Fathom - beautiful, simple website analytics -->
-{{ with site.Params.fathom }}
+{{ with site.Params.fathomAnalytics }}
 <script src="https://cdn.usefathom.com/script.js" data-site="{{ . }}" defer crossorigin="anonymous"></script>
 {{ end }}
-{{ with site.GoogleAnalytics }}
-    {{/* TODO: test */}}
-{{ end }}
+{{ template "_internal/google_analytics.html" . }}
 <!-- / Fathom -->
