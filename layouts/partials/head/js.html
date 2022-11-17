@@ -7,4 +7,7 @@
 {{ with site.Params.fathom }}
 <script src="https://cdn.usefathom.com/script.js" data-site="{{ . }}" defer crossorigin="anonymous"></script>
 {{ end }}
+{{ with site.GoogleAnalytics }}
+    {{/* TODO: test */}}
+{{ end }}
 <!-- / Fathom -->
