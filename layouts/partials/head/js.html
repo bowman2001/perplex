@@ -3,9 +3,12 @@
 {{ $aspectratio := resources.Get "js/lazysizes/ls.aspectratio.min.js" }}
 {{ $js := (slice $ls $parent_fit $aspectratio) | resources.Concat "js/ls.min.js" | fingerprint }}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}" defer></script>
-<!-- Fathom - beautiful, simple website analytics -->
-{{ with site.Params.fathomAnalytics }}
-<script src="https://cdn.usefathom.com/script.js" data-site="{{ . }}" defer crossorigin="anonymous"></script>
+{{ with site.Params.fathomSiteID }}
+    {{ $id := . }}
+    {{ with site.Params.fathomCustomDomain }}
+        <script src="{{ . }}/script.js" data-site="{{ $id }}" defer></script>
+    {{ else }}
+        <script src="https://cdn.usefathom.com/script.js" data-site="{{ $id }}" defer></script>
+    {{ end }}
 {{ end }}
 {{ template "_internal/google_analytics.html" . }}
-<!-- / Fathom -->
