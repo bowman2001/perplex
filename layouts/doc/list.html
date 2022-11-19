@@ -28,7 +28,7 @@
               {{- end -}}
           </ul>
         </nav>
-        {{ with .Page.GetPage "after_index" }}
+        {{ with .Page.GetPage "after" }}
           <section class="md md--sans md--h-serif">
               {{- partial "replacements.html" .Content }}
           </section>
