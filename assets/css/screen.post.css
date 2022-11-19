@@ -3230,8 +3230,6 @@ h6:target .heading-anchor {
   position: relative;
   margin-top: 1.4rem;
   margin-bottom: calc(0.9rem + 1 * var(--es));
-  border-top: .1rem solid #a8a8b4;
-  border-bottom: .1rem solid #a8a8b4;
 }
 
 @media screen and (min-width: 37em) {
@@ -3251,6 +3249,8 @@ h6:target .heading-anchor {
 
 .note__content {
   padding: .625rem 2rem;
+  border-top: .1rem solid #a8a8b4;
+  border-bottom: .1rem solid #a8a8b4;
   background: #e7e8e9;
   overflow: hidden;
 }
@@ -3359,13 +3359,13 @@ h6:target .heading-anchor {
 }
 
 @media screen and (min-width: 48em) {
-  .note-long > .note__content {
+  .note-long .note__content {
     position: static;
     overflow: auto;
     height: auto;
   }
 
-  .note-long > .note__content:after {
+  .note-long .note__content:after {
     display: none;
   }
 }
@@ -3379,13 +3379,13 @@ h6:target .heading-anchor {
 
 .checkbox-note ~ .note__content:after {
   position: absolute;
-  bottom: 0;
+  bottom: .1rem;
   z-index: 9;
   width: calc(100% - 4rem);
   height: 100%;
   content: "";
   pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, #dfe0e2 90%);
+  background-image: linear-gradient(to bottom, rgba(231, 232, 233, 0) 33%, #e7e8e9 90%);
 }
 
 @media screen and (min-width: 48em) {
@@ -3470,7 +3470,7 @@ h6:target .heading-anchor {
 }
 
 .checkbox-note:checked ~ .open-note {
-  bottom: -2.1rem;
+  bottom: -2rem;
 }
 
 .checkbox-note:checked ~ .open-note > .arrow {
