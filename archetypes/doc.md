@@ -7,7 +7,7 @@ date: {{ .Date }}
 weight: 9999
 menu:
   doc:
-    identifier: {{ .Name }}-{{ delimit (shuffle (split (md5 .Name) "")) "" }}
+    identifier: {{ .Name }}-{{ substr (delimit (shuffle (split (md5 .Name) "")) "") 0 5 }}
     name: {{ replace .Name "-" " " | title }}
     parent: 
     pre: remove
