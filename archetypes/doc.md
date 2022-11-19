@@ -4,19 +4,17 @@ title: {{ replace .Name "-" " " | title }}
 description: Page description placeholder
 subtitle: false
 date: {{ .Date }} 
-weight: 999
+weight: 9999
 menu:
   doc:
+    identifier: {{ .Name }}-{{ delimit (shuffle (split (md5 .Name) "")) "" }}
     name: {{ replace .Name "-" " " | title }}
     parent: 
     pre: remove
 categories: []
 tags: []
-resources:
-  - src: 
-    name: featured
 draft: true
 ---
 
-Place your lead paragraph here. If you don't need special styling, remove the attribute `{.p-first}`. The **more**-tag marks this placeholder paragraph as the content summary for this page. It’s an introduction for your readers and provides information to search engines. 
+Place your lead paragraph here. If you don't need special styling, remove the attribute `{.p-first}`. The **more**-tag marks this placeholder paragraph as the content summary for this page.
 {.p-first} <!--more-->
