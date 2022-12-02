@@ -4616,11 +4616,11 @@ h6:target .heading-anchor {
   max-width: 70rem;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 79em) {
   .page-footer--taxo {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 37rem;
+    left: 0;
     z-index: 5;
     margin-top: 1rem;
     padding-top: 0;

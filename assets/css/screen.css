@@ -3768,11 +3768,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   margin: 0 2rem;
   max-width: 70rem;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 79em) {
   .page-footer--taxo {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 37rem;
+    left: 0;
     z-index: 5;
     margin-top: 1rem;
     padding-top: 0;
