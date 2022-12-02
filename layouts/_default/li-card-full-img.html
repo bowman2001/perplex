@@ -1,7 +1,9 @@
 <a class="hover-link" href="{{- .RelPermalink -}}">
   <hr>
-    {{ partial "img/featured-card-full.html" . }}
-  <div class="md md--sans md--card md--card--full">
-    {{ partial "nav/card/firstsection-title-summary.html" . }}
+  <div class="card__content">
+      {{ partial "img/featured-card-full.html" . }}
+    <div class="md md--sans md--card md--card--full">
+        {{ partial "nav/card/firstsection-title-summary.html" . }}
+    </div>
   </div>
 </a>
