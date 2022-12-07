@@ -14,20 +14,20 @@
           </div>
         {{ end }}
       {{ with .Pages }}
-      <nav class="card-nav card-nav--top margin-left">
+      <nav class="card-nav card-nav--3 card-nav--top margin-left">
         <ul class="card-nav__list">
             {{ $n := len . }}
             {{ $normal := 3 }}
             {{ $small := 7 }}
             {{- range $index, $page := . -}}
                 {{ if eq $index 0 }}
-                  <li class="card card--full">{{- $page.Render "li-card-full-img" -}}</li>
+                  <li class="card card--3">{{- $page.Render "li-card-full-img" -}}</li>
                 {{ else if lt $index $normal }}
-                  <li class="card">{{- $page.Render "li-card-img" -}}</li>
+                  <li class="card card--3halfs">{{- $page.Render "li-card-img" -}}</li>
                 {{ else if lt $index $small }}
-                  <li class="card card--small">{{- $page.Render "li-card-small-img" -}}</li>
+                  <li class="card card--1">{{- $page.Render "li-card-1-row-img" -}}</li>
                 {{ else }}
-                  <li class="card card--tiny">{{- $page.Render "li-card-small" -}}</li>
+                  <li class="card card--half">{{- $page.Render "li-card-small" -}}</li>
                 {{ end }}
             {{- end -}}
         </ul>
@@ -39,3 +39,9 @@
     </footer>
   </div>
 {{- end -}}
+
+{{ define "footer" -}}
+  <footer id="l-footer" class="l-box margin-left">
+      {{- partial "footer/site.html" . -}}
+  </footer>
+{{ end -}}
