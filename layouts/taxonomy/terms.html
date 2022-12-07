@@ -6,17 +6,16 @@
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
-          <aside class="featured-image show3">{{ partial "img/featured.html" . }}</aside>
       </header>
         {{ with .Content }}
           <div class="md md--sans md--margin-left md--h-serif md--list">
               {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
-      <nav class="section-nav section-nav--top margin-left">
-        <ul>
+      <nav class="card-nav card-nav--2 card-nav--top margin-left">
+        <ul class="card-nav__list">
             {{- range .Pages.ByTitle -}}
-              <li class="section-nav__li">{{- .Render "li-card" -}}</li>
+              <li class="card card--1">{{- .Render "li-card-1-row-img" -}}</li>
             {{- end -}}
         </ul>
       </nav>
