@@ -321,6 +321,12 @@ img {
   overflow: hidden;
 }
 
+@media screen and (max-width: 37em) {
+  .img__container {
+    border-radius: 0;
+  }
+}
+
 svg,
 .img--transparent {
   box-shadow: none;
@@ -1240,12 +1246,12 @@ a.meta__item--text:hover {
 }
 
 .title__description {
-  font-size: 1.9375rem;
-  line-height: 3rem;
-  padding-top: .77440625rem;
-  padding-bottom: .22559375rem;
+  font-size: 2.4375rem;
+  line-height: 4rem;
+  padding-top: .08715625rem;
+  padding-bottom: .91284375rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   color: #333;
 }
@@ -2147,26 +2153,14 @@ h6:target .heading-anchor {
 }
 
 .md--card > p,
-.md--card > ul,
-.md--card > ol,
-.md--card > dl,
-.md--card > blockquote,
 .md--card > .p-first {
   color: #111;
-  font-size: 1.70625rem;
-  line-height: 2.5rem;
-  padding-top: 1.111009375rem;
-  padding-bottom: .388990625rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   text-align: left;
 }
 
 .md--card > p strong,
-.md--card > ul strong,
-.md--card > ol strong,
-.md--card > dl strong,
-.md--card > blockquote strong,
 .md--card > .p-first strong {
   font-weight: 450;
 }
@@ -2174,30 +2168,52 @@ h6:target .heading-anchor {
 .md--card > .p-first {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
+  font-style: italic;
 }
 
-.md--card--full > .p-first {
+.md--card--half {
+  margin-top: -1rem;
+}
+
+.md--card--half > p,
+.md--card--half > .p-first {
+  font-size: 1.43rem;
+  line-height: 1.5rem;
+  padding-top: .214465rem;
+  padding-bottom: .285535rem;
+}
+
+.md--card--1 > p,
+.md--card--3halfs > p,
+.md--card--1 > .p-first,
+.md--card--3halfs > .p-first {
+  margin-top: -0.5rem;
+  font-size: 1.70625rem;
+  line-height: 2.5rem;
+  padding-top: .611009375rem;
+  padding-bottom: .388990625rem;
+}
+
+.md--card--3halfs {
+  padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 48em) {
+  .md--card--3halfs > p,
+  .md--card--3halfs > .p-first {
+    font-size: 1.95rem;
+    line-height: 3rem;
+    padding-top: .769725rem;
+    padding-bottom: .230275rem;
+  }
+}
+
+.md--card--2 > p,
+.md--card--2 > .p-first {
   font-size: 2.4375rem;
   line-height: 4rem;
   padding-top: .58715625rem;
   padding-bottom: .91284375rem;
-}
-
-.md--card--small {
-  margin-top: -1rem;
-}
-
-.md--card--small > p {
-  font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: .464465rem;
-  padding-bottom: .535535rem;
-}
-
-.md--card--small > .p-first {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 300;
-  font-style: italic;
 }
 
 .md--taxo > p,
@@ -2906,10 +2922,6 @@ h6:target .heading-anchor {
 }
 
 .md--card h2 {
-  font-size: 1.666875rem;
-  line-height: 2rem;
-  padding-top: .8757553125rem;
-  margin-bottom: -.3757553125rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .05em;
@@ -2917,38 +2929,70 @@ h6:target .heading-anchor {
   text-transform: uppercase;
 }
 
+.md--card .p-meta {
+  font-weight: 300;
+}
+
 .md--card .p-meta + h2 {
   margin-top: 0;
 }
 
-.md--card--full h2 {
-  font-size: 2.38125rem;
-  line-height: 3rem;
-  padding-top: .608221875rem;
-  padding-bottom: .391778125rem;
-}
-
-.md--card--full .p-meta {
-  font-size: 1.8525rem;
-  line-height: 1.5rem;
-  padding-top: .55623875rem;
-  padding-bottom: .44376125rem;
-  font-weight: 300;
-}
-
-.md--card--small h2 {
+.md--card--half h2 {
   font-size: 1.3585rem;
   line-height: 1.5rem;
   padding-top: .24124175rem;
   padding-bottom: .25875825rem;
 }
 
-.md--card--small .p-meta {
+.md--card--half .p-meta {
   font-size: 1.3585rem;
   line-height: 1.5rem;
   padding-top: .74124175rem;
   padding-bottom: .25875825rem;
-  font-weight: 300;
+}
+
+.md--card--1 h2,
+.md--card--3halfs h2 {
+  font-size: 1.5875rem;
+  line-height: 2rem;
+  padding-top: .40548125rem;
+  padding-bottom: .59451875rem;
+}
+
+.md--card--1 .p-meta,
+.md--card--3halfs .p-meta {
+  font-size: 1.3585rem;
+  line-height: 2rem;
+  padding-top: .49124175rem;
+  padding-bottom: .00875825rem;
+}
+
+.md--card--3halfs h2 {
+  font-size: 1.905rem;
+  line-height: 2rem;
+  padding-top: .2865775rem;
+  padding-bottom: .7134225rem;
+}
+
+.md--card--3halfs .p-meta {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: .464465rem;
+  padding-bottom: .535535rem;
+}
+
+.md--card--2 h2 {
+  font-size: 2.38125rem;
+  line-height: 3rem;
+  padding-top: .608221875rem;
+  padding-bottom: .391778125rem;
+}
+
+.md--card--2 .p-meta {
+  font-size: 1.95rem;
+  line-height: 1.5rem;
+  padding-top: .519725rem;
+  padding-bottom: .480275rem;
 }
 
 .md--home h1 {
@@ -4008,7 +4052,6 @@ h6:target .heading-anchor {
 
 .card-nav {
   padding: 0 0rem calc(3rem + 2 * var(--es)) 0;
-  max-width: 74rem;
 }
 
 @media screen and (min-width: 79em) {
@@ -4017,32 +4060,22 @@ h6:target .heading-anchor {
   }
 }
 
+.card-nav--2 {
+  max-width: 74rem;
+}
+
+.card-nav--3 {
+  max-width: 111rem;
+}
+
 .card-nav__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-@media screen and (min-width: 37em) {
-  .card-nav__list {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-.card-nav__list--small {
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .card {
   width: 100%;
-}
-
-@media screen and (min-width: 37em) {
-  .card {
-    width: 37rem;
-  }
 }
 
 .card hr {
@@ -4052,30 +4085,66 @@ h6:target .heading-anchor {
   transition: border-color 200ms;
 }
 
-@media screen and (min-width: 37em) {
-  .card--full {
-    width: 74rem;
-  }
-}
-
-.card--small {
-  margin: 0;
-}
-
-.card--tiny {
+.card--half {
   margin: 0;
   width: 50%;
 }
 
 @media screen and (min-width: 37em) {
-  .card--tiny {
+  .card--half {
     width: 18.5rem;
   }
 }
 
-.card__content {
+.card--1,
+.card--3halfs {
+  margin: 0;
+}
+
+@media screen and (min-width: 37em) {
+  .card--1,
+  .card--3halfs {
+    width: 37rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .card--3halfs {
+    width: 55.5rem;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .card--2 {
+    max-width: 74rem;
+  }
+}
+
+@media screen and (min-width: 37em) {
+  .card--3 {
+    max-width: 111rem;
+  }
+}
+
+.card__flex {
   display: flex;
+  flex-direction: column;
+}
+
+.card__flex--1 {
   flex-direction: row;
+}
+
+@media screen and (min-width: 37em) {
+  .card__flex--2 {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .card__flex--3 {
+    flex-direction: row;
+  }
 }
 
 .card__fig {
@@ -4094,37 +4163,13 @@ h6:target .heading-anchor {
      object-fit: contain;
 }
 
-@media screen and (min-width: 37em) {
-  .card__fig {
-    width: 37rem;
-    height: 24.00011rem;
-  }
-
-  .card__fig img,
-  .card__fig svg {
-    width: 33rem;
-    height: 22.0011rem;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+.card__fig img,
+.card__fig svg {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-@media screen and (min-width: 37em) {
-  .card__fig--full {
-    width: 74rem;
-    height: 48.6669rem;
-  }
-
-  .card__fig--full img,
-  .card__fig--full svg {
-    width: 70rem;
-    height: 46.669rem;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
-
-.card__fig--small {
+.card__fig--half {
   width: 14.5rem;
   height: 9.6666715rem;
   margin: -0.3333rem 0 1.6667rem 2rem;
@@ -4132,12 +4177,52 @@ h6:target .heading-anchor {
   flex-shrink: 0;
 }
 
-.card__fig--small img,
-.card__fig--small svg {
+.card__fig--half img,
+.card__fig--half svg {
   width: 14.5rem;
   height: 9.6666715rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+}
+
+@media screen and (min-width: 37em) {
+  .card__fig--1,
+  .card__fig--3halfs {
+    width: 37rem;
+    height: 24.00011rem;
+  }
+
+  .card__fig--1 img,
+  .card__fig--3halfs img,
+  .card__fig--1 svg,
+  .card__fig--3halfs svg {
+    width: 33rem;
+    height: 22.0011rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .card__fig--3halfs {
+    width: 55.5rem;
+    height: 35rem;
+  }
+
+  .card__fig--3halfs img,
+  .card__fig--3halfs svg {
+    width: 51.5rem;
+    height: 33rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .card__fig--full {
+    width: 111rem;
+    height: 36.99963rem;
+  }
+
+  .card__fig--full img,
+  .card__fig--full svg {
+    width: 49.5rem;
+    height: 33.00165rem;
+  }
 }
 
 .sidebar-box {
@@ -4614,18 +4699,6 @@ h6:target .heading-anchor {
   height: 1rem;
   margin: 0 2rem;
   max-width: 70rem;
-}
-
-@media screen and (min-width: 79em) {
-  .page-footer--taxo {
-    position: absolute;
-    top: 37rem;
-    left: 0;
-    z-index: 5;
-    margin-top: 1rem;
-    padding-top: 0;
-    width: 37rem;
-  }
 }
 
 .page-footer--blog {
