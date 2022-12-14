@@ -14,5 +14,3 @@
 | replaceRE `(<p[^>]*>|<li[^>]*>)([“«»„])` "$1<span class='hang-quote'>$2</span>"
 | safeHTML
 }}
-
-{{/* The TOC can’t be manipulated by replacements. Therefore no | replaceRE `\{\/\}` " <br>" */}}

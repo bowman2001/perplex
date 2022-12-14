@@ -1,0 +1,9 @@
+{{- with .Summary -}}
+    {{- partial "replacements.html" . -}}
+{{- else -}}
+    {{- with .Description -}}
+      <p>{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
+    {{ else }}
+        {{ warnf "Unable to print summary. No summary or description found for %s." . }}
+    {{- end -}}
+{{- end -}}
