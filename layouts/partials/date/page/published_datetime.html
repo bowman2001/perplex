@@ -1,16 +1,14 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
 {{ if .Site.IsServer -}}
-{{- $path := print "vscode://file" (.Param "sourcePath") .File.Path  -}}
+    {{- $path := print "vscode://file" (.Param "sourcePath") .File.Path  -}}
 <a {{ printf "href=%q" $path | safeHTMLAttr }}>
     {{ end -}}
-<ul>
-<li class="meta__date" {{ with $.Params.author -}}title="By {{ . }}"{{- end -}}><span class="meta__item icon-font">event</span>
-  <time datetime="{{ .Date.Format $iso8601 }}" class="meta__item meta__item--text">&ensp;{{ .Date.Format "Jan 2, 2006" }}</time>
-</li>
-  <li class="meta__date"><span class="meta__item icon-font">schedule</span>
-    <span class="meta__item meta__item--text">&ensp;{{ .Date | time.Format ":time_short" }}</span>
-  </li>
-</ul>
-{{ if .Site.IsServer -}}
-  </a>
+  <ul class="meta__list meta__list--date">
+    <li class="meta__item meta__date" {{ with $.Params.author -}}title="By {{ . }}"{{- end -}}><span class="icon-font">event&nbsp;</span><time datetime="{{ .Date.Format $iso8601 }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </li>
+    <li class="meta__item meta__date"><span class="icon-font">schedule&nbsp;</span>{{ .Date | time.Format ":time_short" }}
+    </li>
+  </ul>
+    {{ if .Site.IsServer -}}
+</a>
 {{ end -}}

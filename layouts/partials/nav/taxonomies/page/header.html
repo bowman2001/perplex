@@ -1,16 +1,18 @@
 {{ $categories := .GetTerms "categories" }}
 {{ $tags := .GetTerms "tags" }}
+{{ if or $categories $tags }}
 <nav>
   <ul>
-      {{ with .GetTerms "categories" }}
-        <li>
-          <p class="meta__list meta__list--blog-header meta__list--categories">{{ partial "nav/taxonomies/page/inlineList.html" . }}</p>
+      {{ with $categories }}
+        <li class="meta__list meta__list--categories">
+          {{ partial "nav/taxonomies/page/inlineList.html" . }}
         </li>
       {{ end }}
-      {{ with .GetTerms "tags" }}
-        <li>
-          <p class="meta__list meta__list--blog-header meta__list--tags">{{ partial "nav/taxonomies/page/inlineList.html" . }}</p>
+      {{ with $tags }}
+        <li class="meta__list meta__list--tags">
+          {{ partial "nav/taxonomies/page/inlineList.html" . }}
         </li>
       {{ end }}
   </ul>
 </nav>
+{{ end }}
