@@ -1,6 +1,6 @@
-<nav>
+<div class="meta__section">
       {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-</nav>
+</div>
 
 {{ define "breadcrumbnav" }}
     {{ if .p1.Parent }}

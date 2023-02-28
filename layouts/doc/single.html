@@ -2,7 +2,7 @@
   <div id="l-content-box" class="l-box">
     <div id="l-content">
       <header class="page-header">
-        <div class="meta">
+        <div class="meta meta--head">
             {{ partial "nav/breadcrumbs/header.html" . }}
             {{ partial "date/page/published_date.html" . }}
         </div>
@@ -19,7 +19,7 @@
     <footer class="page-footer">
         {{ partial "nav/related/small-cards.html" . }}
         {{ partial "doc/nav/taxonomies.html" . }}
-      <div class="meta">
+      <div class="meta meta--foot">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/page/updated.html" . }}
       </div>
