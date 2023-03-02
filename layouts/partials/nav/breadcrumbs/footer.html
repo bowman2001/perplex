@@ -1,18 +1,12 @@
-<div class="meta__section">
-      {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-</div>
-
-{{ define "breadcrumbnav" }}
-    {{ if .p1.Parent }}
-        {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
-        {{ partial "nav/breadcrumbs/separator.html" . }}
-    {{ else if not .p1.IsHome }}
-        {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
-        {{ partial "nav/breadcrumbs/separator.html" . }}
-    {{ end }}
-    {{ if ne .p1 .p2  }}
-        {{ partial "nav/breadcrumbs/shortLink.html" .p1 }}
-    {{ else }}
-        {{ partial "nav/breadcrumbs/shortLink.html" .p2 }}
-    {{ end }}
-{{ end }}
+{{ $n := sub (len .Ancestors) 2 }}
+<ul class="ul--row meta__section">
+  <li class="meta__item">
+    <a class="icon-font" href="{{ site.Home.RelPermalink }}">home</a>{{- if ge $n 0 -}}<span class="icon-font">arrow_right</span>{{- end -}}
+  </li>
+  {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
+  <li class="meta__item">
+    <a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}
+    </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
+  </li>
+  {{- end -}}
+</ul>

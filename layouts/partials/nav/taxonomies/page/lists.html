@@ -1,22 +1,21 @@
 {{ $categories := .GetTerms "categories" }}
 {{ $tags := .GetTerms "tags" }}
-{{ $series := .GetTerms "series" }}
 {{ if or $categories $tags }}
   <nav>
     <ul>
         {{ with $categories }}
           <li class="meta__item meta__taxo meta__taxo--category">
-            <span class="icon-font">category&nbsp;</span>{{ partial "nav/taxonomies/page/inlineList.html" . -}}
+            <ul class="ul--row">
+              <li><span class="icon-font">category&nbsp;</span></li>{{ partial
+                "nav/taxonomies/page/inlineList.html" . -}}
+            </ul>
           </li>
         {{ end }}
         {{ with $tags }}
           <li class="meta__item meta__taxo meta__taxo--tag">
-            <span class="icon-font">style&nbsp;</span>{{ partial "nav/taxonomies/page/inlineList.html" . -}}
-          </li>
-        {{ end }}
-        {{ with $series }}
-          <li class="meta__item meta__taxo meta__taxo--series">
-            <span class="icon-font">animation&nbsp;</span>{{ partial "nav/taxonomies/page/inlineList.html" . -}}
+            <ul class="ul--row">
+              <li><span class="icon-font">style&nbsp;</span></li>{{ partial "nav/taxonomies/page/inlineList.html" . -}}
+            </ul>
           </li>
         {{ end }}
     </ul>
