@@ -1,7 +1,7 @@
 {{ $n := sub (len .Ancestors) 2 }}
 <ul class="ul--row meta__section">
   <li class="meta__item">
-    <a class="icon-font" href="{{ site.Home.RelPermalink }}">home</a>{{- if ge $n 0 -}}<span class="icon-font">arrow_right</span>{{- end -}}
+    <a class="icon-font" href="{{ site.Home.RelPermalink }}">home</a>{{- if ge $n 0 -}}{{ partial "nav/breadcrumbs/separator.html" . }}{{- end -}}
   </li>
   {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
   <li class="meta__item">

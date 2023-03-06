@@ -1,1 +1,14 @@
-<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+<header class="li-header">
+  <div class="meta meta--head meta--left">
+      {{ partial "nav/taxonomies/page/lists.html" . }}
+      {{ partial "date/page/published_datetime.html" . }}
+  </div>
+  <div class="title title--li margin-left">
+      {{ partial "title/title-in-list.html" . }}
+      {{ partial "title/subtitle.html" . }}
+  </div>
+  <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
+</header>
+<div class="md md--sans md--h-serif  md--margin-left">
+    {{ partial "summary.html" . }}
+</div>

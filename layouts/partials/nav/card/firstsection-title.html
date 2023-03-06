@@ -1,2 +1,2 @@
-{{ with .FirstSection.LinkTitle }}<p class="p-meta">{{ . | site.Home.RenderString }}</p>{{ end }}
+<p class="p-meta">{{ .FirstSection.LinkTitle | site.Home.RenderString }}</p>
 {{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}

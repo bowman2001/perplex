@@ -12,12 +12,12 @@
   </div>
   {{ end }}
   <ul class="page-list">
-    {{ $n := 5 }}
+    {{ $n := 10 }}
     {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
     {{ range (.Paginate .Pages $n).Pages.ByDate.Reverse }}
     <li class="li-box">
-      {{- .Render "li-full" -}}
       <hr>
+      {{- .Render "li" -}}
     </li>
     {{- end -}}
   </ul>

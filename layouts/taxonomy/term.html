@@ -16,20 +16,8 @@
       {{ with .Pages }}
       <nav class="card-nav card-nav--3 card-nav--top margin-left">
         <ul class="card-nav__list">
-            {{ $n := len . }}
-            {{ $col3halfs := 4 }}
-            {{ $col1 := 6 }}
-            {{ if le $n 10 }}
-              {{ $col3halfs = 2 }}
-            {{ end }}
-            {{- range $index, $page := . -}}
-                {{ if lt $index $col3halfs }}
-                  <li class="card card--3halfs">{{- $page.Render "li-card-3halfs-col-img" -}}</li>
-                {{ else if lt $index (add $col3halfs $col1) }}
-                  <li class="card card--1">{{- $page.Render "li-card-1-col-img" -}}</li>
-                {{ else }}
-                  <li class="card card--1">{{- $page.Render "li-card-1-row-img" -}}</li>
-                {{ end }}
+            {{- range . -}}
+                  <li class="card card--1">{{- .Render "li-card-1-col-img" -}}</li>
             {{- end -}}
         </ul>
       </nav>
