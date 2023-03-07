@@ -10,6 +10,7 @@
     {{ with .attrlink }}{{ $rp = merge $rp (dict "attrlink" ( . | lower ) ) }}{{ end }}
     {{ with .caption }}{{ $rp = merge $rp (dict "caption" . ) }}{{ end }}
     {{ with .class }}{{ $rp = merge $rp (dict (slice "class" "plain") ( . | lower )) }}{{ end }}
+    {{ with .container }}{{ $rp = merge $rp (dict "container" . ) }}{{ end }}
     {{ with .hint }}{{ $rp = merge $rp (dict "hint" (. | lower ) ) }}{{ end }}
     {{ with .id }}{{ $rp = merge $rp (dict "id" (. | lower )) }}{{ end }}
     {{ with .link }}{{ $rp = merge $rp (dict "link" (. | lower ) ) }}{{ end }}

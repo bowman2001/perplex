@@ -213,7 +213,7 @@ img {
 .img__container {
   display: block;
   border-radius: 0.5rem;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -3414,7 +3414,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 .card__fig .img--transparent, .card__fig svg {
   padding: 2rem;
-  border: 0.1rem solid rgba(17, 17, 17, 0.5);
+  border: 0.1rem solid rgba(17, 17, 17, 0.1);
   border-radius: 0.5rem;
   object-fit: contain;
 }

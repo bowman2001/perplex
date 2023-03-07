@@ -12,7 +12,7 @@
     {{- end -}}
         {{- end -}}>
     {{- end -}}
-  <span class="img__container">
+  {{ if or (ne .a.container "no") (eq .a.card "yes") }}<span class="img__container">{{ end }}
     {{- $subType := .img.MediaType.SubType -}}
       {{- if eq $subType "svg" -}}
           {{ if (eq .a.svg "inline") }}
@@ -52,5 +52,5 @@
                width="{{ $fallbackImg.Width }}"
                height="{{ $fallbackImg.Height }}"/>
       {{- end -}}
-         </span>
+        {{ if or (ne .a.container "no") (eq .a.card "yes") }}</span>{{ end }}
     {{- if .a.link }}</a>{{ end -}}

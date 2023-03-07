@@ -1,3 +1,14 @@
-<nav class="meta__section">
-  <p class="meta__item"><span class="icon-font">list</span> {{- partial "nav/breadcrumbs/section-items.html" . -}}</p>
-</nav>
+{{ $n := sub (len .Ancestors) 2 }}
+<ul class="ul--row meta__section">
+  <li class="meta__item">
+    <span class="icon-font">format_list_numbered</span>&ensp;
+  </li>
+    {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
+      {{ if ne $e .FirstSection }}
+      <li class="meta__item">
+        <a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}
+        </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
+      </li>
+        {{ end }}
+    {{- end -}}
+</ul>

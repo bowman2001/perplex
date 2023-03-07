@@ -1,0 +1,3 @@
+{{ $a := partial "img/func/params/resource.html" . }}
+{{ $a = merge $a (dict "card" "yes" ) }}
+{{ return $a }}
