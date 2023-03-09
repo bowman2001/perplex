@@ -4,8 +4,10 @@
       <header class="page-header page-header--title-left">
         <div class="title title--taxo">
           <hr>
+            {{ partial "file/editor_start.html" .Page }}
             {{ partial "title/taxonomy.html" .Page }}
             {{ partial "title/subtitle.html" .Page }}
+            {{ partial "file/editor_end.html" .Page }}
         </div>
       </header>
         {{ with .Content }}
@@ -16,9 +18,7 @@
       {{ with .Pages }}
       <nav class="card-nav card-nav--3 card-nav--top margin-left">
         <ul class="card-nav__list">
-            {{- range . -}}
-                  <li class="card card--1">{{- .Render "li-card-1-col-img" -}}</li>
-            {{- end -}}
+            {{- range . -}}<li class="card card--1">{{- .Render "li-card-1-col-img" -}}</li>{{- end -}}
         </ul>
       </nav>
       {{ end }}

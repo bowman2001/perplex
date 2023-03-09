@@ -7,7 +7,7 @@
         {{ $is_active := $page.IsMenuCurrent $menuName . }}
         {{ $has_active := $page.HasMenuCurrent $menuName . }}
         <a class="ctrl__link {{ if $is_active -}}is-active{{- end }} {{ if $has_active -}}has-active{{- end }}"
-           {{ if not $is_active }}href="{{ .URL }}"{{ end }}>
+           {{ if not $is_active }}href="{{ .URL }}"{{ else }} aria-current="page"{{ end }}>
             {{ if eq $menuName "main" }}
               {{- with .Pre -}}<span class="icon-font">{{ . }}</span>{{ end }}
               {{ with .Name }}{{ . | site.Home.RenderString }}{{ end }}

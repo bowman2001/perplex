@@ -14,7 +14,7 @@
   <ul class="page-list">
     {{ $n := 10 }}
     {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-    {{ range (.Paginate .Pages $n).Pages.ByDate.Reverse }}
+    {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
     <li class="li-box">
       <hr>
       {{- .Render "li" -}}

@@ -3,15 +3,24 @@
 {{ $series := site.GetPage "series" }}
 {{ if or $categories $tags $series }}
   <nav class="taxo-site-nav">
-      {{ with $categories }}
-        {{ template "taxolist.html" . }}
-      {{ end }}
-      {{ with $series }}
-          {{ template "taxolist.html" . }}
-      {{ end }}
-      {{ with $tags }}
-          {{ template "taxopara.html" . }}
-      {{ end }}
+      <ul>
+          {{ with $categories }}
+            <li class="meta__item meta__taxo meta__taxo--category">
+              <ul class="ul--row">
+                  {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
+                  {{- partial "nav/taxonomies/site/term_list.html" . -}}
+              </ul>
+            </li>
+          {{ end }}
+          {{ with $tags }}
+            <li class="meta__item meta__taxo meta__taxo--tag">
+              <ul class="ul--row">
+                  {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
+                  {{- partial "nav/taxonomies/site/term_list.html" . -}}
+              </ul>
+            </li>
+          {{ end }}
+      </ul>
   </nav>
 {{ end }}
 

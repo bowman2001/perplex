@@ -1,5 +1,0 @@
-{{- $last := sub (len .) 1 -}}
-{{- range $index, $tag := . -}}
-  <li><a href="{{ $tag.Permalink }}">{{ $tag.LinkTitle |
-          site.Home.RenderString | strings.FirstUpper }}</a>{{- if (lt $index $last) }} <span class="separator">• </span>{{ end }}</li>
-{{- end -}}

@@ -38,7 +38,7 @@
     {{- if not $active -}}
       <a href="{{ .menuEntry.URL }}" class="sidebar__link icon-link text-link">
     {{- else -}}
-      <span class="sidebar__link icon-link text-link is-active">
+      <span class="sidebar__link icon-link text-link is-active" aria-current="page">
     {{- end -}}
     {{ partial "nav/menu-pre-icon.html" .menuEntry }}
     <span class="text">{{ .menuEntry.Name | site.Home.RenderString }}</span>

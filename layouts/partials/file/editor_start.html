@@ -1,4 +1,6 @@
-{{- if .Site.IsServer -}}
-    {{- $path := print "vscode://file" (.Param "sourcePath") .File.Path  -}}
-    <a {{ printf "href=%q" $path | safeHTMLAttr }} title="open file in your local vscode" rel="nofollow">
-{{- end -}}
+{{- if and .Site.IsServer .File -}}
+{{- with (.Param "sourcePath") -}}
+{{- $path := print "vscode://file" . $.File.Path  -}}
+<a {{ printf "href=%q" $path | safeHTMLAttr }} rel="nofollow">
+    {{- end -}}
+    {{- end -}}
