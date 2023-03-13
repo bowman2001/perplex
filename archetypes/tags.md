@@ -1,17 +1,13 @@
 ---
-title: {{ replace .Name "-" " " | title }}
-description: 
-subtitle: false
+title: {{ .Name | title }}
+description:
+subtitle: true
 date: {{ .Date }}
-categories: []
-tags: []
-series: []
 resources:
   - src:
     name: featured
     params:
-      alt: 
-draft: true
+      alt:
 ---
 
 {{ partial "archetypes/first_paragraph.md" . -}} <!--more-->

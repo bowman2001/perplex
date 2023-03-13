@@ -1,13 +1,13 @@
 ---
 author:
 title: {{ replace .Name "-" " " | title }}
-description: Page description placeholder
+description: "**Placeholder** for page description"
 subtitle: false
 date: {{ .Date }} 
 weight: 9999
 menu:
   doc:
-    identifier: {{ .Name }}-{{ substr (delimit (shuffle (split (md5 .Name) "")) "") 0 8 }}
+    identifier: {{ .Name }} 
     name: {{ replace .Name "-" " " | title }}
     parent: 
     pre: remove
@@ -16,5 +16,4 @@ tags: []
 draft: true
 ---
 
-Place your lead paragraph here. If you don't need special styling, remove the attribute `{.p-first}`. The **more**-tag marks this placeholder paragraph as the content summary for this page.
-{.p-first} <!--more-->
+{{ partial "archetypes/first_paragraph.md" . -}} <!--more-->

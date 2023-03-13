@@ -1,13 +1,10 @@
-{{ $html := (.Get 0) | default "gets rendered to:" }}
-{{ $result := (.Get 1) | default "and looks like:" }}
+{{ $result := (.Get 0) | default "gets rendered to:" }}
 {{ with .Inner }}
     {{ $inner := trim . "\n" }}
     {{ highlight $inner "md" }}
     {{ $inner = $inner | site.Home.RenderString }}
-    <p>{{ $html | site.Home.RenderString }}</p>
-    {{ highlight ($inner | htmlUnescape) "html" }}
     <p>{{ $result | site.Home.RenderString }}</p>
-    <div class="box box--outer">
+    <div class="box">
         {{ $inner }}
     </div>
 {{ end }}
