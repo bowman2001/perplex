@@ -1029,7 +1029,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   max-width: 74rem;
   color: #111111;
 }
-.title > h1 {
+.title h1 {
   font-size: 2.86rem;
   line-height: 3rem;
   padding-top: 0.42893rem;
@@ -1128,7 +1128,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   border-top: 0.15rem solid #111111;
   height: 1rem;
 }
-.title--third > h1 {
+.title--third h1 {
   font-weight: 500;
   letter-spacing: 0em;
   word-spacing: 0em;
@@ -1199,7 +1199,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box--outer {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > div, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box--outer {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1811,7 +1811,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box--outer {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > div, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box--outer {
     margin-left: 37rem;
   }
 }
@@ -1954,6 +1954,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .md dt {
   font-weight: 600;
   text-align: left;
+  color: #444;
 }
 .md dd {
   padding: 0 0 1rem calc(3rem + 1 * var(--es));
@@ -3861,8 +3862,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .page-footer > hr {
   border-top: 0.15rem solid rgba(17, 17, 17, 0.5);
   height: 1rem;
-  margin: 0 2rem;
-  max-width: 70rem;
 }
 .page-footer--taxo {
   /* @media screen and (min-width: bp.$col-4) {
