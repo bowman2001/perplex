@@ -1,1 +1,1 @@
-{{ with .Title }}<h1>{{- . | site.Home.RenderString -}}</h1>{{ end }}
+{{ with .Title }}<h1>{{- . | site.Home.RenderString | htmlUnescape -}}</h1>{{ end }}

@@ -13,8 +13,6 @@ toggleInterface.addEventListener('keydown', handleToggle); */
 const sbBtn = document.querySelector('#tgl-sb');
 const sb = document.querySelector('#l-sidebar');
 const overlay = document.querySelector('#l-overlay');
-
-
 const tocBtn = document.querySelector('#toggle-toc');
 const toc = document.querySelector('#toc');
 

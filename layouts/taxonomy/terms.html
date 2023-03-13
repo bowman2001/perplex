@@ -1,10 +1,9 @@
 {{- define "main" -}}
   <div id="l-content-box" class="l-box l-box--full">
-    <div id="l-content">
       <header class="page-header page-header--title-left">
         <div class="title title--taxo">
-            <hr>
-            {{ partial "title/title.html" . }}
+          <hr>
+            {{ partial "title/taxo.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
       </header>
@@ -13,13 +12,17 @@
               {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
-      <nav class="card-nav card-nav--3 card-nav--top margin-left">
-        <ul class="card-nav__list">
-            {{- range .Pages.ByTitle -}}
-              <li class="card card--1">{{- .Render "li-card-1-row-img" -}}</li>
-            {{- end -}}
-        </ul>
-      </nav>
-    </div>
+        {{ with .Pages }}
+          <nav class="card-nav card-nav--3 card-nav--top margin-left">
+            <ul class="card-nav__list">
+                {{- range .ByTitle -}}
+                  <li class="card card--1">{{- .Render "li-card-1-row-img" -}}</li>
+                {{- end -}}
+            </ul>
+          </nav>
+        {{ end }}
+      <footer class="page-footer page-footer--taxo">
+          {{ partial "nav/taxonomies/site/lists.html" . }}
+      </footer>
   </div>
 {{- end -}}
