@@ -9,5 +9,3 @@ resources:
     params:
       alt:
 ---
-
-{{ partial "archetypes/first_paragraph.md" . -}} <!--more-->
