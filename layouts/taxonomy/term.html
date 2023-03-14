@@ -22,9 +22,8 @@
           </ul>
         </nav>
       {{ end }}
-    <footer class="page-footer page-footer--taxo">
-        <hr>
-        {{ partial "nav/taxonomies/site/lists.html" . }}
+    <footer class="page-footer page-footer--taxo margin-left">
+        {{- partial "footer/taxo.html" . -}}
     </footer>
   </div>
 {{- end -}}

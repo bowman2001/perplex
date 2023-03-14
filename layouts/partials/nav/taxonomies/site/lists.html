@@ -2,32 +2,30 @@
 {{ $tags := site.GetPage "tags" }}
 {{ $series := site.GetPage "series" }}
 {{ if or $categories $tags $series }}
-  <nav class="taxo-site-nav">
-      <ul>
-          {{ with $categories }}
-            <li class="meta__item meta__taxo meta__taxo--category">
-              <ul class="ul--row">
-                  {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
-                  {{- partial "nav/taxonomies/site/term_list.html" . -}}
-              </ul>
-            </li>
-          {{ end }}
-          {{ with $tags }}
-            <li class="meta__item meta__taxo meta__taxo--tag">
-              <ul class="ul--row">
-                  {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
-                  {{- partial "nav/taxonomies/site/term_list.html" . -}}
-              </ul>
-            </li>
-          {{ end }}
-          {{ with $series }}
-            <li class="meta__item meta__taxo meta__taxo--series">
-              <ul class="ul--row">
-                  {{- partial "nav/taxonomies/icon_item/series.html" . -}}
-                  {{- partial "nav/taxonomies/site/term_list.html" . -}}
-              </ul>
-            </li>
-          {{ end }}
-      </ul>
-  </nav>
+  <ul class="taxo__list">
+      {{ with $tags }}
+        <li class="taxo__item taxo__item--tag">
+          <ul class="ul--row">
+              {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
+              {{- partial "nav/taxonomies/site/term_list.html" . -}}
+          </ul>
+        </li>
+      {{ end }}
+      {{ with $categories }}
+        <li class="taxo__item taxo__item--category">
+          <ul class="ul--row">
+              {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
+              {{- partial "nav/taxonomies/site/term_list.html" . -}}
+          </ul>
+        </li>
+      {{ end }}
+      {{ with $series }}
+        <li class="taxo__item taxo__item--series">
+          <ul class="ul--row">
+              {{- partial "nav/taxonomies/icon_item/series.html" . -}}
+              {{- partial "nav/taxonomies/site/term_list.html" . -}}
+          </ul>
+        </li>
+      {{ end }}
+  </ul>
 {{ end }}

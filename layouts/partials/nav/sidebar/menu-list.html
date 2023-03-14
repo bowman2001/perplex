@@ -36,9 +36,9 @@
 {{- define "item" -}}
     {{- $active := .page.IsMenuCurrent .menuName .menuEntry -}}
     {{- if not $active -}}
-      <a href="{{ .menuEntry.URL }}" class="sidebar__link icon-link text-link">
+      <a href="{{ .menuEntry.URL }}" class="sidebar__link icon-link">
     {{- else -}}
-      <span class="sidebar__link icon-link text-link is-active" aria-current="page">
+      <span class="sidebar__link icon-link is-active" aria-current="page">
     {{- end -}}
     {{ partial "nav/menu-pre-icon.html" .menuEntry }}
     <span class="text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
