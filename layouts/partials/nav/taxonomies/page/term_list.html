@@ -1,4 +1,4 @@
 {{- $last := sub (len .) 1 -}}
 {{- range $i, $el := . -}}
-  <li><a href="{{ $el.RelPermalink }}">{{ $el.LinkTitle | strings.FirstUpper }}</a>{{- if (lt $i $last) }} {{ partial "nav/taxonomies/icon_item/separator.html" . }}{{ end }}</li>
+  <li><a href="{{ $el.RelPermalink }}">{{ $el.LinkTitle | strings.FirstUpper }}</a>{{- if (lt $i $last) }}{{ partial "nav/taxonomies/icon_item/separator.html" . }}{{ end }}</li>
 {{- end -}}

@@ -3,7 +3,7 @@
 {{ if or $categories $tags }}
   <ul>
       {{ with $categories }}
-        <li class="meta__item taxo__item meta__taxo--category">
+        <li class="meta__item meta__item--taxo taxo-shape taxo-shape--category">
           <ul class="ul--row">
               {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
               {{- partial "nav/taxonomies/page/term_list.html" . -}}
@@ -11,7 +11,7 @@
         </li>
       {{ end }}
       {{ with $tags }}
-        <li class="meta__item taxo__item meta__taxo--tag">
+        <li class="meta__item meta__item--taxo taxo-shape taxo-shape--tag">
           <ul class="ul--row">
               {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
               {{- partial "nav/taxonomies/page/term_list.html" . -}}

@@ -1,8 +1,7 @@
 {{ with (site.RegularPages.Related . | first 4 ) }}
     {{ $n := len . }}
-    <div class="md md--footer">
+    <section class="section">
       <h2>See Also</h2>
-    </div>
     <nav class="card-nav card-nav--2">
       <ul class="card-nav__list">
           {{ range $k, $v := . }}
@@ -10,4 +9,5 @@
           {{ end }}
       </ul>
     </nav>
+    </section>
 {{ end }}

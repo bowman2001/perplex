@@ -4,7 +4,7 @@
 {{ if or $categories $tags $series }}
   <ul class="taxo__list">
       {{ with $tags }}
-        <li class="taxo__item taxo__item--tag">
+        <li class="taxo__item taxo-shape taxo-shape--tag">
           <ul class="ul--row">
               {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
               {{- partial "nav/taxonomies/site/term_list.html" . -}}
@@ -12,7 +12,7 @@
         </li>
       {{ end }}
       {{ with $categories }}
-        <li class="taxo__item taxo__item--category">
+        <li class="taxo__item taxo-shape taxo-shape--category">
           <ul class="ul--row">
               {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
               {{- partial "nav/taxonomies/site/term_list.html" . -}}
@@ -20,7 +20,7 @@
         </li>
       {{ end }}
       {{ with $series }}
-        <li class="taxo__item taxo__item--series">
+        <li class="taxo__item taxo-shape taxo-shape--series">
           <ul class="ul--row">
               {{- partial "nav/taxonomies/icon_item/series.html" . -}}
               {{- partial "nav/taxonomies/site/term_list.html" . -}}

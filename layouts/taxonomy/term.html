@@ -18,12 +18,15 @@
         <nav class="card-nav card-nav--3 card-nav--top margin-left">
           <ul class="card-nav__list">
               {{- range . -}}
-              <li class="card card--1">{{- .Render "li-card-1-col-img" -}}</li>{{- end -}}
+                <li class="card card--1">{{- .Render "li-card-1-col-img" -}}</li>
+              {{- end -}}
           </ul>
         </nav>
       {{ end }}
     <footer class="page-footer page-footer--taxo margin-left">
-        {{- partial "footer/taxo.html" . -}}
+        <div class="taxo {{ if gt (len .Pages) 3 }}taxo--left{{ end }}">
+          {{- partial "footer/taxo.html" . -}}
+        </div>
     </footer>
   </div>
 {{- end -}}

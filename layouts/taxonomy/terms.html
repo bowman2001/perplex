@@ -1,30 +1,32 @@
 {{- define "main" -}}
   <div id="l-content-box" class="l-box l-box--full">
-      <header class="page-header page-header--title-left">
-        <div class="title title--taxo">
-          <hr>
-            {{ partial "file/editor_start.html" .Page }}
-            {{ partial "title/taxo.html" .Page }}
-            {{ partial "title/subtitle.html" .Page }}
-            {{ partial "file/editor_end.html" .Page }}
+    <header class="page-header page-header--title-left">
+      <div class="title title--taxo">
+        <hr>
+          {{ partial "file/editor_start.html" .Page }}
+          {{ partial "title/taxo.html" .Page }}
+          {{ partial "title/subtitle.html" .Page }}
+          {{ partial "file/editor_end.html" .Page }}
+      </div>
+    </header>
+      {{- with .Content -}}
+        <div class="md md--sans md--margin-left md--h-serif md--list">
+            {{- partial "replacements.html" . -}}
         </div>
-      </header>
-        {{- with .Content -}}
-          <div class="md md--sans md--margin-left md--h-serif md--list">
-              {{- partial "replacements.html" . -}}
-          </div>
-        {{- end -}}
-        {{- with .Pages -}}
-          <nav class="card-nav card-nav--3 card-nav--top margin-left">
-            <ul class="card-nav__list">
-                {{- range .ByTitle -}}
-                  <li class="card card--1">{{- .Render "li-card-1-row-img" -}}</li>
-                {{- end -}}
-            </ul>
-          </nav>
-        {{- end -}}
+      {{- end -}}
+      {{- with .Pages -}}
+        <nav class="card-nav card-nav--3 card-nav--top margin-left">
+          <ul class="card-nav__list">
+              {{- range .ByTitle -}}
+                <li class="card card--1">{{- .Render "li-card-1-row-img" -}}</li>
+              {{- end -}}
+          </ul>
+        </nav>
+      {{- end -}}
     <footer class="page-footer page-footer--taxo margin-left">
-        {{- partial "footer/taxo.html" . -}}
+        <div class="taxo {{ if gt (len .Pages) 18 }}taxo--left{{ end }}">
+         {{- partial "footer/taxo.html" . -}}
+        </div>
     </footer>
   </div>
 {{- end -}}
