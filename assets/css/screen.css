@@ -3979,21 +3979,16 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 
 .fig--featured {
-  margin-top: 0;
+  margin-top: 1.5rem;
+  float: right;
+  clear: both;
+  width: calc(50% + 1rem);
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
-@media screen and (min-width: 22.5em) {
-  .fig--featured {
-    float: right;
-    clear: both;
-    width: calc(50% + 1rem);
-    margin-top: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .fig--featured .caption {
-    padding-left: 0;
-    padding-right: 0;
-  }
+.fig--featured .caption {
+  padding-left: 0;
+  padding-right: 0;
 }
 @media screen and (min-width: 37em) {
   .fig--featured {
@@ -4036,19 +4031,17 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   }
 }
 
-@media screen and (min-width: 22.5em) {
-  .fig--size-tiny {
-    width: calc(50% + 1rem);
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .fig--size-tiny img {
-    border-radius: 0.5rem;
-  }
-  .fig--size-tiny .caption {
-    padding-left: 0;
-    padding-right: 0;
-  }
+.fig--size-tiny {
+  width: calc(33.3334% + 1rem);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.fig--size-tiny img {
+  border-radius: 0.5rem;
+}
+.fig--size-tiny .caption {
+  padding-left: 0;
+  padding-right: 0;
 }
 @media screen and (min-width: 37em) {
   .fig--size-tiny {
@@ -4131,15 +4124,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   }
 }
 
-@media screen and (min-width: 22.5em) {
-  .fig--size-tiny.fig--posh-left {
-    float: left;
-    clear: left;
-  }
-  .fig--size-tiny.fig--posh-right {
-    float: right;
-    clear: right;
-  }
+.fig--size-tiny.fig--posh-left {
+  float: left;
+  clear: left;
+}
+.fig--size-tiny.fig--posh-right {
+  float: right;
+  clear: right;
 }
 
 @media screen and (min-width: 37em) {
