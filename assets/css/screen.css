@@ -822,7 +822,7 @@ body {
   color: #000;
 }
 
-.meta__section a, .meta__section a.icon-font {
+.taxo-shape a, .meta__section a, .meta__section a.icon-font {
   background-color: transparent;
   border-radius: 0.25em;
   box-shadow: inset 0 0 0.5rem transparent;
@@ -830,21 +830,7 @@ body {
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
-.meta__section a:hover, .meta__section a:focus {
-  color: #000000;
-  background-color: rgba(0, 132, 194, 0.1);
-  box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
-}
-
-.taxo-shape a {
-  background-color: transparent;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0 0.5rem transparent;
-  transition-property: color, text-decoration-color, background-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-}
-.taxo-shape a:hover, .taxo-shape a:focus {
+.taxo-shape a:hover, .meta__section a:hover, .taxo-shape a:focus, .meta__section a:focus {
   color: #000000;
   background-color: rgba(201, 24, 127, 0.1);
   box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
@@ -968,8 +954,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .meta--head {
   margin: 0 2rem 1rem 2rem;
 }
-.meta--head .meta__item--taxo .icon-font {
-  margin-left: -2.5rem;
+@media screen and (min-width: 79em) {
+  .meta--head .meta__item--taxo .icon-font {
+    margin-left: -2.5rem;
+  }
 }
 
 .meta--foot {
@@ -990,9 +978,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   .meta--left .meta__list--date {
     text-align: left;
     width: 18.5rem;
-  }
-  .meta--left .taxo__item .icon-font {
-    margin-left: -2.5rem;
   }
 }
 
