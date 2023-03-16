@@ -1,0 +1,11 @@
+<p class="p-meta">
+{{ with .FirstSection }}
+    {{ if not .IsHome }}<a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a>{{- end -}}
+{{ end }}
+    {{ with .Params.categories }}
+        {{ $firstcategory := (index . 0) }}
+    &nbsp;|&nbsp;<a href="{{ ( site.GetPage (print "categories/" $firstcategory ) ).RelPermalink }}">{{- $firstcategory | strings.FirstUpper -}}</a>
+    {{ end }}
+</p>
+{{- with .Title -}}<h2><a class="title-link" href="{{ $.RelPermalink }}">{{- . | site.Home.RenderString -}}</a></h2>{{- end -}}
+{{ partial "summary.html" . }}

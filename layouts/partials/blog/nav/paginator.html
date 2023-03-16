@@ -2,7 +2,7 @@
 <nav class="page-nav">
   <ul class="page-nav__list">
     {{- with .Paginator.Prev -}}
-    <li class="page-nav__li"><a href="{{ .URL }}" class="page-nav__link page-nav__link--prev icon-link hover-link">
+    <li class="page-nav__li"><a href="{{ .URL }}" class="page-nav__link page-nav__link--prev icon-link hover-card">
         <div class="icon-font page-nav__icon"></div>
       <div class="page-nav__title"><span class="text">Newer</span></div>
       <div class="icon-font page-nav__icon page-nav__icon--arrow">west</div>
@@ -12,7 +12,7 @@
     {{- end -}}
     {{ with .Paginator.Next }}
     <li class="page-nav__li">
-      <a href="{{ .URL }}" class="page-nav__link page-nav__link--next icon-link hover-link">
+      <a href="{{ .URL }}" class="page-nav__link page-nav__link--next icon-link hover-card">
         <div class="icon-font page-nav__icon"></div>
         <div class="page-nav__title"><span class="text">Older</span></div>
         <div class="icon-font page-nav__icon page-nav__icon--arrow">east</div>

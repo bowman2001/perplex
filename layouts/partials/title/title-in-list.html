@@ -1,4 +1,4 @@
 {{ $link := .RelPermalink }}
 {{ with .Title }}
-  <h2><span><a class="heading-anchor" href="{{ $link }}">{{- . | site.Home.RenderString -}}</a></span></h2>
+  <h2><span><a class="title-link" href="{{ $link }}">{{- . | site.Home.RenderString -}}</a></span></h2>
 {{ end }}

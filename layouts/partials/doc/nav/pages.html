@@ -2,7 +2,7 @@
   <ul class="page-nav__list">
       {{ $pages := where site.Pages.Reverse "Section" .Section -}}
       {{ with $pages.Prev . }}
-        <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--prev icon-link hover-link">
+        <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--prev icon-link hover-card">
             <div class="page-nav__itemcol">
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
@@ -14,7 +14,7 @@
       {{- end -}}
       {{ with $pages.Next . }}
         <li class="page-nav__li">
-          <a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next icon-link hover-link">
+          <a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next icon-link hover-card">
             <div class="page-nav__itemcol">
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
@@ -38,7 +38,7 @@
 {{ end }}
 
 {{ define "end" }}
-  <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next icon-link hover-link">
+  <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next icon-link hover-card">
       <div class="page-nav__itemcol">
           {{ partial "doc/nav/menu-icon.html" . }}
       </div>
