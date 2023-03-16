@@ -281,7 +281,7 @@ html {
 }
 
 body {
-  background: #fefefe;
+  background: #fefcfa;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -407,7 +407,7 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #ebebeb;
+    scrollbar-color: hsl(45deg, 83%, 53%) #f8e9da;
   }
   #l-home::-webkit-scrollbar {
     width: 1rem;
@@ -417,7 +417,7 @@ body {
     background: hsl(45deg, 83%, 53%);
   }
   #l-home::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 @media screen and (min-width: 120em) {
@@ -614,7 +614,7 @@ body {
   #l-main {
     overflow-y: auto;
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #ebebeb;
+    scrollbar-color: hsl(45deg, 83%, 53%) #f8e9da;
   }
   #l-main::-webkit-scrollbar {
     width: 1rem;
@@ -624,7 +624,7 @@ body {
     background: hsl(45deg, 83%, 53%);
   }
   #l-main::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 
@@ -639,7 +639,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: #fefefe;
+  background-color: #fefcfa;
 }
 #l-sidebar.is-visible {
   left: 0;
@@ -669,7 +669,7 @@ body {
     padding-left: 0;
     padding-right: 0;
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #ebebeb;
+    scrollbar-color: hsl(45deg, 83%, 53%) #f8e9da;
   }
   #l-sidebar::-webkit-scrollbar {
     width: 1rem;
@@ -679,7 +679,7 @@ body {
     background: hsl(45deg, 83%, 53%);
   }
   #l-sidebar::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 
@@ -943,20 +943,17 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   display: block;
   height: 100%;
   --bs-color: transparent;
-  border: 0.1rem solid var(--bs-color);
   border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.5rem var(--bs-color);
-  text-shadow: 0 0 0.1rem var(--bs-color);
+  box-shadow: inset 0 -0.2rem 0.5rem var(--bs-color);
+  border: 0.1rem solid var(--bs-color);
   filter: brightness(90%);
-  background-color: inherit;
-  transition: border-color, box-shadow, text-shadow, background-color, filter;
+  transition: border, filter, box-shadow;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 .hover-card:hover, .hover-card:focus {
   --bs-color: rgba(17, 17, 17, 0.2);
   filter: brightness(100%);
-  background-color: rgba(235, 185, 36, 0.05);
 }
 .hover-card:hover hr, .hover-card:focus hr {
   border-color: transparent;
@@ -1247,7 +1244,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > div, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box--outer {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box--outer {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1405,7 +1402,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .md .box {
   position: relative;
   margin-bottom: calc(1rem + 1 * var(--es));
-  background-color: rgba(229, 229, 229, 0.25);
+  background-color: rgba(246, 227, 208, 0.25);
   border-radius: 0.5rem;
 }
 .md .hang-quote {
@@ -1859,7 +1856,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > div, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box--outer {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box--outer {
     margin-left: 37rem;
   }
 }
@@ -1920,7 +1917,6 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
   margin-bottom: 1rem;
-  clear: both;
   /* td:last-child code:before {
       display: block;
       content: "Code";
@@ -1933,7 +1929,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .md .highlight > pre, .md .highlight > div {
   overflow: auto;
   scrollbar-gutter: stable;
-  scrollbar-color: hsl(45deg, 83%, 53%) #ebebeb;
+  scrollbar-color: hsl(45deg, 83%, 53%) #f8e9da;
   border-radius: 0.5rem;
 }
 .md .highlight > pre::-webkit-scrollbar, .md .highlight > div::-webkit-scrollbar {
@@ -1944,7 +1940,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   background: hsl(45deg, 83%, 53%);
 }
 .md .highlight > pre::-webkit-scrollbar-track, .md .highlight > div::-webkit-scrollbar-track {
-  background: #ebebeb;
+  background: #f8e9da;
 }
 .md .highlight table:after {
   display: none;
@@ -2389,7 +2385,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   text-transform: uppercase;
 }
 .md--card .p-meta {
-  font-weight: 300;
+  font-weight: 400;
 }
 .md--card .p-meta + h2 {
   margin-top: 0;
@@ -2668,7 +2664,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   max-width: 70rem;
   text-align: center;
   border-radius: 0.5rem;
-  background-color: #f1f1f1;
+  background-color: #f9efe6;
 }
 @media screen and (min-width: 37em) {
   .md .asciicast {
@@ -3522,7 +3518,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 @media screen and (min-width: 79em) {
   .sidebar-box {
     scrollbar-gutter: stable;
-    scrollbar-color: hsl(45deg, 83%, 53%) #ebebeb;
+    scrollbar-color: hsl(45deg, 83%, 53%) #f8e9da;
   }
   .sidebar-box::-webkit-scrollbar {
     width: 1rem;
@@ -3532,7 +3528,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
     background: hsl(45deg, 83%, 53%);
   }
   .sidebar-box::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 

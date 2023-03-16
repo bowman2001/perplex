@@ -390,7 +390,7 @@ html {
 }
 
 body {
-  background: #fefefe;
+  background: #fefcfa;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -529,7 +529,7 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ebebeb;
+    scrollbar-color: #ebb924 #f8e9da;
   }
 
   #l-home::-webkit-scrollbar {
@@ -542,7 +542,7 @@ body {
   }
 
   #l-home::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 
@@ -755,7 +755,7 @@ body {
   #l-main {
     overflow-y: auto;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ebebeb;
+    scrollbar-color: #ebb924 #f8e9da;
   }
 
   #l-main::-webkit-scrollbar {
@@ -768,7 +768,7 @@ body {
   }
 
   #l-main::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 
@@ -783,7 +783,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: #fefefe;
+  background-color: #fefcfa;
 }
 
 #l-sidebar.is-visible {
@@ -818,7 +818,7 @@ body {
     padding-left: 0;
     padding-right: 0;
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ebebeb;
+    scrollbar-color: #ebb924 #f8e9da;
   }
 
   #l-sidebar::-webkit-scrollbar {
@@ -831,7 +831,7 @@ body {
   }
 
   #l-sidebar::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 
@@ -1165,13 +1165,11 @@ h6:target .heading-anchor {
   display: block;
   height: 100%;
   --bs-color: transparent;
-  border: .1rem solid var(--bs-color);
   border-radius: 1rem;
-  box-shadow: 0 .2rem .5rem var(--bs-color);
-  text-shadow: 0 0 .1rem var(--bs-color);
+  box-shadow: inset 0 -0.2rem .5rem var(--bs-color);
+  border: .1rem solid var(--bs-color);
   filter: brightness(90%);
-  background-color: inherit;
-  transition: border-color, box-shadow, text-shadow, background-color, filter;
+  transition: border, filter, box-shadow;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1180,7 +1178,6 @@ h6:target .heading-anchor {
 .hover-card:focus {
   --bs-color: rgba(17, 17, 17, 0.2);
   filter: brightness(100%);
-  background-color: rgba(235, 185, 36, .05);
 }
 
 .hover-card:hover hr,
@@ -1520,7 +1517,6 @@ h6:target .heading-anchor {
 .md > blockquote,
 .md > table,
 .md > pre,
-.md > div,
 .md .highlight,
 .md .maincol,
 .md .literature,
@@ -1752,7 +1748,7 @@ h6:target .heading-anchor {
 .md .box {
   position: relative;
   margin-bottom: calc(1rem + 1 * var(--es));
-  background-color: rgba(229, 229, 229, .25);
+  background-color: rgba(246, 227, 208, .25);
   border-radius: .5rem;
 }
 
@@ -2363,7 +2359,6 @@ h6:target .heading-anchor {
   .md--margin-left > blockquote,
   .md--margin-left > table,
   .md--margin-left > pre,
-  .md--margin-left > div,
   .md--margin-left .highlight,
   .md--margin-left .maincol,
   .md--margin-left .literature,
@@ -2442,14 +2437,13 @@ h6:target .heading-anchor {
   padding-top: .9rem;
   padding-bottom: .9rem;
   margin-bottom: 1rem;
-  clear: both;
 }
 
 .md .highlight > pre,
 .md .highlight > div {
   overflow: auto;
   scrollbar-gutter: stable;
-  scrollbar-color: #ebb924 #ebebeb;
+  scrollbar-color: #ebb924 #f8e9da;
   border-radius: .5rem;
 }
 
@@ -2466,7 +2460,7 @@ h6:target .heading-anchor {
 
 .md .highlight > pre::-webkit-scrollbar-track,
 .md .highlight > div::-webkit-scrollbar-track {
-  background: #ebebeb;
+  background: #f8e9da;
 }
 
 .md .highlight table:after {
@@ -3037,7 +3031,7 @@ h6:target .heading-anchor {
 }
 
 .md--card .p-meta {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .md--card .p-meta + h2 {
@@ -3358,7 +3352,7 @@ h6:target .heading-anchor {
   max-width: 70rem;
   text-align: center;
   border-radius: .5rem;
-  background-color: #f1f1f1;
+  background-color: #f9efe6;
 }
 
 @media screen and (min-width: 37em) {
@@ -4349,7 +4343,7 @@ h6:target .heading-anchor {
 @media screen and (min-width: 79em) {
   .sidebar-box {
     scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #ebebeb;
+    scrollbar-color: #ebb924 #f8e9da;
   }
 
   .sidebar-box::-webkit-scrollbar {
@@ -4362,7 +4356,7 @@ h6:target .heading-anchor {
   }
 
   .sidebar-box::-webkit-scrollbar-track {
-    background: #ebebeb;
+    background: #f8e9da;
   }
 }
 
