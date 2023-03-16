@@ -1,6 +1,8 @@
 {{- $img := ( partial "img/func/get-featured.html" . ) -}}
+{{- $page := . -}}
 {{- with $img -}}
+    {{- $a := partial "img/func/params/resource_card.html" (dict "img" . "page" $page)  -}}
   <figure class="card__fig card__fig--3halfs">
-      {{ partial "img/img.html" (dict "img" . "a" (partial "img/func/params/resource_card.html" . )) }}
+      {{ partial "img/img.html" (dict "img" . "a" $a) }}
   </figure>
 {{- end -}}
