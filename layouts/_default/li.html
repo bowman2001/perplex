@@ -1,4 +1,4 @@
-<a class="hover-card" href="{{- .RelPermalink -}}">
+<a class="card__hover" href="{{- .RelPermalink -}}">
   <h4>
       {{ with .Params.menu.doc.pre }}<span class="icon-font icon-bullet">{{ . }}</span>{{ end }}
       {{ with .Title }}{{- . | site.Home.RenderString -}}{{ end }}
