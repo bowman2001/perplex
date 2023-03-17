@@ -949,7 +949,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 
 .meta--head {
-  margin: 0 2rem 1rem 2rem;
+  margin: 1rem 2rem;
 }
 @media screen and (min-width: 79em) {
   .meta--head .meta__item--taxo .icon-font {
@@ -3409,14 +3409,13 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .card__hover {
   display: block;
   height: 100%;
-  filter: brightness(80%);
-  transition: transform, filter;
+  filter: grayscale(25%) brightness(80%);
+  transition: filter;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 .card__hover:hover, .card__hover:focus, .card__hover:active {
-  filter: brightness(100%);
-  transform: scale(1.045);
+  filter: grayscale(0%) brightness(100%);
 }
 
 .card__flex {
