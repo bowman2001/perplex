@@ -1,9 +1,10 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
 {{- partial "file/editor_start.html" . -}}
 <ul class="meta__list meta__list--date">
-  <li class="meta__item meta__date" {{ with $.Params.author -}}title="By {{ . }}"{{- end -}}><span class="icon-font">edit&nbsp;</span><time datetime="{{ .Lastmod.Format $iso8601 }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
-  </li>
-  <li class="meta__item meta__date"><span class="icon-font">schedule&nbsp;</span>{{ .Date | time.Format ":time_short" }}
-  </li>
+  <li class="meta__item meta__date"><span class="icon-font">edit&nbsp;</span><time datetime="{{ .Lastmod.Format $iso8601 }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></li>
+  <li class="meta__item meta__date"><span class="icon-font">schedule&nbsp;</span>{{ .Date | time.Format ":time_short" }}</li>
+  {{ with .GitInfo }}{{ with .AuthorName }}
+  <li class="meta__item meta__date"><span class="icon-font">person&nbsp;</span>{{ . }}</li>
+  {{ end }}{{ end }}
 </ul>
 {{- partial "file/editor_end.html" . -}}
