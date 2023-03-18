@@ -1,0 +1,8 @@
+{{- with .Params.categories -}}
+  <ul class="ul--row">
+      {{- $first := (index . 0) -}}
+    <li class="meta__item taxo-shape taxo-shape--category"><a
+              href="{{ ( site.GetPage (print "categories/" $first ) ).RelPermalink }}">{{- $first | strings.FirstUpper -}}</a>
+    </li>
+  </ul>
+{{- end -}}

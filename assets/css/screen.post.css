@@ -1180,12 +1180,11 @@ h6:target .heading-anchor {
   flex-direction: row;
   justify-content: space-between;
   max-width: 70rem;
-  margin: 0 2rem;
   color: #444;
 }
 
 .meta--head {
-  margin: 1rem 2rem;
+  margin: 0 2rem 1rem 2rem;
 }
 
 @media screen and (min-width: 79em) {
@@ -1196,6 +1195,19 @@ h6:target .heading-anchor {
 
 .meta--card {
   margin: 0 2rem;
+  max-width: none;
+  max-width: initial;
+}
+
+.meta--card--half {
+  margin: 2rem 2rem -0.5rem 2rem;
+}
+
+.meta--card--half .meta__item {
+  font-size: 1.287rem;
+  line-height: 1.5rem;
+  padding-top: .2680185rem;
+  margin-bottom: -.2680185rem;
 }
 
 .meta--foot {
@@ -1211,6 +1223,7 @@ h6:target .heading-anchor {
     justify-content: start;
     float: left;
     width: 33rem;
+    margin: 1rem 2rem;
   }
 
   .meta--left .meta__list--date {
@@ -1288,7 +1301,7 @@ h6:target .heading-anchor {
 .title--stream {
   height: 5rem;
   max-width: 100%;
-  margin-top: 1rem;
+  margin: 1rem 2rem 0 2rem;
   padding-bottom: 0;
   border-radius: .5rem;
   color: #fff;
@@ -1297,6 +1310,7 @@ h6:target .heading-anchor {
 }
 
 .title--stream > h1 {
+  margin: 0;
   font-size: 2.86rem;
   line-height: 3.5rem;
   padding-top: .67893rem;
@@ -1457,7 +1471,7 @@ h6:target .heading-anchor {
   margin: 0 2rem;
 }
 
-.section h2 {
+.section > h2 {
   font-size: 1.915rem;
   line-height: 2rem;
   padding-top: .2828325rem;
@@ -1466,10 +1480,11 @@ h6:target .heading-anchor {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .03em;
+  word-spacing: .09em;
   margin: 0 2rem;
 }
 
-.section h3 {
+.section > h3 {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: .464465rem;
@@ -1478,6 +1493,7 @@ h6:target .heading-anchor {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .04em;
+  word-spacing: .12em;
   margin: 0 2rem;
 }
 
@@ -2233,11 +2249,6 @@ h6:target .heading-anchor {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
   font-style: italic;
-}
-
-.md--card--half {
-  padding-top: 1.5rem;
-  margin-left: -2rem;
 }
 
 .md--card--half > p,
@@ -4234,19 +4245,6 @@ h6:target .heading-anchor {
   height: 100%;
 }
 
-.card__hover .card__fig {
-  filter: grayscale(100%) brightness(95%);
-  transition: filter;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-}
-
-.card__hover:hover .card__fig,
-.card__hover:focus .card__fig,
-.card__hover:active .card__fig {
-  filter: grayscale(0%) brightness(100%);
-}
-
 .card__hover:hover .card__title h2 a,
 .card__hover:hover .card__title h3 a,
 .card__hover:focus .card__title h2 a,
@@ -4254,6 +4252,19 @@ h6:target .heading-anchor {
 .card__hover:active .card__title h2 a,
 .card__hover:active .card__title h3 a {
   text-decoration-color: #000;
+}
+
+.card__hover--grey .card__fig {
+  filter: grayscale(100%) brightness(95%);
+  transition: filter;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.card__hover--grey:hover .card__fig,
+.card__hover--grey:focus .card__fig,
+.card__hover--grey:active .card__fig {
+  filter: grayscale(0%) brightness(100%);
 }
 
 .card__flex {
@@ -4293,15 +4304,15 @@ h6:target .heading-anchor {
      object-fit: contain;
 }
 
-.card__fig img,
-.card__fig svg {
+.card__fig img {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .card__fig--half {
-  width: 18.5rem;
+  width: 16.5rem;
   height: 13.666715rem;
+  padding: 2rem 0 2rem 2rem;
   flex-shrink: 0;
 }
 
@@ -4362,7 +4373,12 @@ h6:target .heading-anchor {
   margin: 0 2rem;
 }
 
-.card__title h2 {
+.card__title h2,
+.card__title h3 {
+  font-size: 1.905rem;
+  line-height: 2rem;
+  padding-top: .2865775rem;
+  padding-bottom: .7134225rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .05em;
@@ -4370,11 +4386,14 @@ h6:target .heading-anchor {
   text-transform: uppercase;
 }
 
-.card__title-1 h2 {
-  font-size: 1.905rem;
-  line-height: 2rem;
-  padding-top: .2865775rem;
-  padding-bottom: .7134225rem;
+.card__title--small h2,
+.card__title--small h3 {
+  font-size: 1.3585rem;
+  line-height: 1.5rem;
+  padding-top: .74124175rem;
+  margin-bottom: -.24124175rem;
+  letter-spacing: .04em;
+  word-spacing: .12em;
 }
 
 .sidebar-box {

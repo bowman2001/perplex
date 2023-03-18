@@ -1,12 +1,14 @@
-{{ $n := sub (len .Ancestors) 2 }}
 <ul class="ul--row meta__section">
   <li class="meta__item">
-    <a class="icon-font" href="{{ site.Home.RelPermalink }}">home</a>{{- if ge $n 0 -}}{{ partial "nav/breadcrumbs/separator.html" . }}{{- end -}}
+    <a class="icon-font" href="{{ site.Home.RelPermalink }}">home</a>{{ partial "nav/breadcrumbs/separator.html" . }}
   </li>
-  {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
+    {{ $n := sub (len .Ancestors) 1 }}
+    {{- range $i, $e := last $n .Ancestors.Reverse -}}
+      <li class="meta__item">
+        <a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+      </li>
+    {{- end -}}
   <li class="meta__item">
-    <a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}
-    </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
+    <a href="{{ .RelPermalink }}" aria-current="page">{{- .LinkTitle | site.Home.RenderString -}}</a>
   </li>
-  {{- end -}}
 </ul>

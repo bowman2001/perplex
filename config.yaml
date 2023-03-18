@@ -33,7 +33,7 @@ params:
   
   ### Parameters
   imaging     :
-    fallback_width : 1200 # In pixel, also used for meta images
+    fallback_width : 1400 # In pixel, also used for meta images
     sizestep       : 50 # In percent
     min_width      : 100 # In pixel
     # Quality reduction for higher densities
