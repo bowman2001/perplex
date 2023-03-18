@@ -2,7 +2,7 @@
 .
 | replaceRE `\{\^([^\}]*)\}` "<sup>$1</sup>"
 | replaceRE `\{\_([^\}]*)\}` "<sub>$1</sub>"
-| replaceRE `\{\#([^\}]*)\}` "<kbd>$1</kbd>"
+| replaceRE `\{\%([^\}]*)\}` "<kbd>$1</kbd>"
 | replaceRE `\{\!([^\}]*)\}` "<mark>$1</mark>"
 | replaceRE `\{\=([^\}]*)\}` "<cite>$1</cite>"
 | replaceRE `\{\+([^\}]*)\}` "<ins>$1</ins>"

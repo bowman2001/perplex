@@ -1,0 +1,16 @@
+<div class="card__hover">
+    <div class="card__flex card__flex--1">
+      {{ partial "img/featured-card-half.html" . }}
+      <div>
+        <nav class="card__header">
+          <div class="meta meta--card meta--card--half">
+            {{ partial "nav/taxonomies/site/term_count.html" . }}
+          </div>
+            {{ partial "nav/card/title/colhalf.html" . }}
+        </nav>
+      <div class="md md--sans md--card md--card--half">
+        {{ partial "description.html" . }}
+      </div>
+      </div>
+    </div>
+</div>
