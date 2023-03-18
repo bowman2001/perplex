@@ -958,11 +958,14 @@ body {
 
 .md-hook-link,
 .title-link,
-.heading-anchor {
+.heading-anchor,
+.card__hover .card__title h2 a,
+.card__hover .card__title h3 a {
   text-decoration: underline;
   background-color: rgba(0, 0, 0, 0);
   border-radius: .25em;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
+  text-decoration-color: rgba(0, 0, 0, 0);
   text-underline-offset: .075em;
   text-decoration-thickness: 1px;
   transition-property: color, text-decoration-color, background-color;
@@ -972,7 +975,9 @@ body {
 
 .md-hook-link code,
 .title-link code,
-.heading-anchor code {
+.heading-anchor code,
+.card__hover .card__title h2 a code,
+.card__hover .card__title h3 a code {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
@@ -984,9 +989,13 @@ body {
 .md-hook-link:hover,
 .title-link:hover,
 .heading-anchor:hover,
+.card__hover .card__title h2 a:hover,
+.card__hover .card__title h3 a:hover,
 .md-hook-link:focus,
 .title-link:focus,
-.heading-anchor:focus {
+.heading-anchor:focus,
+.card__hover .card__title h2 a:focus,
+.card__hover .card__title h3 a:focus {
   color: #000;
   text-decoration-color: #000;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, .1);
@@ -995,19 +1004,36 @@ body {
 .md-hook-link:hover code,
 .title-link:hover code,
 .heading-anchor:hover code,
+.card__hover .card__title h2 a:hover code,
+.card__hover .card__title h3 a:hover code,
 .md-hook-link:focus code,
 .title-link:focus code,
-.heading-anchor:focus code {
+.heading-anchor:focus code,
+.card__hover .card__title h2 a:focus code,
+.card__hover .card__title h3 a:focus code {
   text-decoration-color: #fff;
 }
 
 .md-hook-link:hover var,
 .title-link:hover var,
 .heading-anchor:hover var,
+.card__hover .card__title h2 a:hover var,
+.card__hover .card__title h3 a:hover var,
 .md-hook-link:focus var,
 .title-link:focus var,
-.heading-anchor:focus var {
+.heading-anchor:focus var,
+.card__hover .card__title h2 a:focus var,
+.card__hover .card__title h3 a:focus var {
   color: #000;
+}
+
+.card__hover .card__title h2 a:hover,
+.card__hover .card__title h3 a:hover,
+.card__hover .card__title h2 a:focus,
+.card__hover .card__title h3 a:focus,
+.card__hover .card__title h2 a:active,
+.card__hover .card__title h3 a:active {
+  background-color: rgba(0, 132, 194, .15);
 }
 
 .meta__section a,
@@ -1180,6 +1206,10 @@ h6:target .heading-anchor {
   }
 }
 
+.meta--card {
+  margin: 0rem 2rem 0 2rem;
+}
+
 .meta--foot {
   margin: 0 2rem 1rem 2rem;
   align-items: end;
@@ -1234,7 +1264,7 @@ h6:target .heading-anchor {
 .meta__section {
   display: block;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .meta__section .icon-font,
@@ -4223,10 +4253,19 @@ h6:target .heading-anchor {
   transition-timing-function: ease-in-out;
 }
 
-.card__hover .card__fig:hover,
-.card__hover .card__fig:focus,
-.card__hover .card__fig:active {
+.card__hover:hover .card__fig,
+.card__hover:focus .card__fig,
+.card__hover:active .card__fig {
   filter: grayscale(0%) brightness(100%);
+}
+
+.card__hover:hover .card__title h2 a,
+.card__hover:hover .card__title h3 a,
+.card__hover:focus .card__title h2 a,
+.card__hover:focus .card__title h3 a,
+.card__hover:active .card__title h2 a,
+.card__hover:active .card__title h3 a {
+  text-decoration-color: #000;
 }
 
 .card__flex {
@@ -4329,6 +4368,25 @@ h6:target .heading-anchor {
     width: 49.5rem;
     height: 33.00165rem;
   }
+}
+
+.card__title {
+  margin: 0 2rem;
+}
+
+.card__title h2 {
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 700;
+  letter-spacing: .05em;
+  word-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.card__title-1 h2 {
+  font-size: 1.905rem;
+  line-height: 2rem;
+  padding-top: .2865775rem;
+  padding-bottom: .7134225rem;
 }
 
 .sidebar-box {
