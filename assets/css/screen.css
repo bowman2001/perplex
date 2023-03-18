@@ -3375,6 +3375,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 
 .card--half {
   width: 50%;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 37em) {
   .card--half {
@@ -3386,6 +3387,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   .card--1, .card--3halfs {
     width: 37rem;
   }
+}
+
+.card--1--row {
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 48em) {
@@ -3409,12 +3414,14 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .card__hover {
   display: block;
   height: 100%;
-  filter: grayscale(25%) brightness(80%);
+}
+.card__hover .card__fig {
+  filter: grayscale(100%) brightness(95%);
   transition: filter;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
-.card__hover:hover, .card__hover:focus, .card__hover:active {
+.card__hover .card__fig:hover, .card__hover .card__fig:focus, .card__hover .card__fig:active {
   filter: grayscale(0%) brightness(100%);
 }
 

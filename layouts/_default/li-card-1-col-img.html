@@ -1,6 +1,9 @@
 <div class="card__hover">
-      {{ partial "img/featured-card-1.html" .  }}
+    <nav class="card__header">
+        {{ partial "img/featured-card-1.html" .  }}
+        {{ partial "nav/card/section-category-title.html" . }}
+    </nav>
     <div class="md md--sans md--card md--card--1">
-        {{ partial "nav/card/section-category-title-summary.html" . }}
+        {{ partial "summary.html" . }}
     </div>
 </div>
