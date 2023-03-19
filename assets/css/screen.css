@@ -866,6 +866,13 @@ body {
 .heading-anchor {
   text-decoration-color: transparent;
 }
+.heading-anchor:before {
+  position: absolute;
+  left: -1.5rem;
+  content: "#";
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
 
 h1:target .heading-anchor, h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor, h5:target .heading-anchor, h6:target .heading-anchor {
   position: relative;
@@ -873,9 +880,7 @@ h1:target .heading-anchor, h2:target .heading-anchor, h3:target .heading-anchor,
   background-color: rgba(24, 124, 170, 0.15);
 }
 h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .heading-anchor:before, h4:target .heading-anchor:before, h5:target .heading-anchor:before, h6:target .heading-anchor:before {
-  position: absolute;
-  left: -1.5rem;
-  content: "#";
+  opacity: 1;
 }
 
 .md-hook-link {

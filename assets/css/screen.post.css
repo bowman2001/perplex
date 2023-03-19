@@ -1072,6 +1072,14 @@ body {
   text-decoration-color: rgba(0, 0, 0, 0);
 }
 
+.heading-anchor:before {
+  position: absolute;
+  left: -1.5rem;
+  content: "#";
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
 h1:target .heading-anchor,
 h2:target .heading-anchor,
 h3:target .heading-anchor,
@@ -1089,9 +1097,7 @@ h3:target .heading-anchor:before,
 h4:target .heading-anchor:before,
 h5:target .heading-anchor:before,
 h6:target .heading-anchor:before {
-  position: absolute;
-  left: -1.5rem;
-  content: "#";
+  opacity: 1;
 }
 
 .md-hook-link {
