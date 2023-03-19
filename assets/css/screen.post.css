@@ -337,15 +337,19 @@ svg,
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(85, 85, 85, .25);
+  -webkit-text-decoration-color: rgba(85, 85, 85, .25);
+          text-decoration-color: rgba(85, 85, 85, .25);
+  transition-property: color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color;
+  transition-property: color, text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
 .caption a:hover {
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .caption__text {
@@ -746,7 +750,8 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  animation: fade 500ms;
+  -webkit-animation: fade 500ms;
+          animation: fade 500ms;
   transition: background-color 250ms;
 }
 
@@ -811,7 +816,8 @@ body {
     grid-area: left;
     position: static;
     width: 35rem;
-    animation: fade 500ms;
+    -webkit-animation: fade 500ms;
+            animation: fade 500ms;
     height: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -830,6 +836,16 @@ body {
 
   #l-sidebar::-webkit-scrollbar-track {
     background: #f8e9da;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -953,10 +969,13 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border-radius: .25em;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
-  text-decoration-color: rgba(0, 0, 0, 0);
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
   text-underline-offset: .075em;
   text-decoration-thickness: 1px;
+  transition-property: color, background-color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color, background-color;
+  transition-property: color, text-decoration-color, background-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -969,7 +988,9 @@ body {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
+  transition-property: -webkit-text-decoration-color;
   transition-property: text-decoration-color;
+  transition-property: text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -985,7 +1006,8 @@ body {
 .card__hover .card__title h2 a:focus,
 .card__hover .card__title h3 a:focus {
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, .1);
 }
 
@@ -999,7 +1021,8 @@ body {
 .heading-anchor:focus code,
 .card__hover .card__title h2 a:focus code,
 .card__hover .card__title h3 a:focus code {
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .md-hook-link:hover var,
@@ -1029,7 +1052,9 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border-radius: .25em;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
+  transition-property: color, background-color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color, background-color;
+  transition-property: color, text-decoration-color, background-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1045,7 +1070,9 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border-radius: .25em;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
+  transition-property: color, background-color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color, background-color;
+  transition-property: color, text-decoration-color, background-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -1065,11 +1092,13 @@ body {
 }
 
 .title-link {
-  text-decoration-color: #006a9c;
+  -webkit-text-decoration-color: #006a9c;
+          text-decoration-color: #006a9c;
 }
 
 .heading-anchor {
-  text-decoration-color: rgba(0, 0, 0, 0);
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
 }
 
 .heading-anchor:before {
@@ -1102,30 +1131,35 @@ h6:target .heading-anchor:before {
 
 .md-hook-link {
   color: #006a9c;
-  text-decoration-color: #006a9c;
+  -webkit-text-decoration-color: #006a9c;
+          text-decoration-color: #006a9c;
 }
 
 .md-hook-link code {
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .md-hook-link:hover,
 .md-hook-link:focus {
   background-color: rgba(0, 132, 194, .15);
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .md-hook-link[href^=http] {
   color: #00826a;
-  text-decoration-color: #00826a;
+  -webkit-text-decoration-color: #00826a;
+          text-decoration-color: #00826a;
 }
 
 .md-hook-link[href^=http]:hover,
 .md-hook-link[href^=http]:focus {
   background-color: rgba(0, 168, 137, .15);
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .icon-link .icon-font {
@@ -1323,7 +1357,7 @@ h6:target .heading-anchor:before {
   max-width: initial;
 }
 
-.title--stream {
+.title--bg-bluegreen {
   height: 5rem;
   max-width: 100%;
   margin: 0 1rem;
@@ -1334,18 +1368,50 @@ h6:target .heading-anchor:before {
   box-shadow: inset 0 0 1rem rgba(0, 0, 0, .1);
 }
 
-.title--stream > h1 {
+.title--bg-bluegreen h1 {
   margin: 0;
   font-size: 2.86rem;
-  line-height: 3.5rem;
-  padding-top: .67893rem;
-  padding-bottom: .32107rem;
+  line-height: 3rem;
+  padding-top: .92893rem;
+  padding-bottom: 1.07107rem;
+  letter-spacing: .04em;
+  word-spacing: .12em;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 79em) {
-  .title--stream {
+  .title--bg-bluegreen {
     margin: 1rem 0 0 0;
     background: linear-gradient(20deg, rgba(0, 98, 143, 0.025) 0%, #00628f 25%, #007560 75%, rgba(0, 117, 96, 0.025) 100%);
+  }
+}
+
+.title--bg-bluered {
+  height: 5rem;
+  max-width: 100%;
+  margin: 0 1rem;
+  padding-bottom: 0;
+  border-radius: .5rem;
+  color: #fff;
+  background: linear-gradient(20deg, #00628f 0%, #9b1262 66%, rgba(155, 18, 98, 0.025) 100%);
+  box-shadow: inset 0 0 1rem rgba(0, 0, 0, .1);
+}
+
+.title--bg-bluered h1 {
+  margin: 0;
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: .92893rem;
+  padding-bottom: 1.07107rem;
+  letter-spacing: .04em;
+  word-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 79em) {
+  .title--bg-bluered {
+    margin: 1rem 0 0 0;
+    background: linear-gradient(20deg, rgba(0, 98, 143, 0.025) 0%, #00628f 25%, #9b1262 75%, rgba(155, 18, 98, 0.025) 100%);
   }
 }
 
@@ -3316,18 +3382,21 @@ h6:target .heading-anchor:before {
 
 .md del,
 .md ins {
-  text-decoration-color: #a00;
+  -webkit-text-decoration-color: #a00;
+          text-decoration-color: #a00;
   text-decoration-thickness: .1rem;
   -webkit-text-decoration-skip: auto;
           text-decoration-skip: auto;
 }
 
 .md del {
-  text-decoration-line: line-through;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
 }
 
 .md ins {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .md sup,
@@ -4282,7 +4351,8 @@ h6:target .heading-anchor:before {
 .card__hover:focus .card__title h3 a,
 .card__hover:active .card__title h2 a,
 .card__hover:active .card__title h3 a {
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .card__hover--grey .card__fig {
@@ -4743,7 +4813,9 @@ h6:target .heading-anchor:before {
   display: block;
   padding: .5rem 0 .5rem 1.7rem;
   border-left: .3rem solid #ccc;
+  transition: color 200ms ease-in-out, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
   transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out;
+  transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
 }
 
 #TableOfContents a .icon-font,

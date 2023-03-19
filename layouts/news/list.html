@@ -1,8 +1,10 @@
 {{- define "main" -}}
 <div id="l-content-box" class="l-box l-box--full">
   <header class="page-header">
-    <div class="title title--stream title--sans padding-left">
-      {{ partial "blog/title/title-list.html" . }}
+    <div class="title title--bg-bluegreen title--sans padding-left">
+        {{ partial "file/editor_start.html" . }}
+        {{ partial "title/title.html" . }}
+        {{ partial "file/editor_end.html" . }}
     </div>
   </header>
   {{ with .Content }}
