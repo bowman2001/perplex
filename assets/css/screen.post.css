@@ -1318,6 +1318,11 @@ h6:target .heading-anchor:before {
   }
 }
 
+.title--wide {
+  max-width: none;
+  max-width: initial;
+}
+
 .title--stream {
   height: 5rem;
   max-width: 100%;
@@ -1550,7 +1555,7 @@ h6:target .heading-anchor:before {
 .md .footnotes,
 .md .gist,
 .md .asciicast,
-.md .box--outer {
+.md .box {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -2387,7 +2392,7 @@ h6:target .heading-anchor:before {
   .md--margin-left .footnotes,
   .md--margin-left .gist,
   .md--margin-left .asciicast,
-  .md--margin-left .box--outer {
+  .md--margin-left .box {
     margin-left: 37rem;
   }
 }

@@ -1,28 +1,30 @@
 {{- define "main" -}}
-<div id="l-content-box" class="l-box l-box--full">
-  <header class="page-header">
-    <div class="title title--first margin-left">
-      <hr>
-      {{ partial "title/title.html" . }}
-    </div>
-  </header>
-  {{ with .Content }}
-  <div class="md md--sans md--h-serif md--list md--margin-left">
-    {{- partial "replacements.html" . -}}
+  <div id="l-content-box" class="l-box l-box--full">
+    <header class="page-header">
+      <div class="title title--first title--wide">
+        <hr>
+          {{ partial "file/editor_start.html" . }}
+          {{ partial "title/title-wide.html" . }}
+          {{ partial "file/editor_end.html" . }}
+      </div>
+    </header>
+      {{ with .Content }}
+        <div class="md md--sans md--h-serif md--list md--margin-left">
+            {{- partial "replacements.html" . -}}
+        </div>
+      {{ end }}
+    <ul class="page-list">
+        {{ $n := 10 }}
+        {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
+        {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
+          <li class="li-box">
+            <hr>
+              {{- .Render "li" -}}
+          </li>
+        {{- end -}}
+    </ul>
+    <footer class="page-footer page-footer--blog margin-left">
+        {{ partial "blog/nav/paginator.html" . }}
+    </footer>
   </div>
-  {{ end }}
-  <ul class="page-list">
-    {{ $n := 10 }}
-    {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-    {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
-    <li class="li-box">
-      <hr>
-      {{- .Render "li" -}}
-    </li>
-    {{- end -}}
-  </ul>
-  <footer class="page-footer page-footer--blog margin-left">
-    {{ partial "blog/nav/paginator.html" . }}
-  </footer>
-</div>
 {{- end -}}
