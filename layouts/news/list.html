@@ -1,7 +1,7 @@
 {{- define "main" -}}
 <div id="l-content-box" class="l-box l-box--full">
   <header class="page-header">
-    <div class="title title--bg-bluegreen title--sans padding-left">
+    <div class="title title--dark title--dark--bluegreen padding-left">
         {{ partial "file/editor_start.html" . }}
         {{ partial "title/title.html" . }}
         {{ partial "file/editor_end.html" . }}
@@ -16,7 +16,7 @@
     {{ $n := 5 }}
     {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
     {{ range (.Paginate .Pages $n).Pages.ByDate.Reverse }}
-    <li class="li-box">
+    <li class="li-box li-box--bluegreen">
       {{- .Render "li-full" -}}
       <hr>
     </li>
