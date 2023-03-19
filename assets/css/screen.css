@@ -867,9 +867,15 @@ body {
   text-decoration-color: transparent;
 }
 
-h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor, h5:target .heading-anchor, h6:target .heading-anchor {
+h1:target .heading-anchor, h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor, h5:target .heading-anchor, h6:target .heading-anchor {
+  position: relative;
   color: #000000;
   background-color: rgba(24, 124, 170, 0.15);
+}
+h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .heading-anchor:before, h4:target .heading-anchor:before, h5:target .heading-anchor:before, h6:target .heading-anchor:before {
+  position: absolute;
+  left: -1.5rem;
+  content: "#";
 }
 
 .md-hook-link {
@@ -942,6 +948,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 .sidebar__link.is-active .icon-font {
   color: hsl(45deg, 83%, 53%);
+  text-shadow: 0 0 0.05rem #000;
 }
 
 .meta {
@@ -1058,11 +1065,11 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 .title--stream {
   height: 5rem;
   max-width: 100%;
-  margin: 1rem 2rem 0 2rem;
+  margin: 0 1rem;
   padding-bottom: 0;
   border-radius: 0.5rem;
   color: #fff;
-  background: linear-gradient(20deg, hsl(199deg, 100%, 38%) 0%, hsl(169deg, 100%, 33%) 66%, rgba(0, 168, 137, 0.025) 100%);
+  background: linear-gradient(20deg, #00628f 0%, #007560 66%, rgba(0, 117, 96, 0.025) 100%);
   box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 .title--stream > h1 {
@@ -1074,7 +1081,8 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
 }
 @media screen and (min-width: 79em) {
   .title--stream {
-    background: linear-gradient(20deg, rgba(0, 132, 194, 0.025) 0%, hsl(199deg, 100%, 38%) 25%, hsl(169deg, 100%, 33%) 75%, rgba(0, 168, 137, 0.025) 100%);
+    margin: 1rem 0 0 0;
+    background: linear-gradient(20deg, rgba(0, 98, 143, 0.025) 0%, #00628f 25%, #007560 75%, rgba(0, 117, 96, 0.025) 100%);
   }
 }
 
@@ -2243,6 +2251,7 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   line-height: 3rem;
   padding-top: 1.42893rem;
   padding-bottom: calc(0.57107rem + var(--es));
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
   color: #111111;
@@ -3101,7 +3110,10 @@ h2:target .heading-anchor, h3:target .heading-anchor, h4:target .heading-anchor,
   color: inherit;
 }
 .ctrl button:disabled {
-  color: rgba(255, 255, 255, 0.33);
+  color: rgba(0, 0, 0, 0.1);
+}
+.ctrl button:disabled .icon-font {
+  color: rgba(0, 0, 0, 0.1);
 }
 .ctrl button:not([disabled]):hover, .ctrl button:not([disabled]):focus {
   color: #df0183;
