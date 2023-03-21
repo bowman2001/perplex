@@ -314,12 +314,13 @@ img {
   border-radius: .5rem;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
   overflow: hidden;
-  background-color: #eeeef4;
+  border: .1rem solid rgba(17, 17, 17, .1);
+  background-color: #fff;
 }
 
-svg,
-.img--transparent {
-  display: block;
+.img__container--footer {
+  padding: .5rem;
+  border: none;
   box-shadow: none;
 }
 
@@ -845,12 +846,11 @@ body {
 
 #l-footer {
   flex: 0 0 auto;
-  filter: grayscale(0.8);
+  filter: grayscale(0);
   margin-top: 5rem;
-  margin-bottom: calc(2 * var(--es));
-  border-radius: .5rem;
-  border: 1px solid #aaa;
-  background: #f8f8f8;
+  border-radius: .5rem .5rem 0 0;
+  border: 1px solid #444;
+  background: #222;
 }
 
 #l-footer hr {
@@ -870,6 +870,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 0 .01rem;
+  margin-bottom: calc(1rem + 1 * var(--es));
 }
 
 @media screen and (min-width: 48em) {
@@ -944,6 +945,7 @@ body {
   }
 }
 
+.md--footer .md-hook-link,
 .md-hook-link,
 .title-link,
 .heading-anchor,
@@ -961,6 +963,7 @@ body {
   transition-timing-function: ease-in-out;
 }
 
+.md--footer .md-hook-link code,
 .md-hook-link code,
 .title-link code,
 .heading-anchor code,
@@ -1126,6 +1129,28 @@ h6:target .heading-anchor:before {
   background-color: rgba(0, 168, 137, .15);
   color: #000;
   text-decoration-color: #000;
+}
+
+.md--footer .md-hook-link {
+  color: #9ce0ff;
+  text-decoration-color: #9ce0ff;
+}
+
+.md--footer .md-hook-link:hover,
+.md--footer .md-hook-link:focus {
+  color: #fff;
+  text-decoration-color: #fff;
+}
+
+.md--footer .md-hook-link[href^=http] {
+  color: #82ffe8;
+  text-decoration-color: #82ffe8;
+}
+
+.md--footer .md-hook-link[href^=http]:hover,
+.md--footer .md-hook-link[href^=http]:focus {
+  color: #fff;
+  text-decoration-color: #fff;
 }
 
 .icon-link .icon-font {
@@ -3062,13 +3087,17 @@ h6:target .heading-anchor:before {
   color: #111;
 }
 
+.md--footer {
+  color: #fff;
+}
+
 .md--footer h2 {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: .464465rem;
-  padding-bottom: .535535rem;
+  margin-bottom: -0.464465rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .05em;
   word-spacing: .15em;
   text-transform: uppercase;
@@ -4353,7 +4382,6 @@ h6:target .heading-anchor:before {
 .card__fig .img--transparent,
 .card__fig svg {
   padding: 2rem;
-  border: .1rem solid rgba(17, 17, 17, .1);
   border-radius: .5rem;
   -o-object-fit: contain;
      object-fit: contain;
@@ -4379,7 +4407,7 @@ h6:target .heading-anchor:before {
 
 .card__fig--half .img--transparent,
 .card__fig--half svg {
-  padding: 1rem;
+  margin: 1rem;
 }
 
 @media screen and (min-width: 37em) {
@@ -5216,6 +5244,10 @@ h6:target .heading-anchor:before {
   width: 100%;
   margin: 0;
   padding: 0 2rem;
+}
+
+.md--footer h2 + figure {
+  margin: 1rem 0 0 0;
 }
 
 .cf:before,
