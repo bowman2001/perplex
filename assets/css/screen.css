@@ -703,16 +703,18 @@ body {
 }
 #l-footer {
   flex: 0 0 auto;
-  filter: grayscale(0);
   margin-top: 5rem;
-  border-radius: 0.5rem 0.5rem 0 0;
-  border: 1px solid #444;
-  background: #222;
+  background: #111111;
 }
 #l-footer hr {
   border-bottom: 0.2rem solid #fff;
   height: 1rem;
   margin: 0 2rem;
+}
+@media screen and (min-width: 37em) {
+  #l-footer {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
 }
 
 .l-footer--home {
