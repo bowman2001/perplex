@@ -482,6 +482,7 @@ body {
 
 #l-logo {
   grid-area: logo;
+  width: 150%;
 }
 
 #l-menu {
@@ -4039,7 +4040,13 @@ h6:target .heading-anchor:before {
 
 .ctrl__title {
   display: inline-block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
+}
+
+@media screen and (min-width: 37em) {
+  .ctrl__title {
+    padding: 1rem;
+  }
 }
 
 .ctrl__title--logo img {
@@ -4054,8 +4061,8 @@ h6:target .heading-anchor:before {
   margin-bottom: -.42893rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
+  word-spacing: .03em;
 }
 
 .ctrl-left {
@@ -4501,7 +4508,7 @@ h6:target .heading-anchor:before {
 
 .card__fig .img--transparent,
 .card__fig svg {
-  padding: 1rem;
+  padding: 2rem;
   border-radius: .5rem;
   -o-object-fit: contain;
      object-fit: contain;
@@ -4531,6 +4538,15 @@ h6:target .heading-anchor:before {
   height: 9.6666715rem;
 }
 
+.card__fig--1 .img--transparent,
+.card__fig--3halfs .img--transparent,
+.card__fig--half .img--transparent,
+.card__fig--1 svg,
+.card__fig--3halfs svg,
+.card__fig--half svg {
+  padding: 1rem;
+}
+
 @media screen and (min-width: 37em) {
   .card__fig--1,
   .card__fig--3halfs {
@@ -4545,6 +4561,13 @@ h6:target .heading-anchor:before {
   .card__fig--3halfs svg {
     width: 33rem;
     height: 22.0011rem;
+  }
+
+  .card__fig--1 .img--transparent,
+  .card__fig--3halfs .img--transparent,
+  .card__fig--1 svg,
+  .card__fig--3halfs svg {
+    padding: 2rem;
   }
 }
 
