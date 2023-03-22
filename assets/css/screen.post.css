@@ -315,14 +315,13 @@ img {
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
   overflow: hidden;
   border: .1rem solid rgba(17, 17, 17, .1);
-  background-color: #fff;
+  background: linear-gradient(white, #faefe5);
 }
 
 .img__container--footer {
   padding: .5rem;
   border: none;
   box-shadow: none;
-  background-color: #faefe5;
 }
 
 .caption {
@@ -1376,7 +1375,7 @@ h6:target .heading-anchor:before {
   text-shadow: 0 0 .1rem #000;
 }
 
-@media screen and (min-width: 79em) {
+@media screen and (min-width: 37em) {
   .title--dark {
     margin: 1rem 0 0 0;
   }
@@ -2338,14 +2337,26 @@ h6:target .heading-anchor:before {
   padding-bottom: .285535rem;
 }
 
-.md--card--1 > p,
-.md--card--3halfs > p,
-.md--card--1 > .p-first,
-.md--card--3halfs > .p-first {
-  font-size: 1.95rem;
-  line-height: 3rem;
-  padding-top: .769725rem;
-  padding-bottom: .230275rem;
+.md--card--1 p,
+.md--card--3halfs p,
+.md--card--1 .p-first,
+.md--card--3halfs .p-first {
+  font-size: 1.625rem;
+  line-height: 2.5rem;
+  padding-top: .6414375rem;
+  padding-bottom: .3585625rem;
+}
+
+@media screen and (min-width: 37em) {
+  .md--card--1 p,
+  .md--card--3halfs p,
+  .md--card--1 .p-first,
+  .md--card--3halfs .p-first {
+    font-size: 1.95rem;
+    line-height: 3rem;
+    padding-top: .769725rem;
+    padding-bottom: .230275rem;
+  }
 }
 
 .md--card--3halfs {
@@ -3139,15 +3150,25 @@ h6:target .heading-anchor:before {
 
 .md--card--1 h2,
 .md--card--3halfs h2 {
-  font-size: 1.905rem;
+  font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: .2865775rem;
-  padding-bottom: .7134225rem;
+  padding-top: .35791975rem;
+  padding-bottom: .64208025rem;
 }
 
 .md--card--1 .p-meta,
 .md--card--3halfs .p-meta {
   margin-top: -1rem;
+}
+
+@media screen and (min-width: 37em) {
+  .md--card--1 h2,
+  .md--card--3halfs h2 {
+    font-size: 1.905rem;
+    line-height: 2rem;
+    padding-top: .2865775rem;
+    padding-bottom: .7134225rem;
+  }
 }
 
 .md--card--3halfs h2 {
@@ -4360,8 +4381,26 @@ h6:target .heading-anchor:before {
   flex-direction: column;
 }
 
+.card__flex--half {
+  flex-direction: row;
+}
+
 .card__flex--1 {
   flex-direction: row;
+}
+
+.card__flex--1 .card__content {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 37em) {
+  .card__flex--1 {
+    flex-direction: column;
+  }
+
+  .card__flex--1 .card__content {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 37em) {
@@ -4385,7 +4424,7 @@ h6:target .heading-anchor:before {
 
 .card__fig .img--transparent,
 .card__fig svg {
-  padding: 2rem;
+  padding: 1rem;
   border-radius: .5rem;
   -o-object-fit: contain;
      object-fit: contain;
@@ -4396,6 +4435,8 @@ h6:target .heading-anchor:before {
      object-fit: cover;
 }
 
+.card__fig--1,
+.card__fig--3halfs,
 .card__fig--half {
   width: 16.5rem;
   height: 13.666715rem;
@@ -4403,15 +4444,14 @@ h6:target .heading-anchor:before {
   flex-shrink: 0;
 }
 
+.card__fig--1 img,
+.card__fig--3halfs img,
 .card__fig--half img,
+.card__fig--1 svg,
+.card__fig--3halfs svg,
 .card__fig--half svg {
   width: 14.5rem;
   height: 9.6666715rem;
-}
-
-.card__fig--half .img--transparent,
-.card__fig--half svg {
-  margin: 1rem;
 }
 
 @media screen and (min-width: 37em) {
@@ -4419,6 +4459,7 @@ h6:target .heading-anchor:before {
   .card__fig--3halfs {
     width: 37rem;
     height: 26.00011rem;
+    padding: 2rem;
   }
 
   .card__fig--1 img,
@@ -4461,11 +4502,12 @@ h6:target .heading-anchor:before {
 }
 
 .card__title h2,
-.card__title h3 {
+.card__title h3,
+.card__title h4 {
   font-size: 1.905rem;
   line-height: 2rem;
   padding-top: .2865775rem;
-  padding-bottom: .7134225rem;
+  margin-bottom: -0.2865775rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .05em;
@@ -4473,8 +4515,18 @@ h6:target .heading-anchor:before {
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 37em) {
+  .card__title {
+    font-size: 1.905rem;
+    line-height: 2rem;
+    padding-top: .2865775rem;
+    padding-bottom: .2134225rem;
+  }
+}
+
 .card__title--small h2,
-.card__title--small h3 {
+.card__title--small h3,
+.card__title--small h4 {
   font-size: 1.3585rem;
   line-height: 1.5rem;
   padding-top: .74124175rem;

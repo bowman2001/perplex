@@ -1,10 +1,14 @@
-{{ partial "img/featured-card-1.html" .  }}
-<nav class="card__header">
-    <div class="meta meta--card">
-        {{ partial "nav/card/meta/breadcrumbs.html" . }}
+<div class="card__flex card__flex--1">
+    {{ partial "img/featured-card-1.html" .  }}
+  <div class="card__content">
+    <nav class="card__header">
+      <div class="meta meta--card">
+          {{ partial "nav/card/meta/breadcrumbs.html" . }}
+      </div>
+        {{ partial "nav/card/title/col1.html" . }}
+    </nav>
+    <div class="md md--sans md--card md--card--1">
+        {{ partial "summary.html" . }}
     </div>
-    {{ partial "nav/card/title/col1.html" . }}
-</nav>
-<div class="md md--sans md--card md--card--1">
-    {{ partial "summary.html" . }}
+  </div>
 </div>
