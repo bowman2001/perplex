@@ -3234,12 +3234,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .ctrl__title {
   display: inline-block;
-  padding: 1rem 1rem 1rem 0;
-}
-@media screen and (min-width: 37em) {
-  .ctrl__title {
-    padding: 1rem;
-  }
+  padding: 1rem;
 }
 
 .ctrl__title--logo img {
