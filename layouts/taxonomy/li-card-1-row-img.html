@@ -1,14 +1,18 @@
 <div class="card__flex card__flex--half">
     {{ partial "img/featured-card-half.html" . }}
-  <div class="card__content">
+  <div class="card__content card__content--flex">
     <nav class="card__header">
+        <div class="card__title card__title--half card__title--top">
+          {{ partial "nav/card/title/h2.html" . }}
+        </div>
+    </nav>
+    <a href="{{ .RelPermalink }}">
+      <div class="md md--sans md--card md--card--half">
+          {{ partial "description.html" . }}
+      </div>
       <div class="meta meta--card meta--card--half">
           {{ partial "nav/taxonomies/site/term_count.html" . }}
       </div>
-        {{ partial "nav/card/title/colhalf.html" . }}
-    </nav>
-    <div class="md md--sans md--card md--card--half">
-        {{ partial "description.html" . }}
-    </div>
+    </a>
   </div>
 </div>

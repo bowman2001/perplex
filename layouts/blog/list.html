@@ -12,17 +12,16 @@
             {{- partial "replacements.html" . -}}
         </div>
       {{ end }}
-    <ul class="page-list">
-        {{ $n := 10 }}
-        {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-        {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
-          <li class="li-box li-box--bluered">
-              {{- .Render "li" -}}
-            <hr>
-          </li>
-        {{- end -}}
-    </ul>
-    <footer class="page-footer page-footer--blog margin-left">
+      {{ with .RegularPages }}
+        <nav class="card-nav card-nav--4">
+          <ul class="card-nav__list">
+              {{- range . -}}
+                <li class="card card--2 card__hover">{{- .Render "li-card-2-row-img" -}}</li>
+              {{- end -}}
+          </ul>
+        </nav>
+      {{ end }}
+    <footer class="page-footer page-footer--blog margin-halfleft">
         {{ partial "blog/nav/paginator.html" . }}
     </footer>
   </div>
