@@ -3361,6 +3361,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   -webkit-column-break-inside: avoid;
 }
 
+.page-nav__placeholder {
+  width: 4rem;
+}
+
 .page-nav__link {
   display: flex;
   flex-wrap: nowrap;
