@@ -3553,10 +3553,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
-.card__hover {
-  display: block;
-  height: 100%;
-}
 .card__hover .card__fig {
   transition: transform 200ms ease-in-out;
 }

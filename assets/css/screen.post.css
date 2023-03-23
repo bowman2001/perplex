@@ -4397,11 +4397,6 @@ h6:target .heading-anchor:before {
   }
 }
 
-.card__hover {
-  display: block;
-  height: 100%;
-}
-
 .card__hover .card__fig {
   transition: transform 200ms ease-in-out;
 }
