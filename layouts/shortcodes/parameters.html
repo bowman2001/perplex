@@ -6,7 +6,7 @@
 {{ end -}}
 {{ with $.Page.Site.Param $param -}}
     {{- if reflect.IsSlice . -}}
-        {{- print (delimit . ", ") -}}
+        {{- print "[" (delimit . ", ") "]" -}}
     {{- else -}}
         {{- print . -}}
     {{- end -}}
