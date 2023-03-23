@@ -974,8 +974,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   text-shadow: 0 0 0.05rem #000;
 }
 .sidebar__link.is-active .icon-font {
-  color: hsl(45deg, 83%, 53%);
-  text-shadow: 0 0 0.05rem #000;
+  color: hsl(325deg, 79%, 44%);
 }
 
 .meta {
@@ -1041,10 +1040,18 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 .meta__item {
-  font-size: 1.6145833333rem;
-  line-height: 2rem;
-  padding-top: 0.3953385417rem;
-  padding-bottom: 0.6046614583rem;
+  font-size: 1.453125rem;
+  line-height: 1.5rem;
+  padding-top: 0.7058046875rem;
+  padding-bottom: 0.2941953125rem;
+}
+@media screen and (min-width: 37em) {
+  .meta__item {
+    font-size: 1.6145833333rem;
+    line-height: 2rem;
+    padding-top: 0.3953385417rem;
+    padding-bottom: 0.6046614583rem;
+  }
 }
 .meta__item--taxo {
   margin-left: -0.5rem;
@@ -1113,7 +1120,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   letter-spacing: 0.04em;
   word-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 0.1rem 0.1rem black;
+  text-shadow: 0 0 0.2rem black;
 }
 @media screen and (min-width: 37em) {
   .title--dark {
@@ -1841,14 +1848,14 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-bottom: 0.285535rem;
 }
 
-.md--card--1 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--3halfs .p-first {
+.md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
   font-size: 1.625rem;
   line-height: 2.5rem;
   padding-top: 0.6414375rem;
   padding-bottom: 0.3585625rem;
 }
 @media screen and (min-width: 37em) {
-  .md--card--1 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--3halfs .p-first {
+  .md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
     padding-top: 0.769725rem;
@@ -1868,12 +1875,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
-.md--card--2 p, .md--card--2 .p-first {
-  font-size: 1.95rem;
-  line-height: 3rem;
-  padding-top: 0.769725rem;
-  padding-bottom: 0.230275rem;
-}
 @media screen and (min-width: 48em) {
   .md--card--2 {
     max-width: 74rem;
@@ -2493,10 +2494,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 .md--card--1 h2, .md--card--3halfs h2, .md--card--2 h2 {
-  font-size: 1.7145rem;
+  font-size: 1.5875rem;
   line-height: 2rem;
-  padding-top: 0.35791975rem;
-  margin-bottom: -0.35791975rem;
+  padding-top: 0.40548125rem;
+  margin-bottom: -0.40548125rem;
 }
 @media screen and (min-width: 37em) {
   .md--card--1 h2, .md--card--3halfs h2, .md--card--2 h2 {
@@ -3705,10 +3706,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin: 0 2rem;
 }
 .card__title h2, .card__title h3, .card__title h4 {
-  font-size: 1.905rem;
+  font-size: 1.5875rem;
   line-height: 2rem;
-  padding-top: 0.2865775rem;
-  margin-bottom: -0.2865775rem;
+  padding-top: 0.40548125rem;
+  margin-bottom: -0.40548125rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -3718,6 +3719,15 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .card__title--top {
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 37em) {
+  .card__title--1 h2, .card__title--2 h2, .card__title--1 h3, .card__title--2 h3, .card__title--1 h4, .card__title--2 h4 {
+    font-size: 1.905rem;
+    line-height: 2rem;
+    padding-top: 0.2865775rem;
+    padding-bottom: 0.7134225rem;
+  }
 }
 
 @media screen and (min-width: 48em) {

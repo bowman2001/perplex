@@ -71,6 +71,31 @@ params:
     xmax         : 10.0
     background   : '#ffffff'
 
+### Markup
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: false
+    renderer:
+      hardWraps: true
+      unsafe: false
+      xhtml: false
+
 ### IMPORTANT!
 ### This module configuration does only affect the folder of the theme.
 module  :

@@ -1,7 +1,19 @@
+{{ $title := "" }}
+{{ $parenttitle := "" }}
+{{ with .Params.menu.doc.name }}
+{{ $title = . }}
+{{ else }}
+{{ $title = .LinkTitle }}
+{{ end }}
+{{ with .Parent.Params.menu.doc.name }}
+      {{ $parenttitle = . }}
+{{ else }}
+      {{ $parenttitle = .Parent.LinkTitle }}
+{{ end }}
 <div>
-    {{- with .Parent.LinkTitle -}}
+    {{- with $parenttitle -}}
       <div class="page-nav__meta">{{- . | site.Home.RenderString -}}</div>
     {{- end -}}
-    {{- with .Title -}}
+    {{- with $title -}}
       <div class="page-nav__title">{{- . | site.Home.RenderString -}}</div>{{- end -}}
 </div>

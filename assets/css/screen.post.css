@@ -1220,8 +1220,7 @@ h6:target .heading-anchor:before {
 }
 
 .sidebar__link.is-active .icon-font {
-  color: #ebb924;
-  text-shadow: 0 0 .05rem #000;
+  color: #c9187f;
 }
 
 .meta {
@@ -1291,10 +1290,19 @@ h6:target .heading-anchor:before {
 }
 
 .meta__item {
-  font-size: 1.6145833333rem;
-  line-height: 2rem;
-  padding-top: .3953385417rem;
-  padding-bottom: .6046614583rem;
+  font-size: 1.453125rem;
+  line-height: 1.5rem;
+  padding-top: 0.7058046875rem;
+  padding-bottom: 0.2941953125rem;
+}
+
+@media screen and (min-width: 37em) {
+  .meta__item {
+    font-size: 1.6145833333rem;
+    line-height: 2rem;
+    padding-top: .3953385417rem;
+    padding-bottom: .6046614583rem;
+  }
 }
 
 .meta__item--taxo {
@@ -1373,7 +1381,7 @@ h6:target .heading-anchor:before {
   letter-spacing: .04em;
   word-spacing: .12em;
   text-transform: uppercase;
-  text-shadow: 0 .1rem .1rem #000;
+  text-shadow: 0 0 .2rem #000;
 }
 
 @media screen and (min-width: 37em) {
@@ -2339,8 +2347,10 @@ h6:target .heading-anchor:before {
 }
 
 .md--card--1 p,
+.md--card--2 p,
 .md--card--3halfs p,
 .md--card--1 .p-first,
+.md--card--2 .p-first,
 .md--card--3halfs .p-first {
   font-size: 1.625rem;
   line-height: 2.5rem;
@@ -2350,8 +2360,10 @@ h6:target .heading-anchor:before {
 
 @media screen and (min-width: 37em) {
   .md--card--1 p,
+  .md--card--2 p,
   .md--card--3halfs p,
   .md--card--1 .p-first,
+  .md--card--2 .p-first,
   .md--card--3halfs .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
@@ -2372,14 +2384,6 @@ h6:target .heading-anchor:before {
     padding-top: .769725rem;
     padding-bottom: .230275rem;
   }
-}
-
-.md--card--2 p,
-.md--card--2 .p-first {
-  font-size: 1.95rem;
-  line-height: 3rem;
-  padding-top: .769725rem;
-  padding-bottom: .230275rem;
 }
 
 @media screen and (min-width: 48em) {
@@ -3176,10 +3180,10 @@ h6:target .heading-anchor:before {
 .md--card--1 h2,
 .md--card--3halfs h2,
 .md--card--2 h2 {
-  font-size: 1.7145rem;
+  font-size: 1.5875rem;
   line-height: 2rem;
-  padding-top: .35791975rem;
-  margin-bottom: -0.35791975rem;
+  padding-top: .40548125rem;
+  margin-bottom: -.40548125rem;
 }
 
 @media screen and (min-width: 37em) {
@@ -4604,10 +4608,10 @@ h6:target .heading-anchor:before {
 .card__title h2,
 .card__title h3,
 .card__title h4 {
-  font-size: 1.905rem;
+  font-size: 1.5875rem;
   line-height: 2rem;
-  padding-top: .2865775rem;
-  margin-bottom: -0.2865775rem;
+  padding-top: .40548125rem;
+  margin-bottom: -.40548125rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .04em;
@@ -4617,6 +4621,20 @@ h6:target .heading-anchor:before {
 
 .card__title--top {
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 37em) {
+  .card__title--1 h2,
+  .card__title--2 h2,
+  .card__title--1 h3,
+  .card__title--2 h3,
+  .card__title--1 h4,
+  .card__title--2 h4 {
+    font-size: 1.905rem;
+    line-height: 2rem;
+    padding-top: .2865775rem;
+    padding-bottom: .7134225rem;
+  }
 }
 
 @media screen and (min-width: 48em) {
