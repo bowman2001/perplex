@@ -3199,7 +3199,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   display: inline-block;
   font-size: 3rem;
   line-height: 3rem;
-  transition: color 250ms ease-in-out, border-bottom-color 250ms ease-in-out;
+}
+.ctrl button .icon-font {
+  transition: color 250ms ease-in-out;
 }
 .ctrl button {
   padding: 1rem;
@@ -3212,13 +3214,20 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .ctrl button:disabled .icon-font {
   color: rgba(0, 0, 0, 0.1);
 }
-.ctrl button:not([disabled]):hover, .ctrl button:not([disabled]):focus {
-  color: #df0183;
+.ctrl button:not([disabled]) .icon-font {
+  color: hsl(325deg, 79%, 44%);
+}
+.ctrl button:not([disabled]):hover .icon-font {
+  color: #fe48b2;
 }
 @media screen and (min-width: 48em) {
   .ctrl {
     width: 37rem;
   }
+}
+
+.ctrl__sidebar .icon-font {
+  color: hsl(325deg, 79%, 44%);
 }
 
 .ctrl__link {
@@ -3704,6 +3713,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   letter-spacing: 0.04em;
   word-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.card__title--top {
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 48em) {
