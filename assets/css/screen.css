@@ -1418,6 +1418,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-style: italic;
   text-align: left;
   color: #333;
+  hyphens: none;
 }
 .md .p-first em {
   font-style: normal;
@@ -1848,14 +1849,14 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-bottom: 0.285535rem;
 }
 
-.md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
+.md--card--1 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--3halfs .p-first {
   font-size: 1.625rem;
   line-height: 2.5rem;
   padding-top: 0.6414375rem;
   padding-bottom: 0.3585625rem;
 }
 @media screen and (min-width: 37em) {
-  .md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
+  .md--card--1 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--3halfs .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
     padding-top: 0.769725rem;
@@ -1875,6 +1876,20 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
+.md--card--2 p, .md--card--2 .p-first {
+  font-size: 1.625rem;
+  line-height: 2.5rem;
+  padding-top: 0.6414375rem;
+  padding-bottom: 0.3585625rem;
+}
+@media screen and (min-width: 22.5em) {
+  .md--card--2 p, .md--card--2 .p-first {
+    font-size: 1.95rem;
+    line-height: 3rem;
+    padding-top: 0.769725rem;
+    padding-bottom: 0.230275rem;
+  }
+}
 @media screen and (min-width: 48em) {
   .md--card--2 {
     max-width: 74rem;
@@ -3361,14 +3376,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   -webkit-column-break-inside: avoid;
 }
 
-.page-nav__placeholder {
-  width: 4rem;
-}
-
 .page-nav__link {
   display: flex;
   flex-wrap: nowrap;
-  align-items: start;
+  align-items: center;
   height: 100%;
   padding: 2rem 1rem;
   margin: 0 1rem;
@@ -3419,7 +3430,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .page-nav__title, .page-nav__icon {
   font-size: 1.9375rem;
   line-height: 3rem;
-  margin-top: -0.22559375rem;
+  margin-top: -1.22559375rem;
   margin-bottom: -0.77440625rem;
 }
 
@@ -3459,7 +3470,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-size: 1.43rem;
   line-height: 2rem;
   margin-top: -0.535535rem;
-  padding-bottom: 0.535535rem;
+  padding-bottom: 1.535535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   color: #444;
@@ -3572,7 +3583,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   transition: transform 200ms ease-in-out;
 }
 .card__hover:hover .card__fig, .card__hover:focus .card__fig, .card__hover:active .card__fig {
-  transform: scale(1.045);
+  transform: scale(1.01);
 }
 .card__hover:hover .card__title h2 a, .card__hover:hover .card__title h3 a, .card__hover:focus .card__title h2 a, .card__hover:focus .card__title h3 a, .card__hover:active .card__title h2 a, .card__hover:active .card__title h3 a {
   text-decoration-color: black;
@@ -3725,15 +3736,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-top: 1rem;
 }
 
-@media screen and (min-width: 37em) {
-  .card__title--1 h2, .card__title--2 h2, .card__title--1 h3, .card__title--2 h3, .card__title--1 h4, .card__title--2 h4 {
-    font-size: 1.905rem;
-    line-height: 2rem;
-    padding-top: 0.2865775rem;
-    padding-bottom: 0.7134225rem;
-  }
-}
-
 @media screen and (min-width: 48em) {
   .card__title--2 h2, .card__title--2 h3, .card__title--2 h4 {
     font-size: 2.54rem;
@@ -3754,8 +3756,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .card__title--half h2, .card__title--half h3, .card__title--half h4 {
   font-size: 1.3585rem;
   line-height: 1.5rem;
-  padding-top: 0.24124175rem;
-  padding-bottom: 0.25875825rem;
+  padding-top: 0.74124175rem;
+  padding-bottom: 0.75875825rem;
   letter-spacing: 0.05em;
   word-spacing: 0.15em;
 }
