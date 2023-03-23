@@ -3570,6 +3570,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 @media screen and (min-width: 79em) {
   .card--2 {
     max-width: 74rem;
+    margin-bottom: 4rem;
   }
 }
 

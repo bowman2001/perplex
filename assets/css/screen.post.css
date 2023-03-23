@@ -4419,6 +4419,7 @@ h6:target .heading-anchor:before {
 @media screen and (min-width: 79em) {
   .card--2 {
     max-width: 74rem;
+    margin-bottom: 4rem;
   }
 }
 
