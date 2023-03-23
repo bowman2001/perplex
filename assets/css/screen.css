@@ -1099,10 +1099,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin: 0 1rem;
   padding-bottom: 0;
   border-radius: 0.5rem;
-  color: #fff;
   box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 .title--dark h1 {
+  color: white;
   margin: 0;
   font-size: 2.86rem;
   line-height: 3rem;
@@ -1113,7 +1113,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   letter-spacing: 0.04em;
   word-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 0 0.1rem black;
+  text-shadow: 0 0.1rem 0.1rem black;
 }
 @media screen and (min-width: 37em) {
   .title--dark {
@@ -3172,6 +3172,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .menu a, .menu .ctrl__link {
   letter-spacing: 0.075em;
   text-transform: uppercase;
+  transition: border-bottom-color 250ms;
 }
 .menu a:hover, .menu a:focus, .menu .ctrl__link:hover, .menu .ctrl__link:focus {
   border-bottom-color: #03afff;
@@ -3201,7 +3202,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   line-height: 3rem;
 }
 .ctrl button .icon-font {
-  transition: color 250ms ease-in-out;
+  transition: color 150ms ease-in-out;
 }
 .ctrl button {
   padding: 1rem;
