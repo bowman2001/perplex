@@ -6,5 +6,10 @@
     {{ $a = merge $a ( partial "img/func/params/resource.html" . ) }}
 {{ end }}
 {{ $a = merge $a ( partial "img/func/params/hook.html" . ) }}
-{{ $a = merge $a (dict "type" "embedded" )}}
-{{ partial "img/embedded.html" (dict "img" $img "a" $a )}}
+{{ if .IsBlock }}
+    {{ $a = merge $a (dict "type" "figure" )}}
+    {{ partial "img/figure.html" (dict "img" $img "a" $a )}}
+{{ else }}
+    {{ $a = merge $a (dict "type" "embedded" )}}
+    {{ partial "img/embedded.html" (dict "img" $img "a" $a )}}
+{{ end }}
