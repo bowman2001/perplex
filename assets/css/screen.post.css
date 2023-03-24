@@ -4492,13 +4492,15 @@ h6:target .heading-anchor:before {
   flex-direction: row;
 }
 
-.card__flex--2 .card__content {
-  margin-top: 1.5rem;
-}
-
 @media screen and (min-width: 37em) {
   .card__flex--2 {
+    margin: 0 1rem;
     max-width: 74rem;
+  }
+
+  .card__flex--2 .card__content {
+    margin-left: -1rem;
+    margin-top: 1.5rem;
   }
 }
 
