@@ -1,7 +1,7 @@
 {{- $p := partial "img/func/preprocess.html" . -}}
 {{- $subType := .img.MediaType.SubType -}}
 {{- if .a.link -}}
-  <a class="link-block" href="{{ .a.link | safeHTMLAttr }}"
+  <a href="{{ .a.link | safeHTMLAttr }}"
         {{- with .a.target -}}
             {{- if in site.Params.link.target }} target="{{ . | safeHTMLAttr }}"{{ else -}}
                 {{- warnf "Unable to us the 'target' attribute %s for a link. Only %s are possible." . site.Params.link.target -}}

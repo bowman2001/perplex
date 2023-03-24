@@ -1248,7 +1248,7 @@ h6:target .heading-anchor:before {
 }
 
 .meta--card--half {
-  margin: 2rem 2rem -0.5rem 2rem;
+  margin: 0 2rem -0.5rem 2rem;
 }
 
 .meta--card--half .meta__item {
@@ -4419,7 +4419,7 @@ h6:target .heading-anchor:before {
 @media screen and (min-width: 79em) {
   .card--2 {
     max-width: 74rem;
-    margin-bottom: 4rem;
+    margin: 2rem 0;
   }
 }
 
@@ -4436,7 +4436,7 @@ h6:target .heading-anchor:before {
 .card__hover:hover .card__fig,
 .card__hover:focus .card__fig,
 .card__hover:active .card__fig {
-  transform: scale(1.01);
+  transform: none;
 }
 
 .card__hover:hover .card__title h2 a,
@@ -4449,7 +4449,7 @@ h6:target .heading-anchor:before {
 }
 
 .card__hover--grey .card__fig {
-  filter: grayscale(100%) brightness(95%);
+  filter: grayscale(50%) brightness(95%);
   transition: filter, transform;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
@@ -4466,12 +4466,12 @@ h6:target .heading-anchor:before {
   flex-direction: column;
 }
 
-.card__flex .card__content {
-  margin-top: 1.5rem;
-}
-
 .card__flex--half {
   flex-direction: row;
+}
+
+.card__flex--half .card__content {
+  margin: 2rem 0 0 -0.5rem;
 }
 
 .card__flex--1 {
@@ -4492,6 +4492,10 @@ h6:target .heading-anchor:before {
   flex-direction: row;
 }
 
+.card__flex--2 .card_content {
+  margin: 2rem 0 0 0;
+}
+
 @media screen and (min-width: 37em) {
   .card__flex--2 {
     margin: 0 1rem;
@@ -4499,8 +4503,7 @@ h6:target .heading-anchor:before {
   }
 
   .card__flex--2 .card__content {
-    margin-left: -1rem;
-    margin-top: 1.5rem;
+    margin: 2rem 0 0 -1rem;
   }
 }
 
