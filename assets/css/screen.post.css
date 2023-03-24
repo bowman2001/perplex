@@ -4482,13 +4482,17 @@ h6:target .heading-anchor:before {
   flex-direction: row;
 }
 
+.card__flex--1 .card__content {
+  margin: 1.5rem 0 0 0;
+}
+
 @media screen and (min-width: 37em) {
   .card__flex--1 {
     flex-direction: column;
   }
 
   .card__flex--1 .card__content {
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -4496,8 +4500,8 @@ h6:target .heading-anchor:before {
   flex-direction: row;
 }
 
-.card__flex--2 .card_content {
-  margin: 2rem 0 0 0;
+.card__flex--2 .card__content {
+  margin: 1.5rem 0 0 0;
 }
 
 @media screen and (min-width: 37em) {
