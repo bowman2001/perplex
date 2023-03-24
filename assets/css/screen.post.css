@@ -397,6 +397,9 @@ body {
   overflow-x: hidden;
   scrollbar-gutter: stable both-edges;
   min-height: 0;
+  animation-name: page;
+  animation-duration: .15s;
+  animation-timing-function: ease-in-out;
 }
 
 @media screen and (min-width: 79em) {
@@ -427,6 +430,16 @@ body {
 
 ::selection {
   background: #c2ecff;
+}
+
+@keyframes page {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 #l-masthead {
