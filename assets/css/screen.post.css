@@ -4415,7 +4415,7 @@ h6:target .heading-anchor:before {
 @media screen and (min-width: 79em) {
   .card--2 {
     max-width: 74rem;
-    margin: 2rem 0;
+    margin-bottom: 4rem;
   }
 }
 
@@ -4425,14 +4425,18 @@ h6:target .heading-anchor:before {
   }
 }
 
-.card__hover .card__fig {
+.card__hover img,
+.card__hover svg {
   transition: transform 200ms ease-in-out;
 }
 
-.card__hover:hover .card__fig,
-.card__hover:focus .card__fig,
-.card__hover:active .card__fig {
-  transform: none;
+.card__hover:hover img,
+.card__hover:hover svg,
+.card__hover:focus img,
+.card__hover:focus svg,
+.card__hover:active img,
+.card__hover:active svg {
+  transform: scale(1.05);
 }
 
 .card__hover:hover .card__title h2 a,
@@ -4444,16 +4448,20 @@ h6:target .heading-anchor:before {
   text-decoration-color: #000;
 }
 
-.card__hover--grey .card__fig {
+.card__hover--grey img,
+.card__hover--grey svg {
   filter: grayscale(50%) brightness(95%);
   transition: filter, transform;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
-.card__hover--grey:hover .card__fig,
-.card__hover--grey:focus .card__fig,
-.card__hover--grey:active .card__fig {
+.card__hover--grey:hover img,
+.card__hover--grey:hover svg,
+.card__hover--grey:focus img,
+.card__hover--grey:focus svg,
+.card__hover--grey:active img,
+.card__hover--grey:active svg {
   filter: grayscale(0%) brightness(100%);
 }
 
