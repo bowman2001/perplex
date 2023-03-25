@@ -2358,8 +2358,10 @@ h6:target .heading-anchor:before {
 }
 
 .md--card--1 p,
+.md--card--2 p,
 .md--card--3halfs p,
 .md--card--1 .p-first,
+.md--card--2 .p-first,
 .md--card--3halfs .p-first {
   font-size: 1.625rem;
   line-height: 2.5rem;
@@ -2369,8 +2371,10 @@ h6:target .heading-anchor:before {
 
 @media screen and (min-width: 37em) {
   .md--card--1 p,
+  .md--card--2 p,
   .md--card--3halfs p,
   .md--card--1 .p-first,
+  .md--card--2 .p-first,
   .md--card--3halfs .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
@@ -2386,24 +2390,6 @@ h6:target .heading-anchor:before {
 @media screen and (min-width: 48em) {
   .md--card--3halfs > p,
   .md--card--3halfs > .p-first {
-    font-size: 1.95rem;
-    line-height: 3rem;
-    padding-top: .769725rem;
-    padding-bottom: .230275rem;
-  }
-}
-
-.md--card--2 p,
-.md--card--2 .p-first {
-  font-size: 1.625rem;
-  line-height: 2.5rem;
-  padding-top: .6414375rem;
-  padding-bottom: .3585625rem;
-}
-
-@media screen and (min-width: 22.5em) {
-  .md--card--2 p,
-  .md--card--2 .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
     padding-top: .769725rem;

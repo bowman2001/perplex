@@ -1852,14 +1852,14 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-bottom: 0.285535rem;
 }
 
-.md--card--1 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--3halfs .p-first {
+.md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
   font-size: 1.625rem;
   line-height: 2.5rem;
   padding-top: 0.6414375rem;
   padding-bottom: 0.3585625rem;
 }
 @media screen and (min-width: 37em) {
-  .md--card--1 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--3halfs .p-first {
+  .md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
     padding-top: 0.769725rem;
@@ -1879,20 +1879,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
-.md--card--2 p, .md--card--2 .p-first {
-  font-size: 1.625rem;
-  line-height: 2.5rem;
-  padding-top: 0.6414375rem;
-  padding-bottom: 0.3585625rem;
-}
-@media screen and (min-width: 22.5em) {
-  .md--card--2 p, .md--card--2 .p-first {
-    font-size: 1.95rem;
-    line-height: 3rem;
-    padding-top: 0.769725rem;
-    padding-bottom: 0.230275rem;
-  }
-}
 @media screen and (min-width: 48em) {
   .md--card--2 {
     max-width: 74rem;
