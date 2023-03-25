@@ -2581,7 +2581,7 @@ h6:target .heading-anchor:before {
   max-height: 200rem;
   padding-top: .9rem;
   padding-bottom: .9rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .md .highlight > pre,
@@ -5108,6 +5108,11 @@ h6:target .heading-anchor:before {
   padding-bottom: .6046614583rem;
 }
 
+.taxo__item a {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
 .taxo-shape a {
   color: #a71469;
 }
@@ -5294,14 +5299,10 @@ h6:target .heading-anchor:before {
     position: absolute;
     z-index: 2;
     top: 1rem;
-    right: 0;
+    right: 18.5rem;
     float: none;
     clear: none;
     margin: 0;
-  }
-
-  .fig--featured.fig--size-tiny {
-    right: 18.5rem;
   }
 }
 

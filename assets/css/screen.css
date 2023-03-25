@@ -2019,7 +2019,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   max-height: 200rem;
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   /* td:last-child code:before {
       display: block;
       content: "Code";
@@ -4108,6 +4108,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-top: 0.3953385417rem;
   padding-bottom: 0.6046614583rem;
 }
+.taxo__item a {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 
 .taxo-shape a {
   color: #a71469;
@@ -4277,13 +4281,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
     position: absolute;
     z-index: 2;
     top: 1rem;
-    right: 0;
+    right: 18.5rem;
     float: none;
     clear: none;
     margin: 0;
-  }
-  .fig--featured.fig--size-tiny {
-    right: 18.5rem;
   }
 }
 
