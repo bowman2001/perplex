@@ -1,7 +1,7 @@
 {{ $categories := .GetTerms "categories" }}
 {{ $tags := .GetTerms "tags" }}
 {{ if or $categories $tags }}
-  <ul>
+  <ul class="meta__list">
       {{ with $categories }}
         <li class="meta__item meta__item--taxo taxo-shape taxo-shape--category">
           <ul class="ul--row">
