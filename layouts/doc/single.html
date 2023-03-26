@@ -6,15 +6,22 @@
             {{ partial "nav/breadcrumbs/header.html" . }}
             {{ partial "date/page/published_date.html" . }}
         </div>
+          {{- with .Resources.GetMatch "titlehead.md" -}}
+            <div class="titlehead md md--sans md--tiny">
+                {{- partial "replacements.html" .Content -}}
+            </div>
+          {{- end -}}
         <div class="title title--serif">
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
+      {{ with .Content }}
       <div class="md md--sans md--h-serif ">
-          {{ partial "replacements.html" .Content }}
+          {{ partial "replacements.html" . }}
       </div>
+      {{ end }}
     </div>
     <footer class="page-footer">
         {{ partial "nav/related/small-cards.html" . }}

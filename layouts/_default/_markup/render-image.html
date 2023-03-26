@@ -1,8 +1,8 @@
 {{ $path := (urls.Parse .Destination).Path }}
 {{ $img := partial "img/func/get-img.html" (dict "name" $path "currentPage" .Page ) }}
-{{ $a := dict }}
+{{ $a := (dict (slice "class" "size") "normal") }}
 {{ with $img }}
-    {{ $a = partial "img/func/params/unsplash.html" . }}
+    {{ $a = merge $a (partial "img/func/params/unsplash.html" . ) }}
     {{ $a = merge $a ( partial "img/func/params/resource.html" . ) }}
 {{ end }}
 {{ $a = merge $a ( partial "img/func/params/hook.html" . ) }}
