@@ -4333,7 +4333,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 @media screen and (min-width: 79em) {
   .md--margin-left .fig--size-tiny.fig--posh-left {
-    margin-left: 18.5rem;
+    width: 37rem;
+    padding-left: 18.5rem;
   }
   .md--margin-left .fig--size-normal {
     margin-left: 37rem;

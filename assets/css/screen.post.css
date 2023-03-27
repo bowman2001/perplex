@@ -5371,7 +5371,8 @@ h6:target .heading-anchor:before {
 
 @media screen and (min-width: 79em) {
   .md--margin-left .fig--size-tiny.fig--posh-left {
-    margin-left: 18.5rem;
+    width: 37rem;
+    padding-left: 18.5rem;
   }
 
   .md--margin-left .fig--size-normal {
