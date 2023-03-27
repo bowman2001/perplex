@@ -92,7 +92,7 @@ either of these shortcodes in conjunction with this render hook.
 {{- end }}
 
 {{- /* Parse destination. */}}
-{{- $u := urls.Parse .Destination }}
+{{- $u := urls.Parse .Destination  }}
 
 {{- /* Set common message. */}}
 {{- $msg := printf "The %q render hook was unable to resolve the destination %q in %s" $renderHookName $u.String $contentPath }}
@@ -221,5 +221,4 @@ either of these shortcodes in conjunction with this render hook.
             {{- end }}
         {{- end }}
     {{- end }}
-
 {{- end -}}
