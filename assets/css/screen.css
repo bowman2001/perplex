@@ -3187,7 +3187,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   border-bottom: 0.5rem solid transparent;
 }
 .top-nav .is-active, .top-nav .has-active {
-  border-bottom-color: inherit;
+  border-bottom-color: black;
 }
 
 .menu a, .menu .ctrl__link {
@@ -3199,8 +3199,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   border-bottom-color: #03afff;
 }
 .menu a.is-active:hover, .menu a.is-active:focus, .menu .ctrl__link.is-active:hover, .menu .ctrl__link.is-active:focus {
-  border-bottom-color: #187caa;
   cursor: default;
+  border-bottom-color: inherit;
 }
 
 .social a, .social .ctrl__link {
@@ -4403,19 +4403,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-top: 1.5rem;
   float: right;
   clear: both;
-  width: calc(50% + 1rem);
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.fig--featured .caption {
-  padding-left: 0;
-  padding-right: 0;
-}
-@media screen and (min-width: 37em) {
-  .fig--featured {
-    width: 37rem;
-    margin-left: 2rem;
-  }
 }
 @media screen and (min-width: 48em) {
   .fig--featured {

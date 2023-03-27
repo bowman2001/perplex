@@ -1,10 +1,10 @@
 {{- $img := ( partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) ) -}}
+{{ $a := dict }}
 {{- with $img -}}
-    {{ $a := partial "img/func/params/unsplash.html" . }}
+    {{ $a = partial "img/func/params/unsplash.html" . }}
+    {{ $a = merge $a (dict (slice "class" "posh") "right" )}}
+    {{ $a = merge $a (dict (slice "class" "size") "small" )}}
     {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
-    {{ if eq $a.class.size "tiny" }}
-        {{ $a = merge $a (dict (slice "class" "posh") "right" )}}
-    {{ end }}
     {{ $a = merge $a (dict (slice "class" "plain") "fig--featured")}}
     {{ partial "img/figure.html" (dict "img" . "a" $a )}}
 {{- end -}}
