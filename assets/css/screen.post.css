@@ -1346,10 +1346,13 @@ h6:target .heading-anchor:before {
 .titlehead {
   margin: 0 2rem 2rem 2rem;
   padding: 1rem 0;
-  background: #ddd;
   max-width: 70rem;
   border-radius: .5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+}
+
+.titlehead--deprecated {
+  background-color: rgba(238, 238, 0, .5333333333);
 }
 
 .title {

@@ -7,7 +7,7 @@
             {{ partial "date/page/published_date.html" . }}
         </div>
           {{- with .Resources.GetMatch "titlehead.md" -}}
-            <div class="titlehead md md--sans md--tiny">
+            <div class="titlehead{{- with .Params.style }} titlehead--{{ . }}{{ end }} md md--sans md--tiny">
                 {{- partial "replacements.html" .Content -}}
             </div>
           {{- end -}}
