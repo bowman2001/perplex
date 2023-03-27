@@ -1,6 +1,224 @@
-{{- if eq .Destination "@" -}}
-  <span id="{{ .PlainText | anchorize }}">{{ .Text | safeHTML }}</span>
-{{- else -}}
-  <a class="md-hook-link" href="{{- .Destination | safeURL -}}" {{ with .Title }} title="{{ . }}" {{ end }}>{{- .Text | safeHTML -}}</a>
+{{- /* Last modified: 2023-03-26T10:05:59-07:00 */}}
+
+{{- /*
+Changes by Jörg Makowski:
+- added class to resulting link (2023-03-27)
+*/ -}}
+
+{{- /*
+Copyright 2023 Veriphor LLC
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy of
+the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under
+the License.
+*/}}
+
+{{- /*
+This render hook resolves internal destinations in the following order:
+
+  1. Content page
+  2. Page resource (e.g., a PDF file in a page bundle)
+  3. Global resource (e.g., a PDF file in the assets directory)
+
+External destinations are not modified.
+
+You must place global resources in the assets directory. If you have placed
+your resources in the static directory, and you are unable or unwilling to move
+them, you must mount the static directory to the assets directory by including
+both of these entries in your site configuration:
+
+  [[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+
+  [[module.mounts]]
+  source = 'static'
+  target = 'assets'
+
+By default, if this render hook is unable to resolve a destination, including a
+fragment if present, it passes the destination through without modification. To
+emit a warning or error, set the error level in your site configuration:
+
+  [params.render_hooks.link]
+  errorLevel = 'error' # ignore (default), warning, or error
+
+In this configuration, when this render hook cannot resolve a destination, it
+throws an error and fails the build.
+
+This render hook may be unable to resolve destinations created with the ref and
+relref shortcodes. Unless you set the error level to ignore you should not use
+either of these shortcodes in conjunction with this render hook.
+
+@context {string} Destination The link destination.
+@context {page} Page A reference to the page containing the link.
+@context {string} PlainText The link description as plain text.
+@context {string} Text The link description.
+@context {string} Title The link title.
+
+@returns {template.html}
+*/}}
+
+{{- /* Initialize. */}}
+{{- $renderHookName := "link" }}
+
+{{- /* Verify minimum required version. */}}
+{{- $minHugoVersion := "0.111.3" }}
+{{- if lt hugo.Version $minHugoVersion }}
+    {{- errorf "The %q render hook requires Hugo v%s or later." $renderHookName $minHugoVersion }}
+{{- end }}
+
+{{- /* Error level when unable to resolve destination: ignore, warning, or error. */}}
+{{- $errorLevel := or site.Params.render_hooks.link.errorLevel "ignore" | lower }}
+
+{{- /* Validate error level. */}}
+{{- if not (in (slice "ignore" "warning" "error") $errorLevel) }}
+    {{- errorf "The %q render hook is misconfigured. The errorLevel %q is invalid. Please check your site configuration." $renderHookName $errorLevel }}
+{{- end }}
+
+{{- /* Determine content path for warning and error messages. */}}
+{{- $contentPath := "" }}
+{{- with .Page.File }}
+    {{- $contentPath = .Path }}
+{{- else }}
+    {{- $contentPath = .Path }}
+{{- end }}
+
+{{- /* Parse destination. */}}
+{{- $u := urls.Parse .Destination  }}
+
+{{- /* Set common message. */}}
+{{- $msg := printf "The %q render hook was unable to resolve the destination %q in %s" $renderHookName $u.String $contentPath }}
+
+{{- /* Set attributes for anchor element. */}}
+{{- $attrs := dict "href" $u.String }}
+{{- if $u.IsAbs }}
+    {{- /* Destination is external. */}}
+    {{- $attrs = merge $attrs (dict "rel" "external") }}
+{{- else }}
+    {{- with $u.Path }}
+        {{- with $p := or ($.Page.GetPage .) ($.Page.GetPage (strings.TrimRight "/" .)) }}
+            {{- /* Destination is a page. */}}
+            {{- $href := .RelPermalink }}
+            {{- with $u.RawQuery }}
+                {{- $href = printf "%s?%s" $href . }}
+            {{- end }}
+            {{- with $u.Fragment }}
+                {{- $ctx := dict
+                "contentPath" $contentPath
+                "errorLevel" $errorLevel
+                "page" $p
+                "parsedURL" $u
+                "renderHookName" $renderHookName
+                }}
+                {{- partial "inline/h-rh-l/validate-fragment.html" $ctx }}
+                {{- $href = printf "%s#%s" $href . }}
+            {{- end }}
+            {{- $attrs = dict "href" $href }}
+        {{- else }}
+            {{- with $.Page.Resources.GetMatch $u.Path }}
+                {{- /* Destination is a page resource; drop query and fragment. */}}
+                {{- $attrs = dict "href" .RelPermalink }}
+            {{- else }}
+                {{- with resources.Get $u.Path }}
+                    {{- /* Destination is a global resource; drop query and fragment. */}}
+                    {{- $attrs = dict "href" .RelPermalink }}
+                {{- else }}
+                    {{- if eq $errorLevel "warning" }}
+                        {{- warnf $msg }}
+                    {{- else if eq $errorLevel "error" }}
+                        {{- errorf $msg }}
+                    {{- end }}
+                {{- end }}
+            {{- end }}
+        {{- end }}
+    {{- else }}
+        {{- with $u.Fragment }}
+            {{- /* Destination is on the same page; prepend relative permalink. */}}
+            {{- $ctx := dict
+            "contentPath" $contentPath
+            "errorLevel" $errorLevel
+            "page" $.Page
+            "parsedURL" $u
+            "renderHookName" $renderHookName
+            }}
+            {{- partial "inline/h-rh-l/validate-fragment.html" $ctx }}
+            {{- $attrs = dict "href" (printf "%s#%s" $.Page.RelPermalink .) }}
+        {{- else }}
+            {{- if eq $errorLevel "warning" }}
+                {{- warnf $msg }}
+            {{- else if eq $errorLevel "error" }}
+                {{- errorf $msg }}
+            {{- end }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+{{- with .Title }}
+    {{- $attrs = merge $attrs (dict "title" .) }}
 {{- end -}}
-{{- /* This comment removes trailing newlines */ -}}
+
+{{- /* Render anchor element. */ -}}
+<a class="md-hook-link"
+        {{- range $k, $v := $attrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end -}}
+>{{ .Text | safeHTML }}</a>
+
+{{- define "partials/inline/h-rh-l/validate-fragment.html" }}
+    {{- /*
+  Validates the fragment portion of a link destination.
+
+  @context {string} contentPath The page containing the link.
+  @context {srting} errorLevel The error level when unable to resolve destination; ignore (default), warning, or error.
+  @context {page} page The page corresponding to the link destination
+  @context {struct} parsedURL The link destination parsed by urls.Parse.
+  @context {string} renderHookName The name of the render hook.
+  */}}
+
+    {{- /* Initialize. */}}
+    {{- $contentPath := .contentPath }}
+    {{- $errorLevel := .errorLevel }}
+    {{- $p := .page }}
+    {{- $u := .parsedURL }}
+    {{- $renderHookName := .renderHookName }}
+
+    {{- /* Validate. */}}
+    {{- with $u.Fragment }}
+        {{- if $p.Fragments.Identifiers.Contains . }}
+            {{- if gt ($p.Fragments.Identifiers.Count .) 1 }}
+                {{- $msg := printf "The %q render hook detected duplicate heading IDs %q in %s" $renderHookName . $contentPath }}
+                {{- if eq $errorLevel "warning" }}
+                    {{- warnf $msg }}
+                {{- else if eq $errorLevel "error" }}
+                    {{- errorf $msg }}
+                {{- end }}
+            {{- end }}
+        {{- else }}
+            {{- /* Determine target path for warning and error message. */}}
+            {{- $targetPath := "" }}
+            {{- with $p.File }}
+                {{- $targetPath = .Path }}
+            {{- else }}
+                {{- $targetPath = .Path }}
+            {{- end }}
+            {{- /* Set common message. */}}
+            {{- $msg := printf "The %q render hook was unable to find heading ID %q in %s. See %s" $renderHookName . $targetPath $contentPath }}
+            {{- if eq $targetPath $contentPath }}
+                {{- $msg = printf "The %q render hook was unable to find heading ID %q in %s" $renderHookName . $targetPath }}
+            {{- end }}
+            {{- /* Throw warning or error. */}}
+            {{- if eq $errorLevel "warning" }}
+                {{- warnf $msg }}
+            {{- else if eq $errorLevel "error" }}
+                {{- errorf $msg }}
+            {{- end }}
+        {{- end }}
+    {{- end }}
+{{- end -}}

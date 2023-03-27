@@ -30,9 +30,6 @@
 {{ if not $img }}
     {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
 {{ end }}
-{{ with .Inner }}
-    {{ $a = merge $a (dict "caption" .) }}
-{{ end }}
 {{ $a = merge $a (dict "name" $name) }}
 {{ $a = merge $a (dict "type" "figure" )}}
 {{ partial "img/figure.html" (dict "img" $img "a" $a )}}

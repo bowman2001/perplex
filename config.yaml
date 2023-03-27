@@ -28,7 +28,12 @@ params:
   link:
     target: [_blank, _parent, _self, _top]
     rel: [alternate, author, bookmark, external, help, license, next, nofollow, noopener, noreferrer, opener, prev, search, tag]
-    
+
+  ### Parameters for the render hook link
+  render_hooks:
+    link:
+      errorLevel: warning # ignore (default), warning, or error
+
   #### Image processing
   
   ### Parameters
