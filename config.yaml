@@ -14,7 +14,7 @@ params:
   latex       : false
   latex_dollar: true
   mermaid     : false
-  svg_inline  : true
+  svg         : inline
   
   paginateNr  : 5
   
@@ -45,7 +45,7 @@ params:
     # quality_reduction: [ -10, -20, -30 ] TODO
     
     ### WARNING!
-    ### Changing the following parameters in your config will break things.
+    ### Changing the following parameters in your own config will break things.
     
     # See https://gohugo.io/content-management/image-processing/#anchor
     anchors        : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]

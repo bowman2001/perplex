@@ -1,12 +1,11 @@
 {{- if .Site.IsServer -}}
-{{ $src := "" }}
 {{- with (.Param "sourcePath") -}}
-{{ $src = . }}
+    {{ $src := . }}
+    {{- with $.File -}}
+        {{- $path := print "vscode://file" $src .Path  -}}
+        <a {{ printf "href=%q" $path | safeHTMLAttr }} rel="nofollow">
+    {{- end -}}
+{{- end -}}
 {{ else }}
-{{ warnf "Unable to find local content files. No 'sourcePath' parameter in the configuration.'" }}
+    {{ warnf "Unable to find local content files. No 'sourcePath' parameter in the configuration.'" }}
 {{ end }}
-{{- with .File -}}
-{{- $path := print "vscode://file" $src .Path  -}}
-<a {{ printf "href=%q" $path | safeHTMLAttr }} rel="nofollow">
-    {{- end -}}
-    {{- end -}}
