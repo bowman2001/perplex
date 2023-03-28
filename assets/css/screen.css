@@ -208,7 +208,7 @@ img, svg {
   border-radius: 0.5rem;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: linear-gradient(white, #faefe5);
+  background: linear-gradient(white, #f6e3d0);
 }
 
 .img__container--footer {
@@ -290,7 +290,7 @@ body {
   scrollbar-gutter: stable both-edges;
   min-height: 0;
   animation-name: page;
-  animation-duration: 0.2s;
+  animation-duration: 150ms;
   animation-timing-function: ease-in-out;
 }
 @media screen and (min-width: 79em) {
@@ -617,7 +617,7 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  animation: fade 500ms;
+  animation: fade 150ms;
   transition: background-color 250ms;
 }
 @media screen and (min-width: 79em) {
@@ -674,7 +674,7 @@ body {
     grid-area: left;
     position: static;
     width: 35rem;
-    animation: fade 500ms;
+    animation: fade 150ms;
     height: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -1930,10 +1930,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 .md--small > p, .md--small > ul, .md--small > ol, .md--small > dl {
-  font-size: 1.43rem;
+  font-size: 1.6083333333rem;
   line-height: 2.5rem;
-  padding-top: 0.714465rem;
-  padding-bottom: 0.285535rem;
+  padding-top: 0.6476791667rem;
+  padding-bottom: 0.3523208333rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
 }
@@ -1968,6 +1968,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box, .md--margin-left .md .box-warn, .md .md--margin-left .box-warn, .md--margin-left .md .box-info, .md .md--margin-left .box-info {
     margin-left: 37rem;
   }
+}
+
+.md--footer p, .md--footer li, .md--footer dd {
+  text-align: left;
 }
 
 .md--list {
@@ -2479,9 +2483,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 .md--footer h2 {
   font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 0.464465rem;
-  margin-bottom: -0.464465rem;
+  line-height: 2.5rem;
+  padding-top: 0.714465rem;
+  margin-bottom: -0.714465rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 0.05em;

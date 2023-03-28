@@ -311,7 +311,7 @@ svg {
   border-radius: .5rem;
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .1);
   overflow: hidden;
-  background: linear-gradient(white, #faefe5);
+  background: linear-gradient(white, #f6e3d0);
 }
 
 .img__container--footer {
@@ -398,7 +398,7 @@ body {
   scrollbar-gutter: stable both-edges;
   min-height: 0;
   animation-name: page;
-  animation-duration: .2s;
+  animation-duration: 150ms;
   animation-timing-function: ease-in-out;
 }
 
@@ -757,7 +757,7 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  animation: fade 500ms;
+  animation: fade 150ms;
   transition: background-color 250ms;
 }
 
@@ -822,7 +822,7 @@ body {
     grid-area: left;
     position: static;
     width: 35rem;
-    animation: fade 500ms;
+    animation: fade 150ms;
     height: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -2464,10 +2464,10 @@ h6:target .heading-anchor:before {
 .md--small > ul,
 .md--small > ol,
 .md--small > dl {
-  font-size: 1.43rem;
+  font-size: 1.6083333333rem;
   line-height: 2.5rem;
-  padding-top: .714465rem;
-  padding-bottom: .285535rem;
+  padding-top: .6476791667rem;
+  padding-bottom: .3523208333rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
 }
@@ -2529,6 +2529,12 @@ h6:target .heading-anchor:before {
   .md .md--margin-left .box-info {
     margin-left: 37rem;
   }
+}
+
+.md--footer p,
+.md--footer li,
+.md--footer dd {
+  text-align: left;
 }
 
 .md--list {
@@ -3176,9 +3182,9 @@ h6:target .heading-anchor:before {
 
 .md--footer h2 {
   font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: .464465rem;
-  margin-bottom: -0.464465rem;
+  line-height: 2.5rem;
+  padding-top: .714465rem;
+  margin-bottom: -0.714465rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: .05em;
