@@ -1,8 +1,8 @@
 {{- /* Last modified: 2023-03-26T10:05:59-07:00 */}}
 
-{{- /*
-Changes by Jörg Makowski:
+{{- /* Changes by Georg Makowski:
 - added class to resulting link (2023-03-27)
+- added an error message in case .Destination can’t be parsed (2023-03-28)
 */ -}}
 
 {{- /*
@@ -92,7 +92,12 @@ either of these shortcodes in conjunction with this render hook.
 {{- end }}
 
 {{- /* Parse destination. */}}
-{{- $u := urls.Parse .Destination  }}
+{{- $u := "" }}
+{{- with urls.Parse .Destination }}
+    {{- $u = .  }}
+{{- else }}
+    {{- errorf "The %q render hook was unable to parse the destination %q in %s" $renderHookName .Destination $contentPath }} }}
+{{- end }}
 
 {{- /* Set common message. */}}
 {{- $msg := printf "The %q render hook was unable to resolve the destination %q in %s" $renderHookName $u.String $contentPath }}
