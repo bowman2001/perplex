@@ -1,10 +1,12 @@
-{{ with .Site.GetPage "site/footer" }}
-    <div class="l-footer__columns">
-        {{ range .Resources.Match "*.md" }}
-          <div class="md md--tiny md--footer footer__col">
-            <h2>{{ .Title | site.Home.RenderString }}</h2>
-              {{ partial "replacements.html" .Content }}
-          </div>
-        {{ end }}
-    </div>
-{{ end }}
+{{ with .Site.GetPage "section" "site/footer" }}
+    {{- with .Pages }}
+      <div class="l-footer__columns">
+          {{- range . }}
+            <div class="md md--tiny md--footer footer__col">
+              <h2>{{ .Title | site.Home.RenderString }}</h2>
+                {{ partial "replacements.html" .Content }}
+            </div>
+          {{- end }}
+      </div>
+    {{- end }}
+{{- end }}
