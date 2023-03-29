@@ -99,15 +99,19 @@ References:
         {{- $attrs = merge $attrs (dict "src" .RelPermalink) }}
 
         {{- /* Render. */}}
+        <figure class="fig fig--size-normal fig--diagram" >
+            <div class="img__container">
         <img
                 {{- range $k, $v := $attrs }}
-                    {{- if not (eq $k "type") }}
+                    {{- if not (or (eq $k "type")) }}
                         {{- if $v }}
                             {{- printf " %s=%q" $k (string $v) | safeHTMLAttr }}
                         {{- end }}
                     {{- end }}
                 {{- end -}}
         >{{- /**/ -}}
+            </div>
+        </figure>
     {{- end }}
 {{- else }}
     {{- warnf "The %q code block render hook was unable to get the remote diagram in %q. See %s" $renderHookName $path $position }}

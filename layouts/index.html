@@ -7,8 +7,41 @@
 </header>
 <div class="l-page">
 <main id="l-main" class="l-tnp">
-  <div id="l-content-box" class="l-box l-box-full">
-
+  <div id="l-content-box" class="l-box l-box--full">
+    <div>
+    <header class="page-header">
+      <div class="title">
+        <hr>
+          {{ partial "file/editor_start.html" . }}
+          {{ partial "title/title.html" . }}
+          {{ partial "title/subtitle.html" . }}
+          {{ partial "file/editor_end.html" . }}
+      </div>
+    </header>
+      {{ with .Content }}
+        <div class="md md--sans md--margin-left md--h-serif md--list">
+            {{- partial "replacements.html" . -}}
+        </div>
+      {{ end }}
+        {{ with site.GetPage "/news" }}
+          <nav class="card-nav card-nav--3 card-nav--top margin-halfleft">
+            <ul class="card-nav__list">
+                {{- range first 4 .RegularPages -}}
+                  <li class="card card--3halfs card__hover">{{- .Render "li-card-3halfs-row-img-small" -}}</li>
+                {{- end -}}
+            </ul>
+          </nav>
+        {{ end }}
+        {{ with site.GetPage "/blog" }}
+          <nav class="card-nav card-nav--3 card-nav--top margin-halfleft">
+            <ul class="card-nav__list">
+                {{- range first 3 .RegularPages -}}
+                  <li class="card card--1 card__hover">{{- .Render "li-card-1-col-img" -}}</li>
+                {{- end -}}
+            </ul>
+          </nav>
+        {{ end }}
+  </div>
   </div>
   <footer id="l-footer" class="l-box margin-halfleft">
       {{- partial "footer/site.html" . -}}

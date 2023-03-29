@@ -1,0 +1,18 @@
+<div class="card__flex card__flex--half">
+    {{ partial "img/featured-card-small.html" . }}
+  <div class="card__content">
+    <nav class="card__header">
+      <div class="meta meta--card meta--card--half">
+          {{ partial "nav/card/meta/firstcategory.html" . }}&emsp;{{ partial "date/page/date.html" . -}}
+      </div>
+      <div class="card__title card__title--small">
+          {{ partial "nav/card/title/h2.html" . }}
+      </div>
+    </nav>
+    <a href="{{ .RelPermalink }}">
+      <div class="md md--sans md--card md--card--small">
+          {{ partial "summary.html" . }}
+      </div>
+    </a>
+  </div>
+</div>

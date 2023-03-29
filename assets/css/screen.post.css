@@ -1135,6 +1135,7 @@ h6:target .heading-anchor:before {
 }
 
 .meta--card--half {
+  justify-content: start;
   margin: 0 1.5rem -0.5rem 1.5rem;
 }
 
@@ -1214,6 +1215,10 @@ h6:target .heading-anchor:before {
 
 .titlehead--experimental {
   background-color: rgba(204, 0, 0, .7333333333);
+}
+
+.titlehead--experimental > p {
+  color: #fff;
 }
 
 .title {
@@ -1491,7 +1496,7 @@ h6:target .heading-anchor:before {
 .md > blockquote,
 .md > table,
 .md > pre,
-.md > figure,
+.md > .fig-diagram,
 .md .highlight,
 .md .maincol,
 .md .literature,
@@ -2245,6 +2250,14 @@ h6:target .heading-anchor:before {
   padding-bottom: .285535rem;
 }
 
+.md--card--small > p,
+.md--card--small > .p-first {
+  font-size: 1.625rem;
+  line-height: 2.5rem;
+  padding-top: .1414375rem;
+  margin-bottom: -0.1414375rem;
+}
+
 .md--card--1 p,
 .md--card--2 p,
 .md--card--3halfs p,
@@ -2378,7 +2391,7 @@ h6:target .heading-anchor:before {
   .md--margin-left > blockquote,
   .md--margin-left > table,
   .md--margin-left > pre,
-  .md--margin-left > figure,
+  .md--margin-left > .fig-diagram,
   .md--margin-left .highlight,
   .md--margin-left .maincol,
   .md--margin-left .literature,
@@ -4280,14 +4293,19 @@ h6:target .heading-anchor:before {
 }
 
 @media screen and (min-width: 39em) {
-  .card--1,
-  .card--3halfs {
+  .card--1 {
     width: 37rem;
   }
 }
 
 .card--1--row {
   margin-bottom: 0;
+}
+
+@media screen and (min-width: 39em) {
+  .card--3halfs {
+    width: 74rem;
+  }
 }
 
 @media screen and (min-width: 48em) {
@@ -4445,6 +4463,7 @@ h6:target .heading-anchor:before {
 }
 
 .card__fig img {
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -4477,12 +4496,30 @@ h6:target .heading-anchor:before {
   padding: 1rem;
 }
 
+.card__fig--small {
+  width: 19rem;
+  height: 15.33339rem;
+  padding: 2rem 0 2rem 2rem;
+  flex-shrink: 0;
+}
+
+.card__fig--small img,
+.card__fig--small svg {
+  width: 17rem;
+  height: 11.333339rem;
+}
+
+.card__fig--small .img--transparent,
+.card__fig--small svg {
+  padding: 1rem;
+}
+
 @media screen and (min-width: 39em) {
   .card__fig--1,
   .card__fig--3halfs {
     width: 37rem;
-    height: 26.00011rem;
-    padding: 2rem;
+    height: 25.00011rem;
+    padding: 2rem 2rem 1rem 2rem;
   }
 
   .card__fig--1 img,
@@ -4566,7 +4603,7 @@ h6:target .heading-anchor:before {
   .card__title--2 h4 {
     font-size: 1.905rem;
     line-height: 2rem;
-    padding-top: .2865775rem;
+    padding-top: .7865775rem;
     margin-bottom: -0.2865775rem;
   }
 }
@@ -4578,6 +4615,17 @@ h6:target .heading-anchor:before {
   line-height: 1.5rem;
   padding-top: .74124175rem;
   padding-bottom: .75875825rem;
+  letter-spacing: .05em;
+  word-spacing: .15em;
+}
+
+.card__title--small h2,
+.card__title--small h3,
+.card__title--small h4 {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: .964465rem;
+  padding-bottom: .535535rem;
   letter-spacing: .05em;
   word-spacing: .15em;
 }
@@ -5356,6 +5404,11 @@ figure {
     clear: none;
     margin: 0;
   }
+}
+
+.fig--diagram .img__container {
+  border: 1px solid rgba(17, 17, 17, .5);
+  box-shadow: none;
 }
 
 .md--footer figure {

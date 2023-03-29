@@ -895,6 +895,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 .meta--card--half {
+  justify-content: start;
   margin: 0 1.5rem -0.5rem 1.5rem;
 }
 .meta--card--half .meta__item a, .meta--card--half .meta__item span, .meta--card--half .meta__item time {
@@ -963,6 +964,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .titlehead--experimental {
   background-color: rgba(204, 0, 0, 0.7333333333);
+}
+.titlehead--experimental > p {
+  color: white;
 }
 
 .title {
@@ -1199,7 +1203,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > figure, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box, .md .box-info, .md .box-warn {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box, .md .box-info, .md .box-warn {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1744,6 +1748,13 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-bottom: 0.285535rem;
 }
 
+.md--card--small > p, .md--card--small > .p-first {
+  font-size: 1.625rem;
+  line-height: 2.5rem;
+  padding-top: 0.1414375rem;
+  margin-bottom: -0.1414375rem;
+}
+
 .md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
   font-size: 1.625rem;
   line-height: 2.5rem;
@@ -1837,7 +1848,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > figure, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box, .md--margin-left .md .box-warn, .md .md--margin-left .box-warn, .md--margin-left .md .box-info, .md .md--margin-left .box-info {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box, .md--margin-left .md .box-warn, .md .md--margin-left .box-warn, .md--margin-left .md .box-info, .md .md--margin-left .box-info {
     margin-left: 37rem;
   }
 }
@@ -3426,7 +3437,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 @media screen and (min-width: 39em) {
-  .card--1, .card--3halfs {
+  .card--1 {
     width: 37rem;
   }
 }
@@ -3435,6 +3446,11 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-bottom: 0;
 }
 
+@media screen and (min-width: 39em) {
+  .card--3halfs {
+    width: 74rem;
+  }
+}
 @media screen and (min-width: 48em) {
   .card--3halfs {
     width: 55.5rem;
@@ -3555,6 +3571,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   object-fit: contain;
 }
 .card__fig img {
+  display: block;
   object-fit: cover;
 }
 
@@ -3572,11 +3589,25 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding: 1rem;
 }
 
+.card__fig--small {
+  width: 19rem;
+  height: 15.33339rem;
+  padding: 2rem 0 2rem 2rem;
+  flex-shrink: 0;
+}
+.card__fig--small img, .card__fig--small svg {
+  width: 17rem;
+  height: 11.333339rem;
+}
+.card__fig--small .img--transparent, .card__fig--small svg {
+  padding: 1rem;
+}
+
 @media screen and (min-width: 39em) {
   .card__fig--1, .card__fig--3halfs {
     width: 37rem;
-    height: 26.00011rem;
-    padding: 2rem;
+    height: 25.00011rem;
+    padding: 2rem 2rem 1rem 2rem;
   }
   .card__fig--1 img, .card__fig--3halfs img, .card__fig--1 svg, .card__fig--3halfs svg {
     width: 33rem;
@@ -3640,7 +3671,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .card__title--2 h2, .card__title--2 h3, .card__title--2 h4 {
     font-size: 1.905rem;
     line-height: 2rem;
-    padding-top: 0.2865775rem;
+    padding-top: 0.7865775rem;
     margin-bottom: -0.2865775rem;
   }
 }
@@ -3650,6 +3681,15 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   line-height: 1.5rem;
   padding-top: 0.74124175rem;
   padding-bottom: 0.75875825rem;
+  letter-spacing: 0.05em;
+  word-spacing: 0.15em;
+}
+
+.card__title--small h2, .card__title--small h3, .card__title--small h4 {
+  font-size: 1.43rem;
+  line-height: 2rem;
+  padding-top: 0.964465rem;
+  padding-bottom: 0.535535rem;
   letter-spacing: 0.05em;
   word-spacing: 0.15em;
 }
@@ -4308,6 +4348,11 @@ figure {
     clear: none;
     margin: 0;
   }
+}
+
+.fig--diagram .img__container {
+  border: 1px solid rgba(17, 17, 17, 0.5);
+  box-shadow: none;
 }
 
 .md--footer figure {
