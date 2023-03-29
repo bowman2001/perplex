@@ -77,7 +77,7 @@ params:
     lineheightfac: 3.0
     guttermobile : 2.0
     xminmobile   : 8.0
-    xmaxmobile   : 8.29
+    xmaxmobile   : 8.5
     xmin         : 6.6667
     xmax         : 10.0
     background   : '#ffffff'
