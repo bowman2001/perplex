@@ -102,12 +102,10 @@ References:
 
 {{- /* Get image. */}}
 {{- $url := printf "%s?%s" $apiEndpoint $qs }}
-{{ $svg := ""}}
 {{- with resources.GetRemote $url }}
     {{- with .Err }}
         {{- errorf "The %q code block render hook was unable to get the remote image. See %s. %s" $renderHookName $position . }}
     {{- else }}
-        {{ $svg = .Content }}
         {{- $url = .RelPermalink }}
     {{- end }}
 {{- else }}
@@ -124,8 +122,6 @@ References:
     {{- end }}
 {{- end -}}
 >
-    <div class="math__container">
-  {{ $svg | safeHTML }}
-    </div>
+  <img src="{{ $url }}" alt="mathematical expression or equation">
 </figure>
 {{- /**/ -}}

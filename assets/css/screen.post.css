@@ -122,7 +122,7 @@ hr {
   --ta: left;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   :root {
     --fs: 1.2820512821vw;
     --es: 1rem;
@@ -405,7 +405,7 @@ body {
   padding-top: calc(var(--tnh) + var(--tg));
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .l-wrap {
     padding: 0 2rem;
   }
@@ -452,7 +452,7 @@ body {
   grid-template-areas: "logo ctrl" "menu menu";
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #l-masthead {
     grid-template-columns: 2rem repeat(2, 37rem) 2rem;
     grid-template-areas: ". logo ctrl ." ". menu menu .";
@@ -513,7 +513,7 @@ body {
   width: 100%;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .l-box {
     width: 74rem;
   }
@@ -540,7 +540,7 @@ body {
   grid-template-areas: "main main";
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .l-page {
     grid-template-columns: 2rem repeat(4, 18.5rem) 2rem;
     grid-template-areas: ". main main main main main";
@@ -658,7 +658,7 @@ body {
   transition: left 250ms ease-in;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #l-sidebar {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -723,7 +723,7 @@ body {
   margin: 0 2rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #l-footer {
     border-radius: .5rem .5rem 0 0;
   }
@@ -756,7 +756,7 @@ body {
   margin: 1rem 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .footer__col {
     flex-grow: 1;
     flex-shrink: 0;
@@ -1212,6 +1212,10 @@ h6:target .heading-anchor:before {
   background-color: rgba(238, 238, 0, .5333333333);
 }
 
+.titlehead--experimental {
+  background-color: rgba(204, 0, 0, .7333333333);
+}
+
 .title {
   padding: 0 calc(1rem + 1 * var(--es)) 2rem calc(1rem + 1 * var(--es));
   margin: 0 1rem;
@@ -1226,7 +1230,7 @@ h6:target .heading-anchor:before {
   padding-bottom: calc(0.57107rem + var(--es));
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .title {
     margin: 0;
   }
@@ -1261,7 +1265,7 @@ h6:target .heading-anchor:before {
   text-shadow: 0 0 .2rem #000;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .title--dark {
     margin: 1rem 0 0 0;
   }
@@ -1638,7 +1642,7 @@ h6:target .heading-anchor:before {
   border-top: .1rem solid rgba(17, 17, 17, .5);
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md > p:not(:empty) + ul,
   .md > p:not(:empty) + ol {
     margin-top: -1rem;
@@ -2253,7 +2257,7 @@ h6:target .heading-anchor:before {
   padding-bottom: .3585625rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md--card--1 p,
   .md--card--2 p,
   .md--card--3halfs p,
@@ -2522,7 +2526,7 @@ h6:target .heading-anchor:before {
        column-gap: 4rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col4 > li,
   .md .col2-l3 > li,
   .md .col2-l2 > li,
@@ -2535,14 +2539,14 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col2 {
     -moz-column-count: 2;
          column-count: 2;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col2-l2 {
     -moz-column-count: 2;
          column-count: 2;
@@ -2550,7 +2554,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col2-l3 {
     -moz-column-count: 2;
          column-count: 2;
@@ -2558,7 +2562,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col4 {
     -moz-column-count: 4;
          column-count: 4;
@@ -2601,7 +2605,7 @@ h6:target .heading-anchor:before {
   padding: 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .dl-loose > dt,
   .md .dl-loose2 > dt,
   .md .dl-loose3 > dt {
@@ -2619,7 +2623,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .dl-loose3 > dt {
     width: 24.011rem;
   }
@@ -2629,7 +2633,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .dl-loose2 > dt {
     width: 35rem;
   }
@@ -2873,7 +2877,7 @@ h6:target .heading-anchor:before {
   display: none;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md h1 br,
   .md h2 br,
   .md h3 br,
@@ -3090,7 +3094,7 @@ h6:target .heading-anchor:before {
   margin-bottom: -.40548125rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md--card--1 h2,
   .md--card--3halfs h2,
   .md--card--2 h2 {
@@ -3222,7 +3226,7 @@ h6:target .heading-anchor:before {
           hyphens: auto;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed {
     width: calc(50% - 2rem);
     margin-right: 4rem;
@@ -3243,7 +3247,7 @@ h6:target .heading-anchor:before {
   margin: 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--size-small,
   .embed--size-tiny {
     margin-right: 2rem;
@@ -3254,7 +3258,7 @@ h6:target .heading-anchor:before {
   width: calc(33% - 1rem);
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--size-small {
     max-width: 25%;
   }
@@ -3264,7 +3268,7 @@ h6:target .heading-anchor:before {
   width: calc(25% - 1rem);
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--size-tiny {
     max-width: 12.5%;
   }
@@ -3282,7 +3286,7 @@ h6:target .heading-anchor:before {
   margin-left: 2rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--posv-middle {
     font-size: 1.43rem;
     line-height: 2rem;
@@ -3400,7 +3404,7 @@ h6:target .heading-anchor:before {
   background-color: #f9efe6;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .asciicast {
     margin: 0 2rem 1rem 2rem !important;
   }
@@ -3419,7 +3423,7 @@ h6:target .heading-anchor:before {
   margin-bottom: calc(0.9rem + 1 * var(--es));
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .note {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -3760,7 +3764,7 @@ h6:target .heading-anchor:before {
   padding-left: 2rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .left,
   .md .right {
     position: relative;
@@ -3769,7 +3773,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .left {
     float: left;
     clear: left;
@@ -3777,7 +3781,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .right {
     float: right;
     clear: right;
@@ -4067,7 +4071,7 @@ h6:target .heading-anchor:before {
   flex-direction: column;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__list {
     flex-direction: row;
     justify-content: space-between;
@@ -4101,7 +4105,7 @@ h6:target .heading-anchor:before {
   margin: 0 1rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link {
     padding: 2rem;
     margin: 0;
@@ -4120,7 +4124,7 @@ h6:target .heading-anchor:before {
   display: none;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link--start {
     display: flex;
   }
@@ -4134,7 +4138,7 @@ h6:target .heading-anchor:before {
   text-align: left;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link--prev {
     text-align: right;
   }
@@ -4144,7 +4148,7 @@ h6:target .heading-anchor:before {
   text-align: right;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link--next {
     text-align: left;
   }
@@ -4179,7 +4183,7 @@ h6:target .heading-anchor:before {
   margin: 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__icon--arrow {
     flex: 10;
   }
@@ -4269,13 +4273,13 @@ h6:target .heading-anchor:before {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--half {
     width: 18.5rem;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--1,
   .card--3halfs {
     width: 37rem;
@@ -4292,7 +4296,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--2 {
     max-width: 74rem;
   }
@@ -4311,7 +4315,7 @@ h6:target .heading-anchor:before {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--3 {
     max-width: 111rem;
   }
@@ -4378,7 +4382,7 @@ h6:target .heading-anchor:before {
   margin: 1.5rem 0 0 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card__flex--1 {
     flex-direction: column;
   }
@@ -4396,7 +4400,7 @@ h6:target .heading-anchor:before {
   margin: 1.5rem 0 0 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card__flex--2 {
     margin: 0 1rem;
     max-width: 74rem;
@@ -4473,7 +4477,7 @@ h6:target .heading-anchor:before {
   padding: 1rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card__fig--1,
   .card__fig--3halfs {
     width: 37rem;
@@ -4838,7 +4842,7 @@ h6:target .heading-anchor:before {
   display: none;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #toc {
     grid-area: control;
     right: 2rem;
@@ -4963,7 +4967,7 @@ h6:target .heading-anchor:before {
   flex-direction: column;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .taxo__list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -4974,7 +4978,7 @@ h6:target .heading-anchor:before {
   padding: .5rem 1.5rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .taxo__item {
     width: 37rem;
   }
@@ -5099,7 +5103,7 @@ h6:target .heading-anchor:before {
   margin: 2.5rem 1rem 0 1rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .li-box > hr {
     margin: 2.5rem 0 0 0;
   }
@@ -5126,8 +5130,9 @@ figure {
   overflow-x: auto;
 }
 
-.math__container {
-  width: auto;
+.math img,
+.math svg {
+  font-size: 200%;
 }
 
 .fig {
@@ -5151,14 +5156,14 @@ figure {
   padding-right: 2rem;
 }
 
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 39em) {
   .fig img,
   .fig object {
     border-radius: 0;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -5190,7 +5195,7 @@ figure {
   width: calc(50% + 1rem);
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--size-small,
   .fig--size-medium {
     width: 37rem;
@@ -5203,7 +5208,7 @@ figure {
   width: calc(33.3334% + 1rem);
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--size-tiny {
     width: 18.5rem;
   }
@@ -5309,7 +5314,7 @@ figure {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--size-small.fig--posh-left,
   .fig--size-medium.fig--posh-left {
     margin-right: 2rem;
@@ -5321,14 +5326,14 @@ figure {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--posh-left {
     float: left;
     clear: left;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--posh-right {
     float: right;
     clear: right;
@@ -5402,19 +5407,19 @@ figure {
   overflow: hidden;
 }
 
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 39em) {
   .hide-mobile {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .hide2 {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 39em) {
   .show2 {
     display: none !important;
   }

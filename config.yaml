@@ -76,7 +76,7 @@ params:
     gutter       : 4.0
     lineheightfac: 3.0
     guttermobile : 2.0
-    xminmobile   : 7.5
+    xminmobile   : 8.0
     xmaxmobile   : 8.29
     xmin         : 6.6667
     xmax         : 10.0

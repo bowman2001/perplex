@@ -48,7 +48,7 @@ hr {
   --es: 0rem;
   --ta: left;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   :root {
     --fs: 1.2820512821vw;
     --es: 1rem;
@@ -297,7 +297,7 @@ body {
   padding-top: calc(var(--tnh) + var(--tg));
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .l-wrap {
     padding: 0 2rem;
   }
@@ -336,7 +336,7 @@ body {
   grid-template-rows: 5rem 5rem;
   grid-template-areas: "logo ctrl" "menu menu";
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #l-masthead {
     grid-template-columns: 2rem repeat(2, 37rem) 2rem;
     grid-template-areas: ". logo ctrl ." ". menu menu .";
@@ -393,7 +393,7 @@ body {
 .l-box {
   width: 100%;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .l-box {
     width: 74rem;
   }
@@ -418,7 +418,7 @@ body {
   grid-template-columns: repeat(2, 50%);
   grid-template-areas: "main main";
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .l-page {
     grid-template-columns: 2rem repeat(4, 18.5rem) 2rem;
     grid-template-areas: ". main main main main main";
@@ -523,7 +523,7 @@ body {
   left: 0;
   transition: left 250ms ease-in;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #l-sidebar {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -587,7 +587,7 @@ body {
   height: 1rem;
   margin: 0 2rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #l-footer {
     border-radius: 0.5rem 0.5rem 0 0;
   }
@@ -618,7 +618,7 @@ body {
   flex-basis: 18.5rem;
   margin: 1rem 0;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .footer__col {
     flex-grow: 1;
     flex-shrink: 0;
@@ -961,6 +961,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   background-color: rgba(238, 238, 0, 0.5333333333);
 }
 
+.titlehead--experimental {
+  background-color: rgba(204, 0, 0, 0.7333333333);
+}
+
 .title {
   padding: 0 calc(1rem + 1 * var(--es)) 2rem calc(1rem + 1 * var(--es));
   margin: 0 1rem;
@@ -973,7 +977,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-top: 0.42893rem;
   padding-bottom: calc(0.57107rem + var(--es));
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .title {
     margin: 0;
   }
@@ -1005,7 +1009,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   text-transform: uppercase;
   text-shadow: 0 0 0.2rem black;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .title--dark {
     margin: 1rem 0 0 0;
   }
@@ -1284,7 +1288,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   height: 0.1rem;
   border-top: 0.1rem solid rgba(17, 17, 17, 0.5);
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md > p:not(:empty) + ul, .md > p:not(:empty) + ol {
     margin-top: -1rem;
   }
@@ -1746,7 +1750,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-top: 0.6414375rem;
   padding-bottom: 0.3585625rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md--card--1 p, .md--card--2 p, .md--card--3halfs p, .md--card--1 .p-first, .md--card--2 .p-first, .md--card--3halfs .p-first {
     font-size: 1.95rem;
     line-height: 3rem;
@@ -1947,30 +1951,30 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md .col4, .md .col2-l3, .md .col2-l2, .md .col2 {
   column-gap: 4rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col4 > li, .md .col2-l3 > li, .md .col2-l2 > li, .md .col2 > li, .md .col4 > li > p, .md .col2-l3 > li > p, .md .col2-l2 > li > p, .md .col2 > li > p {
     text-align: left;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col2 {
     column-count: 2;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col2-l2 {
     column-count: 2;
     width: 62rem;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col2-l3 {
     column-count: 2;
     width: 54rem;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .col4 {
     column-count: 4;
   }
@@ -2004,7 +2008,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md .dl-tight > dd {
   padding: 0;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .dl-loose > dt, .md .dl-loose2 > dt, .md .dl-loose3 > dt {
     float: left;
     clear: left;
@@ -2016,7 +2020,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
     padding-left: 18.5rem;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .dl-loose3 > dt {
     width: 24.011rem;
   }
@@ -2024,7 +2028,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
     padding-left: 26.011rem;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .dl-loose2 > dt {
     width: 35rem;
   }
@@ -2213,7 +2217,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md h1 br, .md h2 br, .md h3 br, .md h4 br {
   display: none;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md h1 br, .md h2 br, .md h3 br, .md h4 br {
     display: initial;
   }
@@ -2394,7 +2398,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-top: 0.40548125rem;
   margin-bottom: -0.40548125rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md--card--1 h2, .md--card--3halfs h2, .md--card--2 h2 {
     font-size: 1.905rem;
     line-height: 2rem;
@@ -2511,7 +2515,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   color: #2b2b2b;
   hyphens: auto;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed {
     width: calc(50% - 2rem);
     margin-right: 4rem;
@@ -2531,7 +2535,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin: 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--size-small, .embed--size-tiny {
     margin-right: 2rem;
   }
@@ -2540,7 +2544,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .embed--size-small {
   width: calc(33% - 1rem);
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--size-small {
     max-width: 25%;
   }
@@ -2549,7 +2553,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .embed--size-tiny {
   width: calc(25% - 1rem);
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--size-tiny {
     max-width: 12.5%;
   }
@@ -2565,7 +2569,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-left: 2rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .embed--posv-middle {
     font-size: 1.43rem;
     line-height: 2rem;
@@ -2664,7 +2668,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   border-radius: 0.5rem;
   background-color: #f9efe6;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .asciicast {
     margin: 0 2rem 1rem 2rem !important;
   }
@@ -2681,7 +2685,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-top: 1.4rem;
   margin-bottom: calc(0.9rem + 1 * var(--es));
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .note {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -2978,21 +2982,21 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
         }
     }
 } */
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .left, .md .right {
     position: relative;
     z-index: 2;
     width: 37rem;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .left {
     float: left;
     clear: left;
     margin-right: 2rem;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .md .right {
     float: right;
     clear: right;
@@ -3235,7 +3239,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__list {
     flex-direction: row;
     justify-content: space-between;
@@ -3264,7 +3268,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding: 2rem 1rem;
   margin: 0 1rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link {
     padding: 2rem;
     margin: 0;
@@ -3280,7 +3284,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   visibility: hidden;
   display: none;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link--start {
     display: flex;
   }
@@ -3292,7 +3296,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .page-nav__link--prev .page-nav__icon--arrow {
   text-align: left;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link--prev {
     text-align: right;
   }
@@ -3301,7 +3305,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .page-nav__link--next .page-nav__icon--arrow {
   text-align: right;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__link--next {
     text-align: left;
   }
@@ -3334,7 +3338,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding: 0;
   margin: 0;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .page-nav__icon--arrow {
     flex: 10;
   }
@@ -3415,13 +3419,13 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   width: 50%;
   margin-bottom: 1rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--half {
     width: 18.5rem;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--1, .card--3halfs {
     width: 37rem;
   }
@@ -3437,7 +3441,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--2 {
     max-width: 74rem;
   }
@@ -3454,7 +3458,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card--3 {
     max-width: 111rem;
   }
@@ -3498,7 +3502,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .card__flex--1 .card__content {
   margin: 1.5rem 0 0 0;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card__flex--1 {
     flex-direction: column;
   }
@@ -3513,7 +3517,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .card__flex--2 .card__content {
   margin: 1.5rem 0 0 0;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card__flex--2 {
     margin: 0 1rem;
     max-width: 74rem;
@@ -3568,7 +3572,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding: 1rem;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .card__fig--1, .card__fig--3halfs {
     width: 37rem;
     height: 26.00011rem;
@@ -3858,7 +3862,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 #toc.is-closed {
   display: none;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   #toc {
     grid-area: control;
     right: 2rem;
@@ -3964,7 +3968,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .taxo__list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -3974,7 +3978,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .taxo__item {
   padding: 0.5rem 1.5rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .taxo__item {
     width: 37rem;
   }
@@ -4087,7 +4091,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.1);
   margin: 2.5rem 1rem 0 1rem;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .li-box > hr {
     margin: 2.5rem 0 0 0;
   }
@@ -4113,8 +4117,8 @@ figure {
   overflow-x: auto;
 }
 
-.math__container {
-  width: auto;
+.math img, .math svg {
+  font-size: 200%;
 }
 
 .fig {
@@ -4134,12 +4138,12 @@ figure {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 39em) {
   .fig img, .fig object {
     border-radius: 0;
   }
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -4163,7 +4167,7 @@ figure {
 .fig--size-small, .fig--size-medium {
   width: calc(50% + 1rem);
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--size-small, .fig--size-medium {
     width: 37rem;
   }
@@ -4174,7 +4178,7 @@ figure {
   padding-right: 2rem;
   width: calc(33.3334% + 1rem);
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--size-tiny {
     width: 18.5rem;
   }
@@ -4266,7 +4270,7 @@ figure {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--size-small.fig--posh-left, .fig--size-medium.fig--posh-left {
     margin-right: 2rem;
   }
@@ -4275,14 +4279,14 @@ figure {
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--posh-left {
     float: left;
     clear: left;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .fig--posh-right {
     float: right;
     clear: right;
@@ -4366,19 +4370,19 @@ figure {
   overflow: hidden;
 }
 
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 39em) {
   .hide-mobile {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 39em) {
   .hide2 {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 39em) {
   .show2 {
     display: none !important;
   }
