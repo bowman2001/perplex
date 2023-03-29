@@ -299,13 +299,6 @@ li:empty:before {
   font-weight: 300;
 }
 
-img,
-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .img__container {
   display: block;
   border-radius: .5rem;
@@ -503,142 +496,6 @@ body {
 #l-ctrl {
   grid-area: ctrl;
   position: relative;
-}
-
-#l-home {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(7, auto) 1fr auto;
-  grid-template-areas: "dt" "l1" "d2" "l3" "d4" "l5" "d6" "." "fo";
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  height: 100%;
-}
-
-@media screen and (min-width: 37em) {
-  #l-home {
-    grid-template-columns: 2rem repeat(2, 37rem) 2rem;
-    grid-template-rows: repeat(4, 37rem) 1fr auto;
-    grid-template-areas: ".  dt .  ." ".  l1 d2 ." ".  d4 l3 ." ".  l5 d6 ." ".  .  .  ." ".  fo fo .";
-  }
-}
-
-@media screen and (min-width: 48em) {
-  #l-home {
-    grid-template-columns: 2rem repeat(3, 37rem) 2rem;
-    grid-template-areas: ". dt .  .   ." ". .  d2 l1  ." ". .  l3 d4  ." ". .  d6 l5  ." ".  .  .  .  ." ".  fo fo fo .";
-  }
-}
-
-@media screen and (min-width: 79em) {
-  #l-home {
-    grid-template-columns: minmax(2rem, auto) repeat(4, 37rem) minmax(2rem, auto);
-    grid-template-rows: repeat(3, 37rem) 1fr auto;
-    grid-template-areas: ".  dt .  .  .  ." ".  .  d2 l1 d6 ." ".  .  l3 d4 l5 ." ".  .  .  .  .  ." ".  .  fo fo fo .";
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    scrollbar-gutter: stable;
-    scrollbar-color: #ebb924 #f8e9da;
-  }
-
-  #l-home::-webkit-scrollbar {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  #l-home::-webkit-scrollbar-thumb {
-    background: #ebb924;
-  }
-
-  #l-home::-webkit-scrollbar-track {
-    background: #f8e9da;
-  }
-}
-
-@media screen and (min-width: 120em) {
-  #l-home {
-    grid-template-columns: minmax(2rem, auto) repeat(6, 37rem) minmax(2rem, auto);
-    grid-template-areas: ". . dt .  .  .  . ." ". . .  d2 l1 d6 . ." ". . .  l3 d4 l5 . ." ". . .  .  .  .  . ." ". . .  fo fo fo . .";
-  }
-}
-
-#dt {
-  grid-area: dt;
-}
-
-#l1 {
-  grid-area: l1;
-}
-
-#d2 {
-  grid-area: d2;
-}
-
-#l3 {
-  grid-area: l3;
-}
-
-#d4 {
-  grid-area: d4;
-}
-
-#l5 {
-  grid-area: l5;
-}
-
-#d6 {
-  grid-area: d6;
-}
-
-.home__tile {
-  font-size: 3rem;
-  height: auto;
-  width: 100%;
-  text-align: left;
-}
-
-@media screen and (min-width: 37em) {
-  .home__tile {
-    height: 37rem;
-    width: 37rem;
-  }
-}
-
-.home__tile--title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-@media screen and (min-width: 37em) {
-  .home__tile--title {
-    text-align: left;
-  }
-}
-
-.home__title {
-  flex: 0 0 auto;
-}
-
-.home__tile--red,
-.home__tile--title {
-  background: linear-gradient(225deg, hsl(325, 79%, 44%) 0%, hsl(325, 79%, 44%) 9%, #e7e8e9 9%, #e7e8e9 100%);
-}
-
-.home__tile--blue {
-  background: linear-gradient(225deg, hsl(199, 100%, 38%) 0%, hsl(199, 100%, 38%) 9%, #e7e8e9 9%, #e7e8e9 100%);
-}
-
-.home__tile--green {
-  background: linear-gradient(225deg, hsl(169, 100%, 33%) 0%, hsl(169, 100%, 33%) 9%, #e7e8e9 9%, #e7e8e9 100%);
-}
-
-.home__tile--yellow {
-  background: linear-gradient(225deg, hsl(45, 83%, 53%) 0%, hsl(45, 83%, 53%) 9%, #e7e8e9 9%, #e7e8e9 100%);
 }
 
 #l-content-box {
@@ -1630,6 +1487,7 @@ h6:target .heading-anchor:before {
 .md > blockquote,
 .md > table,
 .md > pre,
+.md > figure,
 .md .highlight,
 .md .maincol,
 .md .literature,
@@ -2516,6 +2374,7 @@ h6:target .heading-anchor:before {
   .md--margin-left > blockquote,
   .md--margin-left > table,
   .md--margin-left > pre,
+  .md--margin-left > figure,
   .md--margin-left .highlight,
   .md--margin-left .maincol,
   .md--margin-left .literature,
@@ -5263,12 +5122,28 @@ h6:target .heading-anchor:before {
   position: relative;
 }
 
+figure {
+  overflow-x: auto;
+}
+
+.math__container {
+  width: auto;
+}
+
 .fig {
   position: relative;
   z-index: 5;
   margin-top: 1.75rem;
   margin-bottom: calc(1rem + 1 * var(--es));
   width: 100%;
+  overflow: hidden;
+}
+
+.fig img,
+.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .fig .caption {
