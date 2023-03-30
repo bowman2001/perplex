@@ -9,9 +9,6 @@ getresource:
 
 ## Theme parameters
 params:
-  # Repositories
-  themeURL    : https://github.com/bowman2001/perplex
-  docURL      : https://github.com/bowman2001/perplexdoc
   
   # All parameters may be set per page in the front-matter
   subtitle    : false
@@ -117,6 +114,10 @@ module  :
           target: layouts/partials
     
     - path  : github.com/bowman2001/hugo-mod-meta
+      mounts:
+        - source: partials
+          target: layouts/partials
+    - path: github.com/bowman2001/hugo-mod-open-in-vscode
       mounts:
         - source: partials
           target: layouts/partials
