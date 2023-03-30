@@ -4623,9 +4623,9 @@ h6:target .heading-anchor:before {
 .card__title--small h3,
 .card__title--small h4 {
   font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: .964465rem;
-  padding-bottom: .535535rem;
+  line-height: 1.5rem;
+  padding-top: .714465rem;
+  padding-bottom: .785535rem;
   letter-spacing: .05em;
   word-spacing: .15em;
 }
