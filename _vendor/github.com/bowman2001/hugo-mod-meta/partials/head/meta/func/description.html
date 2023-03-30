@@ -1,17 +1,21 @@
 {{ $desc := ""}}
 {{ if .IsPage }}
-    {{ if findRE `<!--more-->` .RawContent }}
-        {{ $desc = ( partial "replacements.html" .Summary ) | plainify | htmlUnescape }}
+    {{ with .Params.seo.description }}
+        {{ $desc = . }}
     {{ else }}
-        {{ with .Description }}
-            {{ $desc = . | site.Home.RenderString | plainify | htmlUnescape }}
+        {{ if findRE `<!--more-->` .RawContent }}
+            {{ $desc = ( partial "replacements.html" .Summary ) | plainify | htmlUnescape }}
+        {{ else }}
+            {{ with .Description }}
+                {{ $desc = . | site.Home.RenderString | plainify | htmlUnescape }}
+            {{ end }}
         {{ end }}
     {{ end }}
 {{ else }}
     {{ with site.Params.Description }}
         {{ $desc = . }}
     {{ else }}
-        {{ warnf "Unable to get the general site description (params.description)." }}
+        {{ warnf "There is no general site description (params.description)." }}
     {{ end }}
 {{ end }}
 {{ return $desc }}
