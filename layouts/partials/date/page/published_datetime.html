@@ -1,8 +1,8 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-{{- partial "file/editor_start.html" . -}}
+{{- partial "file/vscode_start.html" . -}}
   <ul class="meta__list meta__list--date">
     <li class="meta__item meta__date" {{ with $.Params.author -}}title="By {{ . }}"{{- end -}}><span class="icon-font">event</span><time datetime="{{ .Date.Format $iso8601 }}">{{ .Date.Format "Jan 2, 2006" }}</time>
     </li>
     <li class="meta__item meta__date"><span class="icon-font">schedule</span><span>{{ .Date | time.Format ":time_short" }}</span></li>
   </ul>
-{{- partial "file/editor_end.html" . -}}
+{{- partial "file/vscode_end.html" . -}}

@@ -7,5 +7,5 @@
     {{- end -}}
 {{- end -}}
 {{ else }}
-    {{ warnf "Unable to find local content files. No 'sourcePath' parameter in the configuration.'" }}
+    {{ warnf "Unable to find and open local content files. Missing 'sourcePath' parameter in the configuration.'" }}
 {{ end }}
