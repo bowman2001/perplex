@@ -1,7 +1,5 @@
 {{ if .Site.IsServer }}
-    {{- with (.Param "sourcePath") }}
-        {{- with $.File }}
+        {{- with .File }}
           </a>
         {{- end }}
-    {{- end }}
 {{ end }}{{- /**/ -}}

@@ -4,6 +4,6 @@ go 1.18
 
 require (
 	github.com/bowman2001/hugo-mod-meta v0.0.0-20230322142243-00b1e30b0f9a // indirect
-	github.com/bowman2001/hugo-mod-open-in-vscode v0.1.2 // indirect
+	github.com/bowman2001/hugo-mod-open-in-vscode v1.0.0 // indirect
 	github.com/bowman2001/hugo-mod-replacements v0.2.0-beta // indirect
 )
