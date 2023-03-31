@@ -38,7 +38,7 @@
     {{ end }}
 {{ end }}
 {{ if not $resource }}
-    {{ errorf "There is no resource with the name '%s' in the page %v, its parent sections or the 'site' folder." $name .currentPage }}
+    {{ errorf "There is no resource with the name '%s' in the %q or related folders." $name .currentPage }}
 {{ end }}
 {{ return $resource }}
 
