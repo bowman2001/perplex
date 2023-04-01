@@ -2,11 +2,6 @@
 ### This is the theme configuration file. Don’t change anything here!
 ### Use the configuration in your project root to change parameters.
 
-## Store remote resources in the project
-getresource:
-  dir: ":resourceDir/_gen"
-  maxAge: -1
-
 ## Theme parameters
 params:
   

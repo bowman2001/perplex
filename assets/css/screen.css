@@ -203,6 +203,7 @@ li:empty:before {
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background: linear-gradient(white, #f6e3d0);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
 
 .img__container--footer {
@@ -987,8 +988,20 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 
-.title--wide {
-  max-width: unset;
+.title--site h1 {
+  font-size: 12.87rem;
+  line-height: 18rem;
+  padding-top: 0.180185rem;
+  padding-bottom: calc(0.819815rem + var(--es));
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  word-spacing: 0.09em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.title--site .p-first {
+  text-align: center;
 }
 
 .title--dark {
@@ -1163,15 +1176,15 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 .section > hr {
-  border-bottom: 0.2rem solid #111111;
+  border-bottom: 0.1rem solid #111111;
   height: 1rem;
   margin: 0 2rem;
 }
 .section > h2 {
-  font-size: 1.915rem;
-  line-height: 2rem;
-  padding-top: 0.2828325rem;
-  padding-bottom: 0.7171675rem;
+  font-size: 1.43rem;
+  line-height: 1.5rem;
+  padding-top: 0.214465rem;
+  padding-bottom: 0.285535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -1181,9 +1194,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 .section > h3 {
   font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 0.464465rem;
-  padding-bottom: 0.535535rem;
+  line-height: 1.5rem;
+  padding-top: 0.214465rem;
+  padding-bottom: 0.285535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -1203,7 +1216,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md .highlight, .md .maincol, .md .literature, .md .footnotes, .md .gist, .md .asciicast, .md .box, .md .box-info, .md .box-warn {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md > .highlight, .md > .maincol, .md > .literature, .md > .footnotes, .md > .gist, .md > .asciicast, .md > .box, .md > .box-info, .md > .box-warn {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1699,7 +1712,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md--home {
   padding-bottom: 1rem;
 }
-.md--home > p, .md--home > ul, .md--home > ol, .md--home > dl, .md--home > blockquote, .md--home > .p-first {
+.md--home > p, .md--home > ul, .md--home > ol, .md--home > dl, .md--home > blockquote {
   font-size: 1.95rem;
   line-height: 3rem;
   padding-top: 0.769725rem;
@@ -1708,7 +1721,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-weight: 300;
   text-align: left;
 }
-.md--home > p strong, .md--home > ul strong, .md--home > ol strong, .md--home > dl strong, .md--home > blockquote strong, .md--home > .p-first strong {
+.md--home > p strong, .md--home > ul strong, .md--home > ol strong, .md--home > dl strong, .md--home > blockquote strong {
   font-weight: 450;
 }
 .md--home dl > dt {
@@ -1848,7 +1861,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left .highlight, .md--margin-left .maincol, .md--margin-left .literature, .md--margin-left .footnotes, .md--margin-left .gist, .md--margin-left .asciicast, .md--margin-left .box, .md--margin-left .md .box-warn, .md .md--margin-left .box-warn, .md--margin-left .md .box-info, .md .md--margin-left .box-info {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left > .highlight, .md--margin-left > .maincol, .md--margin-left > .literature, .md--margin-left > .footnotes, .md--margin-left > .gist, .md--margin-left > .asciicast, .md--margin-left > .box, .md .md--margin-left > .box-warn, .md .md--margin-left > .box-info {
     margin-left: 37rem;
   }
 }
@@ -1903,7 +1916,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-top: 1.9rem;
   margin-bottom: 1.9rem;
 }
-.md > .highlight > pre > code {
+.md .highlight > pre > code {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -2051,6 +2064,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-top: 0;
 }
 
+.md--home .p-first {
+  text-align: center;
+}
 .md--home dt {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
@@ -2532,7 +2548,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
     margin-right: 4rem;
   }
 }
-.embed svg {
+.embed img, .embed svg {
   width: 100%;
   height: auto;
 }
@@ -3396,6 +3412,11 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
     margin-top: -1rem;
   }
 }
+@media screen and (min-width: 79em) {
+  .card-nav--section {
+    margin-top: -2rem;
+  }
+}
 .card-nav--2 {
   max-width: 74rem;
 }
@@ -3687,9 +3708,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .card__title--small h2, .card__title--small h3, .card__title--small h4 {
   font-size: 1.43rem;
-  line-height: 1.5rem;
-  padding-top: 0.714465rem;
-  padding-bottom: 0.785535rem;
+  line-height: 1.75rem;
+  padding-top: 0.589465rem;
+  padding-bottom: 0.660535rem;
   letter-spacing: 0.05em;
   word-spacing: 0.15em;
 }
@@ -4061,6 +4082,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   height: 1rem;
 }
 
+.page-header--home {
+  margin-bottom: 6rem;
+}
+
 @media screen and (min-width: 79em) {
   .page-header--title-left {
     height: 0;
@@ -4353,6 +4378,7 @@ figure {
 .fig--diagram .img__container {
   border: 1px solid rgba(17, 17, 17, 0.5);
   box-shadow: none;
+  background: white;
 }
 
 .md--footer figure {

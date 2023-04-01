@@ -3,6 +3,7 @@
 {{- /* Changes by Georg Makowski:
 - added class to resulting link (2023-03-27)
 - added an error message in case .Destination can’t be parsed (2023-03-28)
+- added an error message in case .Path can’t be parsed (2023-04-01)
 */ -}}
 
 {{- /*
@@ -84,11 +85,16 @@ either of these shortcodes in conjunction with this render hook.
 {{- end }}
 
 {{- /* Determine content path for warning and error messages. */}}
+
 {{- $contentPath := "" }}
 {{- with .Page.File }}
-    {{- $contentPath = .Path }}
+    {{ with .Path }}
+        {{- $contentPath = . }}
+    {{ end }}
 {{- else }}
-    {{- $contentPath = .Path }}
+    {{ with .Path }}
+        {{- $contentPath = . }}
+    {{ end }}
 {{- end }}
 
 {{- /* Parse destination. */}}

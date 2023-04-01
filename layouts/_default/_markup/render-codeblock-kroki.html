@@ -17,6 +17,12 @@ the License.
 */}}
 
 {{- /*
+Added by Georg Makowski:
+- Added available types d2, dbml
+- figure tag with classes and .img__container
+*/}}
+
+{{- /*
 Renders an SVG image of a diagram from a textual description using the Kroki service.
 
 References:
@@ -65,9 +71,7 @@ References:
 
 {{- /* Validate diagram type. */}}
 {{- $supportedTypes := slice
-"actdiag" "blockdiag" "bpmn" "bytefield" "ditaa" "erd" "graphviz" "mermaid"
-"nomnoml" "nwdiag" "packetdiag" "pikchr" "plantuml" "rackdiag" "seqdiag"
-"structurizr" "svgbob" "umlet" "vega" "vegalite" "wavedrom"
+"actdiag" "blockdiag" "bpmn" "bytefield" "d2" "dbml" "ditaa" "erd" "excalidraw" "graphviz" "mermaid" "nomnoml" "nwdiag" "packetdiag" "pikchr" "plantuml" "rackdiag" "seqdiag" "structurizr" "svgbob" "umlet" "vega" "vegalite" "wavedrom" "wireviz"
 }}
 {{- $typesDelimited := delimit $supportedTypes ", " ", and " }}
 {{- if not (in $supportedTypes $diagramType) }}
