@@ -1,0 +1,15 @@
+<div class="card__flex card__flex--1">
+    {{ partial "img/featured-card-1.html" .  }}
+  <div class="card__content">
+    <nav class="card__header">
+      <div class="meta meta--card">
+          {{ partial "nav/card/meta/firstcategory.html" . }}
+          {{ partial "date/page/date.html" . }}
+      </div>
+        {{ partial "nav/card/title/col1.html" . }}
+    </nav>
+    <a class="md md--sans md--card md--card--1" href="{{ .RelPermalink }}">
+        {{ partial "summary.html" . }}
+    </a>
+  </div>
+</div>

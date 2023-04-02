@@ -57,5 +57,5 @@
                width="{{ $fallbackImg.Width }}"
                height="{{ $fallbackImg.Height }}"/>
       {{- end -}}
-        {{ if or (ne .a.container "no") (eq .a.card "yes") }}</span>{{ end }}
+        {{ if $container }}</span>{{ end }}
       {{- if .a.link }}</a>{{ end -}}
