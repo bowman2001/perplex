@@ -374,8 +374,6 @@ body {
 }
 
 html {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 450;
   font-size: var(--fs);
   font-synthesis: weight style;
 }
@@ -1207,7 +1205,12 @@ h6:target .heading-anchor:before {
   padding: 1rem 0;
   max-width: 70rem;
   border-radius: .5rem;
+  border: .1rem solid rgba(0, 0, 0, .2);
   box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+}
+
+.titlehead--todo {
+  background-color: #eee;
 }
 
 .titlehead--deprecated {
@@ -1218,7 +1221,9 @@ h6:target .heading-anchor:before {
   background-color: rgba(204, 0, 0, .7333333333);
 }
 
-.titlehead--experimental > p {
+.titlehead--experimental > p,
+.titlehead--experimental > ol,
+.titlehead--experimental > ul {
   color: #fff;
 }
 
