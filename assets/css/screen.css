@@ -987,6 +987,12 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   color: white;
 }
 
+@media screen and (min-width: 79em) {
+  .titlehead--margin {
+    margin-left: 39rem;
+  }
+}
+
 .title {
   padding: 0 calc(1rem + 1 * var(--es)) 2rem calc(1rem + 1 * var(--es));
   margin: 0 1rem;

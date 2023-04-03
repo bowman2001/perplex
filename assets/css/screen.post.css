@@ -1246,6 +1246,12 @@ h6:target .heading-anchor:before {
   color: #fff;
 }
 
+@media screen and (min-width: 79em) {
+  .titlehead--margin {
+    margin-left: 39rem;
+  }
+}
+
 .title {
   padding: 0 calc(1rem + 1 * var(--es)) 2rem calc(1rem + 1 * var(--es));
   margin: 0 1rem;
