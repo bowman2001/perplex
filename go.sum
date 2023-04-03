@@ -28,3 +28,5 @@ github.com/bowman2001/hugo-mod-replacements v0.1.0-beta h1:+4QFKEr9H0cS1zsHSANlR
 github.com/bowman2001/hugo-mod-replacements v0.1.0-beta/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
 github.com/bowman2001/hugo-mod-replacements v0.2.0-beta h1:w0UuZRJj+RqzztJ1IEUS9LA/lBhrCPJ0MbyJ8pqzukM=
 github.com/bowman2001/hugo-mod-replacements v0.2.0-beta/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
+github.com/bowman2001/hugo-mod-replacements v0.3.0 h1:F37gP26L+bEyUa3DuQrCW8OibN8dqlYvm380QNlFX3Y=
+github.com/bowman2001/hugo-mod-replacements v0.3.0/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=

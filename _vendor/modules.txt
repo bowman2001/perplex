@@ -1,3 +1,3 @@
-# github.com/bowman2001/hugo-mod-replacements v0.2.0-beta
+# github.com/bowman2001/hugo-mod-replacements v0.3.0
 # github.com/bowman2001/hugo-mod-meta v0.0.0-20230402193142-9f1a0bfe2023
 # github.com/bowman2001/hugo-mod-open-in-vscode v1.1.0
