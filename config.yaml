@@ -27,7 +27,13 @@ params:
     target: [_blank, _parent, _self, _top]
     rel: [alternate, author, bookmark, external, help, license, next, nofollow, noopener, noreferrer, opener, prev, search, tag]
 
-  ### Parameters for the render hook link
+  ### TOC walk fragments
+  toc:
+    startLevel: 2      # default is 2
+    endLevel: 4        # default is 3
+    minNumHeadings: 2  # default is 2
+
+  ### Render hook link
   render_hooks:
     link:
       errorLevel: warning # ignore (default), warning, or error

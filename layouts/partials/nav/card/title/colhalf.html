@@ -1,4 +1,3 @@
 <div class="card__title card__title--half">
-    {{- with .Title -}}<h2><a href="{{ $.RelPermalink }}">{{- . | site.Home.RenderString -}}</a>
-    </h2>{{- end -}}
+    <h4>{{ partial "title/render-link.html" . }}</h4>
 </div>

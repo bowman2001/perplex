@@ -1,3 +1,1 @@
-{{- with .Title -}}
-      <div class="page-nav__title"><span class="text">{{- . | site.Home.RenderString -}}</span></div>
-{{- end -}}
+<div class="page-nav__title"><span class="text">{{ partial "title/render.html" . }}</span></div>

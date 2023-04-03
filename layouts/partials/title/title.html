@@ -1,1 +1,1 @@
-{{ with .Title }}<h1>{{- . | site.Home.RenderString | htmlUnescape -}}</h1>{{ end }}
+<h1>{{ partial "title/render.html" . }}</h1>

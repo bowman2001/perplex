@@ -3,8 +3,8 @@
     {{ partial "nav/taxonomies/page/lists.html" . }}
     {{ partial "date/page/published_datetime.html" . }}
   </div>
-  <div class="title title--li margin-left">
-    {{ partial "title/title-in-list.html" . }}
+  <div class="title margin-left">
+    <h2>{{ partial "title/render-link.html" . }}</h2>
     {{ partial "title/subtitle.html" . }}
   </div>
   <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>

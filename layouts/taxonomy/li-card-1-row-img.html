@@ -3,7 +3,7 @@
   <div class="card__content card__content--flex">
     <nav class="card__header">
         <div class="card__title card__title--half">
-          {{ partial "nav/card/title/h2.html" . }}
+          <h2>{{ partial "title/render-link.html" . }}</h2>
         </div>
     </nav>
     <a href="{{ .RelPermalink }}">
