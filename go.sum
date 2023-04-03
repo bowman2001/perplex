@@ -6,6 +6,8 @@ github.com/bowman2001/hugo-mod-meta v0.0.0-20221031205732-dd026d8e81e8 h1:es+xjJ
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221031205732-dd026d8e81e8/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20230322142243-00b1e30b0f9a h1:KjgYXwMWGDSTp0mxUQGwjKNUMCYuqK0Wig42Yhj3uuI=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20230322142243-00b1e30b0f9a/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
+github.com/bowman2001/hugo-mod-meta v0.0.0-20230402193142-9f1a0bfe2023 h1:Vx3nYHBidOvCFTU+5+UgTPmtjRbkWCsNUw4ZspO4dHA=
+github.com/bowman2001/hugo-mod-meta v0.0.0-20230402193142-9f1a0bfe2023/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.0 h1:/feXC+ob88YuBHVFHsWh2zo4JtgbvxI5uu/Oi86/LEs=
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.0/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.1 h1:Cwrv/OPVRcrbx/HYOQX2JndCaDU3f2MT6gFRsaEfm9o=
@@ -14,6 +16,8 @@ github.com/bowman2001/hugo-mod-open-in-vscode v0.1.2 h1:SKPelMIMaKdoYgsFk6ddr55W
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.2/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
 github.com/bowman2001/hugo-mod-open-in-vscode v1.0.0 h1:/w4vyA9INMQqnOwfrT1/mFc8f4ljATj4wq3jJMilXVc=
 github.com/bowman2001/hugo-mod-open-in-vscode v1.0.0/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
+github.com/bowman2001/hugo-mod-open-in-vscode v1.1.0 h1:DRSN5Xs+2V4FXJXnpyx/Lt/YOQMYfTrnFwbkFEgcqis=
+github.com/bowman2001/hugo-mod-open-in-vscode v1.1.0/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c h1:tlyM0cugkBaxBh/G1XewZEVi5XsvAzoJzJt1bOvwhS4=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20220922162241-02d604b5930c/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
 github.com/bowman2001/hugo-mod-replacements v0.0.0-20221027104057-f2c0dfe40057 h1:EPBP1d96vB0Xuy6wlonMWkPNDXeeD3nXyOyHe4MuaHo=
