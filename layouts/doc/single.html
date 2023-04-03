@@ -1,3 +1,4 @@
+
 {{ define "main" }}
   <div id="l-content-box" class="l-box">
     <div>
@@ -6,11 +7,7 @@
             {{ partial "nav/breadcrumbs/header.html" . }}
             {{ partial "date/page/published_date.html" . }}
         </div>
-          {{- with .Resources.GetMatch "titlehead.md" -}}
-            <div class="titlehead{{- with .Params.style }} titlehead--{{ . }}{{ end }} md md--sans md--tiny">
-                {{- partial "replacements.html" .Content -}}
-            </div>
-          {{- end -}}
+         {{ partial "title/titlehead.html" . }}
         <div class="title title--serif">
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}

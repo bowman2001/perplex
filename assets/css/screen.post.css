@@ -1161,10 +1161,10 @@ h6:target .heading-anchor:before {
 .meta__item span,
 .meta__item time {
   display: inline-block;
-  font-size: 1.6145833333rem;
+  font-size: 1.453125rem;
   line-height: 1.5rem;
-  padding-top: .8953385417rem;
-  padding-bottom: .6046614583rem;
+  padding-top: 0.9558046875rem;
+  padding-bottom: 0.5441953125rem;
   padding-left: .5rem;
   padding-right: .5rem;
 }
@@ -1213,6 +1213,17 @@ h6:target .heading-anchor:before {
   background-color: #eee;
 }
 
+.titlehead--draft {
+  padding: 0;
+  background-color: #111;
+}
+
+.titlehead--draft > p,
+.titlehead--draft > ol,
+.titlehead--draft > ul {
+  color: #fff;
+}
+
 .titlehead--deprecated {
   background-color: rgba(238, 238, 0, .5333333333);
 }
@@ -1239,6 +1250,8 @@ h6:target .heading-anchor:before {
   line-height: 3rem;
   padding-top: .42893rem;
   padding-bottom: calc(0.57107rem + var(--es));
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 39em) {
@@ -1346,6 +1359,8 @@ h6:target .heading-anchor:before {
 }
 
 .title--taxo h1 {
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -4543,8 +4558,8 @@ h6:target .heading-anchor:before {
   .card__fig--1,
   .card__fig--3halfs {
     width: 37rem;
-    height: 25.00011rem;
-    padding: 2rem 2rem 1rem 2rem;
+    height: 26.00011rem;
+    padding: 2rem;
   }
 
   .card__fig--1 img,
@@ -4596,10 +4611,10 @@ h6:target .heading-anchor:before {
 .card__title h2,
 .card__title h3,
 .card__title h4 {
-  font-size: 1.5875rem;
+  font-size: 1.80975rem;
   line-height: 2rem;
-  padding-top: .40548125rem;
-  margin-bottom: -.40548125rem;
+  padding-top: .822248625rem;
+  padding-bottom: .177751375rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .04em;

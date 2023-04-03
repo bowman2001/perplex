@@ -10,6 +10,7 @@
           {{ else }}
               {{ $level = "third" }}
           {{ end }}
+          {{ partial "title/titlehead.html" . }}
         <div class="title title--serif  title--{{- $level -}}">
           <hr>
             {{ partial "title/title.html" . }}

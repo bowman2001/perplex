@@ -916,10 +916,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .meta__item a, .meta__item span, .meta__item time {
   display: inline-block;
-  font-size: 1.6145833333rem;
+  font-size: 1.453125rem;
   line-height: 1.5rem;
-  padding-top: 0.8953385417rem;
-  padding-bottom: 0.6046614583rem;
+  padding-top: 0.9558046875rem;
+  padding-bottom: 0.5441953125rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -962,6 +962,14 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   background-color: #eee;
 }
 
+.titlehead--draft {
+  padding: 0;
+  background-color: #111111;
+}
+.titlehead--draft > p, .titlehead--draft > ol, .titlehead--draft > ul {
+  color: white;
+}
+
 .titlehead--deprecated {
   background-color: rgba(238, 238, 0, 0.5333333333);
 }
@@ -984,6 +992,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   line-height: 3rem;
   padding-top: 0.42893rem;
   padding-bottom: calc(0.57107rem + var(--es));
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 700;
 }
 @media screen and (min-width: 39em) {
   .title {
@@ -1081,6 +1091,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   height: 1rem;
 }
 .title--taxo h1 {
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -3630,8 +3642,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 @media screen and (min-width: 39em) {
   .card__fig--1, .card__fig--3halfs {
     width: 37rem;
-    height: 25.00011rem;
-    padding: 2rem 2rem 1rem 2rem;
+    height: 26.00011rem;
+    padding: 2rem;
   }
   .card__fig--1 img, .card__fig--3halfs img, .card__fig--1 svg, .card__fig--3halfs svg {
     width: 33rem;
@@ -3668,10 +3680,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin: 0 2rem;
 }
 .card__title h2, .card__title h3, .card__title h4 {
-  font-size: 1.5875rem;
+  font-size: 1.80975rem;
   line-height: 2rem;
-  padding-top: 0.40548125rem;
-  margin-bottom: -0.40548125rem;
+  padding-top: 0.822248625rem;
+  padding-bottom: 0.177751375rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: 0.04em;
