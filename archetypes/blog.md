@@ -6,16 +6,11 @@ resources:
 - src:
   name: featured
   params:
-    alt: 
-- src:
-  name:
-  params:
-     alt:
-     attr:
-     attrlink:
+    alt:
+    attr:
+    attrlink:
 categories: []
 tags: []
-weight: 9999
 draft: true
 ---
 

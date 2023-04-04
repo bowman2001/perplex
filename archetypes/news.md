@@ -15,7 +15,6 @@ resources:
      attrlink:
 categories: []
 tags: []
-weight: 9999
 draft: true
 ---
 
