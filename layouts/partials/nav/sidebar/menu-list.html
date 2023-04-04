@@ -27,7 +27,7 @@
           </li>
         {{ else }}
           <li class="nav__li1">
-              {{ template "item" }}
+              {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
           </li>
         {{ end }}
     {{ end }}
