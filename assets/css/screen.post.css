@@ -1462,10 +1462,10 @@ h6:target .heading-anchor:before {
 }
 
 .title__description {
-  font-size: 2.4375rem;
-  line-height: 4rem;
-  padding-top: .08715625rem;
-  padding-bottom: .91284375rem;
+  font-size: 1.95rem;
+  line-height: 3rem;
+  padding-top: .769725rem;
+  padding-bottom: .230275rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 300;
   font-style: italic;
@@ -4039,14 +4039,14 @@ h6:target .heading-anchor:before {
 }
 
 .ctrl__title--text span {
-  font-size: 2.86rem;
+  font-size: 1.915rem;
   line-height: 3rem;
-  padding-top: .42893rem;
-  margin-bottom: -.42893rem;
+  padding-top: .7828325rem;
+  margin-bottom: -0.7828325rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
-  letter-spacing: .01em;
-  word-spacing: .03em;
+  font-weight: 600;
+  letter-spacing: .02em;
+  word-spacing: .06em;
 }
 
 .ctrl-left {
