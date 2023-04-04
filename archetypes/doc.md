@@ -4,7 +4,6 @@ title: {{ replace .Name "-" " " | title }}
 description: "**Placeholder** for page description"
 subtitle: false
 date: {{ .Date }} 
-weight: 9999
 menu:
   doc:
     identifier: {{ .Name }} 
@@ -13,6 +12,7 @@ menu:
     pre: remove
 categories: []
 tags: []
+weight: 9999
 draft: true
 ---
 

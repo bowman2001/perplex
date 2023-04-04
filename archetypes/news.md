@@ -1,8 +1,6 @@
 ---
 author: 
 title: {{ replace .Name "-" " " | title }}
-description: "**Placeholder**: Optional short description"
-subtitle: false
 date: {{ .Date }}
 resources:
 - src:

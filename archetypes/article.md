@@ -1,10 +1,9 @@
 ---
+author: 
 title: {{ replace .Name "-" " " | title }}
-description: 
+description: "**Placeholder**: Optional subtitle"
 subtitle: false
 date: {{ .Date }}
-categories: []
-tags: []
 resources:
   - src:
     name: featured
@@ -18,6 +17,9 @@ resources:
       alt:
       attr:
       attrlink:
+categories: []
+tags: []
+weight: 9999
 draft: true
 ---
 

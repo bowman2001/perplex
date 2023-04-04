@@ -1,6 +1,6 @@
 ---
 title: {{ .Name | title }}
-description:
+description: "**Placeholder**: Short category description"
 subtitle: true
 date: {{ .Date }}
 resources:
