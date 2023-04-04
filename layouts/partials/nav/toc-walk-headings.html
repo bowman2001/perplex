@@ -102,32 +102,28 @@ Start with these basic CSS rules to style the table of contents:
     {{- with .Fragments.Headings }}
         {{- $startLevel := or ($.Param "toc.startLevel" | int) 2 }}
         {{- $endLevel := or ($.Param "toc.endLevel" | int) 3 }}
-        {{- $temp := $.Fragments.ToHTML $startLevel $endLevel true | safeHTML }}
-        {{- $numHeadings := $temp | findRE `<a href=".+">.+</a>` | len }}
-        {{- if ge $numHeadings (or ($.Param "toc.minNumHeadings" | int) 2) }}
-          <aside class="is-closed" id="toc">
-            <div class="toc__box">
-              <div class="toc__content">
-                <nav class="toc__list">
-                  <h2 class="toc__title"><a href="#l-content-box"
-                                            class="nav__link">{{ $.Site.Params.toctitle | default "On this Page" }}</a>
-                  </h2>
-                  <ul>
-                      {{- $ctx := dict
-                      "contentPath" $contentPath
-                      "partialName" $partialName
-                      "startLevel" $startLevel
-                      "endLevel" $endLevel
-                      "headings" .
-                      "level" 1
-                      }}
-                      {{- partial "inline/toc/walk.html" $ctx }}
-                  </ul>
-                </nav>
-              </div>
+        <aside class="is-closed" id="toc">
+          <div class="toc__box">
+            <div class="toc__content">
+              <nav class="toc__list">
+                <h2 class="toc__title">
+                  <a href="#l-content-box" class="nav__link">{{ $.Site.Params.toctitle | default "On this Page" }}</a>
+                </h2>
+                <ul>
+                    {{- $ctx := dict
+                    "contentPath" $contentPath
+                    "partialName" $partialName
+                    "startLevel" $startLevel
+                    "endLevel" $endLevel
+                    "headings" .
+                    "level" 1
+                    }}
+                    {{- partial "inline/toc/walk.html" $ctx }}
+                </ul>
+              </nav>
             </div>
-          </aside>
-        {{- end }}
+          </div>
+        </aside>
     {{- end }}
 {{- end }}
 
