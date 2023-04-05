@@ -5344,6 +5344,8 @@ figure {
 @media screen and (max-width: 39em) {
   .fig .img__container {
     border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }
 
