@@ -2228,9 +2228,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md h6, .md .h-p-s {
   color: #111111;
 }
-.md h2 + h3:not(.h-p) {
-  margin-top: -1rem;
-}
 .md h3 + dl, .md h3 + ul, .md h3 + ol {
   margin-top: 1rem;
 }
@@ -2936,7 +2933,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-bottom: calc(1.222785rem + var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   border-collapse: separate;
-  width: 100%;
+  max-width: 100%;
   margin-top: -0.5rem;
 }
 .md table thead {
