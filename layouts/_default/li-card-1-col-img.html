@@ -3,7 +3,8 @@
   <div class="card__content">
     <nav class="card__header">
       <div class="meta meta--card">
-          {{ partial "nav/card/meta/breadcrumbs.html" . }}
+          {{- partial "nav/card/meta/firstsection-category.html" . -}}
+          {{ partial "date/page/date.html" . }}
       </div>
         {{ partial "nav/card/title/col1.html" . }}
     </nav>
