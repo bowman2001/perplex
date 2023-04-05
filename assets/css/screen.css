@@ -235,13 +235,16 @@ li:empty:before {
   text-decoration-color: black;
 }
 
+.caption__text, .caption__attr {
+  color: #555;
+}
+
 .caption__text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
 }
 
 .caption__attr {
-  color: #777;
   float: right;
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -1285,7 +1288,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md > blockquote footer, .md > blockquote cite, .md > div > blockquote footer, .md > div > blockquote cite {
   display: block;
   font-style: italic;
-  text-align: right;
 }
 .md strong {
   font-size: 99%;
@@ -2303,9 +2305,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md--h-serif h3 {
   font-size: 1.915rem;
   line-height: 2rem;
-  padding-top: 2.2828325rem;
+  padding-top: 1.2828325rem;
   padding-bottom: 0.7171675rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
   color: #222222;
@@ -2313,9 +2315,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md--h-serif h4 {
   font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: calc(1.85791975rem + 0.5 * var(--es));
-  padding-bottom: calc(0.14208025rem + 0.5 * var(--es));
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (3.5rem + 0.5 * var(--es)));
+  padding-top: 0.85791975rem;
+  padding-bottom: 0.14208025rem;
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   color: #111111;
@@ -2332,13 +2334,13 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 .md--h-serif h5, .md--h-serif .h-p {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.01em;
   word-spacing: 0.03em;
 }
 .md--h-serif h6, .md--h-serif .h-p-s {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 400;
+  font-weight: 500;
   color: #111111;
 }
 
@@ -3216,6 +3218,18 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   letter-spacing: 0.04em;
   word-spacing: 0.12em;
   text-transform: uppercase;
+}
+@media screen and (min-width: 39em) {
+  .ctrl__title--text span {
+    font-size: 2.86rem;
+    line-height: 3rem;
+    padding-top: 0.42893rem;
+    margin-bottom: -0.42893rem;
+    letter-spacing: 0.02em;
+    word-spacing: 0.06em;
+    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+  }
 }
 
 .ctrl-left {
@@ -4294,7 +4308,7 @@ figure {
   padding-right: 2rem;
 }
 @media screen and (max-width: 39em) {
-  .fig img, .fig object {
+  .fig .img__container {
     border-radius: 0;
   }
 }
@@ -4357,11 +4371,15 @@ figure {
 
 @media screen and (min-width: 48em) {
   .fig--size-normal {
-    width: 74rem;
+    width: 111rem;
+  }
+  .fig--size-normal .img__container {
+    width: 70rem;
   }
   .fig--size-normal .caption {
     position: absolute;
-    left: 100%;
+    z-index: 10;
+    right: 2rem;
     top: 0;
     width: 33rem;
     height: 100%;
@@ -4489,29 +4507,14 @@ figure {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.cf:before,
-.cf:after {
+.clear:before,
+.clear:after {
   content: " "; /* 1 */
   display: table; /* 2 */
 }
 
-.cf:after {
+.clear:after {
   clear: both;
-}
-
-/**
- * Utility classes for Markdown attributes.
- */
-.clear-both {
-  clear: both;
-}
-
-.clear-left {
-  clear: left;
-}
-
-.clear-right {
-  clear: right;
 }
 
 .font-italic {
