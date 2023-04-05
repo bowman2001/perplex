@@ -3214,8 +3214,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-bottom: -0.7828325rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  word-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  word-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .ctrl-left {

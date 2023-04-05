@@ -5,11 +5,12 @@
     {{- with $sections -}}
         {{ range $i, $e := first 1 . }}
           <li class="meta__item meta__section"><a
-                    href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/taxonomies/icon_item/separator.html" . }}</li>
+                    href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>
         {{ end }}
     {{ end }}
     {{- with .Params.categories -}}
         {{- $first := (index . 0) -}}
+        <li class="meta__item">{{ partial "nav/taxonomies/icon_item/separator.html" . }}</li>
         <li class="meta__item taxo-shape taxo-shape--category"><a
                   href="{{ ( site.GetPage (print "categories/" $first ) ).RelPermalink }}">{{- $first | strings.FirstUpper -}}</a></li>
     {{- end -}}

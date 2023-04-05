@@ -4045,8 +4045,9 @@ h6:target .heading-anchor:before {
   margin-bottom: -0.7828325rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: .02em;
-  word-spacing: .06em;
+  letter-spacing: .04em;
+  word-spacing: .12em;
+  text-transform: uppercase;
 }
 
 .ctrl-left {

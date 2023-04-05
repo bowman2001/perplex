@@ -1,22 +1,20 @@
 {{ $categories := .GetTerms "categories" }}
 {{ $tags := .GetTerms "tags" }}
-{{ if or $categories $tags }}
-  <ul class="meta__list">
+<ul class="meta__list">
+  <li class="meta__item meta__item--taxo taxo-shape taxo-shape--category">
       {{ with $categories }}
-        <li class="meta__item meta__item--taxo taxo-shape taxo-shape--category">
-          <ul class="ul--row">
-              {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
-              {{- partial "nav/taxonomies/page/term_list.html" . -}}
-          </ul>
-        </li>
+        <ul class="ul--row">
+            {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
+            {{- partial "nav/taxonomies/page/term_list.html" . -}}
+        </ul>
       {{ end }}
+  </li>
+  <li class="meta__item meta__item--taxo taxo-shape taxo-shape--tag">
       {{ with $tags }}
-        <li class="meta__item meta__item--taxo taxo-shape taxo-shape--tag">
-          <ul class="ul--row">
-              {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
-              {{- partial "nav/taxonomies/page/term_list.html" . -}}
-          </ul>
-        </li>
+        <ul class="ul--row">
+            {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
+            {{- partial "nav/taxonomies/page/term_list.html" . -}}
+        </ul>
       {{ end }}
-  </ul>
-{{ end }}
+  </li>
+</ul>
