@@ -349,7 +349,7 @@ li:empty:before {
   float: right;
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .lazyload,
@@ -966,7 +966,6 @@ h4:target .heading-anchor,
 h5:target .heading-anchor,
 h6:target .heading-anchor {
   position: relative;
-  color: #000;
   background-color: rgba(24, 124, 170, .15);
 }
 
