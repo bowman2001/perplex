@@ -4374,7 +4374,7 @@ figure {
     width: 111rem;
   }
   .fig--size-normal .img__container {
-    width: 70rem;
+    max-width: 70rem;
   }
   .fig--size-normal .caption {
     position: absolute;
