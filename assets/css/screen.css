@@ -1249,11 +1249,11 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md .no-hyphens {
   hyphens: none;
 }
-.md .br-title {
+.md .br-cond {
   display: none;
 }
 @media screen and (min-width: 39em) {
-  .md .br-title {
+  .md .br-cond {
     display: initial;
   }
 }
@@ -3463,7 +3463,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   border-top: 0.3rem solid #111111;
   transition: border-color 200ms;
 }
-.card .br-title {
+.card .br-cond {
   display: none;
 }
 
@@ -4034,7 +4034,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .toc__list > ul {
   margin-top: -0.5rem;
 }
-.toc__list .br-title {
+.toc__list .br-cond {
   display: none;
 }
 .toc__list a {

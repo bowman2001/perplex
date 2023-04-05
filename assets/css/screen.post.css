@@ -1572,12 +1572,12 @@ h6:target .heading-anchor:before {
           hyphens: none;
 }
 
-.md .br-title {
+.md .br-cond {
   display: none;
 }
 
 @media screen and (min-width: 39em) {
-  .md .br-title {
+  .md .br-cond {
     display: inline;
     display: initial;
   }
@@ -4329,7 +4329,7 @@ h6:target .heading-anchor:before {
   transition: border-color 200ms;
 }
 
-.card .br-title {
+.card .br-cond {
   display: none;
 }
 
@@ -5054,7 +5054,7 @@ h6:target .heading-anchor:before {
   margin-top: -0.5rem;
 }
 
-.toc__list .br-title {
+.toc__list .br-cond {
   display: none;
 }
 
