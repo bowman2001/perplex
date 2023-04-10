@@ -779,8 +779,6 @@ body {
 }
 
 .icon-font {
-  position: relative;
-  bottom: .0625em;
   font-family: "Material Icons", monospace;
   font-weight: 400;
   font-style: normal;
