@@ -5124,7 +5124,7 @@ h6:target .heading-anchor:before {
 .toc__title a {
   font-size: 1.43rem;
   line-height: 2rem;
-  padding-top: .464465rem;
+  margin-top: -.035535rem;
   padding-bottom: 1.035535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;

@@ -4090,7 +4090,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .toc__title a {
   font-size: 1.43rem;
   line-height: 2rem;
-  padding-top: 0.464465rem;
+  margin-top: -0.035535rem;
   padding-bottom: 1.035535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
