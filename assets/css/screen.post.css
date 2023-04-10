@@ -325,7 +325,6 @@ li:empty:before {
 }
 
 .caption a {
-  color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: rgba(85, 85, 85, .25);
@@ -353,7 +352,8 @@ li:empty:before {
   float: right;
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 400;
+  color: #988;
 }
 
 .lazyload,
@@ -779,6 +779,8 @@ body {
 }
 
 .icon-font {
+  position: relative;
+  bottom: .0625em;
   font-family: "Material Icons", monospace;
   font-weight: 400;
   font-style: normal;
@@ -1103,8 +1105,8 @@ h6:target .heading-anchor:before {
   flex-direction: row;
   justify-content: space-between;
   max-width: 71rem;
-  color: #444;
-  margin: 0 1.5rem 1rem 1.5rem;
+  color: #666;
+  margin: 0 1.5rem;
 }
 
 @media screen and (min-width: 79em) {
@@ -1115,6 +1117,7 @@ h6:target .heading-anchor:before {
 
 .meta--foot {
   align-items: end;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 79em) {
@@ -1186,8 +1189,8 @@ h6:target .heading-anchor:before {
 
 .meta__date {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-  color: #444;
+  font-weight: 400;
+  color: #666;
 }
 
 .meta__date .icon-font {
@@ -1619,7 +1622,7 @@ h6:target .heading-anchor:before {
 
 .md > blockquote,
 .md > div > blockquote {
-  padding: 0 2rem calc(1 * var(--es)) calc(5rem + 1 * var(--es));
+  padding: 1rem 2rem calc(1 * var(--es)) calc(5rem + 1 * var(--es));
 }
 
 .md > blockquote > p,
@@ -2865,12 +2868,12 @@ h6:target .heading-anchor:before {
   margin-bottom: -0.77440625rem;
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
   padding-bottom: 0;
-  color: #111;
+  color: #444;
 }
 
 .md h6,
 .md .h-p-s {
-  color: #111;
+  color: #333;
 }
 
 .md h3 + dl,
@@ -2921,36 +2924,37 @@ h6:target .heading-anchor:before {
 
 .md .p-meta {
   font-size: 1.453125rem;
-  line-height: 1.5rem;
-  padding-top: 1.2058046875rem;
-  padding-bottom: 0.2941953125rem;
+  line-height: 1rem;
+  padding-top: 1.9558046875rem;
+  margin-bottom: -0.9558046875rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #006a9c;
+  color: #a71469;
 }
 
-.md h1 br,
-.md h2 br,
-.md h3 br,
-.md h4 br {
+.md .p-meta + h3 {
+  margin-top: calc(-1.5rem + -1.5 * var(--es));
+}
+
+.md .p-meta + h4 {
+  margin-top: calc(-1rem + -1 * var(--es));
+}
+
+.md h1 .br-cond,
+.md h2 .br-cond,
+.md h3 .br-cond,
+.md h4 .br-cond {
   display: none;
 }
 
 @media screen and (min-width: 39em) {
-  .md h1 br,
-  .md h2 br,
-  .md h3 br,
-  .md h4 br {
+  .md h1 .br-cond,
+  .md h2 .br-cond,
+  .md h3 .br-cond,
+  .md h4 .br-cond {
     display: inline;
     display: initial;
   }
-}
-
-.md .p-meta + h1,
-.md .p-meta + h2,
-.md .p-meta + h3,
-.md .p-meta + h4 {
-  margin-top: -2rem;
 }
 
 .md--h-serif h1 {
@@ -2979,24 +2983,28 @@ h6:target .heading-anchor:before {
 }
 
 .md--h-serif h3 {
-  font-size: 1.915rem;
+  font-size: 1.905rem;
   line-height: 2rem;
-  padding-top: 1.2828325rem;
-  padding-bottom: .7171675rem;
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
+  padding-top: calc(1.7865775rem + 0.5 * var(--es));
+  padding-bottom: calc(0.2134225rem + 0.5 * var(--es));
+  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (3.5rem + 0.5 * var(--es)));
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: .01em;
+  word-spacing: .03em;
   color: #222;
 }
 
 .md--h-serif h4 {
   font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: .85791975rem;
-  padding-bottom: .14208025rem;
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.5rem);
+  padding-top: 1.35791975rem;
+  margin-bottom: -0.35791975rem;
+  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
+  letter-spacing: .01em;
+  word-spacing: .03em;
   color: #111;
 }
 
@@ -3008,6 +3016,7 @@ h6:target .heading-anchor:before {
   padding-top: .777215rem;
   margin-bottom: -0.777215rem;
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
+  color: #444;
 }
 
 .md--h-serif .h-p {
@@ -3018,15 +3027,12 @@ h6:target .heading-anchor:before {
 .md--h-serif .h-p {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 600;
-  letter-spacing: .01em;
-  word-spacing: .03em;
 }
 
 .md--h-serif h6,
 .md--h-serif .h-p-s {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
-  color: #111;
 }
 
 .md--h-sans h2 {
@@ -3087,7 +3093,7 @@ h6:target .heading-anchor:before {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: .005em;
-  color: #111;
+  color: #444;
 }
 
 .md--h-sans h6,
@@ -3095,7 +3101,7 @@ h6:target .heading-anchor:before {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
   letter-spacing: normal;
-  color: #111;
+  color: #333;
 }
 
 .md--footer {
@@ -4257,7 +4263,7 @@ h6:target .heading-anchor:before {
   padding-bottom: 1.535535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #444;
+  color: #666;
 }
 
 .page-nav__meta--dir {
@@ -5181,7 +5187,7 @@ h6:target .heading-anchor:before {
 
 .taxo-shape--category {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .taxo-shape--tag {
@@ -5191,7 +5197,7 @@ h6:target .heading-anchor:before {
 
 .taxo-shape--series {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-style: italic;
 }
 

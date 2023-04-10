@@ -1,4 +1,4 @@
-{{- $img := ( partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) ) -}}
+{{- $img := ( partial "img/func/get-featured.html" . ) -}}
 {{ $a := dict }}
 {{- with $img -}}
     {{ $a = partial "img/func/params/unsplash.html" . }}

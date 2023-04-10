@@ -1,1 +1,5 @@
-{{ return (partial "img/func/get-img.html" (dict "name" "featured" "currentPage" . ) )}}
+{{ $name := "featured" }}
+{{ with .Params.featured }}
+    {{ $name = . }}
+{{ end }}
+{{ return (partial "img/func/get-img.html" (dict "name" $name "currentPage" . ) )}}
