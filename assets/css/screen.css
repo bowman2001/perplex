@@ -203,7 +203,6 @@ li:empty:before {
   box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background: linear-gradient(white, #f6e3d0);
-  border: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
 
 .img__container--footer {
@@ -2693,6 +2692,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md cite {
   font-style: italic;
 }
+.md dfn {
+  font-weight: 600;
+}
 
 .md .asciicast {
   margin-top: 1rem !important;
@@ -4288,13 +4290,6 @@ figure {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-@media screen and (max-width: 39em) {
-  .fig .img__container {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-}
 @media screen and (min-width: 39em) {
   .fig {
     padding-left: 2rem;
@@ -4349,6 +4344,14 @@ figure {
 @media screen and (min-width: 48em) {
   .fig--size-medium.fig--posh-right {
     width: 55.5rem;
+  }
+}
+
+@media screen and (max-width: 39em) {
+  .fig--size-normal .img__container, .fig--size-large .img__container, .fig--size-xlarge .img__container {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }
 
@@ -4410,10 +4413,16 @@ figure {
   }
 }
 
+@media screen and (min-width: 39em) {
+  .fig--size-large .caption__text, .fig--size-xlarge .caption__text {
+    max-width: 70rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 @media screen and (min-width: 48em) {
   .fig--size-large .caption__text, .fig--size-xlarge .caption__text {
     display: inline-block;
-    width: 70rem;
   }
   .fig--size-large .caption__attr, .fig--size-xlarge .caption__attr {
     width: 33rem;
