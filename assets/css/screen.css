@@ -201,7 +201,7 @@ li:empty:before {
   display: block;
   border-radius: 0.5rem;
   overflow: hidden;
-  background: linear-gradient(white, #f6e3d0);
+  background: linear-gradient(#fcf6ef, #f3dcc5);
   border: 0.1rem solid rgba(0, 0, 0, 0.05);
 }
 
@@ -247,7 +247,7 @@ li:empty:before {
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #988;
+  color: #877;
 }
 
 .lazyload,
@@ -900,8 +900,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   max-width: unset;
 }
 
-.meta--card--1 {
-  margin-top: -1rem;
+@media screen and (min-width: 39em) {
+  .meta--card--1 {
+    margin-top: -1rem;
+  }
 }
 
 .meta--card--half {
