@@ -136,7 +136,7 @@ Start with these basic CSS rules to style the table of contents:
           <li>
               {{- if .ID }}
                   {{ if le $ctx.level $ctx.endLevel }}
-                    <a href="{{ printf "/%s#%s" $ctx.contentPath .ID }}">{{ partial "replacements.html" .Title  }}</a>
+                    <a href="{{ printf "%s#%s" page.RelPermalink .ID }}">{{ partial "replacements.html" .Title  }}</a>
                   {{ end }}
               {{- else }}
                   {{- errorf "The %q partial detected that the %q heading has an empty ID attribute. See %s" $ctx.partialName .Title $ctx.contentPath }}
