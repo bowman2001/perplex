@@ -31,7 +31,7 @@
             {{ with (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . )) }}
                 {{ $resource = . }}
             {{ else }}
-                {{ with site.GetPage "/site"  }}
+                {{ with site.GetPage "/site/images"  }}
                     {{ $resource = .Resources.GetMatch $name }}
                 {{ end }}
             {{ end }}
@@ -39,7 +39,7 @@
     {{ end }}
 {{ end }}
 {{ if not $resource }}
-    {{ errorf "There is no resource with the name '%s' in the %q or related folders." $name .currentPage }}
+    {{ errorf "There is no resource with the name %q in %q or related folders." $name .currentPage }}
 {{ end }}
 {{ return $resource }}
 
