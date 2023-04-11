@@ -368,6 +368,11 @@ body {
   grid-area: logo;
   width: 150%;
 }
+@media screen and (min-width: 39em) {
+  #l-logo {
+    width: 100%;
+  }
+}
 
 #l-menu {
   border-top: 0.1rem solid #ccc;
