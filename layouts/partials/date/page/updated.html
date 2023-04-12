@@ -2,7 +2,7 @@
 {{- partial "file/vscode_start.html" . -}}
 <ul class="meta__list meta__list--date">
   <li class="meta__item meta__date"><span class="icon-font">edit</span><time datetime="{{ .Lastmod.Format $iso8601 }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></li>
-  <li class="meta__item meta__date"><span class="icon-font">schedule</span><span>{{ .Date | time.Format ":time_short" }}</span></li>
+  <li class="meta__item meta__date"><span class="icon-font">schedule</span><span>{{ .Lastmod | time.Format ":time_short" }}</span></li>
   {{ with .GitInfo }}{{ with .AuthorName }}
     <li class="meta__item meta__date"><span class="icon-font">person</span><span>{{ . }}</span></li>
   {{ end }}{{ end }}
