@@ -8,6 +8,8 @@ github.com/bowman2001/hugo-mod-meta v0.0.0-20230322142243-00b1e30b0f9a h1:KjgYXw
 github.com/bowman2001/hugo-mod-meta v0.0.0-20230322142243-00b1e30b0f9a/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20230402193142-9f1a0bfe2023 h1:Vx3nYHBidOvCFTU+5+UgTPmtjRbkWCsNUw4ZspO4dHA=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20230402193142-9f1a0bfe2023/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
+github.com/bowman2001/hugo-mod-meta v0.1.0-beta.1 h1:ek+6/79t8/LRuUef8VwCJnBd4Z+++kpJWtGAJ7INTJ4=
+github.com/bowman2001/hugo-mod-meta v0.1.0-beta.1/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.0 h1:/feXC+ob88YuBHVFHsWh2zo4JtgbvxI5uu/Oi86/LEs=
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.0/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
 github.com/bowman2001/hugo-mod-open-in-vscode v0.1.1 h1:Cwrv/OPVRcrbx/HYOQX2JndCaDU3f2MT6gFRsaEfm9o=

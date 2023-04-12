@@ -7,7 +7,7 @@
 
 # Perplex theme for Hugo
 
-This is still work in progress. I hope to release the first beta in the next few month. 
+The first beta and a few minor patches have been released. This is still work in progress but you’re very welcome to give it a try.
 
 The documentation for this theme is also work in progress and online for testing purposes:
 

@@ -53,7 +53,6 @@ params:
     
     # See https://gohugo.io/content-management/image-processing/#anchor
     anchors        : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
-    #
     no_processing  : [ svg, gif ]
     raster_compress: [ bmp, jpeg, webp ]
     raster_lossless: [ tiff, png ]
@@ -136,8 +135,9 @@ module  :
     - source: static
       target: static
 
-### The following security settings are only for the maintenance of this theme
+### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!
+### Hugo doesn’t merge security settings at all for obvious reasons.
 
 security:
   enableInlineShortcodes: false

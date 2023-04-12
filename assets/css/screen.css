@@ -4434,8 +4434,8 @@ figure {
 @media screen and (min-width: 39em) {
   .fig--size-large .caption__text, .fig--size-xlarge .caption__text {
     max-width: 70rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 @media screen and (min-width: 48em) {

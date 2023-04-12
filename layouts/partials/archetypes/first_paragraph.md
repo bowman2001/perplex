@@ -1,2 +1,2 @@
-**Placeholder**: Put your own summary paragraph here instead of this one.
+**Placeholder**: Put your own summary paragraph here. It may contain inline markup but links are impossible.
 {.p-first}
