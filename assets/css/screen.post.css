@@ -303,8 +303,7 @@ li:empty:before {
   display: block;
   border-radius: .5rem;
   overflow: hidden;
-  background: linear-gradient(#fcf6ef, #f3dcc5);
-  border: .1rem solid rgba(0, 0, 0, .05);
+  background: linear-gradient(#f3dcc5, #fcf6ef);
 }
 
 .img__container--footer {

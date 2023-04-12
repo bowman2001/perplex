@@ -111,6 +111,7 @@ Start with these basic CSS rules to style the table of contents:
                 </h2>
                 <ul>
                     {{- $ctx := dict
+                    "page" $
                     "contentPath" $contentPath
                     "partialName" $partialName
                     "startLevel" $startLevel
@@ -136,7 +137,7 @@ Start with these basic CSS rules to style the table of contents:
           <li>
               {{- if .ID }}
                   {{ if le $ctx.level $ctx.endLevel }}
-                    <a href="{{ printf "%s#%s" page.RelPermalink .ID }}">{{ partial "replacements.html" .Title  }}</a>
+                    <a href="{{ printf "%s#%s" $ctx.page.RelPermalink .ID }}">{{ partial "replacements.html" .Title  }}</a>
                   {{ end }}
               {{- else }}
                   {{- errorf "The %q partial detected that the %q heading has an empty ID attribute. See %s" $ctx.partialName .Title $ctx.contentPath }}
