@@ -3133,6 +3133,11 @@ h6:target .heading-anchor:before {
   text-transform: uppercase;
 }
 
+.md--footer a:hover,
+.md--footer a:focus {
+  color: inherit;
+}
+
 .md--card h2 {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;

@@ -2434,6 +2434,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   word-spacing: 0.15em;
   text-transform: uppercase;
 }
+.md--footer a:hover, .md--footer a:focus {
+  color: inherit;
+}
 
 .md--card h2 {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
