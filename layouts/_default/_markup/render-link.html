@@ -4,6 +4,8 @@
 - added class to resulting link (2023-03-27)
 - added an error message in case .Destination can’t be parsed (2023-03-28)
 - added an error message in case .Path can’t be parsed (2023-04-01)
+- added two special pseudo-link targets: "abbr" and "dfn". They generate the corresponding HTML inline tags with attributes (2023-04-12)
+- added a separate errorlevel for fragments (the hook checks identifiers in headings, all others generate bogus warnings)
 */ -}}
 
 {{- /*
@@ -76,12 +78,18 @@ either of these shortcodes in conjunction with this render hook.
     {{- errorf "The %q render hook requires Hugo v%s or later." $renderHookName $minHugoVersion }}
 {{- end }}
 
-{{- /* Error level when unable to resolve destination: ignore, warning, or error. */}}
+{{- /* Error level when unable to resolve link destination: ignore, warning, or error. */}}
 {{- $errorLevel := or site.Params.render_hooks.link.errorLevel "ignore" | lower }}
 
 {{- /* Validate error level. */}}
 {{- if not (in (slice "ignore" "warning" "error") $errorLevel) }}
     {{- errorf "The %q render hook is misconfigured. The errorLevel %q is invalid. Please check your site configuration." $renderHookName $errorLevel }}
+{{- end }}
+
+{{- /* Error level when unable to resolve fragments: ignore, warning */}}
+{{- $errorLevelFragment := or site.Params.render_hooks.fragments.errorLevel "ignore" | lower }}
+{{- if not (in (slice "ignore" "warning" ) $errorLevelFragment) }}
+    {{- errorf "The %q render hook is misconfigured. The errorLevel %q is invalid. Please check your site configuration." $renderHookName $errorLevelFragment }}
 {{- end }}
 
 {{- /* Determine content path for warning and error messages. */}}
@@ -129,7 +137,7 @@ either of these shortcodes in conjunction with this render hook.
                 {{- with $u.Fragment }}
                     {{- $ctx := dict
                     "contentPath" $contentPath
-                    "errorLevel" $errorLevel
+                    "errorLevel" $errorLevelFragment
                     "page" $p
                     "parsedURL" $u
                     "renderHookName" $renderHookName
@@ -160,7 +168,7 @@ either of these shortcodes in conjunction with this render hook.
                 {{- /* Destination is on the same page; prepend relative permalink. */}}
                 {{- $ctx := dict
                 "contentPath" $contentPath
-                "errorLevel" $errorLevel
+                "errorLevel" $errorLevelFragment
                 "page" $.Page
                 "parsedURL" $u
                 "renderHookName" $renderHookName
