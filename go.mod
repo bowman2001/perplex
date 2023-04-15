@@ -1,6 +1,6 @@
 module github.com/bowman2001/perplex
 
-go 1.18
+go 1.20
 
 require (
 	github.com/bowman2001/hugo-mod-meta v0.1.0-beta.1 // indirect
