@@ -6,9 +6,9 @@
 {{ with site.Params.fathomSiteID }}
     {{ $id := . }}
     {{ with site.Params.fathomCustomDomain }}
-        <script src="{{ . }}/script.js" data-site="{{ $id }}" defer></script>
+        <script src="{{ . }}/script.js" data-site="{{ $id }}" defer crossorigin="anonymous"></script>
     {{ else }}
-        <script src="https://cdn.usefathom.com/script.js" data-site="{{ $id }}" defer></script>
+        <script src="https://cdn.usefathom.com/script.js" data-site="{{ $id }}" defer crossorigin="anonymous"></script>
     {{ end }}
 {{ end }}
 {{ template "_internal/google_analytics.html" . }}
