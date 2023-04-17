@@ -107,6 +107,11 @@ markup:
 ### IMPORTANT!
 ### This module configuration does only affect the folder of the theme.
 module  :
+
+  hugoVersion:
+    extended: false
+    min: "0.111.3"
+
   imports:
     - path  : github.com/bowman2001/hugo-mod-replacements
       mounts:
@@ -120,6 +125,10 @@ module  :
       mounts:
         - source: partials
           target: layouts/partials
+    - path: github.com/bowman2001/hugo-mod-csp
+      mounts:
+        - source: layouts
+          target: layouts
   
   mounts :
     - source: archetypes

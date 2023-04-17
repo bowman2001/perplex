@@ -1,3 +1,5 @@
+github.com/bowman2001/hugo-mod-csp v0.0.0-20230416141946-6c04cdfa7b1b h1:AiutzCUUDJdDNV7kfdULd28XB5LC3fYxRTHPmnVMF3M=
+github.com/bowman2001/hugo-mod-csp v0.0.0-20230416141946-6c04cdfa7b1b/go.mod h1:XuKTqGkSb+Ntff/r+cA/Hb6RQRjtApnHvrI1/A4jk0g=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0 h1:C+Pqx3un5tM72pq4kagQBG7Lo9Bkq95FX6PJukiZVs8=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011095211-5235a7d291a6 h1:w9cnla200kYKA5iWO0eur0FJeQodaOIpT7Ryr+48QEw=
