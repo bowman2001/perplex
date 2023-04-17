@@ -1,4 +1,0 @@
-{{ $title := .Get 0 | site.Home.RenderString | plainify }}
-{{- with .Inner -}}
-<abbr title="{{ $title | safeHTMLAttr }}">{{ . | site.Home.RenderString }}</abbr>
-{{-  end -}}
