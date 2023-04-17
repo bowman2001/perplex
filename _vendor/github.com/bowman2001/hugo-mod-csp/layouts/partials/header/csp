@@ -1,0 +1,42 @@
+{{- with site.Params.cspConfig }}
+    {{- $keysSrc := .keysSrc }}
+    {{- $keysUri := .keysUri }}
+    {{- $values := .values }}
+    {{- $csp := "Content-Security-Policy: " }}
+    {{- if .reportOnly }}
+        {{- $csp = "Content-Security-Policy-Report-Only: " }}
+    {{- end }}
+    {{- with site.Params.csp }}
+        {{- range $k, $v := . }}
+            {{- $key := "" }}
+            {{- $vals := "" }}
+            {{- if in $keysSrc $k }}
+                {{- $key = printf "%s-src" $k }}
+            {{- else if in $keysUri $k }}
+                {{- $key = printf "%s-uri" $k }}
+            {{- else }}
+                {{- errorf "Unable to write CSP header directives. %s is not a valid key." $k }}
+            {{- end -}}
+            {{- $tmp := slice }}
+            {{- if reflect.IsSlice $v }}
+                {{- $tmp = $v }}
+            {{- else }}
+                {{- $tmp = $tmp | append $v }}
+            {{- end }}
+            {{- range $tmp }}
+                {{- if in $values . }}
+                    {{- $vals = printf "%s '%s'" $vals .  }}
+                {{- else }}
+                    {{- with urls.Parse . }}
+                        {{- $vals = printf "%s %s" $vals . }}
+                    {{- else }}
+                        {{- warnf "Unable to use CSP value. %s is not a valid value." . }}
+                    {{- end }}
+                {{- end }}
+            {{- end }}
+            {{- $csp = printf "%s%s%s; " $csp $key $vals  }}
+        {{- end }}
+        {{- htmlUnescape $csp | safeHTML }}
+        {{- warnf "%s" $csp }}
+    {{- end }}
+{{- end }}

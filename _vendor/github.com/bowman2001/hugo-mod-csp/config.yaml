@@ -1,0 +1,30 @@
+module:
+  noProxy: none
+  noVendor:
+  private: '*.*'
+  proxy: direct
+  workspace: "off"
+  hugoVersion:
+    extended: false
+
+mediaTypes:
+  text/netlify:
+    suffixes: [""]
+    delimiter: ""
+
+outputFormats:
+  HEADER:
+    mediaType: "text/netlify"
+    basename: "_headers"
+    isPlainText: true
+    notAlternative: true
+
+Params:
+  cspConfig:
+    keysSrc: ["default", "script", "style", "object", "connect", "font", "frame", "img", "manifest", "media", "worker"]
+    keysUri: [base, report]
+    values: ['none', 'self', 'strict-dynamic', 'report-sample', 'unsafe-inline', 'unsafe-hashes']
+    experimental:
+      allow: false
+      keys: []
+    reportOnly: false
