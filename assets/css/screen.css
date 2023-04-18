@@ -246,7 +246,7 @@ li:empty:before {
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  color: #877;
+  color: #766;
 }
 
 .lazyload,
@@ -1981,10 +1981,11 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   scrollbar-gutter: stable;
   scrollbar-color: hsl(45deg, 83%, 53%) #f8e9da;
   border-radius: 0.5rem;
+  border: 0.1rem solid #888;
 }
 .md .highlight > pre::-webkit-scrollbar, .md .highlight > div::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 .md .highlight > pre::-webkit-scrollbar-thumb, .md .highlight > div::-webkit-scrollbar-thumb {
   background: hsl(45deg, 83%, 53%);
@@ -2978,7 +2979,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-weight: 400;
 }
 .md table th, .md table td {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   border-right: 0.1rem solid #b9b9b9;
 }
 .md table th:first-child, .md table td:first-child {
