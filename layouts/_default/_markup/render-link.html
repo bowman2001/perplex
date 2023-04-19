@@ -1,12 +1,13 @@
-{{- /* Last modified: 2023-03-26T10:05:59-07:00 */}}
-
 {{- /* Changes by Georg Makowski:
-- added class to resulting link (2023-03-27)
+- added a class to the resulting link (2023-03-27)
 - added an error message in case .Destination can’t be parsed (2023-03-28)
 - added an error message in case .Path can’t be parsed (2023-04-01)
 - added two special pseudo-link targets: "abbr" and "dfn". They generate the corresponding HTML inline tags with attributes (2023-04-12)
-- added a separate errorlevel for fragments (the hook checks identifiers in headings, all others generate bogus warnings)
+- added a separate errorlevel for fragments (2023-04-17)
+- added a search by the relref function in the case a page name can’t be resolved by .GetPage (2023-04-18)
 */ -}}
+
+{{- /* Last modified: 2023-03-26T10:05:59-07:00 (by Veriphor) */}}
 
 {{- /*
 Copyright 2023 Veriphor LLC
@@ -79,7 +80,7 @@ either of these shortcodes in conjunction with this render hook.
 {{- end }}
 
 {{- /* Error level when unable to resolve link destination: ignore, warning, or error. */}}
-{{- $errorLevel := or site.Params.render_hooks.link.errorLevel "ignore" | lower }}
+{{- $errorLevel := or site.Params.render_hooks.link.errorLevel "warning" | lower }}
 
 {{- /* Validate error level. */}}
 {{- if not (in (slice "ignore" "warning" "error") $errorLevel) }}

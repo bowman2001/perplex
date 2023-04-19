@@ -36,7 +36,9 @@ params:
   ### Render hook link
   render_hooks:
     link:
-      errorLevel: warning # ignore (default), warning, or error
+      errorLevel: warning # ignore, warning, or error
+    fragments:
+      errorLevel: warning # ignore, or warning
 
   #### Image processing
   

@@ -2262,6 +2262,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md .h-warn {
   color: #ffffff;
 }
+.md .h-warn.h-p, .md .h-warn.h-p-s {
+  color: #ffffff;
+}
 .md .h-warn > span, .md .h-warn:target > span {
   background-color: rgba(204, 0, 0, 0.7333333333);
 }
