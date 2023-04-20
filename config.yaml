@@ -127,10 +127,6 @@ module  :
       mounts:
         - source: partials
           target: layouts/partials
-    - path: github.com/bowman2001/hugo-mod-csp
-      mounts:
-        - source: layouts
-          target: layouts
   
   mounts :
     - source: archetypes
