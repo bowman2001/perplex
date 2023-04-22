@@ -72,6 +72,7 @@ either of these shortcodes in conjunction with this render hook.
 
 {{- /* Initialize. */}}
 {{- $renderHookName := "link" }}
+{{ $page := $.Page }}
 
 {{- /* Verify minimum required version. */}}
 {{- $minHugoVersion := "0.111.3" }}
@@ -129,7 +130,7 @@ either of these shortcodes in conjunction with this render hook.
         {{- $attrs = merge $attrs (dict "rel" "external") }}
     {{- else }}
         {{- with $u.Path }}
-            {{- with $p := or ($.Page.GetPage .) ($.Page.GetPage (strings.TrimRight "/" .)) ($.Page.GetPage (strings.TrimRight "/" (relref $.Page . )))}}
+            {{- with $p := or ($page.GetPage .) ($page.GetPage (strings.TrimRight "/" .)) ($page.GetPage (strings.TrimRight "/" (relref $page . )))}}
                 {{- /* Destination is a page. */}}
                 {{- $href := .RelPermalink }}
                 {{- with $u.RawQuery }}
@@ -148,7 +149,7 @@ either of these shortcodes in conjunction with this render hook.
                 {{- end }}
                 {{- $attrs = dict "href" $href }}
             {{- else }}
-                {{- with $.Page.Resources.GetMatch $u.Path }}
+                {{- with $page.Resources.GetMatch $u.Path }}
                     {{- /* Destination is a page resource; drop query and fragment. */}}
                     {{- $attrs = dict "href" .RelPermalink }}
                 {{- else }}
@@ -170,12 +171,12 @@ either of these shortcodes in conjunction with this render hook.
                 {{- $ctx := dict
                 "contentPath" $contentPath
                 "errorLevel" $errorLevelFragment
-                "page" $.Page
+                "page" $page
                 "parsedURL" $u
                 "renderHookName" $renderHookName
                 }}
                 {{- partial "inline/h-rh-l/validate-fragment.html" $ctx }}
-                {{- $attrs = dict "href" (printf "%s#%s" $.Page.RelPermalink .) }}
+                {{- $attrs = dict "href" (printf "%s#%s" $page.RelPermalink .) }}
             {{- else }}
                 {{- if eq $errorLevel "warning" }}
                     {{- warnf $msg }}
