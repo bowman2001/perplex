@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
             {left: '\\(', right: '\\)', display: false},
             {left: '\\[', right: '\\]', display: true}
         ],
+        fleqn: false,
+        leqno: true,
         // • rendering keys, e.g.:
         throwOnError : false
     });
