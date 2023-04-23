@@ -3072,10 +3072,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   }
 }
 .md .half {
-  width: 37rem;
+  width: 50%;
 }
 .md .normal {
-  width: 74rem;
+  width: 100%;
 }
 .md .semi-large {
   max-width: 92.5rem;

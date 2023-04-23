@@ -3874,11 +3874,11 @@ h6:target .heading-anchor:before {
 }
 
 .md .half {
-  width: 37rem;
+  width: 50%;
 }
 
 .md .normal {
-  width: 74rem;
+  width: 100%;
 }
 
 .md .semi-large {
