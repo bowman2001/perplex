@@ -68,6 +68,7 @@ params:
     figure         :
       size: [ tiny, small, medium, normal, large, xlarge ]
       posh: [ left, center, right ]
+      posv: [ top, middle ]
   
   layout      :
     measure      : 70.0
