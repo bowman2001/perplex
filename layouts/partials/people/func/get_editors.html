@@ -1,0 +1,5 @@
+{{ $editors := slice }}
+{{ with (.GetTerms "editors") }}
+    {{ $editors = . }}
+{{ end }}
+{{ return $editors  }}

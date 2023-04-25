@@ -1,0 +1,15 @@
+{{ $editor := "" }}
+{{ with .GitInfo }}
+    {{ with .AuthorName }}
+        {{ $editor = . }}
+    {{ end }}
+{{ else }}
+    {{ with .Params.lasteditor }}
+        {{ $editor = . }}
+    {{ else }}
+        {{ with (.GetTerms "authors") }}
+            {{ $editor = (index . 0).Title }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return $editor }}

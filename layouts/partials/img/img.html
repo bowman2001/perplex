@@ -3,12 +3,12 @@
 {{- if .a.link -}}
   <a href="{{ .a.link | safeHTMLAttr }}"
         {{- with .a.target -}}
-            {{- if in site.Params.link.target }} target="{{ . | safeHTMLAttr }}"{{ else -}}
+            {{- if in site.Params.link.target . }} target="{{ . | safeHTMLAttr }}"{{ else -}}
                 {{- warnf "Unable to us the 'target' attribute %s for a link. Only %s are possible." . site.Params.link.target -}}
             {{- end -}}
         {{- end -}}
           {{- with .a.rel -}}
-      {{- if in site.Params.link.rel }} rel="{{ . | safeHTMLAttr }}"{{ else -}}
+      {{- if in site.Params.link.rel . }} rel="{{ . | safeHTMLAttr }}"{{ else -}}
           {{- warnf "Unable to us the 'rel' attribute %s for a link. Only %s are possible." . site.Params.link.rel -}}
       {{- end -}}
           {{- end -}}>

@@ -6,14 +6,6 @@
 {{ with .Params }}
     {{ with .alt }}{{ $a = merge $a (dict "alt" . ) }}{{ end }}
     {{ with .anchor }}{{ $a = merge $a (dict "anchor" ( . | lower ) ) }}{{ end }}
-    {{ with .attr }}{{ $a = merge $a (dict "attr" . ) }}{{ end }}
-    {{ with .attrlink }}{{ $a = merge $a (dict "attrlink" ( . | lower ) ) }}{{ end }}
-    {{ $caption := "" }}
-    {{ with .caption }}{{ $caption = . }}{{ end }}
-    {{ with and (not (in .size (slice "tiny" "small" "medium" ))) .captionlong }}
-        {{ $caption = . }}
-    {{ end }}
-    {{ with $caption }}{{ $a = merge $a (dict "caption" . ) }}{{ end }}
     {{ with .class }}{{ $a = merge $a (dict (slice "class" "plain") ( . | lower )) }}{{ end }}
     {{ with .container }}{{ $a = merge $a (dict "container" . ) }}{{ end }}
     {{ with .hint }}{{ $a = merge $a (dict "hint" (. | lower ) ) }}{{ end }}

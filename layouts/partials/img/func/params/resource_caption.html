@@ -1,0 +1,14 @@
+{{ $a := .a }}
+{{ with .img.Params }}
+    {{ with .attr }}{{ $a = merge $a (dict "attr" . ) }}{{ end }}
+    {{ with .attrlink }}{{ $a = merge $a (dict "attrlink" ( . | lower ) ) }}{{ end }}
+    {{ $caption := "" }}
+    {{ with .caption }}{{ $caption = . }}{{ end }}
+    {{ if not (in (slice "tiny" "small" "medium" ) $a.class.size ) }}
+    {{ with .captionlong }}
+        {{ $caption = . }}
+    {{ end }}
+    {{ end }}
+    {{ with $caption }}{{ $a = merge $a (dict "caption" . ) }}{{ end }}
+{{ end }}
+{{ return $a }}
