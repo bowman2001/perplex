@@ -1,14 +1,19 @@
 {{ $a := .a }}
 {{ with .img.Params }}
-    {{ with .attr }}{{ $a = merge $a (dict "attr" . ) }}{{ end }}
-    {{ with .attrlink }}{{ $a = merge $a (dict "attrlink" ( . | lower ) ) }}{{ end }}
+    {{ $attr := "" }}
     {{ $caption := "" }}
+    {{ with .attr }}{{ $attr = . }}{{ end }}
     {{ with .caption }}{{ $caption = . }}{{ end }}
     {{ if not (in (slice "tiny" "small" "medium" ) $a.class.size ) }}
-    {{ with .captionlong }}
+        {{ with .attrlong }}
+            {{ $attr = . }}
+        {{ end }}
+        {{ with .captionlong }}
         {{ $caption = . }}
     {{ end }}
     {{ end }}
+    {{ with $attr }}{{ $a = merge $a (dict "attr" . ) }}{{ end }}
+    {{ with .attrlink }}{{ $a = merge $a (dict "attrlink" ( . | lower ) ) }}{{ end }}
     {{ with $caption }}{{ $a = merge $a (dict "caption" . ) }}{{ end }}
 {{ end }}
 {{ return $a }}
