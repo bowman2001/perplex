@@ -2336,9 +2336,9 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 .md--h-serif h4 {
   font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: 1.35791975rem;
-  margin-bottom: -0.35791975rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2.5rem - 3rem );
+  padding-top: 0.85791975rem;
+  padding-bottom: 0.14208025rem;
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2.5rem - 2.5rem );
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: 0.01em;
