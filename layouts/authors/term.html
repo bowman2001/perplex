@@ -28,11 +28,6 @@
           </ul>
         </nav>
       {{ end }}
-    <footer class="page-footer page-footer--taxo margin-left">
-      <div class="taxo {{ if gt (len .RegularPages) 3 }}taxo--left{{ end }}">
-          {{- partial "footer/taxo.html" . -}}
-      </div>
-    </footer>
   </div>
 {{- end -}}
 {{ define "footer" -}}
