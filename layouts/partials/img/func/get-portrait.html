@@ -1,0 +1,5 @@
+{{ $name := "portrait" }}
+{{ with .Params.portrait }}
+    {{ $name = . }}
+{{ end }}
+{{ return (partial "img/func/get-img.html" (dict "name" $name "currentPage" . ) )}}
