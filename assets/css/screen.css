@@ -206,8 +206,14 @@ li:empty:before {
 
 .img__container--footer {
   padding: 0.5rem;
-  border: none;
-  box-shadow: none;
+}
+
+.img__container--shadow {
+  box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.img__container--border {
+  border: 0.1rem solid #ccc;
 }
 
 .caption {
@@ -928,7 +934,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .meta__list--date {
   text-align: right;
-  min-width: 14.5rem;
 }
 
 .meta__item a, .meta__item span, .meta__item time {
@@ -1118,6 +1123,25 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 500;
   font-style: italic;
+}
+
+.title--author {
+  display: inline-flex;
+  flex-direction: row;
+  margin-top: -1rem;
+}
+.title--author h1 {
+  font-size: 2.86rem;
+  line-height: 4rem;
+  padding-top: 0.92893rem;
+  margin-bottom: -0.92893rem;
+  font-family: 'IBM Plex Serif', Georgia, Times, serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 79em) {
+  .title--author {
+    flex-direction: column-reverse;
+  }
 }
 
 .title--first, .title--second, .title--third, .title--taxo {
@@ -1915,7 +1939,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   padding-bottom: 0;
 }
 
-.md p code, .md li code, .md dt code, .md dd code, .md .caption code {
+.md p > code, .md li > code, .md dt > code, .md dd > code, .md .caption > code {
   position: relative;
   top: -0.05em;
   font-size: 74%;
@@ -1930,7 +1954,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   border: 0.1rem solid rgba(0, 0, 0, 0.1333333333);
   border-radius: 0.5rem;
 }
-.md dt code {
+.md dt > code {
   font-weight: 700;
 }
 .md pre {
@@ -4419,7 +4443,7 @@ figure {
     width: 37rem;
     padding-left: 18.5rem;
   }
-  .md--margin-left .fig--size-normal {
+  .md--margin-left > .fig--size-normal {
     margin-left: 37rem;
   }
   .md--margin-left .fig--size-medium.fig--posh-left {
@@ -4432,7 +4456,7 @@ figure {
     margin-left: 18.5rem;
   }
   .md--margin-left .fig--size-large .caption__attr {
-    width: 14.5rem;
+    width: 18.5rem;
   }
   .md--margin-left .fig--size-xlarge .caption {
     margin-left: 37rem;
@@ -4446,6 +4470,7 @@ figure {
 
 @media screen and (min-width: 39em) {
   .fig--size-large .caption__text, .fig--size-xlarge .caption__text {
+    display: inline-block;
     max-width: 70rem;
     padding-left: 4rem;
     padding-right: 4rem;
@@ -4504,6 +4529,36 @@ figure {
     clear: none;
     margin: 0;
   }
+}
+
+.fig--portrait {
+  margin-top: 1.5rem;
+  padding: 0 2rem 2rem 0;
+  height: 7.8rem;
+  width: 7.8rem;
+}
+.fig--portrait .img__container {
+  border: 0.1rem solid #111111;
+  border-radius: 50%;
+}
+@media screen and (min-width: 79em) {
+  .fig--portrait {
+    margin-left: 8.25rem;
+    margin-top: 3rem;
+    height: 18.3rem;
+    width: 18.3rem;
+  }
+}
+
+.fig--portrait-small {
+  margin: 0;
+  padding: 1rem;
+  height: 5.8rem;
+  width: 5.8rem;
+}
+.fig--portrait-small .img__container {
+  border: 0.1rem solid #111111;
+  border-radius: 50%;
 }
 
 .fig--diagram .img__container {
@@ -4925,6 +4980,29 @@ figure {
 /* TextWhitespace */
 .chroma .w {
   color: #bbbbbb;
+}
+
+.published {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (min-width: 79em) {
+  .published {
+    flex-direction: column-reverse;
+  }
+}
+
+.author-list {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (min-width: 79em) {
+  .author-list {
+    flex-direction: column;
+  }
+  .author-list li:first-child {
+    margin-left: 2rem;
+  }
 }
 
 .clear:before,
