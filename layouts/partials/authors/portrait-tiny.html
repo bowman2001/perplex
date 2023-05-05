@@ -1,0 +1,7 @@
+{{- with .GetTerms "authors" }}
+    <ul class="author-list">
+        {{- range . -}}
+            <li><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{- partial "img/portrait-tiny.html" .Page }}</a></li>
+        {{- end }}
+    </ul>
+{{- end }}

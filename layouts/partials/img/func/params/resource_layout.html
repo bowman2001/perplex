@@ -23,7 +23,11 @@
     {{ with .ratio }}{{ $a = merge $a (dict "ratio"  .  ) }}{{ end }}
     {{ with .rel }}{{ $a = merge $a (dict "rel" ( . | lower ) ) }}{{ end }}
     {{ with .rotate }}{{ $a = merge $a (dict "rotate"  .  ) }}{{ end }}
-    {{ with .size }}{{ $a = merge $a (dict (slice "class" "size") ( . | lower )) }}{{ end }}
+    {{ with .size }}
+        {{ $a = merge $a (dict (slice "class" "size") ( . | lower )) }}
+    {{ else }}
+        {{ $a = merge $a (dict (slice "class" "size") "normal" ) }}
+    {{ end }}
     {{ with .svg }}
         {{ $a = merge $a (dict "svg"  .  ) }}
     {{ else }}

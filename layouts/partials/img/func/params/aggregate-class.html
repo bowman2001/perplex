@@ -29,12 +29,6 @@
             {{ else }}
                 {{ errorf "Unable to generate the CSS class for %s. The key 'size' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optSize }}
             {{ end }}
-        {{ else }}
-            {{ if $isEmbedded }}
-                {{ $class = $class | append (print "embed--size-normal") }}
-            {{ else }}
-                {{ $class = $class | append (print "fig--size-normal") }}
-            {{ end }}
         {{ end }}
         {{ with .plain }}
             {{ $class = $class | append . }}

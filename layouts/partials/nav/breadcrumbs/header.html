@@ -6,7 +6,7 @@
     {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
       {{ if ne $e .FirstSection }}
       <li class="meta__item">
-        <a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}
+        <a href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}
         </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
       </li>
         {{ end }}
