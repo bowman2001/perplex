@@ -38,7 +38,7 @@
           {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
 
           <img data-src="{{ $fallbackImg.RelPermalink }}"
-               data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) }}"
+               data-srcset="{{ partialCached "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) (dict "img" $p.img "params" $p.params "a" .a )  }}"
                data-sizes="auto"
                data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
                data-parentfit="cover"
