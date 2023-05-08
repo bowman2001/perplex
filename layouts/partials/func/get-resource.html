@@ -39,7 +39,7 @@
     {{ end }}
 {{ end }}
 {{ if not $resource }}
-    {{ errorf "There is no resource with the name %q in %q or related folders." $name .currentPage }}
+    {{ warnf "There is no resource with the name %q in %q or related folders." $name .currentPage }}
 {{ end }}
 {{ return $resource }}
 

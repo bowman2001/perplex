@@ -3,10 +3,11 @@
 * The set meets two
 *
 * IN:
-*   int: min (minimum width)
-*   int: max (maximum width)
+*   dict:
+*     int: min (minimum width)
+*     int: max (maximum width)
 *
-* OUT: slice of int
+* OUT: slice of ints
 */}}
 
 {{ $min := site.Params.imaging.min_width }}
@@ -14,10 +15,10 @@
 {{ $max := .max }}
 {{ $ratio := (div $max (float $min)) }}
 {{ $sizestep := site.Params.imaging.sizestep }}
-{{ if (lt $sizestep 10) }}
+{{ if (lt $sizestep 15) }}
     {{ errorf "The file size difference of %d percent for your srcset is too small. You could end up with more than 100 images. At least 20 percent are recommended." $sizestep }}
-{{ else if (lt $sizestep 15) }}
-    {{ warnf "The file size difference of %d percent for your srcset is small. Hugo will take some time for the image processing. 20 percent or more are recommended." $sizestep }}
+{{ else if (lt $sizestep 20) }}
+    {{ warnf "The file size difference of %d percent for the srcsets is small. Hugo will take some time for the image processing. 20 percent or more are recommended." $sizestep }}
 {{ end }}
 {{ $m := (math.Sqrt (add 1 (div site.Params.imaging.sizestep 100.0))) }}
 {{ $n := (math.Ceil (div (math.Log $ratio) (math.Log $m))) }}

@@ -1,23 +1,11 @@
 ---
-author: 
+authors: []
 title: {{ replace .Name "-" " " | title }}
-description: "**Placeholder**: Optional short description"
+description: "**Placeholder**: Short description for small cards"
 subtitle: false
 date: {{ .Date }}
-resources:
-- src:
-  name: featured
-  params:
-    alt: 
-- src:
-  name:
-  params:
-     alt:
-     attr:
-     attrlink:
 categories: []
 tags: []
-weight: 9999
 draft: true
 ---
 
