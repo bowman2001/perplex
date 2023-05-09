@@ -336,15 +336,19 @@ li:empty:before {
 .caption a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(85, 85, 85, .25);
+  -webkit-text-decoration-color: rgba(85, 85, 85, .25);
+          text-decoration-color: rgba(85, 85, 85, .25);
+  transition-property: color, -webkit-text-decoration-color;
   transition-property: color, text-decoration-color;
+  transition-property: color, text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
 
 .caption a:hover {
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .caption__text,
@@ -402,9 +406,12 @@ body {
   overflow-x: hidden;
   scrollbar-gutter: stable both-edges;
   min-height: 0;
-  animation-name: page;
-  animation-duration: 150ms;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: page;
+          animation-name: page;
+  -webkit-animation-duration: 150ms;
+          animation-duration: 150ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 
 @media screen and (min-width: 79em) {
@@ -435,6 +442,16 @@ body {
 
 ::selection {
   background: #c2ecff;
+}
+
+@-webkit-keyframes page {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes page {
@@ -632,7 +649,8 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  animation: fade 150ms;
+  -webkit-animation: fade 150ms;
+          animation: fade 150ms;
   transition: background-color 250ms;
 }
 
@@ -697,7 +715,8 @@ body {
     grid-area: left;
     position: static;
     width: 35rem;
-    animation: fade 150ms;
+    -webkit-animation: fade 150ms;
+            animation: fade 150ms;
     height: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -716,6 +735,16 @@ body {
 
   #l-sidebar::-webkit-scrollbar-track {
     background: #f8e9da;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -848,7 +877,8 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border-radius: .25em;
   box-shadow: inset 0 0 .5rem rgba(0, 0, 0, 0);
-  text-decoration-color: rgba(0, 0, 0, 0);
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
   text-underline-offset: .075em;
   text-decoration-thickness: 1px;
   transition-property: color, text-decoration-color, background-color, box-shadow;
@@ -865,7 +895,9 @@ body {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
+  transition-property: -webkit-text-decoration-color;
   transition-property: text-decoration-color;
+  transition-property: text-decoration-color, -webkit-text-decoration-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -895,7 +927,8 @@ body {
 .heading-anchor:focus code,
 .card__hover .card__title h2 a:focus code,
 .card__hover .card__title h3 a:focus code {
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .md-hook-link:hover var,
@@ -913,7 +946,8 @@ body {
 
 .card__hover .card__title h2 a .title-link,
 .card__hover .card__title h3 a .title-link {
-  text-decoration-color: rgba(0, 0, 0, 0);
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
 }
 
 .card__hover .card__title h2 a:hover,
@@ -1002,52 +1036,61 @@ h6:target .heading-anchor:before {
 
 .md-hook-link {
   color: #006a9c;
-  text-decoration-color: #006a9c;
+  -webkit-text-decoration-color: #006a9c;
+          text-decoration-color: #006a9c;
 }
 
 .md-hook-link code {
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .md-hook-link:hover,
 .md-hook-link:focus {
   background-color: rgba(0, 132, 194, .15);
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .md-hook-link[href^=http] {
   color: #00826a;
-  text-decoration-color: #00826a;
+  -webkit-text-decoration-color: #00826a;
+          text-decoration-color: #00826a;
 }
 
 .md-hook-link[href^=http]:hover,
 .md-hook-link[href^=http]:focus {
   background-color: rgba(0, 168, 137, .15);
   color: #000;
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .md--footer .md-hook-link {
   color: #9ce0ff;
-  text-decoration-color: #9ce0ff;
+  -webkit-text-decoration-color: #9ce0ff;
+          text-decoration-color: #9ce0ff;
 }
 
 .md--footer .md-hook-link:hover,
 .md--footer .md-hook-link:focus {
   color: #fff;
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .md--footer .md-hook-link[href^=http] {
   color: #82ffe8;
-  text-decoration-color: #82ffe8;
+  -webkit-text-decoration-color: #82ffe8;
+          text-decoration-color: #82ffe8;
 }
 
 .md--footer .md-hook-link[href^=http]:hover,
 .md--footer .md-hook-link[href^=http]:focus {
   color: #fff;
-  text-decoration-color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
 }
 
 .icon-link .icon-font {
@@ -3466,18 +3509,21 @@ h6:target .heading-anchor:before {
 
 .md del,
 .md ins {
-  text-decoration-color: #a00;
+  -webkit-text-decoration-color: #a00;
+          text-decoration-color: #a00;
   text-decoration-thickness: .1rem;
   -webkit-text-decoration-skip: auto;
           text-decoration-skip: auto;
 }
 
 .md del {
-  text-decoration-line: line-through;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
 }
 
 .md ins {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .md sup,
@@ -4532,7 +4578,8 @@ h6:target .heading-anchor:before {
 .card__hover:focus .card__title h3 a,
 .card__hover:active .card__title h2 a,
 .card__hover:active .card__title h3 a {
-  text-decoration-color: #000;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
 }
 
 .card__hover--grey img,
@@ -4811,7 +4858,8 @@ h6:target .heading-anchor:before {
 }
 
 .card__title .title-link {
-  text-decoration-color: rgba(0, 0, 0, 0);
+  -webkit-text-decoration-color: rgba(0, 0, 0, 0);
+          text-decoration-color: rgba(0, 0, 0, 0);
 }
 
 .card__title--top {
@@ -5208,7 +5256,9 @@ h6:target .heading-anchor:before {
   display: block;
   padding: .5rem 0 .5rem 1.7rem;
   border-left: .3rem solid #ccc;
+  transition: color 200ms ease-in-out, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
   transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out;
+  transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
 }
 
 #TableOfContents a .icon-font,
@@ -5282,7 +5332,9 @@ h6:target .heading-anchor:before {
   display: block;
   padding: .5rem 0 .5rem 1.7rem;
   border-left: .3rem solid #ccc;
+  transition: color 200ms ease-in-out, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
   transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out;
+  transition: color 200ms ease-in-out, text-decoration-color 200ms, border-color 200ms ease-in-out, -webkit-text-decoration-color 200ms;
 }
 
 .toc__list a .icon-font,
