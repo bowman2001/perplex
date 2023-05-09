@@ -21,11 +21,11 @@
         </section>
         <section class="section">
             <hr>
-            <h2>Last working on:</h2>
+            <h2>Latest contributions:</h2>
             {{ with first 6 .RegularPages.ByLastmod.Reverse }}
                 <nav class="card-nav card-nav--3 card-nav--top margin-left">
                     <ul class="card-nav__list">
-                        {{- range .ByDate.Reverse -}}
+                        {{- range . -}}
                             <li class="card card--1 card__hover">{{- .Render "li-card-1-col-img" -}}</li>
                         {{- end -}}
                     </ul>

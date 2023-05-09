@@ -161,11 +161,6 @@ hr {
   }
 }
 
-.heading {
-  display: inline-block;
-  max-width: 100%;
-}
-
 em,
 i {
   font-style: italic;
@@ -736,7 +731,7 @@ body {
 
 #l-footer {
   flex: 0 0 auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
   background: #111;
 }
 
@@ -1175,7 +1170,7 @@ h6:target .heading-anchor:before {
 
 .meta--card--half {
   justify-content: start;
-  margin: 0 1.5rem -0.5rem 1.5rem;
+  margin: 0 1.5rem 0 1.5rem;
 }
 
 .meta--card--half .meta__item a,
@@ -1543,11 +1538,11 @@ h6:target .heading-anchor:before {
 }
 
 .section > h2 {
-  font-size: 1.43rem;
-  line-height: 1.5rem;
-  padding-top: .214465rem;
-  padding-bottom: .285535rem;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.915rem;
+  line-height: 2rem;
+  padding-top: .2828325rem;
+  margin-bottom: -0.2828325rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .03em;
@@ -1859,10 +1854,12 @@ h6:target .heading-anchor:before {
 .md .box-info,
 .md .box-warn {
   position: relative;
-  margin-bottom: calc(1rem + 1 * var(--es));
+  margin: 1rem .1rem calc(1 * var(--es)) .1rem;
+  padding-left: 1.9rem;
+  padding-right: 1.9rem;
   background-color: rgba(246, 227, 208, .25);
   border-radius: .5rem;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
 }
 
 .md .box-warn {
@@ -2612,10 +2609,9 @@ h6:target .heading-anchor:before {
 .md .highlight > pre,
 .md .highlight > div {
   overflow: auto;
-  scrollbar-gutter: stable;
   scrollbar-color: #ebb924 #f8e9da;
   border-radius: .5rem;
-  border: .1rem solid #888;
+  box-shadow: 0 0 0 .1rem #888;
 }
 
 .md .highlight > pre::-webkit-scrollbar,
@@ -2757,6 +2753,7 @@ h6:target .heading-anchor:before {
   .md .dl-loose2 > dt,
   .md .dl-loose3 > dt {
     float: left;
+    clear: left;
     width: 16.5rem;
     padding-bottom: 0;
   }
@@ -4578,6 +4575,7 @@ h6:target .heading-anchor:before {
 
 .card__flex--1 .card__content {
   margin: 1.5rem 0 0 0;
+  flex-grow: 1;
 }
 
 @media screen and (min-width: 39em) {
@@ -4798,13 +4796,13 @@ h6:target .heading-anchor:before {
   margin: 0 2rem;
 }
 
-.card__title h2,
-.card__title h3,
-.card__title h4 {
+.card__title h2 a,
+.card__title h3 a,
+.card__title h4 a {
   font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: calc(0.35791975rem + 0.5 * var(--es));
-  margin-bottom: calc(-0.35791975rem + 0.5 * var(--es));
+  padding-top: .35791975rem;
+  margin-bottom: -0.35791975rem;
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .04em;
@@ -4821,9 +4819,9 @@ h6:target .heading-anchor:before {
 }
 
 @media screen and (min-width: 48em) {
-  .card__title--2 h2,
-  .card__title--2 h3,
-  .card__title--2 h4 {
+  .card__title--2 h2 a,
+  .card__title--2 h3 a,
+  .card__title--2 h4 a {
     font-size: 2.54rem;
     line-height: 3rem;
     padding-top: .54877rem;
@@ -4832,9 +4830,9 @@ h6:target .heading-anchor:before {
 }
 
 @media screen and (min-width: 79em) {
-  .card__title--2 h2,
-  .card__title--2 h3,
-  .card__title--2 h4 {
+  .card__title--2 h2 a,
+  .card__title--2 h3 a,
+  .card__title--2 h4 a {
     font-size: 1.905rem;
     line-height: 2rem;
     padding-top: .7865775rem;
@@ -4842,21 +4840,20 @@ h6:target .heading-anchor:before {
   }
 }
 
-.card__title--half h2,
-.card__title--half h3,
-.card__title--half h4 {
-  max-width: 100%;
+.card__title--half h2 a,
+.card__title--half h3 a,
+.card__title--half h4 a {
   font-size: 1.3585rem;
   line-height: 1.5rem;
-  padding-top: .74124175rem;
+  padding-top: .49124175rem;
   padding-bottom: .25875825rem;
   letter-spacing: .05em;
   word-spacing: .15em;
 }
 
-.card__title--small h2,
-.card__title--small h3,
-.card__title--small h4 {
+.card__title--small h2 a,
+.card__title--small h3 a,
+.card__title--small h4 a {
   font-size: 1.43rem;
   line-height: 1.75rem;
   padding-top: .589465rem;
@@ -4877,6 +4874,7 @@ h6:target .heading-anchor:before {
   flex-direction: row;
   justify-content: space-between;
   padding: 0 2rem 2rem 1.5rem;
+  width: 100%;
 }
 
 .card__footer .link {
@@ -5650,9 +5648,9 @@ figure {
     position: absolute;
     z-index: 10;
     right: 2rem;
-    top: 0;
+    top: 1.75rem;
     width: 33rem;
-    height: 100%;
+    height: calc(100% - 1.75rem);
     margin-left: 2rem;
     text-align: left;
     padding-left: 0;

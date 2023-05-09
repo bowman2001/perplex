@@ -9,6 +9,12 @@ resources:
       alt:
       attr:
       attrlink:
+  - src:
+    name:
+    params:
+      alt:
+      attr:
+      attrlink:
 categories: []
 tags: []
 draft: true
