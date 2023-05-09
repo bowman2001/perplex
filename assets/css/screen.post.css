@@ -3076,9 +3076,9 @@ h6:target .heading-anchor:before {
 .md--h-serif h4 {
   font-size: 1.7145rem;
   line-height: 2rem;
-  padding-top: 1.35791975rem;
-  margin-bottom: -0.35791975rem;
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 3rem);
+  padding-top: .85791975rem;
+  padding-bottom: .14208025rem;
+  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.5rem);
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
   font-weight: 700;
   letter-spacing: .02em;
@@ -4901,7 +4901,7 @@ h6:target .heading-anchor:before {
   background: linear-gradient(90deg, #0096db 0%, hsl(199, 100%, 38%) 25%, hsl(199, 100%, 38%) 75%, #0096db 100%);
 }
 
-.card__footer .link--blog {
+.card__footer .link--post {
   background: linear-gradient(90deg, #0073a8 0%, #00628f 25%, #9b1262 75%, #b21571 100%);
 }
 
