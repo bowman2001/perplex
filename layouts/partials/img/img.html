@@ -1,61 +1,61 @@
 {{- $p := partial "img/func/preprocess.html" . -}}
 {{- $subType := .img.MediaType.SubType -}}
 {{- if .a.link -}}
-  <a href="{{ .a.link | safeHTMLAttr }}"
+<a href="{{ .a.link | safeHTMLAttr }}"
         {{- with .a.target -}}
-            {{- if in site.Params.link.target }} target="{{ . | safeHTMLAttr }}"{{ else -}}
-                {{- warnf "Unable to us the 'target' attribute %s for a link. Only %s are possible." . site.Params.link.target -}}
+            {{- if in site.Params.link.target . }} target="{{ . | safeHTMLAttr }}"{{ else -}}
+                {{- warnf "Unable to use the 'target' attribute %s for a link. Only %s are possible." . site.Params.link.target -}}
             {{- end -}}
         {{- end -}}
-          {{- with .a.rel -}}
-      {{- if in site.Params.link.rel }} rel="{{ . | safeHTMLAttr }}"{{ else -}}
-          {{- warnf "Unable to us the 'rel' attribute %s for a link. Only %s are possible." . site.Params.link.rel -}}
-      {{- end -}}
-          {{- end -}}>
+        {{- with .a.rel -}}
+    {{- if in site.Params.link.rel . }} rel="{{ . | safeHTMLAttr }}"{{ else -}}
+        {{- warnf "Unable to use the 'rel' attribute %s for a link. Only %s are possible." . site.Params.link.rel -}}
     {{- end -}}
-      {{ $container := false }}
-      {{- if or (ne .a.container "no") (eq .a.card "yes") -}}
+        {{- end -}}>
+    {{- end -}}
+    {{ $container := false }}
+    {{- if or (ne .a.container "no") (eq .a.card "yes") -}}
         {{ $container = true }}
-      {{- end -}}
-      {{- if $container -}}
-    <span class="img__container {{- if eq .a.container "footer" }} img__container--footer{{ end -}}">{{ end -}}
-      {{- if eq $subType "svg" -}}
-          {{ if (eq .a.svg "inline") }}
-              {{ .img.Content | safeHTML }}
-          {{ else }}
-            <img src="{{ .img.RelPermalink }}"
-                 class="img--transparent"
-                 {{- with .a.alt }}alt="{{ . }}"{{ end -}}
-                    {{- with .a.title }}title="{{ . }}"{{ end }}>
-          {{ end }}
-      {{- else -}}
-          {{- $imgClass := "" -}}
-          {{- if eq $subType "png" -}}
-              {{- $imgClass = "img--transparent" -}}
-          {{- end -}}
-          {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
-          {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
-          {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
+    {{- end -}}
+    {{- if $container -}}
+    <span class="img__container {{- with .a.container }} img__container--{{ . }}{{ end -}}">{{ end -}}
+        {{- if eq $subType "svg" -}}
+            {{ if (eq .a.svg "inline") }}
+                {{ .img.Content | safeHTML }}
+            {{ else }}
+                <img src="{{ .img.RelPermalink }}"
+                     class="img--transparent"
+                     {{- with .a.alt }}alt="{{ . }}"{{ end -}}
+                        {{- with .a.title }}title="{{ . }}"{{ end }}>
+            {{ end }}
+        {{- else -}}
+            {{- $imgClass := "" -}}
+            {{- if eq $subType "png" -}}
+                {{- $imgClass = "img--transparent" -}}
+            {{- end -}}
+            {{- $fallbackWidth := site.Params.imaging.fallback_width -}}
+            {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
+            {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
 
-          <img data-src="{{ $fallbackImg.RelPermalink }}"
-               data-srcset="{{ partial "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) }}"
-               data-sizes="auto"
-               data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
-               data-parentfit="cover"
+            <img data-src="{{ $fallbackImg.RelPermalink }}"
+                 data-srcset="{{ partialCached "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) (dict "img" $p.img "params" $p.params "a" .a )  }}"
+                 data-sizes="auto"
+                 data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
+                 data-parentfit="cover"
                   {{- if lt (len $lqip.base64) 2048 -}}
-                    src="data:image/webp;base64,{{- $lqip.base64 -}}"
+                      src="data:image/webp;base64,{{- $lqip.base64 -}}"
                   {{- else -}}
-                    src="{{ $lqip.img.RelPermalink }}"
+                      src="{{ $lqip.img.RelPermalink }}"
                   {{- end -}}
                class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                   {{- with .a.alt -}}
-                    alt="{{ . }}"
+                      alt="{{ . }}"
                   {{- else -}}
                       {{- warnf "No alternative description for image %s." $p.img.RelPermalink -}}
                   {{- end -}}
-                  {{- with .a.title }} title="{{ . }}"{{ end -}}
+                    {{- with .a.title }} title="{{ . }}"{{ end -}}
                width="{{ $fallbackImg.Width }}"
-               height="{{ $fallbackImg.Height }}"/>
-      {{- end -}}
+                 height="{{ $fallbackImg.Height }}" />
+        {{- end -}}
         {{ if $container }}</span>{{ end }}
-      {{- if .a.link }}</a>{{ end -}}
+    {{- if .a.link }}</a>{{ end -}}

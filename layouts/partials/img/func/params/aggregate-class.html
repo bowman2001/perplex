@@ -29,12 +29,6 @@
             {{ else }}
                 {{ errorf "Unable to generate the CSS class for %s. The key 'size' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optSize }}
             {{ end }}
-        {{ else }}
-            {{ if $isEmbedded }}
-                {{ $class = $class | append (print "embed--size-normal") }}
-            {{ else }}
-                {{ $class = $class | append (print "fig--size-normal") }}
-            {{ end }}
         {{ end }}
         {{ with .plain }}
             {{ $class = $class | append . }}
@@ -48,7 +42,7 @@
                 {{ $class = $class | append (print "fig--posh-" . )}}
             {{ end }}
         {{ else }}
-            {{ errorf "Unable to generate a CSS class for %s. The key 'posh' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optPosh }}
+            {{ errorf "Unable to generate a CSS class for %s. The key 'posh' contains the value '%s'. Only the values %s are possible." $.img.RelPermalink . $optPosh }}
         {{ end }}
     {{ end }}
     {{ with .posv }}
@@ -59,7 +53,7 @@
                 {{ $class = $class | append (print "fig--posv-" . )}}
             {{ end }}
         {{ else }}
-            {{ errorf "Unable to generate a CSS class for %s. The key 'posv' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optPosv }}
+            {{ errorf "Unable to generate a CSS class for %s. The key 'posv' contains the invalid value '%s'. Only the values %v are possible." $.img.RelPermalink . $optPosv }}
         {{ end }}
     {{ end }}
 {{ end }}

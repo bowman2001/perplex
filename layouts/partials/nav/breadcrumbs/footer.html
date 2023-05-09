@@ -1,14 +1,14 @@
 <ul class="ul--row meta__section">
   <li class="meta__item">
-    <a class="icon-font" href="{{ site.Home.RelPermalink }}">home</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+    <a class="icon-font" href="{{ site.Home.RelPermalink }}" rel="nofollow">home</a>{{ partial "nav/breadcrumbs/separator.html" . }}
   </li>
     {{ $n := sub (len .Ancestors) 1 }}
     {{- range $i, $e := last $n .Ancestors.Reverse -}}
       <li class="meta__item">
-        <a href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+        <a href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
       </li>
     {{- end -}}
   <li class="meta__item">
-    <a href="{{ .RelPermalink }}" aria-current="page">{{- .LinkTitle | site.Home.RenderString -}}</a>
+    <a href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>
   </li>
 </ul>

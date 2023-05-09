@@ -1,4 +1,5 @@
-{{ $a := partial "img/func/params/resource.html" .img }}
+{{ $a := partial "img/func/params/resource_layout.html" .img }}
 {{ $a = merge $a (dict "card" "yes" ) }}
 {{ $a =  merge $a (dict "link" .page.RelPermalink ) }}
+{{ $a = merge $a (dict "rel" "nofollow" )}}
 {{ return $a }}

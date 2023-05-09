@@ -1,0 +1,40 @@
+{{ $a := dict  }}
+{{ with .Name }}{{ $a = merge $a (dict "name" . ) }}{{ end }}
+{{ with .Title }}
+    {{ if not (eq . (path.Base $.Key)) }}{{ $a = merge $a (dict "title" . ) }}{{ end }}
+{{ end }}
+{{ with .Params }}
+    {{ with .alt }}
+        {{ $a = merge $a (dict "alt" . ) }}
+    {{ else }}
+        {{ with .caption }}
+            {{ $a = merge $a (dict "alt" . ) }}
+        {{ end }}
+    {{ end }}
+    {{ with .anchor }}{{ $a = merge $a (dict "anchor" ( . | lower ) ) }}{{ end }}
+    {{ with .class }}{{ $a = merge $a (dict (slice "class" "plain") ( . | lower )) }}{{ end }}
+    {{ with .container }}{{ $a = merge $a (dict "container" . ) }}{{ end }}
+    {{ with .hint }}{{ $a = merge $a (dict "hint" (. | lower ) ) }}{{ end }}
+    {{ with .id }}{{ $a = merge $a (dict "id" (. | lower )) }}{{ end }}
+    {{ with .link }}{{ $a = merge $a (dict "link" (. | lower ) ) }}{{ end }}
+    {{ with .pos }}{{ $a = merge $a (dict (slice "class" "posh") ( . | lower )) }}{{ end }}
+    {{ with .posh }}{{ $a = merge $a (dict (slice "class" "posh") ( . | lower )) }}{{ end }}
+    {{ with .posv }}{{ $a = merge $a (dict (slice "class" "posv") ( . | lower )) }}{{ end }}
+    {{ with .ratio }}{{ $a = merge $a (dict "ratio"  .  ) }}{{ end }}
+    {{ with .rel }}{{ $a = merge $a (dict "rel" ( . | lower ) ) }}{{ end }}
+    {{ with .rotate }}{{ $a = merge $a (dict "rotate"  .  ) }}{{ end }}
+    {{ with .size }}
+        {{ $a = merge $a (dict (slice "class" "size") ( . | lower )) }}
+    {{ else }}
+        {{ $a = merge $a (dict (slice "class" "size") "normal" ) }}
+    {{ end }}
+    {{ with .svg }}
+        {{ $a = merge $a (dict "svg"  .  ) }}
+    {{ else }}
+        {{ with site.Params.svg }}
+            {{ $a = merge $a (dict "svg" . ) }}
+        {{ end }}
+    {{ end }}
+    {{ with .target }}{{ $a = merge $a (dict "target" ( . | lower ) ) }}{{ end }}
+{{ end }}
+{{ return $a }}

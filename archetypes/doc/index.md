@@ -10,6 +10,19 @@ menu:
     name: {{ replace .Name "-" " " | title }}
     parent: 
     pre: remove
+resources: 
+  - src:
+    name: featured
+    params:
+      alt:
+      attr:
+      attrlink:
+  - src: 
+    name: 
+    params:
+      alt:
+      attr: 
+      attrlink:
 categories: []
 tags: []
 weight: 9999

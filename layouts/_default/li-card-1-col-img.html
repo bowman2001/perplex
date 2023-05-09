@@ -1,15 +1,28 @@
 <div class="card__flex card__flex--1">
     {{ partial "img/featured-card-1.html" .  }}
-  <div class="card__content">
-    <nav class="card__header">
-      <div class="meta meta--card meta--card--1">
-          {{- partial "nav/card/meta/firstsection-category.html" . -}}
-          {{ partial "date/page/date.html" . }}
-      </div>
-        {{ partial "nav/card/title/col1.html" . }}
-    </nav>
-    <a class="md md--sans md--card md--card--1" href="{{ .RelPermalink }}">
-        {{ partial "summary.html" . }}
-    </a>
-  </div>
+    <div class="card__content">
+        <div>
+            <nav class="card__header">
+                <div class="meta meta--card meta--card--1">
+                    {{- partial "nav/card/meta/firstsection-category.html" . -}}
+                    {{ partial "date/date.html" . }}
+                </div>
+                {{ partial "nav/card/title/col1.html" . }}
+            </nav>
+            <div class="md md--sans md--card md--card--1">
+                {{ partial "summary.html" . }}
+            </div>
+        </div>
+        <div class="card__footer">
+            {{ partial "authors/portrait-tiny.html" . }}
+            {{ $modifier := "" }}
+            {{- if eq .Kind "news" }}
+                {{- $modifier = "link--news" }}
+            {{- end }}
+            {{- if or (eq .Kind "blog") (eq .Kind "article") }}
+                {{- $modifier = "link--blog" }}
+            {{- end }}
+            <a href="{{ .RelPermalink }}" class="link{{ with $modifier }} {{ . }}{{ end }}" rel="nofollow">&#8618;</a>
+        </div>
+    </div>
 </div>

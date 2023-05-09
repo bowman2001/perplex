@@ -3,7 +3,8 @@
 {{ $a := (dict (slice "class" "size") "normal") }}
 {{ with $img }}
     {{ $a = merge $a (partial "img/func/params/unsplash.html" . ) }}
-    {{ $a = merge $a ( partial "img/func/params/resource.html" . ) }}
+    {{ $a = merge $a ( partial "img/func/params/resource_layout.html" . ) }}
+    {{ $a = merge $a ( partial "img/func/params/resource_caption.html" (dict "img" . "a" $a ) ) }}
 {{ end }}
 {{ $a = merge $a ( partial "img/func/params/hook.html" . ) }}
 {{ if .IsBlock }}

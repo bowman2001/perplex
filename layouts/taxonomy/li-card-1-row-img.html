@@ -3,10 +3,10 @@
   <div class="card__content card__content--flex">
     <nav class="card__header">
         <div class="card__title card__title--half">
-          <h2>{{ partial "title/render-link.html" . }}</h2>
+          <h2>{{ partial "title/render-link-nofollow.html" . }}</h2>
         </div>
     </nav>
-    <a href="{{ .RelPermalink }}">
+    <a href="{{ .RelPermalink }}" rel="nofollow">
       <div class="md md--sans md--card md--card--half">
           {{ partial "description.html" . }}
       </div>

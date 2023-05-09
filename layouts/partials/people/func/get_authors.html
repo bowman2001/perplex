@@ -1,0 +1,5 @@
+{{ $authors := slice }}
+{{ with (.GetTerms "authors") }}
+  {{ $authors = . }}
+{{ end }}
+{{ return $authors  }}

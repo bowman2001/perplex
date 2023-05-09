@@ -1,19 +1,17 @@
 ---
-author: 
+authors: []
 title: {{ replace .Name "-" " " | title }}
-description: "**Placeholder**: Optional subtitle"
-subtitle: false
 date: {{ .Date }}
 resources:
   - src:
     name: featured
     params:
       alt:
-      attr: 
-      attrlink: 
-  - src: 
+      attr:
+      attrlink:
+  - src:
     name:
-    params: 
+    params:
       alt:
       attr:
       attrlink:

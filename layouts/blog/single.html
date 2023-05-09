@@ -4,14 +4,14 @@
       <header class="page-header">
         <div class="meta meta--head meta--left">
             {{ partial "nav/taxonomies/page/lists.html" . }}
-            {{ partial "date/page/published_datetime.html" . }}
+            {{ partial "date/published_datetime.html" . }}
         </div>
         {{ partial "title/titlehead-margin.html" . }}
         <div class="title title--serif margin-left">
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
-          <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
+          {{ partial "img/featured.html" . }}
       </header>
       <div class="md md--sans md--h-serif md--margin-left">
           {{- partial "replacements.html" .Content -}}
@@ -21,7 +21,7 @@
         {{ partial "nav/related/small-cards.html" . }}
       <div class="meta meta--foot">
           {{ partial "nav/taxo_and_breadcrumbs.html" . }}
-          {{ partial "date/page/updated.html" . }}
+          {{ partial "date/updated.html" . }}
       </div>
       <hr>
         {{ partial "blog/nav/pages.html" . }}

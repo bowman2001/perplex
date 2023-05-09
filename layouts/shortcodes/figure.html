@@ -10,7 +10,8 @@
     {{ end }}
     {{ with $img }}
         {{ $a = partial "img/func/params/unsplash.html" . }}
-        {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
+        {{ $a = merge $a ( partial "img/func/params/resource_layout.html" . ) }}
+        {{ $a = merge $a ( partial "img/func/params/resource_caption.html" (dict "img" . "a" $a ) ) }}
     {{ else }}
         {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
     {{ end }}
@@ -24,7 +25,8 @@
     {{ end }}
     {{ with $img }}
         {{ $a = partial "img/func/params/unsplash.html" . }}
-        {{ $a = merge $a (partial "img/func/params/resource.html" . )}}
+        {{ $a = merge $a ( partial "img/func/params/resource_layout.html" . ) }}
+        {{ $a = merge $a ( partial "img/func/params/resource_caption.html" (dict "img" . "a" $a ) ) }}
     {{ end }}
 {{ end }}
 {{ if not $img }}

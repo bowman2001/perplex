@@ -1,0 +1,14 @@
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<ul class="meta__list meta__list--date">
+    {{- partial "file/vscode_start.html" . -}}
+  <li class="meta__item meta__date">
+    <span class="icon-font">edit</span>
+    <time datetime="{{ .Lastmod.Format $iso8601 }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
+  </li>
+    {{- partial "file/vscode_end.html" . -}}
+  <li class="meta__item meta__date">
+    <span class="icon-font">schedule</span><span>{{ .Lastmod | time.Format ":time_short" }}</span></li>
+    {{- with ( partial "people/lasteditor.html" . ) -}}
+      <li class="meta__item meta__date">{{ partialCached "people/icon/editor.html" . }}{{ . }}</li>
+    {{- end -}}
+</ul>{{- /**/ -}}

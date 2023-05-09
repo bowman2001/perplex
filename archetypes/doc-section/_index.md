@@ -1,7 +1,12 @@
 ---
-author: 
 title: {{ replace .Name "-" " " | title }}
 date: {{ .Date }}
+menu:
+  doc:
+    identifier: {{ .Name }}
+    name: {{ replace .Name "-" " " | title }}
+    parent:
+    pre: remove
 resources:
 - src:
   name: featured
@@ -11,6 +16,7 @@ resources:
     attrlink:
 categories: []
 tags: []
+weight: 9999
 draft: true
 ---
 

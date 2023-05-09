@@ -1,0 +1,8 @@
+{{- $img := ( partial "img/func/get-portrait.html" . ) -}}
+{{- $a := dict -}}
+{{- with $img -}}
+    {{- $a = merge $a (partial "img/func/params/resource_layout.html" . )}}
+    {{- $a = merge $a (dict (slice "class" "size") "") }}
+    {{- $a = merge $a (dict (slice "class" "plain") "fig--portrait-tiny") }}
+    {{- partial "img/figure.html" (dict "img" . "a" $a )}}
+{{- end -}}

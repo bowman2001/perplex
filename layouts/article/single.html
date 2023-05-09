@@ -1,22 +1,28 @@
 {{- define "main" -}}
-<div id="l-content-box" class="l-box">
+<div id="l-content-box" class="l-box l-box--full">
   <div id="l-content">
     <header class="page-header">
-      <div class="title title--article">
+      <div class="meta meta--head meta--left">
+          {{ partial "nav/taxonomies/page/lists.html" . }}
+          {{ partial "date/published_datetime.html" . }}
+      </div>
+        {{ partial "title/titlehead-margin.html" . }}
+      <div class="title title--article margin-left">
         {{ partial "title/title.html" . }}
         {{ partial "title/subtitle.html" . }}
       </div>
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
     </header>
-    <div class="md md--serif md--margin-left md--article
+    <div class="md md--sans md--margin-left md--article
     {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
       {{- partial "replacements.html" .Content -}}
     </div>
   </div>
-  <footer class="page-footer">
+  <footer class="page-footer margin-left">
+      {{ partial "nav/related/small-cards.html" . }}
     <div class="meta meta--foot">
       {{ partial "nav/taxo_and_breadcrumbs.html" . }}
-      {{ partial "date/page/updated.html" . }}
+      {{ partial "date/updated.html" . }}
     </div>
   </footer>
 </div>

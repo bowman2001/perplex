@@ -1,0 +1,6 @@
+{{- with .GetTerms "authors" }}
+  {{- $last := sub (len .) 1 -}}
+  {{- range $i, $el := . -}}
+    <a href="{{ $el.RelPermalink }}">{{ $el.Title | strings.FirstUpper }}</a>{{- if (lt $i $last) }}, {{ end }}
+  {{- end -}}
+{{- end }}{{- /**/ -}}
