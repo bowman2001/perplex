@@ -1547,7 +1547,8 @@ h6:target .heading-anchor:before {
   text-transform: uppercase;
   letter-spacing: .03em;
   word-spacing: .09em;
-  margin: 0 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .section > h3 {
@@ -1560,7 +1561,8 @@ h6:target .heading-anchor:before {
   text-transform: uppercase;
   letter-spacing: .04em;
   word-spacing: .12em;
-  margin: 0 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .md {

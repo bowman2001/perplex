@@ -1257,7 +1257,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   text-transform: uppercase;
   letter-spacing: 0.03em;
   word-spacing: 0.09em;
-  margin: 0 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 .section > h3 {
   font-size: 1.43rem;
@@ -1269,7 +1270,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   text-transform: uppercase;
   letter-spacing: 0.04em;
   word-spacing: 0.12em;
-  margin: 0 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .md {
