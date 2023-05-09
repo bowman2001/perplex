@@ -1176,7 +1176,7 @@ h6:target .heading-anchor:before {
 .meta--card--half .meta__item a,
 .meta--card--half .meta__item span,
 .meta--card--half .meta__item time {
-  padding-bottom: 0;
+  margin-bottom: 0;
   font-size: 1.287rem;
   line-height: 1.5rem;
   padding-top: .2680185rem;

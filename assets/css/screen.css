@@ -929,7 +929,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin: 0 1.5rem;
 }
 .meta--card--half .meta__item a, .meta--card--half .meta__item span, .meta--card--half .meta__item time {
-  padding-bottom: 0;
+  margin-bottom: 0;
   font-size: 1.287rem;
   line-height: 1.5rem;
   padding-top: 0.2680185rem;
