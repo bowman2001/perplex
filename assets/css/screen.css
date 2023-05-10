@@ -4028,6 +4028,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 @media screen and (min-width: 39em) {
   #toc {
+    top: calc(var(--tnh) + var(--tg) + 1rem);
     grid-area: control;
     right: 2rem;
   }
@@ -4035,7 +4036,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 @media screen and (min-width: 120em) {
   #toc {
     right: -35rem;
-    top: calc(var(--tnh) + var(--tg) + 1rem);
   }
   #toc.is-closed {
     display: block;
