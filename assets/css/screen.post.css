@@ -4745,6 +4745,7 @@ h6:target .heading-anchor:before {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
 .card__footer {
