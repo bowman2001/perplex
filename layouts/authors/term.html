@@ -2,16 +2,16 @@
     <div id="l-content-box" class="l-box l-box--full">
         <section class="section">
             <header class="page-header page-header--title-left">
-                <div class="title title--author">
-                    {{ partial "img/portrait.html" . }}
+                <div class="title title--sans title--author">
+                    {{- partial "img/portrait.html" . }}
                     <div>
-                        {{ partial "file/vscode_start.html" .Page }}
-                        {{ partial "title/title.html" .Page }}
-                        {{ partial "file/vscode_end.html" .Page }}
-                        {{ partial "title/subtitle.html" .Page }}
+                        {{- partial "file/vscode_start.html" .Page }}
+                        {{- partial "title/title.html" .Page }}
+                        {{- partial "file/vscode_end.html" .Page }}
+                        {{- partial "title/subtitle.html" .Page }}
                     </div>
                 </div>
-                {{ partial "img/featured.html" . }}
+                {{- partial "img/featured.html" . }}
             </header>
             {{ with .Content }}
                 <div class="md md--sans md--margin-left md--h-serif md--list">
@@ -21,7 +21,8 @@
         </section>
         <section class="section">
             <hr>
-            <h2>Latest contributions:</h2>
+            <h2>Latest Contributions</h2>
+            {{- page.Scratch.Set "level" 3 -}}
             {{ with first 6 .RegularPages.ByLastmod.Reverse }}
                 <nav class="card-nav card-nav--3 card-nav--top margin-left">
                     <ul class="card-nav__list">

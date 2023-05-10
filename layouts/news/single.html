@@ -6,13 +6,13 @@
             {{ partial "nav/taxonomies/page/lists.html" . }}
             {{ partial "date/published_datetime.html" . }}
         </div>
-        <div class="title title--serif margin-left">
+        <div class="title title--sans margin-left">
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
           <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
-      <div class="md md--sans md--h-serif md--margin-left">
+      <div class="md md--sans md--h-sans md--margin-left">
           {{- partial "replacements.html" .Content -}}
       </div>
     </div>

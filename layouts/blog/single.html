@@ -7,13 +7,13 @@
             {{ partial "date/published_datetime.html" . }}
         </div>
         {{ partial "title/titlehead-margin.html" . }}
-        <div class="title title--serif margin-left">
+        <div class="title title--sans margin-left">
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
           {{ partial "img/featured.html" . }}
       </header>
-      <div class="md md--sans md--h-serif md--margin-left">
+      <div class="md md--sans md--h-sans md--margin-left">
           {{- partial "replacements.html" .Content -}}
       </div>
     </div>

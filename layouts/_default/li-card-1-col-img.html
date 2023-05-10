@@ -1,27 +1,32 @@
 <div class="card__flex card__flex--1">
-    {{ partial "img/featured-card-1.html" .  }}
+    {{- partial "img/featured-card-1.html" .  -}}
     <div class="card__content">
         <div>
             <nav class="card__header">
                 <div class="meta meta--card meta--card--1">
                     {{- partial "nav/card/meta/firstsection-category.html" . -}}
-                    {{ partial "date/date.html" . }}
+                    {{- partial "date/date.html" . -}}
                 </div>
-                {{ partial "nav/card/title/col1.html" . }}
+                {{- $level := 2 -}}
+                {{- with page.Scratch.Get "level" -}}
+                    {{- $level = . -}}
+                {{- end -}}
+                {{ partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
             </nav>
             <div class="md md--sans md--card md--card--1">
-                {{ partial "summary.html" . }}
+                {{- partial "summary.html" . -}}
             </div>
         </div>
         <div class="card__footer">
-            {{ partial "authors/portrait-tiny.html" . }}
-            {{ $modifier := "" }}
+            {{- partial "authors/portrait-tiny.html" . -}}
+            {{- $modifier := "" -}}
             {{- if eq .Section "news" }}
                 {{- $modifier = "link--news" }}
-            {{- end }}
-            {{- if or (eq .Section "blog") (eq .Section "article") }}
-                {{- $modifier = "link--post" }}
-            {{- end }}
+            {{- else }}
+                {{- if or (eq .Section "blog") (eq .Section "article") }}
+                    {{- $modifier = "link--post" }}
+                {{- end }}
+            {{- end -}}
             <a href="{{ .RelPermalink }}" class="link{{ with $modifier }} {{ . }}{{ end }}" rel="nofollow">&#8618;</a>
         </div>
     </div>
