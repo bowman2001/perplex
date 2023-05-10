@@ -5036,7 +5036,7 @@ h6:target .heading-anchor:before {
 #toc {
   display: block;
   position: absolute;
-  top: calc(var(--tnh) + var(--tg) + 1rem);
+  top: calc(var(--tnh) + 1rem);
   right: 0;
   width: 33rem;
   max-height: calc(100vh - var(--tnh) - 2 * 3rem - 4rem);
