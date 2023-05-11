@@ -1,7 +1,7 @@
 {{ $a := dict  }}
 {{ with .Name }}{{ $a = merge $a (dict "name" . ) }}{{ end }}
 {{ with .Title }}
-    {{ if not (eq . (path.Base $.Key)) }}{{ $a = merge $a (dict "title" . ) }}{{ end }}
+    {{ if not (eq . (path.Base $.RelPermalink)) }}{{ $a = merge $a (dict "title" . ) }}{{ end }}
 {{ end }}
 {{ with .Params }}
     {{ with .alt }}

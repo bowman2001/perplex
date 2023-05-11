@@ -456,7 +456,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
   background-color: #fefcfa;
 }
 #l-sidebar.is-visible {
@@ -4004,7 +4004,7 @@ li:empty:before {
   max-height: calc(100vh - var(--tnh) - 2 * 3rem - 4rem);
   overflow-y: auto;
   overflow-x: hidden;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 #toc.is-closed {
