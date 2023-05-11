@@ -9,6 +9,8 @@
     {{ else }}
         {{ with .caption }}
             {{ $a = merge $a (dict "alt" . ) }}
+        {{- else}}
+            {{- warnf "No alternative description for image %s." $.RelPermalink }}
         {{ end }}
     {{ end }}
     {{ with .anchor }}{{ $a = merge $a (dict "anchor" ( . | lower ) ) }}{{ end }}

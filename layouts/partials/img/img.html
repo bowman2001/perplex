@@ -37,25 +37,25 @@
             {{- $fallbackImg := $p.img.Resize (printf "%dx" (int (math.Max $fallbackWidth $p.img.Width)) ) -}}
             {{- $lqip := partial "img/func/generate-lqip.html" $p.img -}}
 
-            <img data-src="{{ $fallbackImg.RelPermalink }}"
+            <img data-src="{{ $fallbackImg.RelPermalink | safeHTMLAttr }}"
                  data-srcset="{{ partialCached "img/func/generate-global-srcset.html" (dict "img" $p.img "params" $p.params "a" .a ) (dict "img" $p.img "params" $p.params "a" .a )  }}"
                  data-sizes="auto"
                  data-aspectratio="{{ div $p.img.Width (float $p.img.Height) }}"
                  data-parentfit="cover"
                   {{- if lt (len $lqip.base64) 2048 -}}
-                      src="data:image/webp;base64,{{- $lqip.base64 | safeHTMLAttr -}}"
+                      src="data:image/webp;base64,{{ $lqip.base64 | safeHTMLAttr }}"
                   {{- else -}}
                       src="{{ $lqip.img.RelPermalink | safeHTMLAttr }}"
                   {{- end -}}
-               class="lazyload {{ with $imgClass -}}{{ . | safeHTMLAttr }}{{- end }}"
-                  {{- with .a.alt -}}
+                 class="lazyload{{ with $imgClass }} {{ . | safeHTMLAttr }}{{ end }}"
+                  {{- with .a.alt }}
                       alt="{{ . | safeHTMLAttr }}"
-                  {{- else -}}
-                      {{- warnf "No alternative description for image %s." $p.img.RelPermalink -}}
-                  {{- end -}}
-                    {{- with .a.title }} title="{{ . | safeHTMLAttr }}"{{ end -}}
-               width="{{ $fallbackImg.Width }}"
-                 height="{{ $fallbackImg.Height }}" />
+                  {{- end }}
+                    {{- with .a.title }}
+                        title="{{ . | safeHTMLAttr }}"
+                    {{ end -}}
+                   width="{{ $fallbackImg.Width }}"
+                   height="{{ $fallbackImg.Height }}" />
         {{- end -}}
         {{ if $container }}</span>{{ end }}
     {{- if .a.link }}</a>{{ end -}}
