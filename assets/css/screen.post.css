@@ -212,97 +212,6 @@ q:after {
   content: close-quote;
 }
 
-li {
-  page-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-       break-inside: avoid-column;
-}
-
-li:empty {
-  display: none;
-}
-
-li:empty:before {
-  display: none;
-}
-
-.md ol li,
-.md ul li {
-  position: relative;
-  padding-left: calc(3rem + 1 * var(--es));
-}
-
-.md ol li > p,
-.md ul li > p {
-  padding-bottom: 1rem;
-}
-
-.md ol li:before,
-.md ul li:before {
-  position: absolute;
-  left: 0;
-}
-
-.md ul li:before {
-  font-weight: 600;
-}
-
-.md ul li li:before {
-  font-weight: 450;
-}
-
-.md ul li li li:before {
-  font-weight: 300;
-}
-
-.md ul li:before {
-  content: "•";
-}
-
-.md ol {
-  counter-reset: ol1;
-}
-
-.md ol > li > ol {
-  counter-reset: ol2;
-}
-
-.md ol > li > ol > li > ol {
-  counter-reset: ol3;
-}
-
-.md ol > li:before {
-  content: counter(ol1) ".";
-  counter-increment: ol1;
-}
-
-.md ol > li > ol > li:before {
-  content: counter(ol2, lower-alpha) ")";
-  counter-increment: ol2;
-}
-
-.md ol > li > ol > li > ol > li:before {
-  content: counter(ol3, lower-roman) ".";
-  counter-increment: ol3;
-  letter-spacing: -0.05em;
-}
-
-.md ol li:before {
-  font-weight: 600;
-}
-
-.md ol li li:before {
-  font-weight: 450;
-}
-
-.md ol li li li:before {
-  font-weight: 300;
-}
-
-.smallindent li {
-  padding-left: 3rem !important;
-}
-
 .img__container {
   display: block;
   border-radius: .5rem;
@@ -3098,10 +3007,11 @@ h6:target .heading-anchor:before {
 }
 
 .md--footer h2 {
+  padding-bottom: 0;
   font-size: 1.43rem;
-  line-height: 2.5rem;
-  padding-top: .714465rem;
-  margin-bottom: -0.714465rem;
+  line-height: 2rem;
+  padding-top: .464465rem;
+  padding-bottom: .035535rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: .05em;
@@ -3769,11 +3679,6 @@ h6:target .heading-anchor:before {
   background-color: #444;
 }
 
-.md ul.indent-small li,
-.md ol.indent-small li {
-  padding-left: 3rem;
-}
-
 .md ul h5,
 .md ul h6,
 .md ol h5,
@@ -3782,20 +3687,78 @@ h6:target .heading-anchor:before {
   padding: 0;
 }
 
+.md ul li:before {
+  content: "•";
+}
+
+.md ol {
+  counter-reset: ol1;
+}
+
+.md ol > li > ol {
+  counter-reset: ol2;
+}
+
+.md ol > li > ol > li > ol {
+  counter-reset: ol3;
+}
+
+.md ol > li:before {
+  content: counter(ol1) ".";
+  counter-increment: ol1;
+}
+
+.md ol > li > ol > li:before {
+  content: counter(ol2, lower-alpha) ")";
+  counter-increment: ol2;
+}
+
+.md ol > li > ol > li > ol > li:before {
+  content: counter(ol3, lower-roman) ".";
+  counter-increment: ol3;
+  letter-spacing: -0.05em;
+}
+
+.md li {
+  position: relative;
+  padding-left: calc(3rem + 1 * var(--es));
+  page-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid-column;
+}
+
+.md li > p {
+  padding-bottom: 1rem;
+}
+
+.md li:before {
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+}
+
+.md li li:before {
+  font-weight: 400;
+}
+
+.md li li li:before {
+  font-weight: 300;
+}
+
 .md .ol-continue {
   counter-reset: none;
 }
 
-.md > ul > li:last-child > p:last-child,
-.md > ol > li:last-child > p:last-child {
-  padding-bottom: 0;
+.md--small li {
+  padding-left: 2.5rem;
 }
 
-.md--small ul li,
-.md--small ol li,
-.md--tiny ul li,
-.md--tiny ol li {
+.md--tiny li {
   padding-left: 2rem;
+}
+
+.smallindent li {
+  padding-left: 3rem !important;
 }
 
 @media screen and (min-width: 39em) {
@@ -5030,6 +4993,14 @@ h6:target .heading-anchor:before {
 
 .has-active > .chk-menu:checked ~ .open-menu > span:after {
   content: "";
+}
+
+li:empty {
+  display: none;
+}
+
+li:empty:before {
+  display: none;
 }
 
 #toc {
