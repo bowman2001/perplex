@@ -45,7 +45,7 @@
                   {{- if lt (len $lqip.base64) 2048 -}}
                       src="data:image/webp;base64,{{- $lqip.base64 -}}"
                   {{- else -}}
-                      src="{{ $lqip.img.RelPermalink }}"
+                      src="{{ $lqip.img.RelPermalink | safeHTMLAttr }}"
                   {{- end -}}
                class="lazyload {{ with $imgClass -}}{{ . }}{{- end }}"
                   {{- with .a.alt -}}

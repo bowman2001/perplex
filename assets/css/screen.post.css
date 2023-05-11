@@ -1398,7 +1398,7 @@ h6:target .heading-anchor:before {
 }
 
 .title--taxo > hr {
-  border-top: .3rem solid #111;
+  border-top: .35rem solid #111;
   height: 1rem;
 }
 
@@ -1516,7 +1516,7 @@ h6:target .heading-anchor:before {
 }
 
 .section > hr {
-  border-bottom: .1rem solid #111;
+  border-bottom: .25rem solid #111;
   height: 1rem;
   margin: 0 2rem;
 }
@@ -2361,7 +2361,7 @@ h6:target .heading-anchor:before {
   font-size: 1.625rem;
   line-height: 2.5rem;
   padding-top: .6414375rem;
-  margin-bottom: -0.6414375rem;
+  padding-bottom: .3585625rem;
 }
 
 .md--card--3halfs {
@@ -4703,9 +4703,8 @@ h6:target .heading-anchor:before {
   margin-bottom: -0.35454925rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: .02em;
-  word-spacing: .06em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
+  word-spacing: .03em;
   text-decoration-color: rgba(0, 0, 0, 0);
 }
 
@@ -4724,10 +4723,10 @@ h6:target .heading-anchor:before {
 
 .card__title--half .title__link {
   margin-bottom: 0;
-  font-size: 1.3585rem;
+  font-size: 1.5015rem;
   line-height: 1.5rem;
-  padding-top: .24124175rem;
-  padding-bottom: .25875825rem;
+  padding-top: .43768825rem;
+  padding-bottom: .56231175rem;
   letter-spacing: .02em;
   word-spacing: .06em;
 }
@@ -4752,7 +4751,7 @@ h6:target .heading-anchor:before {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 2rem 2rem 1.5rem;
+  padding: 1rem 2rem 2rem 1.5rem;
   width: 100%;
 }
 

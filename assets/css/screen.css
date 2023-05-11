@@ -1125,7 +1125,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   max-width: unset;
 }
 .title--taxo > hr {
-  border-top: 0.3rem solid #111111;
+  border-top: 0.35rem solid #111111;
   height: 1rem;
 }
 .title--taxo h1 {
@@ -1228,7 +1228,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-bottom: 3rem;
 }
 .section > hr {
-  border-bottom: 0.1rem solid #111111;
+  border-bottom: 0.25rem solid #111111;
   height: 1rem;
   margin: 0 2rem;
 }
@@ -1828,7 +1828,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-size: 1.625rem;
   line-height: 2.5rem;
   padding-top: 0.6414375rem;
-  margin-bottom: -0.6414375rem;
+  padding-bottom: 0.3585625rem;
 }
 
 .md--card--3halfs {
@@ -3737,9 +3737,8 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-bottom: -0.35454925rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  word-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  word-spacing: 0.03em;
   text-decoration-color: transparent;
 }
 
@@ -3758,10 +3757,10 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .card__title--half .title__link {
   margin-bottom: 0;
-  font-size: 1.3585rem;
+  font-size: 1.5015rem;
   line-height: 1.5rem;
-  padding-top: 0.24124175rem;
-  padding-bottom: 0.25875825rem;
+  padding-top: 0.43768825rem;
+  padding-bottom: 0.56231175rem;
   letter-spacing: 0.02em;
   word-spacing: 0.06em;
 }
@@ -3786,7 +3785,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 2rem 2rem 1.5rem;
+  padding: 1rem 2rem 2rem 1.5rem;
   width: 100%;
 }
 .card__footer .link {
