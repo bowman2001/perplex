@@ -7,10 +7,7 @@ params:
   
   # All parameters may be set per page in the front-matter
   subtitle    : false
-  toc         : true
   toctitle    : On this Page
-  latex       : false
-  latex_dollar: true
   mermaid     : false
   svg         : inline
   
@@ -128,6 +125,14 @@ module  :
       mounts:
         - source: partials
           target: layouts/partials
+    - path: github.com/bowman2001/hugo-mod-katex
+      mounts:
+        - source: assets
+          target: assets
+        - source: layouts
+          target: layouts
+        - source: static
+          target: static
   
   mounts :
     - source: archetypes

@@ -2,6 +2,14 @@ github.com/bowman2001/hugo-mod-csp v0.0.0-20230416141946-6c04cdfa7b1b h1:AiutzCU
 github.com/bowman2001/hugo-mod-csp v0.0.0-20230416141946-6c04cdfa7b1b/go.mod h1:XuKTqGkSb+Ntff/r+cA/Hb6RQRjtApnHvrI1/A4jk0g=
 github.com/bowman2001/hugo-mod-csp v0.0.0-20230417074552-cfbb783707d1 h1:lQJQ3wePj1g3Iq4KuajG2j+pnuLF1gUBkWgOi8gNxwM=
 github.com/bowman2001/hugo-mod-csp v0.0.0-20230417074552-cfbb783707d1/go.mod h1:XuKTqGkSb+Ntff/r+cA/Hb6RQRjtApnHvrI1/A4jk0g=
+github.com/bowman2001/hugo-mod-katex v0.0.0-20230513132514-b12b8e097eb5 h1:iyOiHf3ryPeeYGf84udVftREc+L91wIeXsXEVusANbM=
+github.com/bowman2001/hugo-mod-katex v0.0.0-20230513132514-b12b8e097eb5/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
+github.com/bowman2001/hugo-mod-katex v0.0.0-20230513180852-250df0859b51 h1:x3fTgpdUBQO73SzsWCi5ELv/+PYBjasXdbMWaH/SGsI=
+github.com/bowman2001/hugo-mod-katex v0.0.0-20230513180852-250df0859b51/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
+github.com/bowman2001/hugo-mod-katex v0.1.0 h1:YLfi4X0fy4iQqZWsBoNC12Mbwq1LCXsAK0lfOwnp+2A=
+github.com/bowman2001/hugo-mod-katex v0.1.0/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
+github.com/bowman2001/hugo-mod-katex v0.1.1 h1:q7uYLROY5GRPyW7u8gqjxGhkTJ2NAErvEIiimG48IsU=
+github.com/bowman2001/hugo-mod-katex v0.1.1/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0 h1:C+Pqx3un5tM72pq4kagQBG7Lo9Bkq95FX6PJukiZVs8=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011095211-5235a7d291a6 h1:w9cnla200kYKA5iWO0eur0FJeQodaOIpT7Ryr+48QEw=

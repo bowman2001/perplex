@@ -1146,7 +1146,7 @@ h6:target .heading-anchor:before {
 }
 
 .titlehead {
-  margin: 0 2rem 2rem 2rem;
+  margin: 2rem;
   padding: 1rem 0;
   max-width: 70rem;
   border-radius: .5rem;
@@ -1201,7 +1201,7 @@ h6:target .heading-anchor:before {
   font-size: 2.86rem;
   line-height: 4rem;
   padding-top: .92893rem;
-  margin-bottom: calc(-0.92893rem + var(--es));
+  margin-bottom: -0.92893rem;
   letter-spacing: .005em;
   word-spacing: .015em;
 }
@@ -1494,7 +1494,7 @@ h6:target .heading-anchor:before {
 .md > .box,
 .md > .box-info,
 .md > .box-warn,
-.md > .katex-wrapper {
+.md > .katex-block {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1697,7 +1697,7 @@ h6:target .heading-anchor:before {
   .md .p-first {
     font-size: 2.6rem;
     line-height: 4rem;
-    padding-top: .0263rem;
+    padding-top: calc(0.0263rem + var(--es));
     padding-bottom: calc(0.9737rem + var(--es));
   }
 }
@@ -2390,7 +2390,7 @@ h6:target .heading-anchor:before {
   .md--margin-left > .box,
   .md .md--margin-left > .box-warn,
   .md .md--margin-left > .box-info,
-  .md--margin-left > .katex-wrapper {
+  .md--margin-left > .katex-block {
     margin-left: 37rem;
   }
 }
@@ -4449,7 +4449,7 @@ h6:target .heading-anchor:before {
   }
 
   .card__flex--1 .card__content {
-    margin: 0;
+    margin: 1rem 0 0 0;
   }
 }
 
@@ -4714,8 +4714,14 @@ h6:target .heading-anchor:before {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1rem 2rem 2rem 1.5rem;
+  padding: 0 2rem 2rem 1.5rem;
   width: 100%;
+}
+
+@media screen and (min-width: 39em) {
+  .card__footer {
+    padding: 1rem 2rem 2rem 1.5rem;
+  }
 }
 
 .card__footer .link {

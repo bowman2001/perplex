@@ -906,7 +906,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 
 .titlehead {
-  margin: 0 2rem 2rem 2rem;
+  margin: 2rem;
   padding: 1rem 0;
   max-width: 70rem;
   border-radius: 0.5rem;
@@ -953,7 +953,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   font-size: 2.86rem;
   line-height: 4rem;
   padding-top: 0.92893rem;
-  margin-bottom: calc(-0.92893rem + var(--es));
+  margin-bottom: -0.92893rem;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
 }
@@ -1194,7 +1194,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md > .highlight, .md > .maincol, .md > .literature, .md > .footnotes, .md > .gist, .md > .asciicast, .md > .box, .md > .box-info, .md > .box-warn, .md > .katex-wrapper {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md > .highlight, .md > .maincol, .md > .literature, .md > .footnotes, .md > .gist, .md > .asciicast, .md > .box, .md > .box-info, .md > .box-warn, .md > .katex-block {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1320,7 +1320,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .md .p-first {
     font-size: 2.6rem;
     line-height: 4rem;
-    padding-top: 0.0263rem;
+    padding-top: calc(0.0263rem + var(--es));
     padding-bottom: calc(0.9737rem + var(--es));
   }
 }
@@ -1833,7 +1833,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left > .highlight, .md--margin-left > .maincol, .md--margin-left > .literature, .md--margin-left > .footnotes, .md--margin-left > .gist, .md--margin-left > .asciicast, .md--margin-left > .box, .md .md--margin-left > .box-warn, .md .md--margin-left > .box-info, .md--margin-left > .katex-wrapper {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left > .highlight, .md--margin-left > .maincol, .md--margin-left > .literature, .md--margin-left > .footnotes, .md--margin-left > .gist, .md--margin-left > .asciicast, .md--margin-left > .box, .md .md--margin-left > .box-warn, .md .md--margin-left > .box-info, .md--margin-left > .katex-block {
     margin-left: 37rem;
   }
 }
@@ -3553,7 +3553,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
     height: 100%;
   }
   .card__flex--1 .card__content {
-    margin: 0;
+    margin: 1rem 0 0 0;
   }
 }
 
@@ -3763,8 +3763,13 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1rem 2rem 2rem 1.5rem;
+  padding: 0 2rem 2rem 1.5rem;
   width: 100%;
+}
+@media screen and (min-width: 39em) {
+  .card__footer {
+    padding: 1rem 2rem 2rem 1.5rem;
+  }
 }
 .card__footer .link {
   display: inline-block;
