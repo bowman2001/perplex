@@ -10,6 +10,8 @@ github.com/bowman2001/hugo-mod-katex v0.1.0 h1:YLfi4X0fy4iQqZWsBoNC12Mbwq1LCXsAK
 github.com/bowman2001/hugo-mod-katex v0.1.0/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-katex v0.1.1 h1:q7uYLROY5GRPyW7u8gqjxGhkTJ2NAErvEIiimG48IsU=
 github.com/bowman2001/hugo-mod-katex v0.1.1/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
+github.com/bowman2001/hugo-mod-katex v0.2.0 h1:745I1uUktO/4a647M5Hkq39mBwZlVzxieR2b5I/03p8=
+github.com/bowman2001/hugo-mod-katex v0.2.0/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0 h1:C+Pqx3un5tM72pq4kagQBG7Lo9Bkq95FX6PJukiZVs8=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011092154-9bf220a941c0/go.mod h1:PTObNZgKG0C9BgJD/3VTtyyp1wwpn7qLg9KfGLxYInY=
 github.com/bowman2001/hugo-mod-meta v0.0.0-20221011095211-5235a7d291a6 h1:w9cnla200kYKA5iWO0eur0FJeQodaOIpT7Ryr+48QEw=

@@ -1494,7 +1494,8 @@ h6:target .heading-anchor:before {
 .md > .box,
 .md > .box-info,
 .md > .box-warn,
-.md > .katex-block {
+.md > .math-block,
+.md > .chem-block {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -2390,7 +2391,8 @@ h6:target .heading-anchor:before {
   .md--margin-left > .box,
   .md .md--margin-left > .box-warn,
   .md .md--margin-left > .box-info,
-  .md--margin-left > .katex-block {
+  .md--margin-left > .math-block,
+  .md--margin-left > .chem-block {
     margin-left: 37rem;
   }
 }

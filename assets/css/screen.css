@@ -1194,7 +1194,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md > .highlight, .md > .maincol, .md > .literature, .md > .footnotes, .md > .gist, .md > .asciicast, .md > .box, .md > .box-info, .md > .box-warn, .md > .katex-block {
+.md > p, .md > ul, .md > ol, .md > dl, .md > blockquote, .md > table, .md > pre, .md > .fig-diagram, .md > .highlight, .md > .maincol, .md > .literature, .md > .footnotes, .md > .gist, .md > .asciicast, .md > .box, .md > .box-info, .md > .box-warn, .md > .math-block, .md > .chem-block {
   max-width: 74rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1833,7 +1833,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   .md--margin-left > h1, .md--margin-left > h2, .md--margin-left > h3, .md--margin-left > h4, .md--margin-left > h5, .md--margin-left > h6, .md--margin-left > hr {
     margin-left: 39rem;
   }
-  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left > .highlight, .md--margin-left > .maincol, .md--margin-left > .literature, .md--margin-left > .footnotes, .md--margin-left > .gist, .md--margin-left > .asciicast, .md--margin-left > .box, .md .md--margin-left > .box-warn, .md .md--margin-left > .box-info, .md--margin-left > .katex-block {
+  .md--margin-left > p, .md--margin-left > ul, .md--margin-left > ol, .md--margin-left > dl, .md--margin-left > blockquote, .md--margin-left > table, .md--margin-left > pre, .md--margin-left > .fig-diagram, .md--margin-left > .highlight, .md--margin-left > .maincol, .md--margin-left > .literature, .md--margin-left > .footnotes, .md--margin-left > .gist, .md--margin-left > .asciicast, .md--margin-left > .box, .md .md--margin-left > .box-warn, .md .md--margin-left > .box-info, .md--margin-left > .math-block, .md--margin-left > .chem-block {
     margin-left: 37rem;
   }
 }
