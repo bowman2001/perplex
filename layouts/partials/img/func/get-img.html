@@ -1,5 +1,5 @@
 {{ $img := "" }}
-{{ $resource := (partial "func/get-resource.html" (dict "name" .name "currentPage" .currentPage ) )}}
+{{ $resource := (partial "func/get-resource.html" (dict "name" .name "currentPage" .currentPage  ) )}}
 {{ with $resource }}
     {{ if (eq $resource.MediaType.MainType "image") }}
         {{ $img = $resource }}

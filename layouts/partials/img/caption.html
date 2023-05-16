@@ -1,4 +1,10 @@
-{{ with .a.caption }}<span class="caption__text">{{ . | site.Home.RenderString }}</span>{{ end -}}
+{{- $ordinal := 0 }}
+{{ with .a.ordinal }}
+    {{ $ordinal = . }}
+{{ end }}
+{{- with .a.caption -}}
+<span class="caption__text">
+    {{ with $ordinal }}<strong>{{ . }}.</strong> {{ end }}{{ . | site.Home.RenderString }}</span>{{ end -}}
 {{ with .a.attr -}}
     {{- $attribution := ( . | site.Home.RenderString ) -}}
     {{- with $.a.attrlink -}}

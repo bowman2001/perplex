@@ -1,7 +1,9 @@
 {{ $path := (urls.Parse .Destination).Path }}
+{{ $ordinal := add .Ordinal 1 }}
 {{ $img := partial "img/func/get-img.html" (dict "name" $path "currentPage" .Page ) }}
 {{ $a := (dict (slice "class" "size") "normal") }}
 {{ with $img }}
+    {{ $a = merge $a (dict "ordinal" $ordinal) }}
     {{ $a = merge $a (partial "img/func/params/unsplash.html" . ) }}
     {{ $a = merge $a ( partial "img/func/params/resource_layout.html" . ) }}
     {{ $a = merge $a ( partial "img/func/params/resource_caption.html" (dict "img" . "a" $a ) ) }}

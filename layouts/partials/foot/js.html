@@ -1,2 +1,2 @@
-{{- $js := resources.Get "js/toggles.js" | fingerprint -}}
+{{- $js := resources.Get "js/toggles.js" | minify | fingerprint -}}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>

@@ -8,7 +8,6 @@ params:
   # All parameters may be set per page in the front-matter
   subtitle    : false
   toctitle    : On this Page
-  mermaid     : false
   svg         : inline
   
   paginateNr  : 5
@@ -66,6 +65,10 @@ params:
       size: [ tiny, small, medium, normal, large, xlarge ]
       posh: [ left, center, right ]
       posv: [ top, middle ]
+
+  mermaid:
+    version: 10
+    theme: base
   
   layout      :
     measure      : 70.0
@@ -126,13 +129,7 @@ module  :
         - source: partials
           target: layouts/partials
     - path: github.com/bowman2001/hugo-mod-katex
-      mounts:
-        - source: assets
-          target: assets
-        - source: layouts
-          target: layouts
-        - source: static
-          target: static
+    - path: github.com/bowman2001/hugo-mod-mermaid
   
   mounts :
     - source: archetypes
