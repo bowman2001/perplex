@@ -129,7 +129,19 @@ module  :
         - source: partials
           target: layouts/partials
     - path: github.com/bowman2001/hugo-mod-katex
+      mounts:
+        - source: assets
+          target: assets
+        - source: layouts
+          target: layouts
+        - source: static
+          target: static
     - path: github.com/bowman2001/hugo-mod-mermaid
+      mounts:
+        - source: assets
+          target: assets
+        - source: layouts
+          target: layouts
   
   mounts :
     - source: archetypes
