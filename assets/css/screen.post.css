@@ -216,7 +216,7 @@ q:after {
   display: block;
   border-radius: .5rem;
   overflow: hidden;
-  background: linear-gradient(#f3dcc5, #fefcfa);
+  background: #fff;
   box-shadow: 0 0 0 1px rgba(31, 31, 31, .15);
 }
 
@@ -5401,7 +5401,7 @@ figure {
   position: relative;
   z-index: 5;
   padding-top: 1.75rem;
-  margin-bottom: calc(1rem + 1 * var(--es));
+  padding-bottom: calc(1rem + 1 * var(--es));
   width: 100%;
   overflow: hidden;
 }

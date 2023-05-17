@@ -6,22 +6,22 @@
 params:
   
   # All parameters may be set per page in the front-matter
-  subtitle    : false
-  toctitle    : On this Page
-  svg         : inline
+  subtitle: false
+  toctitle: On this Page
+  svg: inline
   
-  paginateNr  : 5
+  paginateNr: 5
   
   ### Default taxonomies the theme can handle
-  taxonomies  :
-    tag     : tags
+  taxonomies:
+    tag: tags
     category: categories
-    series  : series
+    series: series
   
   ### Official values for the link '<a>' attributes
   link:
-    target: [_blank, _parent, _self, _top]
-    rel: [alternate, author, bookmark, external, help, license, next, nofollow, noopener, noreferrer, opener, prev, search, tag]
+    target: [ _blank, _parent, _self, _top ]
+    rel: [ alternate, author, bookmark, external, help, license, next, nofollow, noopener, noreferrer, opener, prev, search, tag ]
 
   ### TOC walk fragments
   toc:
@@ -39,10 +39,10 @@ params:
   #### Image processing
   
   ### Parameters
-  imaging     :
-    fallback_width : 1400 # In pixel, also used for meta images
-    sizestep       : 50 # In percent
-    min_width      : 100 # In pixel
+  imaging:
+    fallback_width: 1400 # In pixel, also used for meta images
+    sizestep: 50 # In percent
+    min_width: 100 # In pixel
     # Quality reduction for higher densities
     # quality_reduction: [ -10, -20, -30 ] TODO
     
@@ -50,18 +50,18 @@ params:
     ### Changing the following parameters in your own config will break things.
     
     # See https://gohugo.io/content-management/image-processing/#anchor
-    anchors        : [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
-    no_processing  : [ svg, gif ]
+    anchors: [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
+    no_processing: [ svg, gif ]
     raster_compress: [ bmp, jpeg, webp ]
     raster_lossless: [ tiff, png ]
-    rotate         : [ 90right, 90left, flip ]
-    webp_hints     : [ drawing, icon, photo, picture, text ]
-    rs_filter      : [ bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch ]
-    embedded       :
+    rotate: [ 90right, 90left, flip ]
+    webp_hints: [ drawing, icon, photo, picture, text ]
+    rs_filter: [ bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch ]
+    embedded:
       size: [ tiny, small, normal, full ]
       posh: [ left, right ]
       posv: [ top, middle ]
-    figure         :
+    figure:
       size: [ tiny, small, medium, normal, large, xlarge ]
       posh: [ left, center, right ]
       posv: [ top, middle ]
@@ -70,17 +70,17 @@ params:
     version: 10
     theme: base
   
-  layout      :
-    measure      : 70.0
-    column       : 33.0
-    gutter       : 4.0
+  layout:
+    measure: 70.0
+    column: 33.0
+    gutter: 4.0
     lineheightfac: 3.0
-    guttermobile : 2.0
-    xminmobile   : 8.0
-    xmaxmobile   : 8.5
-    xmin         : 6.6667
-    xmax         : 10.0
-    background   : '#ffffff'
+    guttermobile: 2.0
+    xminmobile: 8.0
+    xmaxmobile: 8.5
+    xmin: 6.6667
+    xmax: 10.0
+    background: '#ffffff'
 
 ### Markup
 
@@ -109,50 +109,21 @@ markup:
 
 ### IMPORTANT!
 ### This module configuration does only affect the folder of the theme.
-module  :
-
-  hugoVersion:
-    extended: false
-    min: "0.111.3"
-
+module:
   imports:
-    - path  : github.com/bowman2001/hugo-mod-replacements
-      mounts:
-        - source: partials
-          target: layouts/partials
-    - path  : github.com/bowman2001/hugo-mod-meta
-      mounts:
-        - source: partials
-          target: layouts/partials
+    - path: github.com/bowman2001/hugo-mod-meta
+    - path: github.com/bowman2001/hugo-mod-replacements
     - path: github.com/bowman2001/hugo-mod-open-in-vscode
-      mounts:
-        - source: partials
-          target: layouts/partials
     - path: github.com/bowman2001/hugo-mod-katex
-      mounts:
-        - source: assets
-          target: assets
-        - source: layouts
-          target: layouts
-        - source: static
-          target: static
     - path: github.com/bowman2001/hugo-mod-mermaid
-      mounts:
-        - source: assets
-          target: assets
-        - source: layouts
-          target: layouts
   
-  mounts :
+  mounts:
     - source: archetypes
       target: archetypes
-    
     - source: assets
       target: assets
-    
     - source: layouts
       target: layouts
-    
     - source: static
       target: static
 
@@ -162,18 +133,18 @@ module  :
 
 security:
   enableInlineShortcodes: false
-  exec                  :
+  exec:
     allow:
       - ^go$
     osEnv:
       - '.*'
       # - (?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|DISPLAY)$
-  funcs                 :
+  funcs:
     getenv:
       - ^HUGO_
       - ^GO
-  http                  :
+  http:
     methods:
       - (?i)GET|POST
-    urls   :
+    urls:
       - .*

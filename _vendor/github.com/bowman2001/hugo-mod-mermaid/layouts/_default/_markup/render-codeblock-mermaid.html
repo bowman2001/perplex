@@ -1,6 +1,18 @@
 {{ .Page.Store.Set "hasMermaid" true -}}
-<figure class="fig">
-    <pre class="img__container mermaid">
-    {{- .Inner -}}
+{{- $id := or .Attributes.id (printf "fig-%d" ( add .Ordinal 1)) }}
+{{- $class := or .Page.Params.mermaid.figure.class site.Data.hugoModMermaid.figure.class "fig fig--mermaid" }}
+{{- with .Attributes.class }}
+    {{- $class = (slice $class) | append (slice .) }}
+    {{- $class = delimit $class " " }}
+{{- end }}
+{{ $attrs := merge .Attributes (dict "id" $id "class" $class) }}
+<figure
+        {{- range $k, $v := $attrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end -}}
+>
+    {{ $container := or .Page.Params.mermaid.container.class site.Data.hugoModMermaid.container.class "img__container" }}
+    <pre class="mermaid {{ $container }}">
+        {{- .Inner -}}
     </pre>
 </figure>
