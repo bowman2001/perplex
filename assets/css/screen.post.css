@@ -220,7 +220,12 @@ q:after {
   box-shadow: 0 0 0 1px rgba(31, 31, 31, .15);
 }
 
+.img__container svg {
+  margin: 0 auto;
+}
+
 .img__container--footer {
+  filter: brightness(90%);
   padding: .5rem;
 }
 
@@ -641,7 +646,7 @@ body {
 #l-footer {
   flex: 0 0 auto;
   margin-top: 2rem;
-  background: #111;
+  background: #333;
 }
 
 #l-footer hr {
@@ -5513,7 +5518,7 @@ figure {
     right: 2rem;
     top: 1.75rem;
     width: 33rem;
-    height: calc(100% - 1.75rem);
+    height: calc(100% - 3.75rem);
     margin-left: 2rem;
     text-align: left;
     padding-left: 0;
