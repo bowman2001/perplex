@@ -1,6 +1,6 @@
-{{- if or (.Page.Store.Get "hasKatex") .Params.math -}}
+{{- if or (page.Store.Get "hasKatex") .Params.math -}}
     {{- partialCached "katex/css-and-main.html" . }}
-    {{- if or (.Page.Store.Get "hasChem") .Params.chem }}
+    {{- if or (page.Store.Get "hasChem") .Params.chem }}
         {{- partialCached "katex/mhchem.html" . }}
     {{- end }}
     {{- partialCached "katex/render-and-copy.html" . }}
