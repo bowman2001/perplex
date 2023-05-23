@@ -4,7 +4,7 @@
 {{ end }}
 {{- with .a.caption -}}
 <span class="caption__text">
-    {{ with $ordinal }}<strong>{{ . }}.</strong> {{ end }}{{ . | site.Home.RenderString }}</span>{{ end -}}
+    {{ with $ordinal }}<span class="caption__nr">{{ . }}.</span> {{ end }}{{ . | site.Home.RenderString }}</span>{{ end -}}
 {{ with .a.attr -}}
     {{- $attribution := ( . | site.Home.RenderString ) -}}
     {{- with $.a.attrlink -}}

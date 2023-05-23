@@ -72,7 +72,7 @@ either of these shortcodes in conjunction with this render hook.
 
 {{- /* Initialize. */}}
 {{- $renderHookName := "link" }}
-{{ $page := $.Page }}
+{{- $page := $.Page -}}
 
 {{- /* Verify minimum required version. */}}
 {{- $minHugoVersion := "0.111.3" }}
@@ -107,11 +107,11 @@ either of these shortcodes in conjunction with this render hook.
     {{ end }}
 {{- end }}
 
-{{ if eq .Destination "abbr" }}
-    {{ printf "<abbr title=%q>%s</abbr>" .Title .Text | safeHTML }}
-{{ else if eq .Destination "dfn" }}
-    {{ printf "<dfn id=%q>%s</dfn>" .Title .Text | safeHTML }}
-{{ else }}
+{{- if eq .Destination "abbr" }}
+    {{- printf "<abbr title=%q>%s</abbr>" .Title .Text | safeHTML }}
+{{- else if eq .Destination "dfn" }}
+    {{- printf "<dfn id=%q>%s</dfn>" .Title .Text | safeHTML }}
+{{- else }}
     {{- /* Parse destination. */}}
     {{- $u := "" }}
     {{- with urls.Parse .Destination }}
