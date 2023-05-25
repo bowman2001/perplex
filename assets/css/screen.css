@@ -1384,6 +1384,22 @@ body {
 .md .width_full {
   max-width: 100%;
 }
+@media screen and (min-width: 48em) {
+  .md .inline {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 48em) {
+  .md .block.block {
+    display: block;
+    margin-right: 37rem;
+  }
+}
+@media screen and (min-width: 79em) {
+  .md .block.block {
+    margin-left: 37rem;
+  }
+}
 .md .box, .md .box-warn, .md .box-info, .md .box-tip {
   position: relative;
   margin: 1rem 0 calc(1rem + 1 * var(--es)) 0;
@@ -2277,8 +2293,8 @@ body {
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   padding-bottom: 0;
 }
-.md h3 + dl, .md h3 + ul, .md h3 + ol {
-  margin-top: 1rem;
+.md h3:has(+ dl, + ul, + ol) {
+  margin-bottom: 1rem;
 }
 .md .h-warn .heading, .md .h-info .heading, .md .h-tip .heading {
   display: inline-block;
@@ -3058,7 +3074,7 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  .md--margin-left .highlight + .right, .md--margin-left .highlight + .right3 {
+  .md--margin-left .highlight + .right, .md--margin-left .highlight + .right3, .md--margin-left .inline + .right, .md--margin-left .inline + .right3 {
     margin-left: -37rem;
   }
 }

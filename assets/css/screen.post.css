@@ -1794,6 +1794,25 @@ body {
   max-width: 100%;
 }
 
+@media screen and (min-width: 48em) {
+  .md .inline {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .md .block.block {
+    display: block;
+    margin-right: 37rem;
+  }
+}
+
+@media screen and (min-width: 79em) {
+  .md .block.block {
+    margin-left: 37rem;
+  }
+}
+
 .md .box,
 .md .box-warn,
 .md .box-info,
@@ -2988,10 +3007,12 @@ body {
   padding-bottom: 0;
 }
 
-.md h3 + dl,
-.md h3 + ul,
-.md h3 + ol {
-  margin-top: 1rem;
+.md h3[\:has\(\%2Bdl\,\%2Bul\,\%2Bol\)] {
+  margin-bottom: 1rem;
+}
+
+.md h3:has(+dl,+ul,+ol) {
+  margin-bottom: 1rem;
 }
 
 .md .h-warn .heading,
@@ -3890,7 +3911,9 @@ body {
   }
 
   .md--margin-left .highlight + .right,
-  .md--margin-left .highlight + .right3 {
+  .md--margin-left .highlight + .right3,
+  .md--margin-left .inline + .right,
+  .md--margin-left .inline + .right3 {
     margin-left: -37rem;
   }
 }
