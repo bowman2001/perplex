@@ -1365,13 +1365,12 @@ body {
 
 .title--taxo h1 {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .title--author {
   display: inline-flex;
   flex-direction: row;
-  margin-top: -1rem;
   margin-bottom: -1rem;
 }
 
@@ -2535,7 +2534,7 @@ body {
 }
 
 @media screen and (min-width: 48em) {
-  .md .highlight .expand {
+  .md .highlight.expand {
     display: inline-block;
     min-width: 74rem;
     max-width: 111rem;
@@ -2740,6 +2739,7 @@ body {
 }
 
 .footnotes {
+  text-align: left;
   margin-top: -0.15em;
   word-wrap: break-word;
 }
@@ -3814,7 +3814,8 @@ body {
   .md .right {
     position: relative;
     z-index: 2;
-    min-width: 37rem;
+    min-width: 0;
+    min-width: initial;
     width: 37rem;
   }
 }
@@ -3865,8 +3866,10 @@ body {
   width: 50%;
 }
 
-.md .normal {
-  width: 100%;
+@media screen and (min-width: 39em) {
+  .md .normal {
+    width: 74rem;
+  }
 }
 
 .md .full {
