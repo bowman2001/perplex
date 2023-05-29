@@ -6,8 +6,7 @@
       <li>
         {{- $is_active := $page.IsMenuCurrent $menuName . -}}
         {{- $has_active := $page.HasMenuCurrent $menuName . -}}
-        {{- if $is_active -}}<span {{ else -}}<a {{ end -}}
-        class="ctrl__link {{ if $is_active -}}is-active{{- end }} {{ if $has_active -}}has-active{{- end }}"
+        {{- if $is_active -}}<span {{ else -}}<a {{ end }} class="nav-main__link {{ if $is_active -}}is-active{{- end }} {{ if $has_active -}}has-active{{- end }}"
            {{ if not $is_active }}href="{{ .URL }}"{{ else }} aria-current="page"{{ end }}>
             {{ if eq $menuName "main" }}
               {{- with .Pre -}}<span class="icon-font">{{ . }}</span>{{ end }}

@@ -1,0 +1,32 @@
+{{- $page := . }}
+<nav class="nav-main">
+    <ul class="top-nav">
+    {{- range site.Menus.main }}
+        {{- $a := dict }}
+        {{- $c := slice "ctrl__link" "nav-main__link" }}
+        {{- $tag := "a" }}
+        {{- if $page.IsMenuCurrent "main" . }}
+            {{- $tag = "span" }}
+            {{- $c = $c | append "is-active" }}
+            {{- $a = merge $a (dict "aria-current" "page") }}
+        {{- else }}
+            {{- $a = merge $a (dict "href" .URL) }}
+        {{- end }}
+        {{- if $page.HasMenuCurrent "main" . }}
+            {{- $c = $c | append "has-active" }}
+        {{- end }}
+        {{- $class := delimit $c " " }}
+        {{- $a = merge $a (dict "class" $class) }}
+        <li>
+            {{- printf "<%s " $tag | safeHTML }}
+            {{- range $k, $v := $a }}
+                {{- printf " %s=%q" $k $v | safeHTML }}
+            {{- end }}
+            {{- printf " >" | safeHTML }}
+            {{- with .Pre -}}<span class="icon-font">{{ . }}</span>{{ end -}}
+            {{- with .Name }}{{ . | site.Home.RenderString }}{{ end -}}
+            {{- printf "</%s>" $tag | safeHTML }}
+        </li>
+    {{- end }}
+    </ul>
+</nav>
