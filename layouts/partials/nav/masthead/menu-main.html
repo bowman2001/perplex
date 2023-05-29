@@ -1,6 +1,6 @@
 {{- $page := . }}
 <nav class="nav-main">
-    <ul class="top-nav">
+    <ul class="ul--row">
     {{- range site.Menus.main }}
         {{- $a := dict }}
         {{- $c := slice "ctrl__link" "nav-main__link" }}
@@ -15,8 +15,7 @@
         {{- if $page.HasMenuCurrent "main" . }}
             {{- $c = $c | append "has-active" }}
         {{- end }}
-        {{- $class := delimit $c " " }}
-        {{- $a = merge $a (dict "class" $class) }}
+        {{- $a = merge $a (dict "class" (delimit $c " ")) }}
         <li>
             {{- printf "<%s " $tag | safeHTML }}
             {{- range $k, $v := $a }}
