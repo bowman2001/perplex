@@ -1,0 +1,8 @@
+<svg width="200" height="200" version="1.1" viewBox="0 0 52.917 52.917" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(0 -244.08)">
+  <rect x="3.7529e-6" y="244.08" width="52.917" height="52.917" style="fill-opacity:.26667;stroke-width:.26458"/>
+  <text x="26.458332" y="258.82437" style="fill:#000000;font-family:'IBM Plex Sans Condensed';font-feature-settings:normal;font-size:8.4667px;font-stretch:condensed;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-weight:500;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan x="26.458332" y="258.82437" style="stroke-width:.26458">Small</tspan></text>
+  <text x="26.458334" y="286.51114" style="fill:#000000;font-family:'IBM Plex Sans Condensed';font-feature-settings:normal;font-size:8.4667px;font-stretch:condensed;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-weight:500;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan x="26.458334" y="286.51114" style="stroke-width:.26458">¼</tspan></text>
+  <text x="26.552828" y="270.44714" style="fill:#000000;font-family:'IBM Plex Sans Condensed';font-feature-settings:normal;font-size:8.4667px;font-stretch:condensed;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-weight:500;letter-spacing:0px;line-height:1.25;stroke-width:.26458;text-align:center;text-anchor:middle;word-spacing:0px" xml:space="preserve"><tspan x="26.552828" y="270.44714" style="stroke-width:.26458">embedded</tspan></text>
+ </g>
+</svg>

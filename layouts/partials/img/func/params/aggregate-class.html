@@ -1,3 +1,4 @@
+{{ $page := page }}
 {{ $class := slice }}
 {{ $optPosh := "" }}
 {{ $optPosv := "" }}
@@ -27,7 +28,7 @@
                     {{ $class = $class | append (print "fig--size-" . )}}
                 {{ end }}
             {{ else }}
-                {{ errorf "Unable to generate the CSS class for %s. The key 'size' contains the invalid value '%s'. Only the values %s are possible." $.img.RelPermalink . $optSize }}
+                {{ errorf "%s Unable to generate the CSS class for %s. The key 'size' contains the invalid value '%s'. Only the values %s are possible." $page $.img.RelPermalink . $optSize }}
             {{ end }}
         {{ end }}
         {{ with .plain }}

@@ -125,7 +125,7 @@ either of these shortcodes in conjunction with this render hook.
 
     {{- /* Set attributes for anchor element. */}}
     {{- $attrs := dict "href" $u.String }}
-    {{- if $u.IsAbs }}
+    {{- if and $u.IsAbs (ne $u.Host site.BaseURL) }}
         {{- /* Destination is external. */}}
         {{- $attrs = merge $attrs (dict "rel" "external") }}
     {{- else }}
@@ -191,7 +191,7 @@ either of these shortcodes in conjunction with this render hook.
     {{- end -}}
 
     {{- /* Render anchor element. */ -}}
-    <a class="md-hook-link"
+    <a class="hook-link"
             {{- range $k, $v := $attrs }}
                 {{- printf " %s=%q" $k $v | safeHTMLAttr }}
             {{- end -}}

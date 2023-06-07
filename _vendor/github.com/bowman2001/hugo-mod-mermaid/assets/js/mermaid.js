@@ -1,4 +1,4 @@
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@{{ $.Params.mermaid.version | default "latest" }}/dist/mermaid.esm.min.mjs';
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@{{ or $.Params.mermaid.version site.Data.hugoModMermaid.version "latest" }}/dist/mermaid.esm.min.mjs';
 {{ $config := slice }}
 {{ with site.Data.hugoModMermaid }}
     {{- range $k, $v := . -}}

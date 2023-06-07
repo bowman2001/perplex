@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     renderMathInElement(document.body, {
-        // customised options
+        // customized options
         // • auto-render specific keys, e.g.:
         delimiters: [
             {left: '$$', right: '$$', display: true},
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
             {left: '\\(', right: '\\)', display: false},
             {left: '\\[', right: '\\]', display: true}
         ],
-        fleqn: true,
-        leqno: false,
+        fleqn: false,
+        leqno: true,
         // • rendering keys, e.g.:
         throwOnError : false
     });

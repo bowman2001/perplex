@@ -110,22 +110,15 @@ markup:
 ### IMPORTANT!
 ### This module configuration does only affect the folder of the theme.
 module:
+  hugoVersion:
+    extended: false
+    min: "v0.112.0"
   imports:
     - path: github.com/bowman2001/hugo-mod-meta
     - path: github.com/bowman2001/hugo-mod-replacements
     - path: github.com/bowman2001/hugo-mod-open-in-vscode
     - path: github.com/bowman2001/hugo-mod-katex
     - path: github.com/bowman2001/hugo-mod-mermaid
-  
-  mounts:
-    - source: archetypes
-      target: archetypes
-    - source: assets
-      target: assets
-    - source: layouts
-      target: layouts
-    - source: static
-      target: static
 
 ### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!

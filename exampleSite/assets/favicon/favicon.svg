@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256"><svg version="1.1" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+ <style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: contrast(0.8333333333333334) brightness(1.7); } }</style>
+ <g>
+  <rect x="16" y="16" width="224" height="224" ry="4" style="fill:#fbf5df;paint-order:markers fill stroke;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:16;stroke-width:32;stroke:#efd16d"></rect>
+ </g>
+ <svg version="1.1" viewBox="0 0 256 256">
+  <svg version="1.1" viewBox="0 0 256 256">
+   <g transform="scale(1 .999)" aria-label="PX">
+    <path d="m16 200v-144h59.7q19 0 28.7 11.8 9.91 11.8 9.91 32.4t-9.91 32.4q-9.7 11.8-28.7 11.8h-33.9v55.7zm25.8-78.2h31.2q6.61 0 10.3-3.51 3.92-3.72 3.92-11.8v-12.8q0-8.05-3.92-11.6-3.72-3.72-10.3-3.72h-31.2z" style="fill:#c9177e;stroke-width:.999"></path>
+    <path d="m239 200h-29.7l-28.1-53.9h-2.68l-27.7 53.9h-27.7l41.1-73.7-39-70.4h29.5l25.6 50h2.89l26-50h27.7l-39.6 70.2z" style="fill:#0083c0;stroke-width:.999"></path>
+   </g>
+  </svg>
+  <style>@media (prefers-color-scheme: light) { :root { filter: none; } }</style>
+ </svg>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

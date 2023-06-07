@@ -1,4 +1,9 @@
-{{ $path := (urls.Parse .Destination).Path }}
+{{- $path := "" }}
+{{- with (urls.Parse .Destination).Path }}
+    {{- $path = . }}
+{{- else }}
+    {{ errorf "Can’t find resource. Destination '%s' is malformed." .Destination }}
+{{- end }}
 {{ $ordinal := add .Ordinal 1 }}
 {{ $img := partial "img/func/get-img.html" (dict "name" $path "currentPage" .Page ) }}
 {{ $a := (dict (slice "class" "size") "normal") }}
