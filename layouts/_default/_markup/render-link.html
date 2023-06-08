@@ -98,13 +98,9 @@ either of these shortcodes in conjunction with this render hook.
 
 {{- $contentPath := "" }}
 {{- with .Page.File }}
-    {{ with .Path }}
-        {{- $contentPath = . }}
-    {{ end }}
+        {{- $contentPath = .Path }}
 {{- else }}
-    {{ with .Path }}
-        {{- $contentPath = . }}
-    {{ end }}
+        {{- $contentPath = "" }}
 {{- end }}
 
 {{- if eq .Destination "abbr" }}

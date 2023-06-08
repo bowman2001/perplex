@@ -1,8 +1,42 @@
 baseURL: https://example.org
-title: Perplex Theme Example
+title: Perplex Example
+
+refLinksErrorLevel: warning
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+      wrapStandAloneImageWithinParagraph: false
+    renderer:
+      hardWraps: true
+  highlight:
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: github
+    tabWidth: 4
+
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
+
 module:
   imports:
     - path: github.com/bowman2001/perplex
+
+  mounts:
+    - source: "../../../../perplex-example/content"
+      target: content
 
 params:
   description: An example site for the Hugo theme Perplex
