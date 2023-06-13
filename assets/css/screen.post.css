@@ -159,6 +159,7 @@ hr {
   --c-nav-link: #006a9c;
   --c-nav-link-hover: hsl(325, 79%, 44%);
   --c-code: #1a282f;
+  --c-code-extralow: #59737f;
   --c-code-bg: #fff;
   --c-danger: #fff;
   --c-danger-bg: hsl(0, 80%, 47.5%);
@@ -2595,6 +2596,10 @@ body {
   padding: 1rem 0;
 }
 
+.md .note code {
+  color: var(--c-code-extralow);
+}
+
 .md .language-mermaid {
   text-align: center;
 }
@@ -3935,6 +3940,7 @@ body {
 .md .box-warn,
 .md .box-info,
 .md .box-success {
+  --box-shadow-color: var(--c-shadow-2);
   position: relative;
   z-index: 2;
   text-align: left;
@@ -3942,7 +3948,7 @@ body {
   max-width: 70rem;
   background-color: var(--c-bg-2);
   border-radius: .5rem;
-  box-shadow: 0 0 0 1px var(--c-shadow-2);
+  box-shadow: 0 0 0 1px var(--box-shadow-color);
   clear: both;
 }
 
@@ -3963,30 +3969,32 @@ body {
   padding-left: 1rem;
   border-left-width: 1rem;
   border-left-style: solid;
+  border-left-color: var(--box-shadow-color);
 }
 
 .md .box-danger {
   color: var(--c-text-high);
   background-color: var(--c-danger-box-bg);
   border-left-color: var(--c-danger-bg);
+  --box-shadow-color: var(--c-danger-bg);
 }
 
 .md .box-warn {
   color: var(--c-text-high);
   background-color: var(--c-warn-box-bg);
-  border-left-color: var(--c-warn-box);
+  --box-shadow-color: var(--c-warn-box);
 }
 
 .md .box-info {
   color: var(--c-text-semihigh);
   background-color: var(--c-info-box-bg);
-  border-left-color: var(--c-info-bg);
+  --box-shadow-color: var(--c-info-bg);
 }
 
 .md .box-success {
   color: var(--c-text-semihigh);
   background-color: var(--c-success-box-bg);
-  border-left-color: var(--c-success-bg);
+  --box-shadow-color: var(--c-success-bg);
 }
 
 @media screen and (min-width: 79em) {

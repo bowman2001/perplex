@@ -34,10 +34,6 @@ module:
   imports:
     - path: github.com/bowman2001/perplex
 
-  mounts:
-    - source: "../../../../perplex-example/content"
-      target: content
-
 params:
   description: An example site for the Hugo theme Perplex
   favicon:
