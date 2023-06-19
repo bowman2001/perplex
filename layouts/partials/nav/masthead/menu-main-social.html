@@ -1,0 +1,19 @@
+<nav>
+    <ul class="ul--row">
+        {{- range site.Menus.main_social }}
+            {{- $a := dict "class" "ctrl__extlink" }}
+            {{- with .URL }}
+                {{- $a = merge $a (dict "href" . ) }}
+            {{- else }}
+                {{- errorf "No URL for entry in main social menu." }}
+            {{- end }}
+            <li>
+                {{- with .Pre -}}
+                    <a {{ range $k, $v := $a }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{ end }} >
+                        {{- partial "simple-icon.html" ( dict "id" . ) -}}
+                    </a>
+                {{- end -}}
+            </li>
+        {{- end }}
+    </ul>
+</nav>

@@ -12,3 +12,5 @@ github.com/bowman2001/hugo-mod-open-in-vscode v1.2.0 h1:EU+WDkw6NbA15TPcLEudk4YB
 github.com/bowman2001/hugo-mod-open-in-vscode v1.2.0/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
 github.com/bowman2001/hugo-mod-replacements v0.3.2 h1:cPMn4hKUhhBTa1qs9SpiBtWhQ69IzBh5iPxL8BAvguk=
 github.com/bowman2001/hugo-mod-replacements v0.3.2/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
+github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20230619093607-227aa7ba45c3 h1:WQoc/JfMuzcRvml5PjiRIpXnpHsL16uU21TXDcNjHSM=
+github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20230619093607-227aa7ba45c3/go.mod h1:VYsc/Eirw/18yQjkxduLrh7IhNHYQR4YDRaKcMMS9Nk=

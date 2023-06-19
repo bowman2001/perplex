@@ -283,9 +283,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   color: var(--c-text-link);
   text-decoration-color: inherit;
 }
-.hook-link code {
-  text-decoration-color: #fff;
-}
 .hook-link:hover, .hook-link:focus {
   background-color: var(--c-text-link-hover-bg);
   color: var(--c-text-link-hover);
@@ -722,17 +719,6 @@ body {
     width: 55.5rem;
     border-right: 1px solid var(--c-text-extralow);
     margin-right: 2rem;
-  }
-}
-@media screen and (min-width: 79em) {
-  #l-sidebar {
-    grid-area: left;
-    position: static;
-    width: 35rem;
-    animation: fade 150ms;
-    height: 100%;
-    padding-left: 0;
-    padding-right: 0;
     scrollbar-gutter: stable;
     scrollbar-color: var(--c-scrollbar) var(--c-bg-3);
   }
@@ -745,6 +731,17 @@ body {
   }
   #l-sidebar::-webkit-scrollbar-track {
     background: var(--c-bg-3);
+  }
+}
+@media screen and (min-width: 79em) {
+  #l-sidebar {
+    grid-area: left;
+    position: static;
+    width: 35rem;
+    animation: fade 150ms;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -817,11 +814,13 @@ body {
   }
 }
 
-.icon-svg {
+.icon {
   display: inline-block;
   height: 3rem;
   width: 3rem;
+  fill: currentColor;
 }
+
 .icon-font {
   font-family: "Material Icons", monospace;
   font-weight: 400;
@@ -3105,21 +3104,17 @@ body {
 }
 
 .md .box, .md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
+  --es: 0.5rem;
   --box-shadow-color: var(--c-shadow-2);
   position: relative;
   z-index: 2;
   text-align: left;
-  margin: 1rem 2rem 2rem 2rem;
+  margin: 1rem 2rem 2.5rem 2rem;
   max-width: 70rem;
   background-color: var(--c-bg-2);
   border-radius: 0.5rem;
   box-shadow: 0 0 0 1px var(--box-shadow-color);
   clear: both;
-}
-@media screen and (max-width: 39em) {
-  .md .box, .md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
-    padding-bottom: 1rem;
-  }
 }
 .md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
   padding-left: 1rem;
@@ -3214,46 +3209,54 @@ body {
   padding: 0 2rem;
   color: var(--c-frame-text);
 }
-.ctrl button {
-  display: inline-block;
-  font-size: 3rem;
-  line-height: 3rem;
-  padding: 1rem;
-  background: inherit;
-  color: inherit;
-}
-.ctrl button .icon-font {
-  background-color: transparent;
-  border-radius: 0.5rem;
-  transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
-}
-.ctrl button:disabled {
-  color: var(--c-frame-button-disabled);
-}
-.ctrl button:disabled .icon-font {
-  color: var(--c-frame-button-disabled);
-}
-.ctrl button:not([disabled]) .icon-font {
-  color: var(--c-frame-button);
-}
-.ctrl button:not([disabled]):hover {
-  cursor: pointer;
-}
-.ctrl button:not([disabled]):hover .icon-font {
-  color: var(--c-frame-button-hover);
-  background-color: var(--c-frame-button-hover-bg);
-}
 @media screen and (min-width: 48em) {
   .ctrl {
     width: 37rem;
   }
 }
 
-.ctrl__sidebar .icon-font {
-  color: var(--c-frame-button);
+.ctrl__button, .ctrl__extlink {
+  display: inline-block;
+  line-height: 3rem;
+  font-size: 3rem;
+  margin: 1rem;
+}
+.ctrl__button .icon-font, .ctrl__button .icon, .ctrl__extlink .icon-font, .ctrl__extlink .icon {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
 }
 
-.ctrl__link {
+.ctrl__button {
+  background: inherit;
+  color: inherit;
+}
+.ctrl__button:not([disabled]) .icon-font {
+  color: var(--c-frame-button);
+}
+.ctrl__button:not([disabled]):hover {
+  cursor: pointer;
+}
+.ctrl__button:not([disabled]):hover .icon-font {
+  color: var(--c-frame-button-hover);
+  background-color: var(--c-frame-button-hover-bg);
+}
+.ctrl__button:disabled {
+  color: var(--c-frame-button-disabled);
+}
+.ctrl__button:disabled .icon-font {
+  color: var(--c-frame-button-disabled);
+}
+
+.ctrl__extlink .icon {
+  fill: currentColor;
+  transition: fill 150ms ease-in-out;
+}
+.ctrl__extlink:hover .icon {
+  fill: var(--c-frame-text-link-ext);
+}
+
+.ctrl__menulink {
   display: inline-block;
   font-size: 1.43rem;
   line-height: 1rem;
@@ -4441,6 +4444,10 @@ figure {
   .fig--size-small, .fig--size-medium {
     width: 37rem;
   }
+}
+.fig--size-small.fig--posh-right, .fig--posh-right.fig--size-medium {
+  float: right;
+  clear: right;
 }
 
 .fig--size-tiny {

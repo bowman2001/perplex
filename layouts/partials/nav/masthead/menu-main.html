@@ -1,9 +1,9 @@
 {{- $page := . }}
-<nav class="nav-main">
+<nav>
     <ul class="ul--row">
     {{- range site.Menus.main }}
         {{- $a := dict }}
-        {{- $c := slice "ctrl__link" "nav-main__link" }}
+        {{- $c := slice "ctrl__menulink" "nav-main__link" }}
         {{- $tag := "a" }}
         {{- if $page.IsMenuCurrent "main" . }}
             {{- $tag = "span" }}

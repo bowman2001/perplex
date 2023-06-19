@@ -119,6 +119,7 @@ module:
     - path: github.com/bowman2001/hugo-mod-open-in-vscode
     - path: github.com/bowman2001/hugo-mod-katex
     - path: github.com/bowman2001/hugo-mod-mermaid
+    - path: github.com/bowman2001/hugo-mod-simple-icons
 
 ### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!
