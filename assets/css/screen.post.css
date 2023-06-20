@@ -1063,8 +1063,6 @@ body {
 
 .icon {
   display: inline-block;
-  height: 3rem;
-  width: 3rem;
   fill: currentColor;
 }
 
@@ -4076,9 +4074,6 @@ body {
 .ctrl__button,
 .ctrl__extlink {
   display: inline-block;
-  line-height: 3rem;
-  font-size: 3rem;
-  margin: 1rem;
 }
 
 .ctrl__button .icon-font,
@@ -4091,6 +4086,9 @@ body {
 }
 
 .ctrl__button {
+  line-height: 3rem;
+  font-size: 3rem;
+  margin: 1rem;
   background: inherit;
   color: inherit;
 }
@@ -4116,8 +4114,13 @@ body {
   color: var(--c-frame-button-disabled);
 }
 
+.ctrl__extlink {
+  margin: 1.25rem 1rem;
+}
+
 .ctrl__extlink .icon {
-  fill: currentColor;
+  height: 2.5rem;
+  width: 2.5rem;
   transition: fill 150ms ease-in-out;
 }
 

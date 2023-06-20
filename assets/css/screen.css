@@ -51,8 +51,8 @@ hr {
   --ta: left;
   color-scheme: light dark;
   --c-fff: #fff;
-  --c-page: hsl(325deg, 50%, 99%);
-  --c-frame: hsl(325deg, 4%, 15.5%);
+  --c-page: hsl(325, 50%, 99%);
+  --c-frame: hsl(325, 4%, 15.5%);
   --c-frame-text: #fff;
   --c-frame-text-medium: lightgray;
   --c-frame-text-low: #b8b8b8;
@@ -84,22 +84,22 @@ hr {
   --c-taxo-link-hover: #18272d;
   --c-taxo-link-hover-bg: #f8e3ef;
   --c-nav-link: #006a9c;
-  --c-nav-link-hover: hsl(325deg, 79%, 44%);
+  --c-nav-link-hover: hsl(325, 79%, 44%);
   --c-code: #1a282f;
   --c-code-extralow: #59737f;
   --c-code-bg: #fff;
   --c-danger: #fff;
-  --c-danger-bg: hsl(0deg, 80%, 47.5%);
+  --c-danger-bg: hsl(0, 80%, 47.5%);
   --c-danger-box-bg: #f2d7d7;
   --c-warn: #18272d;
-  --c-warn-bg: hsl(60deg, 85%, 59%);
+  --c-warn-bg: hsl(60, 85%, 59%);
   --c-warn-box: #d0d05d;
   --c-warn-box-bg: #f0f098;
   --c-info: #fff;
-  --c-info-bg: hsl(230deg, 70%, 48.5%);
+  --c-info-bg: hsl(230, 70%, 48.5%);
   --c-info-box-bg: #eaebf4;
   --c-success: #11181c;
-  --c-success-bg: hsl(120deg, 80%, 49%);
+  --c-success-bg: hsl(120, 80%, 49%);
   --c-success-box-bg: #d7f2d7;
   --c-bg-1: #f9f6f8;
   --c-bg-2: #f4f0f2;
@@ -108,7 +108,7 @@ hr {
   --c-shadow-2: #c5d2d8;
   --c-shadow-3: #a3b8c2;
   --c-watermark: #ddeaf0;
-  --c-scrollbar: hsl(45deg, 83%, 53%);
+  --c-scrollbar: hsl(45, 83%, 53%);
   --c-selection: #030505;
   --c-selection-bg: #ade5ff;
 }
@@ -334,14 +334,14 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   color: var(--c-nav-link-hover);
 }
 .icon-link.is-active .icon-font {
-  color: hsl(325deg, 79%, 44%);
+  color: hsl(325, 79%, 44%);
 }
 
 .svg-link path {
   transition: color 200ms ease-in-out;
 }
 .svg-link:hover path, .svg-link:focus path {
-  color: hsl(325deg, 79%, 44%);
+  color: hsl(325, 79%, 44%);
 }
 .svg-link.is-active path {
   color: #006a9c;
@@ -816,8 +816,6 @@ body {
 
 .icon {
   display: inline-block;
-  height: 3rem;
-  width: 3rem;
   fill: currentColor;
 }
 
@@ -3217,9 +3215,6 @@ body {
 
 .ctrl__button, .ctrl__extlink {
   display: inline-block;
-  line-height: 3rem;
-  font-size: 3rem;
-  margin: 1rem;
 }
 .ctrl__button .icon-font, .ctrl__button .icon, .ctrl__extlink .icon-font, .ctrl__extlink .icon {
   background-color: transparent;
@@ -3228,6 +3223,9 @@ body {
 }
 
 .ctrl__button {
+  line-height: 3rem;
+  font-size: 3rem;
+  margin: 1rem;
   background: inherit;
   color: inherit;
 }
@@ -3248,8 +3246,12 @@ body {
   color: var(--c-frame-button-disabled);
 }
 
+.ctrl__extlink {
+  margin: 1.25rem 1rem;
+}
 .ctrl__extlink .icon {
-  fill: currentColor;
+  height: 2.5rem;
+  width: 2.5rem;
   transition: fill 150ms ease-in-out;
 }
 .ctrl__extlink:hover .icon {
@@ -3907,13 +3909,13 @@ body {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 .card__footer .link--doc {
-  background: linear-gradient(90deg, hsl(199deg, 100%, 38%) 50%, hsl(199deg, 100%, 38%) 100%);
+  background: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(199, 100%, 38%) 100%);
 }
 .card__footer .link--post {
-  background: linear-gradient(90deg, hsl(199deg, 100%, 38%) 50%, hsl(325deg, 79%, 44%) 100%);
+  background: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(325, 79%, 44%) 100%);
 }
 .card__footer .link--news {
-  background: linear-gradient(90deg, hsl(199deg, 100%, 38%) 50%, hsl(169deg, 100%, 33%) 100%);
+  background: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(169, 100%, 33%) 100%);
 }
 
 .sidebar-box {
@@ -4379,11 +4381,11 @@ li:empty:before {
 }
 
 .li-box--bluegreen > hr {
-  background-image: linear-gradient(90deg, hsl(199deg, 100%, 38%) 0%, hsl(169deg, 100%, 33%) 75%, hsl(169deg, 100%, 33%) 100%);
+  background-image: linear-gradient(90deg, hsl(199, 100%, 38%) 0%, hsl(169, 100%, 33%) 75%, hsl(169, 100%, 33%) 100%);
 }
 
 .li-box--bluered > hr {
-  background-image: linear-gradient(90deg, hsl(199deg, 100%, 38%) 0%, hsl(325deg, 79%, 44%) 75%, hsl(325deg, 79%, 44%) 100%);
+  background-image: linear-gradient(90deg, hsl(199, 100%, 38%) 0%, hsl(325, 79%, 44%) 75%, hsl(325, 79%, 44%) 100%);
 }
 
 .li-header {
