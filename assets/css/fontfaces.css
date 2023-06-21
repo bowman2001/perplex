@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: local("Material Icons"), local("MaterialIcons"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff");
+  src: local("Material Icons"), local("MaterialIcons"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "IBM Plex Sans Condensed";

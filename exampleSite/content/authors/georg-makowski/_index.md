@@ -7,6 +7,14 @@ menu:
   main:
     name: About
     weight: 100
+social_icons:
+- name: Twitter
+  icon: twitter
+  url: "https://twitter.com/GeorgMakowski"
+contact_icons:
+- name: Email
+  icon: gmail
+  url: "mailto:gm@desider.at"
 resources:
 - src: Joerg_Makowski.jpg
   name: featured

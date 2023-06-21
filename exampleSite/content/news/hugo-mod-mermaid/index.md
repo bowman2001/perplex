@@ -19,7 +19,7 @@ The Mermaid Javascript module seems to perform some caching. When we play with t
 
 ```mermaid {.fig--size-tiny .fig--posh-left}
 %%{init: { 
-      "theme": "base",
+      "theme": "forest",
       "fontFamily": "ibm plex sans condensed"
 }}%%
 flowchart TB
@@ -27,7 +27,7 @@ flowchart TB
   B -->|Mermaid| C(Diagram)
 ```
 
-The module allows Hugo to process fenced code blocks with the identifier `mermaid`. The diagram code inside the fences gets wrapped by a `<figure>` tag and a `<pre>` tag as an inner container. Both tags include globally configurable attributes. The code block also accepts Markdown attributes for the `<figure>` tag.
+The module allows Hugo to process fenced code blocks with the identifier `mermaid`. The diagram code inside the fences gets wrapped by a `<figure>` tag and a `<pre>` tag as an inner container. Both tags include globally configurable attributes. The mermaid code block accepts Markdown attributes for the `<figure>` tag as usual code blocks do.
 
 The code inside the container is rendered on the client side by Mermaid JS into an SVG diagram.
 
@@ -36,7 +36,7 @@ Mermaid diagrams are theme-able and some of their attributes are also configurab
 ```md
 %%{init: { 
       "theme": "forest",
-      "fontFamily": "ibm plex sans"
+      "fontFamily": "ibm plex sans condensed"
 }}%%
 flowchart TB
   A[Fenced code] -->|render-hook| B[Tagged code]

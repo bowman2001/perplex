@@ -23,7 +23,8 @@ At the moment, this site shows the news section as a start page. A design for a 
 
 ## Design & Layout
 
-The typographic design of this theme is based on the open-source font family Plex by IBM. The CSS stylesheet is built following their proportions.
+The typographic design of this theme is based on the open-source font family Plex by IBM. The CSS stylesheet is built in accordance with their basic proportions but the layout does **not resemble IBM’s corporate design** style.
+
 
 The layout is **fluid-responsive**. This concept has been around for a while but hasn’t been realized often. I’m not completely sure why because there are [only advantages](/blog/accessibility-of-fluid-typography). The proportions of this layout stay fixed between breakpoints beyond mobile. And this also means:
 
