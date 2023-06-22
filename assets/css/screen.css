@@ -50,18 +50,18 @@ hr {
   --es: 0rem;
   --ta: left;
   color-scheme: light dark;
-  --c-frame: hsl(325, 4%, 15.5%);
-  --c-frame-text: #fff;
-  --c-frame-text-medium: lightgray;
-  --c-frame-text-low: #b8b8b8;
-  --c-frame-text-extralow: #959595;
-  --c-frame-text-link: #42c3ff;
-  --c-frame-text-link-ext: #00cfa9;
-  --c-frame-text-link-hover: #030505;
-  --c-frame-button: #ebb924;
-  --c-frame-button-hover: #ebb924;
-  --c-frame-button-hover-bg: rgba(177, 177, 177, 0.34);
-  --c-frame-button-disabled: #69510a;
+  --c-frame: hsl(325, 5%, 5%);
+  --c-frame-text: #e1e1e1;
+  --c-frame-text-medium: #bababa;
+  --c-frame-text-low: #a1a1a1;
+  --c-frame-text-extralow: #818181;
+  --c-frame-text-link: #00a9f7;
+  --c-frame-text-link-ext: #00b594;
+  --c-frame-text-link-hover: #363033;
+  --c-frame-button: #e7b315;
+  --c-frame-button-hover: #e7b315;
+  --c-frame-button-hover-bg: rgba(181, 181, 181, 0.34);
+  --c-frame-button-disabled: #554208;
   --c-frame-border-hover: #0095da;
   --c-frame-border-active: #f448ac;
   --c-page: hsl(325, 50%, 99%);
@@ -103,9 +103,10 @@ hr {
   --c-bg-1: #f9f6f8;
   --c-bg-2: #f4f0f2;
   --c-bg-3: #eae6e8;
-  --c-shadow-1: #dde5e9;
-  --c-shadow-2: #c5d2d8;
-  --c-shadow-3: #a3b8c2;
+  --c-bg-trans: #f9f6f8;
+  --c-shadow-1: #e3e3e3;
+  --c-shadow-2: #d1d1d1;
+  --c-shadow-3: #b5b5b5;
   --c-watermark: #ddeaf0;
   --c-scrollbar: hsl(45, 83%, 53%);
   --c-selection: #030505;
@@ -153,22 +154,21 @@ hr {
     --c-frame-text-extralow: #818181;
     --c-frame-text-link: #00a9f7;
     --c-frame-text-link-ext: #00b594;
-    --c-frame-text-link-hover: #030505;
+    --c-frame-text-link-hover: #363033;
     --c-frame-button: #e7b315;
     --c-frame-button-hover: #e7b315;
-    --c-frame-button-hover-bg: rgba(150, 150, 150, 0.34);
+    --c-frame-button-hover-bg: rgba(181, 181, 181, 0.34);
     --c-frame-button-disabled: #554208;
     --c-frame-border-hover: #0095da;
     --c-frame-border-active: #f448ac;
     --c-page: hsl(325, 5%, 10%);
-    --c-text-normal: #d4dee2;
-    --c-text-high: #f9fafb;
-    --c-text-semihigh: #e3eaed;
-    --c-text-medium: #c7d1d6;
-    --c-text-semilow: #b8c3c8;
-    --c-text-low: #a6b1b6;
-    --c-text-extralow: #8c979c;
-    --c-text-link: #0074a9;
+    --c-text-normal: #d1dce0;
+    --c-text-high: #f6f8f9;
+    --c-text-semihigh: #e0e7eb;
+    --c-text-medium: #c4cfd4;
+    --c-text-low: #a4afb4;
+    --c-text-extralow: #89949a;
+    --c-text-link: #00a9f7;
     --c-text-link-hover: #18272d;
     --c-text-link-hover-bg: rgba(208, 236, 248, 0.5);
     --c-text-link-ext: #007d66;
@@ -199,9 +199,10 @@ hr {
     --c-bg-1: #1f1f1f;
     --c-bg-2: #242424;
     --c-bg-3: #2e2e2e;
-    --c-shadow-1: #222d32;
-    --c-shadow-2: #2b3a41;
-    --c-shadow-3: #394d56;
+    --c-bg-trans: #f9f6f8;
+    --c-shadow-1: #2b2b2b;
+    --c-shadow-2: #383838;
+    --c-shadow-3: #4a4a4a;
     --c-watermark: #ddeaf0;
     --c-scrollbar: hsl(45, 83%, 53%);
     --c-selection: #030505;
@@ -438,7 +439,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   display: block;
   border-radius: 0.5rem;
   overflow: hidden;
-  background: var(--c-bg-1);
+  background: var(--c-bg-trans);
   box-shadow: 0 0 0 1px var(--c-shadow-2);
 }
 .img__container svg {
@@ -4391,7 +4392,7 @@ li:empty:before {
   padding-top: 7rem;
 }
 .page-footer > hr {
-  border-top: 0.15rem solid rgba(0, 0, 0, 0.5333333333);
+  border-top: 0.15rem solid var(--c-text-extralow);
   height: 1rem;
   margin: 0 2rem;
   max-width: 70rem;
