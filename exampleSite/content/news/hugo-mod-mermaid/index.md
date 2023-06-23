@@ -43,4 +43,4 @@ flowchart TB
   B -->|Mermaid| C(Diagram)
 ```
 
-**The module is [available on GitHub](https://github.com/bowman2001/hugo-mod-mermaid) with an example site.**
+**The module is [available on GitHub](https://github.com/bowman2001/hugo-mod-mermaid) and includes a minimal Hugo example site for local rendering.**

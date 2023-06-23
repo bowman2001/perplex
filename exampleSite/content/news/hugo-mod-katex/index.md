@@ -22,4 +22,4 @@ LaTeX blocks
 $$\begin{equation}E = mc^2\end{equation}$$
 {.dl-loose}
 
-**The module is [available on GitHub](https://github.com/bowman2001/hugo-mod-katex) with an example site.**
+**The module is [available on GitHub](https://github.com/bowman2001/hugo-mod-katex) and includes a minimal Hugo example site for local rendering.**
