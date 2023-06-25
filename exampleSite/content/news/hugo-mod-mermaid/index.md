@@ -13,7 +13,7 @@ Mermaid is a Javascript library creating SVG diagrams from text and code descrip
 
 Mermaid diagrams are popular in the technical writing community because they are easy to code and can be tested immediately with the [Mermaid live editor](https://mermaid.live) or live preview plugins.
 
-{{< mnote up=5 >}}
+{{< mnote up=8 >}}
 The Mermaid Javascript module seems to perform some caching. When we play with the diagram code in the Markdown editor the result shown by the Hugo server may not get updated completely.
 {{< /mnote >}}
 

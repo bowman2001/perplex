@@ -1,3 +1,7 @@
 {
-  "theme": "base"
+  "config": {
+    "theme": "base"
+  },
+  "figure_class": "fig fig--mermaid",
+  "container_class": "img__c"
 }

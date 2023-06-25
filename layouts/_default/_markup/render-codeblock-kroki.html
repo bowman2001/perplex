@@ -19,7 +19,7 @@ the License.
 {{- /*
 Added by Georg Makowski:
 - Added available types d2, dbml, wireviz
-- figure tag with classes and .img__container
+- figure tag with classes and .img__c
 */}}
 
 {{- /*
@@ -104,7 +104,7 @@ References:
 
         {{- /* Render. */}}
         <figure class="fig fig--size-normal fig--diagram" >
-            <div class="img__container">
+            <div class="img__c">
         <img
                 {{- range $k, $v := $attrs }}
                     {{- if not (or (eq $k "type")) }}

@@ -34,7 +34,7 @@ Physicist with a diploma in the fields of applied non-linear dynamics and inform
 
 I’m engaged in web publishing. My focus lies on a consistent layout structure and optimal legibility on modern devices. I’m specialized in fluid-responsive design because it can integrate many achievements of classic typographic page design.
 
-A baseline grid bears fruit when the layout proportions stay fixed between at least two breakpoints of the responsive design. A fluid-responsive web page template is a collection of a few layout versions where each one beyond mobile has conceivable fixed proportions.
+A baseline grid bears fruit when the layout proportions stay fixed. And a fluid-responsive web page template consists of a few layout versions where each one beyond mobile has those fixed proportions.
 
 **C**ascading **S**tyle **S**heets
 : are my main field of expertise. Style sheets are a collection of mechanisms to add fonts and styling to a web document. They’re not a programming language and every rigorous system reducing their complexity for the sake of technical maintainability tends to diminish their capabilities.

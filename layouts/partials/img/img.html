@@ -21,7 +21,7 @@
         {{ $container = true }}
     {{- end -}}
     {{- if $container -}}
-    <span class="img__container {{- with .a.container }} img__container--{{ . }}{{ end -}}">{{ end -}}
+    <span class="img__c {{- with .a.container }} img__c--{{ . }}{{ end -}}">{{ end -}}
         {{- if eq $subType "svg" -}}
             {{ if (eq .a.svg "inline") }}
                 {{ .img.Content | safeHTML }}
