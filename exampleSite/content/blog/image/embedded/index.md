@@ -90,16 +90,16 @@ Embedded images take a fixed percentage of the width of the containing block:
 Usually, we use a normal-sized stand-alone image to use the full width of the text. But they don’t fit inside indented text blocks. Then, we can also place embedded images with the full width of the containing block like this:
 
 1. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-normal?size=full)
+   ![](img-full?size=full)
 
 2. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-normal?size=full)
+   ![](img-full?size=full)
 
 or this
 
 1. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-normal?size=full)
+   ![](img-full?size=full)
 
 2. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-normal?size=full)
+   ![](img-full?size=full)
 {.col2}

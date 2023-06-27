@@ -14,8 +14,7 @@ resources:
   name: featured
   params:
     alt: Markdown logo
-    size: tiny
-    container: "no"
+    container: trans
 - src: erda-estremera-eMX1aIAp9Nw-unsplash.jpg
   name: bigsplash
   params: 

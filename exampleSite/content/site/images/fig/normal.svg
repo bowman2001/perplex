@@ -1,0 +1,7 @@
+<svg width="800" height="533.33" version="1.1" viewBox="0 0 211.67 141.11" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0 -155.89)" opacity=".94">
+    <rect y="155.89" width="211.67" height="141.11" fill="#c0c0c0" stroke-width=".86413"/>
+    <text x="105.73885" y="204.30132" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.4667px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="105.73885" y="204.30132" stroke-width=".26458">Normal</tspan></text>
+    <text x="105.59985" y="246.1622" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.4667px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="105.59985" y="246.1622" stroke-width=".26458">1</tspan></text>
+  </g>
+</svg>
