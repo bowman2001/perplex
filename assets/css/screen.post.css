@@ -5768,7 +5768,7 @@ figure {
 
 .fig--size-tiny .img__c svg,
 .fig--size-tiny .img__c .img--transparent {
-  padding: 0rem;
+  padding: 0;
 }
 
 @media screen and (min-width: 39em) {
