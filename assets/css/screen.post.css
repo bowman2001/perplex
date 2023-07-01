@@ -235,15 +235,15 @@ hr {
     --c-text-medium: #bbc4c9;
     --c-text-low: #a0abb0;
     --c-text-extralow: #7f8a90;
-    --c-text-link: #1691ca;
+    --c-text-link: #2392c5;
     --c-text-link-hover: #eaeef0;
-    --c-text-link-hover-bg: rgba(136, 208, 242, 0.15);
-    --c-text-link-ext: #119a81;
+    --c-text-link-hover-bg: rgba(149, 209, 236, 0.15);
+    --c-text-link-ext: #339986;
     --c-text-link-ext-hover: #eaeef0;
-    --c-text-link-ext-hover-bg: rgba(87, 236, 209, 0.15);
+    --c-text-link-ext-hover-bg: rgba(140, 217, 203, 0.15);
     --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
-    --c-nav-link: #1691ca;
-    --c-nav-link-hover: #fe5dbb;
+    --c-nav-link: #2392c5;
+    --c-nav-link-hover: #fe48b2;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-code: #1a282f;
     --c-code-extralow: #59737f;
@@ -284,15 +284,15 @@ hr {
     --c-text-medium: #bbc4c9;
     --c-text-low: #a0abb0;
     --c-text-extralow: #7f8a90;
-    --c-text-link: #1691ca;
+    --c-text-link: #2392c5;
     --c-text-link-hover: #eaeef0;
-    --c-text-link-hover-bg: rgba(136, 208, 242, 0.15);
-    --c-text-link-ext: #119a81;
+    --c-text-link-hover-bg: rgba(149, 209, 236, 0.15);
+    --c-text-link-ext: #339986;
     --c-text-link-ext-hover: #eaeef0;
-    --c-text-link-ext-hover-bg: rgba(87, 236, 209, 0.15);
+    --c-text-link-ext-hover-bg: rgba(140, 217, 203, 0.15);
     --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
-    --c-nav-link: #1691ca;
-    --c-nav-link-hover: #fe5dbb;
+    --c-nav-link: #2392c5;
+    --c-nav-link-hover: #fe48b2;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-code: #1a282f;
     --c-code-extralow: #59737f;
@@ -333,15 +333,15 @@ hr {
     --c-text-medium: #bbc4c9;
     --c-text-low: #a0abb0;
     --c-text-extralow: #7f8a90;
-    --c-text-link: #1691ca;
+    --c-text-link: #2392c5;
     --c-text-link-hover: #eaeef0;
-    --c-text-link-hover-bg: rgba(136, 208, 242, 0.15);
-    --c-text-link-ext: #119a81;
+    --c-text-link-hover-bg: rgba(149, 209, 236, 0.15);
+    --c-text-link-ext: #339986;
     --c-text-link-ext-hover: #eaeef0;
-    --c-text-link-ext-hover-bg: rgba(87, 236, 209, 0.15);
+    --c-text-link-ext-hover-bg: rgba(140, 217, 203, 0.15);
     --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
-    --c-nav-link: #1691ca;
-    --c-nav-link-hover: #fe5dbb;
+    --c-nav-link: #2392c5;
+    --c-nav-link-hover: #fe48b2;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-code: #1a282f;
     --c-code-extralow: #59737f;
@@ -725,7 +725,8 @@ h6:target .heading-anchor:before {
           hyphens: none !important;
 }
 
-.caption__text {
+.caption__text,
+.caption__attr {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   color: var(--c-text-extralow);
@@ -735,9 +736,6 @@ h6:target .heading-anchor:before {
   float: right;
   margin-left: 1em;
   text-align: right;
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-  color: var(--c-text-extralow);
 }
 
 .caption__nr {

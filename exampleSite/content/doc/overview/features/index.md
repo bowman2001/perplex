@@ -10,7 +10,7 @@ menu:
     parent: tldr
     pre: featured_play_list
 categories: [Overview]
-tags: [features]
+tags: [feature]
 weight: 6
 ---
 
