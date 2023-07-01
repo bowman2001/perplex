@@ -187,7 +187,7 @@ either of these shortcodes in conjunction with this render hook.
     {{- end -}}
 
     {{- /* Render anchor element. */ -}}
-    <a class="hook-link"
+    <a class="text-link"
             {{- range $k, $v := $attrs }}
                 {{- printf " %s=%q" $k $v | safeHTMLAttr }}
             {{- end -}}

@@ -4,7 +4,7 @@
 {{- with $sections -}}
   <ul class="ul--row meta__section">
       {{ range $i, $e := . }}
-        <li class="meta__item"><a
+        <li class="meta__item"><a class="nav-link"
                   href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ if lt $i $nrange }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}</li>
       {{ end }}
   </ul>
