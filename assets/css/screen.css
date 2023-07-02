@@ -191,7 +191,7 @@ hr {
     --c-scrollbar: #c99b13;
     --c-selection: white;
     --c-selection-bg: #003852;
-    --f-img: brightness(80%);
+    --f-img: brightness(90%);
   }
 }
 
@@ -244,7 +244,6 @@ q:after {
 }
 
 .title__link, .nav-link, .md--frame .text-link, .md--footer .text-link, .text-link {
-  display: inline-block;
   position: relative;
   background-color: transparent;
   border-radius: 0.5rem;
@@ -343,13 +342,7 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
   text-decoration-color: inherit;
 }
 .text-link[href^=http]:after {
-  position: absolute;
-  top: -35%;
-  right: -0.2em;
   content: "↗";
-  font-size: 50%;
-  color: transparent;
-  transition: color 200ms ease-out;
 }
 .text-link[href^=http]:hover, .text-link[href^=http]:focus {
   background-color: var(--c-text-link-ext-hover-bg);
@@ -3452,8 +3445,12 @@ body {
   page-break-inside: avoid;
   break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
-  width: 50%;
-  align-self: stretch;
+}
+@media screen and (min-width: 39em) {
+  .page-nav__li {
+    width: 50%;
+    align-self: stretch;
+  }
 }
 
 .page-nav__link {
@@ -4386,9 +4383,6 @@ li:empty:before {
   margin: 0 2rem;
   max-width: 70rem;
 }
-.page-footer--blog {
-  padding-top: 0;
-}
 
 @media screen and (min-width: 79em) {
   .padding-left {
@@ -4436,8 +4430,7 @@ li:empty:before {
   }
 }
 .li-box:last-child > hr {
-  height: 2rem;
-  border-radius: 1rem;
+  display: none;
 }
 
 .li-box--bluegreen > hr {

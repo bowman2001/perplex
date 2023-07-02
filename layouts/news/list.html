@@ -1,29 +1,35 @@
 {{- define "main" -}}
-<div id="l-content-box" class="l-box l-box--full">
-  <header class="page-header">
-    <div class="title title--sans title--dark title--dark--bluegreen padding-left">
-        {{ partial "file/vscode_start.html" . }}
-        {{ partial "title/title.html" . }}
-        {{ partial "file/vscode_end.html" . }}
+    <div id="l-content-box" class="l-box l-box--full">
+        <div>
+            <header class="page-header">
+                <div class="title title--sans title--dark title--dark--bluegreen padding-left">
+                    {{ partial "file/vscode_start.html" . }}
+                    {{ partial "title/title.html" . }}
+                    {{ partial "file/vscode_end.html" . }}
+                </div>
+            </header>
+            {{ with .Content }}
+                <div class="md md--sans md--h-sans md--list md--margin-left">
+                    {{- partial "replacements.html" . -}}
+                </div>
+            {{ end }}
+            <ul class="page-list">
+                {{ $n := 5 }}
+                {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
+                {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
+                    <li class="li-box li-box--bluegreen">
+                        {{- .Render "li-full" -}}
+                        <hr>
+                    </li>
+                {{- end -}}
+            </ul>
+        </div>
+        <footer class="page-footer margin-left">
+            <div class="meta meta--foot">
+                {{ partial "nav/breadcrumbs/footer.html" . }}
+            </div>
+            <hr>
+            {{ partial "nav/paginator.html" . }}
+        </footer>
     </div>
-  </header>
-  {{ with .Content }}
-  <div class="md md--sans md--h-sans md--list md--margin-left">
-    {{- partial "replacements.html" . -}}
-  </div>
-  {{ end }}
-  <ul class="page-list">
-    {{ $n := 5 }}
-    {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-    {{ range (.Paginate .Pages $n).Pages.ByDate.Reverse }}
-    <li class="li-box li-box--bluegreen">
-      {{- .Render "li-full" -}}
-      <hr>
-    </li>
-    {{- end -}}
-  </ul>
-  <footer class="page-footer page-footer--blog margin-left">
-    {{ partial "blog/nav/paginator.html" . }}
-  </footer>
-</div>
 {{- end -}}
