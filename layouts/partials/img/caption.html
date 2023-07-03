@@ -3,13 +3,13 @@
     {{ $ordinal = . }}
 {{ end }}
 {{- with .a.caption -}}
-<span class="caption__text">
+<span class="caption__text" data-pagefind-ignore>
     {{ with $ordinal }}<span class="caption__nr">{{ . }}.</span> {{ end }}{{ . | site.Home.RenderString }}</span>{{ end -}}
 {{ with .a.attr -}}
     {{- $attribution := ( . | site.Home.RenderString ) -}}
     {{- with $.a.attrlink -}}
-        <span class="caption__attr">(<a class="text-link" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>)</span>
+        <span class="caption__attr" data-pagefind-ignore>(<a class="text-link" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>)</span>
     {{- else -}}
-      <span class="caption__attr">({{ $attribution }})</span>
+      <span class="caption__attr" data-pagefind-ignore>({{ $attribution }})</span>
     {{- end -}}
 {{ end -}}

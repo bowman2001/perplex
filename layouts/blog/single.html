@@ -1,8 +1,8 @@
 {{- define "main" -}}
   <div id="l-content-box" class="l-box l-box--full">
-    <div id="l-content">
+    <div id="l-content" data-pagefind-body>
       <header class="page-header">
-        <div class="meta meta--head meta--left">
+        <div class="meta meta--head meta--left" data-pagefind-ignore>
             {{ partial "nav/taxonomies/page/lists.html" . }}
             {{ partial "date/published_datetime.html" . }}
         </div>
@@ -11,7 +11,7 @@
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
-          {{ partial "img/featured.html" . }}
+        <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
       <div class="md md--sans md--h-sans md--margin-left">
           {{- partial "replacements.html" .Content -}}
