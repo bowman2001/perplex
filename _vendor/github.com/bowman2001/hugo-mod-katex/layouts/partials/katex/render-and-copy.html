@@ -1,0 +1,6 @@
+{{/* Configure & load auto-render and copy-tex */}}
+{{- $js := slice (resources.Get "js/katex_render_settings.js")
+(resources.Get "katex/contrib/auto-render.js")
+(resources.Get "katex/contrib/copy-tex.js") }}
+{{ $js = $js | resources.Concat "katex/render-and-contrib.js" | minify | fingerprint }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

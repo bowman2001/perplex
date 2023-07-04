@@ -1,0 +1,9 @@
+{{ $author := "" }}
+{{ with .Params.author }}
+    {{ if reflect.isSlice . }}
+        {{ $author = delimit . ", " }}
+    {{ else }}
+        {{ $author = . }}
+    {{ end }}
+{{ end }}
+{{ return $author }}

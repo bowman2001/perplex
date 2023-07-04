@@ -1,0 +1,10 @@
+{{ $title := "" }}
+{{ with .Title }}
+    {{ $title = . }}
+    {{ if gt (len $title) 70 }}
+        {{ with .LinkTitle }}
+            {{ $title = .  }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return ($title | site.Home.RenderString | plainify | htmlUnescape | truncate 70) }}

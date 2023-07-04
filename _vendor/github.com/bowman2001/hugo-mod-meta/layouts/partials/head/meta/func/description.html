@@ -1,0 +1,29 @@
+{{ $desc := ""}}
+{{ if not .IsHome }}
+    {{ with .Params.seo.description }}
+        {{ $desc = . }}
+    {{ else }}
+        {{ if findRE `<!--more-->` .RawContent }}
+            {{ $desc = ( partial "replacements.html" .Summary ) | plainify | htmlUnescape }}
+        {{ else }}
+            {{ with .Description }}
+                {{ $desc = . | site.Home.RenderString | plainify | htmlUnescape }}
+            {{ else }}
+                {{ $desc = partial "site-description.html" . }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ else }}
+    {{ $desc = partial "site-description.html" . }}
+{{ end }}
+{{ return $desc }}
+
+{{ define "partials/site-description.html" }}
+    {{ $desc := "" }}
+    {{ with site.Params.Description }}
+        {{ $desc = . }}
+    {{ else }}
+        {{ warnf "There is no general site description (params.description)." }}
+    {{ end }}
+    {{ return $desc }}
+{{ end }}
