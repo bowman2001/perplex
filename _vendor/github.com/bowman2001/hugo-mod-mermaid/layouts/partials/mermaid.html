@@ -1,5 +1,0 @@
-{{- if or (.Page.Store.Get "hasMermaid") .Params.mermaid }}
-{{ $jsTemplate := resources.Get "js/mermaid.js" }}
-{{ $js := $jsTemplate | resources.ExecuteAsTemplate "js/mermaid.js" . | minify | fingerprint }}
-<script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-{{- end }}

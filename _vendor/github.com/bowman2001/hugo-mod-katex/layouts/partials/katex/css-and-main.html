@@ -1,6 +1,0 @@
-{{/* Load CSS */}}
-{{- $css := resources.Get "katex/katex.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
-{{/* Load KaTeX */}}
-{{- $main := resources.Get "katex/katex.js" | minify | fingerprint -}}
-<script defer src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" crossorigin="anonymous"></script>
