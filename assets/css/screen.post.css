@@ -432,8 +432,11 @@ q:after {
 .title__link,
 .nav-link,
 .md--frame .text-link,
+.md--frame .pagefind-ui__result-link,
 .md--footer .text-link,
-.text-link {
+.md--footer .pagefind-ui__result-link,
+.text-link,
+.pagefind-ui__result-link {
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   border-radius: .5rem;
@@ -445,8 +448,11 @@ q:after {
 }
 
 .md--frame .text-link,
+.md--frame .pagefind-ui__result-link,
 .md--footer .text-link,
-.text-link {
+.md--footer .pagefind-ui__result-link,
+.text-link,
+.pagefind-ui__result-link {
   padding-left: .2em;
   padding-right: .2em;
   margin-left: -0.2em;
@@ -458,8 +464,11 @@ q:after {
 }
 
 .md--frame .text-link code,
+.md--frame .pagefind-ui__result-link code,
 .md--footer .text-link code,
-.text-link code {
+.md--footer .pagefind-ui__result-link code,
+.text-link code,
+.pagefind-ui__result-link code {
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
@@ -469,8 +478,11 @@ q:after {
 }
 
 .text-link:hover,
+.pagefind-ui__result-link:hover,
 .text-link:focus,
-.text-link:active {
+.pagefind-ui__result-link:focus,
+.text-link:active,
+.pagefind-ui__result-link:active {
   color: var(--c-text-semihigh);
   text-decoration-color: var(--c-text-semihigh);
   box-shadow: inset 0 0 .5em var(--c-text-link-hover-shadow);
@@ -550,63 +562,84 @@ h6:target .heading-anchor:before {
   color: var(--c-nav-link-hover);
 }
 
-.text-link {
+.text-link,
+.pagefind-ui__result-link {
   color: var(--c-text-link);
   text-decoration-color: inherit;
 }
 
 .text-link:hover,
-.text-link:focus {
+.pagefind-ui__result-link:hover,
+.text-link:focus,
+.pagefind-ui__result-link:focus {
   color: var(--c-text-link-hover);
   text-decoration-color: var(--c-text-link-hover);
   background-color: var(--c-text-link-hover-bg);
 }
 
-.text-link[href^=http] {
+.text-link[href^=http],
+[href^=http].pagefind-ui__result-link {
   color: var(--c-text-link-ext);
   text-decoration-color: inherit;
 }
 
-.text-link[href^=http]:after {
+.text-link[href^=http]:after,
+[href^=http].pagefind-ui__result-link:after {
   content: "↗";
 }
 
 .text-link[href^=http]:hover,
-.text-link[href^=http]:focus {
+[href^=http].pagefind-ui__result-link:hover,
+.text-link[href^=http]:focus,
+[href^=http].pagefind-ui__result-link:focus {
   background-color: var(--c-text-link-ext-hover-bg);
   color: var(--c-text-link-ext-hover);
   text-decoration-color: var(--c-text-link-ext-hover);
 }
 
 .text-link[href^=http]:hover:after,
-.text-link[href^=http]:focus:after {
+[href^=http].pagefind-ui__result-link:hover:after,
+.text-link[href^=http]:focus:after,
+[href^=http].pagefind-ui__result-link:focus:after {
   color: var(--c-text-link-ext-hover);
 }
 
 .md--frame .text-link,
-.md--footer .text-link {
+.md--frame .pagefind-ui__result-link,
+.md--footer .text-link,
+.md--footer .pagefind-ui__result-link {
   color: var(--c-frame-text-link);
   text-decoration-color: var(--c-frame-text-link);
 }
 
 .md--frame .text-link:hover,
+.md--frame .pagefind-ui__result-link:hover,
 .md--frame .text-link:focus,
+.md--frame .pagefind-ui__result-link:focus,
 .md--footer .text-link:hover,
-.md--footer .text-link:focus {
+.md--footer .pagefind-ui__result-link:hover,
+.md--footer .text-link:focus,
+.md--footer .pagefind-ui__result-link:focus {
   color: var(--c-frame-text-link);
   background-color: var(--c-frame-button-hover-bg);
 }
 
 .md--frame .text-link[href^=http],
-.md--footer .text-link[href^=http] {
+.md--frame [href^=http].pagefind-ui__result-link,
+.md--footer .text-link[href^=http],
+.md--footer [href^=http].pagefind-ui__result-link {
   color: var(--c-frame-text-link-ext);
   text-decoration-color: inherit;
 }
 
 .md--frame .text-link[href^=http]:hover,
+.md--frame [href^=http].pagefind-ui__result-link:hover,
 .md--frame .text-link[href^=http]:focus,
+.md--frame [href^=http].pagefind-ui__result-link:focus,
 .md--footer .text-link[href^=http]:hover,
-.md--footer .text-link[href^=http]:focus {
+.md--footer [href^=http].pagefind-ui__result-link:hover,
+.md--footer .text-link[href^=http]:focus,
+.md--footer [href^=http].pagefind-ui__result-link:focus {
   background-color: var(--c-frame-button-hover-bg);
 }
 
@@ -685,7 +718,7 @@ h6:target .heading-anchor:before {
 
 .img__c--trans,
 .img__c--footer {
-  background: var(--c-frame-bg-3);
+  background: var(--c-frame-bg-1);
 }
 
 .img__c--trans svg,
@@ -694,7 +727,7 @@ h6:target .heading-anchor:before {
 }
 
 .img__c--footer {
-  filter: brightness(80%);
+  filter: brightness(90%);
 }
 
 .img__c--footer svg,
@@ -727,7 +760,6 @@ h6:target .heading-anchor:before {
 
 .caption__attr {
   float: right;
-  margin-left: 1em;
   text-align: right;
 }
 
@@ -2556,7 +2588,7 @@ body {
 }
 
 .md--footer {
-  color: var(--c-frame-text-medium);
+  color: var(--c-frame-text-normal);
 }
 
 .md--footer p,
@@ -6252,6 +6284,76 @@ figure {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.pagefind-ui-box {
+  max-width: 74rem;
+}
+
+@media screen and (min-width: 79em) {
+  .pagefind-ui-box {
+    margin-left: 37rem;
+  }
+}
+
+.pagefind-ui {
+  margin: 2rem;
+  font-size: 1.9375rem;
+  line-height: 3rem;
+  padding-top: .77440625rem;
+  padding-bottom: .22559375rem;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.pagefind-ui__form {
+  position: relative;
+}
+
+.pagefind-ui__search-input {
+  padding-left: 2rem;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: inherit;
+  border: 1px solid var(--c-shadow-3);
+  border-radius: .5rem;
+  height: 5rem;
+  width: 100%;
+}
+
+.pagefind-ui__search-clear {
+  position: absolute;
+  z-index: 10;
+  top: 1rem;
+  right: 0;
+  width: 7rem;
+  background: none;
+}
+
+.pagefind-ui__message {
+  padding: 1rem 0;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.pagefind-ui__result {
+  padding: 1.9rem 0 2rem 0;
+  border-top: .1rem solid var(--c-shadow-3);
+}
+
+.pagefind-ui__result-title {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.pagefind-ui__button {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: inherit;
+  border: 1px solid var(--c-shadow-3);
+  border-radius: .5rem;
+  height: 5rem;
+  width: 100%;
 }
 
 .clear:before,
