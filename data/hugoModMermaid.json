@@ -4,6 +4,6 @@
     "theme": "base",
     "fontFamily": "ibm plex sans"
   },
-  "figure_class": "fig fig--mermaid",
-  "container_class": "img__c img__c--trans"
+  "figureClass": "fig fig--mermaid",
+  "containerClass": "img__c img__c--trans"
 }

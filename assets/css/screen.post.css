@@ -3216,32 +3216,24 @@ body {
   page-break-inside: avoid;
   -moz-column-break-inside: avoid;
        break-inside: avoid-column;
-}
-
-.footnotes ol li:target {
-  border-radius: .25em;
-  background-color: var(--c-bg-2);
-}
-
-.footnotes ol li:before {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
-  font-size: 1.675625rem;
-  line-height: 2.625rem;
-  padding-top: 0.6849784375rem;
-  margin-bottom: -0.6849784375rem;
-  scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.625rem);
-  float: left;
-  height: 1em;
-  content: counter(nr, decimal) ".";
-}
-
-.footnotes ol li p {
   font-size: 1.68875rem;
   line-height: 2.625rem;
   padding-top: .680063125rem;
   padding-bottom: .319936875rem;
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - 2.625rem);
+}
+
+.footnotes ol li:target {
+  border-radius: .5rem;
+  background-color: var(--c-bg-3);
+}
+
+.footnotes ol li:before {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  float: left;
+  height: 1em;
+  content: counter(nr, decimal) ".";
 }
 
 .footnotes ol li p + p {
