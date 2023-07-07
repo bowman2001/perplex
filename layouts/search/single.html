@@ -3,9 +3,10 @@
         <div id="l-content">
             <header class="page-header page-header--title-left">
                 <div class="title title--sans title--left">
-                    <hr>
+                    {{ partial "file/vscode_start.html" .Page }}
                     {{ partial "title/title.html" . }}
                     {{ partial "title/subtitle.html" . }}
+                    {{ partial "file/vscode_end.html" .Page }}
                 </div>
                 <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
             </header>
@@ -26,10 +27,5 @@
                 });
             </script>
         </div>
-        <footer class="page-footer">
-            <section class="md md--sans">
-                <p class="center">Powered by <a class="text-link" href="https://pagefind.app">CloudCannons Pagefind library</a>.</p>
-            </section>
-        </footer>
     </div>
 {{- end -}}

@@ -1,6 +1,7 @@
 ---
 authors: [Georg Makowski]
-title: Stand-alone Image Layout 
+title: Stand-alone Image Layout
+linktitle: Stand-alone Image
 description: A demonstration of layout options for pages without a sidebar
 date: 2023-03-27T12:02:10+02:00
 categories: [Markdown]

@@ -45,10 +45,10 @@ Markdown
 : is a very popular heuristic markup system to structure text files. Because Markdown has been derived from intuitive markup habits in early text forums and emails it's sometimes overly simplistic. I’m an expert in enriching and styling the resulting HTML.
 
 Hugo
-: I’ve been using this reliable engine since version {$0.18} to build fast static websites that require minimal maintenance. I dove deeper into the JAMstack since version {$0.86} when Markdown attributes became available to provide optional styling for authors. I’m an experienced template programmer.
+: I’ve been using this reliable engine since version {$0.18} to build fast static websites that require minimal maintenance. When Markdown attributes became available in version {$0.86} I started to dive deep into Markdown styling. I’ve been constantly following Hugo’s growing capabilities and have become a proficient template programmer.
 
 Javascript
-: I know my way around vanilla Javascript, Typescript, and Node and like to enhance sites with dynamic capabilities when the result justifies loading additional libraries (preferably on demand).
+: I have some experience with vanilla Javascript, Typescript, and the Node universe. I like to enhance sites with dynamic capabilities when the result justifies loading additional libraries (preferably on demand).
 {.dl-loose}
 
 I’m also a writer and speaker (in German) with a focus on the epistemology of the natural sciences, and a lecturer at the University of Applied Sciences{/}in Frankfurt.
