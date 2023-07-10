@@ -185,6 +185,15 @@ hr {
   --c-chroma-gu: #aaaaaa;
   --c-chroma-gt: #aa0000;
   --c-chroma-w: #bbbbbb;
+  --fw-chroma-k: bold;
+  --fw-chroma-kc: bold;
+  --fw-chroma-kd: bold;
+  --fw-chroma-kn: bold;
+  --fw-chroma-kp: bold;
+  --fw-chroma-kr: bold;
+  --fw-chroma-kt: bold;
+  --fw-chroma-no: unset;
+  --fw-chroma-gh: unset;
   --f-img: unset;
 }
 @media screen and (min-width: 39em) {
@@ -332,6 +341,15 @@ hr {
     --c-chroma-gu: #79c0ff;
     --c-chroma-gt: #ff7b72;
     --c-chroma-w: #6e7681;
+    --fw-chroma-k: unset;
+    --fw-chroma-kc: unset;
+    --fw-chroma-kd: unset;
+    --fw-chroma-kn: unset;
+    --fw-chroma-kp: unset;
+    --fw-chroma-kr: unset;
+    --fw-chroma-kt: unset;
+    --fw-chroma-no: bold;
+    --fw-chroma-gh: bold;
     --f-img: brightness(90%);
   }
 }
@@ -4930,36 +4948,43 @@ figure {
 /* Keyword */
 .chroma .k {
   color: var(--c-chroma-k);
+  font-weight: var(--fw-chroma-k);
 }
 
 /* KeywordConstant */
 .chroma .kc {
   color: var(--c-chroma-kc);
+  font-weight: var(--fw-chroma-kc);
 }
 
 /* KeywordDeclaration */
 .chroma .kd {
   color: var(--c-chroma-kd);
+  font-weight: var(--fw-chroma-kd);
 }
 
 /* KeywordNamespace */
 .chroma .kn {
   color: var(--c-chroma-kn);
+  font-weight: var(--fw-chroma-kn);
 }
 
 /* KeywordPseudo */
 .chroma .kp {
   color: var(--c-chroma-kp);
+  font-weight: var(--fw-chroma-kp);
 }
 
 /* KeywordReserved */
 .chroma .kr {
   color: var(--c-chroma-kr);
+  font-weight: var(--fw-chroma-kr);
 }
 
 /* KeywordType */
 .chroma .kt {
   color: var(--c-chroma-kt);
+  font-weight: var(--fw-chroma-kt);
 }
 
 /* Name */
@@ -4987,7 +5012,7 @@ figure {
 /* NameConstant */
 .chroma .no {
   color: var(--c-chroma-no);
-  font-weight: bold;
+  font-weight: var(--fw-chroma-no);
 }
 
 /* NameDecorator */
@@ -5254,7 +5279,7 @@ figure {
 /* GenericHeading */
 .chroma .gh {
   color: var(--c-chroma-gh);
-  font-weight: bold;
+  font-weight: var(--fw-chroma-gh);
 }
 
 /* GenericInserted */
