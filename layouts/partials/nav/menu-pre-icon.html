@@ -1,4 +1,5 @@
-{{- with .Pre | default "arrow_right" -}}
-    {{ partial "icon/material-icon.html" . }}
-  {{/*- partial "icon/material-symbol.html" (dict "icon" . "weight" "400") -*/}}
+{{ $entry := .menuEntry }}
+{{ $size := .size | default "normal" }}
+{{- with $entry.Pre | default "arrow_right" -}}
+    {{- partial "material-symbol" (dict "id" . "ctx" page "size" $size ) -}}
 {{- end -}}

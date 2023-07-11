@@ -3,14 +3,6 @@
 {{ $series := site.GetPage "series" }}
 {{ if or $categories $tags $series }}
   <ul class="taxo__list">
-      {{ with $tags }}
-        <li class="taxo__item taxo-shape taxo-shape--tag">
-          <ul class="ul--row">
-              {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
-              {{- partial "nav/taxonomies/site/term_list.html" . -}}
-          </ul>
-        </li>
-      {{ end }}
       {{ with $categories }}
         <li class="taxo__item taxo-shape taxo-shape--category">
           <ul class="ul--row">
@@ -18,6 +10,14 @@
               {{- partial "nav/taxonomies/site/term_list.html" . -}}
           </ul>
         </li>
+      {{ end }}
+      {{ with $tags }}
+          <li class="taxo__item taxo-shape taxo-shape--tag">
+              <ul class="ul--row">
+                  {{- partial "nav/taxonomies/icon_item/tags.html" . -}}
+                  {{- partial "nav/taxonomies/site/term_list.html" . -}}
+              </ul>
+          </li>
       {{ end }}
       {{ with $series }}
         <li class="taxo__item taxo-shape taxo-shape--series">

@@ -1,1 +1,2 @@
-<li><a class="nav-link icon-font" href="{{ (site.GetPage "categories").RelPermalink }}" title="All Categories">category</a></li>
+<li><a class="meta__icon nav-link" href="{{ (site.GetPage "categories").RelPermalink }}" title="All Categories">
+        {{- partial "material-symbol" (dict "id" "category" "ctx" . "size" "tiny") -}}</a></li>

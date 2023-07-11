@@ -1,12 +1,12 @@
 {{ $n := sub (len .Ancestors) 2 }}
-<ul class="ul--row meta__section">
+<ul class="ul--row meta__list">
   <li class="meta__item">
-    <span class="icon-font">format_list_numbered</span>
+    {{ partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}
   </li>
     {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
       {{ if ne $e .FirstSection }}
       <li class="meta__item">
-        <a class="nav-link" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}
+        <a class="meta__text nav-link" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}
         </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
       </li>
         {{ end }}

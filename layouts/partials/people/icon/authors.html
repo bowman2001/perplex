@@ -1,1 +1,3 @@
-<a class="icon-font" href="{{ (site.GetPage "authors").RelPermalink }}" title="All authors">group</a>
+<a href="{{ (site.GetPage "authors").RelPermalink }}" title="All authors">
+    {{- partial "material-symbol" (dict "id" "group" "ctx" . "size" "tiny") -}}
+</a>

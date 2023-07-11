@@ -1,7 +1,7 @@
 {{- with ( partial "people/func/get_lasteditor.html" . ) }}
     {{- with (site.GetPage (printf "%s/%s" "authors" (urlize .)))}}
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle | strings.FirstUpper }}</a>
+      <a class="meta__text nav-link" href="{{ .RelPermalink }}" rel="nofollow">{{ .LinkTitle | strings.FirstUpper }}</a>
     {{- else }}
-      <span>{{ . }}</span>
+      <span class="meta__text">{{ . }}</span>
     {{- end }}
 {{- end }}{{- /**/ -}}

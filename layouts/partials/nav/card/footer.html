@@ -1,0 +1,12 @@
+{{- partial "authors/portrait-tiny.html" . -}}
+{{- $modifier := "" -}}
+{{- if eq .Section "news" }}
+    {{- $modifier = "link--news" }}
+{{- else if or (eq .Section "blog") (eq .Section "article") }}
+    {{- $modifier = "link--post" }}
+{{- else if eq .Section "doc" }}
+    {{- $modifier = "link--doc" }}
+{{- end -}}
+<a href="{{ .RelPermalink }}" class="link{{ with $modifier }} {{ . }}{{ end }}" rel="nofollow">
+    {{- partial "material-symbol" (dict "id" "read_more" "ctx" . ) -}}
+</a>

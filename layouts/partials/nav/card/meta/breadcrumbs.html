@@ -2,10 +2,10 @@
 {{ $nrange := sub $n 1 }}
 {{ $sections := last $n .Ancestors.Reverse }}
 {{- with $sections -}}
-  <ul class="ul--row meta__section">
+  <ul class="ul--row meta__list">
       {{ range $i, $e := . }}
-        <li class="meta__item"><a class="nav-link"
-                  href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ if lt $i $nrange }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}</li>
+        <li class="meta__item"><a class="meta__text nav-link"
+                                  href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>{{ if lt $i $nrange }}<li>{{ partial "nav/breadcrumbs/separator.html" . }}</li>{{ end }}
       {{ end }}
   </ul>
 {{- end -}}

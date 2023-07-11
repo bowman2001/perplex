@@ -1,22 +1,22 @@
-<ul class="nav__list sidebar__list">
+<ul class="sidebar__list sidebar__list--1">
     {{ $page := .context }}
     {{ $menuName := .menuName }}
     {{ $menu := .menu }}
     {{ range $menu }}
         {{ if .HasChildren }}
-          <li class="nav__li1 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
-              {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
-              {{ template "expand" . }}
-            <ul class="{{ if ( partial "itemsHaveNoChildren" . ) -}}items-have-no-children{{ end }}">
+          <li class="sidebar__item sidebar__item--1 nav__item nav__item--1 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
+              {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page "size" "normal") }}
+              {{ partial "sidebar/expand" . }}
+            <ul class="sidebar__list sidebar__list--2 {{ if ( partial "sidebar/itemsHaveNoChildren" . ) -}}items-have-no-children{{ end }}">
                 {{ range .Children }}
-                  <li class="nav__li2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
-                      {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
+                  <li class="sidebar__item sidebar__item--2 nav__item nav__item--2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
+                      {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page "size" "small") }}
                       {{ if .HasChildren }}
-                          {{ template "expand" . }}
-                          <ul class="{{ if ( partial "itemsHaveNoChildren" . ) }}items-have-no-children{{ end }}">
+                          {{ partial "sidebar/expand" . }}
+                          <ul class="sidebar__list sidebar__list--3 {{ if ( partial "sidebar/itemsHaveNoChildren" . ) }}items-have-no-children{{ end }}">
                               {{ range .Children }}
-                                <li class="nav__li3">
-                                    {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
+                                <li class="sidebar__item sidebar__item--3 nav__item nav__item--3">
+                                    {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page "size" "tiny") }}
                                 </li>
                               {{ end }}
                           </ul>
@@ -26,22 +26,22 @@
             </ul>
           </li>
         {{ else }}
-          <li class="nav__li1">
-              {{ template "item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
+          <li class="sidebar__item sidebar__item--1 nav__item nav__item--1">
+              {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
           </li>
         {{ end }}
     {{ end }}
 </ul>
 
-{{- define "item" -}}
+{{- define "partials/sidebar/item" -}}
     {{- $active := .page.IsMenuCurrent .menuName .menuEntry -}}
     {{- if not $active -}}
       <a href="{{ .menuEntry.URL }}" class="sidebar__link icon-link">
     {{- else -}}
       <span class="sidebar__link icon-link is-active" aria-current="page">
     {{- end -}}
-    {{ partial "nav/menu-pre-icon.html" .menuEntry }}
-    <span class="text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
+        {{ partial "nav/menu-pre-icon.html" (dict "menuEntry" .menuEntry "size" .size) }}
+        <span class="sidebar__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
     {{- if $active -}}
       </span>
     {{- else -}}
@@ -49,17 +49,18 @@
     {{- end -}}
 {{- end -}}
 
-{{- define "expand" -}}
+{{- define "partials/sidebar/expand" -}}
     {{ with .Identifier }}
-      <input id="menu-{{ . }}" class="chk-menu" type="checkbox">
-      <label class="open-menu icon-link" for="menu-{{ . }}"><span class="sr-only">+</span><span
-                class="icon-font"></span></label>
+      <input id="menu-{{ . }}" class="sidebar__chk" type="checkbox">
+      <label class="sidebar__open icon-link" for="menu-{{ . }}"><span class="sr-only">+</span>
+          <span class="icon icon--material"></span>
+      </label>
     {{ else }}
         {{ warnf "Missing menu identifier for menu entry %q" .KeyName }}
     {{ end }}
 {{- end -}}
 
-{{- define "partials/itemsHaveNoChildren" -}}
+{{- define "partials/sidebar/itemsHaveNoChildren" -}}
     {{ $value := true }}
     {{ range .Children }}
         {{ if .HasChildren }}

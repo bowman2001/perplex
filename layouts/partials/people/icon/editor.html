@@ -1,1 +1,3 @@
-<a class="icon-font" href="{{ (site.GetPage "editors").RelPermalink }}" title="All editors">person_add_alt</a>
+<a class="nav-link" href="{{ (site.GetPage "editors").RelPermalink }}" title="All editors" rel="nofollow">
+    {{- partial "material-symbol" (dict "id" "person_add" "ctx" . "size" "tiny") -}}
+</a>

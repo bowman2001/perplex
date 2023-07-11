@@ -1,6 +1,7 @@
 <div class="card__flex card__flex--half">
     {{ partial "img/featured-card-half.html" . }}
   <div class="card__content card__content--flex">
+    <div>
     <nav class="card__header">
         <div class="card__title card__title--half">
           <h2>{{ partial "title/render-link-nofollow.html" . }}</h2>
@@ -10,9 +11,10 @@
       <div class="md md--sans md--card md--card--half">
           {{ partial "description.html" . }}
       </div>
-      <div class="meta meta--card meta--card--half">
-          {{ partial "nav/taxonomies/site/term_count.html" . }}
-      </div>
     </a>
+  </div>
+  <div class="meta meta--card meta--card--half">
+    {{ partial "nav/taxonomies/site/term_count.html" . }}
+  </div>
   </div>
 </div>

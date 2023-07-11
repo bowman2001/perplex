@@ -134,7 +134,7 @@ Start with these basic CSS rules to style the table of contents:
     {{- $level := .level }}
     {{- range $ctx.headings }}
         {{- if ge $level $ctx.startLevel }}
-          <li>
+          <li class="nav__item nav__item--{{ $level }}">
               {{- if .ID }}
                   {{ if le $ctx.level $ctx.endLevel }}
                     <a href="{{ printf "%s#%s" $ctx.page.RelPermalink .ID }}">{{ partial "replacements.html" .Title  }}</a>

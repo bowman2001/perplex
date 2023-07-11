@@ -1,0 +1,24 @@
+<nav>
+    <ul class="author__icon-list">
+        {{- with .Params.follow_icons }}
+        {{- range . }}
+            {{- $a := dict "class" "author__icon-item" }}
+            {{- with .name }}
+                {{- $a = merge $a (dict "title" .) }}
+            {{- end }}
+            {{- with .url }}
+                {{- $a = merge $a (dict "href" . ) }}
+            {{- else }}
+                {{- errorf "No url for entry in follow_icons parameter." }}
+            {{- end }}
+            <li>
+                {{- with .icon -}}
+                    <a {{ range $k, $v := $a }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{ end }} >
+                        {{- partial "simple-icon.html" ( dict "id" . ) -}}
+                    </a>
+                {{- end -}}
+            </li>
+        {{- end }}
+        {{- end }}
+    </ul>
+</nav>

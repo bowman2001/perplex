@@ -1,17 +1,19 @@
 {{- define "main" -}}
     <div id="l-content-box" class="l-box l-box--full">
         <section class="section" data-pagefind-body>
-            <header class="page-header page-header--title-left">
-                <div class="title title--sans title--author">
-                    {{- partial "img/portrait.html" . }}
-                    <div>
+            <header class="page-header page-header--left">
+                <div id="author" class="title title--sans">
+                    <div id="author__portrait">{{- partial "img/portrait.html" .Page }}</div>
+                    <div id="author__title">
                         {{- partial "file/vscode_start.html" .Page }}
                         {{- partial "title/title.html" .Page }}
                         {{- partial "file/vscode_end.html" .Page }}
-                        {{- partial "title/subtitle.html" .Page }}
                     </div>
+                    <div id="author__description">{{ partial "title/profession.html" .Page }}</div>
+                    <div id="author__follow">{{ partial "nav/author/follow-links.html" .Page }}</div>
+                    <div id="author__contact">{{ partial "nav/author/contact-links.html" .Page }}</div>
                 </div>
-                {{- partial "img/featured.html" . }}
+                {{- partial "img/featured.html" .Page }}
             </header>
             {{ with .Content }}
                 <div class="md md--sans md--margin-left md--h-serif md--list">

@@ -18,16 +18,7 @@
             </div>
         </div>
         <div class="card__footer">
-            {{- partial "authors/portrait-tiny.html" . -}}
-            {{- $modifier := "" -}}
-            {{- if eq .Section "news" }}
-                {{- $modifier = "link--news" }}
-            {{- else }}
-                {{- if or (eq .Section "blog") (eq .Section "article") }}
-                    {{- $modifier = "link--post" }}
-                {{- end }}
-            {{- end -}}
-            <a href="{{ .RelPermalink }}" class="link{{ with $modifier }} {{ . }}{{ end }}" rel="nofollow">&#8618;</a>
+            {{- partial "nav/card/footer.html" . -}}
         </div>
     </div>
 </div>

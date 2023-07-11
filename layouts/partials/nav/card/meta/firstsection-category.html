@@ -1,17 +1,17 @@
 {{ $n := sub (len .Ancestors) 1 }}
 {{ $nrange := sub $n 1 }}
 {{ $sections := last $n .Ancestors.Reverse }}
-<ul class="ul--row">
+<ul class="ul--row meta__list">
     {{- with $sections -}}
         {{ range $i, $e := first 1 . }}
-          <li class="meta__item meta__section"><a class="nav-link"
-                    href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>
+          <li class="meta__item meta__list"><a class="meta__text nav-link"
+                                               href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>
         {{ end }}
     {{ end }}
     {{- with .Params.categories -}}
         {{- $first := (index . 0) -}}
         <li class="meta__item">{{ partial "nav/taxonomies/icon_item/separator.html" . }}</li>
-        <li class="meta__item taxo-shape taxo-shape--category"><a class="nav-link"
+        <li class="meta__item taxo-shape taxo-shape--category"><a class="meta__text nav-link"
                   href="{{ ( site.GetPage (print "categories/" $first ) ).RelPermalink }}">{{- $first | strings.FirstUpper -}}</a></li>
     {{- end -}}
 </ul>

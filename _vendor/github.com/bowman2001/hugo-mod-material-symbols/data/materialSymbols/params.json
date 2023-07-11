@@ -1,0 +1,10 @@
+{
+  "version": "outlined",
+  "size": {
+    "normal": "wght300grad0fill0opsz24",
+    "small": "wght300grad0fill0opsz20",
+    "tiny": "wght300grad0fill1opsz20",
+    "big": "wght300grad0fill0opsz40"
+  },
+  "class": "icon icon--material"
+}

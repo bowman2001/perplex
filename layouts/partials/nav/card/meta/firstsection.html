@@ -1,5 +1,5 @@
 {{- with .FirstSection -}}
-    <ul class="ul--row">
-      <li class="meta__item meta__section"><a class="nav-link" href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>
+    <ul class="ul--row meta__list">
+      <li class="meta__item meta__list"><a class="meta__text nav-link" href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>
     </ul>
 {{ end }}

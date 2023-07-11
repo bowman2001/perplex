@@ -7,7 +7,9 @@
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
                 {{ partial "nav/page/parent-title.html" . }}
-            <div class="icon-font page-nav__icon page-nav__icon--arrow">west</div>
+            <div class="page-nav__icon page-nav__icon--arrow">
+                {{- partial "material-symbol" (dict "id" "west" "ctx" . "size" "normal") -}}
+            </div>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "start" . }}{{ end }}
@@ -19,7 +21,9 @@
                 {{ partial "doc/nav/menu-icon.html" . }}
             </div>
               {{ partial "nav/page/parent-title.html" . }}
-            <div class="icon-font page-nav__icon page-nav__icon--arrow">east</div>
+            <div class="page-nav__icon page-nav__icon--arrow">
+                {{- partial "material-symbol" (dict "id" "east" "ctx" . "size" "normal") -}}
+            </div>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "end" . }}{{ end }}
@@ -33,7 +37,9 @@
         {{ partial "doc/nav/menu-icon.html" . }}
       </div>
          {{ partial "nav/page/parent-title.html" . }}
-      <div class="icon-font page-nav__icon page-nav__icon--arrow">&nbsp;</div>
+      <div class="page-nav__icon page-nav__icon--arrow">
+          {{- partial "material-symbol" (dict "id" "empty" "ctx" . "size" "normal") -}}
+      </div>
     </span></li>
 {{ end }}
 
@@ -43,7 +49,9 @@
           {{ partial "doc/nav/menu-icon.html" . }}
       </div>
           {{ partial "nav/page/parent-title.html" . }}
-      <div class="icon-font page-nav__icon page-nav__icon--arrow">north</div>
+      <div class="page-nav__icon page-nav__icon--arrow">
+          {{- partial "material-symbol" (dict "id" "north" "ctx" . "size" "normal") -}}
+      </div>
     </a></li>
 {{ end }}
 
