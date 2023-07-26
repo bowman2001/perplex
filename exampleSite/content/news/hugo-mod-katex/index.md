@@ -12,7 +12,7 @@ This Hugo module allows rendering mathematical and chemical formulas in Markdown
 {.p-first}
 <!--more-->
 
-The popular Javascript library [{{< math >}}\KaTeX{{< /math >}}](https://katex.org) is included for self-hosting.
+The popular Javascript library [{{< math >}}\KaTeX{{< /math >}}](https://katex.org "KaTeX") is included for self-hosting.
 
 Inline LaTeX
 : can get wrapped with the two Hugo shortcodes `{{</* math */>}}` and `{{</* chem */>}}`. They prevent distortions by the Markdown rendering. Already working LaTeX expressions surrounded by a `$` or doubly escaped parenthesis are still fine, of course: $E = mc^2$.

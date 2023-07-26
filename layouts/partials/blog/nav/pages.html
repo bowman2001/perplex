@@ -3,7 +3,7 @@
       {{ $pages := where site.Pages.Reverse "Section" .Section -}}
       {{ with $pages.Prev . }}
         <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--prev icon-link card__hover">
-            <div class="page-nav__placeholder"></div>
+            <div class="page-nav__icon"></div>
             {{ partial "nav/page/title.html" . }}
             <div class="page-nav__icon page-nav__icon--arrow">
                 {{- partial "material-symbol" (dict "id" "west" "ctx" . "size" "normal") -}}
@@ -15,7 +15,7 @@
       {{ with $pages.Next . }}
         <li class="page-nav__li">
           <a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next icon-link card__hover">
-              <div class="page-nav__placeholder"></div>
+              <div class="page-nav__icon"></div>
               {{ partial "nav/page/title.html" . }}
             <div class="page-nav__icon page-nav__icon--arrow">
                 {{- partial "material-symbol" (dict "id" "east" "ctx" . "size" "normal") -}}
