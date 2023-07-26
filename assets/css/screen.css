@@ -5604,6 +5604,10 @@ figure {
   overflow: hidden;
 }
 
+.hide {
+  display: none !important;
+}
+
 @media screen and (max-width: 39em) {
   .hide-mobile {
     display: none !important;
