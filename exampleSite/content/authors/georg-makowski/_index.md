@@ -43,7 +43,7 @@ I’m engaged in web publishing. My focus lies on a consistent layout structure 
 Baseline grids and evenly spaced columns bear many fruits when the layout proportions are at least partially fixed as they always are on physical pages. Fluid-responsive templates like the ones of this theme contain only a few layout versions and each one beyond mobile preserves fixed proportions between its breakpoints.
 {.inline}
 
-[^1]: My design skills are self-taught. I got an advanced degree in physics (with a diploma thesis on non-linear dynamics and parts of the exam in information technology).
+[^1]: My design skills are self-taught. I got an advanced degree in physics (diploma thesis in the field of applied non-linear dynamics, minor field: IT).
 
 **C**ascading **S**tyle **S**heets
 : are my main field of expertise. Style sheets are a collection of mechanisms to add fonts and styling to a web document. They’re not a consistent programming language and every rigorous system reducing their complexity for the sake of technical maintainability tends to diminish their capabilities.
@@ -57,8 +57,7 @@ Hugo
 : I’ve been using this reliable engine since version {$0.18} to build fast static websites that require minimal maintenance. When Markdown attributes became available in version {$0.86} I started to dive deep into Markdown styling. I’ve been constantly following Hugo’s growing capabilities and have become a proficient template programmer.
 
 Javascript
-: I have some experience with vanilla Javascript, Typescript, and the Node universe. I like to progressively enhance static sites following the JAMStack concept.  
+: I have experience with vanilla Javascript, Typescript, and the Node universe. I like to progressively enhance static sites following the JAMStack concept.  
 {.dl-loose}
 
 I’m also a writer and speaker (in German) with a focus on the epistemology of the natural sciences, and a lecturer at the University of Applied Sciences{/}in Frankfurt.
-

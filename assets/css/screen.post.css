@@ -6630,17 +6630,18 @@ figure {
 #author {
   display: inline-grid;
   width: 100%;
+  padding: 0 2rem;
   padding-bottom: calc(1rem + 1 * var(--es));
-  grid-template-columns: 2rem 10rem auto auto 2rem;
+  grid-template-columns: 10rem auto auto;
   grid-template-rows: repeat(3, minmax(4rem, auto));
-  grid-template-areas: ". img title title ." ". img description description ." ". . follow contact .";
+  grid-template-areas: "img title title" "img description description" ". follow contact";
 }
 
 @media screen and (min-width: 25em) {
   #author {
-    grid-template-columns: 2rem 10rem 50% 1fr 2rem;
+    grid-template-columns: 10rem 50% 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas: ". img title follow ." ". img description contact .";
+    grid-template-areas: "img title follow" "img description contact";
   }
 }
 
@@ -6653,9 +6654,9 @@ figure {
 @media screen and (min-width: 79em) {
   #author {
     width: 37rem;
-    grid-template-columns: 2rem 22.5rem 4rem 4rem 2rem;
+    grid-template-columns: 22.5rem 4rem 4rem;
     grid-template-rows: auto auto auto;
-    grid-template-areas: ". title title title ." ". description description description ." "- img follow contact .";
+    grid-template-areas: "title title title" "description description description" "img follow contact";
   }
 }
 
