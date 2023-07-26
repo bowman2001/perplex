@@ -3734,9 +3734,9 @@ body {
 
 .page-nav__title {
   font-size: 1.9375rem;
-  line-height: 2rem;
-  padding-top: 0.52440625rem;
-  padding-bottom: 0.47559375rem;
+  line-height: 3rem;
+  margin-top: -0.02559375rem;
+  padding-bottom: 0.02559375rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
   text-decoration: underline;
@@ -5533,8 +5533,35 @@ figure {
   font-weight: 600;
 }
 .pagefind-ui__result {
+  display: inline-flex;
+  flex-direction: row;
   padding: calc(0.9rem + 1 * var(--es)) 0 calc(1rem + 1 * var(--es)) 0;
   border-top: 0.1rem solid var(--c-shadow-3);
+}
+.pagefind-ui__result-thumb {
+  display: block;
+  flex-shrink: 0;
+  align-self: auto;
+  margin: 1rem 2rem 0 0;
+}
+@media screen and (min-width: 39em) {
+  .pagefind-ui__result-thumb {
+    margin: 1rem 4rem 0 0;
+  }
+}
+.pagefind-ui__result-image {
+  display: block;
+  width: 7.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px var(--c-shadow-1);
+  height: 4.833575rem;
+  object-fit: cover;
+}
+@media screen and (min-width: 39em) {
+  .pagefind-ui__result-image {
+    width: 14.5rem;
+    height: 9.66715rem;
+  }
 }
 .pagefind-ui__result-title {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;

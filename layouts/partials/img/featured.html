@@ -3,7 +3,8 @@
 {{- with $img -}}
     {{ $a = partial "img/func/params/unsplash.html" . }}
     {{ $a = merge $a (partial "img/func/params/resource_layout.html" . )}}
-    {{ $a = merge $a (dict (slice "class" "posh") "right" )}}
+    {{ $a = merge $a (dict (slice "class" "posh") "right" ) }}
+    {{ $a = merge $a (dict "index" true) }}
     {{ if not (in (slice "small" "tiny") $a.class.size)  }}
         {{ $a = merge $a (dict (slice "class" "size") "small" )}}
     {{ end }}
