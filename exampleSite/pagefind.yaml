@@ -1,7 +1,7 @@
 source: public
 ## The library gets moved to static only for the local development server!
 ## We don’t use this configuration in production.
-bundle_dir: "../static/_pagefind"
+bundle_dir: "../static/pagefind"
 
 exclude_selectors:
   - ".md table"
