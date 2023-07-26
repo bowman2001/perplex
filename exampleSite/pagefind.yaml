@@ -1,0 +1,11 @@
+source: public
+## The library gets moved to static only for the local development server!
+## We don’t use this configuration in production.
+bundle_dir: "../static/_pagefind"
+
+exclude_selectors:
+  - ".md table"
+  - ".md pre"
+  - ".katex"
+  - "[id^='fnref']"
+  - "[class='footnote-backref']"

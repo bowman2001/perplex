@@ -206,12 +206,12 @@ hr {
 @media screen and (min-width: 48em) {
   :root {
     --fs: 0.8695652174vw;
+    --tnh: 5rem;
   }
 }
 @media screen and (min-width: 79em) {
   :root {
     --fs: 0.6578947368vw;
-    --tnh: 5rem;
   }
 }
 @media screen and (min-width: 95em) {
@@ -675,7 +675,8 @@ body {
   height: 10rem;
   color: var(--c-frame-text-normal);
   background-color: var(--c-frame);
-  opacity: 0.95;
+  opacity: 0.9;
+  backdrop-filter: blur(1rem);
   display: grid;
   justify-content: center;
   box-shadow: 0 0 0 1px var(--c-shadow-1);
@@ -691,14 +692,14 @@ body {
 }
 @media screen and (min-width: 48em) {
   #l-masthead {
+    height: 5rem;
+    grid-template-rows: 5rem;
     grid-template-columns: 2rem repeat(3, 37rem) 2rem;
-    grid-template-areas: ". logo . ctrl ." ". menu menu menu .";
+    grid-template-areas: ". logo menu ctrl .";
   }
 }
 @media screen and (min-width: 79em) {
   #l-masthead {
-    height: 5rem;
-    grid-template-rows: 5rem;
     grid-template-columns: minmax(2rem, auto) repeat(4, 37rem) minmax(2rem, auto);
     grid-template-areas: ". logo menu menu ctrl .";
   }
@@ -986,6 +987,7 @@ body {
 
 .icon {
   display: inline-block;
+  flex-shrink: 0;
   width: 3rem;
   height: 3rem;
 }
@@ -3466,6 +3468,7 @@ body {
   display: flex;
   flex-direction: row;
   padding: 0 2rem;
+  align-items: flex-start;
 }
 @media screen and (min-width: 48em) {
   .ctrl {
@@ -3475,7 +3478,7 @@ body {
 
 .ctrl__button, .ctrl__extlink {
   display: inline-block;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 0 0.5rem;
 }
 .ctrl__button .icon, .ctrl__extlink .icon {
   fill: currentColor;
@@ -3524,7 +3527,7 @@ body {
 
 .ctrl__title {
   display: inline-block;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .ctrl__title--logo img {
@@ -4147,11 +4150,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding: 0 2rem 0 1.5rem;
+  padding: 0.5rem 2rem 0 1.5rem;
 }
 @media screen and (min-width: 39em) {
   .card__footer {
-    padding: 1rem 2rem 2rem 1.5rem;
+    padding: 0.5rem 2rem 2rem 1.5rem;
   }
 }
 .card__footer .link {
@@ -4241,6 +4244,14 @@ body {
   padding-left: 1rem;
 }
 
+.sidebar__list--2 {
+  margin-left: 4.5rem;
+}
+
+.sidebar__list--3 {
+  margin-left: 3.5rem;
+}
+
 .sidebar__item {
   position: relative;
   border-bottom: 0.1rem solid var(--c-shadow-2);
@@ -4250,23 +4261,14 @@ body {
 }
 @media screen and (min-width: 79em) {
   .sidebar__item {
-    padding-bottom: 0;
     border-bottom-color: transparent;
   }
-}
-
-.sidebar__item--2, .sidebar__item--3 {
-  margin-left: 4.5rem;
-}
-
-.sidebar__item--3 {
-  margin-left: 3.5rem;
 }
 
 .items-have-no-children {
   display: block;
   column-count: 3;
-  column-width: 17.5rem;
+  column-width: 15rem;
   padding-bottom: 1rem;
 }
 .items-have-no-children .sidebar__item {
@@ -4305,9 +4307,9 @@ body {
 .sidebar__text {
   display: inline-block;
   font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 0.564465rem;
-  padding-bottom: 0.435535rem;
+  line-height: 1.5rem;
+  padding-top: 0.814465rem;
+  padding-bottom: 0.685535rem;
   color: var(--c-text-extralow);
   --shadow: transparent;
   text-shadow: 0 0 1px var(--shadow);

@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "description": "Example project for the Hugo theme Perplex",
+  "main": "index.js",
+  "author": "Georg Makowski",
+  "license": "Apache License 2.0",
+  "dependencies": {
+    "pagefind": "^0.12.0"
+  }
+}
