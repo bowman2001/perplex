@@ -157,6 +157,7 @@ hr {
   --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
   --c-nav-link: #0074aa;
   --c-nav-link-hover: #c70074;
+  --c-nav-link-ext-hover: #008f75;
   --c-nav-link-hover-bg: #f1eef0;
   --c-code: #1a282f;
   --c-code-extralow: #59737f;
@@ -326,7 +327,8 @@ hr {
     --c-text-link-ext-hover-bg: rgba(140, 217, 203, 0.15);
     --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
     --c-nav-link: #2392c5;
-    --c-nav-link-hover: #fe48b2;
+    --c-nav-link-hover: #ff47b3;
+    --c-nav-link-ext-hover: #00ab8c;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-code: #d1d9dd;
     --c-code-extralow: #7d898e;
@@ -451,7 +453,8 @@ hr {
     --c-text-link-ext-hover-bg: rgba(140, 217, 203, 0.15);
     --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
     --c-nav-link: #2392c5;
-    --c-nav-link-hover: #fe48b2;
+    --c-nav-link-hover: #ff47b3;
+    --c-nav-link-ext-hover: #00ab8c;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-code: #d1d9dd;
     --c-code-extralow: #7d898e;
@@ -576,7 +579,8 @@ hr {
     --c-text-link-ext-hover-bg: rgba(140, 217, 203, 0.15);
     --c-text-link-hover-shadow: rgba(0, 0, 0, 0.0666666667);
     --c-nav-link: #2392c5;
-    --c-nav-link-hover: #fe48b2;
+    --c-nav-link-hover: #ff47b3;
+    --c-nav-link-ext-hover: #00ab8c;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-code: #d1d9dd;
     --c-code-extralow: #7d898e;
@@ -742,6 +746,7 @@ q:after {
 
 .title__link,
 .nav-link,
+.nav-link-ext,
 .md--frame .text-link,
 .md--frame .pagefind-ui__result-link,
 .md--footer .text-link,
@@ -799,7 +804,8 @@ q:after {
   box-shadow: inset 0 0 .5em var(--c-text-link-hover-shadow);
 }
 
-.nav-link {
+.nav-link,
+.nav-link-ext {
   display: inline-block;
   color: var(--c-nav-link);
   fill: var(--c-nav-link);
@@ -811,6 +817,13 @@ q:after {
   color: var(--c-nav-link-hover);
   fill: var(--c-nav-link-hover);
   background-color: var(--c-nav-link-hover-bg);
+}
+
+.nav-link-ext:hover,
+.nav-link-ext:focus,
+.nav-link-ext:active {
+  color: var(--c-nav-link-ext-hover);
+  fill: var(--c-nav-link-ext-hover);
 }
 
 .title__link {
@@ -5842,7 +5855,8 @@ li:empty:before {
 }
 
 @media screen and (min-width: 79em) {
-  .page-header--left .title {
+  .page-header--left .title,
+  .page-header--left #author {
     position: absolute;
     left: 0;
     top: 0;
@@ -6616,25 +6630,32 @@ figure {
 #author {
   display: inline-grid;
   width: 100%;
-  grid-template-columns: 10rem auto auto 1fr;
+  padding-bottom: calc(1rem + 1 * var(--es));
+  grid-template-columns: 2rem 10rem auto auto 2rem;
   grid-template-rows: repeat(3, minmax(4rem, auto));
-  grid-template-areas: "img title title ." "img description description ." ". follow contact .";
+  grid-template-areas: ". img title title ." ". img description description ." ". . follow contact .";
 }
 
 @media screen and (min-width: 25em) {
   #author {
-    grid-template-columns: 10rem 50% 1fr;
+    grid-template-columns: 2rem 10rem 50% 1fr 2rem;
     grid-template-rows: auto auto;
-    grid-template-areas: "img title follow" "img description contact";
+    grid-template-areas: ". img title follow ." ". img description contact .";
+  }
+}
+
+@media screen and (min-width: 39em) {
+  #author {
+    width: 74rem;
   }
 }
 
 @media screen and (min-width: 79em) {
   #author {
     width: 37rem;
-    grid-template-columns: 22.5rem 4rem 4rem;
+    grid-template-columns: 2rem 22.5rem 4rem 4rem 2rem;
     grid-template-rows: auto auto auto;
-    grid-template-areas: "title title title" "description description description" "img follow contact";
+    grid-template-areas: ". title title title ." ". description description description ." "- img follow contact .";
   }
 }
 
@@ -6644,6 +6665,17 @@ figure {
 
 #author__title {
   grid-area: title;
+}
+
+#author__title h1 {
+  font-size: 2.86rem;
+  line-height: 3rem;
+  padding-top: .42893rem;
+  padding-bottom: .57107rem;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: .005em;
+  word-spacing: .015em;
 }
 
 #author__description {

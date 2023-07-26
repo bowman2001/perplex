@@ -2,7 +2,7 @@
     <ul class="author__icon-list">
         {{- with .Params.contact_icons }}
             {{- range . }}
-                {{- $a := dict "class" "author__icon-item" }}
+                {{- $a := dict "class" "author__icon-item nav-link-ext" }}
                 {{- with .name }}
                     {{- $a = merge $a (dict "title" .) }}
                 {{- end }}
