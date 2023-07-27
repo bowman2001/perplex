@@ -20,17 +20,17 @@ Features, which I consider essential, and the ones which would be nice to have.
 
 ## Essential
 
-Better SEO
-: The theme includes the module [{$hugo-mod-meta}](https://github.com/bowman2001/hugo-mod-meta) which I will improve.
-
 Documentation
 : The documentation needs to get finished and in a few cases even updated :grinning_face_with_sweat:.
 
 Start page
-: A distinct starting page always depends on the project. But the theme should include a simple template which can be filled with Markdown content.
+: A distinct starting page always depends on the project. But the theme should include a simple template that can be filled with Markdown content.
 {.dl-loose}
 
 ## Nice to have
+
+Better SEO
+: The meta tags are fine, Lighthouse gives the theme a 100. But there is still some room for improvement. The theme includes the module [{$hugo-mod-meta}](https://github.com/bowman2001/hugo-mod-meta) for this task.
 
 Article pages
 : For long texts a big title, a hero image, and a more centered layout would be more appropriate.

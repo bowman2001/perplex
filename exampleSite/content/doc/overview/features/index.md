@@ -11,24 +11,15 @@ menu:
     parent: tldr
     pre: star
 resources: 
-  - src:
+  - src: ray-hennessy-gdTxVSAE5sk-unsplash.jpg
     name: featured
     params:
-      alt:
-      attr:
-      attrlink:
-  - src: 
-    name: 
-    params:
-      alt:
-      attr: 
-      attrlink:
+      alt: fireworks over open water
 categories: [Overview]
 tags: [feature]
 weight: 7
-draft: true
 ---
 
-**Placeholder**: Put your own summary paragraph here. It may contain inline markup but links are impossible.
+
 {.p-first}
 <!--more-->
