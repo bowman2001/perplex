@@ -4342,7 +4342,7 @@ body {
   line-height: 1.5rem;
   padding-top: 0.814465rem;
   padding-bottom: 0.685535rem;
-  color: var(--c-text-extralow);
+  color: var(--c-text-low);
   --shadow: transparent;
   text-shadow: 0 0 1px var(--shadow);
   transition-property: color, text-shadow;
@@ -4368,7 +4368,7 @@ body {
   display: inline-block;
   height: 3rem;
   width: 3rem;
-  background-color: var(--c-text-extralow);
+  background-color: var(--c-text-low);
   content: "";
   mask-size: cover;
   -webkit-mask-size: cover;
