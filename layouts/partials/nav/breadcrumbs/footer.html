@@ -1,15 +1,15 @@
 <ul class="ul--row meta__list">
   <li class="meta__item">
-    <a class="meta__icon nav-link" href="{{ site.Home.RelPermalink }}" title="Home" rel="nofollow">
+    <a class="meta__icon link link--nav" href="{{ site.Home.RelPermalink }}" title="Home" rel="nofollow">
         {{- partial "material-symbol" (dict "id" "home" "ctx" . "size" "tiny") -}}
     </a></li><li class="meta__item">{{ partial "nav/breadcrumbs/separator.html" . }}</li>
     {{ $n := sub (len .Ancestors) 1 }}
     {{- range $i, $e := last $n .Ancestors.Reverse -}}
       <li class="meta__item">
-        <a class="meta__text nav-link" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
       </li>&zwj;
     {{- end -}}
   <li class="meta__item">
-    <a class="meta__text nav-link" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>
+    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>
   </li>
 </ul>

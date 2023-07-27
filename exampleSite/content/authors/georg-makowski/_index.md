@@ -22,7 +22,7 @@ contact_icons:
   icon: gmail
   url: "mailto:gm@desider.at"
 resources:
-- src: Joerg_Makowski.jpg
+- src: Joerg_Makowski2.jpg
   name: featured
   params:
     alt: Georg Makowski

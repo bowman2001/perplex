@@ -8,7 +8,7 @@
 {{ with .a.attr -}}
     {{- $attribution := ( . | site.Home.RenderString ) -}}
     {{- with $.a.attrlink -}}
-        <span class="caption__attr" data-pagefind-ignore>(<a class="text-link" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>)</span>
+        <span class="caption__attr" data-pagefind-ignore>(<a class="link link--text" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>)</span>
     {{- else -}}
       <span class="caption__attr" data-pagefind-ignore>({{ $attribution }})</span>
     {{- end -}}

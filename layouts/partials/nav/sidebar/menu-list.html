@@ -36,9 +36,9 @@
 {{- define "partials/sidebar/item" -}}
     {{- $active := .page.IsMenuCurrent .menuName .menuEntry -}}
     {{- if not $active -}}
-      <a href="{{ .menuEntry.URL }}" class="sidebar__link icon-link">
+      <a href="{{ .menuEntry.URL }}" class="link link--nav sidebar__link">
     {{- else -}}
-      <span class="sidebar__link icon-link is-active" aria-current="page">
+      <span class="link link--nav sidebar__link is-active" aria-current="page">
     {{- end -}}
         {{ partial "nav/menu-pre-icon.html" (dict "menuEntry" .menuEntry "size" .size) }}
         <span class="sidebar__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
@@ -52,7 +52,7 @@
 {{- define "partials/sidebar/expand" -}}
     {{ with .Identifier }}
       <input id="menu-{{ . }}" class="sidebar__chk" type="checkbox">
-      <label class="sidebar__open icon-link" for="menu-{{ . }}"><span class="sr-only">+</span>
+      <label class="sidebar__open" for="menu-{{ . }}"><span class="sr-only">+</span>
           <span class="icon icon--material"></span>
       </label>
     {{ else }}
