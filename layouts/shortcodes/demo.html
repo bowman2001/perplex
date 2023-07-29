@@ -4,7 +4,7 @@
     {{ highlight $inner "md" }}
     {{ $inner = $inner | site.Home.RenderString }}
     <p>{{ $result | site.Home.RenderString }}</p>
-    <div class="box">
-        {{ $inner }}
-    </div>
+    <hr>
+    {{ $inner }}
+    <hr>
 {{ end }}

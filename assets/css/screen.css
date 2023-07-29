@@ -1566,38 +1566,41 @@ body {
   font-size: 99%;
 }
 .md .blockquote-hero {
-  padding-right: 4rem;
+  padding: calc(1rem + 1 * var(--es)) calc(4rem + 1 * var(--es));
   color: var(--c-text-semihigh);
+  /* > p:first-child {
+  	position: relative;
+
+  	&:before {
+  		position: absolute;
+  		font-size: 400%;
+  		top: 0.3em;
+  		left: -4.5rem;
+  		content: "“";
+  		// color: transparentize(#222, 0.85);
+  	}
+  }
+
+  > p:last-child {
+  	position: relative;
+
+  	&:after {
+  		position: absolute;
+  		font-size: 400%;
+  		top: 0.3em;
+  		right: -3.5rem;
+  		content: "”";
+  		// color: transparentize(#222, 0.85);
+  	}
+  } */
 }
 .md .blockquote-hero > p, .md .blockquote-hero > ul, .md .blockquote-hero > ol, .md .blockquote-hero > dl {
-  font-size: 1.93rem;
-  line-height: 3rem;
-  padding-top: 0.777215rem;
-  padding-bottom: 0.222785rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
+  font-size: 2.4125rem;
+  line-height: 4rem;
+  padding-top: 0.09651875rem;
+  padding-bottom: 0.90348125rem;
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
   font-style: italic;
-}
-.md .blockquote-hero > p:first-child {
-  position: relative;
-}
-.md .blockquote-hero > p:first-child:before {
-  position: absolute;
-  font-size: 400%;
-  top: 0.3em;
-  left: -4.5rem;
-  content: "“";
-  color: rgba(34, 34, 34, 0.15);
-}
-.md .blockquote-hero > p:last-child {
-  position: relative;
-}
-.md .blockquote-hero > p:last-child:after {
-  position: absolute;
-  font-size: 400%;
-  top: 0.3em;
-  right: -3.5rem;
-  content: "”";
-  color: rgba(34, 34, 34, 0.15);
 }
 .md hr {
   margin: calc(1.4rem + 0.5 * var(--es)) 2rem calc(0.5rem + 1.5 * var(--es)) 2rem;
@@ -1611,6 +1614,9 @@ body {
 }
 .md dd p + ol, .md dd p + ul {
   padding-top: 1rem;
+}
+.md dd ul, .md dd ol, .md dd dl {
+  text-align: left;
 }
 .md .p-first {
   font-size: 1.95rem;
@@ -3378,7 +3384,6 @@ body {
 }
 
 .md .box, .md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
-  --es: 0.5rem;
   --box-shadow-color: var(--c-shadow-2);
   position: relative;
   z-index: 2;
@@ -3416,6 +3421,11 @@ body {
   color: var(--c-text-semihigh);
   background-color: var(--c-success-box-bg);
   --box-shadow-color: var(--c-success-bg);
+}
+.md .layout-box {
+  border-radius: 0.5rem;
+  background-color: var(--c-bg-1);
+  box-shadow: 0 0 0 1px var(--c-shadow-1);
 }
 
 @media screen and (min-width: 79em) {
@@ -4677,37 +4687,28 @@ li:empty:before {
   position: relative;
 }
 
-figure {
-  overflow-x: auto;
-}
-
-.math img, .math svg {
-  font-size: 200%;
-}
-
-.fig {
+.fig, .goat {
   position: relative;
   z-index: 5;
   padding-top: 1.75rem;
   padding-bottom: 1rem;
   width: 100%;
-  overflow: hidden;
 }
-.fig img, .fig svg {
+.fig img, .goat img, .fig svg, .goat svg {
   display: block;
   width: 100%;
   height: auto;
 }
-.fig .caption {
+.fig .caption, .goat .caption {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 @media screen and (min-width: 39em) {
-  .fig {
+  .fig, .goat {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  .fig .caption {
+  .fig .caption, .goat .caption {
     padding-left: 0;
     padding-right: 0;
   }
@@ -4768,7 +4769,7 @@ figure {
 }
 
 @media screen and (max-width: 39em) {
-  .fig--size-normal .img__c, .fig--size-large .img__c, .fig--size-xlarge .img__c {
+  .fig--size-normal .img__c, .goat .img__c, .fig--size-large .img__c, .fig--size-xlarge .img__c {
     border-radius: 0;
     border-left: none;
     border-right: none;
@@ -4776,25 +4777,25 @@ figure {
 }
 
 @media screen and (min-width: 48em) {
-  .fig--size-normal {
-    width: 111rem;
+  .fig--size-normal, .goat {
+    width: 74rem;
   }
-  .fig--size-normal .img__c {
+  .fig--size-normal .img__c, .goat .img__c {
     max-width: 70rem;
   }
-  .fig--size-normal .caption {
+  .fig--size-normal .caption, .goat .caption {
     position: absolute;
     z-index: 10;
-    right: 2rem;
+    right: -35rem;
     top: 1.75rem;
     width: 33rem;
-    height: calc(100% - 3.75rem);
+    height: calc(100% - 2.75rem);
     margin-left: 2rem;
     text-align: left;
     padding-left: 0;
     padding-right: 0;
   }
-  .fig--size-normal .caption__attr {
+  .fig--size-normal .caption__attr, .goat .caption__attr {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -4808,7 +4809,7 @@ figure {
     width: 37rem;
     padding-left: 18.5rem;
   }
-  .md--margin-left > .fig--size-normal {
+  .md--margin-left > .fig--size-normal, .md--margin-left > .goat {
     margin-left: 37rem;
   }
   .md--margin-left .fig--size-medium.fig--posh-left {
