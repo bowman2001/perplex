@@ -27,7 +27,7 @@ I don’t include the resulting code, you can inspect it as usual with your brow
 ## Bullet list inside of definition list
 
 ### Version 1
-{{< playground >}}
+{{< demo >}}
 > He adds up:
 > : - The cost of raw materials to be processed
 >   - The wages
@@ -35,10 +35,10 @@ I don’t include the resulting code, you can inspect it as usual with your brow
 >     - The selling expenses: transport. brokerage. discounts.
 >     - The general expenses: administration, rents, taxes. insurance etc.
 > {.dl-loose}
-{{< /playground >}}
+{{< /demo >}}
 
 ### Version 2
-{{< playground >}}
+{{< demo >}}
 > He adds up:
 > : The cost of raw materials to be processed
 > : The wages
@@ -46,6 +46,6 @@ I don’t include the resulting code, you can inspect it as usual with your brow
 >   - The selling expenses: transport. brokerage. discounts.
 >   - The general expenses: administration, rents, taxes. insurance etc.
 > {.dl-loose}
-{{< /playground >}}
+{{< /demo >}}
 
 Markdown is very sensitive to indentation when combining various formatting signs and [attributes](https://perplex.desider.at/doc/attribute). We need to align our code correctly. Then, the HTML code is the expected one. Which version fits the content in the best way is a matter of taste.

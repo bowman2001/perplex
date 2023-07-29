@@ -62,7 +62,6 @@ resources :
       alt: Placeholder image, normal size
       caption: The **default** normal size occupies the full text width. If the margin is available, the caption is placed there.
       size: normal
-      posh: left
       attr: gm
   - src: fig/large.svg
     name: fig-large
