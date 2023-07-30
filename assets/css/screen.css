@@ -57,10 +57,9 @@ hr {
   --c-frame-text-extralow: #7c8183;
   --c-frame-text-link: #00a9f7;
   --c-frame-text-link-ext: #00b594;
-  --c-frame-text-link-hover: #382e34;
   --c-frame-button: #e6b215;
   --c-frame-button-hover: #e6b215;
-  --c-frame-button-hover-bg: rgba(181, 181, 181, 0.34);
+  --c-frame-button-hover-bg: #282427;
   --c-frame-button-disabled: #544108;
   --c-frame-border-hover: #0088c7;
   --c-frame-border-active: #e7329b;
@@ -510,22 +509,6 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 }
 .link--text[href^=http]:hover:after, [href^=http].pagefind-ui__result-link:hover:after, .link--text[href^=http]:focus:after, [href^=http].pagefind-ui__result-link:focus:after {
   color: var(--c-text-link-ext-hover);
-}
-
-.md--frame .link--text, .md--frame .pagefind-ui__result-link {
-  color: var(--c-frame-text-link);
-  text-decoration-color: var(--c-frame-text-link);
-}
-.md--frame .link--text:hover, .md--frame .pagefind-ui__result-link:hover, .md--frame .link--text:focus, .md--frame .pagefind-ui__result-link:focus {
-  color: var(--c-frame-text-link-hover);
-  background-color: var(--c-frame-button-hover-bg);
-}
-.md--frame .link--text[href^=http], .md--frame [href^=http].pagefind-ui__result-link {
-  color: var(--c-frame-text-link-ext);
-  text-decoration-color: inherit;
-}
-.md--frame .link--text[href^=http]:hover, .md--frame [href^=http].pagefind-ui__result-link:hover, .md--frame .link--text[href^=http]:focus, .md--frame [href^=http].pagefind-ui__result-link:focus {
-  background-color: var(--c-frame-button-hover-bg);
 }
 
 .icon-link .icon {
@@ -1559,15 +1542,18 @@ body {
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
 }
 .md > blockquote footer, .md > blockquote cite, .md > div > blockquote footer, .md > div > blockquote cite {
-  display: block;
   font-style: italic;
 }
 .md strong {
   font-size: 99%;
 }
 .md .blockquote-hero {
-  padding: calc(1rem + 1 * var(--es)) calc(4rem + 1 * var(--es));
+  margin: calc(2rem + 1 * var(--es)) 2rem;
+  max-width: 70rem;
+  padding: calc(2rem + 1 * var(--es)) calc(2rem + 1 * var(--es));
   color: var(--c-text-semihigh);
+  border-top: 0.1rem solid var(--c-text-normal);
+  border-bottom: 0.1rem solid var(--c-text-normal);
   /* > p:first-child {
   	position: relative;
 
@@ -1595,12 +1581,10 @@ body {
   } */
 }
 .md .blockquote-hero > p, .md .blockquote-hero > ul, .md .blockquote-hero > ol, .md .blockquote-hero > dl {
-  font-size: 2.4125rem;
+  font-size: 2.5733333333rem;
   line-height: 4rem;
-  padding-top: 0.09651875rem;
-  padding-bottom: 0.90348125rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 4rem );
-  font-style: italic;
+  padding-top: 0.0362866667rem;
+  margin-bottom: -0.0362866667rem;
 }
 .md hr {
   margin: calc(1.4rem + 0.5 * var(--es)) 2rem calc(0.5rem + 1.5 * var(--es)) 2rem;
@@ -1619,10 +1603,10 @@ body {
   text-align: left;
 }
 .md .p-first {
-  font-size: 1.95rem;
-  line-height: 3rem;
-  padding-top: 0.769725rem;
-  padding-bottom: 0.230275rem;
+  font-size: 2.6rem;
+  line-height: 4rem;
+  padding-top: 0.0263rem;
+  padding-bottom: calc(0.9737rem + var(--es));
   text-align: left;
   color: var(--c-text-low);
   hyphens: none;
