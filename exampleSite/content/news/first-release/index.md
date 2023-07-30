@@ -14,7 +14,7 @@ resources:
     alt: Rendered spheres
 ---
 
-A new fluid-responsive theme for Hugo is available for test runs.
+A new fluid-responsive Hugo theme is available for test runs.
 {.p-first}
 <!--more-->
 
