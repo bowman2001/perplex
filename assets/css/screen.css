@@ -2559,7 +2559,7 @@ body {
 .md .h-danger .heading, .md .h-warn .heading, .md .h-info .heading, .md .h-success .heading {
   display: inline-block;
   padding: 0 0.5rem;
-  margin: 0 -0.5rem;
+  margin-left: -0.5rem;
   border-radius: 0.5rem;
   box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.25), 0 0 0 1px var(--c-shadow-1);
 }
@@ -2568,6 +2568,9 @@ body {
 }
 .md .h-danger .heading {
   background-color: var(--c-danger-bg);
+}
+.md .h-danger:hover .heading-anchor {
+  color: var(--c-danger);
 }
 .md .h-warn {
   color: var(--c-warn);
@@ -2580,6 +2583,9 @@ body {
 }
 .md .h-info .heading {
   background-color: var(--c-info-bg);
+}
+.md .h-info:hover .heading-anchor {
+  color: var(--c-info);
 }
 .md .h-success {
   color: var(--c-success);
@@ -3211,6 +3217,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.md > ul, .md > ol {
+  margin-bottom: 1rem;
+}
+.md > ul > li:last-child > p, .md > ol > li:last-child > p {
+  margin-bottom: 0;
+}
 .md ul li:before {
   content: "•";
 }
@@ -3245,7 +3257,7 @@ body {
   overflow: visible;
 }
 .md li > p {
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   overflow: visible;
 }
 .md li:before {
@@ -3409,7 +3421,7 @@ body {
 .md .layout-box {
   border-radius: 0.5rem;
   background-color: var(--c-bg-1);
-  box-shadow: 0 0 0 1px var(--c-shadow-1);
+  border: 1px solid var(--c-shadow-1);
 }
 
 @media screen and (min-width: 79em) {

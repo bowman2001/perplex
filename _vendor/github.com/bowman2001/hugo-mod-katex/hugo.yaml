@@ -1,0 +1,5 @@
+title: hugo-mod-katex
+module:
+  hugoVersion:
+    min: v0.110.0
+    extended: false

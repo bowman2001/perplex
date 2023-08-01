@@ -1,0 +1,11 @@
+{{ $map := partialCached "hugo-mod-pangram/function/get-sentence-list" . }}
+{{ $rmap := shuffle $map }}
+{{ $nSum := 0 }}
+{{ range $rmap }}
+    {{ $nSum = add $nSum .nw }}
+{{ end }}
+{{ $string := "" }}
+{{ range (shuffle $map.list) }}
+    {{ $string = print $string .sentence }}
+{{ end }}
+{{ return (delimit $string " ") }}

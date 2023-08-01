@@ -1,0 +1,11 @@
+{{- $p := partialCached "hugo-mod-pangram/function/get-sentence-list" . -}}
+{{- printf "The list contains **%d** pangrams. " (len $p.list) -}}
+{{- printf "They are between _%d_ and _%d_ characters (C) long " $p.minChars $p.maxChars  }}
+{{- printf "and contain between _%d_ and _%d_ words (W).\n" $p.minWords $p.maxWords  }}
+{{- print "|Nr.|Pangram|C|W|\n" -}}
+{{- print "|:--|:--|:--:|:--:|\n" -}}
+{{- $counter := 0 -}}
+{{- range $p.list -}}
+    {{- $counter = add $counter 1 -}}
+    {{- printf "|**%d.**|%s|%d|%d|\n" $counter .sentence .nc .nw -}}
+{{- end }}
