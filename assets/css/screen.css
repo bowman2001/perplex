@@ -70,10 +70,10 @@ hr {
   --c-text-normal: #18272d;
   --c-text-high: #030505;
   --c-text-semihigh: #11181c;
-  --c-text-medium: #24343c;
-  --c-text-semilow: #30444d;
-  --c-text-low: #405660;
-  --c-text-extralow: #58717d;
+  --c-text-medium: #25343a;
+  --c-text-semilow: #32434b;
+  --c-text-low: #43565f;
+  --c-text-extralow: #5b717b;
   --c-text-link: #0074aa;
   --c-text-link-hover: #030505;
   --c-text-link-hover-bg: rgba(68, 196, 255, 0.1);
@@ -89,7 +89,7 @@ hr {
   --c-icon-link-hover: #e00083;
   --c-icon-link-ext-hover: #00a687;
   --c-code: #1a282f;
-  --c-code-extralow: #59737f;
+  --c-code-extralow: #5d737e;
   --c-code-bg: #fff;
   --c-danger: #fff;
   --c-danger-bg: hsl(0, 80%, 47.5%);
@@ -571,19 +571,19 @@ h1:target .heading-anchor:before, h2:target .heading-anchor:before, h3:target .h
 
 .caption__text {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .caption__attr {
   float: right;
   text-align: right;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .caption__nr {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .lazyload,
@@ -4345,9 +4345,11 @@ body {
 }
 
 .sidebar__chk, .sidebar__open {
+  z-index: 10;
   position: absolute;
   right: 0;
   width: 3rem;
+  height: 3rem;
 }
 
 .sidebar__open {
@@ -5385,7 +5387,7 @@ li:empty:before {
   display: inline-grid;
   width: 100%;
   padding: 0 2rem;
-  padding-bottom: calc(1rem + 1 * var(--es));
+  padding-bottom: 3rem;
   grid-template-columns: 10rem auto auto;
   grid-template-rows: repeat(3, minmax(4rem, auto));
   grid-template-areas: "img title title" "img description description" ". follow contact";
