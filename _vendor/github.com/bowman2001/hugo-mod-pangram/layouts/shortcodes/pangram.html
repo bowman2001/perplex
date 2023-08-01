@@ -12,10 +12,12 @@
 {{- if $nSentences -}}
     {{- $map := partialCached "hugo-mod-pangram/function/get-sentence-list" . -}}
     {{- $sr := shuffle (seq 0 (sub (len $map.list) 1)) -}}
+    {{- $slice := slice -}}
     {{- range first $nSentences $sr -}}
         {{- $p := index $map.list . -}}
-        {{- print $p.sentence " " -}}
+        {{- $slice = $slice | append $p.sentence -}}
     {{- end -}}
+    {{- print (delimit $slice " ") -}}
 {{- else if $nWords -}}
     {{- $list := partial "hugo-mod-pangram/function/get-word-list" -}}
     {{- $sr := shuffle (seq 0 (sub (len $list) 1)) -}}

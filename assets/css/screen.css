@@ -1532,7 +1532,7 @@ body {
   margin-left: -0.5em;
 }
 .md > blockquote, .md > div > blockquote {
-  padding: 1rem 2rem calc(1 * var(--es)) calc(5rem + 1 * var(--es));
+  padding: 0 2rem calc(1 * var(--es)) calc(5rem + 1 * var(--es));
 }
 .md > blockquote > p, .md > blockquote > ul, .md > blockquote > ol, .md > blockquote > dl, .md > div > blockquote > p, .md > div > blockquote > ul, .md > div > blockquote > ol, .md > div > blockquote > dl {
   font-size: 1.809375rem;
@@ -1548,7 +1548,7 @@ body {
   font-size: 99%;
 }
 .md .blockquote-hero {
-  margin: calc(2rem + 1 * var(--es)) 2rem;
+  margin: 2rem 2rem calc(2rem + 1 * var(--es)) 2rem;
   max-width: 70rem;
   padding: calc(2rem + 1 * var(--es)) calc(2rem + 1 * var(--es));
   color: var(--c-text-semihigh);
@@ -2178,10 +2178,6 @@ body {
 .md pre code {
   display: block;
   white-space: pre;
-}
-.md > pre {
-  margin-top: 1.9rem;
-  margin-bottom: 1.9rem;
 }
 .md .highlight > pre > code {
   padding-left: 1rem;
