@@ -34,6 +34,8 @@ github.com/bowman2001/hugo-mod-meta v0.2.0 h1:dvRfqXJPTdpl8FXWQALFxfID4CZy0doRfO
 github.com/bowman2001/hugo-mod-meta v0.2.0/go.mod h1:zVmeyy6n09TU/R/dJLT1xAjgK4LxkvNrZI5197LknjE=
 github.com/bowman2001/hugo-mod-open-in-vscode v1.2.0 h1:EU+WDkw6NbA15TPcLEudk4YBTPkQWaREKPowBqOgnhU=
 github.com/bowman2001/hugo-mod-open-in-vscode v1.2.0/go.mod h1:N4vt3jnFUB4QI041NCQZPfw/SWM+cPVG0HwAcWnvJho=
+github.com/bowman2001/hugo-mod-pangram v0.0.0-20230801071655-d9d6ebdf26d0 h1:LZ4Ddb7n44Nov0DI+aoltw32B45yV1ckT4AwdIvvfcM=
+github.com/bowman2001/hugo-mod-pangram v0.0.0-20230801071655-d9d6ebdf26d0/go.mod h1:p26SPxvC7Q7pLpgX+qS0qicq8Nck5ewwSkS6IfzF3kM=
 github.com/bowman2001/hugo-mod-replacements v0.3.2 h1:cPMn4hKUhhBTa1qs9SpiBtWhQ69IzBh5iPxL8BAvguk=
 github.com/bowman2001/hugo-mod-replacements v0.3.2/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
 github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20230619093607-227aa7ba45c3 h1:WQoc/JfMuzcRvml5PjiRIpXnpHsL16uU21TXDcNjHSM=
