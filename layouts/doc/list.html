@@ -1,7 +1,7 @@
 {{- define "main" -}}
-  <div id="l-content-box" class="l-box">
+  <div id="l-content-box" class="l-box l-box--doc">
     <div id="l-content" data-pagefind-body>
-      <header class="page-header">
+      <header class="page-header margin-doc">
           {{ $level := "" }}
           {{ if eq .CurrentSection .FirstSection }}
               {{ $level = "first" }}
@@ -19,11 +19,11 @@
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--h-serif md--list">
+          <div class="md md--sans md--list md--margin-doc">
               {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
-        <nav class="section-nav">
+        <nav class="section-nav margin-doc">
           <ul>
               {{- range .Pages -}}
                 <li class="section-nav__li">{{- .Render "li" -}}</li>
@@ -31,12 +31,12 @@
           </ul>
         </nav>
         {{ with .Page.GetPage "after" }}
-          <section class="md md--sans md--h-serif">
+          <section class="md md--sans md--margin-doc">
               {{- partial "replacements.html" .Content }}
           </section>
         {{ end }}
     </div>
-    <footer class="page-footer">      
+    <footer class="page-footer margin-doc">
       <div class="meta meta--foot">
           {{ partial "nav/breadcrumbs/footer.html" . }}
           {{ partial "date/updated.html" . }}

@@ -10,12 +10,12 @@
       </div>
     </header>
       {{- with .Content -}}
-        <div class="md md--sans md--margin-left md--h-serif md--list">
+        <div class="md md--sans md--margin-full md--h-serif md--list">
             {{- partial "replacements.html" . -}}
         </div>
       {{- end -}}
       {{- with .Pages -}}
-        <nav class="card-nav card-nav--3 card-nav--top margin-left">
+        <nav class="card-nav card-nav--3 card-nav--top margin-full">
           <ul class="card-nav__list">
               {{- range .ByTitle -}}
                 <li class="card card--1 card--1--row card__hover">{{- .Render "li-card-1-row-img" -}}</li>
@@ -23,7 +23,7 @@
           </ul>
         </nav>
       {{- end -}}
-    <footer class="page-footer page-footer--taxo margin-left">
+    <footer class="page-footer page-footer--taxo margin-full">
         <div class="taxo {{ if gt (len .Pages) 18 }}taxo--left{{ end }}">
          {{- partial "footer/taxo.html" . -}}
         </div>
@@ -31,7 +31,7 @@
   </div>
 {{- end -}}
 {{ define "footer" -}}
-  <footer id="l-footer" class="l-box margin-left">
+  <footer id="l-footer" class="l-box margin-full">
       {{- partial "footer/site.html" . -}}
   </footer>
 {{ end -}}

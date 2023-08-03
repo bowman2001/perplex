@@ -18,12 +18,4 @@
         {{- $slice = $slice | append $p.sentence -}}
     {{- end -}}
     {{- print (delimit $slice " ") -}}
-{{- else if $nWords -}}
-    {{- $list := partial "hugo-mod-pangram/function/get-word-list" -}}
-    {{- $sr := shuffle (seq 0 (sub (len $list) 1)) -}}
-    {{- range first $nWords $sr -}}
-        {{- $p := index $list . -}}
-        {{- print $p.sentence " " -}}
-    {{- end -}}
-{{- else if $chars -}}
-{{- end -}}
+{{- end -}}{{- /**/ -}}

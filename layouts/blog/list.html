@@ -1,14 +1,14 @@
 {{- define "main" -}}
   <div id="l-content-box" class="l-box l-box--full">
     <header class="page-header">
-      <div class="title title--dark title--dark--bluered padding-left">
+      <div class="title title--dark title--dark--bluered padding-full">
           {{ partial "file/vscode_start.html" . }}
           {{ partial "title/title.html" . }}
           {{ partial "file/vscode_end.html" . }}
       </div>
     </header>
       {{ with .Content }}
-        <div class="md md--sans md--h-serif md--list md--margin-left">
+        <div class="md md--sans md--h-serif md--list md--margin-full">
             {{- partial "replacements.html" . -}}
         </div>
       {{ end }}
@@ -21,7 +21,7 @@
           </ul>
         </nav>
       {{ end }}
-    <footer class="page-footer margin-left">
+    <footer class="page-footer margin-full">
     </footer>
   </div>
 {{- end -}}

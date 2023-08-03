@@ -6,17 +6,17 @@
             {{ partial "nav/taxonomies/page/lists.html" . }}
             {{ partial "date/published_datetime.html" . }}
         </div>
-        <div class="title title--sans margin-left">
+        <div class="title title--sans margin-full">
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
         </div>
           <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
-      <div class="md md--sans md--h-sans md--margin-left">
+      <div class="md md--sans md--h-sans md--margin-full">
           {{- partial "replacements.html" .Content -}}
       </div>
     </div>
-    <footer class="page-footer margin-left">
+    <footer class="page-footer margin-full">
         {{ partial "nav/related/small-cards.html" . }}
       <div class="meta meta--foot">
           {{ partial "nav/taxo_and_breadcrumbs.html" . }}

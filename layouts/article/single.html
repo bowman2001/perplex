@@ -7,18 +7,18 @@
           {{ partial "date/published_datetime.html" . }}
       </div>
         {{ partial "title/titlehead-margin.html" . }}
-      <div class="title title--article margin-left">
+      <div class="title title--article margin-full">
         {{ partial "title/title.html" . }}
         {{ partial "title/subtitle.html" . }}
       </div>
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
     </header>
-    <div class="md md--sans md--margin-left md--h-sans
+    <div class="md md--sans md--margin-full md--h-sans
     {{ with .Params.dropcap -}} md-dropcap {{- . }}{{ end }}">
       {{- partial "replacements.html" .Content -}}
     </div>
   </div>
-  <footer class="page-footer margin-left">
+  <footer class="page-footer margin-full">
       {{ partial "nav/related/small-cards.html" . }}
     <div class="meta meta--foot">
       {{ partial "nav/taxo_and_breadcrumbs.html" . }}

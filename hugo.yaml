@@ -122,6 +122,7 @@ module:
     - path: github.com/bowman2001/hugo-mod-simple-icons
     - path: github.com/bowman2001/hugo-mod-material-symbols
     - path: github.com/bowman2001/hugo-mod-pangram
+    - path: github.com/bowman2001/hugo-mod-wrap
 
 ### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!

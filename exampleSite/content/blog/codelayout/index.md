@@ -53,7 +53,7 @@ When our code lines never exceed {$40} characters, we can embed them inside or p
 }
 ```
 
-{{< farfar 1 >}}
+{{% pangram 3 %}}
 
 ```bash {.lh15 .right}
 ├── assets
@@ -64,7 +64,7 @@ When our code lines never exceed {$40} characters, we can embed them inside or p
 └── themes
 ```
 
-{{< farfar 1 >}}
+{{% pangram 7 %}}
 
 ## In lists or other indented blocks
 

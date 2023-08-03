@@ -1,0 +1,27 @@
+{{- $mod := "hugo-mod-wrap" -}}
+{{- $begin := "begin" -}}
+{{- $name := "end" -}}
+{{- $page := .Page -}}
+{{- $class := "" -}}
+{{- with (.Get 0) -}}
+    {{- $class = . -}}
+{{- else -}}
+    {{- errorf "%s: The shortcode %q (on %s) is always expecting one class name as parameter." $mod $name $page -}}
+{{- end -}}
+{{- with $page.Scratch.Get "begin" -}}
+    {{- $list := . -}}
+    {{- $storedclass := trim (delimit (last 1 $list) "") " " -}}
+    {{- if eq $storedclass $class -}}
+        {{- /**/ -}}</div>{{- /**/ -}}
+        {{- $n := len $list -}}
+        {{- if gt $n 1 -}}
+            {{- $page.Scratch.Set "begin" (first (sub $n 1) $list) -}}
+        {{- else -}}
+            {{- $page.Scratch.Delete "begin" -}}
+        {{- end -}}
+    {{- else -}}
+        {{- errorf "%s: The shortcode %q (on %s) doesn’t match a %q shortcode with the parameter %q. The last %q is %q (typo?)" $mod $name $page $begin $class $begin $storedclass -}}
+    {{- end -}}
+{{- else -}}
+    {{- errorf "%s: The shortcode %q (on %s) doesn’t match a %q shortcode." $mod $name $page $begin -}}
+{{- end }}{{- /**/ -}}

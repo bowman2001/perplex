@@ -49,30 +49,24 @@ This theme processes a few front-matter parameters to produce the [title section
 
 # Title
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque...
-{.blind}
+{{% pangram 3 %}}
 
 ---
 
 ## Section
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque...
-{.blind}
+{{% pangram 3 %}}
 
 ### Subsection
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque...
-{.blind}
+{{% pangram 3 %}}
 
 #### Sub-subsection
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque...
-{.blind}
+{{% pangram 3 %}}
 
 ##### Paragraph
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
-{.blind}
+{{% pangram 3 %}}
 
 ###### Small Paragraph
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-{.blind}
+{{% pangram 3 %}}
 
 ## Images
 
@@ -84,8 +78,8 @@ Since version 0.108.0 Hugo allows distinguishing stand-alone and embedded images
 
 ### Embedded
 
-![A smaller splash of water](splash) Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
-{.blind .blind-right}
+![A smaller splash of water](splash) {{% pangram 9 %}}
+{.clear}
 
 ## Link
 
@@ -98,15 +92,14 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Without attribution
 
-> Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque...
-> {.blind}
+> {{% pangram 5 %}}
 >
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
 ### With attribution and footnote
 
 > Don't communicate by sharing memory, share memory by communicating.
-> {=— Rob Pike[^1]}
+> — _Rob Pike_[^1]
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, on November 18, 2015.
 

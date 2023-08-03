@@ -2,14 +2,14 @@
     <div id="l-content-box" class="l-box l-box--full">
         <div>
             <header class="page-header">
-                <div class="title title--sans title--dark title--dark--bluegreen padding-left">
+                <div class="title title--sans title--dark title--dark--bluegreen padding-full">
                     {{ partial "file/vscode_start.html" . }}
                     {{ partial "title/title.html" . }}
                     {{ partial "file/vscode_end.html" . }}
                 </div>
             </header>
             {{ with .Content }}
-                <div class="md md--sans md--h-sans md--list md--margin-left">
+                <div class="md md--sans md--h-sans md--list md--margin-full">
                     {{- partial "replacements.html" . -}}
                 </div>
             {{ end }}
@@ -24,7 +24,7 @@
                 {{- end -}}
             </ul>
         </div>
-        <footer class="page-footer margin-left">
+        <footer class="page-footer margin-full">
             <div class="meta meta--foot">
                 {{ partial "nav/breadcrumbs/footer.html" . }}
             </div>

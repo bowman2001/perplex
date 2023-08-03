@@ -3,7 +3,7 @@
       <div class="l-footer__columns">
           {{- range . }}
             <div class="md md--tiny md--footer md--frame footer__col">
-              <h2>{{ .Title | site.Home.RenderString }}</h2>
+              <h2>{{- partial "file/vscode_start.html" . -}}{{ .Title | site.Home.RenderString }}{{- partial "file/vscode_end.html" . -}}</h2>
                 {{ partial "replacements.html" .Content }}
             </div>
           {{- end }}

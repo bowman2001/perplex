@@ -9,7 +9,7 @@
   <main id="l-main" class="l-tnp">
       {{- block "main" . -}}{{- end -}}
       {{- block "footer" . -}}
-    <footer id="l-footer" class="l-box margin-halfleft">
+    <footer id="l-footer" class="l-box margin-full-half">
         {{- partial "footer/site.html" . -}}
     </footer>
       {{- end -}}
@@ -17,5 +17,6 @@
   <div id="l-overlay"></div>
 </div>
 {{- partial "foot.html" . -}}
+{{- partial "hugo-mod-wrap/check" . -}}
 </body>
 </html>

@@ -1,7 +1,7 @@
 {{ define "main" }}
-    <div id="l-content-box" class="l-box">
+    <div id="l-content-box" class="l-box l-box--doc">
         <div data-pagefind-body>
-            <header class="page-header">
+            <header class="page-header margin-doc">
                 <div class="meta meta--head" data-pagefind-ignore>
                     {{ partial "nav/breadcrumbs/header.html" . }}
                     {{ partial "date/published_date.html" . }}
@@ -14,12 +14,12 @@
                 <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
             </header>
             {{ with .Content }}
-                <div class="md md--sans md--h-sans ">
+                <div class="md md--sans md--h-sans md--margin-doc">
                     {{ partial "replacements.html" . }}
                 </div>
             {{ end }}
         </div>
-        <footer class="page-footer">
+        <footer class="page-footer margin-doc">
             {{ partial "nav/related/small-cards.html" . }}
             <div class="meta meta--foot">
                 {{ partial "nav/taxo_and_breadcrumbs.html" . }}
