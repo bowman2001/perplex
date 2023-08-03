@@ -645,6 +645,9 @@ body {
   overflow-x: hidden;
   scrollbar-gutter: stable both-edges;
   min-height: 0;
+  animation-name: page;
+  animation-duration: 150ms;
+  animation-timing-function: ease-in-out;
   color: var(--c-text-normal);
   background-color: var(--c-page);
 }
@@ -858,7 +861,6 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  animation: fade 150ms;
   transition: background-color 250ms;
 }
 @media screen and (min-width: 79em) {
@@ -926,7 +928,6 @@ body {
     grid-area: left;
     position: static;
     width: 35rem;
-    animation: fade 150ms;
     height: 100%;
     padding-left: 0;
     padding-right: 0;

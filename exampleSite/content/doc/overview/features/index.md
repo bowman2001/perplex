@@ -23,3 +23,8 @@ weight: 7
 
 {.p-first}
 <!--more-->
+
+Layout
+: Advanced and user-friendly design for technical publishing. Different kinds of pages all reside on the same grid and you can publish everything: Large documentation, news stream, blog postings, and articles (coming). 
+{.dl-loose}
+ 

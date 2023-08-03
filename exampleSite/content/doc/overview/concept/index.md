@@ -23,15 +23,20 @@ At the moment, this site shows the news section as a start page. A template for 
 
 ## Design & Layout
 
-The typographic design of this theme takes the proportions of the open-source font family [Plex](https://www.ibm.com/plex/) into consideration. But the layout does **not** resemble [IBM’s corporate design](https://carbondesignsystem.com/).
+![Sample of IBM Plex Sans](IBM_Plex_Sans_Sample.svg?posh=left&size=tiny)
 
-The layout is **fluid-responsive**. This concept has been around for a while but hasn’t been realized often. I’m not completely sure why because there are [many advantages](/blog/accessibility-of-fluid-typography). The proportions of this layout stay fixed between breakpoints beyond mobile. And this also means:
+The theme includes the open-source font family [Plex](https://www.ibm.com/plex/) and the layout fits their proportions. The theme does **not** resemble [IBM’s corporate design system](https://carbondesignsystem.com/).
 
-- The viewport is used at full width when the screen space is limited.
+The layout is **fluid-responsive**. This concept has been around for a while but hasn’t been realized often. I’m not completely sure why because there are [many advantages](/blog/accessibility-of-fluid-typography). The proportions of this layout stay fixed between breakpoints beyond mobile. And this allows us to achieve some essential typographic advantages:
+
+- The viewport is always used at full width when the screen space is limited.
 
 - The line length stays the same on all screens wide enough.
 
-All text is placed on a **baseline grid** to introduce a comfortable vertical rhythm. Combined with the fluid-responsive design this allows placing images (and other block elements) in and around the text with high accuracy. The blog contains examples of all layout options for [stand-alone](/blog/image/stand-alone) and [embedded](/blog/image/embedded) images.
+- adjacent columns stay in sync
+{.col2}
+
+All text is placed on a **baseline grid** to introduce a comfortable vertical rhythm and coherence between adjacent text elements. Combined with the fluid-responsive design this allows placing images (and other block elements) in and around the text with high accuracy. The blog contains examples of all layout options for [stand-alone](/blog/image/stand-alone), [embedded](/blog/image/embedded) images, and [code blocks](/blog/codelayout).
 
 ## Usage concept
 

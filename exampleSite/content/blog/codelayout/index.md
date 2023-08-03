@@ -42,7 +42,9 @@ type NodeRenderer interface {
 ```
 
 ## Short lines
-When our code lines never exceed {$40} characters, we can embed them inside or place them beside the text:
+When our code lines never exceed {$40} characters, we place them beside the text:
+
+---
 
 ```json {.left}
 {
@@ -65,6 +67,37 @@ When our code lines never exceed {$40} characters, we can embed them inside or p
 ```
 
 {{% pangram 7 %}}
+
+---
+
+Or we can embed them in the text:
+
+---
+
+
+```json {.left-inside}
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 35,
+  "profession": "Last Man Standing"
+}
+```
+
+{{% pangram 4 %}}
+
+```bash {.lh15 .right-inside}
+├── assets
+├── config
+├── package.json
+├── public
+├── resources
+└── themes
+```
+
+{{% pangram 5 %}}
+
+---
 
 ## In lists or other indented blocks
 
