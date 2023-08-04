@@ -646,7 +646,6 @@ body {
   overflow-x: hidden;
   scrollbar-gutter: stable both-edges;
   min-height: 0;
-  animation-name: page;
   animation-duration: 150ms;
   animation-timing-function: ease-in-out;
   color: var(--c-text-normal);
@@ -2264,8 +2263,8 @@ body {
   white-space: pre;
 }
 .md .highlight > pre > code {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.8em;
+  padding-right: 0.8rem;
 }
 .md .highlight {
   display: block;
@@ -5201,8 +5200,8 @@ li:empty:before {
   white-space: pre;
   -webkit-user-select: none;
   user-select: none;
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
+  margin-right: 0.2em;
+  padding-right: 0.4em;
   color: var(--c-chroma-ln);
 }
 
