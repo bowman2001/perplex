@@ -1,6 +1,6 @@
 ### WARNING!
 ### This is the theme configuration file. Don’t change anything here!
-### Use the configuration in your project root to change parameters.
+### Use the configuration in your project root to add or overwrite parameters.
 
 ## Theme parameters
 params:
@@ -34,15 +34,16 @@ params:
     link:
       errorLevel: warning # ignore, warning, or error
     fragments:
-      errorLevel: warning # ignore, or warning
+      errorLevel: ignore # ignore, or warning
 
   #### Image processing
   
   ### Parameters
   imaging:
-    fallback_width: 1400 # In pixel, also used for meta images
+    fallback_width: 660 # In pxl
+    social_width: 1200 # In px TODO
     sizestep: 50 # In percent
-    min_width: 100 # In pixel
+    min_width: 100 # In px
     # Quality reduction for higher densities
     # quality_reduction: [ -10, -20, -30 ] TODO
     
@@ -86,33 +87,24 @@ params:
 
 markup:
   goldmark:
-    extensions:
-      definitionList: true
-      footnote: true
-      linkify: true
-      linkifyProtocol: https
-      strikethrough: true
-      table: true
-      taskList: true
-      typographer: true
     parser:
       attribute:
         block: true
-        title: true
-      autoHeadingID: true
-      autoHeadingIDType: github
       wrapStandAloneImageWithinParagraph: false
     renderer:
       hardWraps: true
-      unsafe: false
-      xhtml: false
+  highlight:
+    anchorLineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+
 
 ### IMPORTANT!
 ### This module configuration does only affect the folder of the theme.
 module:
   hugoVersion:
     extended: false
-    min: "v0.112.0"
+    min: "v0.115.0"
   imports:
     - path: github.com/bowman2001/hugo-mod-meta
     - path: github.com/bowman2001/hugo-mod-replacements
@@ -126,10 +118,9 @@ module:
 
 ### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!
-### Hugo doesn’t merge security settings at all for obvious reasons.
+### (Hugo never merges security settings.)
 
 security:
-  enableInlineShortcodes: false
   exec:
     allow:
       - ^go$

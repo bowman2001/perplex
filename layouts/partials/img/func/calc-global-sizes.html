@@ -15,12 +15,12 @@
 {{ $max := .max }}
 {{ $ratio := (div $max (float $min)) }}
 {{ $sizestep := site.Params.imaging.sizestep }}
-{{ if (lt $sizestep 15) }}
-    {{ errorf "The file size difference of %d percent for your srcset is too small. You could end up with more than 100 images. At least 20 percent are recommended." $sizestep }}
-{{ else if (lt $sizestep 20) }}
-    {{ warnf "The file size difference of %d percent for the srcsets is small. Hugo will take some time for the image processing. 20 percent or more are recommended." $sizestep }}
+{{ if (lt $sizestep 20) }}
+    {{ errorf "Aborting. The file size difference of %d percent for your srcset is too small. The srcset would become too big. At least 25 percent are recommended." $sizestep }}
+{{ else if (lt $sizestep 25) }}
+    {{ warnf "The file size difference of %d percent for the srcsets is small. Hugo will take some time for the image processing. 25 percent or more are recommended." $sizestep }}
 {{ end }}
-{{ $m := (math.Sqrt (add 1 (div site.Params.imaging.sizestep 100.0))) }}
+{{ $m := (math.Sqrt (add 1 (div $sizestep 100.0))) }}
 {{ $n := (math.Ceil (div (math.Log $ratio) (math.Log $m))) }}
 {{ $mo := (math.Pow $ratio (div 1.0 $n)) }}
 {{ $size := $min }}
