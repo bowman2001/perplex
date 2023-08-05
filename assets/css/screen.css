@@ -646,8 +646,6 @@ body {
   overflow-x: hidden;
   scrollbar-gutter: stable both-edges;
   min-height: 0;
-  animation-duration: 150ms;
-  animation-timing-function: ease-in-out;
   color: var(--c-text-normal);
   background-color: var(--c-page);
 }
