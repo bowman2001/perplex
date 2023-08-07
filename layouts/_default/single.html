@@ -1,6 +1,6 @@
 {{- define "main" -}}
 <div id="l-content-box" class="l-box l-box--full">
-  <div id="l-content">
+  <article id="l-content">
     <header class="page-header page-header--left">
       <div class="title title--serif">
         <hr>
@@ -10,11 +10,11 @@
        <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
     </header>
     {{ with .Content }}
-    <div class="md md--sans md--margin-full md--h-serif ">
+    <div class="md md--sans md--h-sans md--margin-full">
       {{- partial "replacements.html" . -}}
     </div>
     {{ end }}
-  </div>
+  </article>
   <footer class="page-footer">
   </footer>
 </div>

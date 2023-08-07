@@ -18,9 +18,11 @@
                     {{ partial "replacements.html" . }}
                 </div>
             {{ end }}
+            <div class="margin-doc">
+                {{ partial "nav/related/small-cards.html" . }}
+            </div>
         </div>
         <footer class="page-footer margin-doc">
-            {{ partial "nav/related/small-cards.html" . }}
             <div class="meta meta--foot">
                 {{ partial "nav/taxo_and_breadcrumbs.html" . }}
                 {{ partial "date/updated.html" . }}

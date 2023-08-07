@@ -1,6 +1,7 @@
+{{ $up := dict }}
+{{ if not (eq .Params.attr "no") }}
 {{ $filename := .Key | path.Base }}
 {{ $length := len $filename }}
-{{ $up := dict }}
 {{ if (gt $length 24) }}
     {{ $endid := (sub $length 13) }}
     {{ if eq (slicestr $filename $endid) "-unsplash.jpg" }}
@@ -14,5 +15,6 @@
         {{ end }}
         {{ $up = merge $up (dict "attr" (print (trim (delimit $name " ") " ") (htmlUnescape "/&hairsp;Unsplash")))  }}
     {{ end }}
+{{ end }}
 {{ end }}
 {{ return $up }}

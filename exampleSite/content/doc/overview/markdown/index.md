@@ -15,14 +15,17 @@ resources:
   params:
     alt: Markdown logo
     container: trans
+    size: tiny
 - src: erda-estremera-eMX1aIAp9Nw-unsplash.jpg
   name: bigsplash
   params: 
-    caption: This caption and attribution are only available when we register an image as a resource in the front-matter
+    caption: This caption and the attribution below are not available for directly included images. We need to register an image as a resource in the front-matter and provide additional information.
+    alt: Big splash of water
 - src: mulyadi-JJMoAiVl9jA-unsplash.jpg
   name: splash
   params:
-    caption: Caption (via resource)
+    caption: Caption (only from a resource)
+    alt: Splash of water
 categories: [Overview, Markdown]
 tags: [Block, Inline]
 weight: 5
@@ -50,23 +53,29 @@ This theme processes a few front-matter parameters to produce the [title section
 # Title
 
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ---
 
 ## Section
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ### Subsection
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 #### Sub-subsection
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ##### Paragraph
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ###### Small Paragraph
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Images
 
@@ -79,8 +88,10 @@ Since version 0.108.0 Hugo allows distinguishing stand-alone and embedded images
 ### Embedded
 
 ![A smaller splash of water](splash) {{% pangram 6 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 {{% pangram 6 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Link
 
@@ -89,11 +100,13 @@ Since version 0.108.0 Hugo allows distinguishing stand-alone and embedded images
 - This is an external [example link](https://example.com "example.com").
 
 ## Blockquotes
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+
+The blockquote element contains content from another source.
 
 ### Without attribution
 
 > {{% pangram 5 %}}
+> {.placeholder data-pagefind-ignore="all"}
 >
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 

@@ -3,7 +3,7 @@
     {{ $ordinal = . }}
 {{ end }}
 {{- with .a.caption -}}
-<span class="caption__text" data-pagefind-ignore>
+<span class="caption__text">
     {{ with $ordinal }}<span class="caption__nr">{{ . }}.</span> {{ end }}{{ . | site.Home.RenderString }}</span>{{ end -}}
 {{ with .a.attr -}}
     {{- $attribution := ( . | site.Home.RenderString ) -}}

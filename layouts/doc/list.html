@@ -11,7 +11,7 @@
               {{ $level = "third" }}
           {{ end }}
           {{ partial "title/titlehead.html" . }}
-        <div class="title title--sans  title--{{- $level -}}">
+        <div class="title title--sans title--{{- $level -}}">
           <hr>
             {{ partial "title/title.html" . }}
             {{ partial "title/subtitle.html" . }}
@@ -19,7 +19,7 @@
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
         {{ with .Content }}
-          <div class="md md--sans md--list md--margin-doc">
+          <div class="md md--sans md--h-sans md--list md--margin-doc">
               {{- partial "replacements.html" . -}}
           </div>
         {{ end }}
@@ -31,7 +31,7 @@
           </ul>
         </nav>
         {{ with .Page.GetPage "after" }}
-          <section class="md md--sans md--margin-doc">
+          <section class="md md--sans md--h-sans md--margin-doc">
               {{- partial "replacements.html" .Content }}
           </section>
         {{ end }}

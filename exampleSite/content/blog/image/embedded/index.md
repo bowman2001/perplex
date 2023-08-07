@@ -23,83 +23,69 @@ All the other following options are only available for images that are registere
 
 ### Normal size {#normal}
 
-![](img-normal) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-{.blind .blind-right}
+![](img-normal) {{% pangram 10 %}}
+{.placeholder data-pagefind-ignore="all"}
 
-![](img-normal?posh=right) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-{.blind .blind-left}
+![](img-normal?posh=right) {{% pangram 10 %}}
+{.placeholder data-pagefind-ignore="all" .clear}
 
 ### Small size
 
-![](img-small?size=small) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life.
-{.blind}
+![](img-small?size=small) {{% pangram 4 %}}
+{.placeholder data-pagefind-ignore="all"}
 
-![](img-small?posh=right&size=small) Far, far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life.
-{.blind}
+![](img-small?posh=right&size=small) {{% pangram 7 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ### Tiny size
 
-![](img-tiny?s=tiny) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-{.blind}
+![](img-tiny?s=tiny) {{% pangram 5 %}}
+{.placeholder data-pagefind-ignore="all"}
 
-![](img-tiny?s=tiny&ph=right) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-{.blind}
+![](img-tiny?s=tiny&ph=right) {{% pangram 5 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## In the middle
 
-### Default
+Only normal-sized embedded images need some additional spacing when they are placed in the middle of a text block:
 
-Far, far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. ![](img-normal?pv=middle) A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life.
-{.blind .blind-right}
+{{% pangram 4 %}} ![](img-normal?pv=middle) {{% pangram 6 %}}
+{.placeholder data-pagefind-ignore="all"}
 
-One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
-{.blind .blind-right}
+{{% pangram 8 %}}
+{.placeholder data-pagefind-ignore="all"}
 
-Far, far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. ![](img-normal?ph=right&pv=middle) A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life.
-{.blind .blind-left}
+{{% pangram 4 %}} ![](img-normal?ph=right&pv=middle) {{% pangram 6 %}}
+{.placeholder data-pagefind-ignore="all"}
 
-### Small
-
-Far, far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ![](img-small?s=small&pv=middle) A small river named Duden flows by their place and supplies it with the necessary regelialia.
-
- Far, far away, behind the word mountains, far from the countries Vokalia and Consonantia. ![](img-small?ph=right&pv=middle&s=small) Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life.
-{.blind}
-
-### Tiny
-
-Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ![](img-tiny?pv=middle&s=tiny) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-
-Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. ![](img-tiny?ph=right&pv=middle&s=tiny) A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographical life.
-{.blind}
+{{% pangram 8 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Indented text blocks
 
 Embedded images take a fixed percentage of the width of the containing block: 
 
-1. ![](img-tiny) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+1. ![](img-tiny) {{% pangram 4 %}}
 
-   - ![](img-tiny?posh=right) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+   - ![](img-tiny?posh=right) {{% pangram 4 %}}
 
-   - ![](img-tiny) Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+   - ![](img-tiny) {{% pangram 4 %}}
 
-2. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.  ![](img-tiny?posv=middle&posh=right) Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
-{.blind}
+2. {{% pangram 2 %}} ![](img-tiny?posh=right) {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ### Full size {.clear}
 
 Usually, we use a normal-sized stand-alone image to use the full width of the text. But they don’t fit inside indented text blocks. Then, we can also place embedded images with the full width of the containing block like this:
 
-1. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-full?size=full)
+1. {{% pangram 2 %}} ![](img-full?size=full)
 
-2. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-full?size=full)
+2. {{% pangram 2 %}} ![](img-full?size=full)
+{.placeholder data-pagefind-ignore="all"}
 
 or this
 
-1. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-full?size=full)
+1. {{% pangram 1 %}} ![](img-full?size=full)
 
-2. Far from the countries Vokalia and Consonantia, there live the blind texts:
-   ![](img-full?size=full)
-{.col2}
+2. {{% pangram 1 %}} ![](img-full?size=full)
+{.col2 .placeholder data-pagefind-ignore="all"}

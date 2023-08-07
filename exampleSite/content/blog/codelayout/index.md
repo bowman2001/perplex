@@ -56,6 +56,7 @@ When our code lines never exceed {$40} characters, we place them beside the text
 ```
 
 {{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ```bash {.lh15 .right}
 ├── assets
@@ -67,6 +68,7 @@ When our code lines never exceed {$40} characters, we place them beside the text
 ```
 
 {{% pangram 7 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ---
 
@@ -85,6 +87,7 @@ Or we can embed them in the text:
 ```
 
 {{% pangram 4 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ```bash {.lh15 .right-inside}
 ├── assets
@@ -96,6 +99,7 @@ Or we can embed them in the text:
 ```
 
 {{% pangram 5 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ---
 

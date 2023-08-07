@@ -20,50 +20,62 @@ The CommonMark syntax and the additional parameter handling by this theme are de
 
 ![](fig-tiny)
 
-{{< farfar 1 >}}
+{{% pangram 7 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ![](fig-tiny?posh=right)
 
-{{< farfar 2 >}}
+{{% pangram 8 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Small
 
 ![](fig-small-portrait)
 
-{{< farfar 2 >}}
+{{% pangram 15 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ![](fig-small)
 
-{{< farfar 1 >}}
+{{% pangram 8 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Medium
 
 ![](fig-medium)
 
-{{< farfar 2 >}}
+{{% pangram 10 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ![](fig-medium?posh=left)
 
-{{< farfar 2 >}}
+{{% pangram 14 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Normal
-{{< farfar 1 >}}
+{{% pangram 4 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ![](fig-normal)
 
-{{< farfar 1 >}}
+{{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Large
-{{< farfar 1 >}}
+{{% pangram 4 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ![](fig-large)
 
-{{< farfar 1 >}}
+{{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ## Extra Large
 
-{{< farfar 1 >}}
+{{% pangram 4 %}}
+{.placeholder data-pagefind-ignore="all"}
 
 ![](fig-xlarge)
 
-{{< farfar 1 >}}
+{{% pangram 3 %}}
+{.placeholder data-pagefind-ignore="all"}

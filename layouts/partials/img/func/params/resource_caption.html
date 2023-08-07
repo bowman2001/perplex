@@ -3,7 +3,7 @@
 {{ with $img.Params }}
     {{ $attr := "" }}
     {{ $caption := "" }}
-    {{ with .attr }}{{ $attr = . }}{{ end }}
+    {{ with .attr }}{{ if not (eq . "no") }}{{ $attr = . }}{{ end }}{{ end }}
     {{ with .caption }}{{ $caption = . }}{{ end }}
     {{ if not (in (slice "tiny" "small" "medium" ) $a.class.size ) }}
         {{ with .attrlong }}
