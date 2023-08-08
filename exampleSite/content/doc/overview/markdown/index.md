@@ -41,10 +41,10 @@ This page only shows their default style. The theme offers style variations for 
 
 The following HTML elements `<h1>`—`<h6>` represent the title, three levels of section headings, and two levels of paragraph headings.
 
-As usual with Hugo and other Markdown SSGs, the title **is not present** in the Markdown content. The theme templates generate the title section from front-matter meta-data.
-{ .inline }
+Because the templates generate the title section from front-matter meta-data the Markdown **should not** contain a title.
+{.box-info .inline}
 
-{{< mnote >}}
+{{< mnote down=1 >}}
 This theme processes a few front-matter parameters to produce the [title section](https://perplex.desider.at/doc/page/title).
 {{< /mnote >}}
 
@@ -227,7 +227,7 @@ sub & sup
 : H{_2}O, X{^n} + Y{^n} = Z{^n}
 
 kbd
-: Press {%CTRL} + {%ALT} + {%Delete} to end the session.
+: Press {~CTRL} + {~ALT} + {~Delete} to end the session.
 
 mark
 : Most {!salamanders} are nocturnal, and hunt for insects, worms, and other small creatures.

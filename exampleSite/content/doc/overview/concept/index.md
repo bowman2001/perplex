@@ -36,7 +36,7 @@ The layout is **fluid-responsive**. This concept has been around for a while but
 - adjacent columns stay in sync
 {.col2}
 
-All text is placed on a **baseline grid** to introduce a comfortable vertical rhythm and coherence between adjacent text elements. Combined with the fluid-responsive design this allows placing images (and other block elements) in and around the text with high accuracy. The blog contains examples of all layout options for [stand-alone](/blog/image/stand-alone), [embedded](/blog/image/embedded) images, and [code blocks](/blog/codelayout).
+All text is placed on a **baseline grid** to introduce a comfortable vertical rhythm and coherence between adjacent text elements. Combined with the fluid-responsive design this allows placing images (and other block elements) in and around the text with high accuracy. The blog contains examples of all layout options for [stand-alone](/blog/image/standalone), [embedded](/blog/image/embed) images, and [code blocks](/blog/codelayout).
 
 ## Usage concept
 

@@ -1,0 +1,6 @@
+{{- $page := (.Get 0) -}}
+{{- with site.GetPage $page -}}
+  {{ .RenderShortcodes }}
+{{- else -}}
+{{- errorf "Unable to import %s into %s." $page .Page -}}
+{{- end -}}{{- /**/ -}}

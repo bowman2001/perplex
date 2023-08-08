@@ -5,6 +5,7 @@
 - added two special pseudo-link targets: "abbr" and "dfn". They generate the corresponding HTML inline tags with attributes (2023-04-12)
 - added a separate errorlevel for fragments (2023-04-17)
 - added a search by the relref function in the case a page name can’t be resolved by .GetPage (2023-04-18)
+- added a comparison for absolute links: In case the link points to the actual site its changed into a relative one. (2023-08-08)
 */ -}}
 
 {{- /* Last modified: 2023-03-26T10:05:59-07:00 (by Veriphor) */}}
@@ -121,7 +122,7 @@ either of these shortcodes in conjunction with this render hook.
 
     {{- /* Set attributes for anchor element. */}}
     {{- $attrs := dict "href" $u.String }}
-    {{- if and $u.IsAbs (ne $u.Host site.BaseURL) }}
+    {{- if and $u.IsAbs (ne (print "https://" $u.Hostname) site.BaseURL) }}
         {{- /* Destination is external. */}}
         {{- $attrs = merge $attrs (dict "rel" "external") }}
     {{- else }}
