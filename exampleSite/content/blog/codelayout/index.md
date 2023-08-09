@@ -42,9 +42,6 @@ type NodeRenderer interface {
 ```
 
 ## Short lines
-When our code lines never exceed {$40} characters, we place them beside the text:
-
----
 
 ```json {.left}
 {
@@ -55,29 +52,21 @@ When our code lines never exceed {$40} characters, we place them beside the text
 }
 ```
 
-{{% pangram 3 %}}
+{{% pangram 2 %}}
 {.placeholder data-pagefind-ignore="all"}
 
 ```bash {.lh15 .right}
+├── archetypes
 ├── assets
-├── config
-├── package.json
-├── public
-├── resources
+├── content
+├── data
 └── themes
 ```
 
 {{% pangram 7 %}}
 {.placeholder data-pagefind-ignore="all"}
 
----
-
-Or we can embed them in the text:
-
----
-
-
-```json {.left-inside}
+```json {.left-in-half}
 {
   "firstName": "John",
   "lastName": "Smith",
@@ -86,24 +75,45 @@ Or we can embed them in the text:
 }
 ```
 
-{{% pangram 4 %}}
+{{% pangram 5 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-```bash {.lh15 .right-inside}
+```bash {.lh15 .right-in-half}
+├── archetypes
 ├── assets
-├── config
-├── package.json
-├── public
-├── resources
+├── content
+├── data
 └── themes
 ```
 
 {{% pangram 5 %}}
 {.placeholder data-pagefind-ignore="all"}
 
----
 
-## In lists or other indented blocks
+```json {.left-in}
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 35,
+  "profession": "Last Man Standing"
+}
+```
+
+{{% pangram 7 %}}
+{.placeholder data-pagefind-ignore="all"}
+
+```bash {.lh15 .right-in}
+├── archetypes
+├── assets
+├── content
+├── data
+└── themes
+```
+
+{{% pangram 7 %}}
+{.placeholder data-pagefind-ignore="all"}
+
+## In lists 
 
 - List entries are indented and the code block gets smaller
   
