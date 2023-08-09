@@ -1604,10 +1604,10 @@ body {
   padding: 1rem 2rem 1rem calc(5rem + 2 * var(--es));
 }
 .md blockquote > p, .md blockquote > ul, .md blockquote > ol, .md blockquote > dl, .container blockquote > p, .container blockquote > ul, .container blockquote > ol, .container blockquote > dl {
-  font-size: 1.9375rem;
+  font-size: 1.93rem;
   line-height: 3rem;
-  padding-top: 0.77440625rem;
-  padding-bottom: 0.22559375rem;
+  padding-top: 0.777215rem;
+  padding-bottom: 0.222785rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
   hyphens: none;
 }
@@ -1653,10 +1653,10 @@ body {
   } */
 }
 .md .blockquote-hero > p, .md .blockquote-hero > ul, .md .blockquote-hero > ol, .md .blockquote-hero > dl, .container .blockquote-hero > p, .container .blockquote-hero > ul, .container .blockquote-hero > ol, .container .blockquote-hero > dl {
-  font-size: 2.5833333333rem;
+  font-size: 2.5733333333rem;
   line-height: 4rem;
-  padding-top: 0.0325416667rem;
-  margin-bottom: -0.0325416667rem;
+  padding-top: 0.0362866667rem;
+  margin-bottom: -0.0362866667rem;
 }
 .md hr, .container hr {
   margin: calc(1.4rem + 0.5 * var(--es)) 2rem calc(0.5rem + 1.5 * var(--es)) 2rem;
@@ -2016,7 +2016,7 @@ body {
 		@include font.style(serif, light, italic);
 
 		strong {
-			@include font.weight(serif, regular);
+			@include font.weight(serif, text);
 		}
 	}
 } */
@@ -2026,7 +2026,7 @@ body {
 }
 .md--sans blockquote p, .md--sans blockquote ul, .md--sans blockquote ol, .md--sans blockquote dl {
   font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 400;
+  font-weight: 450;
 }
 .md--sans blockquote strong {
   font-weight: 600;
@@ -2628,13 +2628,9 @@ body {
   background-color: var(--c-success-bg);
 }
 
-.md--h-sans h1, .md--h-sans h2 {
+.md--h-sans h1, .md--h-sans h2, .md--h-sans h3, .md--h-sans h4 {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-}
-.md--h-sans h3, .md--h-sans h4 {
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
 }
 .md--h-sans h5, .md--h-sans .h-p {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -2660,8 +2656,8 @@ body {
   padding-bottom: calc(0.3033025rem + var(--es));
   scroll-margin-top: calc(var(--tnh) + var(--tg) + 2rem - (4rem + 1 * var(--es)));
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  word-spacing: 0.09em;
+  letter-spacing: 0.02em;
+  word-spacing: 0.06em;
 }
 .md--h-sans h3 {
   font-size: 2.145rem;
@@ -2679,8 +2675,8 @@ body {
   padding-bottom: 0.102476875rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  word-spacing: 0.09em;
+  letter-spacing: 0.02em;
+  word-spacing: 0.06em;
 }
 .md--h-sans h4 + ul, .md--h-sans h4 + ol, .md--h-sans h4 + dl {
   margin-top: 1rem;
@@ -2981,7 +2977,7 @@ body {
   display: inline-block;
   font-size: 90%;
   font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
-  font-weight: 400;
+  font-weight: 450;
   line-height: 1em;
   min-width: 1.2em;
   margin: 0 0.1em;

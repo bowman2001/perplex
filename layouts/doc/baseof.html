@@ -9,7 +9,7 @@
   <main id="l-main" class="l-tnp">
       {{- block "main" . -}}{{- end -}}
     <footer id="l-footer" class="l-box margin-doc-half">
-        {{- partial "footer/site.html" . -}}
+        {{- partialCached "footer/site.html" . -}}
     </footer>
   </main>
   <div id="l-overlay"></div>

@@ -5,18 +5,21 @@
     {{ range $menu }}
         {{ if .HasChildren }}
           <li class="sidebar__item sidebar__item--1 nav__item nav__item--1 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
-              {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page "size" "normal") }}
-              {{ partial "sidebar/expand" . }}
-            <ul class="sidebar__list sidebar__list--2 {{ if ( partial "sidebar/itemsHaveNoChildren" . ) -}}items-have-no-children{{ end }}">
+            {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "normal" -}}
+            {{ partialCached "sidebar/item" $ctx $ctx }}
+              {{ partialCached "sidebar/expand" . . }}
+            <ul class="sidebar__list sidebar__list--2 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) -}}items-have-no-children{{ end }}">
                 {{ range .Children }}
                   <li class="sidebar__item sidebar__item--2 nav__item nav__item--2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
-                      {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page "size" "small") }}
+                      {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "small" -}}
+                      {{ partialCached "sidebar/item" $ctx $ctx  }}
                       {{ if .HasChildren }}
-                          {{ partial "sidebar/expand" . }}
-                          <ul class="sidebar__list sidebar__list--3 {{ if ( partial "sidebar/itemsHaveNoChildren" . ) }}items-have-no-children{{ end }}">
+                          {{ partialCached "sidebar/expand" . . }}
+                          <ul class="sidebar__list sidebar__list--3 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) }}items-have-no-children{{ end }}">
                               {{ range .Children }}
                                 <li class="sidebar__item sidebar__item--3 nav__item nav__item--3">
-                                    {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page "size" "tiny") }}
+                                  {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "tiny" -}}
+                                  {{ partialCached "sidebar/item" $ctx $ctx }}
                                 </li>
                               {{ end }}
                           </ul>
@@ -27,7 +30,8 @@
           </li>
         {{ else }}
           <li class="sidebar__item sidebar__item--1 nav__item nav__item--1">
-              {{ partial "sidebar/item" (dict "menuEntry" . "menuName" $menuName "page" $page) }}
+            {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page -}}
+            {{ partialCached "sidebar/item" $ctx $ctx }}
           </li>
         {{ end }}
     {{ end }}
