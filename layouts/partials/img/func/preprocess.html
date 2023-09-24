@@ -11,11 +11,11 @@
         {{ end }}
     {{ else }}
         {{ if in site.Params.imaging.raster_compress . }}
-            {{ $params = merge $params (dict "process" true)  }}
+            {{ $params = merge $params (dict "process" true) }}
             {{ $params = merge $params (dict "compress" true) }}
         {{ else if in site.Params.imaging.raster_lossless . }}
-            {{ $params = merge $params (dict "process" true )}}
-            {{ $params = merge $params (dict "compress" false)}}
+            {{ $params = merge $params (dict "process" true ) }}
+            {{ $params = merge $params (dict "compress" false) }}
         {{ else }}
             {{ errorf "Unable to handle '%s'. Image type '%s' is not supported." $.img.RelPermalink . }}
         {{ end }}
