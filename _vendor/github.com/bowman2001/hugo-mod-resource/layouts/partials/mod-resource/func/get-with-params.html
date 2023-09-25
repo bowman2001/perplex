@@ -1,0 +1,43 @@
+{{- $name := "mod-resource/func/get-with-params" }}
+
+{{- /* Initialize local variables with the values from the context map */}}
+{{- $url := .url }}
+{{- $ctx := .ctx }}
+{{- $errorLevel := .errorLevel }}
+
+{{- $errorMsg := printf "Unable to resolve the resource %q" $url.String }}
+
+{{- $map := "" }}
+{{- if $url.IsAbs }} {{- /* Remote */}}
+    {{- with resources.GetRemote $url.String }}
+        {{- with .Err }}
+            {{- $msg := print $errorMsg ". " . }}
+            {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel ) }}
+        {{- else }}
+            {{- $map = dict "resource" . }} {{- /* no params possible */}}
+        {{ end }}
+    {{- else }}
+        {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $errorMsg "errorLevel" $errorLevel) }}
+    {{- end }}
+{{- else }}
+    {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
+    {{- with $ctx.Page.Resources.GetMatch (print "*" $path "*") }} {{- /* Page */}}
+        {{ $args := dict "data" . "ctx" $ctx "errorLevel" $errorLevel }}
+        {{ with (partial "mod-resource/func/helper/get-from-data" $args $args ) }}
+            {{- $map = . }}
+        {{ else }}
+            {{- $map = dict "resource" . "params" .Params }}
+        {{ end }}
+    {{- else }}
+        {{- $map = partial "mod-resource/func/helper/page-fallback-with-params" (dict "path" $path "ctx" $ctx) }}
+    {{- end }}    
+    {{- if not $map }}
+        {{- with resources.Get $url.Path }} {{- /* Site */}}
+            {{- $map = dict "resource" . }} {{- /* no params possible */}}
+        {{- else }} {{- /* $map is still empty */}}
+            {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $errorMsg "errorLevel" $errorLevel) }}
+        {{- end }}   
+    {{- end }}
+{{- end }}
+
+{{- return $map }}

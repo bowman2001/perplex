@@ -1,0 +1,29 @@
+{{/* Context: parameter map */}}
+
+{{- $params := dict }}
+
+{{ with .id }}{{ $params = merge $params (dict (slice "attrs" "id") ( . | lower )) }}{{ end }}
+{{ with or .width .w }}{{ $params = merge $params (dict (slice "class" "width") ( (string .) | lower )) }}{{ end }}
+{{ with or .posh .ph }}{{ $params = merge $params (dict (slice "class" "posh") ( . | lower )) }}{{ end }}
+{{ with or .posv .pv }}{{ $params = merge $params (dict (slice "class" "posv") ( . | lower )) }}{{ end }}
+{{ with .class }}{{ $params = merge $params (dict (slice "class" "plain") ( . | lower )) }}{{ end }}
+
+{{ with .link }}{{ $params = merge $params (dict (slice "linkAttrs" "href") . ) }}{{ end }}
+{{ with .rel }}{{ $params = merge $params (dict (slice "linkAttrs" "rel") ( . | lower )) }}{{ end }}
+{{ with .target }}{{ $params = merge $params (dict (slice "linkAttrs" "target") ( . | lower )) }}{{ end }}
+{{ with .background }}{{ $params = merge $params (dict (slice "contClass" "background") ( . | lower )) }}{{ end }}
+
+{{ with or .alt .caption }}
+    {{ $params = merge $params (dict (slice "imgAttrs" "alt") . ) }}
+{{ end }}
+
+{{ with .ratio }}{{ $params = merge $params (dict (slice "preprocess" "ratio") . ) }}{{ end }}
+{{ with .zoom }}{{ $params = merge $params (dict (slice "preprocess" "zoom") . ) }}{{ end }}
+{{ with .rotate }}{{ $params = merge $params (dict (slice "preprocess" "rotate") (. | lower) ) }}{{ end }}
+{{ with .hint }}{{ $params = merge $params (dict (slice "preprocess" "hint") . ) }}{{ end }}
+{{ with .anchor }}{{ $params = merge $params (dict (slice "preprocess" "anchor")  . ) }}{{ end }}
+{{ with or .svg site.Data.modImg.svg }}
+    {{ $params = merge $params (dict (slice "process" "svg") ( . | lower )) }}
+{{ end }}
+
+{{ return $params }}

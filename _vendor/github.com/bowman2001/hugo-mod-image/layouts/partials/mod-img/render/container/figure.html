@@ -1,0 +1,11 @@
+<figure
+{{- range $k, $v := .params.attrs }}
+{{- printf " %s=%q" $k $v | safeHTMLAttr }}
+{{- end }}>
+    {{- partial "mod-img/render/container/img.html" . }}
+    {{ with .params.caption }}
+      <figcaption class="caption">
+           {{ partial "mod-img/render/caption" . }}
+      </figcaption>
+    {{ end }}
+</figure>

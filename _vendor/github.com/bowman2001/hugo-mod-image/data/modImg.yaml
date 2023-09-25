@@ -1,0 +1,25 @@
+container: img-c
+svg: inline
+missing: mod-img/missing.svg
+errorLevel: warning
+unsplash: false
+
+srcset:
+  sizeStep: 50 # In percent 
+  maxDensityFactor: 2
+  quality: 90
+  qualityReductionFactor: 12.5
+
+process:
+  none: [ gif ]
+  compress: [ bmp, jpeg, webp ]
+  lossless: [ tiff, png ]
+
+preprocess:  
+  anchor: [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ] # See https://gohugo.io/content-management/image-processing/#anchor
+  ratio: 
+    min: 0.2
+    max: 5    
+  rotate: [ 90right, 90left, "180" ]
+  rsFilter: [ bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch ]
+  webpHint: [ drawing, icon, photo, picture, text ]

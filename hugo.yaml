@@ -104,7 +104,7 @@ markup:
 module:
   hugoVersion:
     extended: false
-    min: "v0.115.0"
+    min: "v0.119.0"
   imports:
     - path: github.com/bowman2001/hugo-mod-meta
     - path: github.com/bowman2001/hugo-mod-replacements
@@ -115,6 +115,7 @@ module:
     - path: github.com/bowman2001/hugo-mod-material-symbols
     - path: github.com/bowman2001/hugo-mod-pangram
     - path: github.com/bowman2001/hugo-mod-wrap
+    - path: github.com/bowman2001/hugo-mod-image
 
 ### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!

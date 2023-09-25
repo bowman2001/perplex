@@ -1,0 +1,23 @@
+{
+  "name": "hugo-mod-image",
+  "version": "0.1.0",
+  "description": "Hugo module to retrieve and process images",
+  "main": "\"\"",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/bowman2001/hugo-mod-image"
+  },
+  "keywords": [
+    "hugo",
+    "module",
+    "image"
+  ],
+  "author": "Georg Makowski",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "lazysizes": "^5.3.2"
+  }
+}

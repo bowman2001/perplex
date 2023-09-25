@@ -1,0 +1,43 @@
+{{/* 
+  Context:
+    - img
+    - params 
+*/ -}}
+
+{{- $img := .img }}
+{{- $params := merge .params (dict (slice "imgAttrs" "src") $img.RelPermalink ) }} 
+{{- $placeholder := "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" }}
+
+{{- if $params.process.compress }}
+    {{- with (partial "mod-img/func/raster/srcset" (dict "img" $img "params" $params) ) }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "src") .fallback.RelPermalink ) }} 
+        {{- $params = merge $params (dict (slice "imgAttrs" "width") (string .fallback.Width)) (dict (slice "imgAttrs" "height") (string .fallback.Height)) }}
+        {{- $lqip := partial "mod-img/func/raster/lqip" .fallback -}}
+        {{- $lqipBase64 := printf "data:image/webp;base64,%s" (base64Encode $lqip.Content) }}
+        {{- if lt (len $lqipBase64) 4096 }}
+            {{- $params = merge $params (dict (slice "imgAttrs" "srcset") $lqipBase64 ) }}
+        {{ else }}
+            {{- $params = merge $params (dict (slice "imgAttrs" "srcset") $placeholder ) }}
+            {{- $params = merge $params (dict (slice "imgAttrs" "data-lowsrc") $lqip.RelPermalink ) }}
+        {{- end }}
+        
+        {{- with .srcset }}
+            {{- $params = merge $params (dict (slice "imgAttrs" "data-srcset") . ) }}
+        {{- end }}
+    {{- end }}
+
+    {{- $imgClass := site.Data.modImg.lsImgClass | default "img--ls" }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "%s lazyload" $imgClass)) }} 
+    {{- $params = merge $params (dict (slice "imgAttrs" "data-sizes") "auto" ) }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "data-parentfit") "cover" ) }}
+{{- end }}
+
+{{- if .params.index }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "data-pagefind-meta") "image[src], image_alt[alt]" ) }} 
+{{- end }}
+<img
+  {{- range $k, $v := $params.imgAttrs }}
+      {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+  {{- end -}}
+>
+{{- /**/ -}}       

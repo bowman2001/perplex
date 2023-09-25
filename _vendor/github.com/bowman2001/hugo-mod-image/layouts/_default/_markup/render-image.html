@@ -1,0 +1,66 @@
+{{- /* Init */}}
+{{- $name := "hugo-mod-image – render-image" }}
+{{- $configName := "data/mod-img" }}
+{{- $level := site.Data.modImg.errorLevel | default "warning" }}
+{{- $errorLevel := partial "error-level" (dict "caller" $name "level" $level "config" $configName ) }}
+{{- $configErrorEnd := printf " Please check the configuration in %q" $configName }}
+
+{{- /* Variable maps */}}
+{{- $ctx := . }}
+{{- $url := urls.Parse .Destination }}
+
+{{- /* Parameter defaults */}}
+{{- $defaultParams := dict }}
+{{- if .IsBlock }}
+    {{- with site.Data.modImg.default.figure.class.width }} 
+        {{- $defaultParams = (dict (slice "class" "width") . ) }}
+    {{- else }}
+        {{- $msg := print "Can’t find default width for figure." $configErrorEnd }}
+        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+{{- else }}
+    {{- with site.Data.modImg.default.embed.class.width }}
+        {{- $defaultParams = (dict (slice "class" "width") . ) }}
+    {{- else }}
+        {{- $msg := print "Can’t find default width for embedded image." $configErrorEnd }}
+        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+{{- end }}
+
+{{- $hookParams := partial "mod-img/func/params/hook" . }}
+{{- $queryParams := dict }}
+{{- with and (not $url.IsAbs) $url.Query }} {{- /* Params from a query string (only local) */}}
+    {{- $queryParams = (partial "mod-img/func/params/query" .) }}
+{{- end }}
+{{- $mdParams := dict }}
+{{- with .Attributes }}
+    {{- $mdParams = dict "attrs" . }}
+{{- end }}
+
+{{- $args := dict "src" .Destination "ctx" $ctx }}
+{{- with (partial "mod-img/get" $args $args) }}
+    {{- $params := merge $defaultParams .params $hookParams $queryParams $mdParams }}
+    {{- /* Aggregate classes */}}
+    {{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params )}}
+    {{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
+    {{- if $.IsBlock }}
+        {{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params ) }}
+    {{- else }}
+        {{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "embed" "params" $params ) }}
+    {{- end }}
+
+    {{- $imgMap := (dict "img" .img "params" $params) }}
+    {{- /* Preprocess */}}
+    {{- if $params.process.run }}
+        {{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}
+    {{- end }}
+
+    {{- /* Render */}}
+    {{- partial "mod-img/helper/debug" $imgMap.params }}
+    {{- if $.IsBlock }}
+        {{- partialCached "mod-img/render/container/figure" $imgMap $imgMap }}
+    {{- else }}
+        {{- partialCached "mod-img/render/container/embed" $imgMap $imgMap }}
+    {{- end }}
+{{- end }}
+{{- /**/ -}}

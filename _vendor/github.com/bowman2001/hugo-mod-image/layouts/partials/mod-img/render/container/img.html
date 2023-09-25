@@ -1,0 +1,26 @@
+{{- $imgMap := . }}
+
+{{- if .params.process.compress }}
+    {{- $height := printf "%.3f%%" (div (mul .img.Height 100) (float .img.Width))   }}
+    {{- $style := print "position: relative; " "width: 100%; " "height: 0; " "padding-bottom: " $height ";" }}
+    {{ $imgMap = merge $imgMap (dict (slice "params" "contAttrs" "style") $style ) }}
+{{- end }}
+
+
+{{- with .params.linkAttrs }}
+    {{- $attrs := merge $imgMap.params.contAttrs . }}
+    <a 
+    {{- range $k, $v := $attrs }}
+        {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+    {{- end }}>
+    {{- partial "mod-img/render/img.html" $imgMap }}
+    </a>
+{{- else }}
+    <span 
+    {{ range $k, $v := $imgMap.params.contAttrs }}
+        {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+    {{- end }}>
+    {{- partial "mod-img/render/img.html" $imgMap -}}
+    </span>
+{{- end }}
+

@@ -1,0 +1,11 @@
+{{ $width := int (math.Round (div .Width (float 4))) }}
+{{ $blur := or site.Data.modImg.process.lqip.blur 5 }}
+{{ $quality := or site.Data.modImg.process.lqip.quality 80 }}
+
+
+{{ $lqip := .Filter (images.GaussianBlur $blur) (images.Process (printf "resize %dx webp q%d" $width $quality)) }}
+{{ $path := path.Split .Key }}
+{{ $id := printf "-%dx-q%d-lqip" $width $quality }}
+{{ $newpath := path.Join $path.Dir (print (path.BaseName $path.File) $id (path.Ext $lqip.Key )) }}    
+{{ $lqip = $lqip | resources.Copy (print $newpath) }}
+{{ return $lqip -}}

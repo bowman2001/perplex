@@ -1,0 +1,62 @@
+debug: false
+unsplash: true
+
+srcset:
+  sizeStep: 100
+  maxDensityFactor: 3
+  quality: 90
+  qualityReductionFactor: 15
+
+container:
+  class:
+    base: "img-c"
+    background:
+      name: "Background"
+      prefix: bg-
+      options: [grey, transparent]
+
+figure:
+  class:
+    base: "fig"
+    width:
+      name: Width
+      prefix: w-
+      options: [half, full, double, triple]
+  type: featured
+
+embed:
+  class:
+    base: "emb"
+    width:
+      name: Width
+      prefix: w-
+      options: [quarter, half]
+    posh:
+      name: Horizontal position
+      prefix: ph-
+      options: [left, right]
+    posv:
+      name: Vertical position
+      prefix: pv-
+      options: [top, middle]
+
+width:
+  quarter: [70, 135]
+  half: [140,275]
+  full: [285,570]
+  double: [570,1140]
+  triple: [570,1710]
+
+link:
+
+default:
+  container:
+    class:
+      background: transparent
+  figure:
+    class:
+      width: full
+  embed:
+    class:
+      width: half
+  width: [285,570]
