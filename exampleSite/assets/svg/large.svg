@@ -1,0 +1,8 @@
+<svg width="1200" height="675" version="1.1" viewBox="0 0 317.25 178.5" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(-52.889 -88.65)">
+    <rect x="52.833" y="88.65" width="317.33" height="178.5" fill="#c0c0c0" stroke-width="1.1927"/>
+    <text x="210.81622" y="137.02155" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.47px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".265" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="210.81622" y="137.02155">Large width</tspan><tspan x="210.81622" y="147.60904"/><tspan x="210.81622" y="158.19655">[large]</tspan></text>
+    <text x="211.43318" y="229.53125" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.47px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".265" text-anchor="middle" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="211.43318" y="229.53125" stroke-width=".265">6 minor (or 3 major) columns</tspan></text>
+  </g>
+</svg>
+ 

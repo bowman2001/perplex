@@ -1,0 +1,3 @@
+src: svg/normal.svg
+caption: On large screens, the caption text of a normal-sized figure is placed right beside the image in the margin.
+attr: gm

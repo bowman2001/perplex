@@ -2,14 +2,14 @@ debug: false
 unsplash: true
 
 srcset:
-  sizeStep: 100
+  sizeStep: 50
   maxDensityFactor: 3
   quality: 90
   qualityReductionFactor: 15
 
 container:
   class:
-    base: "img-c"
+    base: "img__c"
     background:
       name: "Background"
       prefix: bg-
@@ -21,7 +21,11 @@ figure:
     width:
       name: Width
       prefix: w-
-      options: [half, full, double, triple]
+      options: [tiny, small, medium, text, large, xlarge]
+    posh:
+      name: Horizontal position
+      prefix: ph-
+      options: [left, right]
   type: featured
 
 embed:
@@ -30,7 +34,7 @@ embed:
     width:
       name: Width
       prefix: w-
-      options: [quarter, half]
+      options: [micro, tiny, small, text]
     posh:
       name: Horizontal position
       prefix: ph-
@@ -41,13 +45,13 @@ embed:
       options: [top, middle]
 
 width:
-  quarter: [70, 135]
-  half: [140,275]
-  full: [285,570]
-  double: [570,1140]
-  triple: [570,1710]
-
-link:
+  micro: [40,85]
+  tiny: [80,165]
+  small: [160,330]
+  medium: [160,515]
+  text: [320,700]
+  large: [320,1070]
+  xlarge: [320,1440]
 
 default:
   container:
@@ -55,8 +59,9 @@ default:
       background: transparent
   figure:
     class:
-      width: full
+      width: text
+      posh: left
   embed:
     class:
-      width: half
-  width: [285,570]
+      width: small
+      posh: left

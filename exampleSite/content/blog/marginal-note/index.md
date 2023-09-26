@@ -11,7 +11,7 @@ resources:
   name: wiles
   params:
     alt: Portrait of Sir Andrew John Wiles
-    size: tiny
+    width: tiny
     posh: left 
     caption: Sir Andrew John Wiles
     attr: "&copy; C. J. Mozzochi, Princeton&nbsp;N.J"

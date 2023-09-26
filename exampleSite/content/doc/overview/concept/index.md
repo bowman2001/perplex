@@ -23,7 +23,7 @@ At the moment, this site shows the news section as a start page. A template for 
 
 ## Design & Layout
 
-![Sample of IBM Plex Sans](IBM_Plex_Sans_Sample.svg?posh=left&size=tiny)
+![Sample of IBM Plex Sans](IBM_Plex_Sans_Sample.svg?ph=left&w=tiny)
 
 The theme includes the open-source font family [Plex](https://www.ibm.com/plex/) and the layout fits their proportions. The theme does **not** resemble [IBM’s corporate design system](https://carbondesignsystem.com/).
 

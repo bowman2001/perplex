@@ -1,0 +1,4 @@
+src: svg/small_portrait.svg
+width: small
+caption: The small width fits neatly into one (marginal) column.
+attr: gm

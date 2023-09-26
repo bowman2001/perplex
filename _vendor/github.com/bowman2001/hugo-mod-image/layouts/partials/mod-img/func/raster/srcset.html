@@ -3,8 +3,8 @@
 
 {{/* Get width min, max, and density factor */}}
 
-{{ $min := (index site.Data.modImg.default.width 0) | default 400 }} 
-{{ $max := (index site.Data.modImg.default.width 1) | default 800 }}
+{{ $min := index site.Data.modImg.default.width 0 | default 320 }} 
+{{ $max := index site.Data.modImg.default.width 1 | default 800 }}
 {{ with index site.Data.modImg.width $params.class.width }}
     {{ $min = (int (index . 0)) }}
     {{ $max = (int (index . 1)) }}

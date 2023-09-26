@@ -18,11 +18,23 @@
         {{- $msg := print "Can’t find default width for figure." $configErrorEnd }}
         {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- end }}
+    {{- with site.Data.modImg.default.figure.class.posh }} 
+        {{- $defaultParams = merge $defaultParams (dict (slice "class" "posh") . ) }}
+    {{- else }}
+        {{- $msg := print "Can’t find default horizontal position for figure." $configErrorEnd }}
+        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
 {{- else }}
     {{- with site.Data.modImg.default.embed.class.width }}
         {{- $defaultParams = (dict (slice "class" "width") . ) }}
     {{- else }}
         {{- $msg := print "Can’t find default width for embedded image." $configErrorEnd }}
+        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+    {{- with site.Data.modImg.default.embed.class.posh }}
+        {{- $defaultParams = merge $defaultParams (dict (slice "class" "posh") . ) }}
+    {{- else }}
+        {{- $msg := print "Can’t find default horizontal position for embedded image." $configErrorEnd }}
         {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- end }}
 {{- end }}

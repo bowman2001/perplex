@@ -16,47 +16,47 @@ This page demonstrates the layout for advanced stand-alone images.
 
 For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/image) and [extended image](https://perplex.desider.at/doc/improved/image/syntax).
 
-## Tiny
+## Tiny width
 
-![](fig-tiny)
+![Tiny placeholder image in portrait ratio](tiny-portrait)
 
 {{% pangram 7 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](fig-tiny?posh=right)
+![Tiny placeholder image](tiny.yaml?posh=right)
 
 {{% pangram 8 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-## Small
+## Small width
 
-![](fig-small-portrait)
+![Small placeholder image in portrait ratio](small-portrait)
 
-{{% pangram 15 %}}
+{{% pangram 17 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](fig-small)
+![Small placeholder image](small.yaml?ph=right)
 
-{{% pangram 8 %}}
+{{% pangram 13 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-## Medium
+## Medium width
 
-![](fig-medium)
+![Medium placeholder image](medium)
 
 {{% pangram 10 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](fig-medium?posh=left)
+![](medium.yaml?posh=right)
 
 {{% pangram 14 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-## Normal
+## Text width
 {{% pangram 4 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](fig-normal)
+![Placeholder image](text)
 
 {{% pangram 3 %}}
 {.placeholder data-pagefind-ignore="all"}
@@ -65,7 +65,7 @@ For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/i
 {{% pangram 4 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](fig-large)
+![Large placeholder image](large)
 
 {{% pangram 3 %}}
 {.placeholder data-pagefind-ignore="all"}
@@ -75,7 +75,7 @@ For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/i
 {{% pangram 4 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](fig-xlarge)
+![Extra large placeholder image](xlarge)
 
 {{% pangram 3 %}}
 {.placeholder data-pagefind-ignore="all"}

@@ -1,0 +1,49 @@
+{{/*
+  IN: dict of
+    - name: Name of the resource
+    - currentPage: The current page
+
+  OUT: Resource or empty string
+*/}}
+{{ $name := .name }}
+{{ $r := "" }}
+{{ with .currentPage }}
+{{ $r = .Resources.GetMatch $name }}
+{{ if not $r }}
+{{ range $i, $tag := .GetTerms "tags" }}
+{{ if not $r }}
+{{ $r = $tag.Page.Resources.GetMatch $name }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ if not $r }}
+{{ range $i, $category := .GetTerms "categories" }}
+{{ if not $r }}
+{{ $r = $category.Page.Resources.GetMatch $name }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ if not $r }}
+{{ $r = (partial "resource-in-parent.html" ( dict "name" $name "currentPage" . )) }}
+{{ end }}
+{{ if not $r }}
+{{ $r = (site.GetPage "/site/images").Resources.GetMatch $name }}
+{{ end }}
+{{ end }}
+{{ if not $r }}
+{{ errorf "There is no resource with the name %q in %v or related folders." $name .currentPage }}
+{{ end }}
+{{ return $r }}
+
+{{ define "partials/resource-in-parent.html" }}
+{{ $name := .name }}
+{{ $resource := "" }}
+{{ with .currentPage.Parent }}
+{{ with .Resources.GetMatch $name }}
+{{ $resource = . }}
+{{ else }}
+{{ $resource = partial "resource-in-parent.html" ( dict "name" $name "currentPage" . )}}
+{{ end }}
+{{ end }}
+{{ return $resource }}
+{{ end }}

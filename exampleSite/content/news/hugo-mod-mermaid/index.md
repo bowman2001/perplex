@@ -17,7 +17,7 @@ Mermaid diagrams are popular in the technical writing community because they are
 The Mermaid Javascript module seems to perform some caching. When we play with the diagram code in the Markdown editor the result shown by the Hugo server may not get updated completely.
 {{< /mnote >}}
 
-```mermaid {.fig--size-tiny .fig--posh-left}
+```mermaid {.fig--w-tiny .fig--ph-left}
 %%{init: { 
       "theme": "forest",
       "fontFamily": "ibm plex sans condensed"

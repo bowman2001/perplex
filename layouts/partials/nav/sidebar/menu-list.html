@@ -6,20 +6,20 @@
         {{ if .HasChildren }}
           <li class="sidebar__item sidebar__item--1 nav__item nav__item--1 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
             {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "normal" -}}
-            {{ partialCached "sidebar/item" $ctx $ctx }}
-              {{ partialCached "sidebar/expand" . . }}
+            {{ partial "sidebar/item" $ctx }}
+            {{ partialCached "sidebar/expand" . . }}
             <ul class="sidebar__list sidebar__list--2 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) -}}items-have-no-children{{ end }}">
                 {{ range .Children }}
                   <li class="sidebar__item sidebar__item--2 nav__item nav__item--2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
                       {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "small" -}}
-                      {{ partialCached "sidebar/item" $ctx $ctx  }}
+                      {{ partial "sidebar/item" $ctx  }}
                       {{ if .HasChildren }}
                           {{ partialCached "sidebar/expand" . . }}
                           <ul class="sidebar__list sidebar__list--3 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) }}items-have-no-children{{ end }}">
                               {{ range .Children }}
                                 <li class="sidebar__item sidebar__item--3 nav__item nav__item--3">
                                   {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "tiny" -}}
-                                  {{ partialCached "sidebar/item" $ctx $ctx }}
+                                  {{ partial "sidebar/item" $ctx }}
                                 </li>
                               {{ end }}
                           </ul>
@@ -31,7 +31,7 @@
         {{ else }}
           <li class="sidebar__item sidebar__item--1 nav__item nav__item--1">
             {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page -}}
-            {{ partialCached "sidebar/item" $ctx $ctx }}
+            {{ partial "sidebar/item" $ctx }}
           </li>
         {{ end }}
     {{ end }}

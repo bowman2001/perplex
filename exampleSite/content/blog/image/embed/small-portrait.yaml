@@ -1,0 +1,5 @@
+src: svg/small_portrait.svg
+width: small
+alt: Small placeholder image
+caption: The small width fits neatly into a marginal column.
+attr: gm

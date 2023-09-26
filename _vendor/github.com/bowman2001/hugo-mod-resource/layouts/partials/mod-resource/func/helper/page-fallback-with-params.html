@@ -1,13 +1,15 @@
 {{ $ctx := .ctx }}
 {{ $path := .path }}
+{{ $errorLevel := .errorLevel }}
  
 {{ $map := "" }}
 {{ with $ctx.Page.Parent }}
     {{ with .Page.Resources.GetMatch (print "*" $path "*") }}
-        {{ with (partial "mod-resource/func/helper/get-from-data" . ) }}
+        {{ $args := dict "data" . "ctx" $ctx "errorLevel" $errorLevel }}
+        {{ with (partial "mod-resource/func/helper/get-from-data" $args ) }}
             {{ $map = . }}
         {{ else }}
-            {{ $map = dict "resource" . }}
+            {{ $map = dict "resource" . "params" .Params }}
         {{ end }}
     {{ end }}
 {{ end }}

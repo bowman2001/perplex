@@ -10,10 +10,11 @@
         <img class="hide" 
             data-pagefind-meta="image[data-src], image_alt[alt]" 
             data-src="{{ $.params.imgAttrs.src | safeHTMLAttr }}" 
-            {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }}>
+            {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }} 
+            loading="lazy">
     {{- end }}
 {{- else }}
-    {{- $params := .params }}
+    {{- $params := merge .params (dict (slice "imgAttrs" "loading") "lazy" ) }}
     {{- if .params.index }}
         {{- $params = merge $params (dict (slice "imgAttrs" "data-pagefind-meta") "image[data-src], image_alt[alt]" ) }}
     {{- end }}

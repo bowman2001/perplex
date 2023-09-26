@@ -1,0 +1,7 @@
+<svg width="1600" height="900" version="1.1" viewBox="0 0 423 238" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0 -58.9)">
+    <rect y="58.9" width="423" height="238" fill="#c0c0c0" stroke-width="1.59"/>
+    <text x="210.81622" y="137.02155" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.47px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".265" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="210.81622" y="137.02155">Extra large width</tspan><tspan x="210.81622" y="147.60904"/><tspan x="210.81622" y="158.19655">[xlarge]</tspan></text>
+    <text x="211.43318" y="229.53125" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.47px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".265" text-anchor="middle" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="211.43318" y="229.53125" stroke-width=".265">8 minor (or 4 major) columns</tspan></text>
+  </g>
+</svg>

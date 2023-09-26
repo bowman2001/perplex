@@ -1,0 +1,8 @@
+
+<svg width="100" height="100" version="1.1" viewBox="0 0 26.45 26.45" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0,-244)" stroke-width=".265">
+    <rect y="244" width="26.45" height="26.45" fill="#bfbfbf" stroke-width=".1325"/>
+    <text x="13.307241" y="243.91478" fill="#000000" font-family="'IBM Plex Sans Condensed'" font-size="8.47px" font-stretch="condensed" font-weight="500" letter-spacing="0px" text-anchor="middle" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="13.307241" y="254.50227">[micro]</tspan></text>
+    <text x="13.525611" y="266.34039" font-family="'IBM Plex Sans Condensed'" font-size="5.6427px" font-stretch="condensed" font-weight="500" letter-spacing="0px" stroke-width=".070092" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="13.525611" y="266.34039" font-family="'IBM Plex Sans Condensed'" font-size="5.6427px" font-stretch="condensed" font-weight="500" stroke-width=".070092" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">½ min. col.</tspan></text>
+  </g>
+</svg>

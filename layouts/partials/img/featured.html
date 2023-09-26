@@ -1,14 +1,13 @@
-{{- $img := ( partial "img/func/get-featured.html" . ) -}}
-{{ $a := dict }}
-{{- with $img -}}
-    {{ $a = partial "img/func/params/unsplash.html" . }}
-    {{ $a = merge $a (partial "img/func/params/resource_layout.html" . )}}
-    {{ $a = merge $a (dict (slice "class" "posh") "right" ) }}
-    {{ $a = merge $a (dict "index" true) }}
-    {{ if not (in (slice "small" "tiny") $a.class.size)  }}
-        {{ $a = merge $a (dict (slice "class" "size") "small" )}}
-    {{ end }}
-    {{ $a = partial "img/func/params/resource_caption.html" (dict "img" $img "a" $a) }}
-    {{ $a = merge $a (dict (slice "class" "plain") "fig--featured")}}
-    {{ partial "img/figure.html" (dict "img" . "a" $a )}}
-{{- end -}}
+{{- $defaultParams := dict (slice "class" "plain") "fig--featured" (slice "class" "width") "small" (slice "class" "posh") "right" (slice "imgAttrs" "alt") "Featured image" }}
+{{- with (partial "mod-img/get" (dict "src" "featured" "ctx" . )) }}
+	{{- $params := merge $defaultParams .params }}
+	{{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params) }}
+	{{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
+	{{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params) }}
+	{{- $imgMap := (dict "img" .img "params" $params )}}
+	{{- if $params.process.run }}
+		{{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}
+	{{- end }}
+	{{- partial "mod-img/render/container/figure" $imgMap }}
+	{{- partial "mod-img/helper/debug" $imgMap.params }}
+{{- end }}

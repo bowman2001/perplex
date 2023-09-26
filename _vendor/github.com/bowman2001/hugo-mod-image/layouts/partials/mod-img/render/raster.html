@@ -30,6 +30,8 @@
     {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "%s lazyload" $imgClass)) }} 
     {{- $params = merge $params (dict (slice "imgAttrs" "data-sizes") "auto" ) }}
     {{- $params = merge $params (dict (slice "imgAttrs" "data-parentfit") "cover" ) }}
+{{- else }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "loading") "lazy" ) }}
 {{- end }}
 
 {{- if .params.index }}

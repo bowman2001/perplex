@@ -1,0 +1,4 @@
+src: svg/xlarge.svg
+width: xlarge
+caption: The caption text of an extra large figure is aligned with the main text but indented on both sides. The optional attribution is always on the right.
+attr: gm

@@ -230,7 +230,7 @@ either of these shortcodes in conjunction with this render hook.
             {{- with $p.File }}
                 {{- $targetPath = .Path }}
             {{- else }}
-                {{- $targetPath = .Path }}
+                {{- $targetPath = $contentPath }}
             {{- end }}
             {{- /* Set common message. */}}
             {{- $msg := printf "The %q render hook was unable to find heading ID %q in %s. See %s" $renderHookName . $targetPath $contentPath }}
