@@ -1,2 +1,2 @@
 {{- $ff := resources.Get "css/fontfaces.css" | minify | fingerprint -}}
-<link rel="stylesheet" href="{{- $ff.RelPermalink -}}" integrity="{{ $ff.Data.Integrity }}" media="screen">
+<link rel="preload" href="{{- $ff.RelPermalink -}}" integrity="{{ $ff.Data.Integrity }}" media="screen" as="style">

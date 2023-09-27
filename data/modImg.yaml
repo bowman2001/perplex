@@ -22,6 +22,7 @@ figure:
       name: Width
       prefix: w-
       options: [tiny, small, medium, text, large, xlarge]
+      intOpts: [thumb, portrait]
     posh:
       name: Horizontal position
       prefix: ph-
@@ -60,7 +61,6 @@ default:
   figure:
     class:
       width: text
-      posh: left
   embed:
     class:
       width: small

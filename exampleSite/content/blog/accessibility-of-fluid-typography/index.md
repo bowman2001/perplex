@@ -16,7 +16,7 @@ Websites with a fluid-responsive design can be especially user-friendly and acce
 {.p-first}
 <!--more-->
 
-![](fluid?ph=left&s=tiny)
+![](fluid?ph=left&w=tiny)
 
 Fluid sizes solely depend on the width of the browser window or the view-port width of the mobile device. When a user changes the zoom factor of his browser or his device, they are not affected at all. That’s the problem with fixed fluid sizes. The solution is obvious: We need to change fluid sizes accordingly when we change the layout responsively.
 

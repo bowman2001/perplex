@@ -1,3 +1,5 @@
+{{- $name := "mod-resource/func/helper/get-from-data" }}
+
 {{- $data := .data }}
 {{- $ctx := .ctx }}
 {{- $errorLevel := .errorLevel }}
@@ -5,10 +7,43 @@
 {{- $map := "" }}
 {{- if (in (slice "yaml" "toml" "json") $data.MediaType.SubType ) }}
     {{- $params := transform.Unmarshal $data }}
-    {{- $url := urls.Parse $params.src }} 
-    {{- $args := dict "url" $url "ctx" $ctx "errorLevel" $errorLevel }}
-    {{- with (partial "mod-resource/func/get" $args) }}
-        {{- $map = merge $map (dict "resource" . "params" $params) }}
+    {{ $url := "" }}
+    {{ with $params.src }}
+        {{- $url = urls.Parse $params.src }}
+    {{ else }}
+        {{- $msg := printf "Missing 'src' parameter in the data file %q" $data }} 
+        {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel ) }}
+    {{ end }}
+
+    {{- $r := "" }}
+    {{ with $url }}
+        {{- $msg := printf "Unable to resolve the resource %q in data file %q" $url.String $data }}
+        
+        {{- if $url.IsAbs }} {{- /* Remote */}}
+            {{- with resources.GetRemote $url.String }}
+                {{- with .Err }}
+                    {{- $msg := print $msg ". " . }}
+                    {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel ) }}
+                {{- else }}
+                    {{- $r = . }}
+                {{ end }}
+            {{- end }}
+        {{- else }}
+            {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
+            {{- with $ctx.Page.Resources.GetMatch (print "*" $path "*") }} {{- /* Page */}}
+                {{- $r = . }}
+            {{- else }}
+                {{- with resources.Get $url.Path }} {{- /* Site */}}
+                    {{- $r = . }}
+                {{- end }}
+            {{- end }}    
+        {{- end }}
+    {{ end }}
+    {{- with $r }}
+        {{- $map = (dict "resource" . "params" $params) }}
+    {{- else }}
+        {{- $msg := printf "Unable to resolve a resource in the data file %q" $data }}
+        {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- end }}
 {{- end }}
 

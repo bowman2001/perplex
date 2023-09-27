@@ -13,7 +13,11 @@
         {{ $classes = $classes | append (print $baseClass) }}        
         {{ range $k, $v := $params.class }}
             {{ with (index $classMap $k)  }}
-                {{ if in .options $v }}
+                {{ $opts := .options }}
+                {{ with .intOpts }}
+                    {{ $opts = $opts | append . }}
+                {{ end }}
+                {{ if in $opts $v }}
                     {{ $classes = $classes | append (printf "%s--%s%s" $baseClass .prefix $v ) }}
                 {{ else }}
                     {{ $msg := printf "%s %q is not in %s. %s" .name $v .options $configErrorEnd }}

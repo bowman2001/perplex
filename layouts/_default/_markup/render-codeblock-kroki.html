@@ -91,7 +91,7 @@ References:
 {{- end }}
 
 {{- /* Merge class and id attributes. */}}
-{{- $attrs = merge $attrs (dict "class" $class "id" $id "alt" "diagram") }}
+{{- $attrs = merge $attrs (dict "class" $class "id" $id "alt" "Kroki diagram") }}
 
 {{- /* Get diagram. */}}
 {{- $body := dict "diagram_source" $inner "diagram_type" $diagramType "output_format" "SVG" | jsonify }}
@@ -103,11 +103,10 @@ References:
         {{- $attrs = merge $attrs (dict "src" .RelPermalink) }}
 
         {{- /* Render. */}}
-        <figure class="fig fig--size-normal fig--diagram" >
+        <figure class="fig fig--w-text fig--diagram">
             <div class="img__c">
-        <img
-                {{- range $k, $v := $attrs }}
-                    {{- if not (or (eq $k "type")) }}
+        <img    {{- range $k, $v := $attrs }}
+                    {{- if not (eq $k "type") }}
                         {{- if $v }}
                             {{- printf " %s=%q" $k (string $v) | safeHTMLAttr }}
                         {{- end }}

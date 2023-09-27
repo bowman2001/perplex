@@ -26,7 +26,7 @@ The famous mathematician Fermat wrote his last conjecture around 1637 in the mar
 
 Proof has been considered generally inaccessible until Sir Andrew John Wiles announced to have found one in 1993 after years of ground-breaking work. A few mathematicians were able to follow him and pointed out some flaws in his first preliminary version. Wiley finally published a completely convincing version in 1995 — a breakthrough in number theory that won him a few prizes.  
 
-Wiley’s proof is still only accessible to mathematical specialists. But the initial mathematical problem — Diophantus’ successful method to split a second power into the sum of two-second powers and Fermat’s conjecture about the impossibility to do the same for higher powers — are relatively easy to grasp:  
+Wiley’s proof is still only accessible to mathematical specialists. But the initial mathematical problem — Diophantus’ successful method to split a second power into the sum of two second powers and Fermat’s conjecture about the impossibility to do the same for higher powers — are relatively easy to grasp:  
 
 - - -
 

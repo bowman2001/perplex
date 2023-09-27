@@ -21,17 +21,21 @@
 {{- else }}
     {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
     {{- $errorMsg := printf "Unable to resolve the resource %q" $path }}
+    {{ $resource := "" }}
     {{- with $ctx.Page.Resources.GetMatch (print "*" $path "*") }} {{- /* Page */}}
+        {{ $resource = . }}
+    {{ else }}
+        {{ $args := dict "path" $path "ctx" $ctx }}
+        {{ $resource = (partial "mod-resource/func/helper/page-fallback" $args) }}
+    {{ end }}
+    {{ with $resource }}
         {{ $args := dict "data" . "ctx" $ctx "errorLevel" $errorLevel }}
         {{ with (partial "mod-resource/func/helper/get-from-data" $args ) }}
             {{- $map = . }}
         {{ else }}
             {{- $map = dict "resource" . "params" .Params }}
         {{ end }}
-    {{- else }}
-    1   {{- $args := dict "path" $path "ctx" $ctx "errorLevel" $errorLevel }}
-        {{- $map = partial "mod-resource/func/helper/page-fallback-with-params" $args }}
-    {{- end }}    
+    {{ end }}
     {{- if not $map }}
         {{- with resources.Get $url.Path }} {{- /* Site */}}
             {{- $map = dict "resource" . }} {{- /* no params possible */}}
