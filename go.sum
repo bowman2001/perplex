@@ -20,6 +20,8 @@ github.com/bowman2001/hugo-mod-image v0.0.0-20230926192425-c20ab8cef944 h1:T9HOg
 github.com/bowman2001/hugo-mod-image v0.0.0-20230926192425-c20ab8cef944/go.mod h1:wdsPU7Y4ReKOM8eNJtujCl2ZrEfMt9T3gTEanTW7KGY=
 github.com/bowman2001/hugo-mod-image v0.0.0-20230926201103-8f07845a4cb0 h1:YYugkRPHDd2JFRFVadZFzKkBWw2NMDxh8fzWgl/j2bE=
 github.com/bowman2001/hugo-mod-image v0.0.0-20230926201103-8f07845a4cb0/go.mod h1:wdsPU7Y4ReKOM8eNJtujCl2ZrEfMt9T3gTEanTW7KGY=
+github.com/bowman2001/hugo-mod-image v0.0.0-20230927091315-78c9a94c4642 h1:0mqS4sHMoyYE0/vADd4DBtzj3hFD9rmeD5cTJ524TVM=
+github.com/bowman2001/hugo-mod-image v0.0.0-20230927091315-78c9a94c4642/go.mod h1:wdsPU7Y4ReKOM8eNJtujCl2ZrEfMt9T3gTEanTW7KGY=
 github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXeFkZaCX6eMs=
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230714015859-65056038e566 h1:8uiCesJZaWXuxImJw3thG9iNeKLxJWFmO0ODfpkGvPc=
