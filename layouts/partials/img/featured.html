@@ -1,6 +1,9 @@
-{{- $defaultParams := dict (slice "class" "plain") "fig--featured" (slice "class" "width") "small" (slice "class" "posh") "right" (slice "imgAttrs" "alt") "Featured image" }}
-{{- with (partial "mod-img/get" (dict "src" "featured" "ctx" . )) }}
-	{{- $params := merge $defaultParams .params }}
+{{- $forcedParams := dict (slice "class" "plain") "fig--featured" (slice "class" "posh") "right" }}
+{{- with (partial "img/func/featured" . ) }}
+	{{- $params := merge .params $forcedParams }}
+	{{- if not (eq $params.class.width "tiny") }}
+		{{ $params = merge $params (dict (slice "class" "width") "small") }}
+	{{- end }}
 	{{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params) }}
 	{{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
 	{{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params) }}

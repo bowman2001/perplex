@@ -1,0 +1,5 @@
+{{ $src := "featured" }}
+{{ with .Params.featured }}
+  {{ $src = . }}
+{{ end }}
+{{ return (partial "mod-img/get" (dict "src" $src "ctx" . )) }}
