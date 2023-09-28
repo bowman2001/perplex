@@ -1,2 +1,3 @@
 {{ $screen := resources.Get "css/screen.post.css" | minify | fingerprint }}
-<link rel="preload" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" media="screen" as="style">
+<link rel="preload" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" as="style">
+<link rel="stylesheet" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" media="screen">
