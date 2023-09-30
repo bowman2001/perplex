@@ -52,8 +52,8 @@ type NodeRenderer interface {
 }
 ```
 
-{{% pangram 2 %}}
-{.placeholder data-pagefind-ignore="all"}
+{{% pangram 7 %}}
+{.inline .placeholder data-pagefind-ignore="all"}
 
 ```bash {.lh15 .right}
 ├── archetypes

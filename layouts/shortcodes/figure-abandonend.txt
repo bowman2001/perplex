@@ -15,7 +15,7 @@
     {{ else }}
         {{ errorf "Unable to get resource '%s' in %q" $name $.Page }}
     {{ end }}
-    {{ $a = merge $a ( partial "img/func/params/namedFigure.html" . ) }}
+    {{ $a = merge $a ( partial "img/func/params/namedFigure-abandonend.txt" . ) }}
 {{ else }}
     {{ with (.Get 0) }}
         {{ $name = . }}

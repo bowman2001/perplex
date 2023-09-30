@@ -1,5 +1,5 @@
 {{ $src := "featured" }}
 {{ with .Params.featured }}
-    {{ $src = . }}
+  {{ $src = . }}
 {{ end }}
-{{ return (partial "img/func/get-img.html" (dict "name" $src "currentPage" . ) )}}
+{{ return (partial "mod-img/get" (dict "src" $src "ctx" . )) }}

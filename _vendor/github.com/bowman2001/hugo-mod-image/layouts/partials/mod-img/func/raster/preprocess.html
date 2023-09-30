@@ -1,67 +1,66 @@
 {{ $img := .img }}
 {{ $params := .params }}
-{{ $width := (float .img.Width) }}
-{{ $height := (float .img.Height) }}
-{{ $ratio := div $width $height }}
-{{ $path := path.Split .img.RelPermalink }}
-{{ $resize := false }}
-{{ $fill := false }}
-{{ $crop := false }}
 
+{{ with and $params.process.run $params.preprocess }}
+    {{ $width := (float $img.Width) }}
+    {{ $height := (float $img.Height) }}
+    {{ $ratio := div $width $height }}
+    {{ $rotate := "" }}
 
-{{ with .params.preprocess.rotate }}
-    {{ if $params.preprocess.flipsides }}
-        {{ $tmp := $width }}
-        {{ $width = $height }}
-        {{ $height = $tmp }}
+    {{ $path := path.Split $img.Key }}
+    {{ $resize := false }}
+    {{ $crop := false }}
+    
+    
+    {{ with .rotate }}
+        {{ $rotate = . }}
+        {{ $resize = true }}
+        {{ if $params.preprocess.flipsides }}
+            {{ $tmp := $width }}
+            {{ $width = $height }}
+            {{ $height = $tmp }}
+        {{ end }}
     {{ end }}
-    {{ $args := printf "%dx%d %s" (int (math.Round $width)) (int (math.Round $height)) . }}
-    {{ $img = $img.Resize $args }}
-    {{ $newpath := path.Join $path.Dir (print (path.BaseName $path.File) "-" . (path.Ext $img.RelPermalink)) }}    
-    {{ $img = $img | resources.Copy (print $newpath) }}
-    {{ $path = path.Split $img.RelPermalink }}
-{{ end }}
 
-{{ with .params.preprocess.ratio }}
-    {{ if (ge . $ratio) }}
-        {{ $height = div $width . }}
-    {{ else }}
-        {{ $width = mul . $height }}
+    {{ with .ratio }}
+        {{ if (ge . $ratio) }}
+            {{ $height = div $width . }}
+        {{ else }}
+            {{ $width = mul . $height }}
+        {{ end }}
+        {{ $resize = true }}
     {{ end }}
-    {{ $resize = true }}
-    {{ $fill = true }}
-{{ end }}
 
-{{ with .params.preprocess.zoom }}
-    {{ $zoom := (float .) }}
-    {{ $height = div $height $zoom }}
-    {{ $width = div $width $zoom }}
-    {{ $crop = true }}
-    {{ $resize = true }}
-{{ end }}
+    {{ with .zoom }}
+        {{ $zoom := (float .) }}
+        {{ $height = div $height $zoom }}
+        {{ $width = div $width $zoom }}
+        {{ $resize = true }}
+        {{ $crop = true }}        
+    {{ end }}
 
-{{ $newWidth := int (math.Round $width) }}
-{{ $newHeight := int (math.Round $height) }}
-{{ $params = merge $params  (dict (slice "imgAttrs" "width") (string $newWidth)) (dict (slice "imgAttrs" "height") (string $newHeight)) }}
-{{ $size := printf "%dx%d" $newWidth $newHeight }}
-{{ $args := (slice $size) }}
-{{ if .params.process.compress }}
-    {{ $args = $args | append "webp" }}
-    {{ $args = $args | append (printf "q%d" site.Data.modImg.srcset.quality) }}
-{{ end }}
+    {{ $newWidth := int (math.Round $width) }}
+    {{ $newHeight := int (math.Round $height) }}
+    {{ $params = merge $params  (dict (slice "imgAttrs" "width") (string $newWidth)) (dict (slice "imgAttrs" "height") (string $newHeight)) }}
+    {{ $args := slice (printf "%dx%d" $newWidth $newHeight) }}
+    {{ $args = $args | append $rotate }}
+    {{ if .params.process.compress }}
+        {{ $args = $args | append "webp" }}
+        {{ $args = $args | append (printf "q%d" site.Data.modImg.srcset.quality) }}
+    {{ end }}
 
-{{ with .params.preprocess.anchor }}
-    {{ $args = $args | append . }}
-{{ end }}
-
-{{ if $resize }}
-    {{ if $crop }}
-        {{ $img = $img.Crop (print (delimit $args " ")) }}
-    {{ else if $fill }}
-        {{ $img = $img.Fill (print (delimit $args " ")) }}
-    {{ end }}   
-    {{ $newpath := path.Join $path.Dir (print (path.BaseName $path.File) "-" (delimit $args "-") (path.Ext $img.RelPermalink )) }}    
-    {{ $img = $img | resources.Copy (print $newpath) }}
+    {{ if $resize }}
+        {{ with .anchor }}
+            {{ $args = $args | append . }}
+        {{ end }}
+        {{ if $crop }}
+            {{ $img = $img.Crop (print (delimit $args " ")) }}
+        {{ else }}
+            {{ $img = $img.Fill (print (delimit $args " ")) }}
+        {{ end }}   
+        {{ $newpath := path.Join $path.Dir (print (path.BaseName $path.File) "-" (delimit $args "-") (path.Ext $img.Key )) }}    
+        {{ $img = $img | resources.Copy (print $newpath) }}
+    {{ end }}
 {{ end }} 
 
 {{ return (dict "img" $img "params" $params) }}

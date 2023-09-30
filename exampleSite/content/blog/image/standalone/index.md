@@ -1,14 +1,14 @@
 ---
 authors: [Georg Makowski]
 title: Stand-alone Images
-description: Demonstration for enhanced images
+description: Demo for enhanced block images
 date: 2023-03-27T12:02:10+02:00
 categories: [Markdown]
 tags: [image, block]
 series: [demo]
 ---
 
-A demonstration of enhanced images and their layout possibilities.
+Demo for enhanced images and their layout possibilities.
 {.p-first}
 <!--more-->
 

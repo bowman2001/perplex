@@ -1,0 +1,12 @@
+{{ $type := .type }}
+{{ $className := .className }}
+
+{{ $params := dict }}
+{{ with (index site.Data.modImg.default $type) }}
+    {{ warnf "%v" .class }}
+    {{ range $k, $v := .class }}
+        {{ $params = merge $params (dict (slice (print $className) (print $k)) $v) }}
+    {{ end }}
+{{ end }}
+{{ return $params }}
+

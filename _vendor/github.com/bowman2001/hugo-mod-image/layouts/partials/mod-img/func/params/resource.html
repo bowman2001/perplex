@@ -11,7 +11,7 @@
     {{- $params = merge $params (dict (slice "imgAttrs" "width") (string .Width) ) }}
 {{- end -}}
 
-{{ if or site.Data.modImg.unsplash (eq .Params.unsplash "true") }}
+{{ if and (or site.Data.modImg.unsplash (eq .Params.unsplash "true")) (not (eq $params.caption "no")) }}
     {{ $filename := .RelPermalink | path.Base }}
     {{ $length := len $filename }}
     {{ if (gt $length 24) }}

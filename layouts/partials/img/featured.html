@@ -1,16 +1,10 @@
 {{- $forcedParams := dict (slice "class" "plain") "fig--featured" (slice "class" "posh") "right" }}
-{{- with (partial "img/func/featured" . ) }}
+{{- with (partialCached "img/func/get-featured" . . ) }}
 	{{- $params := merge .params $forcedParams }}
 	{{- if not (eq $params.class.width "tiny") }}
-		{{ $params = merge $params (dict (slice "class" "width") "small") }}
+		{{- $params = merge $params (dict (slice "class" "width") "small") }}
 	{{- end }}
-	{{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params) }}
-	{{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
-	{{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params) }}
-	{{- $imgMap := (dict "img" .img "params" $params )}}
-	{{- if $params.process.run }}
-		{{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}
-	{{- end }}
+	{{- $imgMap := partial "mod-img/func/params/aggregate/all/figure" (dict "img" .img "params" $params) }}
+	{{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}
 	{{- partial "mod-img/render/container/figure" $imgMap }}
-	{{- partial "mod-img/helper/debug" $imgMap.params }}
 {{- end }}

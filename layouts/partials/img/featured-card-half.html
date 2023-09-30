@@ -1,8 +1,7 @@
-{{- $img := ( partial "img/func/get-featured.html" . ) -}}
-{{- $page := . -}}
-{{- with $img -}}
-    {{- $a := partial "img/func/params/resource_card.html" (dict "img" . "page" $page)  -}}
-  <figure class="card__fig card__fig--half">
-      {{ partial "img/img.html" (dict "img" . "a" $a) }}
-  </figure>
-{{- end -}}
+{{- $forcedParams := dict (slice "class" "plain") "card__fig card__fig--half" (slice "class" "width") "tiny" (slice "linkAttrs" "href") .RelPermalink (slice "linkAttrs" "rel") "nofollow" (slice "preprocess" "ratio") 1.5 }}
+{{- with (partialCached "img/func/get-featured" . . ) }}
+  {{- $params := merge .params $forcedParams }}
+  {{- $imgMap := partial "mod-img/func/params/aggregate/all/figure" (dict "img" .img "params" $params) }}
+  {{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}
+  {{- partial "mod-img/render/container/figure-nc" $imgMap }}
+{{- end }}

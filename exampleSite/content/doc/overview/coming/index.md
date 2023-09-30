@@ -44,14 +44,13 @@ Media shortcodes
   - AsciiCast (self-hosted). The current shortcode is only a wrapper for a call to the official server.
   - Audio 
   - Image galleries
-
-: Hugo’s shortcodes for Youtube and Vimeo are not GDPR-compliant.
+  - override Hugo’s shortcodes for Youtube and Vimeo because they are not GDPR-compliant.
 
 Icons
 : Allow to use other icon sets than Material Symbols in the menus.
 
 New elements
-: Many vague ideas ...
+: Many ideas ...
 {.dl-loose}
 
 Suggestions are welcome as new issues in the [repo](https://github.com/bowman2001/perplex). Please check out the existing ones before filing a new one.

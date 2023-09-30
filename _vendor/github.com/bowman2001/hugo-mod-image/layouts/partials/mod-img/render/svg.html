@@ -7,11 +7,10 @@
 {{- if (eq .params.process.svg "inline") }}
     {{- .img.Content | safeHTML }}
     {{- if .params.index -}} {{- /* Hidden img with pagefind attributes */}}
-        <img class="hide" 
+        <img class="hide"
             data-pagefind-meta="image[data-src], image_alt[alt]" 
             data-src="{{ $.params.imgAttrs.src | safeHTMLAttr }}" 
-            {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }} 
-            loading="lazy">
+            {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }}>
     {{- end }}
 {{- else }}
     {{- $params := merge .params (dict (slice "imgAttrs" "loading") "lazy" ) }}
@@ -21,4 +20,4 @@
     <img {{- range $k, $v := $params.imgAttrs }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
         {{- end }}>
-{{ end }}
+{{- end }}

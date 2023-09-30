@@ -30,7 +30,7 @@
     {{ end }}
     {{ with $resource }}
         {{ $args := dict "data" . "ctx" $ctx "errorLevel" $errorLevel }}
-        {{ with (partial "mod-resource/func/helper/get-from-data" $args ) }}
+        {{ with (partial "mod-resource/func/helper/get-from-data" $args) }}
             {{- $map = . }}
         {{ else }}
             {{- $map = dict "resource" . "params" .Params }}

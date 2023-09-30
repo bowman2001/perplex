@@ -22,7 +22,7 @@ resources:
     caption: This caption and the attribution below are not available for directly included images. We need to register an image as a resource in the front-matter and provide additional information.
     alt: Big splash of water
 - src: mulyadi-JJMoAiVl9jA-unsplash.jpg
-  name: splash
+  name: smallsplash
   params:
     caption: Caption (only from a resource)
     alt: Splash of water
@@ -83,7 +83,7 @@ Since version 0.108.0 Hugo allows distinguishing stand-alone and embedded images
 
 ### Embedded
 
-![A smaller splash of water](splash) {{% pangram 6 %}}
+![A smaller splash of water](smallsplash) {{% pangram 6 %}}
 {.placeholder data-pagefind-ignore="all"}
 
 {{% pangram 6 %}}

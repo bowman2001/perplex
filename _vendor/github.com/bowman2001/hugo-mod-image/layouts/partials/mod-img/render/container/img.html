@@ -1,14 +1,25 @@
 {{- $imgMap := . }}
 
-{{- if .params.process.run }}
-    {{- $height := printf "%.3f%%" (div (mul .img.Height 100) (float .img.Width))   }}
-    {{- $style := print "position: relative; " "width: 100%; " "height: 0; " "padding-bottom: " $height ";" }}
-    {{ $imgMap = merge $imgMap (dict (slice "params" "contAttrs" "style") $style ) }}
+{{- $ratio := "" }}
+
+{{- with $imgMap.params.preprocess.ratio }}
+    {{- $ratio = . }}
+{{- else }}
+    {{- if .params.process.run }}
+        {{- $ratio = div (float .img.Width) .img.Height }}
+    {{- end }}
 {{- end }}
 
+{{- with $ratio }}
+    {{- $style := print "position: relative; " "width: 100%; " "height: 0; " "padding-bottom: " (printf "%.4f%%" (div (float 100) . )) ";" }}
+    {{- $imgMap = merge $imgMap (dict (slice "params" "contAttrs" "style") $style ) }}
+{{- end }}
 
 {{- with .params.linkAttrs }}
     {{- $attrs := merge $imgMap.params.contAttrs . }}
+    {{- with $.params.imgAttrs.alt }}
+        {{- $attrs = merge $attrs (dict "aria-label" . ) }}
+    {{- end }}
     <a 
     {{- range $k, $v := $attrs }}
         {{- printf " %s=%q" $k $v | safeHTMLAttr }}

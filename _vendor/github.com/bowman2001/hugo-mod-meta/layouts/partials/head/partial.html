@@ -4,6 +4,6 @@
         {{ $result = . }}
     {{ end }}
 {{ else }}
-    {{ warnf "There is no template in %s." .partial }}
+    {{ warnf "There is no partial %s." .partial }}
 {{ end }}
 {{ return $result }}

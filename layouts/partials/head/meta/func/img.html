@@ -1,12 +1,25 @@
 {{ $img := "" }}
-{{ $currentPage := . }}
-{{ with partial "img/func/get-featured.html" . }}
-    {{ if eq .MediaType.SubType "svg" }}
-        {{ with partial "img/func/get-img.html" (dict "name" (print (path.BaseName .RelPermalink) ".png") "currentPage" $currentPage ) }}
-            {{ $img = . }}
+{{ $imgMap := "" }}
+{{ $ctx := . }}
+
+{{ $src := "featured" }}
+{{ with .Params.featured }}{{ $src = . }}{{ end }}
+{{ with partial "mod-img/get-nm" (dict "src" $src "ctx" $ctx) }}
+    {{ if eq .img.MediaType.SubType "svg" }}
+        {{ $png := print (path.BaseName .img.Key) ".png" }}
+        {{ with partial "mod-img/get-nm" (dict "src" $png "ctx" $ctx ) }}
+            {{ $imgMap = . }}
         {{ end }}
     {{ else }}
-        {{ $img = . }}
+        {{ $imgMap = . }}
     {{ end }}
 {{ end }}
+
+{{ with $imgMap }}
+    {{ $ratio := div 16 (float 9) }}
+    {{ $width := 1200 }}
+    {{ $height := int (math.Round (div $width $ratio)) }}
+    {{ $img = .img.Fill (printf "%dx%d webp q80" $width $height ) }}
+{{ end }}
+
 {{ return $img }}

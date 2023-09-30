@@ -22,7 +22,7 @@ figure:
       name: Width
       prefix: w-
       options: [tiny, small, medium, text, large, xlarge]
-      intOpts: [thumb, portrait]
+      intOpts: [pt1, pt2, portrait]
     posh:
       name: Horizontal position
       prefix: ph-
@@ -46,6 +46,8 @@ embed:
       options: [top, middle]
 
 width:
+  pt1: [24,30]
+  pt2: [36,45]
   micro: [40,85]
   tiny: [80,165]
   small: [160,330]

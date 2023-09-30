@@ -1,6 +1,6 @@
 {{ $width := int (math.Round (div .img.Width (float 4))) }}
-{{ $blur := or site.Data.modImg.process.lqip.blur 5 }}
-{{ $quality := or site.Data.modImg.process.lqip.quality 80 }}
+{{ $blur := or site.Data.modImg.process.lqip.blur 6 }}
+{{ $quality := or site.Data.modImg.process.lqip.quality 30 }}
 
 {{ $arg :=  printf "resize %dx" $width }}
 {{ if .params.process.compress }}

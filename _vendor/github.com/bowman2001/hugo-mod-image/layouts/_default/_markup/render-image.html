@@ -9,42 +9,24 @@
 {{- $ctx := . }}
 {{- $url := urls.Parse .Destination }}
 
-{{- /* Parameter defaults */}}
-{{- $defaultParams := dict }}
+{{- /* Set parameter defaults */}}
+{{- $classParams := dict }}
 {{- if .IsBlock }}
-    {{- with site.Data.modImg.default.figure.class.width }} 
-        {{- $defaultParams = (dict (slice "class" "width") . ) }}
-    {{- else }}
-        {{- $msg := print "Can’t find default width for figure." $configErrorEnd }}
-        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
-    {{- end }}
-    {{- with site.Data.modImg.default.figure.class.posh }} 
-        {{- $defaultParams = merge $defaultParams (dict (slice "class" "posh") . ) }}
-    {{- end }}
+    {{- $classParams = partial "mod-img/func/params/default-class" (dict "type" "figure" "className" "class") }} 
 {{- else }}
-    {{- with site.Data.modImg.default.embed.class.width }}
-        {{- $defaultParams = (dict (slice "class" "width") . ) }}
-    {{- else }}
-        {{- $msg := print "Can’t find default width for embedded image." $configErrorEnd }}
-        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
-    {{- end }}
-    {{- with site.Data.modImg.default.embed.class.posh }}
-        {{- $defaultParams = merge $defaultParams (dict (slice "class" "posh") . ) }}
-    {{- else }}
-        {{- $msg := print "Can’t find default horizontal position for embedded image." $configErrorEnd }}
-        {{- partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
-    {{- end }}
+    {{- $classParams = partial "mod-img/func/params/default-class" (dict "type" "embed" "className" "class") }} 
 {{- end }}
+{{- $contParams := partial "mod-img/func/params/default-class" (dict "type" "container" "className" "contClass") }}
+{{- $defaultParams := merge $classParams $contParams }}
 
+{{- /* Collect parameters */}}
 {{- $hookParams := partial "mod-img/func/params/hook" . }}
 {{- $queryParams := dict }}
 {{- with and (not $url.IsAbs) $url.Query }} {{- /* Params from a query string (only local) */}}
     {{- $queryParams = (partial "mod-img/func/params/query" .) }}
 {{- end }}
 {{- $mdParams := dict }}
-{{- with .Attributes }}
-    {{- $mdParams = dict "attrs" . }}
-{{- end }}
+{{- with .Attributes }}{{- $mdParams = dict "attrs" . }}{{ end }}
 
 {{- $args := dict "src" .Destination "ctx" $ctx }}
 {{- with (partial "mod-img/get" $args $args) }}
