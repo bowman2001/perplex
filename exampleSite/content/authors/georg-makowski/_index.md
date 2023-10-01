@@ -38,9 +38,9 @@ Front-end developer[^1] specializing in typographic layout & SSG.
 {.p-first}
 <!--more-->
 
-I’m engaged in web publishing. My focus lies on a consistent layout structure and optimal legibility on modern devices. I’m developing fluid-responsive designs because they can integrate many achievements of classic typographic page design.
+I’m engaged in web publishing. My focus lies on a consistent layout structure and optimal legibility. I’m developing fluid-responsive designs because they can integrate many achievements of classic typographic page design on all kinds of screens --- from mobile phones up to high density monitors.
 
-Baseline grids and evenly spaced columns bear many fruits when the layout proportions are at least partially fixed as they always are on physical pages. Fluid-responsive templates like the ones of this theme contain only a few layout versions and each one beyond mobile preserves fixed proportions between its breakpoints.
+Baseline grids and evenly spaced columns bear many fruits when the layout proportions are at least partially fixed as they always are on physical pages. My fluid-responsive templates contain a few layout versions and each one beyond mobile preserves fixed proportions between its breakpoints.
 {.inline}
 
 [^1]: My design skills are self-taught. I’ve got an advanced degree in physics (diploma thesis in the field of applied non-linear dynamics, minor field: IT).
@@ -57,7 +57,7 @@ Hugo
 : I’ve been using this reliable engine since version {$0.18} to build fast static websites that require minimal maintenance. When Markdown attributes became available in version {$0.86} I started to dive deep into Markdown styling. I’ve been constantly following Hugo’s growing capabilities and have become a proficient template programmer.
 
 Javascript
-: I have experience with vanilla Javascript, Typescript, and the Node universe. I like to progressively enhance static sites following the JAMStack concept.  
+: I have experience with vanilla Javascript, Typescript, and Node. I like to progressively enhance static sites following the JAMStack concept.  
 {.dl-loose}
 
 I’m also a writer and speaker (in German) with a focus on the epistemology of the natural sciences, and a lecturer at the University of Applied Sciences{/}in Frankfurt.
