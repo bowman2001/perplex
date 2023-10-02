@@ -7,6 +7,18 @@ srcset:
   quality: 90
   qualityReductionFactor: 15
 
+image:
+  class:
+    base: img
+    type:
+      name: Type
+      prefix: t-
+      options: [logo]
+    padding:
+      name: "Padding"
+      prefix: pad-
+      options: [ half, one, two ]
+
 container:
   class:
     base: "img__c"
@@ -18,10 +30,6 @@ container:
       name: "Box"
       prefix: box-
       options: [shadow, none]
-    padding:
-      name: "Padding"
-      prefix: pad-
-      options: [half, one, two]
 
 figure:
   class:

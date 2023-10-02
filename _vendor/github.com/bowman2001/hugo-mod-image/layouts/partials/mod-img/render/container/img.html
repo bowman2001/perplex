@@ -6,7 +6,7 @@
     {{- $ratio = . }}
 {{- else }}
     {{- if .params.process.run }}
-        {{- $ratio = div (float .img.Width) .img.Height }}
+        {{- $ratio = div (float .img.Width) (float .img.Height) }}
     {{- end }}
 {{- end }}
 

@@ -28,8 +28,12 @@
         {{- end }}
     {{- end }}
 
-    {{- $imgClass := site.Data.modImg.lsImgClass | default "img--ls" }}
-    {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "%s lazyload" $imgClass)) }} 
+    {{- $lsClass := site.Data.modImg.lsImgClass | default "img--ls" }}
+    {{ with $params.imgAttrs.class }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "%s lazyload %s" . $lsClass)) }}
+    {{- else }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "lazyload %s" $lsClass)) }}
+    {{- end }}
     {{- $params = merge $params (dict (slice "imgAttrs" "data-sizes") "auto" ) }}
     {{- $params = merge $params (dict (slice "imgAttrs" "data-parentfit") "cover" ) }}
 {{- else }}

@@ -1,6 +1,6 @@
 {{ define "main" }}
     <div id="l-content-box" class="l-box l-box--doc">
-        <div data-pagefind-body>
+        <div class="content" data-pagefind-body>
             <header class="page-header margin-doc">
                 <div class="meta meta--head" data-pagefind-ignore>
                     {{ partial "nav/breadcrumbs/header.html" . }}
@@ -18,9 +18,9 @@
                     {{ partial "replacements.html" . }}
                 </div>
             {{ end }}
-            <div class="margin-doc">
-                {{ partial "nav/related/small-cards.html" . }}
-            </div>
+        </div>
+        <div class="related margin-doc">
+            {{ partial "nav/related/small-cards.html" . }}
         </div>
         <footer class="page-footer margin-doc">
             <div class="meta meta--foot">

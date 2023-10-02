@@ -25,7 +25,7 @@
 		{{ $resource = (partial "resource-in-parent.html" ( dict "name" $path "page" . )) }}
 	{{ end }}
 	{{ if not $resource }}
-		{{ $resource = (site.GetPage "/site/images").Resources.GetMatch $path }}
+		{{ $resource = (site.GetPage "/site").Resources.GetMatch $path }}
 	{{ end }}
 {{ end }}
 

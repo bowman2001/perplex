@@ -1,7 +1,7 @@
 {{ $img := .img }}
 {{ $params := .params }}
 
-{{ with and $params.process.run $params.preprocess }}
+{{ with and $params.process.run $params.preprocess.run $params.preprocess }}
     {{ $width := (float $img.Width) }}
     {{ $height := (float $img.Height) }}
     {{ $ratio := div $width $height }}

@@ -4,8 +4,19 @@
         - params
 */}}
 
-{{- if (eq .params.process.svg "inline") }}
+{{ $params := .params }}
+{{- if (eq $params.process.svg "inline") }}
+    {{ with $params.imgAttrs.alt }}
+        {{ $params = merge $params (dict (slice "imgAttrs" "aria-label") . )}}
+    {{ end }}        
+    <span 
+        {{- range $k, $v := $params.imgAttrs }}
+            {{ if not (in (slice "src" "alt" ) $k) }}
+                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+            {{- end }}
+        {{- end }}>
     {{- .img.Content | safeHTML }}
+    </span>
     {{- if .params.index -}} {{- /* Hidden img with pagefind attributes */}}
         <img class="hide"
             data-pagefind-meta="image[data-src], image_alt[alt]" 
