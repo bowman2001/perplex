@@ -13,7 +13,15 @@ container:
     background:
       name: "Background"
       prefix: bg-
-      options: [grey, transparent]
+      options: [dark, light]
+    box:
+      name: "Box"
+      prefix: box-
+      options: [shadow, none]
+    padding:
+      name: "Padding"
+      prefix: pad-
+      options: [half, one, two]
 
 figure:
   class:
@@ -59,7 +67,7 @@ width:
 default:
   container:
     class:
-      background: transparent
+      box: shadow
   figure:
     class:
       width: text

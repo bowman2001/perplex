@@ -13,6 +13,7 @@
 {{ with .target }}{{ $params = merge $params (dict (slice "linkAttrs" "target") ( . | lower )) }}{{ end }}
 {{ with .background }}{{ $params = merge $params (dict (slice "contClass" "background") ( . | lower )) }}{{ end }}
 {{ with .box }}{{ $params = merge $params (dict (slice "contClass" "box") ( . | lower )) }}{{ end }}
+{{ with .padding }}{{ $params = merge $params (dict (slice "contClass" "padding") ( . | lower )) }}{{ end }}
 
 {{ with or .alt .caption }}
     {{ $params = merge $params (dict (slice "imgAttrs" "alt") . ) }}    

@@ -1,4 +1,4 @@
-{{ $width := int (math.Round (div .img.Width (float 4))) }}
+{{ $width := int (math.Round (div .img.Width (float .divider))) }}
 {{ $blur := or site.Data.modImg.process.lqip.blur 6 }}
 {{ $quality := or site.Data.modImg.process.lqip.quality 30 }}
 

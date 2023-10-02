@@ -5,7 +5,7 @@ go 1.21.0
 toolchain go1.21.1
 
 require (
-	github.com/bowman2001/hugo-mod-image v0.0.0-20230930234814-344cb0040e30 // indirect
+	github.com/bowman2001/hugo-mod-image v0.0.0-20231001162635-43a9407ba88e // indirect
 	github.com/bowman2001/hugo-mod-katex v0.2.3 // indirect
 	github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230808224723-c30f1d4cfdfa // indirect
 	github.com/bowman2001/hugo-mod-mermaid v0.4.2 // indirect
