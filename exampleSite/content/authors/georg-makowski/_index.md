@@ -38,12 +38,11 @@ Front-end developer[^1] specializing in typographic layout & SSG.
 {.p-first}
 <!--more-->
 
-I’m engaged in web publishing. My focus lies on a consistent layout structure and optimal legibility. I’m developing fluid-responsive designs because they can integrate many achievements of classic typographic page design on all kinds of screens --- from mobile phones up to high density monitors.
+I’m engaged in web publishing. My focus lies on a consistent layout and optimal legibility. I’m developing fluid-responsive designs because they can integrate many achievements of classic typographic page design on all kinds of screens --- from mobile phones up to high density monitors.
 
-Baseline grids and evenly spaced columns bear many fruits when the layout proportions are at least partially fixed as they always are on physical pages. My fluid-responsive templates contain a few layout versions and each one beyond mobile preserves fixed proportions between its breakpoints.
-{.inline}
+Baseline grids and evenly spaced columns bear many fruits when the layout proportions are at least partially fixed like on physical pages. My fluid-responsive templates contain a few layout versions and each one beyond mobile preserves fixed proportions between its breakpoints. I can offer outstanding layout flows and details on very fast-loading pages.
 
-[^1]: My design skills are self-taught. I’ve got an advanced degree in physics (diploma thesis in the field of applied non-linear dynamics, minor field: IT).
+[^1]: I’ve got an advanced degree in physics (diploma thesis in the field of applied non-linear dynamics, minor field: IT).
 
 **C**ascading **S**tyle **S**heets
 : are my main field of expertise. Style sheets are a collection of mechanisms to add fonts and styling to a web document. They’re not a consistent programming language and every rigorous system reducing their complexity for the sake of technical maintainability tends to diminish their capabilities.

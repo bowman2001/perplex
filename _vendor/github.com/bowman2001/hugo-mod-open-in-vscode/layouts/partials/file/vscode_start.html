@@ -1,6 +1,6 @@
 {{- if .Site.IsServer -}}
     {{- with .File -}}
         {{- $path := print "vscode://file" .Filename  -}}
-        <a {{ printf "href=%q" $path | safeHTMLAttr }} rel="nofollow">
+        <a {{ printf "href=%q" $path | safeHTMLAttr }} aria-label="Open file in VSCode" rel="nofollow">
     {{- end -}}
 {{- end -}}{{- /**/ -}}

@@ -1,15 +1,15 @@
 {{ $params := . }}
 
-{{ $name := "mod-img/func/params/aggregate/image-class" }}
+{{ $name := "mod-img/func/params/aggregate/frame-class" }}
 {{ $errorLevel := site.Data.modImg.errorLevel | default "warning" }}
 {{ $configErrorEnd := "See configuration in data/mod-img" }}
 
 {{ $classes := slice }}
-{{ with index site.Data.modImg.image.class }}
+{{ with index site.Data.modImg.frame.class }}
     {{ $classMap := . }}
     {{ $baseClass := .base }}
     {{ $classes = $classes | append (print $baseClass) }}        
-    {{ range $k, $v := $params.imgClass }}
+    {{ range $k, $v := $params.frameClass }}
         {{ with (index $classMap $k)  }}
             {{ if in .options $v }}
                 {{ $classes = $classes | append (printf "%s--%s%s" $baseClass .prefix $v ) }}
@@ -20,9 +20,10 @@
         {{ end }}
     {{ end }}
 {{ else }}
-    {{ $msg := printf "Can’t find image class configuration. %s" $configErrorEnd }}
-    {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel ) }}
+    {{ $msg := printf "Can’t find frame class configuration. %s" $configErrorEnd }}
+    {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel )}}
 {{ end }}
 
-{{ $params = merge $params (dict (slice "imgAttrs" "class") (delimit $classes " ")) }}
+{{ $params = merge $params (dict (slice "frameAttrs" "class") (delimit $classes " ")) }}
+
 {{ return $params }}

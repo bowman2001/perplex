@@ -1,6 +1,10 @@
-{{- $forcedParams := dict (slice "class" "plain") "fig--featured" (slice "class" "posh") "right" }}
+{{- $forcedParams := dict
+	(slice "class" "plain") "fig--featured"
+	(slice "class" "posh") "right"
+}}
+{{- $defaultParams := dict (slice "frameClass" "box") "shadow" }}
 {{- with (partialCached "img/func/get-featured" . . ) }}
-	{{- $params := merge .params $forcedParams }}
+	{{- $params := merge $defaultParams .params $forcedParams }}
 {{- if not (eq $params.class.width "tiny") }}
 	{{- $params = merge $params (dict (slice "class" "width") "small") }}
 {{- end }}

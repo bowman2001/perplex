@@ -1,36 +1,6 @@
 debug: false
 unsplash: true
 
-srcset:
-  sizeStep: 100
-  maxDensityFactor: 2
-  quality: 90
-  qualityReductionFactor: 15
-
-image:
-  class:
-    base: img
-    type:
-      name: Type
-      prefix: t-
-      options: [logo]
-    padding:
-      name: "Padding"
-      prefix: pad-
-      options: [ half, one, two ]
-
-container:
-  class:
-    base: "img__c"
-    background:
-      name: "Background"
-      prefix: bg-
-      options: [dark, light]
-    box:
-      name: "Box"
-      prefix: box-
-      options: [shadow, none]
-
 figure:
   class:
     base: "fig"
@@ -38,7 +8,7 @@ figure:
       name: Width
       prefix: w-
       options: [tiny, small, medium, text, large, xlarge]
-      intOpts: [pt1, pt2, portrait]
+      intOpts: [pt1, pt2]
     posh:
       name: Horizontal position
       prefix: ph-
@@ -61,6 +31,31 @@ embed:
       prefix: pv-
       options: [top, middle]
 
+frame:
+  class:
+    base: "img__frame"
+    background:
+      name: "Background"
+      prefix: bg-
+      options: [ dark, light ]
+    box:
+      name: "Box"
+      prefix: box-
+      options: [ shadow, light, none ]
+    padding:
+      name: "Padding"
+      prefix: pad-
+      options: [ half, one, two, logo, none ]
+
+
+container:
+  class:
+    base: "img__c"
+    type:
+      name: Type
+      prefix: t-
+      options: [ logo ]
+
 width:
   pt1: [24,30]
   pt2: [36,45]
@@ -73,7 +68,7 @@ width:
   xlarge: [320,1440]
 
 default:
-  container:
+  frame:
     class:
       box: shadow
   figure:
@@ -83,3 +78,9 @@ default:
     class:
       width: small
       posh: left
+
+srcset:
+  sizeStep: 100
+  maxDensityFactor: 2
+  quality: 90
+  qualityReductionFactor: 15

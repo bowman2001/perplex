@@ -2,5 +2,5 @@
 {{- range $k, $v := .params.attrs }}
 {{- printf " %s=%q" $k $v | safeHTMLAttr }}
 {{- end }}>
-    {{- partial "mod-img/render/container/img.html" . }}
+    {{- partial "mod-img/render/container/frame.html" . }}
 </figure>

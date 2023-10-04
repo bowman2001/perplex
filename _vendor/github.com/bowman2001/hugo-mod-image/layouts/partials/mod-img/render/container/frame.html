@@ -1,0 +1,28 @@
+{{- $imgMap := . }}
+
+{{- if .params.process.run }}
+    {{- $style := "display: flex; justify-content: center; align-items: center" }}
+    {{- $imgMap = merge $imgMap (dict (slice "params" "frameAttrs" "style") $style ) }}
+{{- end }}
+
+{{- with .params.frameAttrs }}
+    {{- with $imgMap.params.linkAttrs }}
+        {{- $attrs := merge $imgMap.params.frameAttrs . }}
+        {{- with $.params.imgAttrs.alt }}
+            {{- $attrs = merge $attrs (dict "aria-label" . ) }}
+        {{- end -}}
+        <a 
+        {{- range $k, $v := $attrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}>
+        {{- partial "mod-img/render/container/img.html" $imgMap }}
+        </a>
+    {{- else }}
+        <span 
+        {{ range $k, $v := $imgMap.params.frameAttrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}>
+        {{- partial "mod-img/render/container/img.html" $imgMap -}}
+        </span>
+    {{- end }}
+{{- end }}

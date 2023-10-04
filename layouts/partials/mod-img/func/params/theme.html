@@ -1,0 +1,6 @@
+{{/* Image map parameters (params) */}}
+{{ $params := . }}
+{{ if (eq .contClass.type "logo") }}
+  {{ $params = merge $params (dict (slice "preprocess" "run") false ) }}
+{{ end }}
+{{ return $params }}

@@ -11,17 +11,17 @@
 {{ with .link }}{{ $params = merge $params (dict (slice "linkAttrs" "href") . ) }}{{ end }}
 {{ with .rel }}{{ $params = merge $params (dict (slice "linkAttrs" "rel") ( . | lower )) }}{{ end }}
 {{ with .target }}{{ $params = merge $params (dict (slice "linkAttrs" "target") ( . | lower )) }}{{ end }}
-{{ with .background }}{{ $params = merge $params (dict (slice "contClass" "background") ( . | lower )) }}{{ end }}
-{{ with .box }}{{ $params = merge $params (dict (slice "contClass" "box") ( . | lower )) }}{{ end }}
+{{ with .background }}{{ $params = merge $params (dict (slice "frameClass" "background") ( . | lower )) }}{{ end }}
+{{ with .box }}{{ $params = merge $params (dict (slice "frameClass" "box") ( . | lower )) }}{{ end }}
+{{ with .padding }}{{ $params = merge $params (dict (slice "frameClass" "padding") ( . | lower )) }}{{ end }}
+{{ with .type }}{{ $params = merge $params (dict (slice "contClass" "type") ( . | lower )) }}{{ end }}
 
 {{ with or .alt .caption }}
     {{ $params = merge $params (dict (slice "imgAttrs" "alt") . ) }}    
 {{ end }}
 
-{{ with .type }}{{ $params = merge $params (dict (slice "imgClass" "type") ( . | lower )) }}{{ end }}
-{{ with .padding }}{{ $params = merge $params (dict (slice "imgClass" "padding") ( . | lower )) }}{{ end }}
+{{ $params := partial "mod-img/func/params/theme" $params }}
 
-{{ with .preprocess }}{{ $params = merge $params (dict (slice "preprocess" "run") false ) }}{{ end }}
 {{ with .ratio }}{{ $params = merge $params (dict (slice "preprocess" "ratio") . ) }}{{ end }}
 {{ with .zoom }}{{ $params = merge $params (dict (slice "preprocess" "zoom") . ) }}{{ end }}
 {{ with .rotate }}{{ $params = merge $params (dict (slice "preprocess" "rotate") (. | lower) ) }}{{ end }}
@@ -32,3 +32,5 @@
 {{ end }}
 
 {{ return $params }}
+
+{{ define "partials/mod-img/func/params/theme.html" }}{{ return . }}{{ end }}

@@ -31,7 +31,7 @@ For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/i
 ![](tiny-left) {{% pangram 15 %}}
 {.placeholder data-pagefind-ignore="all"}
 
-![](tiny-right) {{% pangram 13 %}}
+![](tiny-right) {{% pangram 15 %}}
 {.placeholder data-pagefind-ignore="all"}
 
 ### Micro width

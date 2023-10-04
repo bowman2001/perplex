@@ -10,12 +10,14 @@ menu:
     parent: tldr
     pre: edit
 resources:
-- src: Markdown.png
+- src: Markdown.svg
   name: featured
   params:
     alt: Markdown logo
-    container: trans
+    background: light
     width: tiny
+    type: logo
+    padding: one
 - src: erda-estremera-eMX1aIAp9Nw-unsplash.jpg
   name: bigsplash
   params: 

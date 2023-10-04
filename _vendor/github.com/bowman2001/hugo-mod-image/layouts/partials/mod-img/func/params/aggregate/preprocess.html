@@ -1,13 +1,7 @@
 {{ $name := "mod-img/params/aggregate/preprocess" }}
 
 {{ $img := .img }}
-{{ $params := .params }}
-
-{{/* Preprocess ? */}}
-{{ $params = merge (dict (slice "preprocess" "run") true ) .params }}
-{{ if (eq $params.imgClass.type "logo") }}
-    {{ $params = merge $params (dict (slice "preprocess" "run") false ) }}
-{{ end }}
+{{ $params := merge (dict (slice "preprocess" "run") true ) .params }}
 
 {{ if $params.preprocess.run }}
     {{/* Check and modify preprocessing parameters */}}
@@ -61,9 +55,9 @@
 {{/* Process and compress? */}}
 {{ with $img.MediaType.SubType }}
     {{ if eq "svg" .  }}
-        {{ $params = merge $params (dict (slice "process" "run") false ) }}
+        {{ $params = merge $params (dict (slice "preprocess" "run") false ) (dict (slice "process" "run") false ) }}
     {{ else if (in site.Data.modImg.process.none .) }}
-        {{ if or (eq $params.process true) (eq $params.process "yes") }}
+        {{ if $params.process.run }}
             {{ $params = merge $params (dict (slice "process" "run") true ) (dict (slice "process" "compress") false) }}
         {{ else }}
             {{ $params = merge $params (dict (slice "process" "run") false ) }}

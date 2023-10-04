@@ -5,7 +5,7 @@
 
   OUT: Resource or empty string
 */}}
-{{ $path := (print "*" .path "*") }}
+{{ $path := (print .path "*") }}
 {{ $ctx := .ctx }}
 {{ $resource := "" }}
 {{ with $ctx.Page }}
@@ -34,16 +34,16 @@
 
 
 {{ define "partials/mod-resource/func/helper/resource-in-parent.html" }}
-{{ $path := .path }}
-{{ $resource := "" }}
+	{{ $path := .path }}
 
-{{ with .page.Parent }}
-	{{ with .Resources.GetMatch $path }}
-		{{ $resource = . }}
-	{{ else }}
-		{{ $resource = partial "resource-in-parent.html" ( dict "name" $path "currentPage" . )}}
+	{{ $resource := "" }}
+	{{ with .page.Parent }}
+		{{ with .Resources.GetMatch $path }}
+			{{ $resource = . }}
+		{{ else }}
+			{{ $resource = partial "resource-in-parent.html" ( dict "name" $path "currentPage" . )}}
+		{{ end }}
 	{{ end }}
-{{ end }}
 
-{{ return $resource }}
+	{{ return $resource }}
 {{ end }}
