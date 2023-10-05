@@ -7,7 +7,7 @@
     {{- range $i, $e := last $n .Ancestors.Reverse -}}
       <li class="meta__item">
         <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
-      </li>&zwj;
+      </li>
     {{- end -}}
   <li class="meta__item">
     <a class="meta__text link link--nav" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>
