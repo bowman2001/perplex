@@ -17,11 +17,6 @@ params:
     tag: tags
     category: categories
     series: series
-  
-  ### Official values for the link '<a>' attributes
-  link:
-    target: [ _blank, _parent, _self, _top ]
-    rel: [ alternate, author, bookmark, external, help, license, next, nofollow, noopener, noreferrer, opener, prev, search, tag ]
 
   ### TOC walk fragments
   toc:
@@ -39,38 +34,6 @@ params:
   #### Image processing
   
   ### Parameters
-  imaging:
-    fallback_width: 660 # In pxl
-    social_width: 1200 # In px TODO
-    sizestep: 50 # In percent
-    min_width: 100 # In px
-    # Quality reduction for higher densities
-    # quality_reduction: [ -10, -20, -30 ] TODO
-    
-    ### WARNING!
-    ### Changing the following parameters in your own config will break things.
-    
-    # See https://gohugo.io/content-management/image-processing/#anchor
-    anchors: [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ]
-    no_processing: [ svg, gif ]
-    raster_compress: [ bmp, jpeg, webp ]
-    raster_lossless: [ tiff, png ]
-    rotate: [ 90right, 90left, flip ]
-    webp_hints: [ drawing, icon, photo, picture, text ]
-    rs_filter: [ bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch ]
-    embedded:
-      size: [ tiny, small, normal, full ]
-      posh: [ left, right ]
-      posv: [ top, middle ]
-    figure:
-      size: [ tiny, small, medium, normal, large, xlarge ]
-      posh: [ left, center, right ]
-      posv: [ top, middle ]
-
-  mermaid:
-    version: 10
-    theme: base
-  
   layout:
     measure: 70.0
     column: 33.0

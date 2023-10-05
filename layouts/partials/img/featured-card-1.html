@@ -7,7 +7,10 @@
   (slice "linkAttrs" "rel") "nofollow"
   (slice "linkAttrs" "aria-label") "Read more"
   (slice "preprocess" "ratio") 1.5 }}
-{{- $defaultParams := dict (slice "frameClass" "background") "light" }}
+{{- $defaultParams := dict
+  (slice "imgAttrs" "alt") "Featured image"
+  (slice "frameClass" "background") "light"
+}}
 {{- with (partialCached "img/func/get-featured" . . ) }}
   {{- $params := merge $defaultParams .params $forcedParams }}
   {{- $imgMap := partial "mod-img/func/params/aggregate/all/figure" (dict "img" .img "params" $params) }}

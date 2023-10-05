@@ -1,6 +1,12 @@
-{{- $forcedParams := dict (slice "class" "plain") "fig--portrait" (slice "class" "width") "tiny" }}
+{{- $forcedParams := dict
+    (slice "class" "plain") "fig--portrait"
+    (slice "class" "width") "tiny"
+}}
+{{ $defaultParams := dict
+    (slice "imgAttrs" "alt") "Featured image"
+}}
 {{- with ( partial "img/func/get-portrait.html" . ) -}}
-    {{- $params := merge .params $forcedParams }}
+    {{- $params := merge $defaultParams .params $forcedParams }}
     {{- $imgMap := partial "mod-img/func/params/aggregate/all/figure" (dict "img" .img "params" $params) }}
     {{- partial "mod-img/render/container/figure" $imgMap }}
 {{- end -}}

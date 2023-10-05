@@ -2,7 +2,10 @@
 	(slice "class" "plain") "fig--featured"
 	(slice "class" "posh") "right"
 }}
-{{- $defaultParams := dict (slice "frameClass" "box") "shadow" }}
+{{- $defaultParams := dict
+	(slice "imgAttrs" "alt") "Featured image"
+	(slice "frameClass" "box") "shadow"
+}}
 {{- with (partialCached "img/func/get-featured" . . ) }}
 	{{- $params := merge $defaultParams .params $forcedParams }}
 {{- if not (eq $params.class.width "tiny") }}

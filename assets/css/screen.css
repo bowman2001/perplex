@@ -676,11 +676,13 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
   filter: blur(0.4rem);
+  will-change: opacity, contents;
 }
 
 img.lazyload,
 img.lazyloading {
   filter: blur(0.4rem);
+  will-change: filter, contents;
 }
 
 img.lazyloaded {
