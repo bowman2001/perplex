@@ -669,23 +669,23 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .ls-blur-up-img {
   opacity: 1;
-  filter: blur(0.5rem);
-  transition: opacity 200ms 500ms ease-in, filter 1s ease-out;
+  filter: blur(0.4rem);
+  transition: opacity 100ms 300ms ease-in, filter 1s ease-out;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
-  filter: blur(0.5rem);
+  filter: blur(0.4rem);
 }
 
 img.lazyload,
 img.lazyloading {
-  filter: blur(0.5rem);
+  filter: blur(0.4rem);
 }
 
 img.lazyloaded {
   filter: blur(0);
-  transition: filter 200ms 200ms ease-out;
+  transition: filter 100ms 200ms ease-out;
 }
 
 *, *:before, *:after {
@@ -814,7 +814,7 @@ body {
   justify-content: space-between;
   scroll-margin-top: calc(var(--tnh) + var(--tg));
   animation-name: content;
-  animation-duration: 150ms;
+  animation-duration: 100ms;
   animation-timing-function: ease-out;
 }
 
@@ -1202,7 +1202,7 @@ body {
     align-items: flex-start;
   }
   .meta--left .meta__item--taxo .meta__icon {
-    margin-left: -0.5rem;
+    margin-left: -3rem;
   }
 }
 
@@ -5779,8 +5779,7 @@ li:empty:before {
 }
 .taxo-shape--tag {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 450;
 }
 .taxo-shape--series {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
