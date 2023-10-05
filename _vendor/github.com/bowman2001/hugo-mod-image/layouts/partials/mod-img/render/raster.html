@@ -5,7 +5,7 @@
 */ -}}
 
 {{- $img := .img }}
-{{- $maxLqip := site.Data.modImg.srcset.maxLqip | default 2048 }}
+{{- $maxLqip := site.Data.modImg.srcset.lqip.max | default 2048 }}
 
 {{- $params := merge .params (dict (slice "imgAttrs" "src") $img.RelPermalink ) }} 
 {{- $placeholder := "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" }}
@@ -14,7 +14,7 @@
     {{- with (partial "mod-img/func/raster/srcset" (dict "img" $img "params" $params) ) }}
         {{- $params = merge $params (dict (slice "imgAttrs" "src") .fallback.RelPermalink ) }} 
         {{- $params = merge $params (dict (slice "imgAttrs" "width") (string .fallback.Width)) (dict (slice "imgAttrs" "height") (string .fallback.Height)) }}
-        {{- $lqip := partial "mod-img/func/raster/lqip" (dict "img" .fallback "params" $params "divider" 4) -}}        
+        {{- $lqip := partial "mod-img/func/raster/lqip" (dict "img" .fallback "params" $params) -}}        
         {{- $lqipBase64 := printf "data:image/webp;base64,%s" (base64Encode $lqip.Content) }}
         {{- if lt (len $lqipBase64) $maxLqip }}
             {{- $params = merge $params (dict (slice "imgAttrs" "srcset") $lqipBase64 ) }}

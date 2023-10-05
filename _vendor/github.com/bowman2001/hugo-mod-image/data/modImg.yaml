@@ -9,7 +9,8 @@ srcset:
   maxDensityFactor: 2
   quality: 90
   qualityReductionFactor: 15
-  maxLqip: 2048
+  maxLqip: 4096
+  lqipDivider: 8
 
 process:
   none: [ gif ]

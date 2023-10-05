@@ -84,3 +84,8 @@ srcset:
   maxDensityFactor: 2
   quality: 90
   qualityReductionFactor: 15
+  lqip:
+    quality: 10
+    divider: 2
+    blur: 5
+    max: 4096

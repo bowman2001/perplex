@@ -670,7 +670,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 .ls-blur-up-img {
   opacity: 1;
   filter: blur(0.5rem);
-  transition: opacity 500ms ease-in, filter 1s ease-out;
+  transition: opacity 200ms 500ms ease-in, filter 1s ease-out;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
@@ -685,7 +685,7 @@ img.lazyloading {
 
 img.lazyloaded {
   filter: blur(0);
-  transition: filter 400ms ease-out;
+  transition: filter 200ms 200ms ease-out;
 }
 
 *, *:before, *:after {
@@ -814,7 +814,7 @@ body {
   justify-content: space-between;
   scroll-margin-top: calc(var(--tnh) + var(--tg));
   animation-name: content;
-  animation-duration: 200ms;
+  animation-duration: 150ms;
   animation-timing-function: ease-out;
 }
 
