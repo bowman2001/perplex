@@ -1,9 +1,0 @@
-<a class="card__hover" href="{{- .RelPermalink -}}">
-  <h4>
-      {{ with .Params.menu.doc.pre }}{{- partial "material-symbol" (dict "id" . "ctx" . "size" "normal") -}}{{ end }}
-      {{ with .Title }}{{- . | site.Home.RenderString -}}{{ end }}
-  </h4>
-    {{- with .Description -}}
-      <p class="description">{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
-    {{- end -}}
-</a>

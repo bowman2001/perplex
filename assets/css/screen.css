@@ -657,37 +657,36 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   width: 100%;
   height: 100%;
   display: block;
-  /* only if you want to change the blur-up option from always to auto or want to use blur up effect without a lowsrc image. */
   font-family: "blur-up: auto", "object-fit: cover";
   object-fit: cover;
 }
 
-.img--ls.ls-blur-up-is-loading,
-.img--ls.lazyload:not([src]) {
-  visibility: hidden;
-}
-
+/* .img--ls.ls-blur-up-is-loading {
+	visibility: hidden;
+}*/
 .ls-blur-up-img {
   opacity: 1;
   filter: blur(0.4rem);
-  transition: opacity 100ms 300ms ease-in, filter 1s ease-out;
+  transition: opacity 1000ms ease-in-out, filter 2000ms ease-in-out;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
   filter: blur(0.4rem);
-  will-change: opacity, contents;
+  will-change: opacity, filter, contents;
 }
 
 img.lazyload,
 img.lazyloading {
+  opacity: 0.75;
   filter: blur(0.4rem);
-  will-change: filter, contents;
+  will-change: opacity, filter, contents;
 }
 
 img.lazyloaded {
+  opacity: 1;
   filter: blur(0);
-  transition: filter 100ms 200ms ease-out;
+  transition: opacity 500ms ease-in-out, filter 1000ms ease-in-out;
 }
 
 *, *:before, *:after {
@@ -816,7 +815,7 @@ body {
   justify-content: space-between;
   scroll-margin-top: calc(var(--tnh) + var(--tg));
   animation-name: content;
-  animation-duration: 100ms;
+  animation-duration: 150ms;
   animation-timing-function: ease-out;
 }
 

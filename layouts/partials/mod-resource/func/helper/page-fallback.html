@@ -22,7 +22,7 @@
 		{{ end }}
 	{{ end }}
 	{{ if not $resource }}
-		{{ $resource = (partial "resource-in-parent.html" ( dict "name" $path "page" . )) }}
+		{{ $resource = (partial "mod-resource/resource-in-parent.html" ( dict "name" $path "page" . )) }}
 	{{ end }}
 	{{ if not $resource }}
 		{{ $resource = (site.GetPage "/site").Resources.GetMatch $path }}
@@ -33,7 +33,7 @@
 
 
 
-{{ define "partials/mod-resource/func/helper/resource-in-parent.html" }}
+{{ define "partials/mod-resource/resource-in-parent.html" }}
 	{{ $path := .path }}
 
 	{{ $resource := "" }}
@@ -41,7 +41,7 @@
 		{{ with .Resources.GetMatch $path }}
 			{{ $resource = . }}
 		{{ else }}
-			{{ $resource = partial "resource-in-parent.html" ( dict "name" $path "currentPage" . )}}
+			{{ $resource = partial "mod-resource/resource-in-parent.html" ( dict "name" $path "currentPage" . )}}
 		{{ end }}
 	{{ end }}
 

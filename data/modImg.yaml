@@ -81,9 +81,9 @@ default:
 
 srcset:
   sizeStep: 50
-  maxDensityFactor: 3
-  quality: 90
-  qualityReductionFactor: 15
+  maxDensityFactor: 2
+  quality: 85
+  qualityReductionFactor: 20
   lqip:
     quality: 25
     divider: 2
