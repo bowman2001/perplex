@@ -661,9 +661,10 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   object-fit: cover;
 }
 
-/* .img--ls.ls-blur-up-is-loading {
-	visibility: hidden;
-}*/
+.img--ls.ls-blur-up-is-loading {
+  visibility: hidden;
+}
+
 .ls-blur-up-img {
   opacity: 1;
   filter: blur(0.4rem);
