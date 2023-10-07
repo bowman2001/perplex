@@ -685,7 +685,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .img--lqip.lazyloaded {
   filter: blur(0);
-  transition: filter 300ms ease-in-out;
+  transition: filter 200ms ease-in-out;
 }
 
 .img--ph.lazyload,
@@ -696,7 +696,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .img--ph.lazyloaded {
   opacity: 1;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
 *, *:before, *:after {
