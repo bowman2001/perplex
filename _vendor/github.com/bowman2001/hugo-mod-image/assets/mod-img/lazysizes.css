@@ -13,20 +13,19 @@
 	display: block;
 
 	/* only if you want to change the blur-up option from always to auto or want to use blur up effect without a lowsrc image. */
-	font-family: "blur-up: always", "object-fit: cover";
+	font-family: "blur-up: auto", "object-fit: cover";
 
     object-fit: cover;
 }
 
-.img--ls.ls-blur-up-is-loading,
-.img--ls.lazyload:not([src]) {
+.img--ls.ls-blur-up-is-loading {
 	visibility: hidden;
 }
 
 .ls-blur-up-img {
     opacity: 1;
 	filter: blur(5px);
-    transition: opacity 500ms ease-in-out, filter 1s ease-in-out;
+    transition: opacity 1000ms ease-in-out, filter 2s ease-in-out;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
@@ -34,12 +33,12 @@
     filter: blur(5px);
 }
 
-img.lazyload,
-img.lazyloading {
+.img--lqip.lazyload,
+.img--lqip.lazyloading {
 	filter: blur(5px);
 }
 
-img.lazyloaded {
+.img--lqip.lazyloaded {
 	filter: blur(0);
-	transition: filter 250ms ease-in-out;
+	transition: filter 500ms ease-in-out;
 }

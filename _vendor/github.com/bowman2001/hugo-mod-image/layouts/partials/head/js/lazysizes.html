@@ -1,7 +1,4 @@
 {{ $lazysizes := resources.Get "mod-img/js/lazysizes.js" }}
-{{ $parent_fit := resources.Get "mod-img/js/ls.parent-fit.js" }}
-{{ $object_fit := resources.Get "mod-img/js/ls.object-fit.js" }}
-{{/* $aspectratio := resources.Get "mod-img/js/ls.aspectratio.js" */}}
 {{ $blur_up := resources.Get "mod-img/js/ls.blur-up.js" }}
-{{ $js := (slice $parent_fit $object_fit $blur_up $lazysizes) | resources.Concat "js/ls.js" | minify | fingerprint }}
+{{ $js := (slice $blur_up $lazysizes) | resources.Concat "js/ls.js" | minify | fingerprint }}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}" defer></script>

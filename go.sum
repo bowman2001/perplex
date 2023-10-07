@@ -44,6 +44,14 @@ github.com/bowman2001/hugo-mod-image v0.0.0-20231005090536-3afbfed71f12 h1:DoXu/
 github.com/bowman2001/hugo-mod-image v0.0.0-20231005090536-3afbfed71f12/go.mod h1:HvwTeTDYGtSpn3jPP+2om/qCuA/O/tMsFg3CnuoQGSY=
 github.com/bowman2001/hugo-mod-image v0.0.0-20231005094940-6931eef5b13b h1:FAJK5HNpbduF7ZbeH5oiP3tt2tr/LNNLpOg0lQy7kxI=
 github.com/bowman2001/hugo-mod-image v0.0.0-20231005094940-6931eef5b13b/go.mod h1:HvwTeTDYGtSpn3jPP+2om/qCuA/O/tMsFg3CnuoQGSY=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231006113627-f3cd36f79ff9 h1:5+i/lIFu11yXJStUDu7QhJmBdBABvFFk1Zsd4Afi2oM=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231006113627-f3cd36f79ff9/go.mod h1:HvwTeTDYGtSpn3jPP+2om/qCuA/O/tMsFg3CnuoQGSY=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231007051124-f6551a91d533 h1:QcNnVVTLUFM2F/VRyVy9LOPnzxEVuwdRwGvnLiwh3Cc=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231007051124-f6551a91d533/go.mod h1:HvwTeTDYGtSpn3jPP+2om/qCuA/O/tMsFg3CnuoQGSY=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231007052753-451a00315596 h1:qART0hQsTT796crsxvTcHeKfmm6s5Vn+4MkjbiB4+n8=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231007052753-451a00315596/go.mod h1:HvwTeTDYGtSpn3jPP+2om/qCuA/O/tMsFg3CnuoQGSY=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231007053340-16830193d8bf h1:5on8LRHMurmcnz+F1JgfGK4M5QRtVfXhANhbi9yh/kg=
+github.com/bowman2001/hugo-mod-image v0.0.0-20231007053340-16830193d8bf/go.mod h1:HvwTeTDYGtSpn3jPP+2om/qCuA/O/tMsFg3CnuoQGSY=
 github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXeFkZaCX6eMs=
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230808224723-c30f1d4cfdfa h1:jcttE9Z7tz2kzdSN/m8Q4CI4ch0IZS25AHuDSY9Lo7E=

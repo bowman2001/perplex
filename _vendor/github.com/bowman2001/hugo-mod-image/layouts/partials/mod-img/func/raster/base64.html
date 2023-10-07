@@ -1,0 +1,7 @@
+{{ $densityFactor := site.Data.modImg.base64.densityFactor | default 1.0 }}
+{{ $quality := site.Data.modImg.base64.quality | default 80 }}
+
+{{ $vals := index site.Data.modImg.width .params.class.width }}
+{{ $width := int (math.Round (mul (index $vals 1) $densityFactor )) }}
+{{ $img := .img.Resize (printf "%dx webp q%d" $width $quality) }}
+{{ return (printf "data:image/webp;base64,%s" (base64Encode $img.Content)) }}

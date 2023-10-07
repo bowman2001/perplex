@@ -1,9 +1,10 @@
 {{- $forcedParams := dict
     (slice "class" "plain") "fig--portrait-tiny"
     (slice "class" "width") "pt1"
+    (slice "process" "base64") true
 }}
 {{ $defaultParams := dict
-    (slice "imgAttrs" "alt") "Featured image"
+    (slice "imgAttrs" "alt") "Portrait"
 }}
 {{- with ( partial "img/func/get-portrait.html" . ) -}}
     {{- $params := merge $defaultParams .params $forcedParams }}

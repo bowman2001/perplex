@@ -7,10 +7,12 @@ unsplash: false
 srcset:
   sizeStep: 50 # In percent 
   maxDensityFactor: 2
-  quality: 90
-  qualityReductionFactor: 15
-  maxLqip: 4096
-  lqipDivider: 8
+  quality: 85
+  qualityReductionFactor: 20
+  lqip: 
+    divider: 2
+    
+    max: 2048
 
 process:
   none: [ gif ]
