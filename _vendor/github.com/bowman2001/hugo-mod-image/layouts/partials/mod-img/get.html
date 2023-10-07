@@ -13,7 +13,7 @@
 {{ $url := urls.Parse $src }}
 {{ $args := dict "url" $url "ctx" $ctx "errorLevel" $errorLevel }}
 
-{{ with (partial "mod-resource/func/get-with-params" $args $args) }}
+{{ with (partial "mod-resource/func/get-with-params" $args) }}
     {{ if (eq .resource.MediaType.MainType "image") }}
         {{ $imgMap = dict "img" .resource "params" .params }}
     {{ else }}

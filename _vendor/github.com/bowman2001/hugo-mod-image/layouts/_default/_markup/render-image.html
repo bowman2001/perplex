@@ -51,9 +51,9 @@
     {{- /* Render */}}
     {{- partial "mod-img/helper/debug" $imgMap.params }}
     {{- if $.IsBlock }}
-        {{- partialCached "mod-img/render/container/figure" $imgMap $imgMap }}
+        {{- partial "mod-img/render/container/figure" $imgMap }}
     {{- else }}
-        {{- partialCached "mod-img/render/container/embed" $imgMap $imgMap }}
+        {{- partial "mod-img/render/container/embed" $imgMap }}
     {{- end }}
 {{- end }}
 {{- /**/ -}}

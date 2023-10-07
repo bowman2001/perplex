@@ -2333,7 +2333,6 @@ body {
 }
 .md .highlight {
   display: block;
-  overflow: hidden;
   max-height: 200rem;
   padding: 1rem 2rem;
   min-width: 100%;
@@ -2364,12 +2363,14 @@ body {
 @media screen and (min-width: 39em) {
   .md .highlight {
     min-width: 74rem;
+    width: 74rem;
   }
 }
 @media screen and (min-width: 48em) {
   .md .highlight.expand {
     display: inline-block;
     max-width: 148rem;
+    width: unset;
   }
 }
 .md li .highlight, .md dd .highlight {
@@ -2933,9 +2934,9 @@ body {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: 0.814465rem;
-  padding-bottom: 0.535535rem;
+  padding-bottom: 1.035535rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.35rem );
-  width: calc(50% + 1rem);
+  width: calc(50% + 2rem);
 }
 @media screen and (min-width: 39em) {
   .emb--w-small {
@@ -2947,13 +2948,13 @@ body {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: 0.814465rem;
-  padding-bottom: 0.035535rem;
+  padding-bottom: 0.535535rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.35rem );
-  width: calc(33% + 1rem);
+  width: calc(33% + 2rem);
 }
 @media screen and (min-width: 39em) {
   .emb--w-tiny {
-    width: calc(25% + 1rem);
+    width: calc(25% + 2rem);
   }
 }
 
@@ -2961,20 +2962,20 @@ body {
   font-size: 1.43rem;
   line-height: 2rem;
   padding-top: 0.814465rem;
-  margin-bottom: -0.464465rem;
+  padding-bottom: 0.035535rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.35rem );
   width: calc(25% + 1rem);
 }
 @media screen and (min-width: 39em) {
   .emb--w-micro {
-    width: calc(12.5% + 1rem);
+    width: calc(12.5% + 2rem);
   }
 }
 
 .emb--ph-left {
   float: left;
   clear: left;
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 .emb--ph-left.emb--w-small {
   padding-right: 2rem;
@@ -2993,7 +2994,7 @@ body {
 .emb--ph-right {
   float: right;
   clear: right;
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 .emb--ph-right.emb--w-small {
   padding-left: 2rem;
@@ -4040,9 +4041,6 @@ body {
 }
 
 @media screen and (min-width: 39em) {
-  .fig--w-small.fig--ph-left, .fig--w-medium.fig--ph-left {
-    margin-right: 2rem;
-  }
   .fig--w-small.fig--ph-right, .fig--w-medium.fig--ph-right {
     margin-left: 2rem;
   }
