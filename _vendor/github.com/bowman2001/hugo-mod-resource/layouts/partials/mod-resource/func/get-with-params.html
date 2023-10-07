@@ -22,7 +22,7 @@
     {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
     {{- $errorMsg := printf "Unable to resolve the resource %q" $path }}
     {{ $resource := "" }}
-    {{- with $ctx.Page.Resources.GetMatch (print "*" $path "*") }} {{- /* Page */}}
+    {{- with $ctx.Page.Resources.GetMatch (print $path "*") }} {{- /* Page */}}
         {{ $resource = . }}
     {{ else }}
         {{ $args := dict "path" $path "ctx" $ctx }}

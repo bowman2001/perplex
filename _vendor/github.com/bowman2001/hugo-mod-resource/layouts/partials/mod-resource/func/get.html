@@ -21,7 +21,7 @@
     {{- end }}
 {{- else }}
     {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
-    {{- with $ctx.Page.Resources.GetMatch (print "*" $path "*") }} {{- /* Page */}}
+    {{- with $ctx.Page.Resources.GetMatch (print $path "*") }} {{- /* Page */}}
         {{- $r = . }}
     {{- else }}
         {{- $args := dict "path" $path "ctx" $ctx }}

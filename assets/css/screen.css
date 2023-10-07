@@ -2337,7 +2337,7 @@ body {
   padding: 1rem 2rem;
   min-width: 100%;
   max-width: 74rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(0.5rem + 1 * var(--es));
   color: var(--c-code);
 }
 .md .highlight > pre, .md .highlight > div {

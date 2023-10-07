@@ -30,7 +30,7 @@
             {{- end }}
         {{- else }}
             {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
-            {{- with $ctx.Page.Resources.GetMatch (print "*" $path "*") }} {{- /* Page */}}
+            {{- with $ctx.Page.Resources.GetMatch (print $path "*") }} {{- /* Page */}}
                 {{- $r = . }}
             {{- else }}
                 {{- with resources.Get $url.Path }} {{- /* Site */}}

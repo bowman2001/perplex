@@ -16,8 +16,8 @@ srcset:
 
 process:
   none: [ gif ]
-  compress: [ bmp, jpeg, tiff, webp ]
-  lossless: [ png ]
+  compress: [ bmp, jpeg, webp, png ]
+  lossless: [ tiff ]
 
 preprocess:  
   anchor: [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ] # See https://gohugo.io/content-management/image-processing/#anchor
