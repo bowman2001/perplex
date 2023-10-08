@@ -33,7 +33,7 @@
             {{- end }}
             {{- if $params.lqip.run | default true }}      
                 {{- $lqip := partial "mod-img/func/raster/lqip" (dict "img" .fallback "params" $params) -}}
-                {{- $lqipBase64 := printf "data:image/webp;base64,%s" (base64Encode $lqip.Content) }}                
+                {{- $lqipBase64 := printf "data:image/webp;base64,%s" (base64Encode $lqip.Content) }}              
                 {{- if lt (len $lqipBase64) $maxLqip }}
                     {{- $params = merge $params (dict (slice "imgAttrs" "srcset") $lqipBase64 ) }}
                     {{- $imgClass = printf "%s %s lazyload" $imgClass "img--lqip" }}

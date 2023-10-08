@@ -24,18 +24,18 @@
 
 .ls-blur-up-img {
     opacity: 1;
-	filter: blur(5px);
+	filter: blur(3px);
     transition: opacity 1000ms ease-in-out, filter 2s ease-in-out;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(3px);
 }
 
 .img--lqip.lazyload,
 .img--lqip.lazyloading {
-	filter: blur(5px);
+	filter: blur(3px);
 }
 
 .img--lqip.lazyloaded {

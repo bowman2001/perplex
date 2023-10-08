@@ -85,9 +85,9 @@ srcset:
   quality: 85
   qualityReductionFactor: 30
   lqip:
-    quality: 25
-    divider: 2
-    blur: 4
+    quality: 10
+    divider: 3
+    blur: 3
     max: 2048
 
 base64:
