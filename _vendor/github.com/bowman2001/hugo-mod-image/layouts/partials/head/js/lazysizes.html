@@ -1,4 +1,5 @@
 {{ $lazysizes := resources.Get "mod-img/js/lazysizes.js" }}
+{{ $optimumx := resources.Get "mod-img/js/ls.optimumx.js" }}
 {{ $blur_up := resources.Get "mod-img/js/ls.blur-up.js" }}
-{{ $js := (slice $blur_up $lazysizes) | resources.Concat "js/ls.js" | minify | fingerprint }}
+{{ $js := (slice $lazysizes $optimumx $blur_up ) | resources.Concat "js/ls.js" | minify | fingerprint }}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>
