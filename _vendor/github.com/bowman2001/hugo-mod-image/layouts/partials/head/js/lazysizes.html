@@ -2,4 +2,4 @@
 {{ $optimumx := resources.Get "mod-img/js/ls.optimumx.js" }}
 {{ $blur_up := resources.Get "mod-img/js/ls.blur-up.js" }}
 {{ $js := (slice $lazysizes $optimumx $blur_up ) | resources.Concat "js/ls.js" | minify | fingerprint }}
-<script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>
+<script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}" async></script>
