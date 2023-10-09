@@ -674,29 +674,26 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
   filter: blur(0.3rem);
-  will-change: opacity, filter;
 }
 
 .img--lqip.lazyload,
 .img--lqip.lazyloading {
   filter: blur(0.3rem);
-  will-change: filter, contents;
 }
 
 .img--lqip.lazyloaded {
   filter: blur(0);
-  transition: filter 250ms ease;
+  transition: filter 100ms ease;
 }
 
 .img--ph.lazyload,
 .img--ph.lazyloading {
   opacity: 0;
-  will-change: opacity;
 }
 
 .img--ph.lazyloaded {
   opacity: 1;
-  transition: opacity 250ms ease;
+  transition: opacity 100ms ease;
 }
 
 *, *:before, *:after {
