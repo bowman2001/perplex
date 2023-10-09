@@ -582,7 +582,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 }
 
 .img__frame--box-shadow {
-  box-shadow: 0 0 0 0.2rem var(--c-shadow-2);
+  box-shadow: 0 0 0 0.1rem var(--c-shadow-3);
 }
 
 .img__frame--pad-half {
@@ -598,7 +598,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 }
 
 .l-footer .img__frame {
-  box-shadow: 0 0 0 2px var(--c-frame-shadow-1);
+  box-shadow: 0 0 0 0.2rem var(--c-frame-shadow-1);
 }
 
 .img__c {
@@ -667,25 +667,25 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .ls-blur-up-img {
   opacity: 1;
-  filter: blur(0.4rem);
-  transition: opacity 600ms ease-in-out, filter 1200ms ease-in-out;
+  filter: blur(0.3rem);
+  transition: opacity 500ms ease, filter 1000ms ease;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
-  filter: blur(0.4rem);
+  filter: blur(0.3rem);
   will-change: opacity, filter;
 }
 
 .img--lqip.lazyload,
 .img--lqip.lazyloading {
-  filter: blur(0.4rem);
+  filter: blur(0.3rem);
   will-change: filter, contents;
 }
 
 .img--lqip.lazyloaded {
   filter: blur(0);
-  transition: filter 200ms ease-in-out;
+  transition: filter 250ms ease;
 }
 
 .img--ph.lazyload,
@@ -696,7 +696,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .img--ph.lazyloaded {
   opacity: 1;
-  transition: opacity 200ms ease-in-out;
+  transition: opacity 250ms ease;
 }
 
 *, *:before, *:after {
@@ -824,9 +824,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   scroll-margin-top: calc(var(--tnh) + var(--tg));
-  animation-name: content;
-  animation-duration: 150ms;
-  animation-timing-function: ease-out;
 }
 
 #l-content {
@@ -859,14 +856,10 @@ body {
   }
 }
 
-@keyframes content {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* @keyframes content {
+    from {opacity: 0;}
+    to {opacity: 1;}
+} */
 .l-page {
   position: relative;
   z-index: 1;
