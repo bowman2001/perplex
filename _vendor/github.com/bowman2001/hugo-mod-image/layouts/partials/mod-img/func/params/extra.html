@@ -30,6 +30,9 @@
 {{ with or .svg site.Data.modImg.svg }}
     {{ $params = merge $params (dict (slice "process" "svg") ( . | lower )) }}
 {{ end }}
+{{ with .lqip }}{{ $run := false }}{{ if (eq . "yes") }}{{ $run = true }}{{ end }}
+    {{ $params = merge $params (dict (slice "lqip" "run") $run) }}
+{{ end }}
 
 {{ return $params }}
 
