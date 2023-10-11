@@ -4,8 +4,16 @@
         - params
 */}}
 
-{{- if (eq .params.process.svg "inline") }}
-    {{- .img.Content | safeHTML }}
+{{ $svg := "" }}
+{{ with .img }}
+    {{ $svg = .Content }}
+{{ end }}
+{{ with .params.svgstr }}
+    {{ $svg = . }}
+{{ end }}
+
+{{- if (lt (len $svg) site.Data.modImg.svg.inlineMax) }}
+    {{- $svg | safeHTML }}
     {{- if .params.index -}} {{- /* Hidden img with pagefind attributes */}}
         <img class="hide"
             data-pagefind-meta="image[data-src], image_alt[alt]" 
@@ -13,7 +21,10 @@
             {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }}>
     {{- end }}
 {{- else }}
-    {{- $params := merge .params (dict (slice "imgAttrs" "loading") "lazy" ) }}
+    {{- $params := merge .params (dict 
+        (slice "imgAttrs" "loading") "lazy" 
+        (slice "imgAttrs" "class") "img--svg"
+        ) }}
     {{- if .params.index }}
         {{- $params = merge $params (dict (slice "imgAttrs" "data-pagefind-meta") "image[data-src], image_alt[alt]" ) }}
     {{- end }}

@@ -6,7 +6,7 @@ subtitle: false
 featured: micro
 date: 2023-03-23T10:10:51+01:00 
 categories: [markdown]
-tags: [image, inline]
+tags: [image, embedded]
 series: [images]
 ---
 
@@ -14,9 +14,9 @@ Demo for the layout options of enhanced embedded images.
 {.p-first}
 <!--more-->
 
-For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/image) and [enhanced image](https://perplex.desider.at/doc/improved/image/syntax).
+The documentation of the Markdown syntax is filed under [basic image](https://perplex.desider.at/doc/basic/image) and [enhanced image](https://perplex.desider.at/doc/enhancing/image/syntax). The [concept demo](https://perplex.desider.at/doc/enhancing/image/embed) contains width parameters.
 
-## At the beginning
+## At the beginning of a text block
 
 ### Small width (default)
 

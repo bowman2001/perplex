@@ -10,11 +10,6 @@ menu:
     name: Features
     parent: tldr
     pre: star
-resources: 
-  - src: ray-hennessy-gdTxVSAE5sk-unsplash.jpg
-    name: featured
-    params:
-      alt: fireworks over open water
 categories: [Overview]
 tags: [feature]
 weight: 7

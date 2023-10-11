@@ -1,0 +1,15 @@
+{{/* Context: parameter map */}}
+
+{{ $params := dict }}
+
+{{ with .ratio }}{{ $params = merge $params (dict (slice "preprocess" "ratio") . ) }}{{ end }}
+{{ with .zoom }}{{ $params = merge $params (dict (slice "preprocess" "zoom") . ) }}{{ end }}
+{{ with .rotate }}{{ $params = merge $params (dict (slice "preprocess" "rotate") (. | lower) ) }}{{ end }}
+{{ with .hint }}{{ $params = merge $params (dict (slice "preprocess" "hint") . ) }}{{ end }}
+{{ with .anchor }}{{ $params = merge $params (dict (slice "preprocess" "anchor")  . ) }}{{ end }}
+
+{{ with .lqip }}{{ $run := false }}{{ if or (eq . "run") (eq . "yes") }}{{ $run = true }}{{ end }}
+    {{ $params = merge $params (dict (slice "lqip" "run") $run) }}
+{{ end }}
+
+{{ return $params }}

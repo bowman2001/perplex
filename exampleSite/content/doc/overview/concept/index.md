@@ -10,6 +10,11 @@ menu:
     parent: tldr
     pre: featured_play_list
 resources:
+  - src: drew-beamer-xU5Mqq0Chck-unsplash.jpg
+    name: featured
+    params:
+      alt: Horizon through a lensball
+      zoom: 1.6
   - src: IBM_Plex_Sans_Sample.svg
     name: plex_sample
     params:

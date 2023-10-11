@@ -5,7 +5,7 @@
 {{- $errorLevel := partial "error-level" (dict "caller" $name "level" $level "config" $configName ) }}
 {{- $configErrorEnd := printf " Please check the configuration in %q" $configName }}
 
-{{- /* Variable maps */}}
+{{- /* Associated variables */}}
 {{- $ctx := . }}
 {{- $url := urls.Parse .Destination }}
 
@@ -22,16 +22,20 @@
 
 {{- /* Collect parameters */}}
 {{- $hookParams := partial "mod-img/func/params/hook" . }}
+
 {{- $queryParams := dict }}
-{{- with and (not $url.IsAbs) $url.Query }} {{- /* Params from a query string (only local) */}}
+{{- with and (not $url.IsAbs) $url.Query }}{{/* Params from a query string (only local) */}}
     {{- $queryParams = (partial "mod-img/func/params/query" .) }}
 {{- end }}
+
 {{- $mdParams := dict }}
 {{- with .Attributes }}{{- $mdParams = dict "attrs" . }}{{ end }}
 
+{{- /* Get image map */}}
 {{- $args := dict "src" .Destination "ctx" $ctx }}
 {{- with (partial "mod-img/get" $args $args) }}
     {{- $params := merge $defaultParams .params $hookParams $queryParams $mdParams }}
+
     {{- /* Aggregate classes */}}
     {{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params )}}    
     {{- if $.IsBlock }}
@@ -41,8 +45,8 @@
     {{- end }}
     {{- $params = partial "mod-img/func/params/aggregate/frame-class" $params }}
     {{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
-
     {{- $imgMap := (dict "img" .img "params" $params) }}
+
     {{- /* Preprocess */}}
     {{- if $params.process.run }}
         {{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}

@@ -85,7 +85,7 @@ srcset:
   quality: 85
   qualityReductionFactor: 30
   lqip:
-    quality: 10
+    quality: 40
     divider: 3
     blur: 3
     max: 2048
@@ -93,3 +93,6 @@ srcset:
 base64:
   densityFactor: 1.5
   quality: 65
+
+svg:
+  inlineMax: 8192

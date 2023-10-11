@@ -613,6 +613,11 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   object-fit: contain !important;
 }
 
+.img--svg {
+  width: 100%;
+  height: 100%;
+}
+
 #l-footer .img__c {
   filter: brightness(90%) grayscale(50%);
 }
@@ -657,7 +662,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   width: 100%;
   height: 100%;
   display: block;
-  font-family: "blur-up: auto", "object-fit: cover";
+  font-family: "blur-up: always", "object-fit: cover";
   object-fit: cover;
 }
 

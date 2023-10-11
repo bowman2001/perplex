@@ -1,7 +1,7 @@
 {{/*
   IN: dict of
-    - name: Name of the resource
-    - currentPage: The current page
+    - path: (relative path and) name of the resource
+    - ctx: Context (usually the current page)
 
   OUT: Resource or empty string
 */}}
@@ -22,7 +22,13 @@
 		{{ end }}
 	{{ end }}
 	{{ if not $resource }}
-		{{ $resource = (partial "mod-resource/resource-in-parent.html" ( dict "name" $path "page" . )) }}
+		{{ range .Ancestors }}
+			{{ if not $resource }}
+				{{ with .Resources.GetMatch $path }}
+					{{ $resource = . }}
+				{{ end }}
+			{{ end }}
+		{{ end }}
 	{{ end }}
 	{{ if not $resource }}
 		{{ $resource = (site.GetPage "/site").Resources.GetMatch $path }}
@@ -30,20 +36,3 @@
 {{ end }}
 
 {{ return $resource }}
-
-
-
-{{ define "partials/mod-resource/resource-in-parent.html" }}
-	{{ $path := .path }}
-
-	{{ $resource := "" }}
-	{{ with .page.Parent }}
-		{{ with .Resources.GetMatch $path }}
-			{{ $resource = . }}
-		{{ else }}
-			{{ $resource = partial "mod-resource/resource-in-parent.html" ( dict "name" $path "currentPage" . )}}
-		{{ end }}
-	{{ end }}
-
-	{{ return $resource }}
-{{ end }}

@@ -1,7 +1,7 @@
 module:
   hugoVersion:
-    min: v0.111.3
-    extended: false
+    min: v0.119.0
+    extended: true
   imports:
     - path: github.com/bowman2001/hugo-mod-resource
     - path: github.com/bowman2001/hugo-mod-error-message

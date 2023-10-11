@@ -7,13 +7,15 @@
     {{/* Check and modify preprocessing parameters */}}
     {{ with $params.preprocess.rotate }}
         {{ $options := site.Data.modImg.preprocess.rotate }}
-        {{ if in $options . }}
+        {{ if in $options (string .) }}
             {{ if (eq "90right" .) }}
                 {{ $params = merge $params (dict (slice "preprocess" "rotate") "r270" ) (dict (slice "preprocess" "flipsides") true)  }}
             {{ else if (eq "90left" .) }}
                 {{ $params = merge $params (dict (slice "preprocess" "rotate") "r90" ) (dict (slice "preprocess" "flipsides") true)  }}
-            {{ else }}
+            {{ else if (eq "180" .) }}
                 {{ $params = merge $params (dict (slice "preprocess" "rotate") "r180" ) }}
+            {{ else }}
+                {{ errorf "$s: Internal error. Unknown rotate argument." $name }}
             {{ end }}
         {{ else }}
             {{ warnf "Unable to rotate %s. Rotation %q not in %v" $img.RelPermalink . $options }}

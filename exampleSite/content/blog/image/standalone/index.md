@@ -4,7 +4,7 @@ title: Stand-alone Images
 description: Demo for enhanced block images
 date: 2023-03-27T12:02:10+02:00
 categories: [Markdown]
-tags: [image, block]
+tags: [stand-alone, image]
 series: [images]
 ---
 

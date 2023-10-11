@@ -4,9 +4,9 @@ title: Code Block Layout Demo
 description: Code Blocks on full width pages (without sidebar)
 linktitle: Code Demo
 date: 2022-11-01T14:54:07+01:00
-categories: [Markdown]
-tags: [Code, Inline, Block]
-series: [Demo]
+categories: [markdown]
+tags: [code, block]
+series: [demo]
 ---
 
 On large screens, code blocks expand into the margins as long as possible and may include up to {$160} characters in one line.
