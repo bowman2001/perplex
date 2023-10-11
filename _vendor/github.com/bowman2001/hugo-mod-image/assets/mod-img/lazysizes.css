@@ -13,14 +13,14 @@
 	display: block;
 
 	/* only if you want to change the blur-up option from always to auto or want to use blur up effect without a lowsrc image. */
-	font-family: "blur-up: auto", "object-fit: cover";
+	font-family: "blur-up: always", "object-fit: cover";
 
     object-fit: cover;
 }
 
-.img--ls.ls-blur-up-is-loading {
+/* .ls-blur-up-is-loading {
 	visibility: hidden;
-}
+} */
 
 .ls-blur-up-img {
     opacity: 1;
