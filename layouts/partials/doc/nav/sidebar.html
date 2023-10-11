@@ -3,7 +3,7 @@
       {{/* with .Site.GetPage "/doc" }}
           {{ partial "nav/sidebar/heading.html" . }}
       {{ end */}}
-      {{- partial "nav/sidebar/menu-list.html"
-      (dict "context" . "menu" .Site.Menus.doc "menuName" "doc" ) -}}
+      {{ $args := dict "context" . "menu" .Site.Menus.doc "menuName" "doc" }}
+      {{- partialCached "nav/sidebar/menu-list.html" $args . -}}
   </nav>
 </div>

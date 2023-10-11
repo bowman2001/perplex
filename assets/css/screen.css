@@ -582,7 +582,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 }
 
 .img__frame--box-shadow {
-  box-shadow: 0 0 0 0.1rem var(--c-shadow-3);
+  box-shadow: 0 0 0 1px var(--c-shadow-3);
 }
 
 .img__frame--pad-half {
@@ -1551,7 +1551,7 @@ body {
 }
 
 .section {
-  padding: calc(2rem + 1 * var(--es)) 0rem;
+  padding: calc(4rem + 2 * var(--es)) 0rem;
 }
 .section > hr {
   border-bottom: 0.25rem solid var(--c-text-normal);
@@ -3066,7 +3066,8 @@ body {
   box-shadow: 0 0 0 2px var(--c-shadow-2);
 }
 .md cite {
-  font-style: italic;
+  letter-spacing: 0.03em;
+  word-spacing: 0.09em;
 }
 .md dfn {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -3560,7 +3561,7 @@ body {
 }
 
 .md .box, .md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
-  --box-shadow-color: var(--c-shadow-2);
+  --box-shadow-color: var(--c-shadow-3);
   position: relative;
   z-index: 2;
   text-align: left;
@@ -3568,7 +3569,7 @@ body {
   max-width: 70rem;
   background-color: var(--c-bg-2);
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 0.05rem var(--box-shadow-color);
+  box-shadow: 0 0 0 1px var(--box-shadow-color);
   clear: both;
 }
 .md .box.left, .md .left.box-danger, .md .left.box-warn, .md .left.box-info, .md .left.box-success, .md .box.left-in, .md .left-in.box-danger, .md .left-in.box-warn, .md .left-in.box-info, .md .left-in.box-success, .md .box.left-in-half, .md .left-in-half.box-danger, .md .left-in-half.box-warn, .md .left-in-half.box-info, .md .left-in-half.box-success, .md .box.right, .md .right.box-danger, .md .right.box-warn, .md .right.box-info, .md .right.box-success, .md .box.right-in, .md .right-in.box-danger, .md .right-in.box-warn, .md .right-in.box-info, .md .right-in.box-success, .md .box.right-in-half, .md .right-in-half.box-danger, .md .right-in-half.box-warn, .md .right-in-half.box-info, .md .right-in-half.box-success {
@@ -5114,12 +5115,15 @@ body {
   }
 }
 
-.card--1 {
-  animation: card;
-}
 @media screen and (min-width: 39em) {
   .card--1 {
     width: 37rem;
+  }
+}
+
+@media screen and (min-width: 39em) {
+  .card--1--col {
+    padding: 2rem;
   }
 }
 
@@ -5155,11 +5159,17 @@ body {
         max-width: 3*$u-col-g;
     }
 } */
+.card__hover {
+  transition: transform 200ms ease-in-out;
+}
+.card__hover:hover, .card__hover:focus, .card__hover:active {
+  transform: scale(1.0625);
+}
 .card__hover:hover .title__link, .card__hover:focus .title__link, .card__hover:active .title__link {
   text-decoration-color: var(--c-text-normal);
 }
 
-/* .card__hover--grey {    
+/* .card__hover--grey {
     .img__c {
         img, svg {
             filter: grayscale(25%) brightness(95%);
@@ -5186,7 +5196,7 @@ body {
   flex-direction: row;
 }
 .card__flex--half .card__content {
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .card__flex--1 {
@@ -5194,16 +5204,20 @@ body {
 }
 .card__flex--1 .card__content {
   flex-grow: 1;
-  margin: 1rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 @media screen and (min-width: 39em) {
   .card__flex--1 {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--c-bg-2);
+    box-shadow: 0 0 0 1px var(--c-shadow-3);
   }
   .card__flex--1 .card__content {
-    margin: 0;
+    padding: 2.5rem 0 1.5rem 0;
   }
 }
 
@@ -5313,13 +5327,12 @@ body {
 }
 @media screen and (min-width: 39em) {
   .card__fig--1 {
-    width: 37rem;
-    height: 24.00011rem;
-    margin-bottom: 2.5rem;
-    padding: 2rem 2rem 0 2rem;
+    width: 100%;
+    height: auto;
+    padding: 0;
   }
   .card__fig--1 .img__frame {
-    border-radius: 1.5rem 1.5rem 0 0;
+    border-radius: 0;
   }
   .card__fig--1 .img__frame:has(.img__c--t-logo) {
     padding: 2rem;
@@ -5389,7 +5402,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 1.5rem;
 }
 
 .card__footer {
@@ -5397,12 +5409,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem 2rem 0 1.5rem;
-}
-@media screen and (min-width: 39em) {
-  .card__footer {
-    padding: 0.5rem 2rem 2rem 1.5rem;
-  }
+  padding: 1rem 2rem 0 1.5rem;
 }
 .card__footer .link {
   display: inline-block;
