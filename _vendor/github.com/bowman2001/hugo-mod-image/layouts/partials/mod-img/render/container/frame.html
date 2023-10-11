@@ -1,13 +1,19 @@
 {{- $imgMap := . }}
 
 {{- if .params.process.run }}
-{{- $style := "display: flex; justify-content: center; align-items: center" }}
-    {{ if not .params.frameClass.background }}
-        {{- $colors := $imgMap.img.Colors }}
-        {{- $color1 := index $colors 0 }}
-        {{- $color2 := index $colors 1 }}
-        {{ $style = printf "%s; background-image: linear-gradient(to right, %s, %s)" $style $color1 $color2 }}
-    {{ end }}    
+    {{ $style := "display: flex; justify-content: center; align-items: center" }}
+    {{ $srcset := "" }}
+    {{ if not .params.process.base64 }}
+        {{ $srcset = partial "mod-img/func/raster/srcset" $imgMap }}
+        {{ $imgMap = merge $imgMap (dict (slice "params" "srcset") $srcset) }}
+        {{ if not .params.frameClass.background }}
+            {{- $colors := $srcset.smallest.Colors }}
+            {{- $color1 := index $colors 0 }}
+            {{- $color2 := index $colors 1 }}
+            {{ $style = printf "%s; background-image: linear-gradient(to right, %s, %s)" $style $color1 $color2 }}
+        {{ end }}    
+    {{ end }}
+    
     {{- $imgMap = merge $imgMap (dict (slice "params" "frameAttrs" "style") $style ) }}
 {{- end }}
 

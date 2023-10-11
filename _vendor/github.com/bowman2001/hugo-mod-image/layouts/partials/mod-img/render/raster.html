@@ -20,7 +20,7 @@
             (slice "imgAttrs" "loading") "lazy"
             ) }}
     {{- else }}
-        {{- with (partial "mod-img/func/raster/srcset" (dict "img" $img "params" $params) ) }}
+        {{- with $params.srcset }}
             {{- $params = merge $params (dict
                     (slice "imgAttrs" "src") .fallback.RelPermalink
                     (slice "imgAttrs" "width") (string .fallback.Width)

@@ -15,6 +15,7 @@
 {{ $maxHd := math.Max $max (math.Min (int (math.Floor (mul $max $factor))) $img.Width) }}
 
 {{ $fallback := .img }}
+{{ $smallest := "" }}
 {{ $srcset := "" }}
 {{ with partial "mod-img/func/raster/width-numbers" (dict "min" $min "max" $maxHd "fallback" $max ) }}
     {{ $entries := slice }}
@@ -41,13 +42,16 @@
         {{ if eq $width $max }}
             {{ $fallback = $rs_img }}
         {{ end }}
+        {{ if eq $k 0 }}
+            {{ $smallest = $rs_img }}
+        {{ end }}
     {{ end }}
     {{ if gt (len .) 1 }}
         {{ $srcset = delimit $entries ", " }}
     {{ end }}
 {{ end }}
 
-{{ return (dict "fallback" $fallback "srcset" $srcset) }}
+{{ return (dict "fallback" $fallback "smallest" $smallest "srcset" $srcset) }}
 
 
 {{ define "partials/inline/quality" }}
