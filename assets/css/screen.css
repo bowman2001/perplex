@@ -677,7 +677,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 .ls-blur-up-img {
   opacity: 1;
   filter: blur(0.3rem);
-  transition: opacity 500ms ease, filter 1000ms ease;
+  transition: opacity 1s ease, filter 2s ease;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
@@ -1216,6 +1216,27 @@ body {
   }
 }
 
+@media screen and (min-width: 120em) {
+  .meta--left-doc {
+    position: relative;
+    z-index: 5;
+    flex-direction: row-reverse;
+    justify-content: start;
+    float: left;
+    width: 34rem;
+    margin: 0 1.5rem;
+  }
+  .meta--left-doc .meta__list {
+    width: 17rem;
+  }
+  .meta--left-doc .meta__list--date {
+    align-items: flex-start;
+  }
+  .meta--left-doc .meta__icon-doc {
+    margin-left: -3rem;
+  }
+}
+
 .meta--card {
   margin: 0 1.5rem;
   max-width: unset;
@@ -1272,10 +1293,10 @@ body {
 }
 
 .meta__text, .meta__count, .meta__separator {
-  font-size: 1.6083333333rem;
+  font-size: 1.43rem;
   line-height: 2rem;
-  padding-top: 0.4976791667rem;
-  padding-bottom: 0.5023208333rem;
+  padding-top: 0.564465rem;
+  padding-bottom: 0.435535rem;
 }
 
 .meta__text {
@@ -2515,6 +2536,9 @@ body {
 
 .md--sans dt {
   font-weight: 500;
+}
+.md--sans dt var {
+  font-weight: 450;
 }
 .md--sans dt strong {
   font-weight: 700;
@@ -5291,6 +5315,7 @@ body {
   flex-shrink: 0;
   width: 7.25rem;
   height: 4.8333575rem;
+  margin-right: 1px;
 }
 .card__fig--1 .img__frame:has(.img__c--t-logo) {
   padding: 0.5rem;
@@ -5318,6 +5343,7 @@ body {
     width: 100%;
     height: auto;
     padding: 0;
+    margin-right: 0;
   }
   .card__fig--1 .img__frame:has(.img__c--t-logo) {
     padding: 2rem;
