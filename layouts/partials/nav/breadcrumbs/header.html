@@ -1,7 +1,7 @@
 {{ $n := sub (len .Ancestors) 2 }}
 <ul class="ul--row meta__list">
-  <li class="meta__item">
-    {{ partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}
+  <li class="meta__item"><span class="meta__icon-doc">
+    {{ partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}</span>
   </li>
     {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
       {{ if ne $e .FirstSection }}

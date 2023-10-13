@@ -1,5 +1,7 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
 {{- partial "file/vscode_start.html" . -}}
-<div class="meta__item meta__date"><span class="meta__icon">{{ partial "material-symbol.html" (dict "id" "event" "ctx" . "size" "tiny") }}</span><time class="meta__text" datetime="{{ .Date.Format $iso8601 }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-</div>
+<ul class="meta__list meta__list--date">
+<li class="meta__item meta__date"><span class="meta__icon">{{ partial "material-symbol.html" (dict "id" "event" "ctx" . "size" "tiny") }}</span><time class="meta__text" datetime="{{ .Date.Format $iso8601 }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+</li>
+</ul>
 {{- partial "file/vscode_end.html" . -}}

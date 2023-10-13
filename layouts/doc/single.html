@@ -1,13 +1,13 @@
 {{ define "main" }}
     <div id="l-content-box" class="l-box l-box--doc">
         <div id="l-content" data-pagefind-body>
-            <header class="page-header margin-doc">
-                <div class="meta meta--head" data-pagefind-ignore>
+            <header class="page-header">
+                <div class="meta meta--head meta--left-doc" data-pagefind-ignore>
                     {{ partial "nav/breadcrumbs/header.html" . }}
                     {{ partial "date/published_date.html" . }}
                 </div>
                 {{ partial "title/titlehead.html" . }}
-                <div class="title title--sans">
+                <div class="title title--sans margin-doc">
                     {{ partial "title/title.html" . }}
                     {{ partial "title/subtitle.html" . }}
                 </div>
