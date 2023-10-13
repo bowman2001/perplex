@@ -15,7 +15,7 @@ resources:
     params:
       alt: Horizon through a lensball
       zoom: 1.6
-  - src: IBM_Plex_Sans_Sample.svg
+  - src: IBM_Plex_Sans.svg
     name: plex_sample
     params:
       background: light
