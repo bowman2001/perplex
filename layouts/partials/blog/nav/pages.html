@@ -2,24 +2,24 @@
   <ul class="page-nav__list">
       {{ $pages := where site.Pages.Reverse "Section" .Section -}}
       {{ with $pages.Prev . }}
-        <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--prev link link--nav card__hover">
-            <div class="page-nav__icon"></div>
+        <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--prev link link--nav">
+            <span class="page-nav__icon"></span>
             {{ partial "nav/page/title.html" . }}
-            <div class="page-nav__icon page-nav__icon--arrow">
+            <span class="page-nav__icon page-nav__icon--arrow">
                 {{- partial "material-symbol" (dict "id" "west" "ctx" . "size" "normal") -}}
-            </div>
+            </span>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "start" . }}{{ end }}
       {{- end -}}
       {{ with $pages.Next . }}
         <li class="page-nav__li">
-          <a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next link link--nav card__hover">
-              <div class="page-nav__icon"></div>
+          <a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next link link--nav">
+              <span class="page-nav__icon"></span>
               {{ partial "nav/page/title.html" . }}
-            <div class="page-nav__icon page-nav__icon--arrow">
+            <span class="page-nav__icon page-nav__icon--arrow">
                 {{- partial "material-symbol" (dict "id" "east" "ctx" . "size" "normal") -}}
-            </div>
+            </span>
           </a></li>
       {{ else }}
           {{ with .FirstSection }}{{ template "end" . }}{{ end }}
@@ -29,24 +29,24 @@
 
 {{ define "start" }}
   <li class="page-nav__li"><span class="page-nav__link page-nav__link--start">
-      <div class="page-nav__itemcol">
+      <span class="page-nav__itemcol">
         {{ partial "doc/nav/menu-icon.html" . }}
-      </div>
+      </span>
          {{ partial "nav/page/parent-title.html" . }}
-      <div class="page-nav__icon page-nav__icon--arrow">
+      <span class="page-nav__icon page-nav__icon--arrow">
           {{- partial "material-symbol" (dict "id" "empty" "ctx" . "size" "normal") -}}
-      </div>
+      </span>
     </span></li>
 {{ end }}
 
 {{ define "end" }}
-  <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next nav__link card__hover">
-      <div class="page-nav__itemcol">
+  <li class="page-nav__li"><a href="{{ .RelPermalink }}" class="page-nav__link page-nav__link--next nav__link">
+      <span class="page-nav__itemcol">
           {{ partial "doc/nav/menu-icon.html" . }}
-      </div>
+      </span>
           {{ partial "nav/page/parent-title.html" . }}
-      <div class="page-nav__icon page-nav__icon--arrow">
+      <span class="page-nav__icon page-nav__icon--arrow">
           {{- partial "material-symbol" (dict "id" "north" "ctx" . "size" "normal") -}}
-      </div>
+      </span>
     </a></li>
 {{ end }}

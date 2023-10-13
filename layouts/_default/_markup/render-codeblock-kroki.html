@@ -105,7 +105,7 @@ References:
         {{- /* Render. */}}
         <figure class="fig fig--w-text fig--diagram">
             <div class="img__c">
-        <img    {{- range $k, $v := $attrs }}
+        <img class="img--svg"   {{- range $k, $v := $attrs }}
                     {{- if not (eq $k "type") }}
                         {{- if $v }}
                             {{- printf " %s=%q" $k (string $v) | safeHTMLAttr }}

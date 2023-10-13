@@ -2,7 +2,7 @@
 <nav class="page-nav">
   <ul class="page-nav__list">
     {{- with .Paginator.Prev -}}
-    <li class="page-nav__li"><a href="{{ .URL }}" class="page-nav__link page-nav__link--prev link link--nav card__hover">
+    <li class="page-nav__li"><a href="{{ .URL }}" class="page-nav__link page-nav__link--prev link link--nav">
         <div class="page-nav__icon">
           {{- partial "material-symbol" (dict "id" "update" "ctx" . "size" "normal") -}}
         </div>
@@ -16,7 +16,7 @@
     {{- end -}}
     {{ with .Paginator.Next }}
     <li class="page-nav__li">
-      <a href="{{ .URL }}" class="page-nav__link page-nav__link--next link link--nav card__hover">
+      <a href="{{ .URL }}" class="page-nav__link page-nav__link--next link link--nav">
         <div class="page-nav__icon">
           {{- partial "material-symbol" (dict "id" "history" "ctx" . "size" "normal") -}}
         </div>
