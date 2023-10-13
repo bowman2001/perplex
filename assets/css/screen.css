@@ -2971,7 +2971,7 @@ body {
   padding-top: 0.814465rem;
   padding-bottom: 1.035535rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.35rem );
-  width: calc(50% + 2rem);
+  width: calc(50% + 1rem);
 }
 @media screen and (min-width: 39em) {
   .emb--w-small {
@@ -2985,12 +2985,7 @@ body {
   padding-top: 0.814465rem;
   padding-bottom: 0.535535rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.35rem );
-  width: calc(33% + 2rem);
-}
-@media screen and (min-width: 39em) {
-  .emb--w-tiny {
-    width: calc(25% + 2rem);
-  }
+  width: calc(25% + 1rem);
 }
 
 .emb--w-micro {
@@ -2999,12 +2994,7 @@ body {
   padding-top: 0.814465rem;
   padding-bottom: 0.035535rem;
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.35rem );
-  width: calc(25% + 1rem);
-}
-@media screen and (min-width: 39em) {
-  .emb--w-micro {
-    width: calc(12.5% + 2rem);
-  }
+  width: calc(12.5% + 1rem);
 }
 
 .emb--ph-left {
@@ -3059,7 +3049,7 @@ body {
 .emb--w-text {
   float: none;
   width: 100%;
-  padding: 1.15rem 0 0 0;
+  padding: 1.25rem 0 0 0;
 }
 
 .md del, .md ins {
