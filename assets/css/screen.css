@@ -435,6 +435,7 @@ q:after {
 }
 
 .link--nav, .link--nav-ext {
+  color: var(--c-nav-link);
   fill: var(--c-icon-link);
 }
 .link--nav:hover, .link--nav:focus, .link--nav:active, .link--nav-ext:hover, .link--nav-ext:focus, .link--nav-ext:active {
@@ -442,10 +443,12 @@ q:after {
 }
 
 .link--nav:hover, .link--nav:focus, .link--nav:active, .link--nav.is-active {
+  color: var(--c-nav-link-hover);
   fill: var(--c-icon-link-hover);
 }
 
 .link--nav-ext:hover, .link--nav-ext:focus, .link--nav-ext:active {
+  color: var(--c-nav-link-ext-hover);
   fill: var(--c-icon-link-ext-hover);
 }
 
@@ -454,6 +457,7 @@ q:after {
 }
 
 .link--frame {
+  color: var(--c-frame-link);
   fill: var(--c-frame-link);
 }
 .link--frame:hover, .link--frame:focus, .link--frame:active {
@@ -462,6 +466,7 @@ q:after {
 }
 
 .link--frame-ext {
+  color: var(--c-frame-link-ext);
   fill: var(--c-frame-link-ext);
 }
 .link--frame-ext:hover, .link--frame-ext:focus, .link--frame-ext:active {
@@ -696,7 +701,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   transition: opacity 150ms ease;
 }
 
-.img--ph.lazyloaded, .img--lqip.lazyloaded {
+.img--ph.lazyloaded {
   opacity: 1;
 }
 
