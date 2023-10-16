@@ -14,11 +14,7 @@
 {{- if $params.process.run }}
     {{- $imgClass := site.Data.modImg.lsImgClass | default "img--ls" }}
     {{- if $params.process.base64 }}
-        {{- $base64 := partial "mod-img/func/raster/base64" (dict "img" $img "params" $params) }}
-        {{- $params = merge $params (dict 
-            (slice "imgAttrs" "src") $base64 
-            (slice "imgAttrs" "loading") "lazy"
-            ) }}
+        {{- $params = partial "mod-img/func/raster/base64" (dict "img" $img "params" $params) }}
     {{- else }}
         {{- with $params.srcset }}
             {{- $params = merge $params (dict

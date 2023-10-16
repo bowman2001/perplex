@@ -693,17 +693,16 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .img--lqip.lazyloaded {
   filter: blur(0);
-  transition: filter 150ms ease;
+  transition: filter 250ms ease;
 }
 
-.img--ph.lazyload,
-.img--ph.lazyloading {
+.img--ph {
   opacity: 0;
+  transition: opacity 250ms ease;
 }
 
-.img--ph.lazyloaded {
+.img--ph.lazyloaded, .img--lqip.lazyloaded {
   opacity: 1;
-  transition: opacity 150ms ease;
 }
 
 *, *:before, *:after {

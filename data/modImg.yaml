@@ -13,7 +13,6 @@ figure:
       name: Horizontal position
       prefix: ph-
       options: [left, right]
-  type: featured
 
 embed:
   class:
@@ -45,7 +44,7 @@ frame:
     padding:
       name: "Padding"
       prefix: pad-
-      options: [ half, one, two, logo, none ]
+      options: [ half, one, two, none ]
 
 
 container:
@@ -82,8 +81,8 @@ default:
 srcset:
   sizeStep: 50
   maxDensityFactor: 2
-  quality: 85
-  qualityReductionFactor: 30
+  quality: 90
+  qualityReductionFactor: 40
   lqip:
     quality: 25
     divider: 3
@@ -91,8 +90,8 @@ srcset:
     max: 2048
 
 base64:
-  densityFactor: 1.5
+  densityFactor: 1.6
   quality: 65
 
 svg:
-  inlineMax: 8192
+  inlineMax: 4096

@@ -4,4 +4,10 @@
 {{ $vals := index site.Data.modImg.width .params.class.width }}
 {{ $width := int (math.Round (mul (index $vals 1) $densityFactor )) }}
 {{ $img := .img.Resize (printf "%dx webp q%d" $width $quality) }}
-{{ return (printf "data:image/webp;base64,%s" (base64Encode $img.Content)) }}
+{{ $params := merge .params (dict 
+   (slice "imgAttrs" "src") (printf "data:image/webp;base64,%s" (base64Encode $img.Content))
+   (slice "imgAttrs" "width") (string $img.Width)
+   (slice "imgAttrs" "height") (string $img.Height)
+   (slice "imgAttrs" "loading") "lazy"
+   ) }}
+{{ return $params }}
