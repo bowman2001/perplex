@@ -1,2 +1,4 @@
-{{- $js := resources.Get "js/toggles.js" | minify | fingerprint -}}
-<script defer src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- $toggles := resources.Get "js/toggles.js" | minify | fingerprint }}
+{{- $cssHasPseudo := resources.Get "js/css-has-pseudo.js" | minify | fingerprint }}
+<script defer src="{{- $toggles.RelPermalink -}}" integrity="{{ $toggles.Data.Integrity }}"></script>
+<script defer type="module" src="{{- $cssHasPseudo.RelPermalink -}}" integrity="{{ $cssHasPseudo.Data.Integrity }}"></script>

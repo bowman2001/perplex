@@ -17,9 +17,9 @@
                 {{ $n := 5 }}
                 {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
                 {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
-                    <li class="li-box li-box--bluegreen">
+                    <li class="li-box">
                         {{- .Render "li-full" -}}
-                        <hr>
+                        <hr class="post-separator">
                     </li>
                 {{- end -}}
             </ul>
