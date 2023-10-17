@@ -2,7 +2,7 @@
 
 {{ $name := "mod-img/func/params/aggregate/container-class" }}
 {{ $errorLevel := site.Data.modImg.errorLevel | default "warning" }}
-{{ $configErrorEnd := "See configuration in data/mod-img" }}
+{{ $configErrorEnd := "See configuration in data/modImg" }}
 
 {{ $classes := slice }}
 {{ with index site.Data.modImg.container.class }}
@@ -20,7 +20,7 @@
         {{ end }}
     {{ end }}
 {{ else }}
-    {{ $msg := printf "Can’t find container class configuration. %s" $configErrorEnd }}
+    {{ $msg := printf "No container class configuration. %s" $configErrorEnd }}
     {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel )}}
 {{ end }}
 

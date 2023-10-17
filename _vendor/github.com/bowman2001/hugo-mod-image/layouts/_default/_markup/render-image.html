@@ -1,10 +1,3 @@
-{{- /* Init */}}
-{{- $name := "hugo-mod-image – render-image" }}
-{{- $configName := "data/mod-img" }}
-{{- $level := site.Data.modImg.errorLevel | default "warning" }}
-{{- $errorLevel := partial "error-level" (dict "caller" $name "level" $level "config" $configName ) }}
-{{- $configErrorEnd := printf " Please check the configuration in %q" $configName }}
-
 {{- /* Associated variables */}}
 {{- $ctx := . }}
 {{- $url := urls.Parse .Destination }}

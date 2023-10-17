@@ -25,5 +25,5 @@
 {{- else if eq $errorLevel "error" }}
     {{- errorf $msg }}
 {{- else }}
-    {{- errorf "%s: Invalid error level %q in call from %q. Only 'ignore', 'warning', or 'error'." $name $errorLevel $caller }}
+    {{- errorf "%s: Invalid error level %q in call from %q. Only 'ignore', 'warning', or 'error' are possible." $name $errorLevel $caller }}
 {{- end }}

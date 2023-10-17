@@ -1,29 +1,20 @@
 {{- $name := "mod-img/render-codeblock-kroki" }}
-{{- $configName := "data/modImg" }}
-{{- $level := site.Data.modImg.errorLevel | default "warning" }}
-{{- $errorLevel := partial "error-level" (dict "caller" $name "level" $level "config" $configName ) }}
-{{- $configErrorEnd := printf " Please check the configuration in %q" $configName }}
+{{- $errorLevel := site.Data.modImg.errorLevel | default "error" }}
 
-{{ $path := "" }}
-{{ with .Page.File }}
-    {{- $path = .Path -}}
-{{ else }}
-    {{- $path = .Page.Path }}
-{{ end }}
-
+{{- $ctx := . }}
 {{- $inner := trim .Inner "\n\r" }}
 {{- $supported := site.Data.modImg.kroki.types }}
 {{- $diagram := "" }}
 {{ with .Attributes.diagram }}
     {{- $diagram = (string .) | lower }}
 {{ else }}
-    {{- errorf "Missing mandatory 'diagram' attribute for Kroki. See %s" $path }}
+    {{- $msg := "Missing mandatory 'diagram' attribute for Kroki." }}
+    {{- partial "md-error-msg" (dict "caller" $name "ctx" . "errorMsg" $msg "errorLevel" "error") }}
 {{ end }}
 {{- if not (in $supported $diagram) }}
-    {{- errorf "%s: The diagram type %q is not supported. See %s" $name $diagram $path }}{{/* TODO: Better error message. */}}
+    {{- $msg := "The diagram type %q is not supported by the Kroki server."  }}
+    {{- partial "md-error-msg" (dict "caller" $name "ctx" . "errorMsg" $msg "errorLevel" "error") }}
 {{- end }}
-
-
 
 {{- /* Set parameter defaults */}}
 {{- $classParams := partial "mod-img/func/params/default-class" (dict "type" "figure" "className" "class") }} 
@@ -36,40 +27,38 @@
 {{- $attrs := dict }}
 {{- range $k, $v := .Attributes }}
     {{- if (in site.Data.modImg.kroki.attrs $k) }}
-        {{- $userParams = merge $userParams (dict $k (string $v | lower)) }}
+        {{- $userParams = merge $userParams (dict $k (string $v)) }}
     {{- else }}
-        {{- $attrs = merge $attrs (dict $k (string $v | lower)) }}
+        {{- /* $attrs = merge $attrs (dict $k (string $v | lower)) */}}
     {{- end }}
 {{- end }}
 
 {{- /* Sort user parameters and merge with defaults */}}
-{{ $params := merge $defaultParams (partial "mod-img/func/params/attributes" $userParams) }}
+{{ $attributes := partial "mod-img/func/params/attributes" $userParams }}
+{{ $caption := partial "mod-resource/func/caption" $userParams }}
+{{ $params := merge $defaultParams $attributes $caption }}
 
 {{- /* Aggregate classes */}}
 {{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params) }}
 {{- $params = partial "mod-img/func/params/aggregate/frame-class" $params }}
 {{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
 
-{{- partial "mod-img/helper/debug" $params }}
-{{- with $attrs }}{{ partial "mod-img/helper/debug" . }}{{ end }}
-
 {{- $server := site.Data.modImg.kroki.server }}
 
 {{- $jsonBody := dict "diagram_source" $inner "diagram_type" $diagram "output_format" "SVG" | jsonify }}
 {{- $args := dict "method" "post" "body" $jsonBody }}
+{{- $imgMap := dict }}
 {{- with resources.GetRemote $server $args }}
     {{- with .Err }}
-        {{- warnf "%s: Unable to get the remote diagram in %q. %s" $name $path . }}
+        {{- $imgMap = dict "img" (partial "mod-img/helper/missing" $ctx) "params" $params }}
+        {{- $msg := printf "Unable to get remote diagram — %s." . }}
+        {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- else }}
-        {{ with .RelPermalink }}
-            {{ $params = merge $params (dict (slice "imgAttrs" "src") . ) }}
-        {{ end }}
-        {{- $imgMap := (dict "img" . "params" $params) }}
-        {{- partial "mod-img/render/container/figure" $imgMap }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "src") .RelPermalink ) }}
+        {{- $imgMap = dict "img" . "params" $params }}
     {{- end }}
-{{- else }}
-    {{- warnf "The %q code block render hook was unable to get the remote diagram in %q." $name $path }}
 {{- end }}
+{{- partial "mod-img/render/container/figure" $imgMap }}
 
 
 

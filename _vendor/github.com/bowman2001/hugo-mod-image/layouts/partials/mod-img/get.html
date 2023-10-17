@@ -1,9 +1,6 @@
 {{- /* Constants */}}
 {{ $name := "mod-img/get" }}
-{{ $configName := "data/mod-img" }}
-{{ $errorLevel := site.Data.modImg.errorLevel | default "warning" | lower }}
-{{ partial "error-level" (dict "caller" $name "level" $errorLevel "config" $configName ) }}
-{{ $configErrorEnd := printf " Please check the configuration in %q" $configName }}
+{{ $errorLevel := site.Data.modImg.errorLevel | default "error" }}
 
 {{/* Arguments */}}
 {{ $src := .src }}

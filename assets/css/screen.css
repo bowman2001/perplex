@@ -569,6 +569,10 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   overflow: hidden;
 }
 
+.img__frame--bg-white {
+  background: #fff;
+}
+
 .img__frame--bg-light {
   background: var(--c-frame-bg-1);
 }
@@ -605,22 +609,18 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   filter: var(--f-img);
 }
 .img__c svg {
-  height: 100%;
-  width: 100%;
-}
-
-.img__c--t-logo img {
-  object-fit: contain !important;
-}
-
-.img__c svg {
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
 
 .img--svg {
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+
+.img__c--t-logo img {
+  object-fit: contain !important;
 }
 
 #l-footer .img__c {
@@ -4664,7 +4664,8 @@ body {
 #author__title {
   grid-area: title;
 }
-#author__title h1 {
+
+.h1--author {
   font-size: 2.86rem;
   line-height: 3rem;
   padding-top: 0.42893rem;

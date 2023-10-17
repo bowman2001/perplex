@@ -1,9 +1,6 @@
 {{- /* Constants */}}
 {{ $name := "mod-img/get-nm" }}
-{{ $configName := "data/mod-img" }}
-{{ $errorLevel := site.Data.modImg.errorLevel | default "warning" | lower }}
-{{ partial "error-level" (dict "caller" $name "level" $errorLevel "config" $configName ) }}
-{{ $configErrorEnd := printf " Please check the configuration in %q" $configName }}
+{{ $errorLevel := site.Data.modImg.errorLevel | default "error" }}
 
 {{/* Arguments */}}
 {{ $src := .src }}
@@ -13,7 +10,7 @@
 {{ $url := urls.Parse $src }}
 {{ $args := dict "url" $url "ctx" $ctx "errorLevel" $errorLevel }}
 
-{{ with (partial "mod-resource/func/get-with-params" $args $args) }}
+{{ with (partial "mod-resource/func/get-with-params" $args) }}
     {{ if (eq .resource.MediaType.MainType "image") }}
         {{ $imgMap = dict "img" .resource "params" .params }}
     {{ else }}

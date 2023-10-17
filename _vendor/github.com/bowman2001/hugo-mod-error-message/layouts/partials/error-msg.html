@@ -12,5 +12,5 @@
 {{- else if eq $errorLevel "error" }}
     {{- errorf $msg }}
 {{- else }}
-    {{- errorf "%s: Unavailable error level %q in call from %q. Possible are 'ignore', 'warning', and 'error'" $name $errorLevel $caller }}
+    {{- errorf "%s: Unavailable error level %q in call from %q. Only 'ignore', 'warning', and 'error' are possible" $name $errorLevel $caller }}
 {{- end }}

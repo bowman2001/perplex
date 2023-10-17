@@ -74,3 +74,6 @@ kroki:
     - box
     - padding
     - type
+    - caption
+    - attr
+    - attrlink

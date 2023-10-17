@@ -1,23 +1,23 @@
-{{- $name := "mod-resource/func/helper/get-from-data" }}
+{{- $name := "mod-resource/func/helper/get-from-file" }}
 
-{{- $data := .data }}
+{{- $file := .file }}
 {{- $ctx := .ctx }}
 {{- $errorLevel := .errorLevel }}
 
 {{- $map := "" }}
-{{- if (in (slice "yaml" "toml" "json") $data.MediaType.SubType ) }}
-    {{- $params := transform.Unmarshal $data }}
+{{- if (in (slice "yaml" "toml" "json") $file.MediaType.SubType ) }}
+    {{- $params := transform.Unmarshal $file }}
     {{ $url := "" }}
     {{ with $params.src }}
         {{- $url = urls.Parse $params.src }}
     {{ else }}
-        {{- $msg := printf "Missing 'src' parameter in the data file %q" $data }} 
+        {{- $msg := printf "Missing 'src' parameter in the data file %q" $file }} 
         {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel ) }}
     {{ end }}
 
     {{- $r := "" }}
     {{ with $url }}
-        {{- $msg := printf "Unable to resolve the resource %q in data file %q" $url.String $data }}
+        {{- $msg := printf "Unable to resolve the resource %q in data file %q" $url.String $file }}
         
         {{- if $url.IsAbs }} {{- /* Remote */}}
             {{- with resources.GetRemote $url.String }}
@@ -42,7 +42,7 @@
     {{- with $r }}
         {{- $map = (dict "resource" . "params" $params) }}
     {{- else }}
-        {{- $msg := printf "Unable to resolve a resource in the data file %q" $data }}
+        {{- $msg := printf "Unable to resolve a resource in the data file %q" $file }}
         {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- end }}
 {{- end }}

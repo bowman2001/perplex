@@ -7,7 +7,7 @@
 
 {{- $map := "" }}
 {{- if $url.IsAbs }} {{- /* Remote */}}
-    {{- $errorMsg := printf "Unable to resolve the resource %q" $url.String }}
+    {{- $errorMsg := printf "Unable to resolve the resource %q." $url.String }}
     {{- with resources.GetRemote $url.String }}
         {{- with .Err }}
             {{- $msg := print $errorMsg ". " . }}
@@ -20,7 +20,7 @@
     {{- end }}
 {{- else }}
     {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
-    {{- $errorMsg := printf "Unable to resolve the resource %q" $path }}
+    {{- $errorMsg := printf "Unable to resolve the resource %q." $path }}
     {{ $resource := "" }}
     {{- with $ctx.Page.Resources.GetMatch (print $path "*") }} {{- /* Page */}}
         {{ $resource = . }}
@@ -29,8 +29,8 @@
         {{ $resource = (partial "mod-resource/func/helper/page-fallback" $args) }}
     {{ end }}
     {{ with $resource }}
-        {{ $args := dict "data" . "ctx" $ctx "errorLevel" $errorLevel }}
-        {{ with (partial "mod-resource/func/helper/get-from-data" $args) }}
+        {{ $args := dict "file" . "ctx" $ctx "errorLevel" $errorLevel }}
+        {{ with (partial "mod-resource/func/helper/get-from-file" $args) }}
             {{- $map = . }}
         {{ else }}
             {{- $map = dict "resource" . "params" .Params }}

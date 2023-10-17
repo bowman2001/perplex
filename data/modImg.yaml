@@ -36,7 +36,7 @@ frame:
     background:
       name: "Background"
       prefix: bg-
-      options: [ dark, light, transparent ]
+      options: [dark, light, white, transparent]
     box:
       name: "Box"
       prefix: box-

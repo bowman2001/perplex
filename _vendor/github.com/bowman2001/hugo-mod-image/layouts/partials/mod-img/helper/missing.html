@@ -1,15 +1,12 @@
 {{/* Constants */}}
 {{ $name := "mod-img/helper/missing" }}
-{{ $configName := "data/mod-img" }}
-{{ $level := site.Data.modImg.errorLevel | default "warning" | lower }}
-{{ $errorLevel := partial "error-level" (dict "caller" $name "level" $level "config" $configName ) }}
-{{ $configErrorEnd := printf "See %q." $configName }}
+{{ $errorLevel := site.Data.modImg.errorLevel | default "error" }}
 
 {{ $img := "" }}
 {{ with resources.Get site.Data.modImg.missing }}
     {{ $img = . }}
 {{ else }}
-    {{ $msg := print "Can’t resolve file for missing image. " $configErrorEnd }}
+    {{ $msg := "Unable to get file for missing image. See configuration data/modImg." }}
     {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
 {{ end }}
 
