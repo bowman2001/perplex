@@ -1,0 +1,16 @@
+{{ $docs := site.Params.meta.type.docs | default (slice "doc") }}
+{{ $article := site.Params.meta.type.article | default (slice "blog") }}
+{{ $profile := site.Params.meta.type.profile | default (slice "profile")}}
+{{ $type := "website" }}
+{{ if .IsPage }}
+    {{ with .Type }}
+        {{ if in $docs . }}
+            {{ $type = "documentation" }}
+        {{ else if in $article . }}
+            {{ $type = "article" }}
+        {{ else if in $profile . }}
+            {{ $type = "profile" }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return $type }}

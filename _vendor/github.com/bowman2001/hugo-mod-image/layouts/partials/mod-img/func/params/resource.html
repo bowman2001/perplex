@@ -1,0 +1,34 @@
+{{/* Context: image resource */}}
+
+{{ $params := dict }}
+
+{{ with .RelPermalink }}
+    {{ $params = merge $params (dict (slice "imgAttrs" "src") . ) }}
+{{ end }}
+
+{{- if not (eq .MediaType.SubType "svg") }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "height") (string .Height) ) }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "width") (string .Width) ) }}
+{{- end -}}
+
+{{ if and (or site.Data.modImg.unsplash (eq .Params.unsplash "true")) (not (eq $params.caption "no")) }}
+    {{ $filename := .RelPermalink | path.Base }}
+    {{ $length := len $filename }}
+    {{ if (gt $length 24) }}
+        {{ $end := (sub $length 13) }}
+        {{ if eq (slicestr $filename $end) "-unsplash.jpg" }}
+            {{ $start := (sub $length 24) }}
+            {{ $id := (slicestr $filename $start $end) }}
+            {{ $params = merge $params (dict (slice "caption" "attrlink") (print "https://unsplash.com/photos/" $id ) ) }}
+            {{ $name := slice }}
+            {{ $slice := (split (slicestr $filename 0 $start) "-") }}
+            {{ range $slice }}
+                {{ $name = $name | append ( . | humanize ) }}
+            {{ end }}
+            {{ $attr := print (trim (delimit $name " ") " ") (htmlUnescape "/Unsplash") }}
+            {{ $params = merge $params (dict (slice "caption" "attr") $attr)  }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $params }}

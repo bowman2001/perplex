@@ -1,0 +1,71 @@
+{{/* 
+  Context:
+    - img
+    - params 
+*/ -}}
+
+{{- $img := .img }}
+{{- $params := .params }}
+{{- $maxLqip := site.Data.modImg.srcset.lqip.max | default 2048 }}
+
+
+{{- $placeholder := "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" }}
+
+{{- if $params.process.run }}
+    {{- $imgClass := site.Data.modImg.lsImgClass | default "img--ls" }}
+    {{- if $params.process.base64 }}
+        {{- $params = partial "mod-img/func/raster/base64" (dict "img" $img "params" $params) }}
+    {{- else }}
+        {{- with $params.srcset }}
+            {{- $params = merge $params (dict
+                    (slice "imgAttrs" "src") .fallback.RelPermalink
+                    (slice "imgAttrs" "width") (string .fallback.Width)
+                    (slice "imgAttrs" "height") (string .fallback.Height)
+                )
+            }}
+            {{- with .srcset }}
+                {{- $params = merge $params (dict 
+                        (slice "imgAttrs" "data-srcset") .
+                        (slice "imgAttrs" "data-sizes") "auto"
+                        (slice "imgAttrs" "data-optimumx") "auto"
+                    ) }}
+            {{- end }}
+            {{- if $params.lqip.run | default false }}      
+                {{- $lqip := partial "mod-img/func/raster/lqip" (dict "img" .fallback "params" $params) -}}
+                {{- $lqipBase64 := printf "data:image/webp;base64,%s" (base64Encode $lqip.Content) }}              
+                {{- if lt (len $lqipBase64) $maxLqip }}
+                    {{- $params = merge $params (dict (slice "imgAttrs" "src") $lqipBase64 ) }}
+                    {{- $imgClass = printf "%s %s lazyload" $imgClass "img--lqip" }}
+                {{- else }}
+                    {{- $params = merge $params (dict 
+                        (slice "imgAttrs" "data-lowsrc") $lqip.RelPermalink
+                        (slice "imgAttrs" "srcset") $placeholder) }} 
+                    {{- $imgClass = printf "%s lazyload" $imgClass }}           
+                {{- end }}
+            {{- else }}
+                {{- $params = merge $params (dict (slice "imgAttrs" "srcset") $placeholder) }}
+                {{- $imgClass = printf "%s %s lazyload" $imgClass "img--ph" }}
+            {{- end }}
+        {{- end }}
+    {{- end }}    
+    {{ with $params.imgAttrs.class }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "%s %s" . $imgClass)) }}
+    {{- else }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "class") (printf "%s" $imgClass)) }}
+    {{- end }}    
+{{- else }}
+    {{- $params := merge $params (dict 
+            (slice "imgAttrs" "src") $img.RelPermalink 
+            (slice "imgAttrs" "loading") "lazy"
+            ) }}
+{{- end }}
+
+{{- if .params.index }}
+    {{- $params = merge $params (dict (slice "imgAttrs" "data-pagefind-meta") "image[src], image_alt[alt]" ) }} 
+{{- end }}
+<img
+  {{- range $k, $v := $params.imgAttrs }}
+      {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+  {{- end -}}
+>
+{{- /**/ -}}       

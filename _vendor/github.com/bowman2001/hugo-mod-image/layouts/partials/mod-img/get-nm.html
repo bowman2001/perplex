@@ -1,0 +1,39 @@
+{{- /* Constants */}}
+{{ $name := "mod-img/get-nm" }}
+{{ $configName := "data/mod-img" }}
+{{ $errorLevel := site.Data.modImg.errorLevel | default "warning" | lower }}
+{{ partial "error-level" (dict "caller" $name "level" $errorLevel "config" $configName ) }}
+{{ $configErrorEnd := printf " Please check the configuration in %q" $configName }}
+
+{{/* Arguments */}}
+{{ $src := .src }}
+{{ $ctx := .ctx }}
+
+{{ $imgMap := "" }}
+{{ $url := urls.Parse $src }}
+{{ $args := dict "url" $url "ctx" $ctx "errorLevel" $errorLevel }}
+
+{{ with (partial "mod-resource/func/get-with-params" $args $args) }}
+    {{ if (eq .resource.MediaType.MainType "image") }}
+        {{ $imgMap = dict "img" .resource "params" .params }}
+    {{ else }}
+        {{ $msg := printf "The resource %q is not or does not contain an image resource." $src }}
+        {{ partial "error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{ end }}
+{{ end }}
+
+{{/* Collect and sort parameters */}}
+{{ with $imgMap }}
+    {{ $imgParams := partial "mod-img/func/params/resource" .img }}
+    {{ $extraParams := dict }}
+    {{ $captionParams := dict }}
+    {{ with .params }}
+        {{ $extraParams = partial "mod-img/func/params/extra" . }}
+        {{ $captionParams = partial "mod-resource/func/caption" . }}
+    {{ end }}
+    {{ $sortedParams := merge $imgParams $extraParams $captionParams }}
+    {{ $imgMap = dict "img" .img "params" $sortedParams }}
+{{ end }}
+
+{{ return $imgMap }}
+

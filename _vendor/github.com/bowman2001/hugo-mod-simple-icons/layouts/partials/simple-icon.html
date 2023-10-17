@@ -1,0 +1,18 @@
+{{- $mod := "hugo-mod-simple-icons" }}
+{{- $template := "simple-icon.html" }}
+{{- $assets := "svg/simple-icons" }}
+{{- $ctx := .ctx }}
+{{- $svg := "" }}
+{{- with .id }}
+    {{ $id := . }}
+    {{- $filename := path.Join $assets (print $id ".svg") }}
+    {{- with resources.Get $filename }}
+        {{ $svg = .Content }}
+        {{- $link := .RelPermalink }}
+    {{- else }}
+        {{ errorf "%s: The partial %q can’t find '%s' in assets while processing %v." $mod $template $id $ctx }}
+    {{- end }}
+{{- else }}
+    {{ errorf "%s: The partial %q is missing the parameter 'id' while processing %v." $mod $template $ctx }}
+{{- end }}
+<span class="{{ site.Data.simpleIcons.params.class | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>

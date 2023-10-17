@@ -1,0 +1,10 @@
+{{- $ctx := .ctx }}
+{{- $path := .path }}
+ 
+{{- $resource := "" }}
+{{- with $ctx.Page.Parent }}
+    {{- with .Page.Resources.GetMatch (print "*" $path "*") }}
+        {{- $resource = . }}
+    {{- end }}
+{{- end }}
+{{- return $resource }}

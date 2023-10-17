@@ -1,0 +1,34 @@
+{{/* 
+    Context:
+        - img
+        - params
+*/}}
+
+{{ $svg := "" }}
+{{ with .img }}
+    {{ $svg = .Content }}
+{{ end }}
+{{ with .params.svgstr }}
+    {{ $svg = . }}
+{{ end }}
+
+{{- if (lt (len $svg) site.Data.modImg.svg.inlineMax) }}
+    {{- $svg | safeHTML }}
+    {{- if .params.index -}} {{- /* Hidden img with pagefind attributes */}}
+        <img class="hide"
+            data-pagefind-meta="image[data-src], image_alt[alt]" 
+            data-src="{{ $.params.imgAttrs.src | safeHTMLAttr }}" 
+            {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }}>
+    {{- end }}
+{{- else }}
+    {{- $params := merge .params (dict 
+        (slice "imgAttrs" "loading") "lazy" 
+        (slice "imgAttrs" "class") "img--svg"
+        ) }}
+    {{- if .params.index }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "data-pagefind-meta") "image[data-src], image_alt[alt]" ) }}
+    {{- end }}
+    <img {{- range $k, $v := $params.imgAttrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}>
+{{- end }}

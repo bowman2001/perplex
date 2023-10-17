@@ -1,0 +1,7 @@
+module:
+  hugoVersion:
+    min: v0.114.0
+    extended: false
+  
+  imports:
+    - path: github.com/bowman2001/hugo-mod-error-message

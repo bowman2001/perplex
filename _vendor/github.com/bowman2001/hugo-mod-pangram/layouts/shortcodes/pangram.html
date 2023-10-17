@@ -1,0 +1,21 @@
+{{- $nSentences := 0 -}}
+{{- $nWords := 0 -}}
+{{- $chars := 0 -}}
+{{- if .IsNamedParams -}}
+    {{- with .sentences -}}{{ $nSentences = . }}{{- end -}}
+    {{- with .words -}}{{ $nWords = . }}{{- end -}}
+    {{- with .chars -}}{{ $chars = . }}{{- end -}}
+{{- else -}}
+    {{- $nSentences = (.Get 0) | default 1 -}}
+{{- end -}}
+
+{{- if $nSentences -}}
+    {{- $map := partialCached "hugo-mod-pangram/function/get-sentence-list" . -}}
+    {{- $sr := shuffle (seq 0 (sub (len $map.list) 1)) -}}
+    {{- $slice := slice -}}
+    {{- range first $nSentences $sr -}}
+        {{- $p := index $map.list . -}}
+        {{- $slice = $slice | append $p.sentence -}}
+    {{- end -}}
+    {{- print (delimit $slice " ") -}}
+{{- end -}}{{- /**/ -}}

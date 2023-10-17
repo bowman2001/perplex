@@ -1,0 +1,18 @@
+{{- $mod := "hugo-mod-simple-icons" }}
+{{- $template := "simple-icon" }}
+{{- $assets := "svg/simple-icons" }}
+{{- $ctx := .Page }}
+
+{{- $svg := "" }}
+{{- with (.Get 0) }}
+    {{- $id := . }}
+    {{- $filename := path.Join $assets (print $id ".svg") }}
+    {{- with resources.Get $filename }}
+        {{ $svg = .Content }}
+    {{- else }}
+        {{ errorf "%s: The shortcode %q can’t find '%s' in assets while processing %v." $mod $template $id $ctx }}
+    {{- end }}
+{{- else }}
+    {{ errorf "%s: The shortcode %q is missing the argument while processing %v." $mod $template $ctx }}
+{{- end }}
+<span class="{{ site.Data.simpleIcons.params.class | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>

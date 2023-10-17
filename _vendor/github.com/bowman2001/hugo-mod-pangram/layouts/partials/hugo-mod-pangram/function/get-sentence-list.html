@@ -1,0 +1,16 @@
+{{- $list := slice -}}
+{{- $minChars := 1000 -}}
+{{- $maxChars := 0 -}}
+{{- $minWords := 100 -}}
+{{- $maxWords := 0 -}}
+{{- range site.Data.hugoModPangram.en -}}
+    {{- $nChars := len . -}}
+    {{- $nWords := countwords . -}}
+    {{- $list = $list | append (dict "sentence" . "nc" $nChars "nw" $nWords) -}}
+    {{- if lt $nChars $minChars }}{{ $minChars = $nChars }}{{ end -}}
+    {{- if gt $nChars $maxChars }}{{ $maxChars = $nChars }}{{ end -}}
+    {{- if lt $nWords $minWords }}{{ $minWords = $nWords }}{{ end -}}
+    {{- if gt $nWords $maxWords }}{{ $maxWords = $nWords }}{{ end -}}
+{{- end -}}
+{{- $list = sort $list "nc" "asc" -}}
+{{- return (dict "list" $list "minChars" $minChars "maxChars" $maxChars "minWords" $minWords "maxWords" $maxWords ) -}}

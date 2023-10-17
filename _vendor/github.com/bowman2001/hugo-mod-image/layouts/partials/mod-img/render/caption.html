@@ -1,0 +1,18 @@
+{{/* Context: params.caption */}}
+
+{{- with .text -}}
+<span class="caption__text">
+    {{- with $.id }}<span class="caption__id">{{ . }}</span> {{ end }}{{ . | site.Home.RenderString -}}
+</span>
+{{- end }}
+
+{{- with .attr -}}
+    {{- $attribution := ( . | site.Home.RenderString ) -}}
+    <span class="caption__attr" data-pagefind-ignore>
+        {{- with $.attrlink -}}
+        (<a class="link link--text" href="{{ . | safeHTMLAttr }}">{{ $attribution }}</a>)
+        {{- else -}}
+            ({{ $attribution }})
+        {{- end -}}
+    </span>
+{{- end -}}

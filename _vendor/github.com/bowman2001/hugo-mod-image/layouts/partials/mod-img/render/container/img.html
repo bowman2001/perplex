@@ -1,0 +1,34 @@
+{{- $imgMap := . }}
+
+{{- $ratio := "" }}
+{{- with and .params.process.run (div (float .img.Width) (float .img.Height)) }}
+    {{- $ratio = . }}
+{{- end }}
+{{- with and .params.process.run .params.preprocess.ratio }}
+    {{ $ratio = . }}
+{{- end }}
+{{- with $ratio }}
+    {{- $style := print "position: relative; " "width: 100%; " "height: 0; " "padding-bottom: " (printf "%.4f%%" (div (float 100) . )) ";" }}
+    {{- $imgMap = merge $imgMap (dict (slice "params" "contAttrs" "style") $style ) }}
+{{- end }}
+
+{{- with and (not .params.frameAttrs) .params.linkAttrs }}
+    {{- $attrs := merge $imgMap.params.contAttrs . }}
+    {{- with $.params.imgAttrs.alt }}
+        {{- $attrs = merge $attrs (dict "aria-label" . ) }}
+    {{- end }}
+    <a 
+    {{- range $k, $v := $attrs }}
+        {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+    {{- end }}>
+    {{- partial "mod-img/render/img.html" $imgMap }}
+    </a>
+{{- else }}
+    <span 
+    {{ range $k, $v := $imgMap.params.contAttrs }}
+        {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+    {{- end }}>
+    {{- partial "mod-img/render/img.html" $imgMap -}}
+    </span>
+{{- end }}
+

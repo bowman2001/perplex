@@ -1,0 +1,12 @@
+{{/* Context: parameter map */}}
+
+{{ $attrs := partial "mod-img/func/params/attributes" . }}
+{{ $raster := partial "mod-img/func/params/raster" . }}
+{{ $params := merge $attrs $raster }}
+
+{{ $params = partial "mod-img/func/params/theme" $params }}
+
+{{ return $params }}
+
+
+{{ define "partials/mod-img/func/params/theme.html" }}{{ return . }}{{ end }}

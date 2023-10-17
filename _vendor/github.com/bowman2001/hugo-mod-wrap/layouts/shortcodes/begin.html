@@ -1,0 +1,18 @@
+{{- $mod := "hugo-mod-wrap" -}}
+{{- $name := "begin" -}}
+{{- $page := .Page -}}
+{{- $class := "" -}}
+{{- with (.Get 0) -}}
+    {{- $class = . -}}
+{{- else -}}
+    {{- errorf "%s: The shortcode %q (on %s) is always expecting one string as parameter." $mod $name .Page -}}
+{{- end -}}
+{{- with $page.Scratch.Get "begin" -}}
+    {{- $list := . | append $class -}}
+    {{- $page.Scratch.Set "begin" $list -}}
+{{- else -}}
+    {{- $list := slice $class -}}
+    {{- $page.Scratch.Set "begin" $list -}}
+{{- end -}}
+<div class="{{ $class | safeHTMLAttr }}">
+{{- /**/ -}}

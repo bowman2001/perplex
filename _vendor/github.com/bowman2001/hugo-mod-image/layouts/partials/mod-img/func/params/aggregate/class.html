@@ -1,0 +1,47 @@
+{{ $params := .params }}
+{{ $type := .type }}
+
+{{ $name := "mod-img/func/params/aggregate/class" }}
+{{ $errorLevel := site.Data.modImg.errorLevel | default "warning" }}
+{{ $configErrorEnd := "See data/mod-img." }}
+
+{{ $classes := slice }}
+{{ with index site.Data.modImg $type }}
+    {{ with .class }} 
+        {{ $classMap := . }}
+        {{ $baseClass := .base }}
+        {{ $classes = $classes | append (print $baseClass) }}        
+        {{ range $k, $v := $params.class }}
+            {{ with (index $classMap $k)  }}
+                {{ $opts := .options }}
+                {{ with .intOpts }}
+                    {{ $opts = $opts | append . }}
+                {{ end }}
+                {{ if in $opts $v }}
+                    {{ $classes = $classes | append (printf "%s--%s%s" $baseClass .prefix $v ) }}
+                {{ else }}
+                    {{ $msg := printf "%s %q is not in %s. %s" .name $v .options $configErrorEnd }}
+                    {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel ) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ else }}
+        {{ $msg := printf "Can’t find classes for type %q. %s" $type $configErrorEnd }}
+        {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel )}}
+    {{ end }}
+{{ else }}
+    {{ $msg := printf "Can’t find type %q configuration. %s" $type $configErrorEnd }}
+    {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel )}}
+{{ end }}
+
+{{ with $params.class.plain }}
+    {{ $classes = $classes | append (print .) }}
+{{ end }}
+
+{{ with $params.attrs.class }}
+    {{ $classes = $classes | append (print .) }}
+{{ end }}
+
+{{ $params = merge $params (dict (slice "attrs" "class") (delimit $classes " ")) }}
+
+{{ return $params }}

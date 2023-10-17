@@ -1,0 +1,41 @@
+{{/* Calculate the width numbers for the 'srcset' */}}
+{{ $min := .min }}
+{{ $max := .max }} 
+{{ $fallback := .fallback }}  
+
+{{ $step := site.Data.modImg.srcset.sizeStep }}
+{{ if (lt $step 20) }}
+    {{ errorf "Aborting image generation. The file size difference of %d percent for your srcset is too small. The srcset would become too big. At least 25 percent are recommended." $step }}
+{{ else if (lt $step 25) }}
+    {{ warnf "The file size difference of %d percent for the srcset is small. Hugo will take some time for the image processing. 25 percent or more are recommended." $step }}
+{{ end }}
+
+{{ $factor := (math.Sqrt (add 1 (div $step 100.0))) }}
+{{ $ratio := (div $max (float $min)) }}
+{{ $n := math.Ceil (div (math.Log $ratio) (math.Log $factor)) }}
+{{ $fo := 1.0 }}
+{{ if gt $n 0 }}
+    {{ $fo = (math.Pow $ratio (div 1.0 $n)) }}
+{{ end }}
+
+{{ $width := $min }}
+{{ $numbers := (slice $min) }}
+{{ $inserted := false }}
+{{ if eq $fallback $min }}
+    {{ $inserted = true }}
+{{ end }}
+{{ if gt $n 0 }}
+    {{ range (seq 1 (int $n)) }}
+        {{ $width = (mul $width $fo) }}
+        {{ $new := (int (math.Round $width)) }}        
+        {{ if eq $fallback $new }}
+            {{ $inserted = true }}
+        {{ end }}
+        {{ if and (not $inserted) (lt $fallback $new ) }}
+            {{ $numbers = $numbers | append $fallback }}
+            {{ $inserted = true }}
+        {{ end }}
+        {{ $numbers = $numbers | append $new }}
+    {{ end }}
+{{ end }}
+{{ return $numbers }}

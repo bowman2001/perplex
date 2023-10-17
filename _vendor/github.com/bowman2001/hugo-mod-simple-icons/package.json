@@ -1,0 +1,16 @@
+{
+  "name": "hugo-mod-simple-icons",
+  "version": "0.1.0",
+  "description": "Hugo module for including SVG icons",
+  "main": "index.js",
+  "repository": "https://github.com/bowman2001/hugo-mod-simple-icons.git",
+  "author": "Georg Makowski <gm@desider.at>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "simple-icons": "^9.1.0",
+    "svg-sprite": "^2.0.2"
+  },
+  "scripts": {
+    "update": "yarn && update.sh"
+  }
+}

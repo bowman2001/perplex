@@ -1,0 +1,5 @@
+{{- $params := partial "mod-img/func/params/aggregate/preprocess" . }}
+{{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params) }}
+{{- $params = partial "mod-img/func/params/aggregate/frame-class" $params }}
+{{- $params = partial "mod-img/func/params/aggregate/container-class" $params }}
+{{- return (dict "img" .img "params" $params )}}

@@ -1,0 +1,22 @@
+{{/* Context: parameter map */}}
+
+{{- $params := dict }}
+
+{{ with .id }}{{ $params = merge $params (dict (slice "attrs" "id") ( . | lower )) }}{{ end }}
+{{ with or .width .w }}{{ $params = merge $params (dict (slice "class" "width") ( (string .) | lower )) }}{{ end }}
+{{ with or .posh .ph }}{{ $params = merge $params (dict (slice "class" "posh") ( . | lower )) }}{{ end }}
+{{ with or .posv .pv }}{{ $params = merge $params (dict (slice "class" "posv") ( . | lower )) }}{{ end }}
+{{ with .class }}{{ $params = merge $params (dict (slice "class" "plain") ( . | lower )) }}{{ end }}
+
+{{ with .link }}{{ $params = merge $params (dict (slice "linkAttrs" "href") . ) }}{{ end }}
+{{ with .rel }}{{ $params = merge $params (dict (slice "linkAttrs" "rel") ( . | lower )) }}{{ end }}
+{{ with .target }}{{ $params = merge $params (dict (slice "linkAttrs" "target") ( . | lower )) }}{{ end }}
+{{ with .background }}{{ $params = merge $params (dict (slice "frameClass" "background") ( . | lower )) }}{{ end }}
+{{ with .box }}{{ $params = merge $params (dict (slice "frameClass" "box") ( . | lower )) }}{{ end }}
+{{ with .padding }}{{ $params = merge $params (dict (slice "frameClass" "padding") ( . | lower )) }}{{ end }}
+{{ with .type }}{{ $params = merge $params (dict (slice "contClass" "type") ( . | lower )) }}{{ end }}
+
+{{ with or .alt .caption }}{{ $params = merge $params (dict (slice "imgAttrs" "alt") . ) }}{{ end }}
+
+{{ return $params }}
+

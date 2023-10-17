@@ -1,0 +1,5 @@
+{{ $page := .Page }}
+{{ $begin := "begin" }}
+{{ with .Page.Scratch.Get "begin" }}
+    {{ errorf "hugo-mod-wrap: There are open %q shortcodes %s on %s." $begin . $page }}
+{{ end }}

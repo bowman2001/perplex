@@ -1,0 +1,16 @@
+{{- $name := "hugo-mod-error-message – partial error-msg" }}
+
+{{- /* Initialize local variables with the values from the context map */}}
+{{- $caller := .caller }}
+{{- $errorMsg := .errorMsg }}
+{{- $errorLevel := .errorLevel }}
+
+{{- $msg := printf "%s: %s" $caller $errorMsg }}
+{{- if eq $errorLevel "ignore" }}
+{{- else if eq $errorLevel "warning" }}
+    {{- warnf $msg }}                
+{{- else if eq $errorLevel "error" }}
+    {{- errorf $msg }}
+{{- else }}
+    {{- errorf "%s: Unavailable error level %q in call from %q. Possible are 'ignore', 'warning', and 'error'" $name $errorLevel $caller }}
+{{- end }}

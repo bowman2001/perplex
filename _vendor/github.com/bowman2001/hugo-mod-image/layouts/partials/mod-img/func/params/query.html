@@ -1,0 +1,27 @@
+{{/* Context: url.Query */}}
+
+{{ $params := dict }}
+
+{{ with or (.Get "posh") (.Get "ph") }}
+    {{ $params = merge $params (dict (slice "class" "posh") ( . | lower) ) }}
+{{ end }}
+{{ with or (.Get "posv") (.Get "pv") }}
+    {{ $params = merge $params (dict (slice "class" "posv") ( . | lower) ) }}
+{{ end }}
+{{ with or (.Get "width") (.Get "w") }}
+    {{ $params = merge $params (dict (slice "class" "width") ( . | lower) ) }}
+{{ end }}
+{{ with (.Get "ratio") }}
+    {{ $params = merge $params (dict (slice "preprocess" "ratio") (float .) ) }}
+{{ end }}
+{{ with (.Get "zoom") }}
+    {{ $params = merge $params (dict (slice "preprocess" "zoom") (float .) ) }}
+{{ end }}
+{{ with (.Get "anchor") }}
+    {{ $params = merge $params (dict (slice "preprocess" "anchor") . ) }}
+{{ end }}
+{{ with (.Get "rotate") }}
+    {{ $params = merge $params (dict (slice "preprocess" "rotate") ( . | lower) ) }}
+{{ end }}
+
+{{ return $params }}

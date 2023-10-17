@@ -1,0 +1,66 @@
+{{ $img := .img }}
+{{ $params := .params }}
+
+{{ with and $params.process.run $params.preprocess.run $params.preprocess }}
+    {{ $width := (float $img.Width) }}
+    {{ $height := (float $img.Height) }}
+    {{ $ratio := div $width $height }}
+    {{ $rotate := "" }}
+
+    {{ $path := path.Split $img.Key }}
+    {{ $resize := false }}
+    {{ $crop := false }}
+    
+    
+    {{ with .rotate }}
+        {{ $rotate = . }}
+        {{ $resize = true }}
+        {{ if $params.preprocess.flipsides }}
+            {{ $tmp := $width }}
+            {{ $width = $height }}
+            {{ $height = $tmp }}
+        {{ end }}
+    {{ end }}
+
+    {{ with .ratio }}
+        {{ if (ge . $ratio) }}
+            {{ $height = div $width . }}
+        {{ else }}
+            {{ $width = mul . $height }}
+        {{ end }}
+        {{ $resize = true }}
+    {{ end }}
+
+    {{ with .zoom }}
+        {{ $zoom := (float .) }}
+        {{ $height = div $height $zoom }}
+        {{ $width = div $width $zoom }}
+        {{ $resize = true }}
+        {{ $crop = true }}        
+    {{ end }}
+
+    {{ $newWidth := int (math.Round $width) }}
+    {{ $newHeight := int (math.Round $height) }}
+    {{ $params = merge $params  (dict (slice "imgAttrs" "width") (string $newWidth)) (dict (slice "imgAttrs" "height") (string $newHeight)) }}
+    {{ $args := slice (printf "%dx%d" $newWidth $newHeight) }}
+    {{ $args = $args | append $rotate }}
+    {{ if .params.process.compress }}
+        {{ $args = $args | append "webp" }}
+        {{ $args = $args | append (printf "q%d" site.Data.modImg.srcset.quality) }}
+    {{ end }}
+
+    {{ if $resize }}
+        {{ with .anchor }}
+            {{ $args = $args | append . }}
+        {{ end }}
+        {{ if $crop }}
+            {{ $img = $img.Crop (print (delimit $args " ")) }}
+        {{ else }}
+            {{ $img = $img.Fill (print (delimit $args " ")) }}
+        {{ end }}   
+        {{ $newpath := path.Join $path.Dir (print (path.BaseName $path.File) "-" (delimit $args "-") (path.Ext $img.Key )) }}    
+        {{ $img = $img | resources.Copy (print $newpath) }}
+    {{ end }}
+{{ end }} 
+
+{{ return (dict "img" $img "params" $params) }}

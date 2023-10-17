@@ -1,0 +1,40 @@
+{{- $imgMap := . }}
+
+{{- if .params.process.run }}
+    {{ $style := "display: flex; justify-content: center; align-items: center" }}
+    {{ $srcset := "" }}
+    {{ if not .params.process.base64 }}
+        {{ $srcset = partial "mod-img/func/raster/srcset" $imgMap }}
+        {{ $imgMap = merge $imgMap (dict (slice "params" "srcset") $srcset) }}
+        {{ if not .params.frameClass.background }}
+            {{- $colors := $srcset.smallest.Colors }}
+            {{- $color1 := index $colors 0 }}
+            {{- $color2 := index $colors 1 }}
+            {{ $style = printf "%s; background-image: linear-gradient(to right, %s, %s)" $style $color1 $color2 }}
+        {{ end }}    
+    {{ end }}
+    
+    {{- $imgMap = merge $imgMap (dict (slice "params" "frameAttrs" "style") $style ) }}
+{{- end }}
+
+{{- with .params.frameAttrs }}
+    {{- with $imgMap.params.linkAttrs }}
+        {{- $attrs := merge $imgMap.params.frameAttrs . }}
+        {{- with $.params.imgAttrs.alt }}
+            {{- $attrs = merge $attrs (dict "aria-label" . ) }}
+        {{- end -}}
+        <a 
+        {{- range $k, $v := $attrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}>
+        {{- partial "mod-img/render/container/img.html" $imgMap }}
+        </a>
+    {{- else }}
+        <span 
+        {{ range $k, $v := $imgMap.params.frameAttrs }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}>
+        {{- partial "mod-img/render/container/img.html" $imgMap -}}
+        </span>
+    {{- end }}
+{{- end }}

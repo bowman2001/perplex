@@ -1,0 +1,15 @@
+{{/* Context: image render hook */}}
+
+{{ $params := dict }}
+
+{{ $ordinal := add .Ordinal 1 }}
+{{- with site.Data.modImg.id | default "img-%d" }}
+    {{- $params = merge $params (dict (slice "attrs" "id") (printf . $ordinal)) }}
+{{- end }}
+{{- with site.Data.modImg.captionId | default "%d." }}
+    {{ $params = merge $params (dict (slice "caption" "id") (printf . $ordinal)) }}
+{{- end }}
+{{ with .PlainText }}{{ $params = merge $params (dict (slice "imgAttrs" "alt") . ) }}{{ end }}
+{{ with .Title }}{{ $params = merge $params (dict (slice "imgAttrs" "title") . ) }}{{ end }}
+
+{{ return $params }}

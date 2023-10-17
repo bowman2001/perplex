@@ -1,0 +1,41 @@
+{{ $type_partial := site.Params.meta.opengraph.type | default "head/meta/func/type.html" }}
+{{ $title_partial := site.Params.meta.title | default "head/meta/func/title.html" -}}
+{{ $image_partial := site.Params.meta.img | default "head/meta/func/img.html" -}}
+{{ $map := dict }}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{ $type := "" }}
+{{ with partial "head/partial.html" (dict "partial" $type_partial "page" . ) -}}
+    {{ $type = . }}
+{{ end }}
+{{ if eq $type "article" }}
+    {{ $article := (dict
+    "@context" "https://schema.org"
+    "@type" "NewsArticle"
+    )}}
+    {{ with partial "head/partial.html" (dict "partial" $title_partial "page" . ) -}}
+        {{ $article = merge $article (dict "headline" .) }}{{ end }}
+    {{ with partial "head/partial.html" (dict "partial" $image_partial "page" . ) -}}
+        {{ $article = merge $article (dict "image" (slice .Permalink ))}}{{ end }}
+    {{ with .PublishDate }}{{ $article = merge $article (dict "datePublished" (print (.Format $iso8601))) }}{{ end }}
+    {{ with .Lastmod }}{{ $article = merge $article (dict "dateModified" (print (.Format $iso8601))) }}{{ end }}
+    {{ with .Params.author }}
+        {{ $author := slice }}
+        {{ if reflect.IsSlice . }}
+            {{ range . }}
+                {{ $author = $author | append (dict "@type" "Person" "name" . ) }}
+            {{ end }}
+        {{ else }}
+            {{ $author = $author | append (dict "@type" "Person" "name" . ) }}
+        {{ end }}
+        {{ $article = merge $article (dict "author" $author)}}
+    {{ end }}
+    {{ $map = $article }}
+{{ else if eq $type "documentation" }}
+    {{ $breadcrumbs := (dict
+    "@context" "https://schema.org"
+    "@type" "BreadcrumbList"
+    )}}
+{{ end }}
+{{ with $map }}
+  <script type="application/ld+json">{{ jsonify . | safeJS }}</script>
+{{ end }}
