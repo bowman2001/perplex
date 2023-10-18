@@ -22,7 +22,9 @@
 {{- $contParams := partial "mod-img/func/params/default-class" (dict "type" "container" "className" "contClass") }}
 {{- $defaultParams := merge $classParams $frameParams $contParams }}
 
-{{- /* Collect user parameters */}}
+{{- /* Collect and sort parameters */}}
+{{- $hookParams := partial "mod-img/func/params/codeblock-hook" . }}
+
 {{- $userParams := dict }}
 {{- $attrs := dict }}
 {{- range $k, $v := .Attributes }}
@@ -36,7 +38,7 @@
 {{- /* Sort user parameters and merge with defaults */}}
 {{ $attributes := partial "mod-img/func/params/attributes" $userParams }}
 {{ $caption := partial "mod-resource/func/caption" $userParams }}
-{{ $params := merge $defaultParams $attributes $caption }}
+{{ $params := merge $defaultParams $hookParams $attributes $caption }}
 
 {{- /* Aggregate classes */}}
 {{- $params = partial "mod-img/func/params/aggregate/class" (dict "type" "figure" "params" $params) }}
@@ -50,7 +52,9 @@
 {{- $imgMap := dict }}
 {{- with resources.GetRemote $server $args }}
     {{- with .Err }}
-        {{- $imgMap = dict "img" (partial "mod-img/helper/missing" $ctx) "params" $params }}
+        {{- $img := partial "mod-img/helper/missing" site }}
+        {{- $params = merge $params (dict (slice "imgAttrs" "src") $img.RelPermalink ) }}
+        {{- $imgMap = dict "img" $img "params" $params }}
         {{- $msg := printf "Unable to get remote diagram — %s." . }}
         {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- else }}

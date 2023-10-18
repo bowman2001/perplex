@@ -1,4 +1,11 @@
 container: img-c
+id:
+  image:
+    caption: "Fig %d:"
+    anchor: "fig-%d"
+  diagram:
+    caption: "Diag %d:"
+    anchor: "diag-%d"
 missing: mod-img/missing.svg
 errorLevel: warning
 unsplash: false

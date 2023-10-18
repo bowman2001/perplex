@@ -8,4 +8,4 @@
 <link rel="preload" href={{ "IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Text-Latin1.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
 {{- range .AlternativeOutputFormats -}}
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-{{- end -}}
+{{- end }}{{- /**/ -}}

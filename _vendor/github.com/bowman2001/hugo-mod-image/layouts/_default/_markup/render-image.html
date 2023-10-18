@@ -14,7 +14,7 @@
 {{- $defaultParams := merge $classParams $frameParams $contParams }}
 
 {{- /* Collect and sort parameters */}}
-{{- $hookParams := partial "mod-img/func/params/hook" . }}
+{{- $hookParams := partial "mod-img/func/params/img-hook" . }}
 
 {{- $queryParams := dict }}
 {{- with and (not $url.IsAbs) $url.Query }}{{/* Params from a query string (only local) */}}

@@ -3,10 +3,10 @@
 {{ $params := dict }}
 
 {{ $ordinal := add .Ordinal 1 }}
-{{- with site.Data.modImg.id | default "img-%d" }}
+{{- with site.Data.modImg.id.image.anchor | default "fig-%d" }}
     {{- $params = merge $params (dict (slice "attrs" "id") (printf . $ordinal)) }}
 {{- end }}
-{{- with site.Data.modImg.captionId | default "%d." }}
+{{- with site.Data.modImg.id.image.caption | default "Fig&#x202f;%d:" }}
     {{ $params = merge $params (dict (slice "caption" "id") (printf . $ordinal)) }}
 {{- end }}
 {{ with .PlainText }}{{ $params = merge $params (dict (slice "imgAttrs" "alt") . ) }}{{ end }}
