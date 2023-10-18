@@ -1097,6 +1097,11 @@ body {
   height: 3rem;
 }
 
+.icon--material svg {
+  width: 100%;
+  height: 100%;
+}
+
 .icon--small {
   padding: 0.3rem;
 }
