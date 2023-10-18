@@ -1,9 +1,10 @@
 {
-  "version": "outlined",
+  "version": "sharp",
   "size": {
     "normal": "wght300grad0fill0opsz24",
     "small": "wght300grad0fill0opsz20",
     "tiny": "wght500grad0fill1opsz20",
+    "large": "wght300grad0fill0opsz40",
     "big": "wght300grad0fill0opsz40",
     "xl": "wght300grad0fill0opsz48"
   },

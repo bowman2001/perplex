@@ -4,7 +4,7 @@
 # github.com/bowman2001/hugo-mod-katex v0.2.3
 # github.com/bowman2001/hugo-mod-mermaid v0.4.2
 # github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20230716191508-4c68a81e5385
-# github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230808224723-c30f1d4cfdfa
+# github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018135441-af08cbeb0896
 # github.com/bowman2001/hugo-mod-pangram v0.0.0-20230803153646-6851d0e94236
 # github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac
 # github.com/bowman2001/hugo-mod-image v0.1.0

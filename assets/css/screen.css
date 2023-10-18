@@ -3702,14 +3702,14 @@ body {
   .md .left, .md .left-in, .md .left-in-half {
     float: left;
     clear: left;
-    margin-right: 2rem;
+    margin-right: 2rem !important;
   }
 }
 @media screen and (min-width: 39em) {
   .md .right, .md .right-in, .md .right-in-half {
     float: right;
     clear: right;
-    margin-left: 2rem;
+    margin-left: 2rem !important;
   }
 }
 @media screen and (min-width: 48em) {
@@ -3732,7 +3732,7 @@ body {
     margin-right: 2rem;
   }
   .md--margin-doc .left-in-half {
-    margin-left: 19.5rem;
+    margin-left: 18.5rem;
   }
   .md--margin-doc .left-in {
     margin-left: 37rem;

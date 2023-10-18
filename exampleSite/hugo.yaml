@@ -1,7 +1,8 @@
 baseURL: https://example.org
 title: Perplex Example
 
-refLinksErrorLevel: warning
+refLinksErrorLevel: WARNING
+timeout: 600s
 
 markup:
   goldmark:

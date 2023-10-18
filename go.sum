@@ -10,6 +10,12 @@ github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXe
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230808224723-c30f1d4cfdfa h1:jcttE9Z7tz2kzdSN/m8Q4CI4ch0IZS25AHuDSY9Lo7E=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230808224723-c30f1d4cfdfa/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018124929-a3f026025c6a h1:5k3NuxMCRowA3O5rvFJ8ZBeg1urVrWHSrsV2wsFutRM=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018124929-a3f026025c6a/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018130306-abd6db746c99 h1:O9/9N+D/KHUmHRFH4Bl2st0VGI5P4ARe2fLJs/AWaQY=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018130306-abd6db746c99/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018135441-af08cbeb0896 h1:LFaRV1qyCBN6K18zix8X6G/+RsnZMfQ5eKKrtLNa/fc=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018135441-af08cbeb0896/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
 github.com/bowman2001/hugo-mod-mermaid v0.4.2 h1:r6BFnUJtIHodQg6NCtis1FxDRczGZmRc4YxRcWXHp4Q=
 github.com/bowman2001/hugo-mod-mermaid v0.4.2/go.mod h1:+HDKjEKHuCE2cnRX4ZsOKXeiL0gCSHpmxORycHS/+pw=
 github.com/bowman2001/hugo-mod-meta v0.2.3 h1:7Vi1KcaeBe8B1iohl/5TkrH/jQuS8KN0/yczLqHD3Rg=
