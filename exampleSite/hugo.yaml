@@ -40,3 +40,7 @@ params:
   favicon:
     svg: favicon/favicon.svg
     png: favicon/favicon.png
+
+build:
+  buildStats:
+    enable: true

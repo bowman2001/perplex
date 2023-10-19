@@ -1,5 +1,7 @@
 {{- $ff := resources.Get "css/fontfaces.css" -}}
 {{- $css := resources.Get "css/screen.post.css" }}
-{{- $screen := slice $ff $css | resources.Concat "css/screen.css" | minify | fingerprint }}
+{{- $screen := slice $ff $css | resources.Concat "css/screen.css" }}
+{{- $screen = resources.PostCSS $screen }}
+{{- $screen = $screen | minify | fingerprint }}
 <link rel="preload" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" as="style">
 <link rel="stylesheet" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" media="screen">

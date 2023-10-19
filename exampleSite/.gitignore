@@ -3,3 +3,4 @@ resources
 node_modules
 yarn.lock
 .hugo_build.lock
+hugo_stats.json
