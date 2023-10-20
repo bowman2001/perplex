@@ -6,7 +6,10 @@
   "author": "Georg Makowski",
   "license": "Apache-2.0",
   "dependencies": {
-    "pagefind": "^1.0.3"
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "pagefind": "^1.0.3",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0"
   },
   "repository": "https://github.com/bowman2001/perplex"
 }

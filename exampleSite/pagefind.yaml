@@ -1,11 +1,10 @@
 source: public
 ## The library gets moved to static only for the local development server!
-## We don’t use this configuration in production.
+## Don’t use this configuration in production!
+## For the default 'public' folder, you can remove the following entry.
 bundle_dir: "../static/pagefind"
 
 exclude_selectors:
-  - ".md table"
-  - ".md pre"
   - ".katex"
   - "[id^='fnref']"
   - "[class='footnote-backref']"

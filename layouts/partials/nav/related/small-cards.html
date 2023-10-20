@@ -1,13 +1,13 @@
 {{ with (site.RegularPages.Related . | first 4 ) }}
-    {{ $n := len . }}
-    <section class="section">
-      <h3>See Also</h3>
-    <nav class="card-nav card-nav--2">
-      <ul class="card-nav__list">
-          {{ range $k, $v := . }}
-            <li class="card card--1 card--1--row card__hover">{{- $v.Render "li-card-1-row-img" -}}</li>
-          {{ end }}
-      </ul>
-    </nav>
-    </section>
+{{ $n := len . }}
+<section class="section">
+  <h2>See Also</h2>
+  <nav class="card-nav card-nav--2">
+    <ul class="card-nav__list">
+      {{ range $k, $v := . }}
+      <li class="card card--1 card--1--row card__hover">{{- $v.Render "li-card-1-row-img" -}}</li>
+      {{ end }}
+    </ul>
+  </nav>
+</section>
 {{ end }}
