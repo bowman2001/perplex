@@ -4103,9 +4103,14 @@ body {
 }
 
 .fig--featured {
-  padding-top: 1.5rem;
   float: right;
   clear: both;
+  padding-top: 1.75rem;
+}
+@media screen and (min-width: 39em) {
+  .fig--featured {
+    padding-top: 1rem;
+  }
 }
 @media screen and (min-width: 48em) {
   .fig--featured {
@@ -4115,6 +4120,7 @@ body {
     right: 0;
     float: none;
     clear: none;
+    padding-top: 1.5rem;
     margin: 0;
   }
 }
