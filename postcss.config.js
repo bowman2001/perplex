@@ -8,7 +8,10 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
             ...(els.ids || []),
         ];
     },
-    safelist: [/^is-/, /^pagefind-ui/,/^ls-/,/^lazyload/]
+    safelist: {
+        standard: [/^is-/, /^pagefind-ui/,/^ls-/,/^lazyload/],
+        deep: ["chroma"]
+    }
 });
 
 module.exports = {
