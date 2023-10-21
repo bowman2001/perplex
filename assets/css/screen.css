@@ -1758,7 +1758,7 @@ body {
   font-size: 2.275rem;
   line-height: 3.5rem;
   padding-top: 0.8980125rem;
-  padding-bottom: calc(0.1019875rem + var(--es));
+  padding-bottom: 1.1019875rem;
   text-align: left;
   color: var(--c-text-low);
   hyphens: none;
@@ -1778,7 +1778,7 @@ body {
     font-size: 2.6rem;
     line-height: 4rem;
     padding-top: 0.0263rem;
-    padding-bottom: calc(0.9737rem + var(--es));
+    padding-bottom: 1.9737rem;
   }
 }
 .md .p-big, .container .p-big {
@@ -3174,30 +3174,27 @@ body {
 }
 
 .note__content {
-  padding: 0.625rem 2rem;
   border-top: 0.1rem solid var(--c-shadow-2);
   border-bottom: 0.1rem solid var(--c-shadow-2);
+  padding: 1rem 2rem;
   background: var(--c-bg-2);
   overflow: hidden;
 }
-.note__content h3, .note__content h4, .note__content h5, .note__content h6, .note__content .h-p {
-  display: inline;
-  font-size: 1.6083333333rem;
-  line-height: 2.5rem;
-  padding-top: 0.6476791667rem;
-  margin-bottom: -0.6476791667rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
-}
 .note__content > p {
   text-align: left;
-  font-size: 1.6145833333rem;
-  line-height: 2.5rem;
-  padding-top: 0.6453385417rem;
-  padding-bottom: 0.3546614583rem;
-  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2.5rem );
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-size: 1.68875rem;
+  line-height: 2rem;
+  padding-top: 0.367563125rem;
+  padding-bottom: 0.632436875rem;
+  scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2rem );
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
   color: var(--c-text-extralow);
+}
+.note__content > p strong {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  color: var(--c-text-medium);
 }
 .note__content var {
   color: var(--c-text-medium);
@@ -3213,26 +3210,6 @@ body {
     border: none;
     background: transparent;
     overflow: visible;
-  }
-  .note__content > h5, .note__content h6 {
-    font-size: 1.68875rem;
-    line-height: 2rem;
-    padding-top: 0.367563125rem;
-    margin-bottom: -0.367563125rem;
-    scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2rem );
-  }
-  .note__content > p {
-    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 450;
-    font-size: 1.68875rem;
-    line-height: 2rem;
-    padding-top: 0.367563125rem;
-    padding-bottom: 0.632436875rem;
-    scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 2rem );
-  }
-  .note__content > p strong {
-    font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 600;
   }
 }
 
@@ -3330,7 +3307,7 @@ body {
   height: 10.5rem;
 }
 .checkbox-note ~ .note__content:after {
-  transition: opacity 150ms ease;
+  transition: opacity 150ms;
   opacity: 1;
 }
 @media screen and (min-width: 48em) {
@@ -3358,7 +3335,6 @@ body {
   height: 100%;
 }
 .checkbox-note:checked ~ .note__content:after {
-  transition: opacity 150ms ease;
   opacity: 0;
   height: 100%;
 }
