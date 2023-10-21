@@ -1,8 +1,8 @@
-source: public
+site: public
 ## The library gets moved to static only for the local development server!
 ## Don’t use this configuration in production!
 ## For the default 'public' folder, you can remove the following entry.
-bundle_dir: "../static/pagefind"
+output_subdir: "../static/pagefind"
 
 exclude_selectors:
   - ".katex"
