@@ -15,16 +15,9 @@ markup:
       hardWraps: true
   highlight:
     anchorLineNos: true
-    codeFences: true
-    guessSyntax: false
-    hl_Lines: ""
-    lineAnchors: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    style: github
-    tabWidth: 4
+    lineNumbersInTable: false
+    noClasses: false
+
 
 taxonomies:
   tag: tags

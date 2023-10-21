@@ -10,7 +10,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     },
     safelist: {
         standard: [/^is-/, /^pagefind-ui/,/^ls-/,/^lazyload/],
-        deep: ["chroma"]
+        deep: [/^chroma/]
     }
 });
 
