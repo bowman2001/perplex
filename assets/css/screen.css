@@ -5571,9 +5571,6 @@ body {
   padding-top: 0.814465rem;
   padding-bottom: 0.685535rem;
   color: var(--c-frame-text-low);
-  transition-property: color, text-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: ease-in-out;
 }
 
 .sidebar__chk, .sidebar__open {
