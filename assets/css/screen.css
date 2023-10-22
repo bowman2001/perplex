@@ -425,9 +425,6 @@ q:after {
   position: relative;
   background-color: transparent;
   border-radius: 0.5rem;
-  transition-property: color, fill, text-decoration-color, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: ease-in-out;
 }
 
 .link--nav, .link--nav-ext, .link--frame, .link--frame-ext {
@@ -522,9 +519,6 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   text-decoration: inherit;
   text-decoration-thickness: inherit;
   text-underline-offset: inherit;
-  transition-property: text-decoration-color;
-  transition-duration: 250ms;
-  transition-timing-function: ease-out;
 }
 .link--text:hover, .pagefind-ui__result-link:hover, .link--text:focus, .pagefind-ui__result-link:focus, .link--text:active, .pagefind-ui__result-link:active {
   color: var(--c-text-link-hover);
@@ -546,7 +540,6 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .icon-link .icon {
   fill: var(--c-icon-link);
-  transition: fill 250ms ease-in-out;
 }
 .icon-link:hover .icon, .icon-link:focus .icon, .icon-link.is-active .icon {
   fill: var(--c-nav-link-hover);
@@ -554,7 +547,6 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .icon-link-ext .icon {
   fill: var(--c-icon-link-ext);
-  transition: fill 250ms ease-in-out;
 }
 .icon-link-ext:hover .icon, .icon-link-ext:focus .icon, .icon-link-ext.is-active .icon {
   fill: var(--c-icon-link-ext-hover);
@@ -4772,9 +4764,6 @@ body {
   font-weight: 400;
 }
 
-.nav__title {
-  transition: color 250ms ease-in-out;
-}
 .nav__title:hover, .nav__title:focus {
   color: var(--c-frame-border-hover);
 }
@@ -4784,7 +4773,6 @@ body {
   word-spacing: 0.225em;
   text-transform: uppercase;
   border-bottom: 0.6rem solid transparent;
-  transition: border-bottom-color 250ms;
 }
 .nav-main__link:hover, .nav-main__link:focus {
   border-bottom-color: var(--c-frame-border-hover);
