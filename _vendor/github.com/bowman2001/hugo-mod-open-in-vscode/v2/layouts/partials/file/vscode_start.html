@@ -1,0 +1,7 @@
+{{- if .Site.IsServer -}}
+    {{- with .File -}}
+        {{- $label := print "Open file in " site.Params.modOpenIn.name }}
+        {{- $path := print site.Params.modOpenIn.protocol "://file" .Filename  -}}
+        <a {{ printf "href=%q" $path | safeHTMLAttr }} aria-label="{{ $label | safeHTMLAttr }}" rel="nofollow">
+    {{- end -}}
+{{- end -}}{{- /**/ -}}

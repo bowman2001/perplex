@@ -71,7 +71,7 @@ module:
   imports:
     - path: github.com/bowman2001/hugo-mod-meta
     - path: github.com/bowman2001/hugo-mod-replacements
-    - path: github.com/bowman2001/hugo-mod-open-in-vscode
+    - path: github.com/bowman2001/hugo-mod-open-in-vscode/v2
     - path: github.com/bowman2001/hugo-mod-katex
     - path: github.com/bowman2001/hugo-mod-mermaid
     - path: github.com/bowman2001/hugo-mod-simple-icons
