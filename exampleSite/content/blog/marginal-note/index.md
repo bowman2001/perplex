@@ -45,4 +45,4 @@ It is impossible to separate a cube into two cubes, or a fourth power into two f
 
 - - -
 
-**Like to use marginal notes? Have a look at the shortcode [{$mnote}](https://perplex.desider.at/doc/shortcode/mnote).**
+**Like to use marginal notes? Have a look at the shortcode [{$mnote}](https://perplex.desider.at/doc/enhancing/shortcode/mnote).**

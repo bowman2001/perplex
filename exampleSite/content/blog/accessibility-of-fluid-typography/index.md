@@ -18,16 +18,18 @@ Websites with a fluid-responsive design can be especially user-friendly and acce
 
 ![](fluid?ph=left&w=tiny)
 
-Fluid sizes solely depend on the width of the browser window or the view-port width of the mobile device. When a user changes the zoom factor of his browser or his device, they are not affected at all. That’s the problem with fixed fluid sizes. The solution is obvious: We need to change fluid sizes accordingly when we change the layout responsively.
+Fluid sizes solely depend on the width of the browser window or the view-port width of the mobile device. When a user changes the zoom factor of his browser or his device, they are not affected at all. That’s the problem with fixed fluid sizes. 
+
+The solution is obvious: We need to change fluid sizes accordingly when we change the layout responsively.
 
 Just give it a try with {~Ctrl} + {~+} and {~Ctrl} + {~-} or the zoom setting of your desktop browser. You may have to take a few zooming steps, before the layout changes.
 {.p-big}
 
-Fluid sizes and especially fluid fonts are not suitable for every screen width. For various reasons, we shouldn’t deviate too much from the default browser font size on mobile devices. Responsive fluid design is most beneficial on larger screens --- tablet sizes and up. Breakpoints depending on the ‘em’-unit allow fitting our fluid text precisely into the changing fluid variants of our responsive layout. On large desktop screens, we need to stop the fluidity again, because their height is usually more restricted than their width, and{/}the fonts shouldn’t get too large.
+Fluid sizes and especially fluid fonts are not suitable for every screen width. For various reasons, we shouldn’t deviate too much from the default browser font size on mobile devices.
+
+Fluid-responsive design is most beneficial on larger screens --- tablet sizes and up. Breakpoints depending on the ‘em’-unit allow fitting our fluid text precisely into the changing fluid variants of our responsive layout. On large desktop screens, we need to stop the fluidity again, because their height is usually more restricted than their width, and the fonts shouldn’t get too large.
 {.inline}
 
 {{< mnote >}}
 The CSS function {$clamp} has been introduced to allow a single view-port dependent size within min-max constraints. For a layout with different fluid states like this one two constraints aren’t enough and breakpoints are the only way to go.
 {{< /mnote >}}
-
-This theme lets browsers load images always in the most appropriate resolution and in case the zoom factor grows, they are reloaded in a higher resolution.

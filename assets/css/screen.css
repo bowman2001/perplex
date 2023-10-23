@@ -368,9 +368,6 @@ hr {
   }
 }
 
-/*
- * Google Material Icons
- */
 em, i {
   font-style: italic;
 }
@@ -647,7 +644,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 }
 
 .caption__id {
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -1372,7 +1369,7 @@ body {
   line-height: 18rem;
   padding-top: 0.180185rem;
   padding-bottom: calc(0.819815rem + var(--es));
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.03em;
   word-spacing: 0.09em;
@@ -1396,7 +1393,7 @@ body {
   line-height: 3rem;
   padding-top: 0.92893rem;
   padding-bottom: 1.07107rem;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.04em;
   word-spacing: 0.12em;
@@ -1427,11 +1424,6 @@ body {
   .title--dark--bluered {
     background: linear-gradient(90deg, #0084c2 0%, #00628f 25%, #9b1262 75%, #c9187f 100%);
   }
-}
-
-.title--serif h1, .title--serif h2 {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
 }
 
 .title--sans h1, .title--sans h2 {
@@ -1471,6 +1463,8 @@ body {
   line-height: 4rem;
   padding-top: 0.92893rem;
   margin-bottom: -0.92893rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
 }
 
 .title--first > hr, .title--second > hr {
@@ -1479,16 +1473,12 @@ body {
 }
 
 .title--first h1 {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   word-spacing: 0.09em;
 }
 
 .title--second h1 {
-  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
   letter-spacing: 0.015em;
   word-spacing: 0.045em;
 }
@@ -1498,7 +1488,7 @@ body {
   height: 1rem;
 }
 .title--third h1 {
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
 }
@@ -1762,7 +1752,7 @@ body {
   font-style: normal;
 }
 .md .p-first strong, .container .p-first strong {
-  font-weight: 500;
+  font-weight: 450;
   color: var(--c-text-medium);
 }
 @media screen and (min-width: 39em) {
@@ -2101,7 +2091,7 @@ body {
   font-weight: 600;
 }
 .md--sans strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 .md--sans .p-first {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
@@ -2849,107 +2839,85 @@ body {
   color: inherit;
 }
 
-.md--card h2 {
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  word-spacing: 0.15em;
-  text-transform: uppercase;
-}
-.md--card .p-meta {
-  font-weight: 450;
-}
-.md--card .p-meta + h2 {
-  margin-top: 0;
-}
-
-.md--card--half h2 {
-  font-size: 1.3585rem;
-  line-height: 1.5rem;
-  padding-top: 0.24124175rem;
-  padding-bottom: 0.25875825rem;
-}
-.md--card--half .p-meta {
-  font-size: 1.3585rem;
-  line-height: 1.5rem;
-  padding-top: 0.74124175rem;
-  padding-bottom: 0.25875825rem;
+/* .md--card {
+	h2 {
+		@include font.shapes(serif, bold );
+		@include font.spacing( 0.05 );
+		text-transform: uppercase;
+	}
+	.p-meta {
+		@include font.weight(sans-cond, text);
+	}
+	.p-meta + h2 {
+		margin-top: 0;
+	}
 }
 
-.md--card--1 h2, .md--card--3halfs h2, .md--card--2 h2 {
-  font-size: 1.5875rem;
-  line-height: 2rem;
-  padding-top: 0.40548125rem;
-  margin-bottom: -0.40548125rem;
-}
-@media screen and (min-width: 39em) {
-  .md--card--1 h2, .md--card--3halfs h2, .md--card--2 h2 {
-    font-size: 1.905rem;
-    line-height: 2rem;
-    padding-top: 0.2865775rem;
-    margin-bottom: -0.2865775rem;
-  }
+.md--card--half {
+	h2 {
+		@include font.base-w(serif, bold, 0.95, 1.5, 0, 0.5, 0, 0, false );
+	}
+	.p-meta {
+		@include font.base-w(sans-cond, light, 0.95, 1.5, 0.5, 0.5, 0, 0, false );
+	}
 }
 
-@media screen and (min-width: 48em) {
-  .md--card--2 h2 {
-    font-size: 1.905rem;
-    line-height: 2rem;
-    padding-top: 0.2865775rem;
-    padding-bottom: 0.7134225rem;
-  }
+.md--card--1 {
+	h2 {
+		@include font.base-x(serif, bold, math.div(5,6), 2, 0, 0, 0, 0, false );
+	}
+	@media screen and (min-width: bp.$col-2) {
+		h2 {
+			@include font.base-x(serif, bold, 1, 2, 0, 0, 0, 0, false );
+		}
+	}
 }
 
-.md--card--3halfs h2 {
-  font-size: 1.905rem;
-  line-height: 2rem;
-  padding-top: 0.2865775rem;
-  padding-bottom: 0.7134225rem;
-}
-.md--card--3halfs .p-meta {
-  font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 0.464465rem;
-  padding-bottom: 0.535535rem;
+.md--card--2 {
+	@extend .md--card--1;
+	@media screen and (min-width: bp.$col-3) {
+		h2 {
+			@include font.base-x(serif, bold, 1, 2, 0, 1, 0, 0, false );
+		}
+	}
 }
 
-.md--card--2 h2 {
-  font-size: 2.38125rem;
-  line-height: 3rem;
-  padding-top: 0.608221875rem;
-  padding-bottom: 0.391778125rem;
-}
-.md--card--2 .p-meta {
-  font-size: 1.95rem;
-  line-height: 1.5rem;
-  padding-top: 0.519725rem;
-  padding-bottom: 0.480275rem;
+.md--card--3halfs {
+	@extend .md--card--1;
+	h2 {
+		@include font.base-x(serif, bold, 1, 2, 0, 1, 0, 0, false );
+	}
+	.p-meta {
+		@include font.base-w(sans-cond, light, 1, 2, 0, 1, 0, 0, false );
+	}
 }
 
-.md--home h1 {
-  font-size: 3.81rem;
-  line-height: 4rem;
-  padding-top: calc(4.573155rem + -3 * var(--es));
-  padding-bottom: 2.426845rem;
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  word-spacing: 0.15em;
-  text-transform: uppercase;
-  color: black;
-}
-.md--home h2 {
-  font-size: 1.666875rem;
-  line-height: 2rem;
-  padding-top: 2.3757553125rem;
-  padding-bottom: 0.6242446875rem;
-  font-family: 'IBM Plex Serif', Georgia, Times, serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  word-spacing: 0.15em;
-  text-transform: uppercase;
+.md--card--2 {
+	h2 {
+		@include font.base-x(serif, bold, math.div(5,4), 3, 0, 1, 0, 0, false );
+	}
+	.p-meta {
+		@include font.base-x(sans-cond, light, 1, 1.5, 0.5, 0.5, 0, 0, false );
+	}
 }
 
+
+
+.md--home {
+	h1 {
+		@include font.base-x(serif, bold, 2, 4, 4, 3, -3, 0, false );
+		@include font.shapes(serif, bold);
+		@include font.spacing( 0.05 );
+		text-transform: uppercase;
+		color: black;
+	}
+	h2 {
+		@include font.base-x(serif, bold, math.div(7,8), 2, 2, 1, 0, 0, false );
+		@include font.shapes(serif, bold );
+		@include font.spacing( 0.05 );
+		text-transform: uppercase;
+	}
+} */
 .md--article h2 {
   font-size: 2.86rem;
   line-height: 3rem;
@@ -4666,7 +4634,7 @@ body {
   line-height: 3rem;
   padding-top: 0.42893rem;
   padding-bottom: 0.57107rem;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.005em;
   word-spacing: 0.015em;
@@ -5810,12 +5778,12 @@ li:empty:before {
 
 .pagefind-ui {
   margin: 2rem;
-  font-size: 1.9375rem;
+  font-size: 1.93rem;
   line-height: 3rem;
-  padding-top: 0.77440625rem;
-  padding-bottom: 0.22559375rem;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  padding-top: 0.777215rem;
+  padding-bottom: 0.222785rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
 }
 .pagefind-ui__form {
   position: relative;
@@ -5823,7 +5791,7 @@ li:empty:before {
 .pagefind-ui__search-input {
   padding-left: 2rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: inherit;
   border: 1px solid var(--c-shadow-3);
   border-radius: 0.5rem;
@@ -5840,7 +5808,7 @@ li:empty:before {
 }
 .pagefind-ui__message {
   padding: calc(1rem + 1 * var(--es)) 0rem;
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
 }
 .pagefind-ui__result {
@@ -5875,12 +5843,16 @@ li:empty:before {
   }
 }
 .pagefind-ui__result-title {
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+.pagefind-ui__result-excerpt {
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
 }
 .pagefind-ui__button {
-  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
   font-size: inherit;
   border: 1px solid var(--c-shadow-3);
   border-radius: 0.5rem;

@@ -1,0 +1,4 @@
+src: svg/medium.svg
+width: medium
+caption: The medium size is a good choice for figures with a landscape ratio.
+attr: gm

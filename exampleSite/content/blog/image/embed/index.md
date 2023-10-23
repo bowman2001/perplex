@@ -4,7 +4,7 @@ title: Embedded images
 description: Demo for enhanced inline images
 subtitle: false
 featured: micro
-date: 2023-03-23T10:10:51+01:00 
+date: 2023-03-23T10:10:51+01:00
 categories: [markdown]
 tags: [image, embedded]
 series: [images]
@@ -44,7 +44,7 @@ The documentation of the Markdown syntax is filed under [basic image](https://pe
 
 ## In the middle of a text block
 
-Images with the default small width need some additional spacing when they are placed in the middle of a text block:
+Small and tiny images need some additional spacing when they are placed in the middle of a text block:
 
 {{% pangram 4 %}} ![](small-left?pv=middle) {{% pangram 6 %}}
 {.placeholder data-pagefind-ignore="all"}
@@ -53,6 +53,18 @@ Images with the default small width need some additional spacing when they are p
 {.placeholder data-pagefind-ignore="all"}
 
 {{% pangram 4 %}} ![](small-right?pv=middle) {{% pangram 6 %}}
+{.placeholder data-pagefind-ignore="all"}
+
+{{% pangram 8 %}}
+{.placeholder data-pagefind-ignore="all"}
+
+{{% pangram 4 %}} ![](tiny-left?pv=middle) {{% pangram 6 %}}
+{.placeholder data-pagefind-ignore="all"}
+
+{{% pangram 8 %}}
+{.placeholder data-pagefind-ignore="all"}
+
+{{% pangram 4 %}} ![](tiny-right?pv=middle) {{% pangram 6 %}}
 {.placeholder data-pagefind-ignore="all"}
 
 {{% pangram 8 %}}
