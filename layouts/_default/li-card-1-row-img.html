@@ -1,18 +1,19 @@
 <div class="card__flex card__flex--half">
-    {{ partial "img/featured-card-half.html" . }}
+    {{- partial "img/featured-card-half.html" . }}
   <div class="card__content">
     <div>
     <div class="card__header">
       <div class="meta meta--card meta--card--half">
-          {{ partial "nav/card/meta/firstsection.html" . }}
+          {{- partial "nav/card/meta/firstsection.html" . }}
       </div>
-        {{ partial "nav/card/title/colhalf.html" . }}
+        {{- partial "nav/card/title/colhalf.html" . }}
     </div>
     {{- with ( partial "description.html" . ) -}}
     <a class="md md--sans md--card md--card--half" href="{{ $.RelPermalink }}">
-        {{ . }}
+        {{- . }}
     </a>
-    {{- end -}}
+    {{- end }}
     </div>
   </div>
 </div>
+{{- /**/ -}}

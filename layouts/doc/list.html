@@ -3,49 +3,49 @@
   <div id="l-content">
     <div data-pagefind-body>
       <header class="page-header margin-doc">
-        {{ $level := "" }}
-        {{ if eq .CurrentSection .FirstSection }}
-        {{ $level = "first" }}
-        {{ else if eq .Parent.CurrentSection .FirstSection }}
-        {{ $level = "second" }}
-        {{ else }}
-        {{ $level = "third" }}
-        {{ end }}
-        {{ partial "title/titlehead.html" . }}
+        {{- $level := "" }}
+        {{- if eq .CurrentSection .FirstSection }}
+        {{- $level = "first" }}
+        {{- else if eq .Parent.CurrentSection .FirstSection }}
+        {{- $level = "second" }}
+        {{- else }}
+        {{- $level = "third" }}
+        {{- end }}
+        {{- partial "title/titlehead.html" . }}
         <div class="title title--sans title--{{- $level -}}">
           <hr>
-          {{ partial "title/title.html" . }}
-          {{ partial "title/subtitle.html" . }}
+          {{- partial "title/title.html" . }}
+          {{- partial "title/subtitle.html" . }}
         </div>
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
-      {{ with .Content }}
+      {{- with .Content }}
       <div class="md md--sans md--h-sans md--list md--margin-doc">
         {{- partial "replacements.html" . -}}
       </div>
-      {{ end }}
+      {{- end }}
     </div>
     <nav class="section-nav margin-doc">
       <ul>
         {{- range .Pages -}}
-        <li class="section-nav__li">{{- .Render "li" -}}</li>
+        <li class="section-nav__li">{{ .Render "li" }}</li>
         {{- end -}}
       </ul>
     </nav>
-    {{ with .Page.GetPage "after" }}
+    {{- with .Page.GetPage "after" }}
     <section class="md md--sans md--h-sans md--margin-doc">
       {{- partial "replacements.html" .Content }}
     </section>
-    {{ end }}
+    {{- end }}
   </div>
   <footer class="page-footer margin-doc">
     <div class="meta meta--foot">
-      {{ partial "nav/breadcrumbs/footer.html" . }}
-      {{ partial "date/updated.html" . }}
+      {{- partial "nav/breadcrumbs/footer.html" . }}
+      {{- partial "date/updated.html" . }}
     </div>
     <hr>
-    {{ partial "doc/nav/pages.html" . }}
+    {{- partial "doc/nav/pages.html" . }}
   </footer>
 </div>
-{{- end -}}
-{{- define "sidebar" -}}{{- partial "doc/nav/sidebar.html" . -}}{{- end -}}
+{{- end }}
+{{- define "sidebar" }}{{ partial "doc/nav/sidebar.html" . }}{{ end -}}

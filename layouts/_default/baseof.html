@@ -3,20 +3,20 @@
 {{- partial "head.html" . -}}
 <body>
 <header class="l-masthead l-nav" id="l-masthead">
-    {{- partial "nav/masthead.html" . -}}
+    {{- partial "nav/masthead.html" . }}
 </header>
 <div class="l-page">
   <main id="l-main" class="l-tnp">
-      {{- block "main" . -}}{{- end -}}
-      {{- block "footer" . -}}
+      {{- block "main" . -}}{{ end }}
+      {{- block "footer" . }}
     <footer id="l-footer" class="l-box margin-full-half">
-        {{- partial "footer/site.html" . -}}
+        {{- partial "footer/site.html" . }}
     </footer>
-      {{- end -}}
+      {{- end }}
   </main>
   <div id="l-overlay"></div>
 </div>
-{{- partial "foot.html" . -}}
-{{- partial "hugo-mod-wrap/check" . -}}
+{{- partial "foot.html" . }}
+{{- partial "hugo-mod-wrap/check" . }}
 </body>
 </html>

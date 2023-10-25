@@ -1,5 +1,5 @@
 <div class="card__flex card__flex--1">
-    {{ partial "img/featured-card-1.html" .  }}
+    {{- partial "img/featured-card-1.html" .  }}
     <div class="card__content">
         <div>
             <nav class="card__header">
@@ -10,14 +10,14 @@
                 {{- with page.Scratch.Get "level" -}}
                     {{- $level = . -}}
                 {{- end -}}
-                {{ partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
+                {{- partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
             </nav>
             <div class="md md--sans md--card md--card--1">
                 {{ partial "summary.html" . }}
             </div>
         </div>
         <div class="card__footer">
-            {{ partial "nav/card/footer" . }}
+            {{- partial "nav/card/footer" . }}
         </div>
     </div>
 </div>

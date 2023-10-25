@@ -4,16 +4,16 @@
     <header class="page-header page-header--left">
       <div class="title title--serif">
         <hr>
-        {{ partial "title/title.html" . }}
-        {{ partial "title/subtitle.html" . }}
+        {{- partial "title/title.html" . }}
+        {{- partial "title/subtitle.html" . }}
       </div>
        <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
     </header>
-    {{ with .Content }}
+    {{- with .Content }}
     <div class="md md--sans md--h-sans md--margin-full">
       {{- partial "replacements.html" . -}}
     </div>
-    {{ end }}
+    {{- end }}
   </article>
   <footer class="page-footer">
   </footer>

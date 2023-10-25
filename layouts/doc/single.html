@@ -1,36 +1,36 @@
-{{ define "main" }}
+{{- define "main" }}
     <div id="l-content-box" class="l-box l-box--doc">
         <div id="l-content" data-pagefind-body>
             <header class="page-header">
                 <div class="meta meta--head meta--left-doc" data-pagefind-ignore>
-                    {{ partial "nav/breadcrumbs/header.html" . }}
-                    {{ partial "date/published_date.html" . }}
+                    {{- partial "nav/breadcrumbs/header.html" . }}
+                    {{- partial "date/published_date.html" . }}
                 </div>
                 <div class="margin-doc"> {{ partial "title/titlehead.html" . }}</div>
                 <div class="title title--sans margin-doc">
-                    {{ partial "title/title.html" . }}
-                    {{ partial "title/subtitle.html" . }}
+                    {{- partial "title/title.html" . }}
+                    {{- partial "title/subtitle.html" . }}
                 </div>
                 <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
             </header>
-            {{ with .Content }}
+            {{- with .Content }}
                 <div class="md md--sans md--h-sans md--margin-doc">
-                    {{ partial "replacements.html" . }}
+                    {{- partial "replacements.html" . }}
                 </div>
-            {{ end }}
+            {{- end }}
         </div>
         <div class="related margin-doc">
-            {{ partial "nav/related/small-cards.html" . }}
+            {{- partial "nav/related/small-cards.html" . }}
         </div>
         <footer class="page-footer margin-doc">
             <div class="meta meta--foot">
-                {{ partial "nav/taxo_and_breadcrumbs.html" . }}
-                {{ partial "date/updated.html" . }}
+                {{- partial "nav/taxo_and_breadcrumbs.html" . }}
+                {{- partial "date/updated.html" . }}
             </div>
             <hr>
-            {{ partial "doc/nav/pages.html" . }}
+            {{- partial "doc/nav/pages.html" . }}
         </footer>
     </div>
-{{ end }}
+{{- end }}
 
-{{ define "sidebar" }}{{ partial "doc/nav/sidebar.html" . }}{{ end }}
+{{- define "sidebar" }}{{ partial "doc/nav/sidebar.html" . }}{{ end }}

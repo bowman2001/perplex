@@ -1,0 +1,9 @@
+srcset:
+  sizeStep: 100
+  maxDensityFactor: 2
+  quality: 90
+  qualityReductionFactor: 40
+  lqip:
+    divider: 3
+    blur: 3
+    max: 2048

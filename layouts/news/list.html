@@ -3,33 +3,33 @@
         <div>
             <header class="page-header">
                 <div class="title title--sans title--dark title--dark--bluegreen padding-full">
-                    {{ partial "file/vscode_start.html" . }}
-                    {{ partial "title/title.html" . }}
-                    {{ partial "file/vscode_end.html" . }}
+                    {{- partial "file/vscode_start.html" . }}
+                    {{- partial "title/title.html" . }}
+                    {{- partial "file/vscode_end.html" . }}
                 </div>
             </header>
-            {{ with .Content }}
+            {{- with .Content }}
                 <div class="md md--sans md--h-sans md--list md--margin-full">
                     {{- partial "replacements.html" . -}}
                 </div>
-            {{ end }}
+            {{- end }}
             <ul class="page-list">
-                {{ $n := 5 }}
-                {{ with site.Params.paginateNr }}{{ $n = . }}{{ end }}
-                {{ range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
+                {{- $n := 5 }}
+                {{- with site.Params.paginateNr }}{{ $n = . }}{{ end }}
+                {{- range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
                     <li class="li-box">
-                        {{- .Render "li-full" -}}
+                        {{- .Render "li-full" }}
                         <hr class="post-separator">
                     </li>
-                {{- end -}}
+                {{- end }}
             </ul>
         </div>
         <footer class="page-footer margin-full">
             <div class="meta meta--foot">
-                {{ partial "nav/breadcrumbs/footer.html" . }}
+                {{- partial "nav/breadcrumbs/footer.html" . }}
             </div>
             <hr>
-            {{ partial "nav/paginator.html" . }}
+            {{- partial "nav/paginator.html" . }}
         </footer>
     </div>
 {{- end -}}

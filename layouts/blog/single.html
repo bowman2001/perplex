@@ -3,13 +3,13 @@
     <article id="l-content" data-pagefind-body>
       <header class="page-header">
         <div class="meta meta--head meta--left" data-pagefind-ignore>
-            {{ partial "nav/taxonomies/page/lists.html" . }}
-            {{ partial "date/published_datetime.html" . }}
+            {{- partial "nav/taxonomies/page/lists.html" . }}
+            {{- partial "date/published_datetime.html" . }}
         </div>
-        {{ partial "title/titlehead-margin.html" . }}
+        {{- partial "title/titlehead-margin.html" . }}
         <div class="title title--sans margin-full">
-            {{ partial "title/title.html" . }}
-            {{ partial "title/subtitle.html" . }}
+            {{- partial "title/title.html" . }}
+            {{- partial "title/subtitle.html" . }}
         </div>
         <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
       </header>
@@ -17,16 +17,16 @@
           {{- partial "replacements.html" .Content -}}
       </div>
 		  <div class="margin-full">
-        {{ partial "nav/related/small-cards.html" . }}
+        {{- partial "nav/related/small-cards.html" . }}
       </div>
     </article>
     <footer class="page-footer margin-full">
       <div class="meta meta--foot">
-          {{ partial "nav/taxo_and_breadcrumbs.html" . }}
-          {{ partial "date/updated.html" . }}
+          {{- partial "nav/taxo_and_breadcrumbs.html" . }}
+          {{- partial "date/updated.html" . }}
       </div>
       <hr>
-        {{ partial "blog/nav/pages.html" . }}
+        {{- partial "blog/nav/pages.html" . }}
     </footer>
   </div>
 {{- end -}}
