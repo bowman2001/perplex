@@ -77,18 +77,18 @@ hr {
   --c-text-low: #43565f;
   --c-text-extralow: #5b717b;
   --c-text-contrast: #fbfcfc;
-  --c-text-link: #0074aa;
+  --c-text-link: #006da0;
   --c-text-link-hover: #030505;
-  --c-text-link-hover-bg: rgba(68, 196, 255, 0.1);
-  --c-text-link-ext: #00826a;
+  --c-text-link-hover-bg: rgba(58, 193, 255, 0.1);
+  --c-text-link-ext: #007d66;
   --c-text-link-ext-hover: #11181c;
   --c-text-link-ext-hover-bg: rgba(113, 208, 191, 0.2);
-  --c-nav-link: #0074aa;
+  --c-nav-link: #006da0;
   --c-nav-link-hover: #c70074;
   --c-nav-link-ext-hover: #007a64;
   --c-nav-link-hover-bg: #f1eef0;
   --c-icon: #5e7884;
-  --c-icon-link: #007bb4;
+  --c-icon-link: #0074aa;
   --c-icon-link-hover: #e00083;
   --c-icon-link-ext-hover: #00a687;
   --c-code: #1a282f;
@@ -247,18 +247,18 @@ hr {
     --c-text-low: #a0abb0;
     --c-text-extralow: #7f8a90;
     --c-text-contrast: black;
-    --c-text-link: #2392c5;
+    --c-text-link: #259ad0;
     --c-text-link-hover: #eaeef0;
     --c-text-link-hover-bg: #2c2c2c;
     --c-text-link-ext: #339986;
     --c-text-link-ext-hover: #eaeef0;
     --c-text-link-ext-hover-bg: #2c2c2c;
-    --c-nav-link: #2392c5;
+    --c-nav-link: #259ad0;
     --c-nav-link-hover: #ff47b3;
     --c-nav-link-ext-hover: #00ab8c;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-icon: #86898b;
-    --c-icon-link: #2392c5;
+    --c-icon-link: #259ad0;
     --c-icon-link-hover: #ff47b3;
     --c-icon-link-ext-hover: #00ab8c;
     --c-code: #d1d9dd;
@@ -1006,13 +1006,12 @@ body {
 }
 
 #l-fill {
-  display: none;
-  background-color: var(--c-frame);
+  background-color: transparent;
 }
 @media screen and (min-width: 79em) {
   #l-fill {
     grid-area: fill;
-    display: block;
+    background-color: var(--c-frame);
   }
 }
 
@@ -3612,9 +3611,19 @@ body {
   --box-shadow-color: var(--c-success-bg);
 }
 .md .layout-box {
-  border-radius: 0.5rem;
-  background-color: var(--c-bg-1);
-  border: 1px solid var(--c-shadow-1);
+  position: relative;
+  border-radius: 1rem;
+  background-color: var(--c-bg-2);
+}
+.md .layout-box:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: inset 0 0 2rem var(--c-page);
 }
 
 @media screen and (min-width: 120em) {
