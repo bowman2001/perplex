@@ -6,6 +6,7 @@ id:
   diagram:
     caption: "Diag %d:"
     anchor: "diag-%d"
+  sections: [doc, article]
 missing: mod-img/missing.svg
 errorLevel: warning
 unsplash: false

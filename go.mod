@@ -3,7 +3,7 @@ module github.com/bowman2001/perplex
 go 1.21.3
 
 require (
-	github.com/bowman2001/hugo-mod-image v0.2.0 // indirect
+	github.com/bowman2001/hugo-mod-image v0.3.0 // indirect
 	github.com/bowman2001/hugo-mod-katex v0.2.3 // indirect
 	github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018135441-af08cbeb0896 // indirect
 	github.com/bowman2001/hugo-mod-mermaid v0.4.2 // indirect

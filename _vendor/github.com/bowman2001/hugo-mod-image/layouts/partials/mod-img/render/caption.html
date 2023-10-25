@@ -2,7 +2,7 @@
 
 {{- with .text -}}
 <span class="caption__text">
-    {{- with $.id }}<span class="caption__id">{{ . }}</span> {{ end }}{{ . | site.Home.RenderString -}}
+    {{- with $.id }}<span class="caption__id">{{ . }}</span> {{ end }}{{- . | site.Home.RenderString -}}
 </span>
 {{- end }}
 

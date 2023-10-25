@@ -8,6 +8,8 @@ github.com/bowman2001/hugo-mod-image v0.1.0 h1:sxt2CfScS1dY5qZZFmkOBhRA6kx17AFfS
 github.com/bowman2001/hugo-mod-image v0.1.0/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
 github.com/bowman2001/hugo-mod-image v0.2.0 h1:+LZoEenwdB/PGXw2gdLAvnHXeEYPOpBVqHLdA7UhlXI=
 github.com/bowman2001/hugo-mod-image v0.2.0/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
+github.com/bowman2001/hugo-mod-image v0.3.0 h1:8KUXr9SG1sA42c+xVMysuuq/GvIGtfvRBazKGvsPtIs=
+github.com/bowman2001/hugo-mod-image v0.3.0/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
 github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXeFkZaCX6eMs=
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20230808224723-c30f1d4cfdfa h1:jcttE9Z7tz2kzdSN/m8Q4CI4ch0IZS25AHuDSY9Lo7E=
