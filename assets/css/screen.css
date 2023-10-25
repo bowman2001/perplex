@@ -1005,9 +1005,6 @@ body {
   }
 }
 
-#l-fill {
-  background-color: transparent;
-}
 @media screen and (min-width: 79em) {
   #l-fill {
     grid-area: fill;
@@ -1705,6 +1702,7 @@ body {
 }
 .md strong, .container strong {
   font-size: 99%;
+  color: var(--c-text-semilow);
 }
 .md .blockquote-hero, .container .blockquote-hero {
   color: var(--c-text-semihigh);
@@ -3154,7 +3152,7 @@ body {
 .note__content > p strong {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  color: var(--c-text-medium);
+  color: var(--c-text-low);
 }
 .note__content var {
   color: var(--c-text-medium);
@@ -3618,12 +3616,14 @@ body {
 .md .layout-box:after {
   display: block;
   position: absolute;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   content: "";
-  box-shadow: inset 0 0 2rem var(--c-page);
+  padding: 0 1rem;
+  box-shadow: inset 0 0 0.75rem 0.25rem var(--c-page);
 }
 
 @media screen and (min-width: 120em) {

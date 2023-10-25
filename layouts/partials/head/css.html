@@ -2,6 +2,6 @@
 {{- $css := resources.Get "css/screen.post.css" }}
 {{- $screen := slice $ff $css | resources.Concat "css/screen.css" }}
 {{- if not (eq .Site.Params.postcss false) }}{{- $screen = resources.PostCSS $screen }}{{ end }}
-{{- $screen = $screen | minify | fingerprint }}
+{{- $screen = $screen | minify | fingerprint | resources.PostProcess }}
 <link rel="preload" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" as="style">
 <link rel="stylesheet" href="{{- $screen.RelPermalink -}}" integrity="{{ $screen.Data.Integrity }}" media="screen">
