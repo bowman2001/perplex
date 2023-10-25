@@ -12,7 +12,7 @@ Demo for enhanced images and their layout possibilities.
 {.p-first}
 <!--more-->
 
-For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/image). You find the syntax for enhanced layout options in [enhancing images](/doc/enhancing/image/syntax).
+For the Markdown syntax see [basic image](https://perplex.desider.at/doc/basic/image). You find the syntax for enhanced layout options in [enhancing images](https://perplex.desider.at/doc/enhancing/image/syntax).
 
 ## Large
 

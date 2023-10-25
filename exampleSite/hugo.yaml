@@ -33,8 +33,8 @@ params:
   favicon:
     svg: favicon/favicon.svg
     png: favicon/favicon.png
-  postcss: true
+  postcss: false
 
 build:
   buildStats:
-    enable: true
+    enable: false

@@ -65,7 +65,7 @@ Recent copies of all module dependencies are available in the {$_vendor} folder 
 
 ## Support & development
 
-Should you miss some information in the docs, find a bug in the templates, or have a suggestion, please file an official issue in the repositories (&rightarrow; [Introduction](doc/intro/perplex#in-case-of-problems)).
+Should you miss some information in the docs, find a bug in the templates, or have a suggestion, please file an official issue in the repositories (&rightarrow; [Introduction](https://perplex.desider.at/doc/intro/perplex#in-case-of-problems)).
 
 There will be no public support channel in the foreseeable future because improving this theme takes all my spare time. Support and collaborative development will only work bidirectional. I will not answer private questions.
 

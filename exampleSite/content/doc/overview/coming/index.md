@@ -21,13 +21,13 @@ Features, which I consider essential, and the ones which would be nice to have.
 ## Essential
 
 Documentation
-: The documentation needs to get finished and in a few cases even updated :grinning_face_with_sweat:.
+: The documentation should be up to date :grinning_face_with_sweat:.
 {.dl-loose}
 
 ## Nice to have
 
 Start page
-: A distinct starting page always depends on the project. But the theme should include a simple template that can be filled with Markdown content.
+: A distinct starting page always depends on the project. But the theme should include a template that can be filled easily with Markdown and images.
 
 Article pages
 : For long texts a big title, a hero image, and a more centered layout would be more appropriate.
@@ -44,7 +44,7 @@ Better SEO
 : The meta tags are fine, Lighthouse gives the theme a 100. But there is still some room for improvement. The theme includes the module [{$hugo-mod-meta}](https://github.com/bowman2001/hugo-mod-meta) for this task.
 
 Archive pages
-: Archive pages are not essential for a documentation site. But depending on the content of the content of the other sections, they might come in handy.
+: Archive pages are not essential for a documentation site. But depending on the content of the other sections, they might come in handy.
 
 Icons
 : Allow to use other icon sets than Material Symbols in the menus.

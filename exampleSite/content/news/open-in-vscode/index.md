@@ -3,7 +3,7 @@ authors: [Georg Makowski]
 title: Open files in VSCode{/}from Hugo’s server preview
 linktitle: Open VSCode from server mode
 date: 2023-03-31T00:44:36+02:00
-categories: [Tip, Module]
+categories: [module]
 tags: [vscode, hugo]
 ---
 

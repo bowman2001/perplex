@@ -21,7 +21,7 @@ resources:
 - src: erda-estremera-eMX1aIAp9Nw-unsplash.jpg
   name: bigsplash
   params: 
-    caption: This caption and the attribution below are not available for directly included images. We need to register an image as a resource in the front-matter and provide additional information.
+    caption: This caption and the attribution are not available for directly included images. We need to provide the additional information in associated resource parameters (&rightarrow; [Resources](https://perplex.desider.at/doc/intro/workflow/resources)).
     alt: Big splash of water
 - src: mulyadi-JJMoAiVl9jA-unsplash.jpg
   name: smallsplash

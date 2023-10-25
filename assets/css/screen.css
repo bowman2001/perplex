@@ -646,6 +646,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 .caption__id {
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
+  color: var(--c-text-low);
 }
 
 .ls-blur-up-img,
@@ -3182,7 +3183,7 @@ body {
   font-weight: 400;
   top: 0.1em;
   left: -1rem;
-  font-size: 0.8em;
+  font-size: 80%;
   line-height: 1;
   color: var(--c-text-semihigh);
 }
@@ -3826,12 +3827,12 @@ body {
 .post-separator {
   height: 1rem;
   box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.1);
-  margin: 2.5rem 1rem 0 1rem;
+  margin: 3.5rem 1rem 0 1rem;
   background-image: linear-gradient(90deg, hsl(199, 100%, 38%) 0%, hsl(169, 100%, 33%) 75%, hsl(169, 100%, 33%) 100%);
 }
 @media screen and (min-width: 39em) {
   .post-separator {
-    margin: 2.5rem 0 0 0;
+    margin: 3.5rem 0 0 0;
   }
 }
 
@@ -4636,8 +4637,8 @@ body {
   padding-bottom: 0.57107rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.005em;
-  word-spacing: 0.015em;
+  letter-spacing: 0.02em;
+  word-spacing: 0.06em;
 }
 
 #author__description {
@@ -5793,8 +5794,8 @@ li:empty:before {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
   font-size: inherit;
+  background-color: var(--c-bg-3);
   border: 1px solid var(--c-shadow-3);
-  border-radius: 0.5rem;
   height: 5rem;
   width: 100%;
 }
@@ -5832,7 +5833,7 @@ li:empty:before {
   display: block;
   width: 7.25rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 1px var(--c-shadow-1);
+  box-shadow: 0 0 0 1px var(--c-shadow-2);
   height: 4.833575rem;
   object-fit: cover;
 }
