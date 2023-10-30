@@ -1,5 +1,5 @@
 public
-resources
+resources/_gen
 node_modules
 yarn.lock
 .hugo_build.lock

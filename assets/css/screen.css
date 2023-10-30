@@ -2268,6 +2268,9 @@ body {
 .md--frame p, .md--frame li, .md--frame dd {
   text-align: left;
 }
+.md--frame .fig {
+  float: none;
+}
 .md--frame .link--text {
   color: var(--c-frame-text-link);
   text-decoration-color: var(--c-frame-text-link);
@@ -5684,13 +5687,8 @@ li:empty:before {
   display: block;
   padding: 0.5rem 0 0.5rem 1.5rem;
   border-left: 0.5rem solid #555;
-  transition: color 250ms ease-in-out, text-decoration-color 250ms, border-color 250ms ease-in-out;
-}
-.toc__list a .icon-font, .toc__list a path {
-  transition: color 250ms ease-in-out, fill 250ms ease-in-out;
 }
 .toc__list a .text {
-  transition: background-color 250ms ease-in-out;
   background-color: transparent;
 }
 .toc__list a:hover, .toc__list a:focus {
