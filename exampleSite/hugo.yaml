@@ -4,6 +4,8 @@ title: Perplex Example
 refLinksErrorLevel: WARNING
 timeout: 600s
 
+enableEmoji: true
+
 markup:
   goldmark:
     parser:
