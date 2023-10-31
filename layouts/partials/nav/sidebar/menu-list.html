@@ -55,18 +55,18 @@
 
 {{- define "partials/sidebar/item" -}}
       <a href="{{ .menuEntry.URL }}" class="link link--nav sidebar__link">
-        {{- partial "sidebar/item-inner" (dict "menuEntry" .menuEntry "size" .size) }}
+        {{- partialCached "sidebar/item-inner" . . }}
       </a>
 {{- end -}}
 
 {{- define "partials/sidebar/item-active" }}
   <span class="link link--nav sidebar__link is-active" aria-current="page">
-    {{- partial "sidebar/item-inner" (dict "menuEntry" .menuEntry "size" .size) }}
+    {{- partialCached "sidebar/item-inner" . . }}
   </span>
 {{- end }}
 
 {{- define "partials/sidebar/item-inner" }}
-  {{- partial "nav/menu-pre-icon.html" (dict "menuEntry" .menuEntry "size" .size) }}
+  {{- partialCached "nav/menu-pre-icon.html" . . }}
   <span class="sidebar__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
 {{- end }}
 
@@ -77,7 +77,7 @@
           <span class="icon icon--material"></span>
       </label>
     {{ else }}
-        {{ warnf "Missing menu identifier for menu entry %q" .KeyName }}
+        {{ errorf "Unable to create sidebar menu. Missing menu identifier for menu entry %q" .KeyName }}
     {{ end }}
 {{- end -}}
 
