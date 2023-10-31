@@ -5,21 +5,33 @@
     {{ range $menu }}
         {{ if .HasChildren }}
           <li class="sidebar__item sidebar__item--1 nav__item nav__item--1 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
-            {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "normal" -}}
-            {{ partial "sidebar/item" $ctx }}
+            {{- $args := dict "menuEntry" . "size" "normal" }}
+            {{- if $page.IsMenuCurrent $menuName . }}
+                {{- partialCached "sidebar/item-active" $args . }}
+            {{- else }}
+                {{- partialCached "sidebar/item" $args . }}
+            {{- end }}
             {{ partialCached "sidebar/expand" . . }}
             <ul class="sidebar__list sidebar__list--2 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) -}}items-have-no-children{{ end }}">
                 {{ range .Children }}
                   <li class="sidebar__item sidebar__item--2 nav__item nav__item--2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
-                      {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "small" -}}
-                      {{ partial "sidebar/item" $ctx  }}
+                      {{- $args := dict "menuEntry" . "size" "small" }}
+                      {{- if $page.IsMenuCurrent $menuName . }}
+                          {{- partialCached "sidebar/item-active" $args . }}
+                      {{- else }}
+                          {{- partialCached "sidebar/item" $args . }}
+                      {{- end }}
                       {{ if .HasChildren }}
                           {{ partialCached "sidebar/expand" . . }}
                           <ul class="sidebar__list sidebar__list--3 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) }}items-have-no-children{{ end }}">
                               {{ range .Children }}
                                 <li class="sidebar__item sidebar__item--3 nav__item nav__item--3">
-                                  {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page "size" "tiny" -}}
-                                  {{ partial "sidebar/item" $ctx }}
+                                    {{- $args := dict "menuEntry" . "size" "tiny" }}
+                                    {{- if $page.IsMenuCurrent $menuName . }}
+                                        {{- partialCached "sidebar/item-active" $args . }}
+                                    {{- else }}
+                                        {{- partialCached "sidebar/item" $args . }}
+                                    {{- end }}
                                 </li>
                               {{ end }}
                           </ul>
@@ -30,28 +42,33 @@
           </li>
         {{ else }}
           <li class="sidebar__item sidebar__item--1 nav__item nav__item--1">
-            {{- $ctx := dict "menuEntry" . "menuName" $menuName "page" $page -}}
-            {{ partial "sidebar/item" $ctx }}
+            {{- $args := dict "menuEntry" . "size" "normal" }}
+            {{- if $page.IsMenuCurrent $menuName . }}
+                {{- partialCached "sidebar/item-active" $args . }}
+            {{- else }}
+                {{- partialCached "sidebar/item" $args . }}
+            {{- end }}
           </li>
         {{ end }}
     {{ end }}
 </ul>
 
 {{- define "partials/sidebar/item" -}}
-    {{- $active := .page.IsMenuCurrent .menuName .menuEntry -}}
-    {{- if not $active -}}
       <a href="{{ .menuEntry.URL }}" class="link link--nav sidebar__link">
-    {{- else -}}
-      <span class="link link--nav sidebar__link is-active" aria-current="page">
-    {{- end -}}
-        {{ partial "nav/menu-pre-icon.html" (dict "menuEntry" .menuEntry "size" .size) }}
-        <span class="sidebar__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
-    {{- if $active -}}
-      </span>
-    {{- else -}}
+        {{- partial "sidebar/item-inner" (dict "menuEntry" .menuEntry "size" .size) }}
       </a>
-    {{- end -}}
 {{- end -}}
+
+{{- define "partials/sidebar/item-active" }}
+  <span class="link link--nav sidebar__link is-active" aria-current="page">
+    {{- partial "sidebar/item-inner" (dict "menuEntry" .menuEntry "size" .size) }}
+  </span>
+{{- end }}
+
+{{- define "partials/sidebar/item-inner" }}
+  {{- partial "nav/menu-pre-icon.html" (dict "menuEntry" .menuEntry "size" .size) }}
+  <span class="sidebar__text">{{ .menuEntry.Name | site.Home.RenderString }}</span>
+{{- end }}
 
 {{- define "partials/sidebar/expand" -}}
     {{ with .Identifier }}
