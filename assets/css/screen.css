@@ -5220,7 +5220,7 @@ body {
     transition: transform 250ms ease-in-out;
   }
   .card__hover:hover, .card__hover:focus, .card__hover:active {
-    transform: translateY(-1.5rem);
+    transform: scale(1.075);
   }
 }
 
