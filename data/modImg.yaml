@@ -79,9 +79,9 @@ default:
       posh: left
 
 srcset:
-  sizeStep: 50
+  sizeStep: 25
   maxDensityFactor: 2
-  quality: 90
+  quality: 80
   qualityReductionFactor: 40
   lqip:
     quality: 25

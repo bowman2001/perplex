@@ -2,7 +2,7 @@
     {{- with .Pages }}
       <div class="l-footer__columns">
           {{- range . }}
-            <div class="md md--small md--footer md--frame footer__col">
+            <div class="md md--footer md--frame footer__col">
               <h2>{{- partial "file/vscode_start.html" . -}}{{ .Title | site.Home.RenderString }}{{- partial "file/vscode_end.html" . -}}</h2>
                 {{ partial "replacements.html" .Content }}
             </div>

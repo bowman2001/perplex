@@ -2199,6 +2199,29 @@ body {
   text-align: left;
 }
 
+.md--footer > p, .md--footer > ul, .md--footer > ol, .md--footer > dl {
+  font-size: 1.93rem;
+  line-height: 3rem;
+  padding-top: 0.777215rem;
+  padding-bottom: 0.222785rem;
+  font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 450;
+}
+.md--footer li {
+  padding-left: 3rem;
+}
+@media screen and (min-width: 48em) {
+  .md--footer > p, .md--footer > ul, .md--footer > ol, .md--footer > dl {
+    font-size: 1.6083333333rem;
+    line-height: 2.5rem;
+    padding-top: 0.6476791667rem;
+    padding-bottom: 0.3523208333rem;
+  }
+  .md--footer li {
+    padding-left: 2.5rem;
+  }
+}
+
 .md--small > p, .md--small > ul, .md--small > ol, .md--small > dl {
   font-size: 1.6083333333rem;
   line-height: 2.5rem;
@@ -2826,15 +2849,23 @@ body {
 }
 
 .md--footer h2 {
-  font-size: 1.43rem;
-  line-height: 2rem;
-  padding-top: 0.464465rem;
-  padding-bottom: 0.035535rem;
+  font-size: 1.7145rem;
+  line-height: 2.5rem;
+  padding-top: 0.60791975rem;
+  margin-bottom: -0.10791975rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 0.05em;
   word-spacing: 0.15em;
   text-transform: uppercase;
+}
+@media screen and (min-width: 48em) {
+  .md--footer h2 {
+    font-size: 1.43rem;
+    line-height: 2rem;
+    padding-top: 0.464465rem;
+    padding-bottom: 0.035535rem;
+  }
 }
 .md--footer a:hover, .md--footer a:focus {
   color: inherit;
@@ -3452,6 +3483,15 @@ body {
   clear: both;
 }
 
+.md--footer li {
+  padding-left: 3rem;
+}
+@media screen and (min-width: 48em) {
+  .md--footer li {
+    padding-left: 2.5rem;
+  }
+}
+
 .md--small li {
   padding-left: 2.5rem;
 }
@@ -3464,17 +3504,6 @@ body {
   padding-left: 3rem !important;
 }
 
-/* @supports (-moz-appearance:none) {
-    .md {
-        ul, ol {
-            padding-left: 2rem;
-
-            > li {
-                padding-left: 1rem;
-            }
-        }
-    }
-} */
 .md .icon {
   fill: var(--c-text-low);
 }
