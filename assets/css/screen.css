@@ -1691,6 +1691,9 @@ body {
   font-size: 99%;
   color: var(--c-text-semilow);
 }
+.md strong a, .md a strong, .container strong a, .container a strong {
+  color: inherit;
+}
 .md .blockquote-hero, .container .blockquote-hero {
   color: var(--c-text-semihigh);
   font-style: italic;
@@ -2491,6 +2494,9 @@ body {
     clear: left;
     width: 16.5rem;
     padding-bottom: 0;
+  }
+  .md .dl-loose > dt:after, .md .dl-icon > dt:after, .md .dl-loose2 > dt:after, .md .dl-loose3 > dt:after {
+    content: "‍";
   }
   .md .dl-loose > dd, .md .dl-icon > dd, .md .dl-loose2 > dd, .md .dl-loose3 > dd {
     margin-left: 0;
