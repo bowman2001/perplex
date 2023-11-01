@@ -99,8 +99,8 @@ hr {
   --c-danger-box-bg: #f2d7d7;
   --c-warn: #11181c;
   --c-warn-bg: hsl(60, 85%, 59%);
-  --c-warn-box: #d0d05d;
-  --c-warn-box-bg: #ededc0;
+  --c-warn-box: #cece2c;
+  --c-warn-box-bg: #eeeeaf;
   --c-info: #fff;
   --c-info-bg: hsl(230, 70%, 48.5%);
   --c-info-box-bg: #eaebf4;
@@ -916,11 +916,9 @@ body {
   width: 100%;
   background-color: transparent;
   cursor: unset;
-  transition: background-color 250ms;
 }
 #l-overlay.is-visible {
   display: block;
-  transition: background-color 250ms;
   background-color: rgba(0, 0, 0, 0.7333333333);
   cursor: pointer;
 }
@@ -931,7 +929,6 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  transition: background-color 250ms;
 }
 @media screen and (min-width: 79em) {
   #l-main {
@@ -1671,7 +1668,6 @@ body {
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
 }
 .md > p, .md > ul, .md > ol, .md > blockquote, .md > dl, .container > p, .container > ul, .container > ol, .container > blockquote, .container > dl {
-  transition: background-color 0.5s ease-out, box-shadow 0.5s ease-out;
   background-color: transparent;
 }
 .md > p:target, .md > ul:target, .md > ol:target, .md > blockquote:target, .md > dl:target, .container > p:target, .container > ul:target, .container > ol:target, .container > blockquote:target, .container > dl:target {
@@ -2590,7 +2586,6 @@ body {
 }
 .footnotes ol li {
   counter-increment: nr;
-  transition: background-color 0.5s;
   background-color: transparent;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
@@ -4819,7 +4814,6 @@ body {
   fill: currentColor;
   background-color: transparent;
   border-radius: 0.5rem;
-  transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
 }
 
 .ctrl__button {
@@ -4842,9 +4836,6 @@ body {
   fill: var(--c-frame-button-disabled);
 }
 
-.ctrl__extlink .icon {
-  transition: fill 150ms ease-in-out;
-}
 .ctrl__extlink:hover .icon {
   fill: var(--c-frame-text-link-ext);
 }
@@ -4943,7 +4934,6 @@ body {
   text-underline-offset: 0.075em;
   text-decoration-thickness: 0.075em;
   text-decoration-color: transparent;
-  transition: text-decoration-color 250ms;
 }
 .section-nav__icon {
   width: 4.5rem;
@@ -5069,7 +5059,6 @@ body {
   text-underline-offset: 0.075em;
   text-decoration-thickness: 0.075em;
   text-decoration-color: transparent;
-  transition: text-decoration-color 250ms;
 }
 
 .page-nav__icon {
@@ -5228,7 +5217,7 @@ body {
     .img__c {
         img, svg {
             filter: grayscale(25%) brightness(95%);
-            transition: filter, transform, box-shadow;
+            stransition: filter, transform, box-shadow;
             transition-timing-function: ease-in-out;
             transition-duration: t.$nav-hover;
         }
@@ -5430,7 +5419,6 @@ body {
   width: 9rem;
   height: 3rem;
   margin: 0.5rem 0;
-  transition: box-shadow 150ms ease-in-out;
   text-align: center;
   color: #ffffff;
   fill: #fff;
