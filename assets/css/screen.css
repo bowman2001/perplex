@@ -368,14 +368,14 @@ hr {
   }
 }
 
-em, i {
+em {
   font-style: italic;
 }
-em em, em i, i em, i i {
+em em {
   font-style: normal;
 }
 
-strong, b {
+strong {
   font-weight: 700;
 }
 
@@ -385,8 +385,11 @@ code, kbd, var {
 }
 
 var {
-  font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
   font-weight: 300;
+}
+
+strong var {
+  font-weight: 450;
 }
 
 a {
@@ -406,16 +409,6 @@ mark {
   background-color: var(--c-warn-bg);
   border-radius: 0.5rem;
   box-shadow: 0 0 0 1px var(--c-shadow-2);
-}
-
-q {
-  quotes: "“" "”" "‘" "’";
-}
-q:before {
-  content: open-quote;
-}
-q:after {
-  content: close-quote;
 }
 
 .link {
@@ -914,12 +907,11 @@ body {
   z-index: 9;
   height: 100%;
   width: 100%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5333333333);
   cursor: unset;
 }
 #l-overlay.is-visible {
   display: block;
-  background-color: rgba(0, 0, 0, 0.7333333333);
   cursor: pointer;
 }
 
@@ -954,7 +946,7 @@ body {
   top: 0;
   left: -100vw;
   z-index: 90;
-  transition: left 250ms ease-out;
+  transition: transform 250ms ease-out;
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
@@ -963,8 +955,8 @@ body {
   background-color: var(--c-frame);
 }
 #l-sidebar.is-visible {
-  left: 0;
-  transition: left 250ms ease-in;
+  transform: translateX(100vw);
+  transition: transform 250ms ease-in;
 }
 @media screen and (min-width: 39em) {
   #l-sidebar {
@@ -989,6 +981,9 @@ body {
   }
   #l-sidebar::-webkit-scrollbar-track {
     background: var(--c-bg-3);
+  }
+  #l-sidebar.is-visible {
+    transform: translateX(55.5rem);
   }
 }
 @media screen and (min-width: 79em) {
@@ -1017,14 +1012,10 @@ body {
 		position: relative;
 	}
 } */
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* @keyframes fade {
+	from { opacity: 0; }
+	to { opacity: 1; }
+} */
 #l-footer {
   flex: 0 0 auto;
   margin-top: 2rem;
@@ -5206,10 +5197,11 @@ body {
 } */
 @media screen and (min-width: 39em) {
   .card__hover {
-    transition: transform 250ms ease-in-out;
+    transition: transform 150ms ease-out;
   }
   .card__hover:hover, .card__hover:focus, .card__hover:active {
     transform: scale(1.075);
+    transition: transform 150ms ease-in;
   }
 }
 
