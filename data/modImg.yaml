@@ -2,58 +2,53 @@ debug: false
 unsplash: true
 
 figure:
-  class:
-    base: "fig"
-    width:
-      name: Width
-      prefix: w-
-      options: [tiny, small, medium, text, large, xlarge]
-      intOpts: [pt1, pt2]
-    posh:
-      name: Horizontal position
-      prefix: ph-
-      options: [left, right]
+  base: "fig"
+  width:
+    name: Width
+    prefix: w-
+    options: [tiny, small, medium, text, large, xlarge]
+    intOpts: [pt1, pt2]
+  posh:
+    name: Horizontal position
+    prefix: ph-
+    options: [left, right]
 
 embed:
-  class:
-    base: "emb"
-    width:
-      name: Width
-      prefix: w-
-      options: [micro, tiny, small, text]
-    posh:
-      name: Horizontal position
-      prefix: ph-
-      options: [left, right]
-    posv:
-      name: Vertical position
-      prefix: pv-
-      options: [top, middle]
+  base: "emb"
+  width:
+    name: Width
+    prefix: w-
+    options: [micro, tiny, small, text]
+  posh:
+    name: Horizontal position
+    prefix: ph-
+    options: [left, right]
+  posv:
+    name: Vertical position
+    prefix: pv-
+    options: [top, middle]
 
 frame:
-  class:
-    base: "img__frame"
-    background:
-      name: "Background"
-      prefix: bg-
-      options: [dark, light, white, transparent]
-    box:
-      name: "Box"
-      prefix: box-
-      options: [ shadow, light, none ]
-    padding:
-      name: "Padding"
-      prefix: pad-
-      options: [ half, one, two, none ]
-
+  base: "img__frame"
+  background:
+    name: "Background"
+    prefix: bg-
+    options: [dark, light, white, transparent]
+  box:
+    name: "Box"
+    prefix: box-
+    options: [ shadow, light, none ]
+  padding:
+    name: "Padding"
+    prefix: pad-
+    options: [ half, one, two, none ]
 
 container:
-  class:
-    base: "img__c"
-    type:
-      name: Type
-      prefix: t-
-      options: [ logo ]
+  base: "img__c"
+  type:
+    name: Type
+    prefix: t-
+    options: [ logo ]
 
 width:
   pt1: [30,30]
@@ -68,15 +63,12 @@ width:
 
 default:
   frame:
-    class:
-      box: shadow
+    box: shadow
   figure:
-    class:
-      width: text
+    width: text
   embed:
-    class:
-      width: small
-      posh: left
+    width: small
+    posh: left
 
 srcset:
   sizeStep: 25
