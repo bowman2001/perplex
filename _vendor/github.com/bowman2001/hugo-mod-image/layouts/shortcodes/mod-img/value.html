@@ -1,0 +1,20 @@
+{{- $name := "shortcodes/mod-img/value" }}
+
+{{- $params := slice -}}
+{{- with (.Get 0) -}}{{- $params = $params | append . -}}{{ else -}}
+    {{- errorf "%s: Missing argument. Need at least one parameter name." $name -}}
+{{- end }}
+
+{{- range (seq 1 5) }}
+    {{- with ($.Get . ) }}{{ $params = $params | append . }}{{ end }}
+{{- end }}
+
+{{- with index site.Data.modImg $params -}}
+    {{- if reflect.IsMap . }}
+        {{- print "%v" . }}
+    {{- else if reflect.IsSlice . -}}
+        {{- print "[" (delimit . ", ") "]" -}}
+    {{- else -}}
+        {{- print . -}}
+    {{- end -}}
+{{- end -}}

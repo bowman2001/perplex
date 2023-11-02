@@ -3,7 +3,7 @@
 
 {{ $params := dict }}
 {{ with (index site.Data.modImg.default $type) }}
-    {{ range $k, $v := .class }}
+    {{ range $k, $v := . }}
         {{ $params = merge $params (dict (slice (print $className) (print $k)) $v) }}
     {{ end }}
 {{ end }}

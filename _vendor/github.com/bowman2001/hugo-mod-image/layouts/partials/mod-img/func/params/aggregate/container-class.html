@@ -5,7 +5,7 @@
 {{ $configErrorEnd := "See configuration in data/modImg" }}
 
 {{ $classes := slice }}
-{{ with index site.Data.modImg.container.class }}
+{{ with site.Data.modImg.container }}
     {{ $classMap := . }}
     {{ $baseClass := .base }}
     {{ $classes = $classes | append (print $baseClass) }}        

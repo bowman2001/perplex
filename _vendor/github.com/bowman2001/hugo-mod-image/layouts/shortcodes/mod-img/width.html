@@ -1,0 +1,27 @@
+{{- $name := "shortcodes/mod-img/width" }}
+{{- $config := "data/modImg" }}
+
+{{- $class := "" }}
+{{- $fac := site.Data.modImg.srcset.maxDensityFactor }}
+{{- $constraint := "max" }}
+{{- with .Get 0 }}{{ $class = . }}{{ else }}{{ end }}
+{{- with .Get 1 }}{{ $fac = . }}{{ end }}
+{{- with .Get 2 }}{{ $constraint = . }}{{ end }}
+
+{{- $index := 1 }}
+{{- if (eq $constraint "max") }}
+{{- else if (eq $constraint "min") }}
+    {{- $index = 0 }}
+{{- else }}
+    {{- errorf "%s: The second shortcode argument %q is not one of [min, max]." $name $constraint }}
+{{- end }}
+
+{{- with (index site.Data.modImg.width $class) }}
+    {{- with (index . $index) }}
+        {{- print (mul . $fac ) "px" }}
+    {{- else }}
+        {{- errorf "%s: No maximum value set for the width %q. See %q." $name $class $config }}
+    {{- end }}
+{{- else }}
+    {{- errorf "%s: No width class %q defined. See %q." $name $class $config }}
+{{- end }}
