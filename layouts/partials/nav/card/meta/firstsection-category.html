@@ -4,14 +4,12 @@
 <ul class="ul--row meta__list">
     {{- with $sections -}}
         {{ range $i, $e := first 1 . }}
-          <li class="meta__item meta__list"><a class="meta__text link link--nav"
-                                               href="{{ .RelPermalink }}">{{- .LinkTitle | site.Home.RenderString -}}</a></li>
+          <li class="meta__item meta__list"><span class="meta__text">{{- .LinkTitle | site.Home.RenderString -}}</span></li>
         {{ end }}
     {{ end }}
     {{- with .Params.categories -}}
         {{- $first := (index . 0) -}}
         <li class="meta__item">{{ partial "nav/taxonomies/icon_item/separator.html" . }}</li>
-        <li class="meta__item taxo-shape taxo-shape--category"><a class="meta__text link link--nav"
-                  href="{{ ( site.GetPage (print "categories/" $first ) ).RelPermalink }}">{{- $first | strings.FirstUpper -}}</a></li>
+    <li class="meta__item taxo-shape taxo-shape--category"><span class="meta__text">{{- $first | strings.FirstUpper -}}</span></li>
     {{- end -}}
 </ul>

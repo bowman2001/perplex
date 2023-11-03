@@ -1,8 +1,7 @@
 {{- with .Params.categories -}}
   <ul class="ul--row meta__list">
       {{- $first := (index . 0) -}}
-    <li class="meta__item taxo-shape taxo-shape--category"><a class="meta__text link link--nav"
-              href="{{ ( site.GetPage (print "categories/" $first ) ).RelPermalink }}">{{- $first | strings.FirstUpper -}}</a>
+    <li class="meta__item taxo-shape taxo-shape--category"><a class="meta__text">{{- $first | strings.FirstUpper -}}</a>
     </li>
   </ul>
 {{- end -}}
