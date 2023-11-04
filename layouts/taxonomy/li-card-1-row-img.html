@@ -3,15 +3,13 @@
   <div class="card__content card__content--flex">
     <div>
     <nav class="card__header">
-        <div class="card__title card__title--half">
-          <h2>{{ partial "title/render-link-nofollow.html" . }}</h2>
-        </div>
+        <h2 class="card__title card__title--half">
+          {{ partial "title/render.html" . }}
+        </h2>
     </nav>
-    <a href="{{ .RelPermalink }}" rel="nofollow">
       <div class="md md--sans md--card md--card--half">
           {{ partial "description.html" . }}
       </div>
-    </a>
   </div>
   <div class="meta meta--card meta--card--half">
     {{ partial "nav/taxonomies/site/term_count.html" . }}

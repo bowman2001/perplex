@@ -9,9 +9,7 @@
         {{- partial "nav/card/title/colhalf.html" . }}
     </div>
     {{- with ( partial "description.html" . ) -}}
-    <a class="md md--sans md--card md--card--half" href="{{ $.RelPermalink }}">
-        {{- . }}
-    </a>
+    <div class="md md--sans md--card md--card--half">{{ . }}</div>
     {{- end }}
     </div>
   </div>

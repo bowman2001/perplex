@@ -7,9 +7,7 @@
                     {{ partial "nav/card/meta/breadcrumbs.html" . }}
                 </div>
                 {{- $level := 2 -}}
-                {{- with page.Scratch.Get "level" -}}
-                    {{- $level = . -}}
-                {{- end -}}
+                {{- with page.Scratch.Get "level" -}}{{- $level = . -}}{{- end -}}
                 {{- partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
             </nav>
             <div class="md md--sans md--card md--card--1">

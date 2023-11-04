@@ -4,21 +4,19 @@
         <div class="card__text">
             <nav class="card__header">
                 <div class="meta meta--card meta--card--1">
-                    {{- partial "nav/card/meta/firstsection-category.html" . -}}
-                    {{- partial "date/date.html" . -}}
+                    {{- partial "nav/card/meta/firstsection-category.html" . }}
+                    {{- partial "date/date.html" . }}
                 </div>
-                {{- $level := 2 -}}
-                {{- with page.Scratch.Get "level" -}}
-                    {{- $level = . -}}
-                {{- end -}}
-                {{ partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
+                {{- $level := 2 }}
+                {{- with page.Scratch.Get "level" }}{{ $level = . -}}{{ end }}
+                {{- partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
             </nav>
             <div class="md md--sans md--card md--card--1">
-                {{- partial "summary.html" . -}}
+                {{- partial "summary.html" . }}
             </div>
         </div>
         <div class="card__footer">
-            {{- partial "nav/card/footer.html" . -}}
+            {{- partial "nav/card/footer.html" . }}
         </div>
     </div>
 </div>

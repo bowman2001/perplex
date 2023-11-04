@@ -1222,10 +1222,10 @@ body {
 }
 
 .meta--card--1 .meta__text, .meta--card--1 .meta__separator {
-  font-size: 1.4475rem;
+  font-size: 1.43rem;
   line-height: 1.5rem;
-  padding-top: 0.70791125rem;
-  padding-bottom: 0.79208875rem;
+  padding-top: 0.714465rem;
+  padding-bottom: 0.285535rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 450;
 }
@@ -2119,7 +2119,7 @@ body {
   margin-bottom: 0;
 }
 .md--card > p, .md--card > .p-first {
-  color: var(--c-text-low);
+  color: var(--c-text-medium);
   font-size: 1.6083333333rem;
   line-height: 2.5rem;
   padding-top: 0.6476791667rem;
@@ -5203,7 +5203,9 @@ body {
 } */
 @media screen and (min-width: 39em) {
   .card__hover {
+    display: block;
     transition: transform 150ms ease-out;
+    height: 100%;
   }
   .card__hover:hover, .card__hover:focus, .card__hover:active {
     transform: scale(1.075);
@@ -5349,12 +5351,10 @@ body {
 
 .card__title {
   margin: 0 2rem;
-}
-.card__title .title__link {
   font-size: 1.915rem;
   line-height: 2rem;
-  padding-top: 0.2828325rem;
-  margin-bottom: -0.2828325rem;
+  padding-top: 0.7828325rem;
+  padding-bottom: 0.2171675rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -5366,16 +5366,7 @@ body {
   margin-top: 1rem;
 }
 
-@media screen and (min-width: 48em) {
-  .card__title--2 .title__link {
-    font-size: 2.5533333333rem;
-    line-height: 3rem;
-    padding-top: 0.5437766667rem;
-    padding-bottom: 0.4562233333rem;
-  }
-}
-
-.card__title--half .title__link {
+.card__title--half {
   display: inline-block;
   margin-bottom: 0;
   font-size: 1.5015rem;
