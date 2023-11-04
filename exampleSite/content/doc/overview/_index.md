@@ -10,13 +10,13 @@ menu:
     name: TL;DR
     pre: visibility
 resources: 
-  - src: johannes-plenio-HcNVBkPYT4w-unsplash.jpg
+  - src: miguel-a-amutio-j5GNmYQQcAo-unsplash.jpg
     name: featured
     params:
-      alt: Overview of a city
+      alt: Overview of a mountain range
 ---
 
 Short overview of the Perplex theme for seasoned Hugo users.
 {.p-first} <!--more-->
 
-The theme provides a nice default layout for extended CommonMark content. Additional styling by attributes or shortcodes is optional.
+The theme provides a nice default layout for extended CommonMark content. Styling with attributes or shortcodes offers layout variants familiar from print design.

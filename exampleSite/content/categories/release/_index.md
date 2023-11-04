@@ -8,4 +8,6 @@ resources:
     name: featured
     params:
       alt: Balloons rising into the sky
+      zoom: 2.5
+      anchor: Center
 ---

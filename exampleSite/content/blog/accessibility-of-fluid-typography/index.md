@@ -18,7 +18,7 @@ Websites with a fluid-responsive design can be especially user-friendly and acce
 
 ![](fluid?ph=left&w=tiny)
 
-Fluid sizes solely depend on the width of the browser window or the view-port width of the mobile device. When a user changes the zoom factor of his browser or his device, they are not affected at all. That’s the problem with fixed fluid sizes. 
+Fluid sizes solely depend on the width of the browser window or the view-port width of the mobile device. When a user changes the zoom factor of his browser or his device, they are not affected at all. &Rightarrow; That’s the problem with fixed fluid sizes. 
 
 The solution is obvious: We need to change fluid sizes accordingly when we change the layout responsively.
 
@@ -31,5 +31,7 @@ Fluid-responsive design is most beneficial on larger screens --- tablet sizes an
 {.inline}
 
 {{< mnote >}}
-The CSS function {$clamp} has been introduced to allow a single view-port dependent size within min-max constraints. For a layout with different fluid states like this one two constraints aren’t enough and breakpoints are the only way to go.
+The CSS function {$clamp} has been introduced to allow a single view-port dependent size within min-max constraints. 
+
+For a layout with different fluid states like this one two constraints aren’t enough and breakpoints are the only way to go.
 {{< /mnote >}}

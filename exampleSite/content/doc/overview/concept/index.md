@@ -40,7 +40,7 @@ At the moment, the example site included in the theme shows the news section as 
 
 ![Sample of IBM Plex Sans](plex_sample)
 
-The theme ships with the open-source font family [Plex](https://www.ibm.com/plex/) for optimized self-hosting. The design has taken their proportions into account from the beginning to provide a good line length for text and code examples and consistent spacing.
+The theme ships with the open-source font family [Plex](https://www.ibm.com/plex/) for optimized self-hosting. The design has taken their proportions into account from the beginning to provide a good line length for text and code blocks.
 
 {{< mnote up=11 >}}**The design** does **not** implement IBM’s corporate design system [Carbon](https://carbondesignsystem.com/).{{< /mnote >}}
 
@@ -61,7 +61,9 @@ All text is placed on a **baseline grid** to introduce a comfortable vertical rh
 
 The theme is as self-sufficient as reasonably possible. Fonts and libraries are included, some libraries for plugins are retrieved from the secure and GDPR-compliant CDN <https://jsdelivr.com>.
 
-Recent copies of all module dependencies are available in the {$_vendor} folder for an easy start with the theme. No other installations than the extended binary (for WEBP) of a very recent Hugo release and the theme are required. To stay up to date with the ongoing theme development, the installation of a GoLang environment is certainly more convenient than manual downloads.
+Recent copies of all module dependencies are available in the {$_vendor} folder for an easy start with the theme. No other installations than the extended binary (for WEBP) of a very recent Hugo release and the theme are required. 
+
+The installation of a [GoLang environment](https://go.dev/dl/) to include the theme as a Hugo module from its repository is certainly more convenient than repeated manual downloads if you want to follow the ongoing development.
 
 ## Support & development
 
@@ -69,4 +71,4 @@ Should you miss some information in the docs, find a bug in the templates, or ha
 
 There will be no public support channel in the foreseeable future because improving this theme takes all my spare time. Support and collaborative development will only work bidirectional. I will not answer private questions.
 
-In case the theme or its modules will benefit from larger contributions, I’d love to turn this effort into a community project and change the license holder accordingly to assure contributors, that their work is not in vain.
+In case the theme benefits from contributions and support, I’d love to turn this effort into a community project and change the license holder accordingly to assure, that contributing is never in vain.

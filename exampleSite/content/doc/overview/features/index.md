@@ -1,7 +1,7 @@
 ---
 authors: [Georg Makowski]
 title: Features
-description: Essential functionality
+description: Special functionality of this theme
 subtitle: false
 date: 2023-07-27T18:49:54+02:00 
 menu:
@@ -15,7 +15,7 @@ tags: [feature]
 weight: 7
 ---
 
-
+A page layout based on classic typographical principles without compromise.
 {.p-first}
 <!--more-->
 

@@ -22,12 +22,13 @@ contact_icons:
   icon: gmail
   url: "mailto:gm@desider.at"
 resources:
-- src: Joerg_Makowski2.jpg
+- src: Joerg_Makowski.jpg
   name: featured
   params:
     alt: Georg Makowski
     attr: Elisa Makowski
     attrlink: "http://elisa-makowski.de"
+    anchor: Top
 - src: small_portrait.jpg
   name: portrait
   params:
