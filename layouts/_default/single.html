@@ -1,0 +1,29 @@
+{{- define "main" -}}
+<div id="l-content-box" class="l-box l-box--full">
+  <article id="l-content" data-pagefind-body>
+    <header class="page-header page-header--left">
+      <div class="title title--sans">
+        <hr>
+        {{- partial "file/vscode_start.html" .Page }}
+        {{- partial "title/title.html" . }}
+        {{- partial "title/subtitle.html" . }}
+        {{- partial "file/vscode_end.html" .Page }}
+      </div>
+      <aside class="featured-image">{{ partial "img/featured.html" . }}</aside>
+    </header>
+    <div class="md md--sans md--h-sans md--margin-full">
+      {{- partial "replacements.html" .Content -}}
+    </div>
+    <div class="margin-full">
+      {{- partial "nav/related/small-cards.html" . }}
+    </div>
+  </article>
+  <footer class="page-footer margin-full">
+    <hr>
+    <div class="meta meta--foot">
+      {{- partial "nav/taxo_and_breadcrumbs.html" . }}
+      {{- partial "date/updated.html" . }}
+    </div>
+  </footer>
+</div>
+{{- end -}}
