@@ -243,7 +243,8 @@ hr {
     --c-text-normal: #d3dbde;
     --c-text-high: white;
     --c-text-semihigh: #eaeef0;
-    --c-text-medium: #bbc4c9;
+    --c-text-medium: #d5dadd;
+    --c-text-semilow: #bcc4c8;
     --c-text-low: #a0abb0;
     --c-text-extralow: #7f8a90;
     --c-text-contrast: black;
