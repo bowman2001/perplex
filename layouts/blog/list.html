@@ -16,8 +16,10 @@
         <nav class="card-nav card-nav--4">
           <ul class="card-nav__list">
               {{- range . -}}
-                <li class="card card--1 card--1--col card__hover">
-                  <a href="{{ .RelPermalink }}">{{- .Render "li-card-1-col-img" -}}</a>
+                <li class="card card--1 card--1--col">
+                  <a href="{{ .RelPermalink }}" class="card__hover" aria-label="Read more">
+                    {{- .Render "li-card-1-col-img" -}}
+                  </a>
                 </li>
               {{- end -}}
           </ul>
