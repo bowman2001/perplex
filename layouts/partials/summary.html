@@ -1,5 +1,5 @@
 {{- with .Summary -}}
-    {{- partial "replacements.html" . -}}
+    {{- partial "wrap-p" (partial "replacements.html" .) }}
 {{- else -}}
     {{- with .Description -}}
       <p>{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
