@@ -1,6 +1,6 @@
 {{- $ff := resources.Get "css/fontfaces.css" | minify | fingerprint -}}
 <link rel="preload" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" as="style">
-<link rel="stylesheet" href="{{ ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" media="screen">
+<link rel="stylesheet" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" media="screen">
 {{- $screen := resources.Get "css/screen.post.css" }}
 {{- /* $screen := (slice $ff $css) | resources.Concat "css/screen.css" */}}
 {{- if hugo.IsProduction }}
@@ -11,5 +11,5 @@
 {{- else }}
   {{- $screen = $screen | minify | fingerprint }}
 {{- end }}
-<link rel="preload" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" as="style">
+<!-- link rel="preload" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" as="style" -->
 <link rel="stylesheet" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" media="screen">
