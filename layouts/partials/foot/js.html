@@ -1,4 +1,3 @@
-{{- partialCached "mod-img/head/js/lazysizes" . }}
 {{- $toggles := resources.Get "js/toggles.js" }}
 {{- $cssHasPseudo := resources.Get "js/css-has-pseudo.js" }}
 {{- $js := slice $toggles $cssHasPseudo | resources.Concat "js/foot.js" | minify | fingerprint }}
