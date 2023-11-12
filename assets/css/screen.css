@@ -208,13 +208,13 @@ hr {
     --fs: 1.2820512821vw;
     --tg: 4rem;
     --es: 1rem;
-    --ta: justify;
   }
 }
 @media screen and (min-width: 48em) {
   :root {
     --fs: 0.8695652174vw;
     --tnh: 5rem;
+    --ta: justify;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1659,9 +1659,6 @@ body {
   padding-bottom: calc(0.22559375rem + var(--es));
   scroll-margin-top: calc( var(--tnh) + var(--tg) + 2rem - 3rem );
 }
-.md > p, .md > ul, .md > ol, .md > blockquote, .md > dl, .container > p, .container > ul, .container > ol, .container > blockquote, .container > dl {
-  background-color: transparent;
-}
 .md > p:target, .md > ul:target, .md > ol:target, .md > blockquote:target, .md > dl:target, .container > p:target, .container > ul:target, .container > ol:target, .container > blockquote:target, .container > dl:target {
   border-radius: 0.5rem;
   background-color: var(--c-bg-3);
@@ -2350,10 +2347,10 @@ body {
 .md .highlight {
   display: block;
   max-height: 200rem;
-  padding: 1rem 2rem;
+  padding: 2rem;
   min-width: 100%;
   max-width: 74rem;
-  margin-bottom: calc(0.5rem + 1 * var(--es));
+  margin-bottom: calc(0.5 * var(--es));
   color: var(--c-code);
 }
 .md .highlight > pre, .md .highlight > div {
@@ -3583,62 +3580,73 @@ body {
   }
 }
 
-.md .box, .md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
+.box, .box-danger, .box-warn, .box-info, .box-success {
   --box-shadow-color: var(--c-shadow-3);
   position: relative;
   z-index: 2;
-  text-align: left;
-  margin: 1rem 2rem 3rem 2rem;
-  max-width: 70rem;
+  margin: 1rem 0;
   background-color: var(--c-bg-2);
   border-radius: 0.5rem;
   box-shadow: 0 0 0 1px var(--box-shadow-color);
+  text-align: left !important;
   clear: both;
 }
-.md .box.left, .md .left.box-danger, .md .left.box-warn, .md .left.box-info, .md .left.box-success, .md .box.left-in, .md .left-in.box-danger, .md .left-in.box-warn, .md .left-in.box-info, .md .left-in.box-success, .md .box.left-in-half, .md .left-in-half.box-danger, .md .left-in-half.box-warn, .md .left-in-half.box-info, .md .left-in-half.box-success, .md .box.right, .md .right.box-danger, .md .right.box-warn, .md .right.box-info, .md .right.box-success, .md .box.right-in, .md .right-in.box-danger, .md .right-in.box-warn, .md .right-in.box-info, .md .right-in.box-success, .md .box.right-in-half, .md .right-in-half.box-danger, .md .right-in-half.box-warn, .md .right-in-half.box-info, .md .right-in-half.box-success {
+.box.left, .left.box-danger, .left.box-warn, .left.box-info, .left.box-success, .box.left-in, .left-in.box-danger, .left-in.box-warn, .left-in.box-info, .left-in.box-success, .box.left-in-half, .left-in-half.box-danger, .left-in-half.box-warn, .left-in-half.box-info, .left-in-half.box-success, .box.right, .right.box-danger, .right.box-warn, .right.box-info, .right.box-success, .box.right-in, .right-in.box-danger, .right-in.box-warn, .right-in.box-info, .right-in.box-success, .box.right-in-half, .right-in-half.box-danger, .right-in-half.box-warn, .right-in-half.box-info, .right-in-half.box-success {
   width: 33rem;
 }
-.md .box.left, .md .left.box-danger, .md .left.box-warn, .md .left.box-info, .md .left.box-success, .md .box.left-in, .md .left-in.box-danger, .md .left-in.box-warn, .md .left-in.box-info, .md .left-in.box-success, .md .box.left-in-half, .md .left-in-half.box-danger, .md .left-in-half.box-warn, .md .left-in-half.box-info, .md .left-in-half.box-success {
+.box.left, .left.box-danger, .left.box-warn, .left.box-info, .left.box-success, .box.left-in, .left-in.box-danger, .left-in.box-warn, .left-in.box-info, .left-in.box-success, .box.left-in-half, .left-in-half.box-danger, .left-in-half.box-warn, .left-in-half.box-info, .left-in-half.box-success {
   margin-right: 4rem;
   margin-left: 2rem;
 }
-.md .box.right, .md .right.box-danger, .md .right.box-warn, .md .right.box-info, .md .right.box-success, .md .box.right-in, .md .right-in.box-danger, .md .right-in.box-warn, .md .right-in.box-info, .md .right-in.box-success, .md .box.right-in-half, .md .right-in-half.box-danger, .md .right-in-half.box-warn, .md .right-in-half.box-info, .md .right-in-half.box-success {
+.box.right, .right.box-danger, .right.box-warn, .right.box-info, .right.box-success, .box.right-in, .right-in.box-danger, .right-in.box-warn, .right-in.box-info, .right-in.box-success, .box.right-in-half, .right-in-half.box-danger, .right-in-half.box-warn, .right-in-half.box-info, .right-in-half.box-success {
   margin-left: 4rem;
   margin-right: 2rem;
 }
-.md .box-danger, .md .box-warn, .md .box-info, .md .box-success {
+
+.box-danger, .box-warn, .box-info, .box-success {
   padding-left: 1rem;
+  padding-right: 1rem;
   border-left-width: 1rem;
   border-left-style: solid;
   border-left-color: var(--box-shadow-color);
 }
-.md .box-danger {
+
+.box-danger {
   color: var(--c-text-high);
   background-color: var(--c-danger-box-bg);
   border-left-color: var(--c-danger-bg);
   --box-shadow-color: var(--c-danger-bg);
 }
-.md .box-warn {
+
+.box-warn {
   color: var(--c-text-high);
   background-color: var(--c-warn-box-bg);
   --box-shadow-color: var(--c-warn-box);
 }
-.md .box-info {
+
+.box-info {
   color: var(--c-text-semihigh);
   background-color: var(--c-info-box-bg);
   --box-shadow-color: var(--c-info-bg);
 }
-.md .box-success {
+
+.box-success {
   color: var(--c-text-semihigh);
   background-color: var(--c-success-box-bg);
   --box-shadow-color: var(--c-success-bg);
 }
-.md .layout-box {
+
+.md > .box, .md > .box-danger, .md > .box-warn, .md > .box-info, .md > .box-success {
+  max-width: 70rem;
+  margin: 1rem 2rem 3rem;
+}
+
+.layout-box {
   position: relative;
   border-radius: 1rem;
   background-color: var(--c-bg-2);
 }
-.md .layout-box:after {
+.layout-box:after {
   display: block;
   position: absolute;
   z-index: 10;
@@ -3721,7 +3729,7 @@ body {
   .md--margin-doc .left-in + .highlight, .md--margin-doc .left-in + .inline {
     margin-left: -36.9rem;
   }
-  .md--margin-doc .highlight + .right-in, .md--margin-doc .highlight + .right3, .md--margin-doc .inline + .right-in, .md--margin-doc .inline + .right3 {
+  .md--margin-doc .highlight + .right-in, .md--margin-doc .highlight + .right3, .md--margin-doc .highlight + .fig--ph-right, .md--margin-doc .inline + .right-in, .md--margin-doc .inline + .right3, .md--margin-doc .inline + .fig--ph-right {
     margin-left: -36.9rem;
   }
 }
@@ -3743,7 +3751,7 @@ body {
   .md--margin-full .left-in + .highlight, .md--margin-full .left-in + .inline {
     margin-left: -36.9rem;
   }
-  .md--margin-full .highlight + .right-in, .md--margin-full .highlight + .right3, .md--margin-full .inline + .right-in, .md--margin-full .inline + .right3 {
+  .md--margin-full .highlight + .right-in, .md--margin-full .highlight + .right3, .md--margin-full .highlight + .fig--ph-right, .md--margin-full .inline + .right-in, .md--margin-full .inline + .right3, .md--margin-full .inline + .fig--ph-right {
     margin-left: -36.9rem;
   }
 }
