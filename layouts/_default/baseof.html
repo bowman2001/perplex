@@ -2,6 +2,7 @@
 <html {{ with .Site.Language.Lang }}lang="{{ . }}"{{ end }}>
 {{- partial "head.html" . -}}
 <body>
+<script>/* Hack: Prevent Firefox FOUC */let FF_FOUC_FIX;</script>
 <header class="l-masthead l-nav" id="l-masthead">
     {{- partial "nav/masthead.html" . }}
 </header>

@@ -208,13 +208,13 @@ hr {
     --fs: 1.2820512821vw;
     --tg: 4rem;
     --es: 1rem;
+    --ta: justify;
   }
 }
 @media screen and (min-width: 48em) {
   :root {
     --fs: 0.8695652174vw;
     --tnh: 5rem;
-    --ta: justify;
   }
 }
 @media screen and (min-width: 79em) {
