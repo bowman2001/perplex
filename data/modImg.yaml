@@ -76,6 +76,7 @@ srcset:
   quality: 80
   qualityReductionFactor: 40
   lqip:
+    run: true
     quality: 25
     divider: 3
     blur: 3

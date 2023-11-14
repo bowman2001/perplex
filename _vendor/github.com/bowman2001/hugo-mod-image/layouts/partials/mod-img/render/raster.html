@@ -30,7 +30,8 @@
                         (slice "imgAttrs" "data-optimumx") "auto"
                     ) }}
             {{- end }}
-            {{- if $params.lqip.run | default false }}      
+            {{- $lqipDefault := site.Data.modImg.srcset.lqip.run | default false }}
+            {{- if $params.lqip.run | default $lqipDefault }}      
                 {{- $lqip := partial "mod-img/func/raster/lqip" (dict "img" .fallback "params" $params) -}}
                 {{- $lqipBase64 := printf "data:image/webp;base64,%s" (base64Encode $lqip.Content) }}              
                 {{- if lt (len $lqipBase64) $maxLqip }}

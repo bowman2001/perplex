@@ -661,18 +661,18 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
 
 .ls-blur-up-img {
   opacity: 1;
-  filter: blur(0.3rem);
+  filter: blur(0.4rem);
   transition: opacity 1s ease, filter 2s ease;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
-  filter: blur(0.3rem);
+  filter: blur(0.4rem);
 }
 
 .img--lqip.lazyload,
 .img--lqip.lazyloading {
-  filter: blur(0.3rem);
+  filter: blur(0.4rem);
 }
 
 .img--lqip.lazyloaded {

@@ -19,8 +19,10 @@ srcset:
   quality: 85
   qualityReductionFactor: 30
   lqip: 
+    run: true
     divider: 3
     blur: 4
+    quality: 25
     max: 2048
 
 process:
