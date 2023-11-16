@@ -12,8 +12,23 @@ resources:
   name: portrait
   params:
     alt: {{ replace .Name "-" " " | title }}
+follow_icons:
+- name: 
+  icon: 
+  url: 
+- name: 
+  icon: 
+  url: 
+contact_icons:
+- name: 
+  icon: 
+  url: 
+- name: 
+  icon: 
+  url: 
 draft: true
 ---
 
 **Placeholder**: Put your own summary paragraph here. It may contain inline markup but links are impossible.
+{.p-first}
 <!--more-->

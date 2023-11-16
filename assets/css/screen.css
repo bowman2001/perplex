@@ -387,6 +387,8 @@ code, kbd, var {
 
 var {
   font-weight: 300;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 strong var {
@@ -1312,7 +1314,9 @@ body {
 }
 .titlehead--draft > p, .titlehead--draft > ol, .titlehead--draft > ul, .titlehead--draft > dl {
   color: var(--c-frame-text-normal);
-  text-align: center;
+}
+.titlehead--draft > p strong, .titlehead--draft > ol strong, .titlehead--draft > ul strong, .titlehead--draft > dl strong {
+  color: var(--c-frame-text-normal);
 }
 
 .titlehead--deprecated {
@@ -2347,7 +2351,7 @@ body {
 .md .highlight {
   display: block;
   max-height: 200rem;
-  padding: 2rem;
+  padding: 2rem 2rem 1.5rem;
   min-width: 100%;
   max-width: 74rem;
   margin-bottom: calc(0.5 * var(--es));
