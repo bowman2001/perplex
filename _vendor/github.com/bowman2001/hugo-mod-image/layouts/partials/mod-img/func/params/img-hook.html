@@ -4,8 +4,10 @@
 {{ $page := .Page }}
 
 {{ $ordinal := add .Ordinal 1 }}
-{{ with site.Data.modImg.id.image.anchor | default "fig-%d" }}
-    {{ $params = merge $params (dict (slice "attrs" "id") (printf . $ordinal)) }}
+{{ if or (eq page.Kind "page") (eq page.Kind "home") }}
+    {{ with site.Data.modImg.id.image.anchor | default "fig-%d" }}
+        {{ $params = merge $params (dict (slice "attrs" "id") (printf . $ordinal)) }}
+    {{ end }}
 {{ end }}
 {{ with site.Data.modImg.id.image.caption | default "Fig&#x202f;%d:" }}
     {{ if (in site.Data.modImg.id.sections $page.Section) }}
