@@ -134,8 +134,10 @@ Start with these basic CSS rules to style the table of contents:
     {{- $level := .level }}
     {{- range $ctx.headings }}
         {{- if and (ge $level $ctx.startLevel) (le $level $ctx.endLevel)  }}
-          {{- if not .ID }}
-            {{- errorf "Can’t build TOC. The %q partial detected that the %q heading has an empty ID attribute. See %s" $ctx.partialName .Title $ctx.contentPath }}
+          {{- if not .Title }}
+            {{- errorf "Can’t build TOC. The %q partial detected that there is a heading missing in the hierarchy on level %d. See %s." $ctx.partialName $level $ctx.contentPath }}
+          {{- else if not .ID }}
+            {{- errorf "Can’t build TOC. The %q partial detected that the %q heading has an empty ID attribute. See %s." $ctx.partialName .Title $ctx.contentPath }}
           {{- end }}
           <li class="nav__item nav__item--{{ $level }}">
             <a href="{{ printf "%s#%s" $ctx.page.RelPermalink .ID }}">{{ partial "replacements" .Title  }}</a>
