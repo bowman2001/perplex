@@ -77,7 +77,7 @@
           <span class="icon icon--material"></span>
       </label>
     {{ else }}
-        {{ errorf "Unable to create sidebar menu. Missing menu identifier for menu entry %q" .KeyName }}
+        {{ errorf "Unable to create sidebar menu. Missing menu identifier %q." .KeyName }}
     {{ end }}
 {{- end -}}
 
