@@ -12,6 +12,6 @@
 | replaceRE `\{([a-z]{2})\s([^\}]*)\}` "<span lang='$1'>$2</span>"
 | replaceRE `\{\/\}` "&puncsp;<br class='br-cond'>"
 | replaceRE `\s?(—|&mdash;)\s?` " — "
-| replaceRE `(<p[^>]*>|<li[^>]*>)([“«»„])` "$1<span class='hang-quote'>$2</span>"
+| replaceRE `(<p[^>]*>|<li[^>]*>)((?:&zwj;)|‍?)([“«»„])` "$1<span class='hang-quote'>$3</span>"
 | safeHTML
 }}

@@ -1550,7 +1550,7 @@ body {
   padding: calc(4rem + 2 * var(--es)) 0rem;
 }
 .section > hr {
-  border-bottom: 0.25rem solid var(--c-text-normal);
+  border-bottom: 0.35rem solid var(--c-text-normal);
   height: 1rem;
   margin: 0 2rem;
 }

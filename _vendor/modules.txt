@@ -1,5 +1,5 @@
 # github.com/bowman2001/hugo-mod-meta v0.2.3
-# github.com/bowman2001/hugo-mod-replacements v0.3.4
+# github.com/bowman2001/hugo-mod-replacements v0.3.5
 # github.com/bowman2001/hugo-mod-open-in-vscode/v2 v2.0.4
 # github.com/bowman2001/hugo-mod-katex v0.2.3
 # github.com/bowman2001/hugo-mod-mermaid v0.4.2
