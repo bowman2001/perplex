@@ -35,8 +35,9 @@ preprocess:
   anchor: [ Smart, TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight ] # See https://gohugo.io/content-management/image-processing/#anchor
   ratio: 
     min: 0.2
-    max: 5    
+    max: 5.0    
   rotate: [ 90right, 90left, "180" ]
+  zoomMax: 3.0 
   rsFilter: [ bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch ]
   webpHint: [ drawing, icon, photo, picture, text ]
 
