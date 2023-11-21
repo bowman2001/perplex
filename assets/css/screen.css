@@ -474,8 +474,9 @@ mark {
 }
 .h-a:before {
   position: absolute;
-  left: -1.75rem;
-  content: "#";
+  left: -1.5rem;
+  content: "§";
+  font-size: 80%;
   opacity: 0;
   transition: opacity 150ms ease-out;
   color: var(--c-nav-link);
