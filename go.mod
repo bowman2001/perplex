@@ -15,6 +15,6 @@ require (
 	github.com/bowman2001/hugo-mod-pangram v0.0.0-20230803153646-6851d0e94236 // indirect
 	github.com/bowman2001/hugo-mod-replacements v0.3.6 // indirect
 	github.com/bowman2001/hugo-mod-resource v0.1.2 // indirect
-	github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20230716191508-4c68a81e5385 // indirect
+	github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231121093822-09f78b5fdeda // indirect
 	github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac // indirect
 )

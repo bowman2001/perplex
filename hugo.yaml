@@ -20,9 +20,9 @@ params:
 
   ### TOC walk fragments
   toc:
-    startLevel: 2      # default is 2
-    endLevel: 4        # default is 3
-    minNumHeadings: 2  # default is 2
+    startLevel: 2
+    endLevel: 4
+    minNumHeadings: 2
 
   ### Render hook link
   render_hooks:
