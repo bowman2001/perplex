@@ -7,13 +7,13 @@
             {{- else }}
                 {{- errorf "No URL for entry in main social menu." }}
             {{- end }}
-            <li>
-                {{- with .Pre -}}
-                    <a {{ range $k, $v := $a }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{ end }} >
-                        {{- partial "simple-icon.html" ( dict "id" . ) -}}
-                    </a>
-                {{- end -}}
-            </li>
+            {{- with .Name }}
+                {{- $a = merge $a (dict "title" . ) }}
+            {{- end }}
+            {{- with .Pre -}}
+            <li><a {{ range $k, $v := $a }}{{ printf " %s=%q" $k $v | safeHTMLAttr }}{{ end }} >
+                        {{- partial "simple-icon.html" ( dict "id" . ) -}}</a></li>
+            {{- end -}}
         {{- end }}
     </ul>
 </nav>
