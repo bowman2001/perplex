@@ -8,10 +8,10 @@ params:
   # All parameters may be set per page in the front-matter
   subtitle: false
   toctitle: On this Page
-  svg: inline
-  
   paginateNr: 5
-  
+
+  ### Disable purgecss for now
+  postcss: false
   ### Default taxonomies the theme can handle
   taxonomies:
     tag: tags
@@ -67,7 +67,7 @@ markup:
 module:
   hugoVersion:
     extended: true
-    min: "v0.119.0"
+    min: "v0.120.4"
   imports:
     - path: github.com/bowman2001/hugo-mod-meta
     - path: github.com/bowman2001/hugo-mod-replacements
