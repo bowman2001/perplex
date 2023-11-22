@@ -4,12 +4,12 @@
 name = "Perplex"
 license = "Apache License 2.0"
 licenselink = "https://github.com/bowman2001/perplex/blob/main/LICENSE"
-description = "Publish software related content with extended Markdown"
+description = "Publish technical content"
 homepage = "https://perplex.desider.at"
 demosite = "https://bowman2001.github.io/perplexdoc"
-tags = ["IT", "documentation", "blog", "magazine"]
+tags = ["documentation", "blog"]
 features = ["Responsive fluid", "Typography", "Baseline Grid" ]
-min_version = "0.102.0"
+min_version = "0.120.4"
 
 [author]
   name = "Georg Makowski"
