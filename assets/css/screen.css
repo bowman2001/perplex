@@ -478,7 +478,6 @@ mark {
   content: "§";
   font-size: 80%;
   opacity: 0;
-  transition: opacity 150ms ease-out;
   color: var(--c-nav-link);
 }
 .h-a:hover, .h-a:focus {
