@@ -18,7 +18,7 @@
                 {{ errorf "$s: Internal error. Unknown rotate argument." $name }}
             {{ end }}
         {{ else }}
-            {{ warnf "Unable to rotate %s. Rotation %q not in %v" $img.RelPermalink . $options }}
+            {{ warnf "%s: Unable to rotate %s. Rotation %q not in %v" $name $img.RelPermalink . $options }}
         {{ end }}
     {{ end }}
 
@@ -27,7 +27,7 @@
         {{ $max := (float site.Data.modImg.preprocess.ratio.max) | default 5.0 }}
         {{ if (or (lt . $min) (gt . $max)) }}
             {{ $params = merge $params (dict (slice "preprocess" "ratio") "" ) }}
-            {{ warnf "Unable to resize to ratio %q. Not in [%f, %f] " . $min $max }}
+            {{ warnf "%s: Unable to resize to ratio %q. Not in [%f, %f] " $name . $min $max }}
         {{ end }}
     {{ end }}
 
@@ -35,21 +35,21 @@
         {{ $max := (float site.Data.modImg.preprocess.zoomMax) | default 3 }}
         {{ if (or (lt . 1.0) (gt . $max)) }}
             {{ $params = merge $params (dict (slice "preprocess" "zoom") "" ) }}
-            {{ warnf "Unable to zoom in with factor %f. Not in [1, %f] " . $max }}
+            {{ warnf "%s: Unable to zoom in with factor %f. Not in [1, %f] " $name . $max }}
         {{ end }}
     {{ end }}
 
     {{ with $params.preprocess.anchor }}
         {{ $options := site.Data.modImg.preprocess.anchor }}
         {{ if not (in $options .) }}
-            {{ warnf "Unable to use anchor %q. Not in %v." . $options }}
+            {{ warnf "%s: Unable to use anchor %q. Not in %v." $name . $options }}
         {{ end }}
     {{ end }} 
 
     {{ with $params.preprocess.hint }}
         {{ $options := site.Data.modImg.preprocess.webpHint }}
         {{ if not (in $options .) }}
-            {{ warnf "Unable to use hint %q. Not in %v." . $options }}
+            {{ warnf "%s: Unable to use hint %q. Not in %v." $name . $options }}
         {{ end }}
     {{ end }} 
 {{ end }}
@@ -71,7 +71,7 @@
             {{ $params = merge $params (dict (slice "process" "run") true) (dict (slice "process" "compress") false) }}
         {{ else }}
             {{ $params = merge $params (dict (slice "process" "run") false ) }}
-            {{ warnf "Unable to process %q. Type %q not supported" $img.RelPermalink . }}
+            {{ warnf "%s: Unable to process %q. Type %q not supported" $name $img.RelPermalink . }}
         {{ end }}
     {{ end }}
 {{ end }}

@@ -7,6 +7,6 @@
 # github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231018135441-af08cbeb0896
 # github.com/bowman2001/hugo-mod-pangram v0.0.0-20230803153646-6851d0e94236
 # github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac
-# github.com/bowman2001/hugo-mod-image v0.4.5
+# github.com/bowman2001/hugo-mod-image v0.4.6
 # github.com/bowman2001/hugo-mod-resource v0.1.2
 # github.com/bowman2001/hugo-mod-error-message v0.1.0

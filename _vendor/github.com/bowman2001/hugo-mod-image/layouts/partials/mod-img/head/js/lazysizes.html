@@ -2,5 +2,6 @@
 {{ $optimumx := resources.Get "mod-img/js/ls.optimumx.js" }}
 {{ $blur_up := resources.Get "mod-img/js/ls.blur-up.js" }}
 {{ $progressive := resources.Get "mod-img/js/ls.progressive.js" }}
-{{ $js := (slice $lazysizes $optimumx $blur_up $progressive) | resources.Concat "js/ls.js" | minify | fingerprint }}
+{{ $config := resources.Get "mod-img/js/ls.config.js" }}
+{{ $js := (slice $lazysizes $optimumx $blur_up $progressive $config) | resources.Concat "js/ls.js" | minify | fingerprint }}
 <script src="{{- $js.RelPermalink -}}" integrity="{{ $js.Data.Integrity }}" async></script>

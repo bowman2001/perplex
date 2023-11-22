@@ -2,8 +2,8 @@
 
 {{ $params := dict }}
 
-{{ with .ratio }}{{ $params = merge $params (dict (slice "preprocess" "ratio") . ) }}{{ end }}
-{{ with .zoom }}{{ $params = merge $params (dict (slice "preprocess" "zoom") . ) }}{{ end }}
+{{ with .ratio }}{{ $params = merge $params (dict (slice "preprocess" "ratio") (float . ) ) }}{{ end }}
+{{ with .zoom }}{{ $params = merge $params (dict (slice "preprocess" "zoom") (float . ) ) }}{{ end }}
 {{ with .rotate }}{{ $params = merge $params (dict (slice "preprocess" "rotate") (. | lower) ) }}{{ end }}
 {{ with .hint }}{{ $params = merge $params (dict (slice "preprocess" "hint") . ) }}{{ end }}
 {{ with .anchor }}{{ $params = merge $params (dict (slice "preprocess" "anchor")  . ) }}{{ end }}

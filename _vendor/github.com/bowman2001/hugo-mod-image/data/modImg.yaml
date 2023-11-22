@@ -37,7 +37,7 @@ preprocess:
     min: 0.2
     max: 5.0    
   rotate: [ 90right, 90left, "180" ]
-  zoomMax: 3.0 
+  zoomMax: 4.0 
   rsFilter: [ bartlett, blackman, box, bspline, catmullrom, cosine, gaussian, hamming, hann, hermite, lanczos, linear, mitchellnetravali, nearestneighbor, welch ]
   webpHint: [ drawing, icon, photo, picture, text ]
 
