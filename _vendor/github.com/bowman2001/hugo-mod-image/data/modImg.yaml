@@ -14,10 +14,10 @@ svg:
   maxInline: 8192
 
 srcset:
-  sizeStep: 50 # In percent 
-  maxDensityFactor: 2
+  sizeStep: 30 # In percent 
+  maxDensityFactor: 2.61
   quality: 85
-  qualityReductionFactor: 30
+  qualityReductionFactor: 25
   lqip: 
     run: true
     divider: 3

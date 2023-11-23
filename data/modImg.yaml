@@ -72,9 +72,9 @@ default:
 
 srcset:
   sizeStep: 25
-  maxDensityFactor: 2
-  quality: 80
-  qualityReductionFactor: 40
+  maxDensityFactor: 2.6
+  quality: 85
+  qualityReductionFactor: 25
   lqip:
     run: true
     quality: 25
