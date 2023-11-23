@@ -1,5 +1,1 @@
-{{ template "_internal/google_analytics.html" . }}
-{{- with site.Params.fathomSiteID }}
-<script defer src="https://cdn.usefathom.com/script.js" data-site="{{ . }}" crossorigin></script>
-{{- end }}
 {{- partialCached "mod-img/head/js/lazysizes" . }}
