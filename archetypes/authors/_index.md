@@ -16,13 +16,7 @@ follow_icons:
 - name: 
   icon: 
   url: 
-- name: 
-  icon: 
-  url: 
 contact_icons:
-- name: 
-  icon: 
-  url: 
 - name: 
   icon: 
   url: 
