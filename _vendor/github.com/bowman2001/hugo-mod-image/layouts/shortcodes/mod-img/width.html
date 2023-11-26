@@ -18,7 +18,7 @@
 
 {{- with (index site.Data.modImg.width $class) }}
     {{- with (index . $index) }}
-        {{- print (mul . $fac ) "px" }}
+        {{- printf "%dpx" (int (math.Round ( mul . $fac ))) }}
     {{- else }}
         {{- errorf "%s: No maximum value set for the width %q. See %q." $name $class $config }}
     {{- end }}
