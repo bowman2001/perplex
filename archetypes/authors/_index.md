@@ -1,17 +1,17 @@
 ---
-title: {{ replace .Name "-" " " | title }}
-description: Short description placeholder
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+description: '**Placeholder:** short description'
 subtitle: true
 date: {{ .Date }}
 resources:
 - src:
   name: portrait
   params:
-    alt: {{ replace .Name "-" " " | title }}
+    alt: '{{ replace .File.ContentBaseName "-" " " | title }}'
 - src: 
   name: featured
   params:
-    alt: {{ replace .Name "-" " " | title }}
+    alt: '{{ replace .File.ContentBaseName "-" " " | title }}'
 follow_icons:
 - name: 
   icon: 

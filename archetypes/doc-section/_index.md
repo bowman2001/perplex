@@ -1,10 +1,10 @@
 ---
-title: {{ replace .Name "-" " " | title }}
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: {{ .Date }}
 menu:
   doc:
-    identifier: {{ .Name }}
-    name: {{ replace .Name "-" " " | title }}
+    identifier: '{{ .File.ContentBaseName }}'
+    name: '{{ replace .File.ContentBaseName "-" " " | title }}'
     parent:
     pre: remove
 resources:

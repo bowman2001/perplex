@@ -1,7 +1,7 @@
 ---
 authors: []
-title: {{ replace .Name "-" " " | title }}
-description: "**Placeholder**: Short description"
+title: ''{{ replace .File.ContentBaseName "-" " " | title }}'
+description: '**Placeholder**: Short description'
 subtitle: false
 date: {{ .Date }}
 resources:

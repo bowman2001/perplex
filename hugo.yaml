@@ -4,21 +4,29 @@
 
 ## Theme parameters
 params:
-  
+  # Default site description
+  description: Perplex theme for Hugo
+
   # All parameters may be set per page in the front-matter
   subtitle: false
   toctitle: On this Page
   paginateNr: 5
 
-  ### Disable purgecss for now
+  # Default favicon
+  favicon:
+    svg: favicon/favicon.svg
+    png: favicon/favicon.png
+
+  ### Disable purgecss by default
   postcss: false
-  ### Default taxonomies the theme can handle
+  ### Theme default taxonomies
   taxonomies:
     tag: tags
     category: categories
     series: series
+    author: authors
 
-  ### TOC walk fragments
+  ### TOC walk fragments partial
   toc:
     startLevel: 2
     endLevel: 4
@@ -30,8 +38,6 @@ params:
       errorLevel: warning # ignore, warning, or error
     fragments:
       errorLevel: ignore # ignore, or warning
-
-  #### Image processing
   
   ### Parameters
   layout:

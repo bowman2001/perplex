@@ -1,5 +1,5 @@
 ---
-title: {{ .Name | title }}
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 description: "**Placeholder**: Short tag description"
 subtitle: true
 date: {{ .Date }}

@@ -1,6 +1,11 @@
 {{- define "main" -}}
     <div id="l-content-box" class="l-box l-box--full">
         <div>
+            {{- with .Content }}
+            <div class="md md--sans md--h-sans md--list md--margin-full">
+                {{- partial "replacements.html" . -}}
+            </div>
+            {{- end }}
             <header class="page-header">
                 <div class="title title--sans title--dark title--dark--bluegreen padding-full">
                     {{- partial "file/vscode_start.html" . }}
@@ -8,11 +13,6 @@
                     {{- partial "file/vscode_end.html" . }}
                 </div>
             </header>
-            {{- with .Content }}
-                <div class="md md--sans md--h-sans md--list md--margin-full">
-                    {{- partial "replacements.html" . -}}
-                </div>
-            {{- end }}
             <ul class="page-list">
                 {{- $n := 5 }}
                 {{- with site.Params.paginateNr }}{{ $n = . }}{{ end }}

@@ -1,13 +1,13 @@
 ---
 authors: []
-title: {{ replace .Name "-" " " | title }}
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 description: "**Placeholder** for short description"
 subtitle: false
 date: {{ .Date }} 
 menu:
   doc:
     identifier: {{ .Name }} 
-    name: {{ replace .Name "-" " " | title }}
+    name: '{{ replace .File.ContentBaseName "-" " " | title }}'
     parent: 
     pre: remove
 categories: []
