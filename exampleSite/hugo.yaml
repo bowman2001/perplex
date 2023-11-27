@@ -7,24 +7,10 @@ timeout: 600s
 enableEmoji: true
 
 markup:
-  goldmark:
-    parser:
-      attribute:
-        block: true
-        title: true
-      wrapStandAloneImageWithinParagraph: false
-    renderer:
-      hardWraps: true
-  highlight:
-    anchorLineNos: true
-    lineNumbersInTable: false
-    noClasses: false
-
+  _merge: deep
 
 taxonomies:
-  tag: tags
-  category: categories
-  author: authors
+  _merge: deep
 
 module:
   imports:
@@ -32,11 +18,8 @@ module:
 
 params:
   description: An example site for the Hugo theme Perplex
-  favicon:
-    svg: favicon/favicon.svg
-    png: favicon/favicon.png
-  postcss: true
+  postcss: false
 
 build:
   buildStats:
-    enable: true
+    enable: false

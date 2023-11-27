@@ -67,6 +67,13 @@ markup:
     lineNumbersInTable: false
     noClasses: false
 
+### Taxonomies
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+  author: authors
 
 ### IMPORTANT!
 ### This module configuration does only affect the folder of the theme.
@@ -88,7 +95,7 @@ module:
 
 ### The following loose security settings affect only the maintenance of this theme
 ### They don’t affect the security settings of a project using this theme!
-### (Hugo never merges security settings.)
+### Hugo does not merge any security settings by default.
 
 security:
   exec:
