@@ -5,7 +5,7 @@
 {{- $ctx := .ctx }}
 {{- $errorLevel := .errorLevel }}
 
-{{- $errorMsg := printf "Unable to resolve the resource %q" $url.String }}
+{{- $errorMsg := printf "Can't find the resource %q" $url.String }}
 
 {{- $r := "" }}
 {{- if $url.IsAbs }} {{- /* Remote */}}

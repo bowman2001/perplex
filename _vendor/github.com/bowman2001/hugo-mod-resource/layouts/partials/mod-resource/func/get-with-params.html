@@ -7,7 +7,7 @@
 
 {{- $map := "" }}
 {{- if $url.IsAbs }} {{- /* Remote */}}
-    {{- $errorMsg := printf "Unable to resolve the resource %q." $url.String }}
+    {{- $errorMsg := printf "Can't find the resource %q." $url.String }}
     {{- with resources.GetRemote $url.String }}
         {{- with .Err }}
             {{- $msg := print $errorMsg ". " . }}
@@ -20,7 +20,7 @@
     {{- end }}
 {{- else }}
     {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
-    {{- $errorMsg := printf "Unable to resolve the resource %q." $path }}
+    {{- $errorMsg := printf "Can't find the resource %q." $path }}
     {{ $resource := "" }}
     {{- with $ctx.Page.Resources.GetMatch (print $path "*") }} {{- /* Page */}}
         {{ $resource = . }}
