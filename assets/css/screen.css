@@ -3340,7 +3340,7 @@ sup:target {
   }
 }
 
-.md table {
+.md table:not(.lntable) {
   border-collapse: separate;
   border-radius: 0.5rem;
   box-shadow: 0 0 0 1px var(--c-shadow-2);
@@ -3348,10 +3348,10 @@ sup:target {
   margin-top: calc(1rem + 1 * var(--es));
   margin-bottom: calc(1rem + 1 * var(--es));
 }
-.md table th:first-child, .md table td:first-child {
+.md table:not(.lntable) th:first-child, .md table:not(.lntable) td:first-child {
   padding-left: 2rem;
 }
-.md table th:last-child, .md table td:last-child {
+.md table:not(.lntable) th:last-child, .md table:not(.lntable) td:last-child {
   padding-right: 2rem;
 }
 .md thead, .md tbody {

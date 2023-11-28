@@ -12,7 +12,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
         standard: [/^is-/, /^pagefind-ui/,/^ls-/,/^lazyload/],
         deep: [/^chroma/,/^js-has-pseudo/]
     },
-    dynamicAttributes: ["href", 'id^="fnref"' ]
+    dynamicAttributes: ["href"]
 });
 
 module.exports = {
