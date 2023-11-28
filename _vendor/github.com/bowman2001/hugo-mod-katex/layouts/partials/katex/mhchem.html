@@ -1,4 +1,4 @@
 {{/* Load mhchem */}}
-{{- $chem := resources.Get "katex/contrib/mhchem.js" | minify | fingerprint -}}
+{{- $chem := resources.Get "katex/contrib/mhchem.min.js" | fingerprint -}}
 <script defer src="{{ $chem.RelPermalink }}" integrity="{{ $chem.Data.Integrity }}"
         crossorigin="anonymous"></script>
