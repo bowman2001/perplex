@@ -2,15 +2,14 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Perplex"
-license = "Apache License 2.0"
+license = "Apache 2.0"
 licenselink = "https://github.com/bowman2001/perplex/blob/main/LICENSE"
-description = "Publish technical content"
+description = "Documentation and multi-purpose theme for technical content"
 homepage = "https://perplex.desider.at"
-demosite = "https://bowman2001.github.io/perplexdoc"
-tags = ["documentation", "blog"]
-features = ["Responsive fluid", "Typography", "Baseline Grid" ]
-min_version = "0.120.4"
-
+demosite = "https://perplex.desider.at"
+tags = ["docs", "blog", "news", "dark mode", "multi-purpose", "responsive", "fluid"]
+features = ["Search", "Multi-Authors", "Taxonomies", "Image processing", "Typographie" ]
+min_version = "0.120.1"
 [author]
   name = "Georg Makowski"
-  homepage = "https://desider.at"
+  homepage = "https://perplex.desider.at/about"
