@@ -6,7 +6,7 @@
 {{- $constraint := "max" }}
 {{- with .Get 0 }}{{ $class = . }}{{ else }}{{ end }}
 {{- with .Get 1 }}{{ $fac = . }}{{ end }}
-{{- with .Get 2 }}{{ $constraint = . }}{{ end }}
+{{- with .Get 2 }}{{ $constraint = . }}{{ end }} 
 
 {{- $index := 1 }}
 {{- if (eq $constraint "max") }}

@@ -10,7 +10,7 @@
     {{ $baseClass := .base }}
     {{ $classes = $classes | append (print $baseClass) }}        
     {{ range $k, $v := $params.contClass }}
-        {{ with (index $classMap $k)  }}
+        {{ with (index $classMap $k)  }}    
             {{ if in .options $v }}
                 {{ $classes = $classes | append (printf "%s--%s%s" $baseClass .prefix $v ) }}
             {{ else }}

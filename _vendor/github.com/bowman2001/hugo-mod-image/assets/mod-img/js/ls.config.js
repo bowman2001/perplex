@@ -6,5 +6,5 @@ window.lazySizesConfig.getOptimumX = function(_element){
 	} else {
 		dpr -= 0.01;
 	}	
-	return Math.min(Math.round(dpr * 100) / 100, 2.61);
+	return Math.min(Math.round(dpr * 100) / 100, 2.6);
 };

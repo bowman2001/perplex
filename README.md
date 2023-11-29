@@ -4,9 +4,10 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/bowman2001/perplex?color=green)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bowman2001_perplex&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bowman2001_perplex)
 
-# Perplex Theme
+# Perplex Theme for Hugo
 
-Perplex is a Markdown documentation and multi-purpose theme for Hugo (extended version for WEBP). No other software is required to start with a new project.
+This documentation and multi-purpose theme focuses on good legibility by providing a detailed rich layout. It’s highly optimized for speed by self-hosting resources. No other software is required to start a new project.
+
 
 [**The documentation**][doc] is also the **demonstration site**. If you want to get started right away visit the [workflow introduction][intro].
 
