@@ -12,4 +12,4 @@ features = ["Search", "Multi-Authors", "Taxonomies", "Image processing", "Typogr
 min_version = "0.120.1"
 [author]
   name = "Georg Makowski"
-  homepage = "https://perplex.desider.at/about"
+  homepage = "https://perplex.desider.at/authors/georg-makowski/"
