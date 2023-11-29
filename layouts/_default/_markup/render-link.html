@@ -122,7 +122,7 @@ either of these shortcodes in conjunction with this render hook.
 
     {{- /* Set attributes for anchor element. */}}
     {{- $attrs := dict "href" $u.String }}
-    {{- if and $u.IsAbs (ne (print "https://" $u.Hostname) site.BaseURL) }}
+    {{- if and $u.IsAbs (ne (print "https://" $u.Hostname) site.Home.Permalink) }}
         {{- /* Destination is external. */}}
         {{- $attrs = merge $attrs (dict "rel" "external") }}
     {{- else }}
