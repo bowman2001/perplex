@@ -1,6 +1,6 @@
 {{ with .Site.Title }}
     {{ $title := . | site.Home.RenderString }}
-    {{ $link := $.Site.BaseURL }}
+    {{ $link := $.Site.Home.Permalink }}
     {{ with $.Site.Params.logo }}
         {{ with resources.Get . }}
           <a class="ctrl__title ctrl__title--logo" href="{{ $link }}">
