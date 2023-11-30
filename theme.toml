@@ -7,8 +7,8 @@ licenselink = "https://github.com/bowman2001/perplex/blob/main/LICENSE"
 description = "Documentation and multi-purpose theme for technical content"
 homepage = "https://perplex.desider.at"
 demosite = "https://perplex.desider.at"
-tags = ["docs", "blog", "news", "dark mode", "multi-purpose", "responsive", "fluid"]
-features = ["Search", "Multi-Authors", "Taxonomies", "Image processing", "Typographie" ]
+tags = ["docs", "blog", "news", "multi-purpose"]
+features = ["responsive", "fluid", "dark mode", "accessible", "search", "multi-authors", "taxonomies", "image preprocessing", "typographie" ]
 min_version = "0.120.1"
 [author]
   name = "Georg Makowski"
