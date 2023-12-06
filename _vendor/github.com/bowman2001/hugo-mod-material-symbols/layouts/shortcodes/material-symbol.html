@@ -28,4 +28,4 @@
 {{- else }}
     {{ errorf "%s: The shortcode %q is missing the argument while processing %v." $mod $sc $ctx }}
 {{- end }}
-<span class="{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>
+<span class='{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}'>{{- $svg | safeHTML }}</span>

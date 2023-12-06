@@ -28,4 +28,4 @@
 {{- else }}
     {{ errorf "%s: The partial %q is missing the parameter 'id' while processing %v." $mod $template $ctx }}
 {{- end }}
-<span class="{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>
+<span class='{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}'>{{- $svg | safeHTML }}</span>
