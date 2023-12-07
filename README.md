@@ -25,7 +25,7 @@ All kinds of pages are rendered into the same coherent **fluid-responsive layout
 
 - card previews
 
-The default styling of Markdown content is **optimized for good legibility** and there are many options to further enhance the layout. **Light & dark** modes follow the setting of the OS environment automatically.
+The default styling of Markdown content is **optimized for good legibility** and there are many options to further enhance the layout. **Light & dark** modes follow the setting of the OS environment and their color-contrast complies with the WCGA standard.
 
 **All navigational elements** to sift through the content as fast as possible are generated from data in the frontmatter:
 
