@@ -5,11 +5,14 @@
 */}}
 
 {{ $svg := "" }}
+{{ $src := "" }}
 {{ with .img }}
     {{ $svg = .Content }}
+    {{ $src = $.params.imgAttrs.src }}
 {{ end }}
 {{ with .params.svgstr }}
     {{ $svg = . }}
+    {{ $src = (printf "data:image/webp;base64,%s" (base64Encode .)) }}
 {{ end }}
 
 {{- if (lt (len $svg) site.Data.modImg.svg.inlineMax) }}
@@ -17,7 +20,7 @@
     {{- if .params.index -}} {{- /* Hidden img with pagefind attributes */}}
         <img class="hide"
             data-pagefind-meta="image[data-src], image_alt[alt]" 
-            data-src="{{ $.params.imgAttrs.src | safeHTMLAttr }}" 
+            data-src="{{ $src | safeHTMLAttr }}" 
             {{- with .params.imgAttrs.alt }}alt="{{ . | safeHTMLAttr }}"{{ end }}>
     {{- end }}
 {{- else }}

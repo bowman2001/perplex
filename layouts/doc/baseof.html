@@ -6,6 +6,9 @@
     {{- partial "nav/masthead.html" . -}}
 </header>
 <div class="l-page l-page--doc">
+  <aside id="l-sidebar" class="l-nav l-tnp">
+    {{- block "sidebar" . -}}{{- end -}}
+  </aside>
   <main id="l-main" class="l-tnp">
       {{- block "main" . -}}{{- end -}}
     <footer id="l-footer" class="l-box margin-doc-half">
@@ -14,9 +17,6 @@
   </main>
   <div id="l-overlay"></div>
   <div id="l-fill"></div>
-  <aside id="l-sidebar" class="l-nav l-tnp">
-      {{- block "sidebar" . -}}{{- end -}}
-  </aside>
 </div>
 {{- partial "foot.html" . -}}
 {{- partial "hugo-mod-wrap/check" . -}}

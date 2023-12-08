@@ -32,6 +32,10 @@ github.com/bowman2001/hugo-mod-image v0.5.1 h1:ReFzNZRJqelcMI+UmtNOSD7KoAvsQy03D
 github.com/bowman2001/hugo-mod-image v0.5.1/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
 github.com/bowman2001/hugo-mod-image v0.5.2 h1:A/Rdz7fPRIp+/cqHuijewved0GzSB5Tf2R1H3WXT23E=
 github.com/bowman2001/hugo-mod-image v0.5.2/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
+github.com/bowman2001/hugo-mod-image v0.6.0 h1:Yt0avAlrXqIawewV4r9suSxKsrPK4RIFUxspMpPfK78=
+github.com/bowman2001/hugo-mod-image v0.6.0/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
+github.com/bowman2001/hugo-mod-image v0.6.2 h1:EQd6tadB7OFyJPh5jz2QZX2ehLvH2LOVRr5Rh/gWqFk=
+github.com/bowman2001/hugo-mod-image v0.6.2/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
 github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXeFkZaCX6eMs=
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-katex v0.2.4 h1:ahvjoEVVIVC/kURc7AFS0+zJCGPBPj/y3gxDkFIXbXs=
@@ -48,6 +52,8 @@ github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206151737-b479800a99
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206151737-b479800a9940/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206153314-d8c5e4540427 h1:8Gy3K8SyGO0sckJD3nAzbJJDvmqTfW+IlATMGvRfQnQ=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206153314-d8c5e4540427/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206165133-a8d5507eaa47 h1:5VsdWHXgfLuPSN15AkBCw861fDEYceTpZuphTzS+DVY=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206165133-a8d5507eaa47/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
 github.com/bowman2001/hugo-mod-mermaid v0.4.2 h1:r6BFnUJtIHodQg6NCtis1FxDRczGZmRc4YxRcWXHp4Q=
 github.com/bowman2001/hugo-mod-mermaid v0.4.2/go.mod h1:+HDKjEKHuCE2cnRX4ZsOKXeiL0gCSHpmxORycHS/+pw=
 github.com/bowman2001/hugo-mod-meta v0.2.3 h1:7Vi1KcaeBe8B1iohl/5TkrH/jQuS8KN0/yczLqHD3Rg=

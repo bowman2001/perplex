@@ -1,5 +1,26 @@
 {{ $src := "featured" }}
+{{ $ctx := . }}
+{{ $imgMap := dict }}
+
 {{ with .Params.featured }}
-  {{ $src = . }}
+  {{ if and (eq $.Type "doc") (eq . "icon") }}
+    {{ $iconstr := partial "material-symbol" (dict "id" ($.Scratch.Get "iconid") "ctx" $ctx "size" "xl" ) }}
+    {{ $inner := replaceRE `</?svg[^>]*>` "" $iconstr | replaceRE `</?span[^>]*>` "" }}
+    {{ $begin := "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'><g id='icon' fill='#E7329B' transform='translate(21,21)'>" }}
+    {{ $end := "</g></svg>" }}
+    {{ $iconstr = print $begin $inner $end }}
+    {{ $imgMap = dict
+      (slice "params" "svgstr") $iconstr
+      (slice "params" "class" "width") "tiny"
+      (slice "params" "contClass" "type") "logo"
+      (slice "params" "frameClass" "box") "shadow"
+      (slice "params" "frameClass" "background") "light"
+    }}
+  {{ else }}
+    {{ $imgMap = partial "mod-img/get" (dict "src" . "ctx" $ctx ) }}
+  {{ end }}
+{{ else }}
+  {{ $imgMap = partial "mod-img/get" (dict "src" $src "ctx" $ctx ) }}
 {{ end }}
-{{ return (partial "mod-img/get" (dict "src" $src "ctx" . )) }}
+
+{{ return $imgMap }}
