@@ -8,7 +8,9 @@
 
 {{ $imgMap := "" }}
 {{ $url := urls.Parse $src }}
-{{ $args := dict "url" $url "ctx" $ctx "errorLevel" $errorLevel }}
+
+{{/* No error message for now */}}
+{{ $args := dict "url" $url "ctx" $ctx "errorLevel" "ignore" }}
 
 {{ with (partial "mod-resource/func/get-with-params" $args) }}
     {{ if (eq .resource.MediaType.MainType "image") }}
