@@ -1,7 +1,7 @@
 <ul class="author-list">
 {{- with .GetTerms "authors" }}
         {{- range . -}}
-            <li><span title="{{ .Title }}">{{- partial "img/portrait-tiny.html" .Page }}</span></li>
+            <li><div title="{{ .Title }}">{{- partial "img/portrait-tiny.html" .Page }}</div></li>
         {{- end }}
 {{- end }}
 </ul>
