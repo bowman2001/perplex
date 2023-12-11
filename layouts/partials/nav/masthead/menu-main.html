@@ -22,7 +22,6 @@
                 {{- printf " %s=%q" $k $v | safeHTML }}
             {{- end }}
             {{- printf " >" | safeHTML }}
-            {{- with .Pre -}}{{- partial "material-symbol" (dict "id" . "ctx" . "size" "normal") -}}{{ end -}}
             {{- with .Name }}{{ . | site.Home.RenderString }}{{ end -}}
             {{- printf "</%s>" $tag | safeHTML }}
         </li>
