@@ -1,4 +1,4 @@
-{{- if not ( strings.Contains . "<p>" ) }}
+{{- if not ( strings.Contains . "</p>" ) }}
   <p>{{ . }}</p>
 {{- else }}
   {{- . }}
