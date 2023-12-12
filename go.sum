@@ -80,6 +80,8 @@ github.com/bowman2001/hugo-mod-replacements v0.3.8 h1:wwttdKld0v13SBu305JBGUk91i
 github.com/bowman2001/hugo-mod-replacements v0.3.8/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
 github.com/bowman2001/hugo-mod-replacements v0.3.9 h1:7A2VTixBoB1TGu/8iFe/Q5uqGR6mWRimKjTD5mJtEe0=
 github.com/bowman2001/hugo-mod-replacements v0.3.9/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
+github.com/bowman2001/hugo-mod-replacements v0.4.0 h1:gGuzezZw9qffFaoSf5aq9A3qy4Afs/3fsi6ii0aynxE=
+github.com/bowman2001/hugo-mod-replacements v0.4.0/go.mod h1:Vg5hGRv/wKkyGAd06BM4sXbNXNZl9PKnpVCYLhYcTWc=
 github.com/bowman2001/hugo-mod-resource v0.1.2 h1:+6thJesmW8Q6FQgCawW39JqJB7Kg35oaxsdzyQgmkiA=
 github.com/bowman2001/hugo-mod-resource v0.1.2/go.mod h1:XaqBpwviNkKXnCArAwk2jQAysLJxWbJxRbtniDIJwd0=
 github.com/bowman2001/hugo-mod-resource v0.1.3 h1:ZCA5eDR4cyihtXEJppkjhb5svUy/6Pv169W9tlx4fSw=
