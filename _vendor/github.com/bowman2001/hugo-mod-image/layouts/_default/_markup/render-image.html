@@ -18,7 +18,7 @@
 
 {{- $queryParams := dict }}
 {{- with and (not $url.IsAbs) $url.Query }}{{/* Params from a query string (only local) */}}
-    {{- $queryParams = (partial "mod-img/func/params/query" .) }}
+    {{- $queryParams = (partial "mod-img/func/params/query" . ) }}
 {{- end }}
 
 {{- $mdParams := dict }}
@@ -28,6 +28,8 @@
 {{- $args := dict "src" .Destination "ctx" $ctx }}
 {{- with (partial "mod-img/get" $args $args) }}
     {{- $params := merge $defaultParams .params $hookParams $queryParams $mdParams }}
+    {{/* Hook parameters overwrite frontmatter parameters. But the id is a necessary exception. */}}
+    {{- $params = merge $params (dict (slice "attrs" "id") .params.attrs.id) }}
 
     {{- /* Aggregate classes */}}
     {{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params )}}    
