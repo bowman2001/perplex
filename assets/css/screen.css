@@ -5061,6 +5061,7 @@ sup:target {
 }
 
 .page-nav__title {
+  display: block;
   font-size: 1.915rem;
   line-height: 3rem;
   margin-top: -0.0171675rem;
@@ -5105,6 +5106,7 @@ sup:target {
 }
 
 .page-nav__meta {
+  display: block;
   font-size: 1.43rem;
   line-height: 1.5rem;
   padding-top: 0.464465rem;

@@ -1,19 +1,16 @@
 {{ $title := "" }}
 {{ $parenttitle := "" }}
 {{ with .Params.menu.doc.name }}
-{{ $title = . }}
+    {{ $title = . }}
 {{ else }}
-{{ $title = .LinkTitle }}
+    {{ $title = .LinkTitle }}
 {{ end }}
 {{ with .Parent.Params.menu.doc.name }}
-      {{ $parenttitle = . }}
+    {{ $parenttitle = . }}
 {{ else }}
-      {{ $parenttitle = .Parent.LinkTitle }}
+    {{ $parenttitle = .Parent.LinkTitle }}
 {{ end }}
-<div>
-    {{- with $parenttitle -}}
-      <div class="page-nav__meta">{{- partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) -}}</div>
-    {{- end -}}
-    {{- with $title -}}
-      <div class="page-nav__title">{{- partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) -}}</div>{{- end -}}
-</div>
+<span>
+    {{- with $parenttitle -}}<span class="page-nav__meta">{{- partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) -}}</span>{{- end -}}
+    {{- with $title -}}<span class="page-nav__title">{{- partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) -}}</span>{{- end -}}
+</span>
