@@ -1,8 +1,8 @@
 {{- with .Summary -}}
-    {{- partial "wrap-p" (partial "replacements.html" .) }}
+    {{- partial "wrap-p" (partial "replacements.html" . | htmlUnescape | plainify ) }}
 {{- else -}}
     {{- with .Description -}}
-      <p>{{- partial "replacements.html" ( . | site.Home.RenderString ) -}}</p>
+      <p>{{- partial "replacements.html" ( . | site.Home.RenderString| htmlUnescape | plainify ) -}}</p>
     {{ else }}
         {{ warnf "Unable to print summary. No summary or description found for %v." . }}
     {{- end -}}
