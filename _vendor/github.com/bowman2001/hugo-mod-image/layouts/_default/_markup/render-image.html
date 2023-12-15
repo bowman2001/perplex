@@ -29,7 +29,7 @@
 {{- with (partial "mod-img/get" $args $args) }}
     {{- $params := merge $defaultParams .params $hookParams $queryParams $mdParams }}
     {{/* Hook parameters overwrite frontmatter parameters. But the id is a necessary exception. */}}
-    {{- $params = merge $params (dict (slice "attrs" "id") .params.attrs.id) }}
+    {{ with .params.attrs.id }}{{- $params = merge $params (dict (slice "attrs" "id") . ) }}{{ end }}
 
     {{- /* Aggregate classes */}}
     {{- $params = partial "mod-img/func/params/aggregate/preprocess" (dict "img" .img "params" $params )}}    
