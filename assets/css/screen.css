@@ -2300,6 +2300,10 @@ body {
   background-color: var(--c-frame-button-hover-bg);
 }
 
+.md--blog {
+  padding-top: calc(3rem + 2 * var(--es));
+}
+
 .md--list {
   padding-bottom: 0;
   margin-bottom: 0;
