@@ -127,8 +127,8 @@ either of these shortcodes in conjunction with this render hook.
         {{- $attrs = merge $attrs (dict "rel" "external") }}
     {{- else }}
         {{- with $u.Path }}
-            {{- with $p := or ($page.GetPage .) ($page.GetPage (strings.TrimRight "/" .)) ($page.GetPage (strings.TrimRight "/" (relref $page . )))}}
-                {{- /* Destination is a page. */}}
+            {{- with $p := or ($page.GetPage .) ($page.GetPage (strings.TrimRight "/" .)) }}
+                {{- /* Destination is a path to a page. */}}
                 {{- $href := .RelPermalink }}
                 {{- with $u.RawQuery }}
                     {{- $href = printf "%s?%s" $href . }}

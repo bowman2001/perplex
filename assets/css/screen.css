@@ -1691,7 +1691,7 @@ body {
 }
 .md strong, .container strong {
   font-size: 99%;
-  color: var(--c-text-semilow);
+  color: var(--c-text-medium);
 }
 .md strong a, .md a strong, .container strong a, .container a strong {
   color: inherit;
