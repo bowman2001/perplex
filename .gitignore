@@ -4,3 +4,5 @@ public
 resources/_gen
 .idea
 .vscode
+yarn.*
+.hugo_build.*
