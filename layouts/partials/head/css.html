@@ -1,14 +1,15 @@
 {{- $ff := resources.Get "css/fontfaces.css" | minify | fingerprint -}}
+{{- $colorCSS := resources.Get "css/colors.css" | minify | fingerprint -}}
 <!-- <link rel="preload" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" as="style">
 <link rel="stylesheet" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" media="screen"> -->
 {{- $css := resources.Get "css/screen.post.css" }}
-{{- $screen := (slice $ff $css) | resources.Concat "css/screen.css" }}
+{{- $screen := (slice $ff $colorCSS $css) | resources.Concat "css/screen.css" }}
 {{- if hugo.IsProduction }}
   {{- if not (eq .Site.Params.postcss false) }}
     {{- $screen = resources.PostCSS $screen }}
   {{- end }}
   {{- $screen = $screen | minify | fingerprint | resources.PostProcess }}
-{{- else }}
+{{- else -}}
   {{- $screen = $screen | minify | fingerprint }}
 {{- end }}
 <!-- link rel="preload" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" as="style" -->
