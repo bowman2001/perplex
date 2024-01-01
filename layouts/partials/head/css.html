@@ -13,3 +13,10 @@
 {{- end }}
 <!-- link rel="preload" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" as="style" -->
 <link rel="stylesheet" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" media="screen">
+{{- $customCSS := resources.Match "css/custom/*.css" -}}
+{{ if $customCSS -}}
+  {{- $custom := $customCSS | resources.Concat "css/custom.css" }}
+  {{- $custom = $custom | minify | fingerprint }}
+<!-- link rel="preload" href="{{ $custom.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" as="style" -->
+<link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}" media="screen">
+{{- end -}}
