@@ -1,7 +1,8 @@
 {{- define "main" -}}
+{{- $blogGradient := site.Params.blogGradient | default page.Params.blogGradient | default "dark--bluered" -}}
   <div id="l-content-box" class="l-box l-box--full">
     <header class="page-header">
-      <div class="title title--dark title--dark--bluered padding-full">
+      <div class="title title--dark title--{{ $blogGradient }} padding-full">
           {{ partial "file/vscode_start.html" . }}
           {{ partial "title/title.html" . }}
           {{ partial "file/vscode_end.html" . }}

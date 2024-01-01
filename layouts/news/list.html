@@ -1,4 +1,5 @@
 {{- define "main" -}}
+{{- $newsGradient := site.Params.newsGradient | default page.Params.newsGradient | default "dark--bluegreen" -}}
     <div id="l-content-box" class="l-box l-box--full">
         <div>
             {{- with .Content }}
@@ -7,7 +8,7 @@
             </div>
             {{- end }}
             <header class="page-header">
-                <div class="title title--sans title--dark title--dark--bluegreen padding-full">
+                <div class="title title--sans title--dark title--{{ $newsGradient }} padding-full">
                     {{- partial "file/vscode_start.html" . }}
                     {{- partial "title/title.html" . }}
                     {{- partial "file/vscode_end.html" . }}
