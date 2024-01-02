@@ -1,54 +1,46 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-hr {
-  border: none;
-  margin: 0;
-}
-
 :root {
   --fs: 53.125%;
   --tnh: 10rem;
   --tg: 2rem;
   --es: 0rem;
   --ta: left;
+}
+@media screen and (min-width: 39em) {
+  :root {
+    --fs: 1.2820512821vw;
+    --tg: 4rem;
+    --es: 1rem;
+    --ta: justify;
+  }
+}
+@media screen and (min-width: 48em) {
+  :root {
+    --fs: 0.8695652174vw;
+    --tnh: 5rem;
+  }
+}
+@media screen and (min-width: 79em) {
+  :root {
+    --fs: 0.6578947368vw;
+  }
+}
+@media screen and (min-width: 95em) {
+  :root {
+    --fs: 62.5%;
+  }
+}
+@media screen and (min-width: 120em) {
+  :root {
+    --fs: 0.4424778761vw;
+  }
+}
+@media screen and (min-width: 141em) {
+  :root {
+    --fs: 62.5%;
+  }
+}
+
+:root {
   color-scheme: light dark;
   --c-frame: #0e0b0d;
   --c-frame-text-normal: #dde2e3;
@@ -203,40 +195,6 @@ hr {
   --fw-chroma-gh: unset;
   --f-img: unset;
 }
-@media screen and (min-width: 39em) {
-  :root {
-    --fs: 1.2820512821vw;
-    --tg: 4rem;
-    --es: 1rem;
-    --ta: justify;
-  }
-}
-@media screen and (min-width: 48em) {
-  :root {
-    --fs: 0.8695652174vw;
-    --tnh: 5rem;
-  }
-}
-@media screen and (min-width: 79em) {
-  :root {
-    --fs: 0.6578947368vw;
-  }
-}
-@media screen and (min-width: 95em) {
-  :root {
-    --fs: 62.5%;
-  }
-}
-@media screen and (min-width: 120em) {
-  :root {
-    --fs: 0.4424778761vw;
-  }
-}
-@media screen and (min-width: 141em) {
-  :root {
-    --fs: 62.5%;
-  }
-}
 @media (prefers-color-scheme: dark) {
   :root {
     --c-page: #1a1919;
@@ -367,6 +325,51 @@ hr {
     --fw-chroma-gh: bold;
     --f-img: brightness(90%);
   }
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  border: none;
+  margin: 0;
 }
 
 em {

@@ -1,8 +1,11 @@
-{{- $ff := resources.Get "css/fontfaces.css" | minify | fingerprint -}}
-<!-- <link rel="preload" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" as="style">
-<link rel="stylesheet" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" media="screen"> -->
+{{- $ff := resources.Get "css/fontfaces.css" }}
+{{- $color := resources.Get "css/color-default.css" }}
+{{/* Use alternative color scheme if available */}}
+{{- with resources.Get "css/color.css" }}
+    {{- $color = . }}
+{{- end }}
 {{- $css := resources.Get "css/screen.post.css" }}
-{{- $screen := (slice $ff $css) | resources.Concat "css/screen.css" }}
+{{- $screen := (slice $ff $color $css) | resources.Concat "css/screen.css" }}
 {{- if hugo.IsProduction }}
   {{- if not (eq .Site.Params.postcss false) }}
     {{- $screen = resources.PostCSS $screen }}
