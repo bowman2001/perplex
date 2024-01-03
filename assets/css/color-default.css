@@ -152,6 +152,16 @@
   --fw-chroma-no: unset;
   --fw-chroma-gh: unset;
   --f-img: unset;
+  --ctg-news-title: linear-gradient(90deg, #00628f 0%, #007560 66%, #00dbb3 100%);
+  --ctg4-news-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #007560 75%, #00dbb3 100%);
+  --ctg-blog-title: linear-gradient(90deg, #00628f 0%, #9b1262 66%, #e62d99 100%);
+  --ctg4-blog-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1262 75%, #e62d99 100%);
+  --ctg-article-title: linear-gradient(90deg, #00628f 0%, #9b1262 66%, #e62d99 100%);
+  --ctg4-article-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1262 75%, #e62d99 100%);
+  --cbg-news-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(169, 100%, 33%) 100%);
+  --cbg-blog-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(325, 79%, 44%) 100%);
+  --cbg-article-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(325, 79%, 44%) 100%);
+  --cbg-doc-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(199, 100%, 38%) 100%);
 }
 @media (prefers-color-scheme: dark) {
   :root {

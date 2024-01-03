@@ -3,10 +3,10 @@
 {{- if eq .Section "news" }}
     {{- $modifier = "link--news" }}
 {{- else if or (eq .Section "blog") (eq .Section "article") }}
-    {{- $modifier = "link--post" }}
+    {{- $modifier = "link--blog" }}
 {{- else if eq .Section "doc" }}
     {{- $modifier = "link--doc" }}
 {{- end -}}
-<span class="link{{ with $modifier }} {{ . }}{{ end }}" title="Read more about {{ (partial "replacements" .Title) | plainify }}">
+<span class='link{{ with $modifier }} {{ . }}{{ end }}' title='Read more about {{ (partial "replacements" .Title) | plainify }}'>
     {{- partial "material-symbol" (dict "id" "read_more" "ctx" . ) -}}
 </span>

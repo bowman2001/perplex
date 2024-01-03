@@ -7,7 +7,7 @@
             </div>
             {{- end }}
             <header class="page-header">
-                <div class="title title--sans title--dark title--dark--bluegreen padding-full">
+                <div class="title title--sans title--bg title--news padding-full">
                     {{- partial "file/vscode_start.html" . }}
                     {{- partial "title/title.html" . }}
                     {{- partial "file/vscode_end.html" . }}
@@ -19,7 +19,7 @@
                 {{- range (.Paginate .RegularPages $n).Pages.ByDate.Reverse }}
                     <li class="li-box">
                         {{- .Render "li-full" }}
-                        <hr class="post-separator">
+                        <hr class="news-separator">
                     </li>
                 {{- end }}
             </ul>
