@@ -8,12 +8,17 @@
 
 This documentation and multi-purpose theme focuses on good legibility by providing a detailed rich layout. It’s highly optimized for speed by self-hosting resources. No other software is required to start a new project.
 
-
 [**The documentation**][doc] is also the **demonstration site**. If you want to get started right away visit the [workflow introduction][intro].
 
 ## Features
 
-All kinds of pages are rendered into the same coherent **fluid-responsive layout grid**. The detailed typographic design is based on classic principles and techniques. The theme can generate
+All kinds of pages are rendered into the same coherent **fluid-responsive layout grid**. The detailed typographic design is based on classic principles and techniques. 
+
+### Layout 
+
+The default styling of Markdown content is **optimized for good legibility** and there are many options to further enhance the layout.
+
+The theme can generate
 
 - large documentation with up to three menu levels
 
@@ -25,9 +30,15 @@ All kinds of pages are rendered into the same coherent **fluid-responsive layout
 
 - card previews
 
-The default styling of Markdown content is **optimized for good legibility** and there are many options to further enhance the layout. **Light & dark** modes follow the setting of the OS environment and their color-contrast complies with the WCGA standard.
+### Color scheme 
 
-**All navigational elements** to sift through the content as fast as possible are generated from data in the frontmatter:
+The **light** and the **dark** mode follow the setting of the OS environment and their color-contrast complies with the WCGA standard. 
+
+The color scheme is defined in a separate CSS file by custom properties and can be substituted with your own scheme.
+
+### Navigation
+
+**All elements** to sift through the content as fast as possible are generated from data in the frontmatter:
 
   - Site menu at the top
 
@@ -39,11 +50,19 @@ The default styling of Markdown content is **optimized for good legibility** and
 
   - Breadcrumbs
 
-Google’s [Material Symbols][ms] and [Simple Icons][si] for brands can be included by their identifiers. Material Symbols automatically show in all navigational elements of the documentation. All icon sets can also be used as Markdown content (using shortcodes).
+### Images 
 
 The **appearance of images** can be controlled to a large extent. The theme handles their preprocessing and the generation of all the needed variants. They are delivered smoothly with [Lazysizes][ls] and without layout shifts.
 
-To offer a **full-text search** the theme is prepared to generate and self-host indices with the fast library [Pagefind][pf] (the additional installation of its open-source node package is required).
+### Icons
+
+Google’s [Material Symbols][ms] and [Simple Icons][si] for brands can be included by their identifiers. Material Symbols automatically show in all navigational elements of the documentation. All icon sets can also be used as Markdown content (using shortcodes).
+
+### Full text search
+
+The theme is prepared to generate and self-host indices with the fast library [Pagefind][pf] (the additional installation of its open-source node package is required).
+
+## Efficient!
 
 Sites built with this theme are **very fast and cost-effective**. Image sets are highly optimized to minimize the needed bandwidth (and loaded lazily), fonts are split into small packages, and icons are embedded inline.
 
