@@ -45,17 +45,17 @@
   --c-code-extralow: #5d737e;
   --c-code-bg: #fff;
   --c-danger: #fff;
-  --c-danger-bg: hsl(0, 80%, 47.5%);
+  --c-danger-bg: #da1818;
   --c-danger-box-bg: #f2d7d7;
   --c-warn: #11181c;
-  --c-warn-bg: hsl(60, 85%, 59%);
+  --c-warn-bg: #efef3e;
   --c-warn-box: #cece2c;
   --c-warn-box-bg: #eeeeaf;
   --c-info: #fff;
-  --c-info-bg: hsl(230, 70%, 48.5%);
+  --c-info-bg: #2542d2;
   --c-info-box-bg: #eaebf4;
   --c-success: #11181c;
-  --c-success-bg: hsl(120, 80%, 49%);
+  --c-success-bg: #19e119;
   --c-success-box-bg: #d7f2d7;
   --c-bg-1: #f9f6f8;
   --c-bg-2: #f4f0f2;
@@ -65,7 +65,7 @@
   --c-shadow-2: #d5cfd3;
   --c-shadow-3: #bab4b8;
   --c-watermark: #b9d5e1;
-  --c-scrollbar: hsl(45, 83%, 53%);
+  --c-scrollbar: #ebb924;
   --c-selection: #030505;
   --c-selection-bg: #ade5ff;
   --c-chroma-fg: #1a282f;
@@ -158,10 +158,10 @@
   --ctg4-blog-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1262 75%, #e62d99 100%);
   --ctg-article-title: linear-gradient(90deg, #00628f 0%, #9b1262 66%, #e62d99 100%);
   --ctg4-article-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1262 75%, #e62d99 100%);
-  --cbg-news-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(169, 100%, 33%) 100%);
-  --cbg-blog-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(325, 79%, 44%) 100%);
-  --cbg-article-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(325, 79%, 44%) 100%);
-  --cbg-doc-button: linear-gradient(90deg, hsl(199, 100%, 38%) 50%, hsl(199, 100%, 38%) 100%);
+  --cbg-news-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #00a889 75%, #00dbb3 100%);
+  --cbg-blog-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #c9187f 75%, #e62d99 100%);
+  --cbg-article-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #c9187f 75%, #e62d99 100%);
+  --cbg-doc-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #0084c2 75%, #00a7f5 100%);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -192,17 +192,17 @@
     --c-code-extralow: #7d898e;
     --c-code-bg: #0d1117;
     --c-danger: white;
-    --c-danger-bg: hsl(0, 80%, 47.5%);
+    --c-danger-bg: #da1818;
     --c-danger-box-bg: #471818;
     --c-warn: #18272d;
     --c-warn-bg: #efef3e;
     --c-warn-box: #d0d05d;
     --c-warn-box-bg: #3b3b05;
     --c-info: white;
-    --c-info-bg: hsl(230, 70%, 48.5%);
+    --c-info-bg: #2542d2;
     --c-info-box-bg: #121836;
     --c-success: #11181c;
-    --c-success-bg: hsl(120, 80%, 49%);
+    --c-success-bg: #19e119;
     --c-success-box-bg: #102f10;
     --c-bg-1: #1d1d1d;
     --c-bg-2: #212121;

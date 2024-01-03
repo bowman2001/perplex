@@ -5,7 +5,7 @@
     {{- $color = . }}
 {{- end }}
 {{- $css := resources.Get "css/screen.post.css" }}
-{{- $screen := (slice $ff $color $css) | resources.Concat "css/screen.css" }}
+{{- $screen := (slice $color $css) | resources.Concat "css/screen.css" }}
 {{- if hugo.IsProduction }}
   {{- if not (eq .Site.Params.postcss false) }}
     {{- $screen = resources.PostCSS $screen }}
@@ -14,5 +14,5 @@
 {{- else }}
   {{- $screen = $screen | minify | fingerprint }}
 {{- end }}
-<!-- link rel="preload" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" as="style" -->
+<link rel="stylesheet" href="{{ $ff.RelPermalink }}" integrity="{{ $ff.Data.Integrity }}" media="screen">
 <link rel="stylesheet" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" media="screen">
