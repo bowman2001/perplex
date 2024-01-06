@@ -6,7 +6,7 @@
 {{ $src := .src }}
 {{ $ctx := .ctx }}
 
-{{ $imgMap := "" }}
+{{ $imgMap := dict }}
 {{ $url := urls.Parse $src }}
 {{ $args := dict "url" $url "ctx" $ctx "errorLevel" $errorLevel }}
 
@@ -22,16 +22,11 @@
     {{ $imgMap = dict "img" (partial "mod-img/helper/missing" $ctx) }}
 {{ end }}
 
-{{/* Collect and sort parameters */}}
-{{ $imgParams := partial "mod-img/func/params/resource" $imgMap.img }}
-{{ $extraParams := dict }}
-{{ $captionParams := dict }}
-{{ with $imgMap.params }}
-    {{ $extraParams = partial "mod-img/func/params/extra" . }}
-    {{ $captionParams = partial "mod-resource/func/caption" . }}
+{{ with $imgMap }}
+    {{ $imgMap = partial "mod-img/func/params/collect-and-sort" $imgMap }}
 {{ end }}
-{{ $sortedParams := merge $imgParams $extraParams $captionParams }}
-{{ $imgMap := dict "img" $imgMap.img "params" $sortedParams }}
 
 {{ return $imgMap }}
+
+
 

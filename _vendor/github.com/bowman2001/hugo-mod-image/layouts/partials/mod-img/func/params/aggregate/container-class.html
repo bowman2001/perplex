@@ -1,6 +1,6 @@
 {{ $params := . }}
 
-{{ $name := "mod-img/func/params/aggregate/container-class" }}
+{{ $partial := "mod-img/func/params/aggregate/container-class" }}
 {{ $errorLevel := site.Data.modImg.errorLevel | default "warning" }}
 {{ $configErrorEnd := "See configuration in data/modImg" }}
 
@@ -15,13 +15,13 @@
                 {{ $classes = $classes | append (printf "%s--%s%s" $baseClass .prefix $v ) }}
             {{ else }}
                 {{ $msg := printf "%s %q is not in %s. %s" .name $v .options $configErrorEnd }}
-                {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel ) }}
+                {{ partial "error-msg" (dict "caller" $partial "errorMsg" $msg "errorLevel" $errorLevel ) }}
             {{ end }}
         {{ end }}
     {{ end }}
 {{ else }}
     {{ $msg := printf "No container class configuration. %s" $configErrorEnd }}
-    {{ partial "error-msg" (dict "caller" $name "errorMsg" $msg "errorLevel" $errorLevel )}}
+    {{ partial "error-msg" (dict "caller" $partial "errorMsg" $msg "errorLevel" $errorLevel )}}
 {{ end }}
 
 {{ $params = merge $params (dict (slice "contAttrs" "class") (delimit $classes " ")) }}

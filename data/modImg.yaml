@@ -48,7 +48,7 @@ container:
   type:
     name: Type
     prefix: t-
-    options: [ logo ]
+    options: [ symbol, none ]
 
 width:
   pt1: [30,30]
@@ -87,4 +87,5 @@ base64:
   quality: 65
 
 svg:
+  defaultType: symbol
   inlineMax: 4096

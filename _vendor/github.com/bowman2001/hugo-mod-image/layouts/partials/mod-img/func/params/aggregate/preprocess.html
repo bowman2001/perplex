@@ -1,7 +1,48 @@
+{{/* @context imgMap */}}
 {{ $name := "mod-img/params/aggregate/preprocess" }}
 
 {{ $img := .img }}
-{{ $params := merge (dict (slice "preprocess" "run") true ) .params }}
+{{ $params := .params }}
+
+{{/* Process and compress? */}}
+{{ with $subtype := $img.MediaType.SubType }}
+    {{ if eq "svg" $subtype  }}
+        {{ $params = merge $params 
+            (dict (slice "preprocess" "run") false ) 
+            (dict (slice "process" "run") false ) }}
+    {{ else if in site.Data.modImg.process.none $subtype }}
+        {{/* Is processing explicitly wanted */}}
+        {{ if $params.process.run }}
+            {{ $params = merge $params 
+                (dict (slice "preprocess" "run") true ) 
+                (dict (slice "process" "run") true ) 
+                (dict (slice "process" "compress") false) }}
+        {{ else }}
+            {{ $params = merge $params 
+                (dict (slice "preprocess" "run") false ) 
+                (dict (slice "process" "run") false ) }}
+        {{ end }}
+    {{ else if in site.Data.modImg.process.compress $subtype }}
+        {{ $params = merge $params 
+            (dict (slice "preprocess" "run") true ) 
+            (dict (slice "process" "run") true) 
+            (dict (slice "process" "compress") true) }}
+    {{ else if in site.Data.modImg.process.lossless $subtype }}
+        {{ $params = merge $params 
+            (dict (slice "preprocess" "run") true ) 
+            (dict (slice "process" "run") true) 
+            (dict (slice "process" "compress") false) }}
+    {{ else }}
+        {{ $params = merge $params 
+            (dict (slice "preprocess" "run") false ) 
+            (dict (slice "process" "run") false ) }}
+        {{ warnf "%s: Unable to process %q. Type %q not supported" $name $img.RelPermalink . }}
+    {{ end }}
+{{ end }}
+
+{{ if eq $params.contClass.type "symbol" }}
+        {{ $params = merge $params (dict (slice "preprocess" "run") false ) }}
+{{ end }}
 
 {{ if $params.preprocess.run }}
     {{/* Check and modify preprocessing parameters */}}
@@ -52,28 +93,6 @@
             {{ warnf "%s: Unable to use hint %q. Not in %v." $name . $options }}
         {{ end }}
     {{ end }} 
-{{ end }}
-
-{{/* Process and compress? */}}
-{{ with $img.MediaType.SubType }}
-    {{ if eq "svg" .  }}
-        {{ $params = merge $params (dict (slice "preprocess" "run") false ) (dict (slice "process" "run") false ) }}
-    {{ else if (in site.Data.modImg.process.none .) }}
-        {{ if $params.process.run }}
-            {{ $params = merge $params (dict (slice "process" "run") true ) (dict (slice "process" "compress") false) }}
-        {{ else }}
-            {{ $params = merge $params (dict (slice "process" "run") false ) }}
-        {{ end }}
-    {{ else }}
-        {{ if in site.Data.modImg.process.compress . }}
-            {{ $params = merge $params (dict (slice "process" "run") true) (dict (slice "process" "compress") true) }}
-        {{ else if in site.Data.modImg.process.lossless . }}
-            {{ $params = merge $params (dict (slice "process" "run") true) (dict (slice "process" "compress") false) }}
-        {{ else }}
-            {{ $params = merge $params (dict (slice "process" "run") false ) }}
-            {{ warnf "%s: Unable to process %q. Type %q not supported" $name $img.RelPermalink . }}
-        {{ end }}
-    {{ end }}
 {{ end }}
 
 {{ return $params }}

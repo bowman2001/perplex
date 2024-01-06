@@ -1,7 +1,8 @@
 {{/* Context: parameter map */}}
 
-{{ $attrs := partial "mod-img/func/params/attributes" . }}
-{{ $raster := partial "mod-img/func/params/raster" . }}
+{{ $attrs := partial "mod-img/func/params/collect/attributes" . }}
+{{ $raster := dict }}
+{{ with .params }}{{ $raster = partial "mod-img/func/params/collect/raster" . }}{{ end }}
 {{ $params := merge $attrs $raster }}
 
 {{ $params = partial "mod-img/func/params/theme" $params }}

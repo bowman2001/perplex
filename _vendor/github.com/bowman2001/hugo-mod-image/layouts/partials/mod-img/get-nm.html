@@ -6,7 +6,7 @@
 {{ $src := .src }}
 {{ $ctx := .ctx }}
 
-{{ $imgMap := "" }}
+{{ $imgMap := dict }}
 {{ $url := urls.Parse $src }}
 
 {{/* No error message for now */}}
@@ -21,17 +21,8 @@
     {{ end }}
 {{ end }}
 
-{{/* Collect and sort parameters */}}
 {{ with $imgMap }}
-    {{ $imgParams := partial "mod-img/func/params/resource" .img }}
-    {{ $extraParams := dict }}
-    {{ $captionParams := dict }}
-    {{ with .params }}
-        {{ $extraParams = partial "mod-img/func/params/extra" . }}
-        {{ $captionParams = partial "mod-resource/func/caption" . }}
-    {{ end }}
-    {{ $sortedParams := merge $imgParams $extraParams $captionParams }}
-    {{ $imgMap = dict "img" .img "params" $sortedParams }}
+    {{ $imgMap = partial "mod-img/func/params/collect-and-sort" $imgMap }}
 {{ end }}
 
 {{ return $imgMap }}

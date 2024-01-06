@@ -14,5 +14,6 @@
 	{{- end }}
 	{{- $imgMap := partial "mod-img/func/params/aggregate/all/figure" (dict "img" .img "params" $params) }}
 	{{- $imgMap = partial "mod-img/func/raster/preprocess" $imgMap }}
+	{{- partial "mod-img/helper/debug" $imgMap.params }}
 	{{- partial "mod-img/render/container/figure" $imgMap }}
 {{- end }}

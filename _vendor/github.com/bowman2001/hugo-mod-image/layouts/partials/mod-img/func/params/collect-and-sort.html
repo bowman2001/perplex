@@ -1,0 +1,14 @@
+{{/* Context: imgMap */}}
+
+{{ $imgMap := . }}
+
+{{ with $imgMap.img }}
+    {{ $imgParams := partial "mod-img/func/params/collect/resource" . }}
+    {{ $extraParams := partial "mod-img/func/params/collect/extra" $imgMap }}
+    {{ $captionParams := dict }}
+    {{ with $imgMap.params }}{{ $captionParams = partial "mod-resource/func/caption" . }}{{ end }}
+    {{ $sortedParams := merge $imgParams $extraParams $captionParams }}
+    {{ $imgMap = dict "img" . "params" $sortedParams }}
+{{ end }}
+
+{{ return $imgMap }}
