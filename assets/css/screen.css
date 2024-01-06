@@ -320,7 +320,7 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   height: auto;
 }
 
-.img__c--t-logo img {
+.img__c--t-symbol img {
   object-fit: contain !important;
 }
 
@@ -3678,7 +3678,7 @@ sup:target {
     padding-right: 18.5rem;
   }
 }
-.fig--w-tiny .img-t-logo {
+.fig--w-tiny .img__c-t-symbol {
   padding: 1rem;
 }
 
@@ -5025,7 +5025,7 @@ sup:target {
   height: 100%;
   overflow: hidden;
 }
-.card__fig .img__c--t-logo svg {
+.card__fig .img__c--t-symbol svg {
   display: block;
   margin: 0 auto;
 }
@@ -5035,10 +5035,10 @@ sup:target {
   width: 14.5rem;
   height: 12.5rem;
 }
-.card__fig--half .img__frame:has(.img__c--t-logo) {
+.card__fig--half .img__frame:has(.img__c--t-symbol) {
   padding: 1rem;
 }
-.card__fig--half .img__c--t-logo {
+.card__fig--half .img__c--t-symbol {
   width: 12.5rem;
   height: 10.5rem;
 }
@@ -5049,10 +5049,10 @@ sup:target {
   height: 4.8333575rem;
   margin-right: 1px;
 }
-.card__fig--1 .img__frame:has(.img__c--t-logo) {
+.card__fig--1 .img__frame:has(.img__c--t-symbol) {
   padding: 0.5rem;
 }
-.card__fig--1 .img__c--t-logo {
+.card__fig--1 .img__c--t-symbol {
   width: 6.25rem;
   height: 3.83333575rem;
 }
@@ -5062,10 +5062,10 @@ sup:target {
     width: 14.5rem;
     height: 9.666715rem;
   }
-  .card__fig--1 .img__frame:has(.img__c--t-logo) {
+  .card__fig--1 .img__frame:has(.img__c--t-symbol) {
     padding: 1rem;
   }
-  .card__fig--1 .img__c--t-logo {
+  .card__fig--1 .img__c--t-symbol {
     width: 12.5rem;
     height: 7.6666715rem;
   }
@@ -5077,10 +5077,10 @@ sup:target {
     padding: 0;
     margin-right: 0;
   }
-  .card__fig--1 .img__frame:has(.img__c--t-logo) {
+  .card__fig--1 .img__frame:has(.img__c--t-symbol) {
     padding: 2rem;
   }
-  .card__fig--1 .img__c--t-logo {
+  .card__fig--1 .img__c--t-symbol {
     width: 29rem;
     height: 18.000011rem;
   }
