@@ -33,11 +33,11 @@ frame:
   background:
     name: "Background"
     prefix: bg-
-    options: [dark, light, white, transparent]
+    options: [dark, light, white]
   box:
     name: "Box"
     prefix: box-
-    options: [ shadow, light, none ]
+    options: [ shadow, none ]
   padding:
     name: "Padding"
     prefix: pad-
@@ -48,7 +48,7 @@ container:
   type:
     name: Type
     prefix: t-
-    options: [ symbol, none ]
+    options: [ symbol, image ]
 
 width:
   pt1: [30,30]
