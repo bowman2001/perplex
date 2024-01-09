@@ -6,10 +6,18 @@
     {{ $n := sub (len .Ancestors) 1 }}
     {{- range $i, $e := last $n .Ancestors.Reverse -}}
       <li class="meta__item">
-        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- (partial "inline/check-linktitle" (dict "title" .LinkTitle "page" .Page)) | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
       </li>
     {{- end -}}
   <li class="meta__item">
-    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}</a>
+    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- (partial "inline/check-linktitle" (dict "title" .LinkTitle "page" .Page)) | site.Home.RenderString -}}</a>
   </li>
 </ul>
+
+{{- define "partials/inline/check-linktitle.html" }}
+  {{- $limit := site.Params.linkTitle | default 25 }}
+  {{- if gt (len .title) $limit }}
+    {{ warnf "The title %q is too large for a breadcrumb. Please provide a short linktitle ( < %d characters). See %s." .title $limit .page }}
+  {{- end }}
+  {{- return .title }}
+{{- end }}

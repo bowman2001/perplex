@@ -11,6 +11,9 @@ params:
   subtitle: false
   toctitle: On this Page
   paginateNr: 5
+  limit:
+    linkTitle: 25
+    taxonomy: 25
 
   # Default favicon
   favicon:
