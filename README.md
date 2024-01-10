@@ -30,6 +30,8 @@ The theme can generate
 
 - card previews
 
+To achieve a balanced layout, some content snippets and meta-data parameters shouldn’t exceed a few reasonable limits. The theme helps with some checks and warnings. We can suppress these warnings separately in the project configuration.
+
 ### Color scheme 
 
 The **light** and the **dark** mode follow the setting of the OS environment and their color-contrast complies with the WCGA standard. 
