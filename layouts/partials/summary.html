@@ -1,9 +1,22 @@
+{{- $name := "summary" }}
+{{- $page := . }}
+{{- $min := site.Params.limit.summary.min | default 50 }}
+{{- $max := site.Params.limit.summary.max | default 360 }}
+{{- $errorLevel := site.Params.limit.summary.errorLevel | default "warning" }}
+
 {{- with .Summary -}}
-    {{- partial "wrap-p" (partial "replacements.html" . | htmlUnescape | plainify ) }}
-{{- else -}}
-    {{- with .Description -}}
-      <p>{{- partial "replacements.html" ( . | site.Home.RenderString| htmlUnescape | plainify ) -}}</p>
-    {{ else }}
-        {{ warnf "Unable to print summary. No summary or description found for %v." . }}
-    {{- end -}}
+    {{- $text := (partial "replacements" . | htmlUnescape ) }}
+    {{- $n := len ($text | plainify) }}
+    {{- if lt $n $min }}
+        {{- $msg := printf "Very short summary %q (%d chars). A length beyond %d characters is better." ($text | plainify) $n $min }}
+        {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+    {{- if gt $n $max }}
+        {{- $msg := printf "Very long summary (%d chars). A length under %d characters is better." $n $max }}
+        {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+    {{- partial "wrap-p" $text }}
+{{- else }}
+    {{- $msg := printf "Missing summary." }}
+    {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
 {{- end -}}

@@ -9,11 +9,11 @@
     {{- $diagram = (string .) | lower }}
 {{ else }}
     {{- $msg := "Missing mandatory 'diagram' attribute for Kroki." }}
-    {{- partial "md-error-msg" (dict "caller" $name "ctx" . "errorMsg" $msg "errorLevel" "error") }}
+    {{- partial "error-msg" (dict "caller" $name "ctx" . "errorMsg" $msg "errorLevel" "error") }}
 {{ end }}
 {{- if not (in $supported $diagram) }}
     {{- $msg := "The diagram type %q is not supported by the Kroki server."  }}
-    {{- partial "md-error-msg" (dict "caller" $name "ctx" . "errorMsg" $msg "errorLevel" "error") }}
+    {{- partial "error-msg" (dict "caller" $name "ctx" . "errorMsg" $msg "errorLevel" "error") }}
 {{- end }}
 
 {{- /* Set parameter defaults */}}
@@ -56,7 +56,7 @@
         {{- $params = merge $params (dict (slice "imgAttrs" "src") $img.RelPermalink ) }}
         {{- $imgMap = dict "img" $img "params" $params }}
         {{- $msg := printf "Unable to get remote diagram — %s." . }}
-        {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
+        {{- partial "error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- else }}
         {{- $params = merge $params (dict (slice "imgAttrs" "src") .RelPermalink ) }}
         {{- $imgMap = dict "img" . "params" $params }}

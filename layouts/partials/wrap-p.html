@@ -1,5 +1,5 @@
 {{- if not ( strings.Contains . "</p>" ) }}
-  <p>{{ . }}</p>
+  <p>{{ . | safeHTML }}</p>
 {{- else }}
-  {{- . }}
+  {{- . | safeHTML }}
 {{- end -}}

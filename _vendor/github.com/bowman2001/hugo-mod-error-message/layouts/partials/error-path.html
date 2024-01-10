@@ -1,0 +1,15 @@
+{{/* Determine the path to the erroneous content with a fallback to the context */}}
+{{ $ctx := . }}
+{{ $path := "" }}
+
+{{ with $ctx.Page.File }}
+    {{ $path = .Path }}
+{{ else }}
+    {{ with .Path }}
+        {{ $path = . }}
+    {{- else }}
+        {{ $path = $ctx }}
+    {{ end }}
+{{ end }}
+
+{{ return $path }}

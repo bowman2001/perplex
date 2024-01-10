@@ -11,12 +11,12 @@
     {{- with resources.GetRemote $url.String }}
         {{- with .Err }}
             {{- $msg := print $errorMsg ". " . }}
-            {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel ) }}
+            {{- partial "error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $msg "errorLevel" $errorLevel ) }}
         {{- else }}
             {{- $map = dict "resource" . }} {{- /* no params possible */}}
         {{ end }}
     {{- else }}
-        {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $errorMsg "errorLevel" $errorLevel) }}
+        {{- partial "error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $errorMsg "errorLevel" $errorLevel) }}
     {{- end }}
 {{- else }}
     {{- $path := (strings.TrimPrefix "./" $url.Path ) }}
@@ -40,7 +40,7 @@
         {{- with resources.Get $url.Path }} {{- /* Site */}}
             {{- $map = dict "resource" . }} {{- /* no params possible */}}
         {{- else }} {{- /* $map is still empty */}}
-            {{- partial "md-error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $errorMsg "errorLevel" $errorLevel) }}
+            {{- partial "error-msg" (dict "caller" $name "ctx" $ctx "errorMsg" $errorMsg "errorLevel" $errorLevel) }}
         {{- end }}   
     {{- end }}
 {{- end }}

@@ -1,16 +1,24 @@
-{{- $name := "hugo-mod-error-message – partial error-msg" }}
+{{- $name := "hugo-mod-error-message" }}
 
 {{- /* Initialize local variables with the values from the context map */}}
 {{- $caller := .caller }}
 {{- $errorMsg := .errorMsg }}
 {{- $errorLevel := .errorLevel }}
 
-{{- $msg := printf "%s: %s" $caller $errorMsg }}
+{{- $msg := "" }}
+{{- with .ctx }}
+    {{- $path := partial "error-path" . }}
+    {{- $msg = printf "%s: %s See %s." $caller $errorMsg $path }}
+{{- else }}
+    {{- $msg = printf "%s: %s" $caller $errorMsg }}
+{{- end }}
+
 {{- if eq $errorLevel "ignore" }}
+     {{/* do nothing */}}
 {{- else if eq $errorLevel "warning" }}
     {{- warnf $msg }}                
 {{- else if eq $errorLevel "error" }}
     {{- errorf $msg }}
 {{- else }}
-    {{- errorf "%s: Unavailable error level %q in call from %q. Only 'ignore', 'warning', and 'error' are possible" $name $errorLevel $caller }}
+    {{- errorf "%s: Invalid error level %q in call from %q. Only 'ignore', 'warning', or 'error' are possible." $name $errorLevel $caller }}
 {{- end }}

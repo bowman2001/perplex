@@ -6,18 +6,24 @@
     {{ $n := sub (len .Ancestors) 1 }}
     {{- range $i, $e := last $n .Ancestors.Reverse -}}
       <li class="meta__item">
-        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- (partial "inline/check-linktitle" (dict "title" .LinkTitle "page" .Page)) | site.Home.RenderString -}}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+        {{- $title := partial "inline/check-linktitle" $e }}
+        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{ $title | site.Home.RenderString }}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
       </li>
     {{- end -}}
   <li class="meta__item">
-    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- (partial "inline/check-linktitle" (dict "title" .LinkTitle "page" .Page)) | site.Home.RenderString -}}</a>
+    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" aria-current="page" rel="nofollow">{{- (partial "inline/check-linktitle" . ) | site.Home.RenderString -}}</a>
   </li>
 </ul>
 
 {{- define "partials/inline/check-linktitle.html" }}
-  {{- $limit := site.Params.linkTitle | default 25 }}
-  {{- if gt (len .title) $limit }}
-    {{ warnf "The title %q is too large for a breadcrumb. Please provide a short linktitle ( < %d characters). See %s." .title $limit .page }}
-  {{- end }}
-  {{- return .title }}
+    {{- $limit := site.Params.limit.linkTitle.max | default 30 }}
+    {{- $errorLevel := site.Params.limit.linkTitle.errorLevel | default "warning" }}
+    {{- $title := .LinkTitle }}
+    {{- $page := .Page }}
+
+    {{- if gt (len $title) $limit }}
+        {{ $msg := printf "The title %q is too large for a breadcrumb. Shorter is better ( < %d characters)." $title $limit }}
+        {{- partial "error-msg" (dict "caller" "check-linktitle" "ctx" $page "errorMsg" $msg "errorLevel" $errorLevel ) }}
+    {{- end }}
+    {{- return $title }}
 {{- end }}

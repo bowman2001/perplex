@@ -3,8 +3,8 @@ module github.com/bowman2001/perplex
 go 1.21.3
 
 require (
-	github.com/bowman2001/hugo-mod-error-message v0.1.0 // indirect
-	github.com/bowman2001/hugo-mod-image v0.6.12 // indirect
+	github.com/bowman2001/hugo-mod-error-message v0.3.0 // indirect
+	github.com/bowman2001/hugo-mod-image v0.6.13 // indirect
 	github.com/bowman2001/hugo-mod-katex v0.2.4 // indirect
 	github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206165133-a8d5507eaa47 // indirect
 	github.com/bowman2001/hugo-mod-mermaid v0.4.2 // indirect
@@ -14,7 +14,7 @@ require (
 	github.com/bowman2001/hugo-mod-open-in-vscode/v2 v2.0.4 // indirect
 	github.com/bowman2001/hugo-mod-pangram v0.0.0-20230803153646-6851d0e94236 // indirect
 	github.com/bowman2001/hugo-mod-replacements v0.4.0 // indirect
-	github.com/bowman2001/hugo-mod-resource v0.1.3 // indirect
+	github.com/bowman2001/hugo-mod-resource v0.1.4 // indirect
 	github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231217095241-93247b6eff35 // indirect
 	github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac // indirect
 )

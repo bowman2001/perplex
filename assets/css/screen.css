@@ -876,6 +876,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
   max-width: 71rem;
   color: var(--c-text-low);
   fill: var(--c-icon);
@@ -889,6 +890,7 @@ body {
 }
 
 .meta--foot {
+  flex-shrink: 0;
   align-items: end;
   margin-bottom: 1rem;
 }
@@ -984,6 +986,10 @@ body {
 .meta__item {
   display: inline-flex;
   flex-shrink: 0;
+}
+
+.meta__item--taxo {
+  max-width: 18.5rem;
 }
 
 .meta__separator, .meta__text {

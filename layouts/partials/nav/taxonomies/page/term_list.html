@@ -1,4 +1,17 @@
 {{- $last := sub (len .) 1 -}}
 {{- range $i, $el := . -}}
-  <li><a class="meta__text link link--nav" href="{{ $el.RelPermalink }}">{{ $el.LinkTitle | strings.FirstUpper -}}</a>{{- if (lt $i $last) -}}&zwj;{{- partial "nav/taxonomies/icon_item/separator.html" . -}}{{ end }}</li>
+  {{- $term := partial "inline/check-term" $el  }}
+  <li class="meta__item meta__item--taxo"><a class="meta__text link link--nav" href="{{ $el.RelPermalink }}">{{ $term }}</a>{{- if (lt $i $last) -}}&zwj;{{- partial "nav/taxonomies/icon_item/separator.html" . -}}{{ end }}</li>
+{{- end }}
+
+{{- define "partials/inline/check-term.html" }}
+    {{- $term := .LinkTitle | strings.FirstUpper }}
+    {{- $page := .Page }}
+    {{- $limit := site.Params.limit.taxoterm.max | default 25 }}
+    {{- $errorLevel := site.Params.limit.taxoterm.errorLevel | default "warning" }}
+    {{- if gt (len $term) $limit }}
+        {{- $msg := printf "The term %q is too large for a breadcrumb. Shorter is better ( < %d characters)." $term $limit }}
+        {{- partial "error-msg" (dict "caller" "term-list" "ctx" $page "errorMsg" $msg "errorLevel" $errorLevel ) }}
+    {{- end }}
+    {{- return $term }}
 {{- end -}}

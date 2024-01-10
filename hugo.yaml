@@ -7,13 +7,27 @@ params:
   # Default site description
   description: Perplex theme for Hugo
 
-  # All parameters may be set per page in the front-matter
-  subtitle: false
+  # The following parameters may be set per page in the front-matter
   toctitle: On this Page
+  subtitle: false
   paginateNr: 5
+
+  # Limits for the number of characters to ensure a balanced layout
   limit:
-    linkTitle: 25
-    taxonomy: 25
+    linkTitle:
+      max: 25
+      errorLevel: warning
+    description:
+      max: 85
+      errorLevel: warning
+    taxoterm:
+      max: 30
+      errorLevel: warning
+    summary:
+      min: 50
+      max: 360
+      errorLevel: warning
+
 
   # Default favicon
   favicon:

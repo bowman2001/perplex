@@ -1,7 +1,7 @@
 {{ $categories := .GetTerms "categories" }}
 {{ $tags := .GetTerms "tags" }}
 <ul class="meta__list">
-  <li class="meta__item meta__item--taxo taxo-shape taxo-shape--category">
+  <li class="taxo-shape taxo-shape--category">
       {{ with $categories }}
         <ul class="ul--row">
             {{- partial "nav/taxonomies/icon_item/categories.html" . -}}
@@ -9,7 +9,7 @@
         </ul>
       {{ end }}
   </li>
-  <li class="meta__item meta__item--taxo taxo-shape taxo-shape--tag">
+  <li class="taxo-shape taxo-shape--tag">
       {{ with $tags }}
         <ul class="ul--row">
             {{- partial "nav/taxonomies/icon_item/tags.html" . -}}

@@ -1,0 +1,19 @@
+{{- $name := "short-description" }}
+{{- $page := . }}
+{{- $max := site.Params.limit.description.max | default 80 }}
+{{- $errorLevel := site.Params.limit.description.errorLevel | default "warning" }}
+
+{{- with .Description -}}
+    {{- $text := partial "replacements" ( . | site.Home.RenderString | htmlUnescape ) }}
+    <p>{{ $text }}</p>
+    {{ $n := len (plainify $text) }}
+    {{- if gt $n $max }}
+        {{- $msg := printf "Long description (%d chars). Better trim the text to under %d characters." $n $max }}
+        {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+{{- else }}
+    {{- if and (ne $page.Kind "term") (ne $page.Kind "taxonomy") }}
+        {{- $msg := printf "Missing short description. Add a 'description:' with up to %d characters." $max }}
+        {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
+    {{- end }}
+{{- end -}}
