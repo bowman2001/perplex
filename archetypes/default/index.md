@@ -1,6 +1,8 @@
 ---
 authors: []
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+linktitle:
+description: "**Placeholder**: Short description"
 date: {{ .Date }}
 resources:
   - src:

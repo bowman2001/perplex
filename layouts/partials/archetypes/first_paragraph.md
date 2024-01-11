@@ -1,2 +1,2 @@
-**Placeholder**: Put your summary paragraph here. It may contain inline markup, but it gets removed on cards.
+**Placeholder**: This is the place for a summary paragraph which may contain inline markup.
 {.p-first}
