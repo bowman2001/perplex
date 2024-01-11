@@ -15,7 +15,7 @@ params:
   # Limits for the number of characters to ensure a balanced layout
   limit:
     linkTitle:
-      max: 25
+      max: 30
       errorLevel: warning
     description:
       max: 85

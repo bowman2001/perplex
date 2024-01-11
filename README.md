@@ -30,13 +30,13 @@ The theme can generate
 
 - card previews
 
-To achieve a balanced layout, some content snippets and meta-data parameters shouldn’t exceed a few reasonable limits. The theme helps with some checks and warnings. We can suppress these warnings separately in the project configuration.
+To achieve a balanced layout, some content snippets and meta-data parameters shouldn’t exceed a few reasonable limits. The theme helps with checks and warnings. We can change the limits and suppress all warnings separately in the project configuration.
 
-### Color scheme 
+### Color scheme
 
 The **light** and the **dark** mode follow the setting of the OS environment and their color-contrast complies with the WCGA standard. 
 
-The color scheme is defined in a separate CSS file by custom properties and can be substituted with your own scheme.
+The default color scheme is defined in a separate CSS file and can be replaced with your own scheme.
 
 ### Navigation
 
