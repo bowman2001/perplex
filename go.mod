@@ -2,6 +2,8 @@ module github.com/bowman2001/perplex
 
 go 1.21.3
 
+
+
 require (
 	github.com/bowman2001/hugo-mod-error-message v0.4.0 // indirect
 	github.com/bowman2001/hugo-mod-image v0.6.13 // indirect
