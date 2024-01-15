@@ -911,7 +911,7 @@ body {
   .meta--left .meta__list--date {
     align-items: flex-start;
   }
-  .meta--left .meta__item--taxo .meta__icon {
+  .meta--left .meta__hanging {
     margin-left: -3rem;
   }
 }
@@ -932,7 +932,7 @@ body {
   .meta--left-doc .meta__list--date {
     align-items: flex-start;
   }
-  .meta--left-doc .meta__icon-doc {
+  .meta--left-doc .meta__hanging {
     margin-left: -3rem;
   }
 }
@@ -986,10 +986,11 @@ body {
 .meta__item {
   display: inline-flex;
   flex-shrink: 0;
+  align-items: flex-end;
 }
 
 .meta__item--taxo {
-  max-width: 18.5rem;
+  max-width: 16.5rem;
 }
 
 .meta__separator, .meta__text {
@@ -4661,9 +4662,9 @@ sup:target {
 }
 .section-nav__title {
   font-size: 1.915rem;
-  line-height: 3rem;
-  padding-top: 0.0328325rem;
-  margin-bottom: -1.0328325rem;
+  line-height: 2rem;
+  padding-top: 0.5328325rem;
+  margin-bottom: -0.5328325rem;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   color: var(--c-text-normal);
