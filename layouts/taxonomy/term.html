@@ -18,8 +18,8 @@
         <nav class="card-nav card-nav--3 card-nav--top margin-full">
           <ul class="card-nav__list">
               {{- range . -}}
-                <li class="card card--1 card--1--col">
-                  <a href="{{ .RelPermalink }}" class="card__hover">{{- .Render "li-card-1-col-img" -}}</a>
+                <li class="card card--1 card--1--col card__hover">
+                  {{- .Render "li-card-1-col-img" -}}
                 </li>
               {{- end -}}
           </ul>

@@ -8,19 +8,13 @@
       </div>
     </header>
       {{ with .Content }}
-        <div class="md md--sans md--h-sans md--blog md--margin-full">
-            {{- partial "replacements.html" . -}}
-        </div>
+        <div class="md md--sans md--h-sans md--blog md--margin-full">{{- partial "replacements.html" . -}}</div>
       {{ end }}
       {{ with .RegularPages }}
         <nav class="card-nav card-nav--4">
           <ul class="card-nav__list">
               {{- range . -}}
-                <li class="card card--1 card--1--col">
-                  <a href="{{ .RelPermalink }}" class="card__hover" aria-label="Read more">
-                    {{- .Render "li-card-1-col-img" -}}
-                  </a>
-                </li>
+                <li class="card card--1 card--1--col card__hover">{{- .Render "li-card-1-col-img" -}}</li>
               {{- end -}}
           </ul>
         </nav>

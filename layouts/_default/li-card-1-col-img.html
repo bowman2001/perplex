@@ -1,22 +1,18 @@
 <div class="card__flex card__flex--1">
-    {{- partial "img/featured-card-1.html" . -}}
+    <a href="{{ .RelPermalink }}" aria-label="Read more…">{{- partial "img/featured-card-1.html" . -}}</a>
     <div class="card__content">
         <div class="card__text">
             <nav class="card__header">
                 <div class="meta meta--card meta--card--1">
                     {{- partial "nav/card/meta/firstsection-category.html" . }}
-                    {{- partial "date/date.html" . }}
+                    {{- partial "date/date.html" . -}}
                 </div>
                 {{- $level := 2 }}
                 {{- with page.Scratch.Get "level" }}{{ $level = . -}}{{ end }}
-                {{- partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) }}
+                {{- partial "nav/card/title/col1.html" (dict "ctx" . "level" $level ) -}}
             </nav>
-            <div class="md md--sans md--card md--card--1">
-                {{- partial "summary.html" . }}
-            </div>
+            <div class="md md--sans md--card md--card--1">{{ partial "summary.html" . }}</div>
         </div>
-        <div class="card__footer">
-            {{- partial "nav/card/footer.html" . }}
-        </div>
+        <div class="card__footer">{{ partial "nav/card/footer.html" . }}</div>
     </div>
 </div>

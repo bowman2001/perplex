@@ -4948,7 +4948,6 @@ sup:target {
   .card__hover {
     display: block;
     transition: transform 150ms ease-out;
-    height: 100%;
   }
   .card__hover:hover, .card__hover:focus, .card__hover:active {
     transform: scale(1.075);

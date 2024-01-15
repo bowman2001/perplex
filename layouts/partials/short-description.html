@@ -4,9 +4,9 @@
 {{- $errorLevel := site.Params.limit.description.errorLevel | default "warning" }}
 
 {{- with .Description -}}
-    {{- $text := partial "replacements" ( . | site.Home.RenderString | htmlUnescape ) }}
+    {{- $text := partial "replacements" ( . | site.Home.RenderString | htmlUnescape | plainify ) }}
     <p>{{ $text }}</p>
-    {{ $n := len (plainify $text) }}
+    {{ $n := len $text }}
     {{- if gt $n $max }}
         {{- $msg := printf "Long description (%d chars). Better trim the text to under %d characters." $n $max }}
         {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}

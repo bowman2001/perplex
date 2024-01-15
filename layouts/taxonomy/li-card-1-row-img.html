@@ -3,16 +3,10 @@
   <div class="card__content card__content--flex">
     <div>
     <nav class="card__header">
-        <h2 class="card__title card__title--half">
-          {{ partial "title/render.html" . }}
-        </h2>
+        <h2 class="card__title card__title--half">{{ partial "title/render.html" . }}</h2>
     </nav>
-      <div class="md md--sans md--card md--card--half">
-          {{ partial "short-description.html" . }}
-      </div>
+      <div class="md md--sans md--card md--card--half">{{ partial "short-description.html" . }}</div>
   </div>
-  <div class="meta meta--card meta--card--half">
-    {{ partial "nav/taxonomies/site/term_count.html" . }}
-  </div>
+  <div class="meta meta--card meta--card--half">{{ partial "nav/taxonomies/site/term_count.html" . }}</div>
   </div>
 </div>

@@ -6,9 +6,10 @@
 
 {{- with .Summary -}}
     {{- $text := (partial "replacements" . | htmlUnescape ) }}
-    {{- $n := len ($text | plainify) }}
+    {{- $plaintext := $text | plainify }}
+    {{- $n := len $plaintext }}
     {{- if lt $n $min }}
-        {{- $msg := printf "Very short summary %q (%d chars). A length beyond %d characters is better." ($text | plainify) $n $min }}
+        {{- $msg := printf "Very short summary (%d chars). A length beyond %d characters is better." $n $min }}
         {{- partial "error-msg" (dict "ctx" $page "caller" $name "errorMsg" $msg "errorLevel" $errorLevel) }}
     {{- end }}
     {{- if gt $n $max }}
