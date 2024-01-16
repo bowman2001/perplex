@@ -41,7 +41,7 @@ frame:
   padding:
     name: "Padding"
     prefix: pad-
-    options: [ half, one, two, none ]
+    options: [ half, one, two, three, none ]
 
 container:
   base: "img__c"
@@ -49,6 +49,10 @@ container:
     name: Type
     prefix: t-
     options: [ symbol, image ]
+  color:
+    name: Color
+    prefix: c-
+    options: [red]
 
 width:
   pt1: [30,30]

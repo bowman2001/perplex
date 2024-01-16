@@ -302,6 +302,10 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   padding: 2rem;
 }
 
+.img__frame--pad-three {
+  padding: 3rem;
+}
+
 .l-footer .img__frame {
   box-shadow: 0 0 0 0.2rem var(--c-frame-shadow-1);
 }
@@ -315,13 +319,17 @@ h1:target .h-a:before, h2:target .h-a:before, h3:target .h-a:before, h4:target .
   margin: 0 auto;
 }
 
-.img--svg {
-  width: 100%;
-  height: auto;
+.img__c--c-red {
+  fill: var(--c-frame-border-active);
 }
 
 .img__c--t-symbol img {
   object-fit: contain !important;
+}
+
+.img--svg {
+  width: 100%;
+  height: auto;
 }
 
 #l-footer .img__c {
