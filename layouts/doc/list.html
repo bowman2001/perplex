@@ -2,6 +2,10 @@
 <div id="l-content-box" class="l-box l-box--doc">
   <div id="l-content">
     <div data-pagefind-body>
+      <div class="meta meta--head meta--left-doc show6" data-pagefind-ignore>
+        {{- partial "nav/breadcrumbs/header.html" . }}
+        {{- partial "date/published_date.html" . }}
+      </div>
       <header class="page-header margin-doc">
         {{- $level := "" }}
         {{- if eq .CurrentSection .FirstSection }}

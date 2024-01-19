@@ -1,14 +1,21 @@
-{{ $n := sub (len .Ancestors) 2 }}
+{{- $n := sub (len .Ancestors) 2 }}
 <ul class="ul--row meta__list">
-  <li class="meta__item"><span class="meta__icon-doc">
-    {{ partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}</span>
+  <li class="meta__item"><span class="meta__hanging">
+    {{- partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}</span>
   </li>
-    {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
-      {{ if ne $e .FirstSection }}
-      <li class="meta__item">
-        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle | site.Home.RenderString -}}
-        </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
-      </li>
-        {{ end }}
-    {{- end -}}
+  {{- $empty := true }}
+  {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}
+    {{- if ne $e .FirstSection }}
+      {{- $empty = false }}
+        <li class="meta__item">
+          <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle -}}
+          </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
+        </li>
+    {{ end }}
+  {{- end -}}
+  {{- with and $empty .CurrentSection }}
+  <li class="meta__item">
+    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle }}</a>
+  </li>
+  {{- end }}
 </ul>

@@ -1015,6 +1015,7 @@ body {
 .meta__text {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  max-width: 16.5rem;
 }
 
 .meta__separator {
@@ -5086,8 +5087,8 @@ sup:target {
 }
 @media screen and (min-width: 39em) {
   .card__fig--1 {
-    width: 100%;
-    height: auto;
+    width: 33rem;
+    height: 22.000011rem;
     padding: 0;
     margin-right: 0;
   }

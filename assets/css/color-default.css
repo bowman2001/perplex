@@ -14,7 +14,7 @@
   --c-frame-button-hover-bg: #433d40;
   --c-frame-button-disabled: #544108;
   --c-frame-border-hover: #0088c7;
-  --c-frame-border-active: #e7329b;
+  --c-frame-border-active: #e7339b;
   --c-frame-bg-1: #f9f6f8;
   --c-frame-bg-2: #f4f0f3;
   --c-frame-bg-3: #eae6e8;
@@ -39,7 +39,7 @@
   --c-nav-link-hover-bg: #f1eef0;
   --c-icon: #5e7884;
   --c-icon-link: #0074aa;
-  --c-icon-link-hover: #e00083;
+  --c-icon-link-hover: #e10083;
   --c-icon-link-ext-hover: #00a687;
   --c-code: #1a282f;
   --c-code-extralow: #5d737e;
@@ -62,8 +62,8 @@
   --c-bg-3: #eae6e8;
   --c-bg-4: #e1dedf;
   --c-shadow-1: #e7e2e5;
-  --c-shadow-2: #d5cfd3;
-  --c-shadow-3: #bab4b8;
+  --c-shadow-2: #d5d0d3;
+  --c-shadow-3: #bab5b8;
   --c-watermark: #b9d5e1;
   --c-scrollbar: #ebb924;
   --c-selection: #030505;
@@ -154,13 +154,13 @@
   --f-img: unset;
   --ctg-news-title: linear-gradient(90deg, #00628f 0%, #007560 66%, #00dbb3 100%);
   --ctg4-news-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #007560 75%, #00dbb3 100%);
-  --ctg-blog-title: linear-gradient(90deg, #00628f 0%, #9b1262 66%, #e62d99 100%);
-  --ctg4-blog-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1262 75%, #e62d99 100%);
-  --ctg-article-title: linear-gradient(90deg, #00628f 0%, #9b1262 66%, #e62d99 100%);
-  --ctg4-article-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1262 75%, #e62d99 100%);
+  --ctg-blog-title: linear-gradient(90deg, #00628f 0%, #9b1362 66%, #e62e99 100%);
+  --ctg4-blog-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1362 75%, #e62e99 100%);
+  --ctg-article-title: linear-gradient(90deg, #00628f 0%, #9b1362 66%, #e62e99 100%);
+  --ctg4-article-title: linear-gradient(90deg, #00a7f5 0%, #00628f 25%, #9b1362 75%, #e62e99 100%);
   --cbg-news-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #00a889 75%, #00dbb3 100%);
-  --cbg-blog-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #c9187f 75%, #e62d99 100%);
-  --cbg-article-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #c9187f 75%, #e62d99 100%);
+  --cbg-blog-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #c9187f 75%, #e62e99 100%);
+  --cbg-article-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #c9187f 75%, #e62e99 100%);
   --cbg-doc-button: linear-gradient(90deg, #00a7f5 0%, #0084c2 25%, #0084c2 75%, #00a7f5 100%);
 }
 @media (prefers-color-scheme: dark) {
@@ -181,12 +181,12 @@
     --c-text-link-ext-hover: #eaeef0;
     --c-text-link-ext-hover-bg: #2c2c2c;
     --c-nav-link: #259ad0;
-    --c-nav-link-hover: #ff47b3;
+    --c-nav-link-hover: #ff48b2;
     --c-nav-link-ext-hover: #00ab8c;
     --c-nav-link-hover-bg: #2c2c2c;
     --c-icon: #86898b;
     --c-icon-link: #259ad0;
-    --c-icon-link-hover: #ff47b3;
+    --c-icon-link-hover: #ff48b2;
     --c-icon-link-ext-hover: #00ab8c;
     --c-code: #d1d9dd;
     --c-code-extralow: #7d898e;
@@ -208,9 +208,9 @@
     --c-bg-2: #212121;
     --c-bg-3: #292929;
     --c-bg-4: #2f2f2f;
-    --c-shadow-1: #2e2b2d;
-    --c-shadow-2: #393839;
-    --c-shadow-3: #4b4b4b;
+    --c-shadow-1: #2f2b2d;
+    --c-shadow-2: #3a3839;
+    --c-shadow-3: #4c4c4c;
     --c-watermark: #1a3c4d;
     --c-scrollbar: #c99b13;
     --c-selection: white;
