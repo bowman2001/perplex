@@ -1,7 +1,7 @@
 {{- $n := sub (len .Ancestors) 2 }}
 <ul class="ul--row meta__list">
-  <li class="meta__item"><span class="meta__hanging">
-    {{- partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}</span>
+  <li class="meta__item"><a class="meta__hanging link link--nav" href='{{ ( site.GetPage "/doc" ).RelPermalink }}'>
+    {{- partial "material-symbol.html" (dict "id" "format_list_numbered" "ctx" . "size" "tiny") }}</a>
   </li>
   {{- $empty := true }}
   {{- range $i, $e := last (add $n 1) .Ancestors.Reverse -}}

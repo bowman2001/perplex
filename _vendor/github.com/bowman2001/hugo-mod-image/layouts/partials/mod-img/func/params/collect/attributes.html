@@ -4,8 +4,12 @@
 
 {{ $svgDefaultType := site.Data.modImg.svg.defaultType | default "symbol" }}
 
-{{ with .params }}
-    {{ if (or .svgstr (eq $imgMap.img.MediaType.SubType "svg")) -}}
+{{ if and $imgMap.img (eq $imgMap.img.MediaType.SubType "svg") }}
+    {{ $params = merge $params (dict (slice "contClass" "type") $svgDefaultType ) }}
+{{ end }}
+
+{{ with $imgMap.params }}
+    {{ if .svgstr -}}
         {{ $params = merge $params (dict (slice "contClass" "type") $svgDefaultType ) }}
     {{ end }}
 

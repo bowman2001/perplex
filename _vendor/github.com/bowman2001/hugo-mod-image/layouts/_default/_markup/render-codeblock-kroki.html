@@ -36,7 +36,7 @@
 {{- end }}
 
 {{- /* Sort user parameters and merge with defaults */}}
-{{ $attributes := partial "mod-img/func/params/collect/attributes" $userParams }}
+{{ $attributes := partial "mod-img/func/params/collect/attributes" (dict "img" "" "params" $userParams) }}
 {{ $caption := partial "mod-resource/func/caption" $userParams }}
 {{ $params := merge $defaultParams $hookParams $attributes $caption }}
 
@@ -62,4 +62,5 @@
         {{- $imgMap = dict "img" . "params" $params }}
     {{- end }}
 {{- end }}
+{{- partial "mod-img/helper/debug" $params }}
 {{- partial "mod-img/render/container/figure" $imgMap }}

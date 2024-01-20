@@ -3,10 +3,10 @@
 # github.com/bowman2001/hugo-mod-open-in-vscode/v2 v2.0.4
 # github.com/bowman2001/hugo-mod-katex v0.2.4
 # github.com/bowman2001/hugo-mod-mermaid v0.4.2
-# github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231217095241-93247b6eff35
-# github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206165133-a8d5507eaa47
+# github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20240117184956-cb6747bed09b
+# github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20240117185325-ae3b004482b0
 # github.com/bowman2001/hugo-mod-pangram v0.0.0-20230803153646-6851d0e94236
 # github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac
-# github.com/bowman2001/hugo-mod-image v0.6.13
+# github.com/bowman2001/hugo-mod-image v0.6.14
 # github.com/bowman2001/hugo-mod-resource v0.1.4
 # github.com/bowman2001/hugo-mod-error-message v0.4.0

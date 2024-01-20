@@ -64,6 +64,8 @@ github.com/bowman2001/hugo-mod-image v0.6.12 h1:7YHjEbUqWpIekbEelG7+8GHTS1fs+wte
 github.com/bowman2001/hugo-mod-image v0.6.12/go.mod h1:xitMnd4vhSfq2xX3PAE3R8aLuJL1VXKM/pYivXAKPxY=
 github.com/bowman2001/hugo-mod-image v0.6.13 h1:CkwpFqpsiR6GJGXnFwPmwLcJvG0kek6n7+CHooB0MCs=
 github.com/bowman2001/hugo-mod-image v0.6.13/go.mod h1:5L/FwcTo39jvv/WMKoC4I57XBUUqyiF32TkvI95Ykv0=
+github.com/bowman2001/hugo-mod-image v0.6.14 h1:ODpdwRn/S+/Zxx3fSBeEMW0fsJ6w8MNeLGyhKybspBs=
+github.com/bowman2001/hugo-mod-image v0.6.14/go.mod h1:g4oshY3QQSgh3qyBEnDOjbGR3QSaV6wKYnsKSE+OtUA=
 github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXeFkZaCX6eMs=
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-katex v0.2.4 h1:ahvjoEVVIVC/kURc7AFS0+zJCGPBPj/y3gxDkFIXbXs=
@@ -82,6 +84,8 @@ github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206153314-d8c5e45404
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206153314-d8c5e4540427/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206165133-a8d5507eaa47 h1:5VsdWHXgfLuPSN15AkBCw861fDEYceTpZuphTzS+DVY=
 github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20231206165133-a8d5507eaa47/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20240117185325-ae3b004482b0 h1:JLKpQoAr64EuQnIXu0iWmYcEU7gBWka1bZrhS/MfQYk=
+github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20240117185325-ae3b004482b0/go.mod h1:FncDf3/buO83ITNgcuPsVgb2Qg19+ia2q8qhMlbwKdc=
 github.com/bowman2001/hugo-mod-mermaid v0.4.2 h1:r6BFnUJtIHodQg6NCtis1FxDRczGZmRc4YxRcWXHp4Q=
 github.com/bowman2001/hugo-mod-mermaid v0.4.2/go.mod h1:+HDKjEKHuCE2cnRX4ZsOKXeiL0gCSHpmxORycHS/+pw=
 github.com/bowman2001/hugo-mod-meta v0.2.3 h1:7Vi1KcaeBe8B1iohl/5TkrH/jQuS8KN0/yczLqHD3Rg=
@@ -122,5 +126,7 @@ github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231206104422-f93aa1cf22c1 h
 github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231206104422-f93aa1cf22c1/go.mod h1:VYsc/Eirw/18yQjkxduLrh7IhNHYQR4YDRaKcMMS9Nk=
 github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231217095241-93247b6eff35 h1:T0fMnm/EAy04Aw6+nJYGmYd0oRPFgkyCpVUdbERfFQM=
 github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20231217095241-93247b6eff35/go.mod h1:VYsc/Eirw/18yQjkxduLrh7IhNHYQR4YDRaKcMMS9Nk=
+github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20240117184956-cb6747bed09b h1:7Qq6Ut3ObR8VJnT5v4BWhnd4QW6oXgKzkNt1JcfeBcY=
+github.com/bowman2001/hugo-mod-simple-icons v0.0.0-20240117184956-cb6747bed09b/go.mod h1:VYsc/Eirw/18yQjkxduLrh7IhNHYQR4YDRaKcMMS9Nk=
 github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac h1:KTrUsCHyIzHIEMRd5jMF+xSWDorNHXaZM5AvMtPo1ag=
 github.com/bowman2001/hugo-mod-wrap v0.0.0-20230803072025-a10a9f082aac/go.mod h1:ZfmKGlg5a3bwwe910xjoOWabsyuWidnuUzLOS2gO6iU=
