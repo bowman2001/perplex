@@ -66,6 +66,8 @@ github.com/bowman2001/hugo-mod-image v0.6.13 h1:CkwpFqpsiR6GJGXnFwPmwLcJvG0kek6n
 github.com/bowman2001/hugo-mod-image v0.6.13/go.mod h1:5L/FwcTo39jvv/WMKoC4I57XBUUqyiF32TkvI95Ykv0=
 github.com/bowman2001/hugo-mod-image v0.6.14 h1:ODpdwRn/S+/Zxx3fSBeEMW0fsJ6w8MNeLGyhKybspBs=
 github.com/bowman2001/hugo-mod-image v0.6.14/go.mod h1:g4oshY3QQSgh3qyBEnDOjbGR3QSaV6wKYnsKSE+OtUA=
+github.com/bowman2001/hugo-mod-image v0.6.15 h1:Q6hpSAd+7gObsQinipms5baHZzDTWPzO3i/IpvxD6d8=
+github.com/bowman2001/hugo-mod-image v0.6.15/go.mod h1:g4oshY3QQSgh3qyBEnDOjbGR3QSaV6wKYnsKSE+OtUA=
 github.com/bowman2001/hugo-mod-katex v0.2.3 h1:wYVxLRurgtDaPpkVj1YR/0tjzM7byNJXeFkZaCX6eMs=
 github.com/bowman2001/hugo-mod-katex v0.2.3/go.mod h1:3E5XXqk4Mn5Pll6skKVOcNRwRzzCvayNXCeyXgEx4W0=
 github.com/bowman2001/hugo-mod-katex v0.2.4 h1:ahvjoEVVIVC/kURc7AFS0+zJCGPBPj/y3gxDkFIXbXs=

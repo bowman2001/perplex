@@ -4,7 +4,7 @@ go 1.21.6
 
 require (
 	github.com/bowman2001/hugo-mod-error-message v0.4.0 // indirect
-	github.com/bowman2001/hugo-mod-image v0.6.14 // indirect
+	github.com/bowman2001/hugo-mod-image v0.6.15 // indirect
 	github.com/bowman2001/hugo-mod-katex v0.2.4 // indirect
 	github.com/bowman2001/hugo-mod-material-symbols v0.0.0-20240117185325-ae3b004482b0 // indirect
 	github.com/bowman2001/hugo-mod-mermaid v0.4.2 // indirect

@@ -4,13 +4,25 @@
 {{ $img := .img }}
 {{ $params := .params }}
 
+{{ $none := slice }}
+{{ $compress := slice }}
+{{ $lossless := slice }}
+
+{{ with site.Data.modImg.process }}
+    {{ $none = .none }}
+    {{ $compress = .compress }}
+    {{ $lossless = .lossless }}
+{{ else }}
+    {{ errorf "%s: Misconfiguration. Can’t find 'process' parameters in data/modImg." $name }}    
+{{ end }}
+
 {{/* Process and compress? */}}
 {{ with $subtype := $img.MediaType.SubType }}
     {{ if eq "svg" $subtype  }}
         {{ $params = merge $params 
             (dict (slice "preprocess" "run") false ) 
             (dict (slice "process" "run") false ) }}
-    {{ else if in site.Data.modImg.process.none $subtype }}
+    {{ else if in $none $subtype }}
         {{/* Is processing explicitly wanted */}}
         {{ if $params.process.run }}
             {{ $params = merge $params 
@@ -22,12 +34,12 @@
                 (dict (slice "preprocess" "run") false ) 
                 (dict (slice "process" "run") false ) }}
         {{ end }}
-    {{ else if in site.Data.modImg.process.compress $subtype }}
+    {{ else if in $compress $subtype }}
         {{ $params = merge $params 
             (dict (slice "preprocess" "run") true ) 
             (dict (slice "process" "run") true) 
             (dict (slice "process" "compress") true) }}
-    {{ else if in site.Data.modImg.process.lossless $subtype }}
+    {{ else if in $lossless $subtype }}
         {{ $params = merge $params 
             (dict (slice "preprocess" "run") true ) 
             (dict (slice "process" "run") true) 
