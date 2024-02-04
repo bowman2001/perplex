@@ -12,9 +12,9 @@
                 {{- partialCached "sidebar/item" $args . }}
             {{- end }}
             {{ partialCached "sidebar/expand" . . }}
-            <ul class="sidebar__list sidebar__list--2 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) -}}items-have-no-children{{ end }}">
+            <ul class='sidebar__list sidebar__list--2 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) -}}items-have-no-children{{ end }}'>
                 {{ range .Children }}
-                  <li class="sidebar__item sidebar__item--2 nav__item nav__item--2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}">
+                  <li class='sidebar__item sidebar__item--2 nav__item nav__item--2 {{- if $page.HasMenuCurrent $menuName . }} has-active{{- end -}}'>
                       {{- $args := dict "menuEntry" . "size" "small" }}
                       {{- if $page.IsMenuCurrent $menuName . }}
                           {{- partialCached "sidebar/item-active" $args . }}
@@ -23,7 +23,7 @@
                       {{- end }}
                       {{ if .HasChildren }}
                           {{ partialCached "sidebar/expand" . . }}
-                          <ul class="sidebar__list sidebar__list--3 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) }}items-have-no-children{{ end }}">
+                          <ul class='sidebar__list sidebar__list--3 {{ if ( partialCached "sidebar/itemsHaveNoChildren" . . ) }}items-have-no-children{{ end }}'>
                               {{ range .Children }}
                                 <li class="sidebar__item sidebar__item--3 nav__item nav__item--3">
                                     {{- $args := dict "menuEntry" . "size" "tiny" }}

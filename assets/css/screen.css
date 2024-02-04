@@ -4518,24 +4518,21 @@ sup:target {
 }
 
 .nav__title:hover, .nav__title:focus {
-  color: var(--c-frame-border-hover);
+  color: var(--c-frame-border-active);
 }
 
 .nav-main__link {
   letter-spacing: 0.075em;
   word-spacing: 0.225em;
   text-transform: uppercase;
-  border-bottom: 0.6rem solid transparent;
+  border-bottom: 0.6rem solid var(--c-frame);
+  transition: border-bottom-color 250ms;
 }
 .nav-main__link:hover, .nav-main__link:focus {
-  border-bottom-color: var(--c-frame-border-hover);
+  border-bottom-color: var(--c-frame-border-active);
 }
 .nav-main__link.is-active, .nav-main__link.has-active {
   border-bottom-color: var(--c-frame-border-active);
-}
-.nav-main__link.is-active:hover {
-  border-bottom-color: var(--c-frame-border-active);
-  cursor: default;
 }
 
 .social a, .social .nav-main__link {

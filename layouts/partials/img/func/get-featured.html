@@ -4,17 +4,22 @@
 
 {{ with .Params.featured }}
   {{ if and (eq $.Type "doc") (eq . "icon") }}
-    {{ $iconstr := partial "material-symbol" (dict "id" ($.Scratch.Get "iconid") "ctx" $ctx "size" "xl" ) }}
-    {{ $iconstr = replaceRE `</?span[^>]*>` "" $iconstr }}
-    {{ $imgMap = dict
-      (slice "params" "svgstr") $iconstr
-      (slice "params" "class" "width") "tiny"
-      (slice "params" "contClass" "type") "symbol"
-      (slice "params" "frameClass" "box") "shadow"
-      (slice "params" "frameClass" "background") "light"
-      (slice "params" "frameClass" "padding") "three"
-      (slice "params" "contClass" "color") "red"
-    }}
+    {{ with $id := $.Scratch.Get "iconid" }}
+      {{ $iconstr := partial "material-symbol" (dict "id" $id "ctx" $ctx "size" "xl" ) }}
+      {{ $iconstr = replaceRE `</?span[^>]*>` "" $iconstr }}
+      {{ $imgMap = dict
+        (slice "params" "svgstr") $iconstr
+        (slice "params" "class" "width") "tiny"
+        (slice "params" "contClass" "type") "symbol"
+        (slice "params" "frameClass" "box") "shadow"
+        (slice "params" "frameClass" "background") "light"
+        (slice "params" "frameClass" "padding") "three"
+        (slice "params" "contClass" "color") "red"
+      }}
+    {{ else }}
+      {{ warnf "Cant get icon from scratch on %v." $ctx }}
+      {{ $imgMap = partial "mod-img/get" (dict "src" . "ctx" $ctx ) }}
+    {{ end }}
   {{ else }}
     {{ $imgMap = partial "mod-img/get" (dict "src" . "ctx" $ctx ) }}
   {{ end }}
