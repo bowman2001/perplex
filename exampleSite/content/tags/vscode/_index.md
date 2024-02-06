@@ -10,6 +10,6 @@ resources:
     alt: Logo of Visual Studio Code
     box: none
     width: tiny
-    type: logo
-    background: transparent
+    type: symbol
+    background: none
 ---

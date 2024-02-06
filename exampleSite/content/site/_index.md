@@ -9,20 +9,20 @@ resources :
     params:
       alt: Perplex logo
       link: https://perplex.desider.at
-      type: logo
+      type: symbol
       box: none
   - src: Hugo.png
     name: hugo
     params:
       link: https://gohugo.io
       alt: Hugo logo
-      type: logo
+      type: symbol
       box: none
   - src: Markdown.svg
     name: markdownlogo
     params: 
       alt: Markdown logo
-      type: logo
+      type: symbol
       background: light
       padding: one
       width: tiny

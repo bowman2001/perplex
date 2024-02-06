@@ -12,5 +12,5 @@ resources:
     background: light
     padding: one
     width: tiny
-    type: logo
+    type: symbol
 ---

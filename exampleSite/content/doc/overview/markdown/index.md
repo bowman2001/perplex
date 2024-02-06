@@ -16,7 +16,7 @@ resources:
     alt: Markdown logo
     background: light
     width: tiny
-    type: logo
+    type: symbol
     padding: one
 - src: erda-estremera-eMX1aIAp9Nw-unsplash.jpg
   name: bigsplash

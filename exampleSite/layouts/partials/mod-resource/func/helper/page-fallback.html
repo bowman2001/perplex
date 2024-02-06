@@ -1,0 +1,31 @@
+{{ $path := (print .path "*") }}
+{{ $ctx := .ctx }}
+{{ $resource := "" }}
+{{ with $ctx.Page }}
+{{ range $i, $tag := .GetTerms "tags" }}
+{{ if not $resource }}
+{{ $resource = $tag.Page.Resources.GetMatch $path }}
+{{ end }}
+{{ end }}
+{{ if not $resource }}
+{{ range $i, $category := .GetTerms "categories" }}
+{{ if not $resource }}
+{{ $resource = $category.Page.Resources.GetMatch $path }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ if not $resource }}
+{{ range .Ancestors }}
+{{ if not $resource }}
+{{ with .Resources.GetMatch $path }}
+{{ $resource = . }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ if not $resource }}
+{{ $resource = (site.GetPage "/site").Resources.GetMatch $path }}
+{{ end }}
+{{ end }}
+
+{{ return $resource }}
