@@ -978,6 +978,7 @@ body {
 .meta__list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.01em;
