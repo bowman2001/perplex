@@ -8,7 +8,14 @@
 
 This documentation and multi-purpose theme focuses on good legibility by providing a detailed rich layout. It’s highly optimized for speed by self-hosting resources. No other software is required to start a new project.
 
-[**The documentation**][doc] is also the **demonstration site**. If you want to get started right away visit the [workflow introduction][intro].
+## Requirements
+
+The theme relies on a recent **extended** version of Hugo for WEBP support. If you are new to Hugo and want to get started as fast as possible, visit the [workflow introduction][intro].
+
+## Examples
+
+The theme contains an example project with a few pages of content in the `exampleSite` folder. [**The documentation**][doc] is also the **demonstration site** with a lot of content.
+
 
 ## Features
 
