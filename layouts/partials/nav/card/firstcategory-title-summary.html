@@ -1,6 +1,0 @@
-<p class="p-meta">
-    {{- $firstcategory := index (.GetTerms "categories") 0 -}}
-    {{- with $firstcategory.Title }}&thinsp;/&thinsp;{{ . }}{{ end -}}
-</p>
-{{ with .Title }}<h2>{{ . | site.Home.RenderString }}</h2>{{ end }}
-{{ partial "summary.html" . }}

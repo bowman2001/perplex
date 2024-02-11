@@ -1,2 +1,7 @@
-<li class="meta__hanging"><a class="link link--nav" href="{{ (site.GetPage "categories").RelPermalink }}" title="All Categories">
-        {{- partial "material-symbol" (dict "id" "category" "ctx" . "size" "tiny") -}}</a></li>
+{{- with site.GetPage "categories" }}
+<li class="meta__hanging">
+  <a class="link link--nav" href="{{ .RelPermalink }}" title="All Categories">
+    {{- partial "material-symbol" (dict "id" "category" "ctx" . "size" "tiny") -}}
+  </a>
+</li>
+{{- end -}}

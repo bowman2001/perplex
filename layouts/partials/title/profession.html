@@ -1,1 +1,1 @@
-{{- with .Description -}}<p class="title__profession">{{- . | site.Home.RenderString -}}</p>{{ end }}
+{{- with .Description -}}<p class="title__profession">{{ partial "render-string" . }}</p>{{ end -}}

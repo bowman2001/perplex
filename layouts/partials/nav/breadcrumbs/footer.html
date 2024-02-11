@@ -7,7 +7,9 @@
     {{- range $i, $e := last $n .Ancestors.Reverse -}}
       <li class="meta__item">
         {{- $title := partial "inline/check-linktitle" $e }}
-        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{ $title | site.Home.RenderString }}</a>{{ partial "nav/breadcrumbs/separator.html" . }}
+        <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">
+          {{- partial "render-string" $title -}}
+        </a>{{ partial "nav/breadcrumbs/separator.html" . }}
       </li>
     {{- end -}}
   <li class="meta__item">
@@ -18,10 +20,10 @@
 {{- define "partials/inline/check-linktitle.html" }}
     {{- $limit := site.Params.limit.linkTitle.max | default 30 }}
     {{- $errorLevel := site.Params.limit.linkTitle.errorLevel | default "warning" }}
-    {{- $title := .LinkTitle }}
+    {{- $title := partial "render-string" .LinkTitle }}
     {{- $page := .Page }}
 
-    {{- if gt (len $title) $limit }}
+    {{- if gt (len ($title | plainify)) $limit }}
         {{ $msg := printf "The title %q is too large for a breadcrumb. Shorter is better ( < %d characters)." $title $limit }}
         {{- partial "error-msg" (dict "caller" "check-linktitle" "ctx" $page "errorMsg" $msg "errorLevel" $errorLevel ) }}
     {{- end }}

@@ -1,5 +1,5 @@
 {{- with .FirstSection -}}
     <ul class="ul--row meta__list">
-      <li class="meta__item meta__list"><span class="meta__text">{{- .LinkTitle | site.Home.RenderString -}}</span></li>
+      <li class="meta__item meta__list"><span class="meta__text">{{ partial "render-string" .LinkTitle }}</span></li>
     </ul>
 {{ end }}

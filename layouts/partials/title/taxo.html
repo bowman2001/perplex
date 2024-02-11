@@ -1,1 +1,1 @@
-{{ with .Title }}<h1><strong class="taxo-title">{{ partial "replacements" (. | site.Home.RenderString | htmlUnescape | strings.FirstUpper) -}}</strong></h1>{{ end }}
+{{ with .Title }}<h1><strong class="taxo-title">{{ partial "render-string" . | strings.FirstUpper -}}</strong></h1>{{ end -}}

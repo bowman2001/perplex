@@ -1,1 +1,3 @@
-<span class="heading"><a class="link link--text title__link" href="{{ .RelPermalink }}">{{ partial "title/render.html" . }}</a></span>
+<span class="heading"><a class="link link--text title__link" href="{{ $.RelPermalink }}">
+  {{- partial "render-string.html" .Title -}}
+</a></span>

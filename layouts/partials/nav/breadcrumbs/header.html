@@ -8,14 +8,17 @@
     {{- if ne $e .FirstSection }}
       {{- $empty = false }}
         <li class="meta__item">
-          <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle -}}
+          <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">
+            {{- partial "render-string" .LinkTitle -}}
           </a>{{ if ne $i $n }}{{ partial "nav/breadcrumbs/separator.html" . }}{{ end }}
         </li>
     {{ end }}
   {{- end -}}
   {{- with and $empty .CurrentSection }}
   <li class="meta__item">
-    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">{{- .LinkTitle }}</a>
+    <a class="meta__text link link--nav" href="{{ .RelPermalink }}" rel="nofollow">
+      {{- partial "render-string" .LinkTitle -}}
+    </a>
   </li>
   {{- end }}
 </ul>

@@ -1,1 +1,1 @@
-<h1 class="h1--author" data-pagefind-weight="10">{{ partial "title/render.html" . }}</h1>
+{{ with .Title }}<h1 class="h1--author" data-pagefind-weight="10">{{ partial "render-string" . }}</h1>{{ end -}}

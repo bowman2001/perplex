@@ -1,7 +1,7 @@
 {{ with .Data.Terms.ByCount }}
     {{ $last := sub (len .) 1 }}
     {{ range $i, $el := . }}
-      <li><a class="meta__text link link--nav" href="{{ $el.Page.RelPermalink }}">{{- $el.Page.LinkTitle | strings.FirstUpper -}}</a><span class="meta__count">({{- $el.Count -}})</span>{{- if (lt $i $last) -}}‍{{ partial "nav/taxonomies/icon_item/separator.html" . -}}</li>
+      <li><a class="meta__text link link--nav" href="{{ $el.Page.RelPermalink }}">{{- partial "render-string" $el.Page.LinkTitle | strings.FirstUpper -}}</a><span class="meta__count">({{- $el.Count -}})</span>{{- if (lt $i $last) -}}‍{{ partial "nav/taxonomies/icon_item/separator.html" . -}}</li>
       {{- end -}}
     {{ end }}
 {{ end }}

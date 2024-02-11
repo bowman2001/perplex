@@ -1,10 +1,11 @@
-{{ $n := sub (len .Ancestors) 1 }}
-{{ $nrange := sub $n 1 }}
-{{ $sections := last $n .Ancestors.Reverse }}
+{{- $n := sub (len .Ancestors) 1 }}
+{{- $nrange := sub $n 1 }}
+{{- $sections := last $n .Ancestors.Reverse }}
 {{- with $sections -}}
   <ul class="ul--row meta__list">
-      {{ range $i, $e := . }}
-        <li class="meta__item"><span class="meta__text">{{- .LinkTitle | site.Home.RenderString -}}</span></li>{{ if lt $i $nrange }}<li>{{ partial "nav/breadcrumbs/separator.html" . }}</li>{{ end }}
-      {{ end }}
+      {{- range $i, $e := . }}
+        <li class="meta__item"><span class="meta__text">{{ partial "render-string" .LinkTitle }}</span></li>
+        {{- if lt $i $nrange }}<li>{{ partial "nav/breadcrumbs/separator.html" . }}</li>{{ end }}
+      {{- end }}
   </ul>
 {{- end -}}

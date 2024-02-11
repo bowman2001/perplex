@@ -1,3 +1,8 @@
-<li class="meta__hanging"><a class="link link--nav" href="{{ (site.GetPage "tags").RelPermalink }}" title="All Tags">
-        {{- partial "material-symbol" (dict "id" "style" "ctx" . "size" "tiny") -}}
-    </a></li>
+{{- $ctx := . }}
+{{- with site.GetPage "tags" -}}
+<li class="meta__hanging">
+  <a class="link link--nav" href="{{ .RelPermalink }}" title="All Tags">
+    {{ partial "material-symbol" (dict "id" "style" "ctx" $ctx "size" "tiny") -}}
+  </a>
+</li>
+{{- end -}}

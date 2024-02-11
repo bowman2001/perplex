@@ -3,9 +3,9 @@
 {{ $sections := last $n .Ancestors.Reverse }}
 <ul class="ul--row meta__list">
     {{- with $sections -}}
-        {{ range $i, $e := first 1 . }}
-          <li class="meta__item meta__list"><span class="meta__text">{{- .LinkTitle | site.Home.RenderString -}}</span></li>
-        {{ end }}
+        {{- range $i, $e := first 1 . }}
+          <li class="meta__item meta__list"><span class="meta__text">{{ partial "render-string" .LinkTitle }}</span></li>
+        {{- end }}
     {{ end }}
     {{- with .Params.categories -}}
         {{- $first := (index . 0) -}}

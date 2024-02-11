@@ -11,6 +11,7 @@
     {{ $parenttitle = .Parent.LinkTitle }}
 {{ end }}
 <span>
-    {{- with $parenttitle -}}<span class="page-nav__meta">{{- partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) -}}</span>{{- end -}}
-    {{- with $title -}}<span class="page-nav__title">{{- partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) -}}</span>{{- end -}}
+    {{- with $parenttitle -}}<span class="page-nav__meta">{{ partial "render-string"  . }}</span>{{ end }}
+    {{- with $title }}<span class="page-nav__title">{{ partial "render-string"  . }}</span>{{ end -}}
 </span>
+{{- /**/ -}}

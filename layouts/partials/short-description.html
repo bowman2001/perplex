@@ -4,7 +4,7 @@
 {{- $errorLevel := site.Params.limit.description.errorLevel | default "warning" }}
 
 {{- with .Description -}}
-    {{- $text := partial "replacements" ( . | site.Home.RenderString | htmlUnescape | plainify ) }}
+    {{- $text := partial "render-plain-string" . }}
     <p>{{ $text }}</p>
     {{ $n := len $text }}
     {{- if gt $n $max }}

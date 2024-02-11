@@ -1,1 +1,1 @@
-{{- with .Title }}{{ partial "replacements.html" ( . | site.Home.RenderString | htmlUnescape ) }}{{ end -}}
+{{- with .Title }}{{ partial "render-string" . }}{{ end -}}
