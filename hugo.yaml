@@ -92,8 +92,6 @@ taxonomies:
   series: series
   author: authors
 
-### IMPORTANT!
-### This module configuration does only affect the folder of the theme.
 module:
   hugoVersion:
     extended: true
