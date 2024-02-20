@@ -4,7 +4,7 @@
 
 {{ with .Params.featured }}
   {{ if and (eq $.Type "doc") (eq . "icon") }}
-    {{ with $id := $ctx.Params.menu.doc.pre }}
+    {{ with $id := partial "img/func/params/get-icon-id" $ctx }}
       {{ $iconstr := partial "material-symbol" (dict "id" $id "ctx" $ctx "size" "xl" ) }}
       {{ $iconstr = replaceRE `</?span[^>]*>` "" $iconstr }}
       {{ $imgMap = dict
@@ -18,7 +18,7 @@
       }}
     {{ else }}
       {{ warnf "Can’t find menu icon on %v." $ctx }}
-      {{ $imgMap = partial "mod-img/get" (dict "src" . "ctx" $ctx ) }}
+      {{ $imgMap = partial "mod-img/get" (dict "src" $src "ctx" $ctx ) }}
     {{ end }}
   {{ else }}
     {{ $imgMap = partial "mod-img/get" (dict "src" . "ctx" $ctx ) }}

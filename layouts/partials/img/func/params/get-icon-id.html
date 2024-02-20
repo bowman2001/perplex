@@ -1,0 +1,11 @@
+{{ $id := "" }}
+
+{{ with .Params.menu }}
+  {{ range $k, $v := . }}
+    {{ with $v.pre }}
+      {{ $id = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $id }}
