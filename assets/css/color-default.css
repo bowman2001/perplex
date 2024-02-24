@@ -218,7 +218,7 @@
     --c-chroma-fg: #c9d1d9;
     --c-chroma-bg: #0d1117;
     --c-chroma-err: #f85149;
-    --c-chroma-hl: #ffffcc;
+    --c-chroma-hl: rgba(255, 255, 68, 0.2);
     --c-chroma-lnt: #64686c;
     --c-chroma-ln: #6e7681;
     --c-chroma-k: #ff7b72;

@@ -462,7 +462,7 @@ body {
   }
 }
 
-::selection {
+::selection, .selection {
   color: var(--c-selection);
   background-color: var(--c-selection-bg);
 }
@@ -878,6 +878,23 @@ body {
   #toggle-toc {
     display: none;
   }
+}
+
+.copy-code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2rem;
+  padding: 0.2rem 0.1rem 0 0;
+  width: 2rem;
+  fill: var(--c-icon);
+  background: transparent;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+
+.chroma:hover .copy-code {
+  opacity: 1;
 }
 
 .meta {
@@ -3934,6 +3951,7 @@ sup:target {
 
 /* PreWrapper */
 .chroma {
+  position: relative;
   color: var(--c-chroma-fg);
   background-color: var(--c-chroma-bg);
 }

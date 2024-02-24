@@ -61,19 +61,19 @@ The default color scheme is defined in a separate CSS file and can be replaced w
 
 ### Images 
 
-The **appearance of images** can be controlled to a large extent. The theme handles their preprocessing and the generation of all the needed variants. They are delivered smoothly with [Lazysizes][ls] and without layout shifts.
+The **appearance of images** can be controlled to a large extent. The theme handles their preprocessing and the generation of all the needed variants. They are delivered smoothly with [Lazysizes][ls] and **without** layout shifts.
 
 ### Icons
 
 Google’s [Material Symbols][ms] and [Simple Icons][si] for brands can be included by their identifiers. Material Symbols automatically show in all navigational elements of the documentation. All icon sets can also be used as Markdown content (using shortcodes).
 
-### Full text search
+### Full-text search
 
 The theme is prepared to generate and self-host indices with the fast library [Pagefind][pf] (the additional installation of its open-source node package is required).
 
 ## Efficient!
 
-Sites built with this theme are **very fast and cost-effective**. Image sets are highly optimized to minimize the needed bandwidth (and loaded lazily), fonts are split into small packages, and icons are embedded inline.
+Sites built with this theme are delivered **rapidly and cost-effective**. Image sets are highly optimized to minimize the needed bandwidth (and loaded lazily), fonts are split into small packages, and icons are embedded inline.
 
 [doc]: https://perplex.desider.at/doc
 [intro]: https://perplex.desider.at/doc/intro/workflow/
