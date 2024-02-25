@@ -882,8 +882,8 @@ body {
 
 .copy-code {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2rem;
+  right: 2rem;
   height: 2rem;
   padding: 0.2rem 0.1rem 0 0;
   width: 2rem;
@@ -893,7 +893,10 @@ body {
   transition: opacity 150ms;
 }
 
-.chroma:hover .copy-code {
+.highlight {
+  position: relative;
+}
+.highlight:hover .copy-code {
   opacity: 1;
 }
 
@@ -3951,7 +3954,6 @@ sup:target {
 
 /* PreWrapper */
 .chroma {
-  position: relative;
   color: var(--c-chroma-fg);
   background-color: var(--c-chroma-bg);
 }

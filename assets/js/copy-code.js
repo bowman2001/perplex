@@ -1,18 +1,13 @@
 document.querySelectorAll('pre.chroma > code').forEach((codeBlock) => {
 
-    // tr only may be table row in case of line numbers
+    // tr only may be table row in case of line numbers in table
     const tr = codeBlock.parentNode.parentNode.parentNode;
+
     if( tr.firstChild.firstChild.firstChild === codeBlock) {
         // Do nothing because this code block contains only line numbers
         return
     }
-
-    // The container without line numbers is <pre>
-    let container = codeBlock.parentNode;
-    if( tr.nodeName === 'TR') {
-        // In case of line numbers there is a surrounding <div class="chroma">
-        container = tr.closest('.chroma');
-    }
+    const container = codeBlock.closest('.highlight');
 
     const copyButton = document.createElement('button');
     copyButton.classList.add('copy-code');
