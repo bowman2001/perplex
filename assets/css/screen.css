@@ -462,7 +462,7 @@ body {
   }
 }
 
-::selection, .selection {
+::selection, .selection .cl {
   color: var(--c-selection);
   background-color: var(--c-selection-bg);
 }
@@ -2146,10 +2146,13 @@ body {
   }
 }
 .md li .highlight, .md dd .highlight {
-  padding-left: 1px;
-  padding-right: 1px;
+  padding-left: 0;
+  padding-right: 0;
   min-width: 100%;
   max-width: 100%;
+}
+.md li .highlight .copy-code, .md dd .highlight .copy-code {
+  right: 0;
 }
 .md .lh15 pre {
   font-size: 1.43rem;
