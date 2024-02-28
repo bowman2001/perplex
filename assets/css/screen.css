@@ -891,6 +891,7 @@ body {
   background: transparent;
   opacity: 0;
   transition: opacity 150ms;
+  cursor: pointer;
 }
 
 .highlight {
@@ -3410,11 +3411,12 @@ sup:target {
   position: relative;
   border-radius: 1rem;
   background-color: var(--c-bg-2);
+  z-index: -10;
 }
 .layout-box:after {
   display: block;
   position: absolute;
-  z-index: 10;
+  z-index: -9;
   top: 0;
   left: 0;
   width: 100%;
