@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   --c-frame: #0e0b0d;
+  --c-frame-opac: rgba(14, 11, 13, 0.9);
   --c-frame-text-normal: #dde2e3;
   --c-frame-text-medium: #b3babe;
   --c-frame-text-low: #9ba1a4;
