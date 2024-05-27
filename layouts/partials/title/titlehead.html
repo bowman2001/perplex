@@ -1,5 +1,4 @@
-
-{{ if and site.IsServer .Params.draft }}
+{{ if and hugo.IsServer .Params.draft }}
     <div class="titlehead titlehead--draft md md--sans md--tiny">
       <p><strong>DRAFT</strong></p>
     </div>

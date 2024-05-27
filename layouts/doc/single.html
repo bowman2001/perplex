@@ -4,10 +4,10 @@
         <div id="l-content" data-pagefind-body>
             <header class="page-header">
                 <div class="meta meta--head meta--left-doc" data-pagefind-ignore>
+                    <div class="margin-doc">{{ partial "title/titlehead.html" . }}</div>
                     {{- partial "nav/breadcrumbs/header.html" . }}
                     {{- partial "date/published_date.html" . }}
                 </div>
-                <div class="margin-doc"> {{ partial "title/titlehead.html" . }}</div>
                 <div class="title title--sans margin-doc">
                     {{- partial "title/title.html" . }}
                     {{- partial "title/subtitle.html" . }}
