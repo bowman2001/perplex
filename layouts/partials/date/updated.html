@@ -4,9 +4,11 @@
     {{- partial "material-symbol" (dict "id" "edit" "ctx" . "size" "tiny") -}}{{- partial "file/vscode_end.html" . -}}</span>
     <time class="meta__text" datetime="{{ .Lastmod.Format $iso8601 }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
   </li>
+  {{- if not .Site.Params.date.hideTime -}}
   <li class="meta__item"><span class="meta__icon">
     {{- partial "material-symbol" (dict "id" "schedule" "ctx" . "size" "tiny") -}}</span>
     <span class="meta__text">{{ .Lastmod | time.Format ":time_short" }}</span></li>
+  {{- end -}}
     {{- with ( partial "people/lasteditor.html" . ) -}}
       <li class="meta__item"><span class="meta__icon">{{ partialCached "people/icon/editor.html" . }}</span>{{ . }}</li>
     {{- end -}}

@@ -1,11 +1,24 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
 <div class="published">
-{{- partial "authors/portrait-small.html" . }}
-{{- partial "file/vscode_start.html" . -}}
+  {{- partial "authors/portrait-small.html" . }}
+  {{- partial "file/vscode_start.html" . -}}
   <ul class="meta__list meta__list--date">
-    <li class="meta__item"><span class="meta__icon">{{- partial "material-symbol" (dict "id" "event" "ctx" . "size" "tiny") -}}</span><time class="meta__text" datetime="{{ .Date.Format $iso8601 }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    <li class="meta__item">
+      <span class="meta__icon">
+        {{- partial "material-symbol" (dict "id" "event" "ctx" . "size" "tiny") -}}
+      </span>
+      <time class="meta__text" datetime="{{ .Date.Format $iso8601 }}">
+        {{ .Date.Format "Jan 2, 2006" }}
+      </time>
     </li>
-    <li class="meta__item meta__date">{{- partial "material-symbol" (dict "id" "schedule" "ctx" . "size" "tiny") -}}<span class="meta__text">{{ .Date | time.Format ":time_short" }}</span></li>
+    {{- if not .Site.Params.date.hideTime -}}
+    <li class="meta__item meta__date">
+      {{- partial "material-symbol" (dict "id" "schedule" "ctx" . "size" "tiny") -}}
+      <span class="meta__text">
+        {{ .Date | time.Format ":time_short" }}
+      </span>
+    </li>
+    {{- end -}}
   </ul>
-{{- partial "file/vscode_end.html" . -}}
+  {{- partial "file/vscode_end.html" . -}}
 </div>
