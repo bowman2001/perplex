@@ -16,7 +16,7 @@ The first one renders the opening anchor tag with the VSCode link, the second on
 ## {$vscode_start.html}
 
 ```go-html-template {.inline}
-{{- if .Site.IsServer -}}
+{{- if hugo.IsServer -}}
     {{- with .File -}}
         {{- $path := print "vscode://file" .Filename  -}}
         <a {{ printf "href=%q" $path | safeHTMLAttr }} rel="nofollow">
@@ -31,7 +31,7 @@ The first one renders the opening anchor tag with the VSCode link, the second on
 ## {$vscode_end.html}
 
 ```go-html-template
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
     {{- with .File }}
         </a>
     {{- end }}
