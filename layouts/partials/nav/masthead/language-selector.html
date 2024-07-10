@@ -1,14 +1,11 @@
 {{ if .Site.IsMultiLingual }}
-<li class="nav__item--dropdown">
-    {{- $a := dict }}
-    {{- $c := slice "ctrl__menulink" "nav-main__link" }}
-    <nav class="ctrl__button ctrl__menulink nav-main__link">
-        {{- partial "material-symbol" (dict "id" "globe" "ctx" . "size" "normal") -}}
-        {{- .Site.Language | upper -}}
-    </nav>
+<nav class="nav__item--dropdown ctrl__button" title="Language Selector">
+    {{- partial "material-symbol" (dict "id" "globe" "ctx" . "size" "normal") -}}
+    {{- .Site.Language | upper -}}
     <ul class="dropdown">
         {{ $siteLanguages := .Site.Languages }}
         {{ $pageLang := .Page.Lang }}
+        {{- $a := dict }}
         {{ range .Page.AllTranslations }}
             {{ $translation := . }}
             {{ range $siteLanguages }}
@@ -27,5 +24,5 @@
             {{ end }}
         {{ end }}
     </ul>
-</li>
+</nav>
 {{ end }}
