@@ -4549,10 +4549,8 @@ sup:target {
 
 .nav__item--dropdown {
   position: relative;
-}
-
-.nav__item--dropdown > .ctrl__menulink {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -4565,6 +4563,7 @@ sup:target {
   padding: 0;
   margin: 0;
   list-style: none;
+  box-shadow: 0 0 0 1px var(--c-shadow-3);
 }
 
 .nav__item--dropdown:hover .dropdown,
@@ -4573,10 +4572,14 @@ sup:target {
 }
 
 .nav__item--dropdown .dropdown li {
-  color: var(--c-text-normal);
   padding: 0.5rem;
+}
+
+.nav__item--dropdown .dropdown li a {
+  color: var(--c-text-normal);
   text-decoration: none;
   display: block;
+  padding: 0.5rem;
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 0.075em;
@@ -4584,24 +4587,12 @@ sup:target {
   text-transform: uppercase;
 }
 
-.nav__item--dropdown .dropdown li:hover,
-.nav__item--dropdown .dropdown li:focus {
+.nav__item--dropdown .dropdown li a:hover,
+.nav__item--dropdown .dropdown li a:focus {
   background-color: var(--c-frame-border-active);
   color: var(--c-text-low);
 }
 
-.nav__item--dropdown .dropdown li a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-}
-
-.nav__item--dropdown .dropdown li a:hover,
-.nav__item--dropdown .dropdown li a:focus {
-  background-color: transparent;
-  color: inherit;
-}
 
 .nav-main__link {
   letter-spacing: 0.075em;
