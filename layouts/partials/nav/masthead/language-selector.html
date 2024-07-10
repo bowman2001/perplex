@@ -1,0 +1,31 @@
+{{ if .Site.IsMultiLingual }}
+<li class="nav__item--dropdown">
+    {{- $a := dict }}
+    {{- $c := slice "ctrl__menulink" "nav-main__link" }}
+    <nav class="ctrl__button ctrl__menulink nav-main__link">
+        {{- partial "material-symbol" (dict "id" "globe" "ctx" . "size" "normal") -}}
+        {{- .Site.Language | upper -}}
+    </nav>
+    <ul class="dropdown">
+        {{ $siteLanguages := .Site.Languages }}
+        {{ $pageLang := .Page.Lang }}
+        {{ range .Page.AllTranslations }}
+            {{ $translation := . }}
+            {{ range $siteLanguages }}
+                {{ if eq $translation.Lang .Lang }}
+                    {{- $c := slice "ctrl__menulink" "nav-main__link" }}
+                    {{- if eq $pageLang .Lang }}
+                        {{- $c = $c | append "is-active" }}
+                        {{- $a = merge $a (dict "aria-current" "page") }}
+                    {{- end }}
+                    <li>
+                        <a href="{{ $translation.RelPermalink }}" class="{{ delimit $c " " }}">
+                            {{ .LanguageName }}
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </ul>
+</li>
+{{ end }}
