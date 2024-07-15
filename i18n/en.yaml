@@ -1,0 +1,18 @@
+- id: home
+  translation: "Home"
+- id: language_selector
+  translation: "Language Selector"
+- id: open_search
+  translation: "Open Search"
+- id: open_sidebar
+  translation: "Open Sidebar"
+- id: open_toc
+  translation: "Open TOC"
+- id: all_categories
+  translation: "All Categories"
+- id: all_series
+  translation: "All Series"
+- id: all_tags
+  translation: "All Tags"
+- id: all_authors
+  translation: "All Authors"

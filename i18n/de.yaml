@@ -1,0 +1,18 @@
+- id: home
+  translation: "Startseite"
+- id: language_selector
+  translation: "Sprachauswahl"
+- id: open_search
+  translation: "Suche öffnen"
+- id: open_sidebar
+  translation: "Seitenmenü öffnen"
+- id: open_toc
+  translation: "Inhaltsverzeichnis öffnen"
+- id: all_categories
+  translation: "Alle Kategorien"
+- id: all_series
+  translation: "Alle Serien"
+- id: all_tags
+  translation: "Alle Tags"
+- id: all_authors
+  translation: "Alle Autoren"
