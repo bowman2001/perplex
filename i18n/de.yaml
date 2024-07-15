@@ -16,3 +16,9 @@
   translation: "Alle Tags"
 - id: all_authors
   translation: "Alle Autoren"
+- id: all_taxonomies
+  translation: "Alle Taxonomies"
+- id: latest_contributions
+  translation: "Letzte Beiträge"
+- id: see_also
+  translation: "Siehe auch"

@@ -23,7 +23,7 @@
         </section>
         <section class="section">
             <hr>
-            <h2>Latest Contributions</h2>
+            <h2>{{ i18n "latest_contributions" }}</h2>
             {{- page.Scratch.Set "level" 3 -}}
             {{ with first 6 .RegularPages.ByLastmod.Reverse }}
                 <nav class="card-nav card-nav--3 card-nav--top margin-full">
