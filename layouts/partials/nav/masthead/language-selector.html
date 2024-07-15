@@ -1,4 +1,4 @@
-{{ if .Site.IsMultiLingual }}
+{{- if and .Site.IsMultiLingual (not .Site.Params.DisableLanguageSwitchingButton)}}
 <nav class="nav__item--dropdown ctrl__button" title="Language Selector">
     {{- partial "material-symbol" (dict "id" "globe" "ctx" . "size" "normal") -}}
     {{- .Site.Language | upper -}}
