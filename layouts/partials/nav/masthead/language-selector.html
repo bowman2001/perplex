@@ -1,27 +1,29 @@
 {{- if and .Site.IsMultiLingual (not .Site.Params.DisableLanguageSwitchingButton)}}
-<nav class="nav__item--dropdown ctrl__button" title="{{ i18n "language_selector" }}">
+<nav class="nav__item--dropdown ctrl__button" title="{{ i18n " language_selector" }}">
     {{- partial "material-symbol" (dict "id" "globe" "ctx" . "size" "normal") -}}
-    {{- .Site.Language | upper -}}
+    <a class="ctrl__menulink">
+        {{- .Site.Language | upper -}}
+    </a>
     <ul class="dropdown">
         {{ $siteLanguages := .Site.Languages }}
         {{ $pageLang := .Page.Lang }}
         {{- $a := dict }}
         {{ range .Page.AllTranslations }}
-            {{ $translation := . }}
-            {{ range $siteLanguages }}
-                {{ if eq $translation.Lang .Lang }}
-                    {{- $c := slice "ctrl__menulink" "nav-main__link" }}
-                    {{- if eq $pageLang .Lang }}
-                        {{- $c = $c | append "is-active" }}
-                        {{- $a = merge $a (dict "aria-current" "page") }}
-                    {{- end }}
-                    <li>
-                        <a href="{{ $translation.RelPermalink }}" class="{{ delimit $c " " }}">
-                            {{ .LanguageName }}
-                        </a>
-                    </li>
-                {{ end }}
-            {{ end }}
+        {{ $translation := . }}
+        {{ range $siteLanguages }}
+        {{ if eq $translation.Lang .Lang }}
+        {{- $c := slice "ctrl__menulink" "nav-main__link" }}
+        {{- if eq $pageLang .Lang }}
+        {{- $c = $c | append "is-active" }}
+        {{- $a = merge $a (dict "aria-current" "page") }}
+        {{- end }}
+        <li>
+            <a href="{{ $translation.RelPermalink }}" class="{{ delimit $c " " }}">
+                {{ .LanguageName }}
+            </a>
+        </li>
+        {{ end }}
+        {{ end }}
         {{ end }}
     </ul>
 </nav>
