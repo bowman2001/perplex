@@ -1,4 +1,4 @@
-{{- if .Site.IsServer -}}
+{{- if hugo.IsServer -}}
     {{- with .File -}}
         {{- $label := print "Open file in " site.Params.modOpenIn.name }}
         {{- $path := print site.Params.modOpenIn.protocol "://file" .Filename  -}}
