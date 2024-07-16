@@ -1,10 +1,17 @@
 {{ if and hugo.IsServer .Params.draft }}
-    <div class="titlehead titlehead--draft md md--sans md--tiny">
-      <p><strong>DRAFT</strong></p>
-    </div>
+  <div class="titlehead titlehead--draft md md--sans md--tiny">
+    <p><strong>DRAFT</strong></p>
+  </div>
+{{- end }}
+{{ if and .Site.IsMultiLingual (isset .Params "contentlanguage") (ne .Params.ContentLanguage .Page.Language.Lang) }}
+  <div class="titlehead{{- with .Params.style }} titlehead--{{ . }}{{ end }} md md--sans">
+    <p>
+      <strong>{{ i18n "missing_translation" }}:</strong><br>{{ i18n "untranslated_page" (dict "DefaultLang" (.Params.ContentLanguage | upper) "RequestLang" (.Page.Language.Lang | upper)) }}
+    </p>    
+  </div>
 {{- end }}
 {{- with .Resources.GetMatch "titlehead.md" -}}
   <div class="titlehead{{- with .Params.style }} titlehead--{{ . }}{{ end }} md md--sans md--tiny">
-      {{- partial "replacements.html" .Content -}}
+    {{- partial "replacements.html" .Content -}}
   </div>
 {{- end -}}

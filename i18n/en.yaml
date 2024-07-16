@@ -22,3 +22,7 @@
   translation: "Latest Contributions"
 - id: see_also
   translation: "See Also"
+- id: missing_translation
+  translation: "Missing Translation"
+- id: untranslated_page
+  translation: "Unfortunately, this site isn't available in {{ .RequestLang }}. As a fallback, it is displayed in {{ .DefaultLang }}."

@@ -22,3 +22,7 @@
   translation: "Letzte Beiträge"
 - id: see_also
   translation: "Siehe auch"
+- id: missing_translation
+  translation: "Fehlende Übersetzung"
+- id: untranslated_page
+  translation: "Leider ist diese Seite nicht in {{ .RequestLang }} verfügbar. Als Fallback wird sie in {{ .DefaultLang }} angezeigt."
