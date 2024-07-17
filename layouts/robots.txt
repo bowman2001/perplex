@@ -1,0 +1,13 @@
+User-agent: *
+
+{{ range .Site.Params.robotsdisallow }}
+Disallow: {{ . }}
+{{ end }}
+
+{{ range where .Site.Pages "Params.robotsdisallow" true }}
+Disallow: {{ .RelPermalink }}
+{{ end }}
+
+{{ with .Sitemap }}
+Sitemap: {{ .Filename | absURL }}
+{{ end }}
