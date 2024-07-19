@@ -1,6 +1,6 @@
 {{- with site.GetPage "categories" }}
 <li class="meta__hanging">
-  <a class="link link--nav" href="{{ .RelPermalink }}" title="All Categories">
+  <a class="link link--nav" href="{{ .RelPermalink }}" title="{{ i18n "all_categories" }}">
     {{- partial "material-symbol" (dict "id" "category" "ctx" . "size" "tiny") -}}
   </a>
 </li>

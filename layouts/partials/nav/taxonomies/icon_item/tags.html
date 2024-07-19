@@ -1,7 +1,7 @@
 {{- $ctx := . }}
 {{- with site.GetPage "tags" -}}
 <li class="meta__hanging">
-  <a class="link link--nav" href="{{ .RelPermalink }}" title="All Tags">
+  <a class="link link--nav" href="{{ .RelPermalink }}" title="{{ i18n "all_tags" }}">
     {{ partial "material-symbol" (dict "id" "style" "ctx" $ctx "size" "tiny") -}}
   </a>
 </li>

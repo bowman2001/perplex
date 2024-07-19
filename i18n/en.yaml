@@ -1,0 +1,28 @@
+- id: home
+  translation: "Home"
+- id: language_selector
+  translation: "Language Selector"
+- id: open_search
+  translation: "Open Search"
+- id: open_sidebar
+  translation: "Open Sidebar"
+- id: open_toc
+  translation: "Open TOC"
+- id: all_categories
+  translation: "All Categories"
+- id: all_series
+  translation: "All Series"
+- id: all_tags
+  translation: "All Tags"
+- id: all_authors
+  translation: "All Authors"
+- id: all_taxonomies
+  translation: "All Taxonomies"
+- id: latest_contributions
+  translation: "Latest Contributions"
+- id: see_also
+  translation: "See Also"
+- id: missing_translation
+  translation: "Missing Translation"
+- id: untranslated_page
+  translation: "Unfortunately, this site isn't available in {{ .RequestLang }}. As a fallback, it is displayed in {{ .DefaultLang }}."

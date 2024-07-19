@@ -1,6 +1,6 @@
 <ul class="ul--row meta__list">
   <li class="meta__item">
-    <a class="meta__icon link link--nav" href="{{ site.Home.RelPermalink }}" title="Home" rel="nofollow">
+    <a class="meta__icon link link--nav" href="{{ site.Home.RelPermalink }}" title="{{ i18n "home" }}" rel="nofollow">
         {{- partial "material-symbol" (dict "id" "home" "ctx" . "size" "tiny") -}}
     </a></li><li class="meta__item">{{ partial "nav/breadcrumbs/separator.html" . }}</li>
     {{ $n := sub (len .Ancestors) 1 }}
