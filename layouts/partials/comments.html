@@ -1,0 +1,21 @@
+{{ if and .Site.Params.giscus.enable (not .Params.disableGiscus) }}
+<hr>
+<div class="meta meta--foot">
+        <script src="{{ .Site.Params.giscus.src | default "https://giscus.app/client.js" }}"
+                data-repo="{{ .Site.Params.giscus.repo }}"
+                data-repo-id="{{ .Site.Params.giscus.repo_id }}"
+                {{ with .Site.Params.giscus.category }}data-category="{{ . }}"{{ end }}
+                data-category-id="{{ .Site.Params.giscus.category_id }}"
+                data-mapping="{{ .Site.Params.giscus.mapping }}"
+                data-strict="{{ if .Site.Params.giscus.strict }}1{{ else }}0{{ end }}"
+                data-reactions-enabled="{{ if .Site.Params.giscus.reactions_enabled }}1{{ else }}0{{ end }}"
+                data-emit-metadata="{{ if .Site.Params.giscus.emit_metadata }}1{{ else }}0{{ end }}"
+                data-input-position="{{ .Site.Params.giscus.input_position }}"
+                data-theme="{{ .Site.Params.giscus.theme }}"
+                data-lang="{{ .Lang }}"
+                {{ with .Site.Params.giscus.loading }}data-loading="{{ . }}"{{ end }}
+                crossorigin="anonymous"
+                async>
+        </script>
+</div>
+{{ end }}
